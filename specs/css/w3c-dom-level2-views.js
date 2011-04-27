@@ -88,8 +88,6 @@ test('TODO', function(){
 });
 /******************************************************************************
 
-
-
     Attributes
 
         document of type DocumentView, readonly

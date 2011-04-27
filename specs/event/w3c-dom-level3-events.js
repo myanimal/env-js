@@ -95,6 +95,11 @@ module (see User Interface event types) if it conforms to DOM Level 3 Events
 {"http://www.w3.org/2001/xml-events", "DOMFocusOut"} accordingly to their
 semantics, supports the UIEvent interface, and conforms to the DOM Level 2
 Core module.
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 Note: An implementation which does not conform to an event module can still
 implement the DOM interfaces associated with it. The DOM application can then
@@ -113,6 +118,11 @@ specification [DOM Level 3 Core]. DOM Level 3 Events is built on top of DOM
 Level 2 Events [DOM Level 2 Events], i.e. a DOM Level 3 Events implementation
 where hasFeature("Events", "3.0") returns true must also return true when the
 version number is "2.0", "" or, null.
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 Each event module describes its own feature string in the event module
 listing.
@@ -149,13 +159,22 @@ The target's ancestors are determined before the initial dispatch of the
 event. If the target node is removed during the dispatching, or a target's
 ancestor is added or removed, the event propagation will always be based on
 the target node and the target's ancestors determined before the dispatch.
+******************************************************************************/
+test('TODO: ', function(){
 
+});
+/******************************************************************************
 Some events may not necessarily accomplish the three phases of the DOM event
 flow, e.g. the event could only be defined for one or two phases. As an
 example, events defined in this specification will always accomplish the
 capture and target phases but some will not accomplish the bubbling phase
 ("bubbling events" versus "non-bubbling events", see also the Event.bubbles
 attribute).
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 1.2.2 Event listeners
 
@@ -172,7 +191,11 @@ If the event listener is being registered on a node while an event gets
 processed on this node, the event listener will not be triggered during the
 current phase but may be triggered during a later phase in the event flow,
 i.e. the bubbling phase.
+******************************************************************************/
+test('TODO: ', function(){
 
+});
+/******************************************************************************
 1.2.2.2 Event groups
 
 An event listener is always part of a group. It is either explicitly in a
