@@ -1181,6 +1181,7 @@ The XHTML syntax
 
 There are also some appendices, defining rendering rules for Web browsers and 
 listing obsolete features and IANA considerations.
+
 1.7.1 How to read this specification
 
 This specification should be read like all other specifications. First, it 
@@ -1225,6 +1226,7 @@ Other code fragments are marked up like this.
 Variables are marked up like this.
 
 This is an implementation requirement.
+
 1.8 A quick introduction to HTML
 
 This section is non-normative.
@@ -1754,21 +1756,42 @@ Errors that waste authoring time
 
 Errors that involve areas that affect authors migrating to and from XHTML
 
-    Some authors like to write files that can be interpreted as both XML and HTML with similar results. Though this practice is discouraged in general due to the myriad of subtle complications involved (especially when involving scripting, styling, or any kind of automated serialization), this specification has a few restrictions intended to at least somewhat mitigate the difficulties. This makes it easier for authors to use this as a transitionary step when migrating between HTML and XHTML.
+    Some authors like to write files that can be interpreted as both XML and
+    HTML with similar results. Though this practice is discouraged in general
+    due to the myriad of subtle complications involved (especially when
+    involving scripting, styling, or any kind of automated serialization), this
+    specification has a few restrictions intended to at least somewhat mitigate
+    the difficulties. This makes it easier for authors to use this as a
+    transitionary step when migrating between HTML and XHTML.
 
-    For example, there are somewhat complicated rules surrounding the lang and xml:lang attributes intended to keep the two synchronized.
+    For example, there are somewhat complicated rules surrounding the lang and
+    xml:lang attributes intended to keep the two synchronized.
 
-    Another example would be the restrictions on the values of xmlns attributes in the HTML serialization, which are intended to ensure that elements in conforming documents end up in the same namespaces whether processed as HTML or XML.
+    Another example would be the restrictions on the values of xmlns attributes
+    in the HTML serialization, which are intended to ensure that elements in
+    conforming documents end up in the same namespaces whether processed as
+    HTML or XML.
+
 Errors that involve areas reserved for future expansion
 
-    As with the restrictions on the syntax intended to allow for new syntax in future revisions of the language, some restrictions on the content models of elements and values of attributes are intended to allow for future expansion of the HTML vocabulary.
+    As with the restrictions on the syntax intended to allow for new syntax in
+    future revisions of the language, some restrictions on the content models
+    of elements and values of attributes are intended to allow for future
+    expansion of the HTML vocabulary.
 
-    For example, limiting the values of the target attribute that start with an U+005F LOW LINE character (_) to only specific predefined values allows new predefined values to be introduced at a future time without conflicting with author-defined values.
+    For example, limiting the values of the target attribute that start with an
+    U+005F LOW LINE character (_) to only specific predefined values allows new
+    predefined values to be introduced at a future time without conflicting
+    with author-defined values.
+
 Errors that indicate a mis-use of other specifications
 
-    Certain restrictions are intended to support the restrictions made by other specifications.
+    Certain restrictions are intended to support the restrictions made by other
+    specifications.
 
-    For example, requiring that attributes that take media queries use only valid media queries reinforces the importance of following the conformance rules of that specification.
+    For example, requiring that attributes that take media queries use only
+    valid media queries reinforces the importance of following the conformance
+    rules of that specification.
 
 1.10 Recommended reading
 
@@ -1778,29 +1801,85 @@ The following documents might be of interest to readers of this specification.
 
 Character Model for the World Wide Web 1.0: Fundamentals [CHARMOD]
 
-        This Architectural Specification provides authors of specifications, software developers, and content developers with a common reference for interoperable text manipulation on the World Wide Web, building on the Universal Character Set, defined jointly by the Unicode Standard and ISO/IEC 10646. Topics addressed include use of the terms 'character', 'encoding' and 'string', a reference processing model, choice and identification of character encodings, character escaping, and string indexing.
+        This Architectural Specification provides authors of specifications,
+        software developers, and content developers with a common reference for
+        interoperable text manipulation on the World Wide Web, building on the
+        Universal Character Set, defined jointly by the Unicode Standard and
+        ISO/IEC 10646. Topics addressed include use of the terms 'character',
+        'encoding' and 'string', a reference processing model, choice and
+        identification of character encodings, character escaping, and string
+        indexing.
 
 Unicode Security Considerations [UTR36]
 
-        Because Unicode contains such a large number of characters and incorporates the varied writing systems of the world, incorrect usage can expose programs or systems to possible security attacks. This is especially important as more and more products are internationalized. This document describes some of the security considerations that programmers, system analysts, standards developers, and users should take into account, and provides specific recommendations to reduce the risk of problems.
+        Because Unicode contains such a large number of characters and
+        incorporates the varied writing systems of the world, incorrect usage
+        can expose programs or systems to possible security attacks. This is
+        especially important as more and more products are internationalized.
+        This document describes some of the security considerations that
+        programmers, system analysts, standards developers, and users should
+        take into account, and provides specific recommendations to reduce the
+        risk of problems.
 
 Web Content Accessibility Guidelines (WCAG) 2.0 [WCAG]
 
-        Web Content Accessibility Guidelines (WCAG) 2.0 covers a wide range of recommendations for making Web content more accessible. Following these guidelines will make content accessible to a wider range of people with disabilities, including blindness and low vision, deafness and hearing loss, learning disabilities, cognitive limitations, limited movement, speech disabilities, photosensitivity and combinations of these. Following these guidelines will also often make your Web content more usable to users in general.
+        Web Content Accessibility Guidelines (WCAG) 2.0 covers a wide range of
+        recommendations for making Web content more accessible. Following these
+        guidelines will make content accessible to a wider range of people with
+        disabilities, including blindness and low vision, deafness and hearing
+        loss, learning disabilities, cognitive limitations, limited movement,
+        speech disabilities, photosensitivity and combinations of these.
+        Following these guidelines will also often make your Web content more
+        usable to users in general.
 
 Authoring Tool Accessibility Guidelines (ATAG) 2.0 [ATAG]
 
-        This specification provides guidelines for designing Web content authoring tools that are more accessible for people with disabilities. An authoring tool that conforms to these guidelines will promote accessibility by providing an accessible user interface to authors with disabilities as well as by enabling, supporting, and promoting the production of accessible Web content by all authors.
+        This specification provides guidelines for designing Web content
+        authoring tools that are more accessible for people with disabilities.
+        An authoring tool that conforms to these guidelines will promote
+        accessibility by providing an accessible user interface to authors with
+        disabilities as well as by enabling, supporting, and promoting the
+        production of accessible Web content by all authors.
 
 User Agent Accessibility Guidelines (UAAG) 2.0 [UAAG]
 
-        This document provides guidelines for designing user agents that lower barriers to Web accessibility for people with disabilities. User agents include browsers and other types of software that retrieve and render Web content. A user agent that conforms to these guidelines will promote accessibility through its own user interface and through other internal facilities, including its ability to communicate with other technologies (especially assistive technologies). Furthermore, all users, not just users with disabilities, should find conforming user agents to be more usable.
+        This document provides guidelines for designing user agents that lower
+        barriers to Web accessibility for people with disabilities. User agents
+        include browsers and other types of software that retrieve and render
+        Web content. A user agent that conforms to these guidelines will
+        promote accessibility through its own user interface and through other
+        internal facilities, including its ability to communicate with other
+        technologies (especially assistive technologies). Furthermore, all
+        users, not just users with disabilities, should find conforming user
+        agents to be more usable.
 
 Polyglot Markup: HTML-Compatible XHTML Documents [POLYGLOT]
 
-        A document that uses polyglot markup is a document that is a stream of bytes that parses into identical document trees (with the exception of the xmlns attribute on the root element) when processed as HTML and when processed as XML. Polyglot markup that meets a well defined set of constraints is interpreted as compatible, regardless of whether they are processed as HTML or as XHTML, per the HTML5 specification. Polyglot markup uses a specific DOCTYPE, namespace declarations, and a specific case — normally lower case but occasionally camel case — for element and attribute names. Polyglot markup uses lower case for certain attribute values. Further constraints include those on empty elements, named entity references, and the use of scripts and style.
+        A document that uses polyglot markup is a document that is a stream of
+        bytes that parses into identical document trees (with the exception of
+        the xmlns attribute on the root element) when processed as HTML and
+        when processed as XML. Polyglot markup that meets a well defined set of
+        constraints is interpreted as compatible, regardless of whether they
+        are processed as HTML or as XHTML, per the HTML5 specification.
+        Polyglot markup uses a specific DOCTYPE, namespace declarations, and a
+        specific case — normally lower case but occasionally camel case — for
+        element and attribute names. Polyglot markup uses lower case for
+        certain attribute values. Further constraints include those on empty
+        elements, named entity references, and the use of scripts and style.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 2 Common infrastructure
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 2.1 Terminology
 
 This specification refers to both HTML and XML attributes and IDL attributes,
@@ -1829,6 +1908,12 @@ apply to other media in equivalent ways.
 When an algorithm B says to return to another algorithm A, it implies that A
 called B. Upon returning to A, the implementation must continue from where it
 left off in calling B.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 2.1.1 Resources
 
@@ -3912,30 +3997,30 @@ component.
 For the purposes of the above definitions, URLs must be parsed using the URL
 parsing rules defined in this specification.
 
-Attribute 	Component 	Getter Condition 	Prefix 	Suffix 	Setter Preprocessor 	Setter Condition
-protocol 	<scheme> 	— 	— 	U+003A COLON (:) 	Remove all trailing U+003A COLON characters (:) 	The new value is not the empty string
-host 	<hostport> 	input is an authority-based URL 	— 	— 	— 	The new value is not the empty string and input is an authority-based URL
-hostname 	<host> 	input is an authority-based URL 	— 	— 	Remove all leading U+002F SOLIDUS characters (/) 	The new value is not the empty string and input is an authority-based URL
-port 	<port> 	input is an authority-based URL, and contained a <port> component (possibly an empty one) 	— 	— 	Remove all characters in the new value from the first that is not in the range U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE (9), if any. Remove any leading U+0030 DIGIT ZERO characters (0) in the new value. If the resulting string is empty, set it to a single U+0030 DIGIT ZERO character (0). 	input is an authority-based URL, and the new value, when interpreted as a base-ten integer, is less than or equal to 65535
-pathname 	<path> 	input is a hierarchical URL 	— 	— 	If it has no leading U+002F SOLIDUS character (/), prepend a U+002F SOLIDUS character (/) to the new value 	input is hierarchical
-search 	<query> 	input is a hierarchical URL, and contained a <query> component (possibly an empty one) 	U+003F QUESTION MARK (?) 	— 	Remove one leading U+003F QUESTION MARK character (?), if any 	input is a hierarchical URL
-hash 	<fragment> 	input contained a non-empty <fragment> component 	U+0023 NUMBER SIGN (#) 	— 	Remove one leading U+0023 NUMBER SIGN character (#), if any 	—
+Attribute   Component   Getter Condition    Prefix  Suffix  Setter Preprocessor     Setter Condition
+protocol    <scheme>    —   —   U+003A COLON (:)    Remove all trailing U+003A COLON characters (:)     The new value is not the empty string
+host    <hostport>  input is an authority-based URL     —   —   —   The new value is not the empty string and input is an authority-based URL
+hostname    <host>  input is an authority-based URL     —   —   Remove all leading U+002F SOLIDUS characters (/)    The new value is not the empty string and input is an authority-based URL
+port    <port>  input is an authority-based URL, and contained a <port> component (possibly an empty one)   —   —   Remove all characters in the new value from the first that is not in the range U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE (9), if any. Remove any leading U+0030 DIGIT ZERO characters (0) in the new value. If the resulting string is empty, set it to a single U+0030 DIGIT ZERO character (0).  input is an authority-based URL, and the new value, when interpreted as a base-ten integer, is less than or equal to 65535
+pathname    <path>  input is a hierarchical URL     —   —   If it has no leading U+002F SOLIDUS character (/), prepend a U+002F SOLIDUS character (/) to the new value  input is hierarchical
+search  <query>     input is a hierarchical URL, and contained a <query> component (possibly an empty one)  U+003F QUESTION MARK (?)    —   Remove one leading U+003F QUESTION MARK character (?), if any   input is a hierarchical URL
+hash    <fragment>  input contained a non-empty <fragment> component    U+0023 NUMBER SIGN (#)  —   Remove one leading U+0023 NUMBER SIGN character (#), if any     —
 
 The table below demonstrates how the getter condition for search results in
 different results depending on the exact original syntax of the URL:
 
-Input URL 	search value 	Explanation
-http://example.com/ 	empty string 	No <query> component in input URL.
-http://example.com/? 	? 	There is a <query> component, but it is empty. The question mark in the resulting value is the prefix.
-http://example.com/?test 	?test 	The <query> component has the value "test".
-http://example.com/?test# 	?test 	The (empty) <fragment> component is not part of the <query> component.
+Input URL   search value    Explanation
+http://example.com/     empty string    No <query> component in input URL.
+http://example.com/?    ?   There is a <query> component, but it is empty. The question mark in the resulting value is the prefix.
+http://example.com/?test    ?test   The <query> component has the value "test".
+http://example.com/?test#   ?test   The (empty) <fragment> component is not part of the <query> component.
 
 The following table is similar; it provides a list of what each of the URL
 decomposition IDL attributes returns for a given input URL.
 
-Input 	protocol 	host 	hostname 	port 	pathname 	search 	hash
-http://example.com/carrot#question%3f 	http: 	example.com 	example.com 	(empty string) 	/carrot 	(empty string) 	#question%3f
-https://www.example.com:4443? 	https: 	www.example.com:4443 	www.example.com 	4443 	/ 	? 	(empty string)
+Input   protocol    host    hostname    port    pathname    search  hash
+http://example.com/carrot#question%3f   http:   example.com     example.com     (empty string)  /carrot     (empty string)  #question%3f
+https://www.example.com:4443?   https:  www.example.com:4443    www.example.com     4443    /   ?   (empty string)
 2.7 Fetching resources
 
 When a user agent is to fetch a resource or URL, optionally from an origin
@@ -7839,7 +7924,8 @@ test('TODO: ', function(){
 
 3.2.7 Annotations for assistive technology products (ARIA)
 
-ISSUE-109 (aria-section-title) and ISSUE-129 (aria-mapping) block progress to Last Call
+ISSUE-109 (aria-section-title) and ISSUE-129 (aria-mapping) block progress to
+Last Call
 
 Authors may use the ARIA role and aria-* attributes on HTML elements, in
 accordance with the requirements described in the ARIA specifications, except
@@ -7863,102 +7949,102 @@ multiple rows apply to an element, the role from the last row to define a
 role must be applied, and the states and properties from all the rows must be
 combined.
 
-Language feature 	Strong native semantics and implied ARIA semantics
-base element 	No role
-a element that creates a hyperlink 	link role
-area element that creates a hyperlink 	link role
-button element 	button role
-datalist element 	listbox role, with the aria-multiselectable property set to "false"
-details element 	aria-expanded state set to "true" if the element's open attribute is present, and set to "false" otherwise
-h1 element that does not have an hgroup ancestor 	heading role, with the aria-level property set to the element's outline depth
-h2 element that does not have an hgroup ancestor 	heading role, with the aria-level property set to the element's outline depth
-h3 element that does not have an hgroup ancestor 	heading role, with the aria-level property set to the element's outline depth
-h4 element that does not have an hgroup ancestor 	heading role, with the aria-level property set to the element's outline depth
-h5 element that does not have an hgroup ancestor 	heading role, with the aria-level property set to the element's outline depth
-h6 element that does not have an hgroup ancestor 	heading role, with the aria-level property set to the element's outline depth
-head element 	No role
-hgroup element 	heading role, with the aria-level property set to the element's outline depth
-hr element 	separator role
-html element 	No role
-img element whose alt attribute's value is empty 	presentation role
-input element with a type attribute in the Button state 	button role
-input element with a type attribute in the Checkbox state 	aria-checked state set to "mixed" if the element's indeterminate IDL attribute is true, or "true" if the element's checkedness is true, or "false" otherwise
-input element with a type attribute in the Color state 	No role
-input element with a type attribute in the Date state 	No role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Date and Time state 	No role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Local Date and Time state 	No role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the E-mail state with no suggestions source element 	textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the File Upload state 	No role
-input element with a type attribute in the Hidden state 	No role
-input element with a type attribute in the Image Button state 	button role
-input element with a type attribute in the Month state 	No role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Number state 	spinbutton role, with the aria-readonly state set to "true" if the element has a readonly attribute, the aria-valuemax property set to the element's maximum, the aria-valuemin property set to the element's minimum, and, if the result of applying the rules for parsing floating point number values to the element's value is a number, with the aria-valuenow property set to that number
-input element with a type attribute in the Password state 	textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Radio Button state 	aria-checked state set to "true" if the element's checkedness is true, or "false" otherwise
-input element with a type attribute in the Range state 	slider role, with the aria-valuemax property set to the element's maximum, the aria-valuemin property set to the element's minimum, and the aria-valuenow property set to the result of applying the rules for parsing floating point number values to the element's value, if that results in a number, or the default value otherwise
-input element with a type attribute in the Reset Button state 	button role
-input element with a type attribute in the Search state with no suggestions source element 	textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Submit Button state 	button role
-input element with a type attribute in the Telephone state with no suggestions source element 	textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Text state with no suggestions source element 	textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Text, Search, Telephone, URL, or E-mail states with a suggestions source element 	combobox role, with the aria-owns property set to the same value as the list attribute, and the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Time state 	No role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the URL state with no suggestions source element 	textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element with a type attribute in the Week state 	No role, with the aria-readonly state set to "true" if the element has a readonly attribute
-input element that is required 	The aria-required state set to "true"
-keygen element 	No role
-label element 	No role
-link element that creates a hyperlink 	link role
-menu element with a type attribute in the context menu state 	No role
-menu element with a type attribute in the list state 	menu role
-menu element with a type attribute in the toolbar state 	toolbar role
-meta element 	No role
-meter element 	No role
-nav element 	navigation role
-noscript element 	No role
-optgroup element 	No role
-option element that is in a list of options or that represents a suggestion in a datalist element 	option role, with the aria-selected state set to "true" if the element's selectedness is true, or "false" otherwise.
-param element 	No role
-progress element 	progressbar role, with, if the progress bar is determinate, the aria-valuemax property set to the maximum value of the progress bar, the aria-valuemin property set to zero, and the aria-valuenow property set to the current value of the progress bar
-script element 	No role
-select element with a multiple attribute 	listbox role, with the aria-multiselectable property set to "true"
-select element with no multiple attribute 	listbox role, with the aria-multiselectable property set to "false"
-select element with a required attribute 	The aria-required state set to "true"
-source element 	No role
-style element 	No role
-summary element 	heading role
-textarea element 	textbox role, with the aria-multiline property set to "true", and the aria-readonly state set to "true" if the element has a readonly attribute
-textarea element with a required attribute 	The aria-required state set to "true"
-title element 	No role
-An element that defines a command, whose Type facet is "checkbox", and that is a descendant of a menu element whose type attribute in the list state 	menuitemcheckbox role, with the aria-checked state set to "true" if the command's Checked State facet is true, and "false" otherwise
-An element that defines a command, whose Type facet is "command", and that is a descendant of a menu element whose type attribute in the list state 	menuitem role
-An element that defines a command, whose Type facet is "radio", and that is a descendant of a menu element whose type attribute in the list state 	menuitemradio role, with the aria-checked state set to "true" if the command's Checked State facet is true, and "false" otherwise
-Element that is disabled 	The aria-disabled state set to "true"
-Element with a hidden attribute 	The aria-hidden state set to "true"
-Element that is a candidate for constraint validation but that does not satisfy its constraints 	The aria-invalid state set to "true"
+Language feature    Strong native semantics and implied ARIA semantics
+base element    No role
+a element that creates a hyperlink  link role
+area element that creates a hyperlink   link role
+button element  button role
+datalist element    listbox role, with the aria-multiselectable property set to "false"
+details element     aria-expanded state set to "true" if the element's open attribute is present, and set to "false" otherwise
+h1 element that does not have an hgroup ancestor    heading role, with the aria-level property set to the element's outline depth
+h2 element that does not have an hgroup ancestor    heading role, with the aria-level property set to the element's outline depth
+h3 element that does not have an hgroup ancestor    heading role, with the aria-level property set to the element's outline depth
+h4 element that does not have an hgroup ancestor    heading role, with the aria-level property set to the element's outline depth
+h5 element that does not have an hgroup ancestor    heading role, with the aria-level property set to the element's outline depth
+h6 element that does not have an hgroup ancestor    heading role, with the aria-level property set to the element's outline depth
+head element    No role
+hgroup element  heading role, with the aria-level property set to the element's outline depth
+hr element  separator role
+html element    No role
+img element whose alt attribute's value is empty    presentation role
+input element with a type attribute in the Button state     button role
+input element with a type attribute in the Checkbox state   aria-checked state set to "mixed" if the element's indeterminate IDL attribute is true, or "true" if the element's checkedness is true, or "false" otherwise
+input element with a type attribute in the Color state  No role
+input element with a type attribute in the Date state   No role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Date and Time state  No role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Local Date and Time state    No role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the E-mail state with no suggestions source element  textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the File Upload state    No role
+input element with a type attribute in the Hidden state     No role
+input element with a type attribute in the Image Button state   button role
+input element with a type attribute in the Month state  No role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Number state     spinbutton role, with the aria-readonly state set to "true" if the element has a readonly attribute, the aria-valuemax property set to the element's maximum, the aria-valuemin property set to the element's minimum, and, if the result of applying the rules for parsing floating point number values to the element's value is a number, with the aria-valuenow property set to that number
+input element with a type attribute in the Password state   textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Radio Button state   aria-checked state set to "true" if the element's checkedness is true, or "false" otherwise
+input element with a type attribute in the Range state  slider role, with the aria-valuemax property set to the element's maximum, the aria-valuemin property set to the element's minimum, and the aria-valuenow property set to the result of applying the rules for parsing floating point number values to the element's value, if that results in a number, or the default value otherwise
+input element with a type attribute in the Reset Button state   button role
+input element with a type attribute in the Search state with no suggestions source element  textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Submit Button state  button role
+input element with a type attribute in the Telephone state with no suggestions source element   textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Text state with no suggestions source element    textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Text, Search, Telephone, URL, or E-mail states with a suggestions source element     combobox role, with the aria-owns property set to the same value as the list attribute, and the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Time state   No role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the URL state with no suggestions source element     textbox role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element with a type attribute in the Week state   No role, with the aria-readonly state set to "true" if the element has a readonly attribute
+input element that is required  The aria-required state set to "true"
+keygen element  No role
+label element   No role
+link element that creates a hyperlink   link role
+menu element with a type attribute in the context menu state    No role
+menu element with a type attribute in the list state    menu role
+menu element with a type attribute in the toolbar state     toolbar role
+meta element    No role
+meter element   No role
+nav element     navigation role
+noscript element    No role
+optgroup element    No role
+option element that is in a list of options or that represents a suggestion in a datalist element   option role, with the aria-selected state set to "true" if the element's selectedness is true, or "false" otherwise.
+param element   No role
+progress element    progressbar role, with, if the progress bar is determinate, the aria-valuemax property set to the maximum value of the progress bar, the aria-valuemin property set to zero, and the aria-valuenow property set to the current value of the progress bar
+script element  No role
+select element with a multiple attribute    listbox role, with the aria-multiselectable property set to "true"
+select element with no multiple attribute   listbox role, with the aria-multiselectable property set to "false"
+select element with a required attribute    The aria-required state set to "true"
+source element  No role
+style element   No role
+summary element     heading role
+textarea element    textbox role, with the aria-multiline property set to "true", and the aria-readonly state set to "true" if the element has a readonly attribute
+textarea element with a required attribute  The aria-required state set to "true"
+title element   No role
+An element that defines a command, whose Type facet is "checkbox", and that is a descendant of a menu element whose type attribute in the list state    menuitemcheckbox role, with the aria-checked state set to "true" if the command's Checked State facet is true, and "false" otherwise
+An element that defines a command, whose Type facet is "command", and that is a descendant of a menu element whose type attribute in the list state     menuitem role
+An element that defines a command, whose Type facet is "radio", and that is a descendant of a menu element whose type attribute in the list state   menuitemradio role, with the aria-checked state set to "true" if the command's Checked State facet is true, and "false" otherwise
+Element that is disabled    The aria-disabled state set to "true"
+Element with a hidden attribute     The aria-hidden state set to "true"
+Element that is a candidate for constraint validation but that does not satisfy its constraints     The aria-invalid state set to "true"
 
 Some HTML elements have native semantics that can be overridden. The following table lists these elements and their implicit ARIA semantics, along with the restrictions that apply to those elements. Each language feature (element or attribute) in a cell in the first column implies, unless otherwise overridden, the ARIA semantic (role, state, or property) given in the cell in the second column of the same row, but this semantic may be overridden under the conditions listed in the cell in the third column of that row. In addition, any element may be given the presentation role, regardless of the restrictions below.
-Language feature 	Default implied ARIA semantic 	Restrictions
-address element 	No role 	If specified, role must be contentinfo
-article element 	article role 	Role must be either article, document, application, or main
-aside element 	note role 	Role must be either note, complementary, or search
-audio element 	No role 	If specified, role must be application
-details element 	group role 	Role must be a role that supports aria-expanded
-embed element 	No role 	If specified, role must be either application, document, or img
-footer element 	No role 	If specified, role must be contentinfo
-header element 	No role 	If specified, role must be banner
-iframe element 	No role 	If specified, role must be either application, document, or img
-img element whose alt attribute's value is absent 	img role 	No restrictions
-input element with a type attribute in the Checkbox state 	checkbox role 	Role must be either checkbox or menuitemcheckbox
-input element with a type attribute in the Radio Button state 	radio role 	Role must be either radio or menuitemradio
-li element whose parent is an ol or ul element 	listitem role 	Role must be either listitem, menuitemcheckbox, menuitemradio, option, tab, or treeitem
-object element 	No role 	If specified, role must be either application, document, or image
-ol element 	list role 	Role must be either directory, list, listbox, menu, menubar, tablist, toolbar, tree
-output element 	status role 	No restrictions
-section element 	region role 	Role must be either alert, alertdialog, application, contentinfo, dialog, document, log, main, marquee, region, search, or status
-ul element 	list role 	Role must be either directory, list, listbox, menu, menubar, tablist, toolbar, tree
-video element 	No role 	If specified, role must be application
-The body element 	document role 	Role must be either document or application
+Language feature    Default implied ARIA semantic   Restrictions
+address element     No role     If specified, role must be contentinfo
+article element     article role    Role must be either article, document, application, or main
+aside element   note role   Role must be either note, complementary, or search
+audio element   No role     If specified, role must be application
+details element     group role  Role must be a role that supports aria-expanded
+embed element   No role     If specified, role must be either application, document, or img
+footer element  No role     If specified, role must be contentinfo
+header element  No role     If specified, role must be banner
+iframe element  No role     If specified, role must be either application, document, or img
+img element whose alt attribute's value is absent   img role    No restrictions
+input element with a type attribute in the Checkbox state   checkbox role   Role must be either checkbox or menuitemcheckbox
+input element with a type attribute in the Radio Button state   radio role  Role must be either radio or menuitemradio
+li element whose parent is an ol or ul element  listitem role   Role must be either listitem, menuitemcheckbox, menuitemradio, option, tab, or treeitem
+object element  No role     If specified, role must be either application, document, or image
+ol element  list role   Role must be either directory, list, listbox, menu, menubar, tablist, toolbar, tree
+output element  status role     No restrictions
+section element     region role     Role must be either alert, alertdialog, application, contentinfo, dialog, document, log, main, marquee, region, search, or status
+ul element  list role   Role must be either directory, list, listbox, menu, menubar, tablist, toolbar, tree
+video element   No role     If specified, role must be application
+The body element    document role   Role must be either document or application
 
 Conformance checkers are encouraged to phrase errors such that authors are
 encouraged to use more appropriate elements rather than remove accessibility
@@ -9293,12 +9379,12 @@ Links must be represented using the link element, not the meta element.
 When the http-equiv attribute is specified on a meta element, the element is a pragma directive.
 
 The http-equiv attribute is an enumerated attribute. The following table lists the keywords defined for this attribute. The states given in the first cell of the rows with keywords give the states to which those keywords map. Some of the keywords are non-conforming, as noted in the last column.
-State 	Keyword 	Notes
-Content Language 	content-language 	Conformance checkers will include a warning
-Encoding declaration 	content-type 	
-Default style 	default-style 	
-Refresh 	refresh 	
-Cookie setter 	set-cookie 	Non-conforming
+State   Keyword     Notes
+Content Language    content-language    Conformance checkers will include a warning
+Encoding declaration    content-type    
+Default style   default-style   
+Refresh     refresh     
+Cookie setter   set-cookie  Non-conforming
 
 When a meta element is inserted into the document, if its http-equiv attribute is present and represents one of the above states, then the user agent must run the algorithm appropriate for that state, as described in the following list:
 
@@ -9965,139 +10051,194 @@ must synchronously prepare the script element:
 
     * The script element gets inserted into a document.
     * The script element is in a Document and its child nodes are changed.
-    * The script element is in a Document and has a src attribute set where previously the element had no such attribute.
+    * The script element is in a Document and has a src attribute set where
+      previously the element had no such attribute.
 
 To prepare a script, the user agent must act as follows:
 
-   1.
+   1. If the script element is marked as having "already started", then the
+      user agent must abort these steps at this point. The script is not
+      executed.
+   2. If the element has its "parser-inserted" flag set, then set
+      was-parser-inserted to true and unset the element's "parser-inserted"
+      flag. Otherwise, set was-parser-inserted to false.
+      
+      This is done so that if parser-inserted script elements fail to run when
+      the parser tries to run them, e.g. because they are empty or specify an
+      unsupported scripting language, another script can later mutate them and
+      cause them to run again.
+   3. If was-parser-inserted is true and the element does not have an async
+      attribute, then set the element's "force-async" flag to true.
+      
+      This is done so that if a parser-inserted script element fails to run
+      when the parser tries to run it, but it is later executed after a script
+      dynamically updates it, it will execute asynchronously even if the async
+      attribute isn't set.
+   4. If the element has no src attribute, and its child nodes, if any, consist
+      only of comment nodes and empty text nodes, then the user agent must
+      abort these steps at this point. The script is not executed.
+   5. If the element is not in a Document, then the user agent must abort these
+      steps at this point. The script is not executed.
+   6. If either:
+          * the script element has a type attribute and its value is the empty
+            string, or
+          * the script element has no type attribute but it has a language
+            attribute and that attribute's value is the empty string, or
+          * the script element has neither a type attribute nor a language
+            attribute, then
 
-      If the script element is marked as having "already started", then the user agent must abort these steps at this point. The script is not executed.
-   2.
+      ...let the script block's type for this script element be
+      "text/javascript".
+      
+       Otherwise, if the script element has a type attribute, let the script
+      block's type for this script element be the value of that attribute with
+      any leading or trailing sequences of space characters removed.
+      
+       Otherwise, the element has a non-empty language attribute; let the
+      script block's type for this script element be the concatenation of the
+      string "text/" followed by the value of the language attribute.
+      
+       The language attribute is never conforming, and is always ignored if
+      there is a type attribute present.
+   7. If the user agent does not support the scripting language given by the
+      script block's type for this script element, then the user agent must
+      abort these steps at this point. The script is not executed.
+   8. If was-parser-inserted is true, then flag the element as
+      "parser-inserted" again, and set the element's "force-async" flag to
+      false.
+   9. The user agent must set the element's "already started" flag.
 
-      If the element has its "parser-inserted" flag set, then set was-parser-inserted to true and unset the element's "parser-inserted" flag. Otherwise, set was-parser-inserted to false.
+      The state of the element at this moment is later used to determine the
+      script source.
+  10. If the element is flagged as "parser-inserted", but the element's
+      Document is not the Document of the parser that created the element, then
+      abort these steps.
+  11. If scripting is disabled for the script element, then the user agent must
+      abort these steps at this point. The script is not executed.
+      
+       The definition of scripting is disabled means that, amongst others, the
+      following scripts will not execute: scripts in XMLHttpRequest's
+      responseXML documents, scripts in DOMParser-created documents, and
+      scripts that are first inserted by a script into a Document that was
+      created using the createDocument() API. [XHR] [DOMPARSER] [DOMCORE]
+  12. If the script element has an event attribute and a for attribute, then
+      run these substeps:
+         1. Let for be the value of the for attribute.
+         2. Let event be the value of the event attribute.
+         3. Strip leading and trailing whitespace from event and for.
+         4. If for is not an ASCII case-insensitive match for the string
+            "window", then the user agent must abort these steps at this point.
+            The script is not executed.
+         5. If event is not an ASCII case-insensitive match for either the
+            string "onload" or the string "onload()", then the user agent must
+            abort these steps at this point. The script is not executed.
+  13. If the script element has a charset attribute, then let the script
+      block's character encoding for this script element be the encoding given
+      by the charset attribute.
 
-      This is done so that if parser-inserted script elements fail to run when the parser tries to run them, e.g. because they are empty or specify an unsupported scripting language, another script can later mutate them and cause them to run again.
-   3.
-
-      If was-parser-inserted is true and the element does not have an async attribute, then set the element's "force-async" flag to true.
-
-      This is done so that if a parser-inserted script element fails to run when the parser tries to run it, but it is later executed after a script dynamically updates it, it will execute asynchronously even if the async attribute isn't set.
-   4.
-
-      If the element has no src attribute, and its child nodes, if any, consist only of comment nodes and empty text nodes, then the user agent must abort these steps at this point. The script is not executed.
-   5.
-
-      If the element is not in a Document, then the user agent must abort these steps at this point. The script is not executed.
-   6.
-
-      If either:
-          * the script element has a type attribute and its value is the empty string, or
-          * the script element has no type attribute but it has a language attribute and that attribute's value is the empty string, or
-          * the script element has neither a type attribute nor a language attribute, then
-
-      ...let the script block's type for this script element be "text/javascript".
-
-      Otherwise, if the script element has a type attribute, let the script block's type for this script element be the value of that attribute with any leading or trailing sequences of space characters removed.
-
-      Otherwise, the element has a non-empty language attribute; let the script block's type for this script element be the concatenation of the string "text/" followed by the value of the language attribute.
-
-      The language attribute is never conforming, and is always ignored if there is a type attribute present.
-   7.
-
-      If the user agent does not support the scripting language given by the script block's type for this script element, then the user agent must abort these steps at this point. The script is not executed.
-   8.
-
-      If was-parser-inserted is true, then flag the element as "parser-inserted" again, and set the element's "force-async" flag to false.
-   9.
-
-      The user agent must set the element's "already started" flag.
-
-      The state of the element at this moment is later used to determine the script source.
-  10.
-
-      If the element is flagged as "parser-inserted", but the element's Document is not the Document of the parser that created the element, then abort these steps.
-  11.
-
-      If scripting is disabled for the script element, then the user agent must abort these steps at this point. The script is not executed.
-
-      The definition of scripting is disabled means that, amongst others, the following scripts will not execute: scripts in XMLHttpRequest's responseXML documents, scripts in DOMParser-created documents, and scripts that are first inserted by a script into a Document that was created using the createDocument() API. [XHR] [DOMPARSER] [DOMCORE]
-  12.
-
-      If the script element has an event attribute and a for attribute, then run these substeps:
-         1.
-
-            Let for be the value of the for attribute.
-         2.
-
-            Let event be the value of the event attribute.
-         3.
-
-            Strip leading and trailing whitespace from event and for.
-         4.
-
-            If for is not an ASCII case-insensitive match for the string "window", then the user agent must abort these steps at this point. The script is not executed.
-         5.
-
-            If event is not an ASCII case-insensitive match for either the string "onload" or the string "onload()", then the user agent must abort these steps at this point. The script is not executed. 
-  13.
-
-      If the script element has a charset attribute, then let the script block's character encoding for this script element be the encoding given by the charset attribute.
-
-      Otherwise, let the script block's fallback character encoding for this script element be the same as the encoding of the document itself.
+      Otherwise, let the script block's fallback character encoding for this
+      script element be the same as the encoding of the document itself.
 
       Only one of these two pieces of state is set.
-  14.
+  14. If the element has a src attribute whose value is not the empty string,
+      then the value of that attribute must be resolved relative to the
+      element, and if that is successful, the specified resource must then be
+      fetched, from the origin of the element's Document.
+      
+       If the src attribute's value is the empty string or if it could not be
+      resolved, then the user agent must queue a task to fire a simple event
+      named error at the element, and abort these steps.
+      
+       For historical reasons, if the URL is a javascript: URL, then the user
+      agent must not, despite the requirements in the definition of the
+      fetching algorithm, actually execute the script in the URL; instead the
+      user agent must act as if it had received an empty HTTP 400 response.
+      
+       For performance reasons, user agents may start fetching the script as
+      soon as the attribute is set, instead, in the hope that the element will
+      be inserted into the document. Either way, once the element is inserted
+      into the document, the load must have started. If the UA performs such
+      prefetching, but the element is never inserted in the document, or the
+      src attribute is dynamically changed, then the user agent will not
+      execute the script, and the fetching process will have been effectively
+      wasted.
+  15. Then, the first of the following options that describes the situation
+      must be followed:
+      
+       If the element has a src attribute, and the element has a defer
+      attribute, and the element has been flagged as "parser-inserted", and the
+      element does not have an async attribute
 
-      If the element has a src attribute whose value is not the empty string, then the value of that attribute must be resolved relative to the element, and if that is successful, the specified resource must then be fetched, from the origin of the element's Document.
+          The element must be added to the end of the list of scripts that will
+          execute when the document has finished parsing associated with the
+          Document of the parser that created the element.
+          
+           The task that the networking task source places on the task queue
+          once the fetching algorithm has completed must set the element's
+          "ready to be parser-executed" flag. The parser will handle executing
+          the script.
 
-      If the src attribute's value is the empty string or if it could not be resolved, then the user agent must queue a task to fire a simple event named error at the element, and abort these steps.
+      If the element has a src attribute, and the element has been flagged as
+      "parser-inserted", and the element does not have an async attribute
 
-      For historical reasons, if the URL is a javascript: URL, then the user agent must not, despite the requirements in the definition of the fetching algorithm, actually execute the script in the URL; instead the user agent must act as if it had received an empty HTTP 400 response.
+          The element is the pending parsing-blocking script of the Document of
+          the parser that created the element. (There can only be one such
+          script per Document at a time.)
+          
+           The task that the networking task source places on the task queue
+          once the fetching algorithm has completed must set the element's
+          "ready to be parser-executed" flag. The parser will handle executing
+          the script.
 
-      For performance reasons, user agents may start fetching the script as soon as the attribute is set, instead, in the hope that the element will be inserted into the document. Either way, once the element is inserted into the document, the load must have started. If the UA performs such prefetching, but the element is never inserted in the document, or the src attribute is dynamically changed, then the user agent will not execute the script, and the fetching process will have been effectively wasted.
-  15.
+      If the element does not have a src attribute, and the element has been
+      flagged as "parser-inserted", and the Document of the HTML parser or XML
+      parser that created the script element has a style sheet that is blocking
+      scripts
 
-      Then, the first of the following options that describes the situation must be followed:
+          The element is the pending parsing-blocking script of the Document of
+          the parser that created the element. (There can only be one such
+          script per Document at a time.)
+          
+           Set the element's "ready to be parser-executed" flag. The parser
+          will handle executing the script.
 
-      If the element has a src attribute, and the element has a defer attribute, and the element has been flagged as "parser-inserted", and the element does not have an async attribute
+      If the element has a src attribute, does not have an async attribute, and
+      does not have the "force-async" flag set
 
-          The element must be added to the end of the list of scripts that will execute when the document has finished parsing associated with the Document of the parser that created the element.
-
-          The task that the networking task source places on the task queue once the fetching algorithm has completed must set the element's "ready to be parser-executed" flag. The parser will handle executing the script.
-      If the element has a src attribute, and the element has been flagged as "parser-inserted", and the element does not have an async attribute
-
-          The element is the pending parsing-blocking script of the Document of the parser that created the element. (There can only be one such script per Document at a time.)
-
-          The task that the networking task source places on the task queue once the fetching algorithm has completed must set the element's "ready to be parser-executed" flag. The parser will handle executing the script.
-      If the element does not have a src attribute, and the element has been flagged as "parser-inserted", and the Document of the HTML parser or XML parser that created the script element has a style sheet that is blocking scripts
-
-          The element is the pending parsing-blocking script of the Document of the parser that created the element. (There can only be one such script per Document at a time.)
-
-          Set the element's "ready to be parser-executed" flag. The parser will handle executing the script.
-      If the element has a src attribute, does not have an async attribute, and does not have the "force-async" flag set
-
-          The element must be added to the end of the list of scripts that will execute in order as soon as possible associated with the Document of the script element at the time the prepare a script algorithm started.
-
-          The task that the networking task source places on the task queue once the fetching algorithm has completed must run the following steps:
-             1.
-
-                If the element is not now the first element in the list of scripts that will execute in order as soon as possible to which it was added above, then mark the element as ready but abort these steps without executing the script yet.
-             2.
-
-                Execution: Execute the script block corresponding to the first script element in this list of scripts that will execute in order as soon as possible.
-             3.
-
-                Remove the first element from this list of scripts that will execute in order as soon as possible.
-             4.
-
-                If this list of scripts that will execute in order as soon as possible is still not empty and the first entry has already been marked as ready, then jump back to the step labeled execution. 
+          The element must be added to the end of the list of scripts that will
+          execute in order as soon as possible associated with the Document of
+          the script element at the time the prepare a script algorithm
+          started.
+          
+           The task that the networking task source places on the task queue
+          once the fetching algorithm has completed must run the following
+          steps:
+             1. If the element is not now the first element in the list of
+                scripts that will execute in order as soon as possible to which
+                it was added above, then mark the element as ready but abort
+                these steps without executing the script yet.
+             2. Execution: Execute the script block corresponding to the first
+                script element in this list of scripts that will execute in
+                order as soon as possible.
+             3. Remove the first element from this list of scripts that will
+                execute in order as soon as possible.
+             4. If this list of scripts that will execute in order as soon as
+                possible is still not empty and the first entry has already
+                been marked as ready, then jump back to the step labeled
+                execution.
       If the element has a src attribute
 
-          The element must be added to the set of scripts that will execute as soon as possible of the Document of the script element at the time the prepare a script algorithm started.
-
-          The task that the networking task source places on the task queue once the fetching algorithm has completed must execute the script block and then remove the element from the set of scripts that will execute as soon as possible.
+          The element must be added to the set of scripts that will execute as
+          soon as possible of the Document of the script element at the time
+          the prepare a script algorithm started.
+          
+           The task that the networking task source places on the task queue
+          once the fetching algorithm has completed must execute the script
+          block and then remove the element from the set of scripts that will
+          execute as soon as possible.
       Otherwise
-          The user agent must immediately execute the script block, even if other scripts are already executing.
+          The user agent must immediately execute the script block, even if
+          other scripts are already executing.
 
 Fetching an external script must delay the load event of the element's
 document until the task that is queued by the networking task source once the
@@ -10119,75 +10260,99 @@ is unblocked).
 When the user agent is required to execute a script block, it must run the
 following steps:
 
-   1.
+   1. If the element is flagged as "parser-inserted", but the element's
+      Document is not the Document of the parser that created the element, then
+      abort these steps.
+   2. Jump to the appropriate set of steps from the list below:
 
-      If the element is flagged as "parser-inserted", but the element's Document is not the Document of the parser that created the element, then abort these steps.
-   2.
+      If the load resulted in an error (for example a DNS error, or an HTTP 404
+      error)
 
-      Jump to the appropriate set of steps from the list below:
+          Executing the script block must just consist of firing a simple event
+          named error at the element.
 
-      If the load resulted in an error (for example a DNS error, or an HTTP 404 error)
-
-          Executing the script block must just consist of firing a simple event named error at the element. 
       If the load was successful
 
-          Executing the script block must consists of running the following steps. For the purposes of these steps, the script is considered to be from an external file if, while the prepare a script algorithm above was running for this script, the script element had a src attribute specified.
-             1.
+          Executing the script block must consists of running the following
+          steps. For the purposes of these steps, the script is considered to
+          be from an external file if, while the prepare a script algorithm
+          above was running for this script, the script element had a src
+          attribute specified.
+             1. Initialize the script block's source as follows:
 
-                Initialize the script block's source as follows:
+                If the script is from an external file and the script block's
+                type is a text-based language
 
-                If the script is from an external file and the script block's type is a text-based language
-
-                    The contents of that file, interpreted as string of Unicode characters, are the script source.
-
-                    To obtain the string of Unicode characters, the user agent run the following steps:
-                       1.
-
-                          If the resource's Content Type metadata, if any, specifies a character encoding, and the user agent supports that encoding, then let character encoding be that encoding, and jump to the bottom step in this series of steps.
-                       2.
-
-                          If the algorithm above set the script block's character encoding, then let character encoding be that encoding, and jump to the bottom step in this series of steps.
-                       3.
-
-                          For each of the rows in the following table, starting with the first one and going down, if the file has as many or more bytes available than the number of bytes in the first column, and the first bytes of the file match the bytes given in the first column, then set character encoding to the encoding given in the cell in the second column of that row, and jump to the bottom step in this series of steps:
-                          Bytes in Hexadecimal 	Encoding
-                          FE FF 	Big-endian UTF-16
-                          FF FE 	Little-endian UTF-16
-                          EF BB BF 	UTF-8
+                    The contents of that file, interpreted as string of Unicode
+                    characters, are the script source.
+                    
+                     To obtain the string of Unicode characters, the user agent
+                    run the following steps:
+                       1. If the resource's Content Type metadata, if any,
+                          specifies a character encoding, and the user agent
+                          supports that encoding, then let character encoding
+                          be that encoding, and jump to the bottom step in this
+                          series of steps.
+                       2. If the algorithm above set the script block's
+                          character encoding, then let character encoding be
+                          that encoding, and jump to the bottom step in this
+                          series of steps.
+                       3. For each of the rows in the following table, starting
+                          with the first one and going down, if the file has as
+                          many or more bytes available than the number of bytes
+                          in the first column, and the first bytes of the file
+                          match the bytes given in the first column, then set
+                          character encoding to the encoding given in the cell
+                          in the second column of that row, and jump to the
+                          bottom step in this series of steps:
+                          Bytes in Hexadecimal  Encoding
+                          FE FF     Big-endian UTF-16
+                          FF FE     Little-endian UTF-16
+                          EF BB BF  UTF-8
 
                           This step looks for Unicode Byte Order Marks (BOMs).
-                       4.
+                       4. Let character encoding be the script block's fallback
+                          character encoding.
+                       5. Convert the file to Unicode using character encoding,
+                          following the rules for doing so given by the
+                          specification for the script block's type.
 
-                          Let character encoding be the script block's fallback character encoding.
-                       5.
+                If the script is from an external file and the script block's
+                type is an XML-based language
 
-                          Convert the file to Unicode using character encoding, following the rules for doing so given by the specification for the script block's type. 
-                If the script is from an external file and the script block's type is an XML-based language
+                    The external file is the script source. When it is later
+                    executed, it must be interpreted in a manner consistent
+                    with the specification defining the language given by the
+                    script block's type.
 
-                    The external file is the script source. When it is later executed, it must be interpreted in a manner consistent with the specification defining the language given by the script block's type.
-                If the script is inline and the script block's type is a text-based language
+                If the script is inline and the script block's type is a
+                text-based language
 
-                    The value of the text IDL attribute at the time the element's "already started" flag was last set is the script source.
-                If the script is inline and the script block's type is an XML-based language
+                    The value of the text IDL attribute at the time the
+                    element's "already started" flag was last set is the script
+                    source.
 
-                    The child nodes of the script element at the time the element's "already started" flag was last set are the script source.
+                If the script is inline and the script block's type is an
+                XML-based language
 
-             2.
+                    The child nodes of the script element at the time the
+                    element's "already started" flag was last set are the
+                    script source.
 
-                If the script is from an external file, then increment the ignore-destructive-writes counter of the script element's Document. Let neutralized doc be that Document.
-             3.
-
-                Create a script from the script element node, using the script block's source and the script block's type.
-
+             2. If the script is from an external file, then increment the
+                ignore-destructive-writes counter of the script element's
+                Document. Let neutralized doc be that Document.
+             3. Create a script from the script element node, using the script
+                block's source and the script block's type.
+                
                 This is where the script is compiled and actually executed.
-             4.
-
-                Decrement the ignore-destructive-writes counter of neutralized doc, if it was incremented in the earlier step.
-             5.
-
-                If the script is from an external file, fire a simple event named load at the script element.
-
-                Otherwise, the script is internal; queue a task to fire a simple event named load at the script element.
+             4. Decrement the ignore-destructive-writes counter of neutralized
+                doc, if it was incremented in the earlier step.
+             5. If the script is from an external file, fire a simple event
+                named load at the script element.
+                
+                Otherwise, the script is internal; queue a task to fire a
+                simple event named load at the script element.
 
 The IDL attributes src, type, charset, and defer, each must reflect the
 respective content attributes of the same name.
@@ -10203,7 +10368,8 @@ content attribute.
 
 script . text [ = value ]
 
-    Returns the contents of the element, ignoring child nodes that aren't text nodes.
+    Returns the contents of the element, ignoring child nodes that aren't text
+    nodes.
 
     Can be set, to replace the element's children with the given value.
 
@@ -10270,11 +10436,20 @@ parsed, in this case to initialize the form's output.
  </script>
 </form>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.3.1.1 Scripting languages
 
-A user agent is said to support the scripting language if the script block's type is an ASCII case-insensitive match for the MIME type string of a scripting language that the user agent implements.
+A user agent is said to support the scripting language if the script block's
+type is an ASCII case-insensitive match for the MIME type string of a scripting
+language that the user agent implements.
 
-The following lists some MIME type strings and the languages to which they refer:
+The following lists some MIME type strings and the languages to which they
+refer:
 
 "application/ecmascript"
 "application/javascript"
@@ -10298,10 +10473,21 @@ The following lists some MIME type strings and the languages to which they refer
 
 User agents may support other MIME types and other languages.
 
-When examining types to determine if they support the language, user agents must not ignore unknown MIME parameters — types with unknown parameters must be assumed to be unsupported. The charset parameter must be treated as an unknown parameter for the purpose of comparing MIME types here.
+When examining types to determine if they support the language, user agents
+must not ignore unknown MIME parameters — types with unknown parameters must be
+assumed to be unsupported. The charset parameter must be treated as an unknown
+parameter for the purpose of comparing MIME types here.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.3.1.2 Restrictions for contents of script elements
 
-The textContent of a script element must match the script production in the following ABNF, the character set for which is Unicode. [ABNF]
+The textContent of a script element must match the script production in the
+following ABNF, the character set for which is Unicode. [ABNF]
 
 script        = data1 *( escape [ script-start data3 ] "-->" data1 ) [ escape ]
 escape        = "<!--" data2 *( script-start data3 script-end data2 )
@@ -10341,7 +10527,14 @@ tag-end       =/ %x0020 ; U+0020 SPACE
 tag-end       =/ %x002F ; U+002F SOLIDUS (/)
 tag-end       =/ %x003E ; U+003E GREATER-THAN SIGN (>)
 
-When a script element contains script documentation, there are further restrictions on the contents of the element, as described in the section below.
+When a script element contains script documentation, there are further
+restrictions on the contents of the element, as described in the section below.
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.3.1.3 Inline documentation for external scripts
 
 If a script element's src attribute is specified, then the contents of the script element, if any, must be such that the value of the text IDL attribute, which is derived from the element's contents, matches the documentation production in the following ABNF, the character set for which is Unicode. [ABNF]
@@ -10382,6 +10575,12 @@ include what looks like valid script while also providing a src attribute.
  //    e.stop();
 </script>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.3.2 The noscript element
 
 Categories
@@ -10400,32 +10599,58 @@ Content attributes:
 DOM interface:
     Uses HTMLElement.
 
-The noscript element represents nothing if scripting is enabled, and represents its children if scripting is disabled. It is used to present different markup to user agents that support scripting and those that don't support scripting, by affecting how the document is parsed.
+The noscript element represents nothing if scripting is enabled, and represents
+its children if scripting is disabled. It is used to present different markup
+to user agents that support scripting and those that don't support scripting,
+by affecting how the document is parsed.
 
 When used in HTML documents, the allowed content model is as follows:
 
 In a head element, if scripting is disabled for the noscript element
 
     The noscript element must contain only link, style, and meta elements. 
+
 In a head element, if scripting is enabled for the noscript element
 
-    The noscript element must contain only text, except that invoking the HTML fragment parsing algorithm with the noscript element as the context element and the text contents as the input must result in a list of nodes that consists only of link, style, and meta elements that would be conforming if they were children of the noscript element, and no parse errors. 
+    The noscript element must contain only text, except that invoking the HTML
+    fragment parsing algorithm with the noscript element as the context element
+    and the text contents as the input must result in a list of nodes that
+    consists only of link, style, and meta elements that would be conforming if
+    they were children of the noscript element, and no parse errors.
+
 Outside of head elements, if scripting is disabled for the noscript element
 
-    The noscript element's content model is transparent, with the additional restriction that a noscript element must not have a noscript element as an ancestor (that is, noscript can't be nested). 
+    The noscript element's content model is transparent, with the additional
+    restriction that a noscript element must not have a noscript element as an
+    ancestor (that is, noscript can't be nested).
+
 Outside of head elements, if scripting is enabled for the noscript element
 
-    The noscript element must contain only text, except that the text must be such that running the following algorithm results in a conforming document with no noscript elements and no script elements, and such that no step in the algorithm causes an HTML parser to flag a parse error:
+    The noscript element must contain only text, except that the text must be
+    such that running the following algorithm results in a conforming document
+    with no noscript elements and no script elements, and such that no step in
+    the algorithm causes an HTML parser to flag a parse error:
 
        1. Remove every script element from the document.
-       2. Make a list of every noscript element in the document. For every noscript element in that list, perform the following steps:
-             1. Let the parent element be the parent element of the noscript element.
-             2. Take all the children of the parent element that come before the noscript element, and call these elements the before children.
-             3. Take all the children of the parent element that come after the noscript element, and call these elements the after children.
-             4. Let s be the concatenation of all the text node children of the noscript element.
-             5. Set the innerHTML attribute of the parent element to the value of s. (This, as a side-effect, causes the noscript element to be removed from the document.)
-             6. Insert the before children at the start of the parent element, preserving their original relative order.
-             7. Insert the after children at the end of the parent element, preserving their original relative order.
+       2. Make a list of every noscript element in the document. For every
+          noscript element in that list, perform the following steps:
+             1. Let the parent element be the parent element of the noscript 
+                element.
+             2. Take all the children of the parent element that come before 
+                the noscript element, and call these elements the before 
+                children.
+             3. Take all the children of the parent element that come after 
+                the noscript element, and call these elements the after 
+                children.
+             4. Let s be the concatenation of all the text node children of 
+                the noscript element.
+             5. Set the innerHTML attribute of the parent element to the 
+                value of s. (This, as a side-effect, causes the noscript 
+                element to be removed from the document.)
+             6. Insert the before children at the start of the parent element, 
+                preserving their original relative order.
+             7. Insert the after children at the end of the parent element, 
+                preserving their original relative order.
 
 All these contortions are required because, for historical reasons, the
 noscript element is handled differently by the HTML parser based on whether
@@ -10464,9 +10689,14 @@ a script.
  </noscript>
 </form>
 
-When script is disabled, a button appears to do the calculation on the server side. When script is enabled, the value is computed on-the-fly instead.
+When script is disabled, a button appears to do the calculation on the server
+side. When script is enabled, the value is computed on-the-fly instead.
 
-The noscript element is a blunt instrument. Sometimes, scripts might be enabled, but for some reason the page's script might fail. For this reason, it's generally better to avoid using noscript, and to instead design the script to change the page from being a scriptless page to a scripted page on the fly, as in the next example:
+The noscript element is a blunt instrument. Sometimes, scripts might be
+enabled, but for some reason the page's script might fail. For this reason,
+it's generally better to avoid using noscript, and to instead design the script
+to change the page from being a scriptless page to a scripted page on the fly,
+as in the next example:
 
 <form action="calcSquare.php">
  <p>
@@ -10489,8 +10719,23 @@ The noscript element is a blunt instrument. Sometimes, scripts might be enabled,
  </script>
 </form>
 
-The above technique is also useful in XHTML, since noscript is not supported in the XHTML syntax.
+The above technique is also useful in XHTML, since noscript is not supported in
+the XHTML syntax.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4 Sections
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4.1 The body element
 
 Categories
@@ -10593,6 +10838,12 @@ This page updates an indicator to show whether or not the user is online:
   <p>You are: <span id="status">(Unknown)</span></p>
  </body>
 </html>
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 4.4.2 The section element
 
@@ -10699,6 +10950,12 @@ graduating, and one for the description of the ceremony.
  ></Body
 ></Html>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4.3 The nav element
 
 Categories
@@ -10772,9 +11029,13 @@ present, but only one of those places is considered a navigation section.
  </footer>
 </body>
 
-Notice the div elements being used to wrap all the contents of the page other than the header and footer, and all the contents of the blog entry other than its header and footer.
+Notice the div elements being used to wrap all the contents of the page other
+than the header and footer, and all the contents of the blog entry other than
+its header and footer.
 
-In the following example, there are two nav elements, one for primary navigation around the site, and one for secondary navigation around the page itself.
+In the following example, there are two nav elements, one for primary
+navigation around the site, and one for secondary navigation around the page
+itself.
 
 <body>
  <h1>The Wiki Center Of Exampland</h1>
@@ -10817,7 +11078,8 @@ In the following example, there are two nav elements, one for primary navigation
  </footer>
 </body>
 
-A nav element doesn't have to contain a list, it can contain other kinds of content as well. In this navigation block, links are provided in prose:
+A nav element doesn't have to contain a list, it can contain other kinds of
+content as well. In this navigation block, links are provided in prose:
 
 <nav>
  <h1>Navigation</h1>
@@ -10835,6 +11097,12 @@ A nav element doesn't have to contain a list, it can contain other kinds of cont
  page</a>. Cobwebs cover its disused entrance, and at one point you
  see a rat run quickly out of the page.</p>
 </nav>
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 4.4.4 The article element
 
@@ -10916,7 +11184,17 @@ Here is that same blog post, but showing some of the comments:
  </section>
 </article>
 
-Notice the use of footer to give the information for each comment (such as who wrote it and when): the footer element can appear at the start of its section when appropriate, such as in this case. (Using header in this case wouldn't be wrong either; it's mostly a matter of authoring preference.)
+Notice the use of footer to give the information for each comment (such as who
+wrote it and when): the footer element can appear at the start of its section
+when appropriate, such as in this case. (Using header in this case wouldn't be
+wrong either; it's mostly a matter of authoring preference.)
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4.5 The aside element
 
 Categories
@@ -10954,7 +11232,8 @@ material on Switzerland in a much longer news story on Europe.
  a signatory to a number of European treaties.</p>
 </aside>
 
-The following example shows how an aside is used to mark up a pull quote in a longer article.
+The following example shows how an aside is used to mark up a pull quote in a
+longer article.
 
 ...
 
@@ -10975,7 +11254,8 @@ isn't his only passion. He also enjoys other pleasures.</p>
 
 ...
 
-The following extract shows how aside can be used for blogrolls and other side content on a blog:
+The following extract shows how aside can be used for blogrolls and other side
+content on a blog:
 
 <body>
  <header>
@@ -11045,6 +11325,12 @@ The following extract shows how aside can be used for blogrolls and other side c
  </footer>
 </body>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4.6 The h1, h2, h3, h4, h5, and h6 elements
 
 Categories
@@ -11064,9 +11350,12 @@ DOM interface:
 
 These elements represent headings for their sections.
 
-The semantics and meaning of these elements are defined in the section on headings and sections.
+The semantics and meaning of these elements are defined in the section on
+headings and sections.
 
-These elements have a rank given by the number in their name. The h1 element is said to have the highest rank, the h6 element has the lowest rank, and two elements with the same name have equal rank.
+These elements have a rank given by the number in their name. The h1 element is
+said to have the highest rank, the h6 element has the lowest rank, and two
+elements with the same name have equal rank.
 
 These two snippets are equivalent:
 
@@ -11097,6 +11386,12 @@ These two snippets are equivalent:
   <h1>Paths</h1>
  </section>
 </body>
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 4.4.7 The hgroup element
 
@@ -11148,7 +11443,15 @@ extracting heading data and ignoring subheadings.
  <h2>Or: How I Learned to Stop Worrying and Love the Bomb</h2>
 </hgroup>
 
-The point of using hgroup in these examples is to mask the h2 element (which acts as a secondary title) from the outline algorithm.
+The point of using hgroup in these examples is to mask the h2 element (which
+acts as a secondary title) from the outline algorithm.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4.8 The header element
 
 Categories
@@ -11165,7 +11468,10 @@ DOM interface:
 
 The header element represents a group of introductory or navigational aids.
 
-A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup element), but this is not required. The header element can also be used to wrap a section's table of contents, a search form, or any relevant logos.
+A header element is intended to usually contain the section's heading (an h1–h6
+element or an hgroup element), but this is not required. The header element can
+also be used to wrap a section's table of contents, a search form, or any
+relevant logos.
 
 Here are some sample headers. This first one is for a game:
 
@@ -11174,7 +11480,8 @@ Here are some sample headers. This first one is for a game:
  <h1>Voidwars!</h1>
 </header>
 
-The following snippet shows how the element can be used to mark up a specification's header:
+The following snippet shows how the element can be used to mark up a
+specification's header:
 
 <header>
  <hgroup>
@@ -11198,9 +11505,13 @@ The following snippet shows how the element can be used to mark up a specificati
  <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notic ...
 </header>
 
-The header element is not sectioning content; it doesn't introduce a new section.
+The header element is not sectioning content; it doesn't introduce a new
+section.
 
-In this example, the page has a page heading given by the h1 element, and two subsections whose headings are given by h2 elements. The content after the header element is still part of the last subsection started in the header element, because the header element doesn't take part in the outline algorithm.
+In this example, the page has a page heading given by the h1 element, and two
+subsections whose headings are given by h2 elements. The content after the
+header element is still part of the last subsection started in the header
+element, because the header element doesn't take part in the outline algorithm.
 
 <body>
  <header>
@@ -11220,6 +11531,12 @@ In this example, the page has a page heading given by the h1 element, and two su
  <p>You have three active games:</p>
  <!-- this is still part of the subsection entitled "Games" -->
  ...
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 4.4.9 The footer element
 
@@ -11274,7 +11591,8 @@ the same content:
  <footer><a href="../">Back to index...</a></footer>
 </body>
 
-Here is an example which shows the footer element being used both for a site-wide footer and for a section footer.
+Here is an example which shows the footer element being used both for a
+site-wide footer and for a section footer.
 
 <!DOCTYPE HTML>
 <HTML><HEAD>
@@ -11310,6 +11628,12 @@ Here is an example which shows the footer element being used both for a site-wid
 </BODY>
 </HTML>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.4.10 The address element
 
 Categories
@@ -11324,9 +11648,12 @@ Content attributes:
 DOM interface:
     Uses HTMLElement.
 
-The address element represents the contact information for its nearest article or body element ancestor. If that is the body element, then the contact information applies to the document as a whole.
+The address element represents the contact information for its nearest article
+or body element ancestor. If that is the body element, then the contact
+information applies to the document as a whole.
 
-For example, a page at the W3C Web site related to HTML might include the following contact information:
+For example, a page at the W3C Web site related to HTML might include the
+following contact information:
 
 <ADDRESS>
  <A href="../People/Raggett/">Dave Raggett</A>,
@@ -12066,12 +12393,12 @@ previous item, plus one if the reversed is absent, or minus one if it is
 present.
 
 The type attribute can be used to specify the kind of marker to use in the list, in the cases where that matters (e.g. because items are to be referened by their number/letter). The attribute, if specified, must have a value that is a case-sensitive match for one of the characters given in the first cell of one of the rows of the following table. The type attribute represents the state given in the cell in the second column of the row whose first cell matches the attribute's value; if none of the cells match, or if the attribute is omitted, then the attribute represents the decimal state.
-Keyword 	State 	Description 	Examples for values 1-3 and 3999-4001
-1 (U+0031) 	decimal 	Decimal numbers 	1. 	2. 	3. 	... 	3999. 	4000. 	4001. 	...
-a (U+0061) 	lower-alpha 	Lowercase latin alphabet 	a. 	b. 	c. 	... 	ewu. 	ewv. 	eww. 	...
-A (U+0041) 	upper-alpha 	Uppercase latin alphabet 	A. 	B. 	C. 	... 	EWU. 	EWV. 	EWW. 	...
-i (U+0069) 	lower-roman 	Lowercase roman numerals 	i. 	ii. 	iii. 	... 	mmmcmxcix. 	i̅v̅. 	i̅v̅i. 	...
-I (U+0049) 	upper-roman 	Uppercase roman numerals 	I. 	II. 	III. 	... 	MMMCMXCIX. 	I̅V̅. 	I̅V̅I. 	...
+Keyword     State   Description     Examples for values 1-3 and 3999-4001
+1 (U+0031)  decimal     Decimal numbers     1.  2.  3.  ...     3999.   4000.   4001.   ...
+a (U+0061)  lower-alpha     Lowercase latin alphabet    a.  b.  c.  ...     ewu.    ewv.    eww.    ...
+A (U+0041)  upper-alpha     Uppercase latin alphabet    A.  B.  C.  ...     EWU.    EWV.    EWW.    ...
+i (U+0069)  lower-roman     Lowercase roman numerals    i.  ii.     iii.    ...     mmmcmxcix.  i̅v̅.   i̅v̅i.  ...
+I (U+0049)  upper-roman     Uppercase roman numerals    I.  II.     III.    ...     MMMCMXCIX.  I̅V̅.   I̅V̅I.  ...
 
 User agents should render the items of the list in a manner consistent with
 the state of the type attribute of the ol element. Numbers less than or equal
@@ -14081,104 +14408,104 @@ Any content inside wbr elements must not be considered part of the surrounding t
 4.6.27 Usage summary
 
 This section is non-normative.
-Element 	Purpose 	Example
-a 	Hyperlinks 	
+Element     Purpose     Example
+a   Hyperlinks  
 
 Visit my <a href="drinks.html">drinks</a> page.
 
-em 	Stress emphasis 	
+em  Stress emphasis     
 
 I must say I <em>adore</em> lemonade.
 
-strong 	Importance 	
+strong  Importance  
 
 This tea is <strong>very hot</strong>.
 
-small 	Side comments 	
+small   Side comments   
 
 These grapes are made into wine. <small>Alcohol is addictive.</small>
 
-s 	Inaccurate text 	
+s   Inaccurate text     
 
 Price: <s>£4.50</s> £2.00!
 
-cite 	Titles of works 	
+cite    Titles of works     
 
 The case <cite>Hugo v. Danielle</cite> is relevant here.
 
-q 	Quotations 	
+q   Quotations  
 
 The judge said <q>You can drink water from the fish tank</q> but advised against it.
 
-dfn 	Defining instance 	
+dfn     Defining instance   
 
 The term <dfn>organic food</dfn> refers to food produced without synthetic chemicals.
 
-abbr 	Abbreviations 	
+abbr    Abbreviations   
 
 Organic food in Ireland is certified by the <abbr title="Irish Organic Farmers and Growers Association">IOFGA</abbr>.
 
-time 	Date and/or time 	
+time    Date and/or time    
 
 Published <time>2009-10-21</time>.
 
-code 	Computer code 	
+code    Computer code   
 
 The <code>fruitdb</code> program can be used for tracking fruit production.
 
-var 	Variables 	
+var     Variables   
 
 If there are <var>n</var> fruit in the bowl, at least <var>n</var>÷2 will be ripe.
 
-samp 	Computer output 	
+samp    Computer output     
 
 The computer said <samp>Unknown error -3</samp>.
 
-kbd 	User input 	
+kbd     User input  
 
 Hit <kbd>F1</kbd> to continue.
 
-sub 	Subscripts 	
+sub     Subscripts  
 
 Water is H<sub>2</sub>O.
 
-sup 	Superscripts 	
+sup     Superscripts    
 
 The Hydrogen in heavy water is usually <sup>2</sup>H.
 
-i 	Alternative voice 	
+i   Alternative voice   
 
 Lemonade consists primarily of <i>Citrus limon</i>.
 
-b 	Keywords 	
+b   Keywords    
 
 Take a <b>lemon</b> and squeeze it with a <b>juicer</b>.
 
-mark 	Highlight 	
+mark    Highlight   
 
 Elderflower cordial, with one <mark>part</mark> cordial to ten <mark>part</mark>s water, stands a<mark>part</mark> from the rest.
 
-ruby, rt, rp 	Ruby annotations 	
+ruby, rt, rp    Ruby annotations    
 
 <ruby> OJ <rp>(<rt>Orange Juice<rp>)</ruby>
 
-bdi 	Text directionality isolation 	
+bdi     Text directionality isolation   
 
 The recommended restaurant is <bdi lang="">My Juice Café (At The Beach)</bdi>.
 
-bdo 	Text directionality formatting 	
+bdo     Text directionality formatting  
 
 The proposal is to write English, but in reverse order. "Juice" would become "<bdo dir=rtl>Juice</bdo>"
 
-span 	Other 	
+span    Other   
 
 In French we call it <span lang="fr">sirop de sureau</span>.
 
-br 	Line break 	
+br  Line break  
 
 Simply Orange Juice Company<br>Apopka, FL 32703<br>U.S.A.
 
-wbr 	Line breaking opportunity 	
+wbr     Line breaking opportunity   
 
 www.simply<wbr>orange<wbr>juice.com
 
@@ -15887,6 +16214,12 @@ advertising broker:
 <iframe src="http://ads.example.com/?customerid=923513721&amp;format=banner"
         width="468" height="60"></iframe>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.8.3 The embed element
 
 Categories
@@ -16676,9 +17009,26 @@ element.
 
 audio = new Audio( [ url ] )
 
-    Returns a new audio element, with the src attribute set to the value passed in the argument, if applicable.
+    Returns a new audio element, with the src attribute set to the value passed
+    in the argument, if applicable.
 
-Two constructors are provided for creating HTMLAudioElement objects (in addition to the factory methods from DOM Core such as createElement()): Audio() and Audio(src). When invoked as constructors, these must return a new HTMLAudioElement object (a new audio element). The element must have its preload attribute set to the literal value "auto". If the src argument is present, the object created must have its src content attribute set to the provided value, and the user agent must invoke the object's resource selection algorithm before returning. The element's document must be the active document of the browsing context of the Window object on which the interface object of the invoked constructor is found.
+Two constructors are provided for creating HTMLAudioElement objects (in
+addition to the factory methods from DOM Core such as createElement()): Audio()
+and Audio(src). When invoked as constructors, these must return a new
+HTMLAudioElement object (a new audio element). The element must have its
+preload attribute set to the literal value "auto". If the src argument is
+present, the object created must have its src content attribute set to the
+provided value, and the user agent must invoke the object's resource selection
+algorithm before returning. The element's document must be the active document
+of the browsing context of the Window object on which the interface object of
+the invoked constructor is found.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.8.8 The source element
 
 Categories
@@ -16695,9 +17045,9 @@ Content attributes:
 DOM interface:
 
     interface HTMLSourceElement : HTMLElement {
-               attribute DOMString src;
-               attribute DOMString type;
-               attribute DOMString media;
+        attribute DOMString src;
+        attribute DOMString type;
+        attribute DOMString media;
     };
 
 The source element allows authors to specify multiple alternative media
@@ -16722,11 +17072,13 @@ resource is encoded. [RFC4281]
 The following list shows some examples of how to use the codecs= MIME
 parameter in the type attribute.
 
-H.264 Constrained baseline profile video (main and extended video compatible) level 3 and Low-Complexity AAC audio in MP4 container
+H.264 Constrained baseline profile video (main and extended video compatible)
+level 3 and Low-Complexity AAC audio in MP4 container
 
     <source src='video.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 
-H.264 Extended profile video (baseline-compatible) level 3 and Low-Complexity AAC audio in MP4 container
+H.264 Extended profile video (baseline-compatible) level 3 and Low-Complexity
+AAC audio in MP4 container
 
     <source src='video.mp4' type='video/mp4; codecs="avc1.58A01E, mp4a.40.2"'>
 
@@ -16847,12 +17199,12 @@ DOM interface:
 The track element allows authors to specify explicit external timed text tracks for media elements. It does not represent anything on its own.
 
 The kind attribute is an enumerated attribute. The following table lists the keywords defined for this attribute. The keyword given in the first cell of each row maps to the state given in the second cell.
-Keyword 	State 	Brief description
-subtitles 	Subtitles 	Transcription or translation of the dialogue, suitable for when the sound is available but not understood (e.g. because the user does not understand the language of the media resource's soundtrack). Displayed over the video.
-captions 	Captions 	Transcription or translation of the dialogue, sound effects, relevant musical cues, and other relevant audio information, suitable for when the soundtrack is unavailable (e.g. because it is muted or because the user is deaf). Displayed over the video; labeled as appropriate for the hard-of-hearing.
-descriptions 	Descriptions 	Textual descriptions of the video component of the media resource, intended for audio synthesis when the visual component is unavailable (e.g. because the user is interacting with the application without a screen while driving, or because the user is blind). Synthesized as separate audio track.
-chapters 	Chapters 	Chapter titles, intended to be used for navigating the media resource. Displayed as an interactive list in the user agent's interface.
-metadata 	Metadata 	Tracks intended for use from script. Not displayed by the user agent.
+Keyword     State   Brief description
+subtitles   Subtitles   Transcription or translation of the dialogue, suitable for when the sound is available but not understood (e.g. because the user does not understand the language of the media resource's soundtrack). Displayed over the video.
+captions    Captions    Transcription or translation of the dialogue, sound effects, relevant musical cues, and other relevant audio information, suitable for when the soundtrack is unavailable (e.g. because it is muted or because the user is deaf). Displayed over the video; labeled as appropriate for the hard-of-hearing.
+descriptions    Descriptions    Textual descriptions of the video component of the media resource, intended for audio synthesis when the visual component is unavailable (e.g. because the user is interacting with the application without a screen while driving, or because the user is blind). Synthesized as separate audio track.
+chapters    Chapters    Chapter titles, intended to be used for navigating the media resource. Displayed as an interactive list in the user agent's interface.
+metadata    Metadata    Tracks intended for use from script. Not displayed by the user agent.
 
 The attribute may be omitted. The missing value default is the subtitles
 state.
@@ -17514,10 +17866,10 @@ The resource fetch algorithm for a media element and a given absolute URL is as 
       If the user agent ever reaches this step (which can only happen if the entire resource gets loaded and kept available): abort the overall resource selection algorithm. 
 
 The preload attribute is an enumerated attribute. The following table lists the keywords and states for the attribute — the keywords in the left column map to the states in the cell in the second column on the same row as the keyword.
-Keyword 	State 	Brief description
-none 	None 	Hints to the user agent that either the author does not expect the user to need the media resource, or that the server wants to minimise unnecessary traffic.
-metadata 	Metadata 	Hints to the user agent that the author does not expect the user to need the media resource, but that fetching the resource metadata (dimensions, first frame, track list, duration, etc) is reasonable.
-auto 	Automatic 	Hints to the user agent that the user agent can put the user's needs first without risk to the server, up to and including optimistically downloading the entire resource.
+Keyword     State   Brief description
+none    None    Hints to the user agent that either the author does not expect the user to need the media resource, or that the server wants to minimise unnecessary traffic.
+metadata    Metadata    Hints to the user agent that the author does not expect the user to need the media resource, but that fetching the resource metadata (dimensions, first frame, track list, duration, etc) is reasonable.
+auto    Automatic   Hints to the user agent that the user agent can put the user's needs first without risk to the server, up to and including optimistically downloading the entire resource.
 
 The empty string is also a valid keyword, and maps to the Automatic state.
 The attribute's missing value default is user-agent defined, though the
@@ -18312,12 +18664,12 @@ The text track kind is determined from the state of the element's kind
 attribute according to the following table; for a state given in a cell of
 the first column, the kind is the string given in the second column:
 
-State 	String
-Subtitles 	subtitles
-Captions 	captions
-Descriptions 	descriptions
-Chapters 	chapters
-Metadata 	metadata
+State   String
+Subtitles   subtitles
+Captions    captions
+Descriptions    descriptions
+Chapters    chapters
+Metadata    metadata
 
 The text track label is the element's track label.
 
@@ -18799,15 +19151,15 @@ The getCueAsHTML() method must convert the text track cue text to a DocumentFrag
 4.8.10.10.5 Event definitions
 
 The following are the event handlers that must be supported, as IDL attributes, by all objects implementing the TextTrack interface:
-Event handler 	Event handler event type
-onload 	load
-onerror 	error
-oncuechange 	cuechange
+Event handler   Event handler event type
+onload  load
+onerror     error
+oncuechange     cuechange
 
 The following are the event handlers that must be supported, as IDL attributes, by all objects implementing the TextTrackCue interface:
-Event handler 	Event handler event type
-onenter 	enter
-onexit 	exit
+Event handler   Event handler event type
+onenter     enter
+onexit  exit
 4.8.10.11 User interface
 
 The controls attribute is a boolean attribute. If present, it indicates that
@@ -18970,29 +19322,29 @@ timeline.
 This section is non-normative.
 
 The following events fire on media elements as part of the processing model described above:
-Event name 	Interface 	Dispatched when... 	Preconditions
-loadstart 	Event 	The user agent begins looking for media data, as part of the resource selection algorithm. 	networkState equals NETWORK_LOADING
-progress 	Event 	The user agent is fetching media data. 	networkState equals NETWORK_LOADING
-suspend 	Event 	The user agent is intentionally not currently fetching media data, but does not have the entire media resource downloaded. 	networkState equals NETWORK_IDLE
-abort 	Event 	The user agent stops fetching the media data before it is completely downloaded, but not due to an error. 	error is an object with the code MEDIA_ERR_ABORTED. networkState equals either NETWORK_EMPTY or NETWORK_IDLE, depending on when the download was aborted.
-error 	Event 	An error occurs while fetching the media data. 	error is an object with the code MEDIA_ERR_NETWORK or higher. networkState equals either NETWORK_EMPTY or NETWORK_IDLE, depending on when the download was aborted.
-emptied 	Event 	A media element whose networkState was previously not in the NETWORK_EMPTY state has just switched to that state (either because of a fatal error during load that's about to be reported, or because the load() method was invoked while the resource selection algorithm was already running). 	networkState is NETWORK_EMPTY; all the IDL attributes are in their initial states.
-stalled 	Event 	The user agent is trying to fetch media data, but data is unexpectedly not forthcoming. 	networkState is NETWORK_LOADING.
-play 	Event 	Playback has begun. Fired after the play() method has returned, or when the autoplay attribute has caused playback to begin. 	paused is newly false.
-pause 	Event 	Playback has been paused. Fired after the pause() method has returned. 	paused is newly true.
-loadedmetadata 	Event 	The user agent has just determined the duration and dimensions of the media resource and the text tracks are ready. 	readyState is newly equal to HAVE_METADATA or greater for the first time.
-loadeddata 	Event 	The user agent can render the media data at the current playback position for the first time. 	readyState newly increased to HAVE_CURRENT_DATA or greater for the first time.
-waiting 	Event 	Playback has stopped because the next frame is not available, but the user agent expects that frame to become available in due course. 	readyState is newly equal to or less than HAVE_CURRENT_DATA, and paused is false. Either seeking is true, or the current playback position is not contained in any of the ranges in buffered. It is possible for playback to stop for two other reasons without paused being false, but those two reasons do not fire this event: maybe playback ended, or playback stopped due to errors.
-playing 	Event 	Playback has started. 	readyState is newly equal to or greater than HAVE_FUTURE_DATA, paused is false, seeking is false, or the current playback position is contained in one of the ranges in buffered.
-canplay 	Event 	The user agent can resume playback of the media data, but estimates that if playback were to be started now, the media resource could not be rendered at the current playback rate up to its end without having to stop for further buffering of content. 	readyState newly increased to HAVE_FUTURE_DATA or greater.
-canplaythrough 	Event 	The user agent estimates that if playback were to be started now, the media resource could be rendered at the current playback rate all the way to its end without having to stop for further buffering. 	readyState is newly equal to HAVE_ENOUGH_DATA.
-seeking 	Event 	The seeking IDL attribute changed to true and the seek operation is taking long enough that the user agent has time to fire the event. 	
-seeked 	Event 	The seeking IDL attribute changed to false. 	
-timeupdate 	Event 	The current playback position changed as part of normal playback or in an especially interesting way, for example discontinuously. 	
-ended 	Event 	Playback has stopped because the end of the media resource was reached. 	currentTime equals the end of the media resource; ended is true.
-ratechange 	Event 	Either the defaultPlaybackRate or the playbackRate attribute has just been updated. 	
-durationchange 	Event 	The duration attribute has just been updated. 	
-volumechange 	Event 	Either the volume attribute or the muted attribute has changed. Fired after the relevant attribute's setter has returned. 	
+Event name  Interface   Dispatched when...  Preconditions
+loadstart   Event   The user agent begins looking for media data, as part of the resource selection algorithm.  networkState equals NETWORK_LOADING
+progress    Event   The user agent is fetching media data.  networkState equals NETWORK_LOADING
+suspend     Event   The user agent is intentionally not currently fetching media data, but does not have the entire media resource downloaded.  networkState equals NETWORK_IDLE
+abort   Event   The user agent stops fetching the media data before it is completely downloaded, but not due to an error.   error is an object with the code MEDIA_ERR_ABORTED. networkState equals either NETWORK_EMPTY or NETWORK_IDLE, depending on when the download was aborted.
+error   Event   An error occurs while fetching the media data.  error is an object with the code MEDIA_ERR_NETWORK or higher. networkState equals either NETWORK_EMPTY or NETWORK_IDLE, depending on when the download was aborted.
+emptied     Event   A media element whose networkState was previously not in the NETWORK_EMPTY state has just switched to that state (either because of a fatal error during load that's about to be reported, or because the load() method was invoked while the resource selection algorithm was already running).    networkState is NETWORK_EMPTY; all the IDL attributes are in their initial states.
+stalled     Event   The user agent is trying to fetch media data, but data is unexpectedly not forthcoming.     networkState is NETWORK_LOADING.
+play    Event   Playback has begun. Fired after the play() method has returned, or when the autoplay attribute has caused playback to begin.    paused is newly false.
+pause   Event   Playback has been paused. Fired after the pause() method has returned.  paused is newly true.
+loadedmetadata  Event   The user agent has just determined the duration and dimensions of the media resource and the text tracks are ready.     readyState is newly equal to HAVE_METADATA or greater for the first time.
+loadeddata  Event   The user agent can render the media data at the current playback position for the first time.   readyState newly increased to HAVE_CURRENT_DATA or greater for the first time.
+waiting     Event   Playback has stopped because the next frame is not available, but the user agent expects that frame to become available in due course.  readyState is newly equal to or less than HAVE_CURRENT_DATA, and paused is false. Either seeking is true, or the current playback position is not contained in any of the ranges in buffered. It is possible for playback to stop for two other reasons without paused being false, but those two reasons do not fire this event: maybe playback ended, or playback stopped due to errors.
+playing     Event   Playback has started.   readyState is newly equal to or greater than HAVE_FUTURE_DATA, paused is false, seeking is false, or the current playback position is contained in one of the ranges in buffered.
+canplay     Event   The user agent can resume playback of the media data, but estimates that if playback were to be started now, the media resource could not be rendered at the current playback rate up to its end without having to stop for further buffering of content.   readyState newly increased to HAVE_FUTURE_DATA or greater.
+canplaythrough  Event   The user agent estimates that if playback were to be started now, the media resource could be rendered at the current playback rate all the way to its end without having to stop for further buffering.    readyState is newly equal to HAVE_ENOUGH_DATA.
+seeking     Event   The seeking IDL attribute changed to true and the seek operation is taking long enough that the user agent has time to fire the event.  
+seeked  Event   The seeking IDL attribute changed to false.     
+timeupdate  Event   The current playback position changed as part of normal playback or in an especially interesting way, for example discontinuously.  
+ended   Event   Playback has stopped because the end of the media resource was reached.     currentTime equals the end of the media resource; ended is true.
+ratechange  Event   Either the defaultPlaybackRate or the playbackRate attribute has just been updated.     
+durationchange  Event   The duration attribute has just been updated.   
+volumechange    Event   Either the volume attribute or the muted attribute has changed. Fired after the relevant attribute's setter has returned.   
 
 4.8.10.14 Security and privacy considerations
 
@@ -19290,8 +19642,8 @@ to one of the types given in the first column of the following table, and the
 user agent supports that type, then the subsequent arguments, if any, must be
 treated as described in the second cell of that row.
 
-Type 	Other arguments
-image/jpeg 	The second argument, if it is a number in the range 0.0 to 1.0 inclusive, must be treated as the desired quality level. If it is not a number or is outside that range, the user agent must use its default value, as if the argument had been omitted.
+Type    Other arguments
+image/jpeg  The second argument, if it is a number in the range 0.0 to 1.0 inclusive, must be treated as the desired quality level. If it is not a number or is outside that range, the user agent must use its default value, as if the argument had been omitted.
 
 For the purposes of these rules, an argument is considered to be a number if
 it is converted to an IDL double value by the rules for handling arguments of
@@ -19522,14 +19874,14 @@ keywords defined for this attribute. The states given in the first cell of
 the rows with keywords give the states to which those keywords map. Some of
 the keywords are non-conforming, as noted in the last column.
 
-State 	Keywords 	Notes
-Circle state 	circle 	
-circ 	Non-conforming
-Default state 	default 	
-Polygon state 	poly 	
-polygon 	Non-conforming
-Rectangle state 	rect 	
-rectangle 	Non-conforming
+State   Keywords    Notes
+Circle state    circle  
+circ    Non-conforming
+Default state   default     
+Polygon state   poly    
+polygon     Non-conforming
+Rectangle state     rect    
+rectangle   Non-conforming
 
 The attribute may be omitted. The missing value default is the rectangle
 state.
@@ -19689,11 +20041,11 @@ layer onto the image:
    3.
 
       If the number of items in the coords list is less than the minimum number given for the area element's current state, as per the following table, then the shape is empty; abort these steps.
-      State 	Minimum number of items
-      Circle state 	3
-      Default state 	0
-      Polygon state 	6
-      Rectangle state 	4
+      State     Minimum number of items
+      Circle state  3
+      Default state     0
+      Polygon state     6
+      Rectangle state   4
    4.
 
       Check for excess items in the coords list as per the entry in the following list corresponding to the shape attribute's state:
@@ -19957,9 +20309,9 @@ outline its basic cell structure, highlight any trends or patterns, and
 generally teach the user how to use the table.
 
 For instance, the following table:
-Characteristics with positive and negative sides Negative 	Characteristic 	Positive
-Sad 	Mood 	Happy
-Failing 	Grade 	Passing
+Characteristics with positive and negative sides Negative   Characteristic  Positive
+Sad     Mood    Happy
+Failing     Grade   Passing
 
 ...might benefit from a description explaining the way the table is laid out, something like "Characteristics are given in the second column, with the negative side in the left column and the positive side in the right column".
 
@@ -20355,13 +20707,13 @@ A caption can introduce context for a table, making it significantly easier
 to understand.
 
 Consider, for instance, the following table:
-	1 	2 	3 	4 	5 	6
-1 	2 	3 	4 	5 	6 	7
-2 	3 	4 	5 	6 	7 	8
-3 	4 	5 	6 	7 	8 	9
-4 	5 	6 	7 	8 	9 	10
-5 	6 	7 	8 	9 	10 	11
-6 	7 	8 	9 	10 	11 	12
+    1   2   3   4   5   6
+1   2   3   4   5   6   7
+2   3   4   5   6   7   8
+3   4   5   6   7   8   9
+4   5   6   7   8   9   10
+5   6   7   8   9   10  11
+6   7   8   9   10  11  12
 
 In the abstract, this table is not clear. However, with a caption giving the
 table's number (for reference in the main prose) and explaining its use, it
@@ -20740,13 +21092,13 @@ Here is a markup fragment showing a table:
 </table>
 
 This would result in the following table:
-ID 	Measurement 	Average 	Maximum
-	Cats 		
-93 	Legs 	3.5 	4
-10 	Tails 	1 	1
-	English speakers 		
-32 	Legs 	2.67 	4
-35 	Tails 	0.33 	1
+ID  Measurement     Average     Maximum
+    Cats        
+93  Legs    3.5     4
+10  Tails   1   1
+    English speakers        
+32  Legs    2.67    4
+35  Tails   0.33    1
 
 The headers in the first row all apply directly down to the rows in their
 column.
@@ -21301,11 +21653,11 @@ The following shows how might one mark up the bottom part of table 45 of the Smi
 </table>
 
 This table could look like this:
-Specification values: Steel, Castings, Ann. A.S.T.M. A27-16, Class B;* P max. 0.06; S max. 0.05. Grade. 	Yield Point. 	Ultimate tensile strength 	Per cent elong. 50.8 mm or 2 in. 	Per cent reduct. area.
-kg/mm2 	lb/in2
-Hard 	0.45 ultimate 	56.2 	80,000 	15 	20
-Medium 	0.45 ultimate 	49.2 	70,000 	18 	25
-Soft 	0.45 ultimate 	42.2 	60,000 	22 	30
+Specification values: Steel, Castings, Ann. A.S.T.M. A27-16, Class B;* P max. 0.06; S max. 0.05. Grade.     Yield Point.    Ultimate tensile strength   Per cent elong. 50.8 mm or 2 in.    Per cent reduct. area.
+kg/mm2  lb/in2
+Hard    0.45 ultimate   56.2    80,000  15  20
+Medium  0.45 ultimate   49.2    70,000  18  25
+Soft    0.45 ultimate   42.2    60,000  22  30
 
 The following shows how one might mark up the gross margin table on page 46 of Apple, Inc's 10-K filing for fiscal year 2008:
 
@@ -21362,11 +21714,11 @@ lower on the same page of that document:
 </table>
 
 This table could look like this:
-	2008 	2007 	2006
-Research and development 	$ 1,109 	$ 782 	$ 712
-Percentage of net sales 	3.4% 	3.3% 	3.7%
-Selling, general, and administrative 	$ 3,761 	$ 2,963 	$ 2,433
-Percentage of net sales 	11.6% 	12.3% 	12.6%
+    2008    2007    2006
+Research and development    $ 1,109     $ 782   $ 712
+Percentage of net sales     3.4%    3.3%    3.7%
+Selling, general, and administrative    $ 3,761     $ 2,963     $ 2,433
+Percentage of net sales     11.6%   12.3%   12.6%
 4.10 Forms
 4.10.1 Introduction
 
@@ -22265,77 +22617,77 @@ DOM interface:
 The input element represents a typed data field, usually with a form control to allow the user to edit the data.
 
 The type attribute controls the data type (and associated control) of the element. It is an enumerated attribute. The following table lists the keywords and states for the attribute — the keywords in the left column map to the states in the cell in the second column on the same row as the keyword.
-Keyword 	State 	Data type 	Control type
-hidden 	Hidden 	An arbitrary string 	n/a
-text 	Text 	Text with no line breaks 	Text field
-search 	Search 	Text with no line breaks 	Search field
-tel 	Telephone 	Text with no line breaks 	A text field
-url 	URL 	An absolute IRI 	A text field
-email 	E-mail 	An e-mail address or list of e-mail addresses 	A text field
-password 	Password 	Text with no line breaks (sensitive information) 	Text field that obscures data entry
-datetime 	Date and Time 	A date and time (year, month, day, hour, minute, second, fraction of a second) with the time zone set to UTC 	A date and time control
-date 	Date 	A date (year, month, day) with no time zone 	A date control
-month 	Month 	A date consisting of a year and a month with no time zone 	A month control
-week 	Week 	A date consisting of a week-year number and a week number with no time zone 	A week control
-time 	Time 	A time (hour, minute, seconds, fractional seconds) with no time zone 	A time control
-datetime-local 	Local Date and Time 	A date and time (year, month, day, hour, minute, second, fraction of a second) with no time zone 	A date and time control
-number 	Number 	A numerical value 	A text field or spinner control
-range 	Range 	A numerical value, with the extra semantic that the exact value is not important 	A slider control or similar
-color 	Color 	An sRGB color with 8-bit red, green, and blue components 	A color well
-checkbox 	Checkbox 	A set of zero or more values from a predefined list 	A checkbox
-radio 	Radio Button 	An enumerated value 	A radio button
-file 	File Upload 	Zero or more files each with a MIME type and optionally a file name 	A label and a button
-submit 	Submit Button 	An enumerated value, with the extra semantic that it must be the last value selected and initiates form submission 	A button
-image 	Image Button 	A coordinate, relative to a particular image's size, with the extra semantic that it must be the last value selected and initiates form submission 	Either a clickable image, or a button
-reset 	Reset Button 	n/a 	A button
-button 	Button 	n/a 	A button
+Keyword     State   Data type   Control type
+hidden  Hidden  An arbitrary string     n/a
+text    Text    Text with no line breaks    Text field
+search  Search  Text with no line breaks    Search field
+tel     Telephone   Text with no line breaks    A text field
+url     URL     An absolute IRI     A text field
+email   E-mail  An e-mail address or list of e-mail addresses   A text field
+password    Password    Text with no line breaks (sensitive information)    Text field that obscures data entry
+datetime    Date and Time   A date and time (year, month, day, hour, minute, second, fraction of a second) with the time zone set to UTC    A date and time control
+date    Date    A date (year, month, day) with no time zone     A date control
+month   Month   A date consisting of a year and a month with no time zone   A month control
+week    Week    A date consisting of a week-year number and a week number with no time zone     A week control
+time    Time    A time (hour, minute, seconds, fractional seconds) with no time zone    A time control
+datetime-local  Local Date and Time     A date and time (year, month, day, hour, minute, second, fraction of a second) with no time zone    A date and time control
+number  Number  A numerical value   A text field or spinner control
+range   Range   A numerical value, with the extra semantic that the exact value is not important    A slider control or similar
+color   Color   An sRGB color with 8-bit red, green, and blue components    A color well
+checkbox    Checkbox    A set of zero or more values from a predefined list     A checkbox
+radio   Radio Button    An enumerated value     A radio button
+file    File Upload     Zero or more files each with a MIME type and optionally a file name     A label and a button
+submit  Submit Button   An enumerated value, with the extra semantic that it must be the last value selected and initiates form submission  A button
+image   Image Button    A coordinate, relative to a particular image's size, with the extra semantic that it must be the last value selected and initiates form submission  Either a clickable image, or a button
+reset   Reset Button    n/a     A button
+button  Button  n/a     A button
 
 The missing value default is the Text state.
 
 Which of the accept, alt, autocomplete, checked, dirname, formaction, formenctype, formmethod, formnovalidate, formtarget, height, list, max, maxlength, min, multiple, pattern, placeholder, readonly, required, size, src, step, and width content attributes, the checked, files, valueAsDate, valueAsNumber, list, and selectedOption IDL attributes, the select() method, the selectionStart and selectionEnd IDL attributes, the setSelectionRange() method, the stepUp() and stepDown() methods, and the input and change events apply to an input element depends on the state of its type attribute. The following table is non-normative and summarizes which of those content attributes, IDL attributes, methods, and events apply to each state:
-	Hidden 	Text, Search 	URL, Telephone 	E-mail 	Password 	Date and Time, Date, Month, Week, Time 	Local Date and Time, Number 	Range 	Color 	Checkbox, Radio Button 	File Upload 	Submit Button 	Image Button 	Reset Button, Button
+    Hidden  Text, Search    URL, Telephone  E-mail  Password    Date and Time, Date, Month, Week, Time  Local Date and Time, Number     Range   Color   Checkbox, Radio Button  File Upload     Submit Button   Image Button    Reset Button, Button
 Content attributes
-accept 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	· 	· 	·
-alt 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	·
-autocomplete 	· 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	·
-checked 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	· 	· 	· 	·
-dirname 	· 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	·
-formaction 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	Yes 	·
-formenctype 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	Yes 	·
-formmethod 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	Yes 	·
-formnovalidate 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	Yes 	·
-formtarget 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	Yes 	·
-height 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	·
-list 	· 	Yes 	Yes 	Yes 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	·
-max 	· 	· 	· 	· 	· 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	·
-maxlength 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-min 	· 	· 	· 	· 	· 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	·
-multiple 	· 	· 	· 	Yes 	· 	· 	· 	· 	· 	· 	Yes 	· 	· 	·
-pattern 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-placeholder 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-readonly 	· 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	· 	·
-required 	· 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	· 	· 	Yes 	Yes 	· 	· 	·
-size 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-src 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	·
-step 	· 	· 	· 	· 	· 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	·
-width 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	·
+accept  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·   ·   ·
+alt     ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·
+autocomplete    ·   Yes     Yes     Yes     Yes     Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·
+checked     ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·   ·   ·   ·
+dirname     ·   Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·
+formaction  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     Yes     ·
+formenctype     ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     Yes     ·
+formmethod  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     Yes     ·
+formnovalidate  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     Yes     ·
+formtarget  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     Yes     ·
+height  ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·
+list    ·   Yes     Yes     Yes     ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·
+max     ·   ·   ·   ·   ·   Yes     Yes     Yes     ·   ·   ·   ·   ·   ·
+maxlength   ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+min     ·   ·   ·   ·   ·   Yes     Yes     Yes     ·   ·   ·   ·   ·   ·
+multiple    ·   ·   ·   Yes     ·   ·   ·   ·   ·   ·   Yes     ·   ·   ·
+pattern     ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+placeholder     ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+readonly    ·   Yes     Yes     Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·   ·   ·
+required    ·   Yes     Yes     Yes     Yes     Yes     Yes     ·   ·   Yes     Yes     ·   ·   ·
+size    ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+src     ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·
+step    ·   ·   ·   ·   ·   Yes     Yes     Yes     ·   ·   ·   ·   ·   ·
+width   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·
 IDL attributes and methods
-checked 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	· 	· 	· 	·
-files 	· 	· 	· 	· 	· 	· 	· 	· 	· 	· 	Yes 	· 	· 	·
-value 	default 	value 	value 	value 	value 	value 	value 	value 	value 	default/on 	filename 	default 	default 	default
-valueAsDate 	· 	· 	· 	· 	· 	Yes 	· 	· 	· 	· 	· 	· 	· 	·
-valueAsNumber 	· 	· 	· 	· 	· 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	·
-list 	· 	Yes 	Yes 	Yes 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	·
-selectedOption 	· 	Yes 	Yes 	Yes† 	· 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	·
-select() 	· 	Yes 	Yes 	· 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-selectionStart 	· 	Yes 	Yes 	· 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-selectionEnd 	· 	Yes 	Yes 	· 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-setSelectionRange() 	· 	Yes 	Yes 	· 	Yes 	· 	· 	· 	· 	· 	· 	· 	· 	·
-stepDown() 	· 	· 	· 	· 	· 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	·
-stepUp() 	· 	· 	· 	· 	· 	Yes 	Yes 	Yes 	· 	· 	· 	· 	· 	·
+checked     ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·   ·   ·   ·
+files   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   Yes     ·   ·   ·
+value   default     value   value   value   value   value   value   value   value   default/on  filename    default     default     default
+valueAsDate     ·   ·   ·   ·   ·   Yes     ·   ·   ·   ·   ·   ·   ·   ·
+valueAsNumber   ·   ·   ·   ·   ·   Yes     Yes     Yes     ·   ·   ·   ·   ·   ·
+list    ·   Yes     Yes     Yes     ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·
+selectedOption  ·   Yes     Yes     Yes†    ·   Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·
+select()    ·   Yes     Yes     ·   Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+selectionStart  ·   Yes     Yes     ·   Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+selectionEnd    ·   Yes     Yes     ·   Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+setSelectionRange()     ·   Yes     Yes     ·   Yes     ·   ·   ·   ·   ·   ·   ·   ·   ·
+stepDown()  ·   ·   ·   ·   ·   Yes     Yes     Yes     ·   ·   ·   ·   ·   ·
+stepUp()    ·   ·   ·   ·   ·   Yes     Yes     Yes     ·   ·   ·   ·   ·   ·
 Events
-input event 	· 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	· 	· 	· 	· 	·
-change event 	· 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	Yes 	· 	· 	·
+input event     ·   Yes     Yes     Yes     Yes     Yes     Yes     Yes     Yes     ·   ·   ·   ·   ·
+change event    ·   Yes     Yes     Yes     Yes     Yes     Yes     Yes     Yes     Yes     Yes     ·   ·   ·
 
 † The dagger symbol (†) indicates that the feature only applies when the multiple attribute is not specified.
 
@@ -24743,10 +25095,10 @@ The button element represents a button. If the element is not disabled, then the
 The element is a button.
 
 The type attribute controls the behavior of the button when it is activated. It is an enumerated attribute. The following table lists the keywords and states for the attribute — the keywords in the left column map to the states in the cell in the second column on the same row as the keyword.
-Keyword 	State 	Brief description
-submit 	Submit Button 	Submits the form.
-reset 	Reset Button 	Resets the form.
-button 	Button 	Does nothing.
+Keyword     State   Brief description
+submit  Submit Button   Submits the form.
+reset   Reset Button    Resets the form.
+button  Button  Does nothing.
 
 The missing value default is the Submit Button state.
 
@@ -25661,8 +26013,8 @@ map to the states listed in the cell in the second column on the same row as
 the keyword. User agents are not required to support these values, and must
 only recognize values whose corresponding algorithms they support.
 
-Keyword 	State
-rsa 	RSA
+Keyword     State
+rsa     RSA
 
 The invalid value default state is the unknown state. The missing value
 default state is the RSA state, if it is supported, or the unknown state
@@ -27058,13 +27410,13 @@ When a form element form is submitted from an element submitter (typically a but
   19.
 
       Select the appropriate row in the table below based on the value of scheme as given by the first cell of each row. Then, select the appropriate cell on that row based on the value of method as given in the first cell of each column. Then, jump to the steps named in that cell and defined below the table.
-      	GET 	POST
-      http 	Mutate action URL 	Submit as entity body
-      https 	Mutate action URL 	Submit as entity body
-      ftp 	Get action URL 	Get action URL
-      javascript 	Get action URL 	Get action URL
-      data 	Get action URL 	Post to data:
-      mailto 	Mail with headers 	Mail as body
+        GET     POST
+      http  Mutate action URL   Submit as entity body
+      https     Mutate action URL   Submit as entity body
+      ftp   Get action URL  Get action URL
+      javascript    Get action URL  Get action URL
+      data  Get action URL  Post to data:
+      mailto    Mail with headers   Mail as body
 
       If scheme is not one of those listed in this table, then the behavior is not defined by this specification. User agents should, in the absence of another specification defining this, act in a manner analogous to that defined in this specification for similar schemes.
 
@@ -28271,30 +28623,30 @@ those defined in this specification, are ASCII case-insensitive values, and
 must be compared as such.
 
 Thus, rel="next" is the same as rel="NEXT".
-Link type 	Effect on... 	Brief description
-link 	a and area
-alternate 	Hyperlink 	Hyperlink 	Gives alternate representations of the current document.
-archives 	Hyperlink 	Hyperlink 	Provides a link to a collection of records, documents, or other materials of historical interest.
-author 	Hyperlink 	Hyperlink 	Gives a link to the current document's author.
-bookmark 	not allowed 	Hyperlink 	Gives the permalink for the nearest ancestor section.
-external 	not allowed 	Hyperlink 	Indicates that the referenced document is not part of the same site as the current document.
-first 	Hyperlink 	Hyperlink 	Indicates that the current document is a part of a series, and that the first document in the series is the referenced document.
-help 	Hyperlink 	Hyperlink 	Provides a link to context-sensitive help.
-icon 	External Resource 	not allowed 	Imports an icon to represent the current document.
-index 	Hyperlink 	Hyperlink 	Gives a link to the document that provides a table of contents or index listing the current document.
-last 	Hyperlink 	Hyperlink 	Indicates that the current document is a part of a series, and that the last document in the series is the referenced document.
-license 	Hyperlink 	Hyperlink 	Indicates that the main content of the current document is covered by the copyright license described by the referenced document.
-next 	Hyperlink 	Hyperlink 	Indicates that the current document is a part of a series, and that the next document in the series is the referenced document.
-nofollow 	not allowed 	Annotation 	Indicates that the current document's original author or publisher does not endorse the referenced document.
-noreferrer 	not allowed 	Annotation 	Requires that the user agent not send an HTTP Referer (sic) header if the user follows the hyperlink.
-pingback 	External Resource 	not allowed 	Gives the address of the pingback server that handles pingbacks to the current document.
-prefetch 	External Resource 	External Resource 	Specifies that the target resource should be preemptively cached.
-prev 	Hyperlink 	Hyperlink 	Indicates that the current document is a part of a series, and that the previous document in the series is the referenced document.
-search 	Hyperlink 	Hyperlink 	Gives a link to a resource that can be used to search through the current document and its related pages.
-stylesheet 	External Resource 	not allowed 	Imports a stylesheet.
-sidebar 	Hyperlink 	Hyperlink 	Specifies that the referenced document, if retrieved, is intended to be shown in the browser's sidebar (if it has one).
-tag 	Hyperlink 	Hyperlink 	Gives a tag (identified by the given address) that applies to the current document.
-up 	Hyperlink 	Hyperlink 	Provides a link to a document giving the context for the current document.
+Link type   Effect on...    Brief description
+link    a and area
+alternate   Hyperlink   Hyperlink   Gives alternate representations of the current document.
+archives    Hyperlink   Hyperlink   Provides a link to a collection of records, documents, or other materials of historical interest.
+author  Hyperlink   Hyperlink   Gives a link to the current document's author.
+bookmark    not allowed     Hyperlink   Gives the permalink for the nearest ancestor section.
+external    not allowed     Hyperlink   Indicates that the referenced document is not part of the same site as the current document.
+first   Hyperlink   Hyperlink   Indicates that the current document is a part of a series, and that the first document in the series is the referenced document.
+help    Hyperlink   Hyperlink   Provides a link to context-sensitive help.
+icon    External Resource   not allowed     Imports an icon to represent the current document.
+index   Hyperlink   Hyperlink   Gives a link to the document that provides a table of contents or index listing the current document.
+last    Hyperlink   Hyperlink   Indicates that the current document is a part of a series, and that the last document in the series is the referenced document.
+license     Hyperlink   Hyperlink   Indicates that the main content of the current document is covered by the copyright license described by the referenced document.
+next    Hyperlink   Hyperlink   Indicates that the current document is a part of a series, and that the next document in the series is the referenced document.
+nofollow    not allowed     Annotation  Indicates that the current document's original author or publisher does not endorse the referenced document.
+noreferrer  not allowed     Annotation  Requires that the user agent not send an HTTP Referer (sic) header if the user follows the hyperlink.
+pingback    External Resource   not allowed     Gives the address of the pingback server that handles pingbacks to the current document.
+prefetch    External Resource   External Resource   Specifies that the target resource should be preemptively cached.
+prev    Hyperlink   Hyperlink   Indicates that the current document is a part of a series, and that the previous document in the series is the referenced document.
+search  Hyperlink   Hyperlink   Gives a link to a resource that can be used to search through the current document and its related pages.
+stylesheet  External Resource   not allowed     Imports a stylesheet.
+sidebar     Hyperlink   Hyperlink   Specifies that the referenced document, if retrieved, is intended to be shown in the browser's sidebar (if it has one).
+tag     Hyperlink   Hyperlink   Gives a tag (identified by the given address) that applies to the current document.
+up  Hyperlink   Hyperlink   Provides a link to a document giving the context for the current document.
 
 Some of the types described below list synonyms for these values. These are to be handled as specified by user agents, but must not be used in documents.
 4.12.4.1 Link type "alternate"
@@ -29290,23 +29642,43 @@ one exception as noted below:
 All other attribute values on HTML elements must be treated as case-sensitive.
 
 The exception to the list above is the type attribute on ol elements, which must be treated as case-sensitive.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4.14.2 Pseudo-classes
 
-There are a number of dynamic selectors that can be used with HTML. This section defines when these selectors match HTML elements.
+There are a number of dynamic selectors that can be used with HTML. This
+section defines when these selectors match HTML elements.
 
 :link
 :visited
 
-    All a elements that have an href attribute, all area elements that have an href attribute, and all link elements that have an href attribute, must match one of :link and :visited.
+    All a elements that have an href attribute, all area elements that have an
+    href attribute, and all link elements that have an href attribute, must
+    match one of :link and :visited.
+    
+     Other specification might apply more specific rules regarding how these
+    elements are to match these pseudo-elements, to mitigate some privacy
+    concerns that apply with straightforward implementations of this
+    requirement.
 
-    Other specification might apply more specific rules regarding how these elements are to match these pseudo-elements, to mitigate some privacy concerns that apply with straightforward implementations of this requirement.
 :active
 
-    The :active pseudo-class is defined to match an element "while an element is being activated by the user". For the purposes of defining the :active pseudo-class only, an HTML user agent must consider an element as being activated if it is:
+    The :active pseudo-class is defined to match an element "while an element
+    is being activated by the user". For the purposes of defining the :active
+    pseudo-class only, an HTML user agent must consider an element as being
+    activated if it is:
 
-        *
-
-          An element falling into one of the following categories between the time the user begins to indicate an intent to trigger the element's activation behavior and either the time the user stops indicating an intent to trigger the element's activation behavior, or the time the element's activation behavior has finished running, which ever comes first:
+        * An element falling into one of the following categories between the
+          time the user begins to indicate an intent to trigger the element's
+          activation behavior and either the time the user stops indicating an
+          intent to trigger the element's activation behavior, or the time the
+          element's activation behavior has finished running, which ever comes
+          first:
               o a elements that have an href attribute
               o area elements that have an href attribute
               o link elements that have an href attribute
@@ -29315,40 +29687,50 @@ There are a number of dynamic selectors that can be used with HTML. This section
               o command elements that do not have a disabled attribute
               o elements that are specially focusable
 
-          For example, if the user is using a keyboard to push a button element by pressing the space bar, the element would match this pseudo-class in between the time that the element received the keydown event and the time the element received the keyup event.
-        *
-
-          An element that the user indicates using a pointing device while that pointing device is in the "down" state (e.g. for a mouse, between the time the mouse button is pressed and the time it is depressed).
-        *
-
-          An element that has a descendant that is currently matching the the :active pseudo-class.
+          For example, if the user is using a keyboard to push a button element
+          by pressing the space bar, the element would match this pseudo-class
+          in between the time that the element received the keydown event and
+          the time the element received the keyup event.
+        * An element that the user indicates using a pointing device while that
+          pointing device is in the "down" state (e.g. for a mouse, between the
+          time the mouse button is pressed and the time it is depressed).
+        * An element that has a descendant that is currently matching the the
+          :active pseudo-class.
 
 :enabled
 
-    The :enabled pseudo-class must match any element falling into one of the following categories:
+    The :enabled pseudo-class must match any element falling into one of the
+    following categories:
 
         * a elements that have an href attribute
         * area elements that have an href attribute
         * link elements that have an href attribute
         * button elements that are not disabled
-        * input elements whose type attribute are not in the Hidden state and that are not disabled
+        * input elements whose type attribute are not in the Hidden state and 
+          that are not disabled
         * select elements that are not disabled
         * textarea elements that are not disabled
         * option elements that are not disabled
         * command elements that do not have a disabled attribute
-        * li elements that are children of menu elements, and that have a child element that defines a command, if the first such element's Disabled State facet is false (not disabled)
+        * li elements that are children of menu elements, and that have a 
+          child element that defines a command, if the first such element's 
+          Disabled State facet is false (not disabled)
 
 :disabled
 
-    The :disabled pseudo-class must match any element falling into one of the following categories:
+    The :disabled pseudo-class must match any element falling into one of the
+    following categories:
 
         * button elements that are disabled
-        * input elements whose type attribute are not in the Hidden state and that are disabled
+        * input elements whose type attribute are not in the Hidden state and 
+          that are disabled
         * select elements that are disabled
         * textarea elements that are disabled
         * option elements that are disabled
         * command elements that have a disabled attribute
-        * li elements that are children of menu elements, and that have a child element that defines a command, if the first such element's Disabled State facet is true (disabled)
+        * li elements that are children of menu elements, and that have a child 
+          element that defines a command, if the first such element's Disabled 
+          State facet is true (disabled)
 
 :checked
 
@@ -29425,12 +29807,24 @@ This specification does not define when an element matches the :hover,
 sufficient detail in a language-agnostic fashion in the Selectors
 specification. [SELECTORS]
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5 Loading Web pages
 
 This section describes features that apply most directly to Web browsers.
 Having said that, except where specified otherwise, the requirements defined
 in this section do apply to all user agents, whether they are Web browsers or
 not.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.1 Browsing contexts
 
@@ -29487,6 +29881,12 @@ of the about:blank Document is the origin of the creator Document. Otherwise,
 the origin of the about:blank Document is a globally unique identifier
 assigned when the new browsing context is created.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.1.1 Nested browsing contexts
 
 Certain elements (for example, iframe elements) can instantiate further
@@ -29513,21 +29913,14 @@ context gives the list of ancestor browsing contexts.
 The list of the descendant browsing contexts of a Document d is the (ordered)
 list returned by the following algorithm:
 
-   1.
-
-      Let list be an empty list.
-   2.
-
-      For each child browsing context of d that is nested through an element that is in the Document d, in the tree order of the elements nesting those browsing contexts, run these substeps:
-         1.
-
-            Append that child browsing context to the list list.
-         2.
-
-            Append the list of the descendant browsing contexts of the active document of that child browsing context to the list list. 
-   3.
-
-      Return the constructed list. 
+   1. Let list be an empty list.
+   2. For each child browsing context of d that is nested through an element
+      that is in the Document d, in the tree order of the elements nesting
+      those browsing contexts, run these substeps:
+         1. Append that child browsing context to the list list.
+         2. Append the list of the descendant browsing contexts of the active
+            document of that child browsing context to the list list.
+   3. Return the constructed list. 
 
 A Document is said to be fully active when it is the active document of its
 browsing context, and either its browsing context is a top-level browsing
@@ -29551,6 +29944,12 @@ top-level browsing context, and cannot contain Documents that are fully
 active. Furthermore, if a browsing context container (such as an iframe) is
 moved to another Document, then the parent browsing context of its nested
 browsing context will change.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.1.1.1 Navigating nested browsing contexts in the DOM
 
@@ -29583,15 +29982,18 @@ browsing context or a detached nested browsing context).
 The frameElement IDL attribute on the Window object of a Document d, on
 getting, must run the following algorithm:
 
-   1.
+   1. If d is not a Document in a nested browsing context, return null and
+      abort these steps.
+   2. If the browsing context container's Document does not have the same
+      effective script origin as the entry script, then throw a SECURITY_ERR
+      exception.
+   3. Otherwise, return the browsing context container for b. 
 
-      If d is not a Document in a nested browsing context, return null and abort these steps.
-   2.
+******************************************************************************/
+test('TODO: ', function(){
 
-      If the browsing context container's Document does not have the same effective script origin as the entry script, then throw a SECURITY_ERR exception.
-   3.
-
-      Otherwise, return the browsing context container for b. 
+});
+/******************************************************************************
 
 5.1.2 Auxiliary browsing contexts
 
@@ -29603,6 +30005,12 @@ contexts are always top-level browsing contexts.
 An auxiliary browsing context has an opener browsing context, which is the
 browsing context from which the auxiliary browsing context was created.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.1.2.1 Navigating auxiliary browsing contexts in the DOM
 
 The opener IDL attribute on the Window object, on getting, must return the
@@ -29613,27 +30021,51 @@ opener. On setting, if the new value is null then the current browsing
 context must disown its opener; if the new value is anything else then the
 user agent must ignore the new value.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.1.3 Secondary browsing contexts
 
 User agents may support secondary browsing contexts, which are browsing
 contexts that form part of the user agent's interface, apart from the main
 content area.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.1.4 Security
 
 A browsing context A is allowed to navigate a second browsing context B if
 one of the following conditions is true:
 
-    * Either the origin of the active document of A is the same as the origin of the active document of B, or
-    * The browsing context A is a nested browsing context with a top-level browsing context, and its top-level browsing context is B, or
-    * The browsing context B is an auxiliary browsing context and A is allowed to navigate B's opener browsing context, or
-    * The browsing context B is not a top-level browsing context, but there exists an ancestor browsing context of B whose active document has the same origin as the active document of A (possibly in fact being A itself).
+    * Either the origin of the active document of A is the same as the origin
+      of the active document of B, or
+    * The browsing context A is a nested browsing context with a top-level
+      browsing context, and its top-level browsing context is B, or
+    * The browsing context B is an auxiliary browsing context and A is allowed
+      to navigate B's opener browsing context, or
+    * The browsing context B is not a top-level browsing context, but there
+      exists an ancestor browsing context of B whose active document has the
+      same origin as the active document of A (possibly in fact being A
+      itself).
 
 An element has a browsing context scope origin if its Document's browsing
 context is a top-level browsing context or if all of its Document's ancestor
 browsing contexts all have active documents whose origin are the same origin
 as the element's Document's origin. If an element has a browsing context
 scope origin, then its value is the origin of the element's Document.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.1.5 Groupings of browsing contexts
 
@@ -29643,7 +30075,8 @@ reachable browsing contexts. These are:
     * The browsing context itself.
     * All the browsing context's child browsing contexts.
     * The browsing context's parent browsing context.
-    * All the browsing contexts that have the browsing context as their opener browsing context.
+    * All the browsing contexts that have the browsing context as their opener
+      browsing context.
     * The browsing context's opener browsing context.
 
 The transitive closure of all the browsing contexts that are directly
@@ -29666,6 +30099,12 @@ changed by the jump to a code entry-point algorithm.
 There is at most one event loop per unit of related similar-origin browsing
 contexts.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.1.6 Browsing context names
 
 Browsing contexts can have a browsing context name. By default, a browsing
@@ -29683,47 +30122,91 @@ The rules for choosing a browsing context given a browsing context name are
 as follows. The rules assume that they are being applied in the context of a
 browsing context.
 
-   1.
-
-      If the given browsing context name is the empty string or _self, then the chosen browsing context must be the current one.
-
-      If the given browsing context name is _self, then this is an explicit self-navigation override, which overrides the behavior of the seamless browsing context flag set by the seamless attribute on iframe elements.
-   2.
-
-      If the given browsing context name is _parent, then the chosen browsing context must be the parent browsing context of the current one, unless there isn't one, in which case the chosen browsing context must be the current browsing context.
-   3.
-
-      If the given browsing context name is _top, then the chosen browsing context must be the top-level browsing context of the current one, if there is one, or else the current browsing context.
-   4.
-
-      If the given browsing context name is not _blank and there exists a browsing context whose name is the same as the given browsing context name, and the current browsing context is allowed to navigate that browsing context, and the user agent determines that the two browsing contexts are related enough that it is ok if they reach each other, then that browsing context must be the chosen one. If there are multiple matching browsing contexts, the user agent should select one in some arbitrary consistent manner, such as the most recently opened, most recently focused, or more closely related.
-
-      If the browsing context is chosen by this step to be the current browsing context, then this is also an explicit self-navigation override.
+   1. If the given browsing context name is the empty string or _self, then the
+      chosen browsing context must be the current one.
+      
+      If the given browsing context name is _self, then this is an explicit
+      self-navigation override, which overrides the behavior of the seamless
+      browsing context flag set by the seamless attribute on iframe elements.
+   2. If the given browsing context name is _parent, then the chosen browsing
+      context must be the parent browsing context of the current one, unless
+      there isn't one, in which case the chosen browsing context must be the
+      current browsing context.
+   3. If the given browsing context name is _top, then the chosen browsing
+      context must be the top-level browsing context of the current one, if
+      there is one, or else the current browsing context.
+   4. If the given browsing context name is not _blank and there exists a
+      browsing context whose name is the same as the given browsing context
+      name, and the current browsing context is allowed to navigate that
+      browsing context, and the user agent determines that the two browsing
+      contexts are related enough that it is ok if they reach each other, then
+      that browsing context must be the chosen one. If there are multiple
+      matching browsing contexts, the user agent should select one in some
+      arbitrary consistent manner, such as the most recently opened, most
+      recently focused, or more closely related.
+      
+       If the browsing context is chosen by this step to be the current
+      browsing context, then this is also an explicit self-navigation override.
    5.
 
-      Otherwise, a new browsing context is being requested, and what happens depends on the user agent's configuration and/or abilities:
+      Otherwise, a new browsing context is being requested, and what happens
+      depends on the user agent's configuration and/or abilities:
+      
+       If the current browsing context had the sandboxed navigation browsing
+      context flag set when its active document was created.
 
-      If the current browsing context had the sandboxed navigation browsing context flag set when its active document was created.
+          The user agent may offer to create a new top-level browsing context
+          or reuse an existing top-level browsing context. If the user picks
+          one of those options, then the designated browsing context must be
+          the chosen one (the browsing context's name isn't set to the given
+          browsing context name). Otherwise (if the user agent doesn't offer
+          the option to the user, or if the user declines to allow a browsing
+          context to be used) there must not be a chosen browsing context.
 
-          The user agent may offer to create a new top-level browsing context or reuse an existing top-level browsing context. If the user picks one of those options, then the designated browsing context must be the chosen one (the browsing context's name isn't set to the given browsing context name). Otherwise (if the user agent doesn't offer the option to the user, or if the user declines to allow a browsing context to be used) there must not be a chosen browsing context. 
-      If the user agent has been configured such that in this instance it will create a new browsing context, and the browsing context is being requested as part of following a hyperlink whose link types include the noreferrer keyword
+      If the user agent has been configured such that in this instance it will
+      create a new browsing context, and the browsing context is being
+      requested as part of following a hyperlink whose link types include the
+      noreferrer keyword
 
-          A new top-level browsing context must be created. If the given browsing context name is not _blank, then the new top-level browsing context's name must be the given browsing context name (otherwise, it has no name). The chosen browsing context must be this new browsing context.
+          A new top-level browsing context must be created. If the given
+          browsing context name is not _blank, then the new top-level browsing
+          context's name must be the given browsing context name (otherwise, it
+          has no name). The chosen browsing context must be this new browsing
+          context.
+          
+          If it is immediately navigated, then the navigation will be done
+          with replacement enabled.
 
-          If it is immediately navigated, then the navigation will be done with replacement enabled. 
-      If the user agent has been configured such that in this instance it will create a new browsing context, and the noreferrer keyword doesn't apply
+      If the user agent has been configured such that in this instance it will
+      create a new browsing context, and the noreferrer keyword doesn't apply
 
-          A new auxiliary browsing context must be created, with the opener browsing context being the current one. If the given browsing context name is not _blank, then the new auxiliary browsing context's name must be the given browsing context name (otherwise, it has no name). The chosen browsing context must be this new browsing context.
+          A new auxiliary browsing context must be created, with the opener
+          browsing context being the current one. If the given browsing context
+          name is not _blank, then the new auxiliary browsing context's name
+          must be the given browsing context name (otherwise, it has no name).
+          The chosen browsing context must be this new browsing context.
+          
+           If it is immediately navigated, then the navigation will be done
+          with replacement enabled.
 
-          If it is immediately navigated, then the navigation will be done with replacement enabled. 
-      If the user agent has been configured such that in this instance it will reuse the current browsing context
+      If the user agent has been configured such that in this instance it will
+      reuse the current browsing context
 
           The chosen browsing context is the current browsing context. 
-      If the user agent has been configured such that in this instance it will not find a browsing context
+
+      If the user agent has been configured such that in this instance it will
+      not find a browsing context
 
           There must not be a chosen browsing context. 
 
-      User agent implementors are encouraged to provide a way for users to configure the user agent to always reuse the current browsing context.
+      User agent implementors are encouraged to provide a way for users to
+      configure the user agent to always reuse the current browsing context.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.2 The Window object
 
@@ -29868,33 +30351,60 @@ The defaultView IDL attribute of the HTMLDocument interface must return the
 Document's browsing context's WindowProxy object, if there is one, or null
 otherwise.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.2.1 Security
 
-User agents must raise a SECURITY_ERR exception whenever any of the members of a Window object are accessed by scripts whose effective script origin is not the same as the Window object's Document's effective script origin, with the following exceptions:
+User agents must raise a SECURITY_ERR exception whenever any of the members of
+a Window object are accessed by scripts whose effective script origin is not
+the same as the Window object's Document's effective script origin, with the
+following exceptions:
 
     * The location object
     * The postMessage() method
     * The frames attribute
     * The dynamic nested browsing context properties 
 
-When a script whose effective script origin is not the same as the Window object's Document's effective script origin attempts to access that Window object's methods or attributes, the user agent must act as if any changes to the Window object's properties, getters, setters, etc, were not present.
+When a script whose effective script origin is not the same as the Window
+object's Document's effective script origin attempts to access that Window
+object's methods or attributes, the user agent must act as if any changes to
+the Window object's properties, getters, setters, etc, were not present.
 
-For members that return objects (including function objects), each distinct effective script origin that is not the same as the Window object's Document's effective script origin must be provided with a separate set of objects. These objects must have the prototype chain appropriate for the script for which the objects are created (not those that would be appropriate for scripts whose script's global object is the Window object in question).
+For members that return objects (including function objects), each distinct
+effective script origin that is not the same as the Window object's Document's
+effective script origin must be provided with a separate set of objects. These
+objects must have the prototype chain appropriate for the script for which the
+objects are created (not those that would be appropriate for scripts whose
+script's global object is the Window object in question).
 
-For instance, if two frames containing Documents from different origins access the same Window object's postMessage() method, they will get distinct objects that are not equal.
+For instance, if two frames containing Documents from different origins access
+the same Window object's postMessage() method, they will get distinct objects
+that are not equal.
+
 5.2.2 APIs for creating and navigating browsing contexts by name
 
 window = window . open( [ url [, target [, features [, replace ] ] ] ] )
 
-    Opens a window to show url (defaults to about:blank), and returns it. The target argument gives the name of the new window. If a window exists with that name already, it is reused. The replace attribute, if true, means that whatever page is currently open in that window will be removed from the window's session history. The features argument is ignored.
+    Opens a window to show url (defaults to about:blank), and returns it. The
+    target argument gives the name of the new window. If a window exists with
+    that name already, it is reused. The replace attribute, if true, means that
+    whatever page is currently open in that window will be removed from the
+    window's session history. The features argument is ignored.
+
 window . name [ = value ]
 
     Returns the name of the window.
 
     Can be set, to change the name.
+
 window . close()
 
     Closes the window.
+
 window . stop()
 
     Cancels the document load.
@@ -29968,11 +30478,18 @@ to navigate the browsing context and that attempt is not currently running
 the unload a document algorithm, cancel that navigation and any associated
 instances of the fetch algorithm. Otherwise, it must do nothing.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.2.3 Accessing other browsing contexts
 
 window . length
 
     Returns the number of child browsing contexts.
+
 window[index]
 
     Returns the indicated child browsing context.
@@ -29996,38 +30513,55 @@ contexts.
 
 These properties are the dynamic nested browsing context properties.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.2.4 Named access on the Window object
 
 window[name]
 
     Returns the indicated element or collection of elements.
 
-The Window interface supports named properties. The supported property names at any moment consist of:
+The Window interface supports named properties. The supported property names at
+any moment consist of:
 
-    * the value of the name content attribute for all a, applet, area, embed, form, frame, frameset, iframe, img, and object elements in the active document that have a name content attribute, and
-    * the value of the id content attribute of any HTML element in the active document with an id content attribute.
+    * the value of the name content attribute for all a, applet, area, embed,
+      form, frame, frameset, iframe, img, and object elements in the active
+      document that have a name content attribute, and
+    * the value of the id content attribute of any HTML element in the active
+      document with an id content attribute.
 
-When the Window object is indexed for property retrieval using a name name, then the user agent must return the value obtained using the following steps:
+When the Window object is indexed for property retrieval using a name name,
+then the user agent must return the value obtained using the following steps:
 
-   1.
-
-      Let elements be the list of named elements with the name name in the active document.
-
+   1. Let elements be the list of named elements with the name name in the
+      active document.
+      
       There will be at least one such element, by definition.
-   2.
+   2. If elements contains an iframe element, then return the WindowProxy
+      object of the nested browsing context represented by the first such
+      iframe element in tree order, and abort these steps.
+   3. Otherwise, if elements has only one element, return that element and
+      abort these steps.
+   4. Otherwise return an HTMLCollection rooted at the Document node, whose
+      filter matches only named elements with the name name.
 
-      If elements contains an iframe element, then return the WindowProxy object of the nested browsing context represented by the first such iframe element in tree order, and abort these steps.
-   3.
+Named elements with the name name, for the purposes of the above algorithm, are
+those that are either:
 
-      Otherwise, if elements has only one element, return that element and abort these steps.
-   4.
+    * a, applet, area, embed, form, frame, frameset, iframe, img, or object
+      elements that have a name content attribute whose value is name, or
+    * HTML elements elements that have an id content attribute whose value is
+      name.
 
-      Otherwise return an HTMLCollection rooted at the Document node, whose filter matches only named elements with the name name.
+******************************************************************************/
+test('TODO: ', function(){
 
-Named elements with the name name, for the purposes of the above algorithm, are those that are either:
-
-    * a, applet, area, embed, form, frame, frameset, iframe, img, or object elements that have a name content attribute whose value is name, or
-    * HTML elements elements that have an id content attribute whose value is name.
+});
+/******************************************************************************
 
 5.2.5 Garbage collection and browsing contexts
 
@@ -30047,21 +30581,14 @@ Each script has a strong reference to its browsing context and its document.
 When a browsing context is to discard a Document, the user agent must run the
 following steps:
 
-   1.
-
-      Set the Document's salvageable state to false.
-   2.
-
-      Run any unloading document cleanup steps for the Document that are defined by this specification and other applicable specifications.
-   3.
-
-      Remove any tasks associated with the Document in any task source, without running those tasks.
-   4.
-
-      Discard all the child browsing contexts of the Document.
-   5.
-
-      Lose the strong reference from the Document's browsing context to the Document. 
+   1. Set the Document's salvageable state to false.
+   2. Run any unloading document cleanup steps for the Document that are
+      defined by this specification and other applicable specifications.
+   3. Remove any tasks associated with the Document in any task source, without
+      running those tasks.
+   4. Discard all the child browsing contexts of the Document.
+   5. Lose the strong reference from the Document's browsing context to the
+      Document.
 
 Whenever a Document object is discarded, it is also removed from the list of
 the worker's Documents of each worker whose list contains that Document.
@@ -30076,51 +30603,82 @@ in response to user requests, e.g. when a user closes a window containing one
 or more top-level browsing contexts). Other browsing contexts must be
 discarded once their WindowProxy object is eligible for garbage collection.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.2.6 Browser interface elements
 
-To allow Web pages to integrate with Web browsers, certain Web browser interface elements are exposed in a limited way to scripts in Web pages.
+To allow Web pages to integrate with Web browsers, certain Web browser
+interface elements are exposed in a limited way to scripts in Web pages.
 
 Each interface element is represented by a BarProp object:
 
 interface BarProp {
-           attribute boolean visible;
+    attribute boolean visible;
 };
 
 window . locationbar . visible
 
     Returns true if the location bar is visible; otherwise, returns false.
+
 window . menubar . visible
 
     Returns true if the menu bar is visible; otherwise, returns false.
+
 window . personalbar . visible
 
     Returns true if the personal bar is visible; otherwise, returns false.
+
 window . scrollbars . visible
 
     Returns true if the scroll bars are visible; otherwise, returns false.
+
 window . statusbar . visible
 
     Returns true if the status bar is visible; otherwise, returns false.
+
 window . toolbar . visible
 
     Returns true if the toolbar is visible; otherwise, returns false.
 
-The visible attribute, on getting, must return either true or a value determined by the user agent to most accurately represent the visibility state of the user interface element that the object represents, as described below. On setting, the new value must be discarded.
+The visible attribute, on getting, must return either true or a value
+determined by the user agent to most accurately represent the visibility state
+of the user interface element that the object represents, as described below.
+On setting, the new value must be discarded.
 
-The following BarProp objects exist for each Document object in a browsing context. Some of the user interface elements represented by these objects might have no equivalent in some user agents; for those user agents, except when otherwise specified, the object must act as if it was present and visible (i.e. its visible attribute must return true).
+The following BarProp objects exist for each Document object in a browsing
+context. Some of the user interface elements represented by these objects might
+have no equivalent in some user agents; for those user agents, except when
+otherwise specified, the object must act as if it was present and visible (i.e.
+its visible attribute must return true).
 
 The location bar BarProp object
-    Represents the user interface element that contains a control that displays the URL of the active document, or some similar interface concept.
+    Represents the user interface element that contains a control that displays
+    the URL of the active document, or some similar interface concept.
 The menu bar BarProp object
-    Represents the user interface element that contains a list of commands in menu form, or some similar interface concept.
+    Represents the user interface element that contains a list of commands in
+    menu form, or some similar interface concept.
 The personal bar BarProp object
-    Represents the user interface element that contains links to the user's favorite pages, or some similar interface concept.
+    Represents the user interface element that contains links to the user's
+    favorite pages, or some similar interface concept.
 The scrollbar BarProp object
-    Represents the user interface element that contains a scrolling mechanism, or some similar interface concept.
+    Represents the user interface element that contains a scrolling mechanism,
+    or some similar interface concept.
 The status bar BarProp object
-    Represents a user interface element found immediately below or after the document, as appropriate for the user's media. If the user agent has no such user interface element, then the object may act as if the corresponding user interface element was absent (i.e. its visible attribute may return false).
+    Represents a user interface element found immediately below or after the
+    document, as appropriate for the user's media. If the user agent has no
+    such user interface element, then the object may act as if the
+    corresponding user interface element was absent (i.e. its visible attribute
+    may return false).
 The toolbar BarProp object
-    Represents the user interface element found immediately above or before the document, as appropriate for the user's media. If the user agent has no such user interface element, then the object may act as if the corresponding user interface element was absent (i.e. its visible attribute may return false).
+    Represents the user interface element found immediately above or before the
+    document, as appropriate for the user's media. If the user agent has no
+    such user interface element, then the object may act as if the
+    corresponding user interface element was absent (i.e. its visible attribute
+    may return false).
 
 The locationbar attribute must return the location bar BarProp object.
 
@@ -30133,6 +30691,12 @@ The scrollbars attribute must return the scrollbar BarProp object.
 The statusbar attribute must return the status bar BarProp object.
 
 The toolbar attribute must return the toolbar BarProp object.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.2.7 The WindowProxy object
 
@@ -30157,6 +30721,12 @@ var x = window;
 x instanceof Window; // true
 x === this; // true
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.3 Origin
 
 The origin of a resource and the effective script origin of a resource are
@@ -30171,51 +30741,49 @@ These characteristics are defined as follows:
 
 For URLs
 
-    The origin and effective script origin of the URL is whatever is returned by the following algorithm:
+    The origin and effective script origin of the URL is whatever is returned
+    by the following algorithm:
 
-       1.
+       1. Let url be the URL for which the origin is being determined.
+       2. Parse url.
+       3. If url identifies a resource that is its own trust domain (e.g. it
+          identifies an e-mail on an IMAP server or a post on an NNTP server)
+          then return a globally unique identifier specific to the resource
+          identified by url, so that if this algorithm is invoked again for
+          URLs that identify the same resource, the same identifier will be
+          returned.
+       4. If url does not use a server-based naming authority, or if parsing
+          url failed, or if url is not an absolute URL, then return a new
+          globally unique identifier.
+       5. Let scheme be the <scheme> component of url, converted to ASCII
+          lowercase.
+       6. If the UA doesn't support the protocol given by scheme, then return a
+          new globally unique identifier.
+       7. If scheme is "file", then the user agent may return a UA-specific
+          value.
+       8. Let host be the <host> component of url.
+       9. Apply the IDNA ToASCII algorithm to host, with both the
+          AllowUnassigned and UseSTD3ASCIIRules flags set. Let host be the
+          result of the ToASCII algorithm.
+          
+          If ToASCII fails to convert one of the components of the string,
+          e.g. because it is too long or because it contains invalid
+          characters, then return a new globally unique identifier. [RFC3490]
+      10. Let host be the result of converting host to ASCII lowercase.
+      11. If there is no <port> component, then let port be the default port
+          for the protocol given by scheme. Otherwise, let port be the <port>
+          component of url.
+      12. Return the tuple (scheme, host, port). 
 
-          Let url be the URL for which the origin is being determined.
-       2.
+    In addition, if the URL is in fact associated with a Document object that
+    was created by parsing the resource obtained from fetching URL, and this
+    was done over a secure connection, then the server's secure certificate may
+    be added to the origin as additional data.
 
-          Parse url.
-       3.
-
-          If url identifies a resource that is its own trust domain (e.g. it identifies an e-mail on an IMAP server or a post on an NNTP server) then return a globally unique identifier specific to the resource identified by url, so that if this algorithm is invoked again for URLs that identify the same resource, the same identifier will be returned.
-       4.
-
-          If url does not use a server-based naming authority, or if parsing url failed, or if url is not an absolute URL, then return a new globally unique identifier.
-       5.
-
-          Let scheme be the <scheme> component of url, converted to ASCII lowercase.
-       6.
-
-          If the UA doesn't support the protocol given by scheme, then return a new globally unique identifier.
-       7.
-
-          If scheme is "file", then the user agent may return a UA-specific value.
-       8.
-
-          Let host be the <host> component of url.
-       9.
-
-          Apply the IDNA ToASCII algorithm to host, with both the AllowUnassigned and UseSTD3ASCIIRules flags set. Let host be the result of the ToASCII algorithm.
-
-          If ToASCII fails to convert one of the components of the string, e.g. because it is too long or because it contains invalid characters, then return a new globally unique identifier. [RFC3490]
-      10.
-
-          Let host be the result of converting host to ASCII lowercase.
-      11.
-
-          If there is no <port> component, then let port be the default port for the protocol given by scheme. Otherwise, let port be the <port> component of url.
-      12.
-
-          Return the tuple (scheme, host, port). 
-
-    In addition, if the URL is in fact associated with a Document object that was created by parsing the resource obtained from fetching URL, and this was done over a secure connection, then the server's secure certificate may be added to the origin as additional data.
 For scripts
 
-    The origin and effective script origin of a script are determined from another resource, called the owner:
+    The origin and effective script origin of a script are determined from
+    another resource, called the owner:
 
     If a script is in a script element
         The owner is the Document to which the script element belongs.
@@ -30223,51 +30791,82 @@ For scripts
         The owner is the Document to which the attribute node belongs.
     If a script is a function or other code reference created by another script
         The owner is the script that created it.
-    If a script is a javascript: URL that was returned as the location of an HTTP redirect (or equivalent in other protocols)
+    If a script is a javascript: URL that was returned as the location of an
+    HTTP redirect (or equivalent in other protocols)
         The owner is the URL that redirected to the javascript: URL.
     If a script is a javascript: URL in an attribute
-        The owner is the Document of the element on which the attribute is found.
+        The owner is the Document of the element on which the attribute is
+        found.
     If a script is a javascript: URL in a style sheet
         The owner is the URL of the style sheet.
-    If a script is a javascript: URL to which a browsing context is being navigated, the URL having been provided by the user (e.g. by using a bookmarklet)
+    If a script is a javascript: URL to which a browsing context is being
+    navigated, the URL having been provided by the user (e.g. by using a
+    bookmarklet)
         The owner is the Document of the browsing context's active document.
-    If a script is a javascript: URL to which a browsing context is being navigated, the URL having been declared in markup
-        The owner is the Document of the element (e.g. an a or area element) that declared the URL.
-    If a script is a javascript: URL to which a browsing context is being navigated, the URL having been provided by script
+    If a script is a javascript: URL to which a browsing context is being
+    navigated, the URL having been declared in markup
+        The owner is the Document of the element (e.g. an a or area element)
+        that declared the URL.
+    If a script is a javascript: URL to which a browsing context is being
+    navigated, the URL having been provided by script
         The owner is the script that provided the URL.
 
-    The origin of the script is then equal to the origin of the owner, and the effective script origin of the script is equal to the effective script origin of the owner.
+    The origin of the script is then equal to the origin of the owner, and the
+    effective script origin of the script is equal to the effective script
+    origin of the owner.
+
 For Document objects and images
 
-    If a Document is in a browsing context whose sandboxed origin browsing context flag was set when the Document was created
+    If a Document is in a browsing context whose sandboxed origin browsing
+    context flag was set when the Document was created
     If a Document was generated from a resource labeled as text/html-sandboxed
-        The origin is a globally unique identifier assigned when the Document is created.
+        The origin is a globally unique identifier assigned when the Document
+        is created.
     If a Document or image was generated from a javascript: URL
-        The origin is equal to the origin of the script of that javascript: URL.
-    If a Document or image was served over the network and has an address that uses a URL scheme with a server-based naming authority
-        The origin is the origin of the address of the Document or the URL of the image, as appropriate.
-    If a Document or image was generated from a data: URL that was returned as the location of an HTTP redirect (or equivalent in other protocols)
+        The origin is equal to the origin of the script of that javascript:
+        URL.
+    If a Document or image was served over the network and has an address that
+    uses a URL scheme with a server-based naming authority
+        The origin is the origin of the address of the Document or the URL of
+        the image, as appropriate.
+    If a Document or image was generated from a data: URL that was returned as
+    the location of an HTTP redirect (or equivalent in other protocols)
         The origin is the origin of the URL that redirected to the data: URL.
-    If a Document or image was generated from a data: URL found in another Document or in a script
-        The origin is the origin of the Document or script that initiated the navigation to that URL.
+    If a Document or image was generated from a data: URL found in another
+    Document or in a script
+        The origin is the origin of the Document or script that initiated the
+        navigation to that URL.
     If a Document has the address "about:blank"
-        The origin of the Document is the origin it was assigned when its browsing context was created.
+        The origin of the Document is the origin it was assigned when its
+        browsing context was created.
     If a Document is an iframe srcdoc document
-        The origin of the Document is the origin of the Document's browsing context's browsing context container's Document.
-    If a Document or image was obtained in some other manner (e.g. a data: URL typed in by the user, a Document created using the createDocument() API, etc)
-        The origin is a globally unique identifier assigned when the Document or image is created.
+        The origin of the Document is the origin of the Document's browsing
+        context's browsing context container's Document.
+    If a Document or image was obtained in some other manner (e.g. a data: URL
+    typed in by the user, a Document created using the createDocument() API,
+    etc)
+        The origin is a globally unique identifier assigned when the Document
+        or image is created.
 
-    When a Document is created, its effective script origin is initialized to the origin of the Document. However, the document.domain attribute can be used to change it.
+    When a Document is created, its effective script origin is initialized to
+    the origin of the Document. However, the document.domain attribute can be
+    used to change it.
+
 For audio and video elements
 
-    If value of the media element's currentSrc attribute is the empty string, the origin is the same as the origin of the element's Document's origin.
+    If value of the media element's currentSrc attribute is the empty string,
+    the origin is the same as the origin of the element's Document's origin.
+    
+     Otherwise, the origin is equal to the origin of the absolute URL given by
+    the media element's currentSrc attribute.
 
-    Otherwise, the origin is equal to the origin of the absolute URL given by the media element's currentSrc attribute.
 For fonts
 
-    The origin of a downloadable Web font is equal to the origin of the absolute URL used to obtain the font (after any redirects). [CSSFONTS]
-
-    The origin of a locally installed system font is equal to the origin of the Document in which that font is being used.
+    The origin of a downloadable Web font is equal to the origin of the
+    absolute URL used to obtain the font (after any redirects). [CSSFONTS]
+    
+     The origin of a locally installed system font is equal to the origin of
+    the Document in which that font is being used.
 
 Other specifications can override the above definitions by themselves
 specifying the origin of a particular URL, script, Document, or image.
@@ -30275,74 +30874,59 @@ specifying the origin of a particular URL, script, Document, or image.
 The Unicode serialization of an origin is the string obtained by applying the
 following algorithm to the given origin:
 
-   1.
+   1. If the origin in question is not a scheme/host/port tuple, then return
+      the literal string "null" and abort these steps.
+   2. Otherwise, let result be the scheme part of the origin tuple.
+   3. Append the string "://" to result.
+   4. Apply the IDNA ToUnicode algorithm to each component of the host part of
+      the origin tuple, and append the results — each component, in the same
+      order, separated by U+002E FULL STOP characters (.) — to result.
+      [RFC3490]
+   5. If the port part of the origin tuple gives a port that is different from
+      the default port for the protocol given by the scheme part of the origin
+      tuple, then append a U+003A COLON character (:) and the given port, in
+      base ten, to result.
+   6. Return result. 
 
-      If the origin in question is not a scheme/host/port tuple, then return the literal string "null" and abort these steps.
-   2.
+The ASCII serialization of an origin is the string obtained by applying the
+following algorithm to the given origin:
 
-      Otherwise, let result be the scheme part of the origin tuple.
-   3.
+   1. If the origin in question is not a scheme/host/port tuple, then return
+      the literal string "null" and abort these steps.
+   2. Otherwise, let result be the scheme part of the origin tuple.
+   3. Append the string "://" to result.
+   4. Apply the IDNA ToASCII algorithm the host part of the origin tuple, with
+      both the AllowUnassigned and UseSTD3ASCIIRules flags set, and append the
+      results result.
+      
+      If ToASCII fails to convert one of the components of the string, e.g.
+      because it is too long or because it contains invalid characters, then
+      return the empty string and abort these steps. [RFC3490]
+   5. If the port part of the origin tuple gives a port that is different from
+      the default port for the protocol given by the scheme part of the origin
+      tuple, then append a U+003A COLON character (:) and the given port, in
+      base ten, to result.
+   6. Return result. 
 
-      Append the string "://" to result.
-   4.
+Two origins are said to be the same origin if the following algorithm returns
+true:
 
-      Apply the IDNA ToUnicode algorithm to each component of the host part of the origin tuple, and append the results — each component, in the same order, separated by U+002E FULL STOP characters (.) — to result. [RFC3490]
-   5.
+   1. Let A be the first origin being compared, and B be the second origin
+      being compared.
+   2. If A and B are both opaque identifiers, and their value is equal, then
+      return true.
+   3. Otherwise, if either A or B or both are opaque identifiers, return false.
+   4. If A and B have scheme components that are not identical, return false.
+   5. If A and B have host components that are not identical, return false.
+   6. If A and B have port components that are not identical, return false.
+   7. If either A or B have additional data, but that data is not identical for both, return false.
+   8. Return true. 
 
-      If the port part of the origin tuple gives a port that is different from the default port for the protocol given by the scheme part of the origin tuple, then append a U+003A COLON character (:) and the given port, in base ten, to result.
-   6.
+******************************************************************************/
+test('TODO: ', function(){
 
-      Return result. 
-
-The ASCII serialization of an origin is the string obtained by applying the following algorithm to the given origin:
-
-   1.
-
-      If the origin in question is not a scheme/host/port tuple, then return the literal string "null" and abort these steps.
-   2.
-
-      Otherwise, let result be the scheme part of the origin tuple.
-   3.
-
-      Append the string "://" to result.
-   4.
-
-      Apply the IDNA ToASCII algorithm the host part of the origin tuple, with both the AllowUnassigned and UseSTD3ASCIIRules flags set, and append the results result.
-
-      If ToASCII fails to convert one of the components of the string, e.g. because it is too long or because it contains invalid characters, then return the empty string and abort these steps. [RFC3490]
-   5.
-
-      If the port part of the origin tuple gives a port that is different from the default port for the protocol given by the scheme part of the origin tuple, then append a U+003A COLON character (:) and the given port, in base ten, to result.
-   6.
-
-      Return result. 
-
-Two origins are said to be the same origin if the following algorithm returns true:
-
-   1.
-
-      Let A be the first origin being compared, and B be the second origin being compared.
-   2.
-
-      If A and B are both opaque identifiers, and their value is equal, then return true.
-   3.
-
-      Otherwise, if either A or B or both are opaque identifiers, return false.
-   4.
-
-      If A and B have scheme components that are not identical, return false.
-   5.
-
-      If A and B have host components that are not identical, return false.
-   6.
-
-      If A and B have port components that are not identical, return false.
-   7.
-
-      If either A or B have additional data, but that data is not identical for both, return false.
-   8.
-
-      Return true. 
+});
+/******************************************************************************
 
 5.3.1 Relaxing the same-origin restriction
 
@@ -30350,7 +30934,9 @@ document . domain [ = domain ]
 
     Returns the current domain used for security checks.
 
-    Can be set to a value that removes subdomains, to change the effective script origin to allow pages on other subdomains of the same domain (if they do the same thing) to access each other.
+    Can be set to a value that removes subdomains, to change the effective
+    script origin to allow pages on other subdomains of the same domain (if
+    they do the same thing) to access each other.
 
 The domain attribute on Document objects must be initialized to the
 document's domain, if it has one, and the empty string otherwise. If the
@@ -30362,40 +30948,39 @@ has no browsing context, in which case it must return the empty string.
 
 On setting, the user agent must run the following algorithm:
 
-   1.
-
-      If the Document has no browsing context, throw a SECURITY_ERR exception and abort these steps.
-   2.
-
-      If the new value is an IP address, let new value be the new value. Otherwise, apply the IDNA ToASCII algorithm to the new value, with both the AllowUnassigned and UseSTD3ASCIIRules flags set, and let new value be the result of the ToASCII algorithm.
-
-      If ToASCII fails to convert one of the components of the string, e.g. because it is too long or because it contains invalid characters, then throw a SECURITY_ERR exception and abort these steps. [RFC3490]
-   3.
-
-      If new value is not exactly equal to the current value of the document.domain attribute, then run these substeps:
-         1.
-
-            If the current value is an IP address, throw a SECURITY_ERR exception and abort these steps.
-         2.
-
-            If new value, prefixed by a U+002E FULL STOP (.), does not exactly match the end of the current value, throw a SECURITY_ERR exception and abort these steps.
-         3.
-
-            If new value matches a suffix in the Public Suffix List, or, if new value, prefixed by a U+002E FULL STOP (.), matches the end of a suffix in the Public Suffix List, then throw a SECURITY_ERR exception and abort these steps. [PSL]
-
-            Suffixes must be compared after applying the IDNA ToASCII algorithm to them, with both the AllowUnassigned and UseSTD3ASCIIRules flags set, in an ASCII case-insensitive manner. [RFC3490]
-   4.
-
-      Release the storage mutex.
-   5.
-
-      Set the attribute's value to new value.
-   6.
-
-      Set the host part of the effective script origin tuple of the Document to new value.
-   7.
-
-      Set the port part of the effective script origin tuple of the Document to "manual override" (a value that, for the purposes of comparing origins, is identical to "manual override" but not identical to any other value).
+   1. If the Document has no browsing context, throw a SECURITY_ERR exception
+      and abort these steps.
+   2. If the new value is an IP address, let new value be the new value.
+      Otherwise, apply the IDNA ToASCII algorithm to the new value, with both
+      the AllowUnassigned and UseSTD3ASCIIRules flags set, and let new value be
+      the result of the ToASCII algorithm.
+      
+      If ToASCII fails to convert one of the components of the string, e.g.
+      because it is too long or because it contains invalid characters, then
+      throw a SECURITY_ERR exception and abort these steps. [RFC3490]
+   3. If new value is not exactly equal to the current value of the
+      document.domain attribute, then run these substeps:
+         1. If the current value is an IP address, throw a SECURITY_ERR
+            exception and abort these steps.
+         2. If new value, prefixed by a U+002E FULL STOP (.), does not exactly
+            match the end of the current value, throw a SECURITY_ERR exception
+            and abort these steps.
+         3. If new value matches a suffix in the Public Suffix List, or, if new
+            value, prefixed by a U+002E FULL STOP (.), matches the end of a
+            suffix in the Public Suffix List, then throw a SECURITY_ERR
+            exception and abort these steps. [PSL]
+            
+            Suffixes must be compared after applying the IDNA ToASCII
+            algorithm to them, with both the AllowUnassigned and
+            UseSTD3ASCIIRules flags set, in an ASCII case-insensitive manner.
+            [RFC3490]
+   4. Release the storage mutex.
+   5. Set the attribute's value to new value.
+   6. Set the host part of the effective script origin tuple of the Document to
+      new value.
+   7. Set the port part of the effective script origin tuple of the Document to
+      "manual override" (a value that, for the purposes of comparing origins,
+      is identical to "manual override" but not identical to any other value).
 
 The domain of a Document is the host part of the document's origin, if that
 is a scheme/host/port tuple. If it isn't, then the document does not have a
@@ -30411,7 +30996,19 @@ protects two different sites on the same host will fail, as the ports are
 ignored when comparing origins after the document.domain attribute has been
 used.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.4 Session history and navigation
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.4.1 The session history of browsing contexts
 
@@ -30500,6 +31097,12 @@ script navigates back or forwards to a page which has no in-memory DOM
 objects, any other entries that shared the same Document object with it must
 share the new object as well.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.4.2 The History interface
 
 interface History {
@@ -30514,29 +31117,37 @@ interface History {
 window . history . length
 
     Returns the number of entries in the joint session history.
+
 window . history . go( [ delta ] )
 
-    Goes back or forward the specified number of steps in the joint session history.
+    Goes back or forward the specified number of steps in the joint session
+    history.
 
     A zero delta will reload the current page.
 
     If the delta is out of range, does nothing.
+
 window . history . back()
 
     Goes back one step in the joint session history.
 
     If there is no previous page, does nothing.
+
 window . history . forward()
 
     Goes forward one step in the joint session history.
 
     If there is no next page, does nothing.
+
 window . history . pushState(data, title [, url ] )
 
-    Pushes the given data onto the session history, with the given title, and, if provided, the given URL.
+    Pushes the given data onto the session history, with the given title, and,
+    if provided, the given URL.
+
 window . history . replaceState(data, title [, url ] )
 
-    Updates the current entry in the session history to have the given data, title, and, if provided, URL.
+    Updates the current entry in the session history to have the given data,
+    title, and, if provided, URL.
 
 The joint session history of a History object is the union of all the session
 histories of all browsing contexts of all the fully active Document objects
@@ -30576,30 +31187,24 @@ To traverse the history by a delta delta, the user agent must queue a task to
 run the following steps. The task source for the queued task is the history
 traversal task source.
 
-   1.
-
-      Let delta be the argument to the method.
-   2.
-
-      If the index of the current entry of the joint session history plus delta is less than zero or greater than or equal to the number of items in the joint session history, then abort these steps.
-   3.
-
-      Let specified entry be the entry in the joint session history whose index is the sum of delta and the index of the current entry of the joint session history.
-   4.
-
-      Let specified browsing context be the browsing context of the specified entry.
-   5.
-
-      If the specified browsing context's active document is not the same Document as the Document of the specified entry, then run these substeps:
-         1.
-
-            Prompt to unload the active document of the specified browsing context. If the user refused to allow the document to be unloaded, then abort these steps.
-         2.
-
-            Unload the active document of the specified browsing context with the recycle parameter set to false. 
-   6.
-
-      Traverse the history of the specified browsing context to the specified entry.
+   1. Let delta be the argument to the method.
+   2. If the index of the current entry of the joint session history plus delta
+      is less than zero or greater than or equal to the number of items in the
+      joint session history, then abort these steps.
+   3. Let specified entry be the entry in the joint session history whose index
+      is the sum of delta and the index of the current entry of the joint
+      session history.
+   4. Let specified browsing context be the browsing context of the specified
+      entry.
+   5. If the specified browsing context's active document is not the same
+      Document as the Document of the specified entry, then run these substeps:
+         1. Prompt to unload the active document of the specified browsing
+            context. If the user refused to allow the document to be unloaded,
+            then abort these steps.
+         2. Unload the active document of the specified browsing context with
+            the recycle parameter set to false.
+   6. Traverse the history of the specified browsing context to the specified
+      entry.
 
 When the user navigates through a browsing context, e.g. using a browser's
 back and forward buttons, the user agent must traverse the history by a delta
@@ -30614,53 +31219,62 @@ and optionally the URL of the current entry in the history.
 When either of these methods is invoked, the user agent must run the
 following steps:
 
-   1.
+   1. Let clone data be a structured clone of the specified data. If this
+      throws an exception, then rethrow that exception and abort these steps.
+   2. If a third argument is specified, run these substeps:
+         1. Resolve the value of the third argument, relative to the entry 
+            script's base URL.
+         2. If that fails, raise a SECURITY_ERR exception and abort these 
+            steps.
+         3. Compare the resulting absolute URL to the document's address. If 
+            any part of these two URLs differ other than the <path>, <query>, 
+            and <fragment> components, then raise a SECURITY_ERR exception and 
+            abort these steps.
+         4. If the origin of the resulting absolute URL is not the same as the 
+            origin of the entry script's document, and either the <path> or 
+            <query> components of the two URLs compared in the previous step 
+            differ, raise a SECURITY_ERR exception and abort these steps. (This 
+            prevents sandboxed content from spoofing other pages on the same 
+            origin.)
 
-      Let clone data be a structured clone of the specified data. If this throws an exception, then rethrow that exception and abort these steps.
-   2.
-
-      If a third argument is specified, run these substeps:
-         1. Resolve the value of the third argument, relative to the entry script's base URL.
-         2. If that fails, raise a SECURITY_ERR exception and abort these steps.
-         3. Compare the resulting absolute URL to the document's address. If any part of these two URLs differ other than the <path>, <query>, and <fragment> components, then raise a SECURITY_ERR exception and abort these steps.
-         4. If the origin of the resulting absolute URL is not the same as the origin of the entry script's document, and either the <path> or <query> components of the two URLs compared in the previous step differ, raise a SECURITY_ERR exception and abort these steps. (This prevents sandboxed content from spoofing other pages on the same origin.)
-
-      For the purposes of the comparisons in the above substeps, the <path> and <query> components can only be the same if the URLs are both hierarchical URLs.
-   3.
-
-      If the method invoked was the pushState() method:
-         1.
-
-            Remove all the entries in the browsing context's session history after the current entry. If the current entry is the last entry in the session history, then no entries are removed.
-
-            This doesn't necessarily have to affect the user agent's user interface.
-         2.
-
-            Remove any tasks queued by the history traversal task source.
-         3.
-
-            If appropriate, update the current entry to reflect any state that the user agent wishes to persist. The entry is then said to be an entry with persisted user state.
-         4.
-
-            Add a state object entry to the session history, after the current entry, with cloned data as the state object, the given title as the title, and, if the third argument is present, the absolute URL that was found earlier in this algorithm as the URL of the entry.
-         5.
-
-            Update the current entry to be the this newly added entry. 
+      For the purposes of the comparisons in the above substeps, the <path> and
+      <query> components can only be the same if the URLs are both hierarchical
+      URLs.
+   3. If the method invoked was the pushState() method:
+         1. Remove all the entries in the browsing context's session history
+            after the current entry. If the current entry is the last entry in
+            the session history, then no entries are removed.
+            
+            This doesn't necessarily have to affect the user agent's user
+            interface.
+         2. Remove any tasks queued by the history traversal task source.
+         3. If appropriate, update the current entry to reflect any state that
+            the user agent wishes to persist. The entry is then said to be an
+            entry with persisted user state.
+         4. Add a state object entry to the session history, after the current
+            entry, with cloned data as the state object, the given title as the
+            title, and, if the third argument is present, the absolute URL that
+            was found earlier in this algorithm as the URL of the entry.
+         5. Update the current entry to be the this newly added entry. 
 
       Otherwise, if the method invoked was the replaceState() method:
-         1.
-
-            Update the current entry in the session history so that cloned data is the entry's new state object, the given title is the new title, and, if the third argument is present, the absolute URL that was found earlier in this algorithm is the entry's new URL. 
-   4.
-
-      If the third argument is present, set the document's current address to the absolute URL that was found earlier in this algorithm.
-
-      Since this is neither a navigation of the browsing context nor a history traversal, it does not cause a hashchange event to be fired.
-   5.
-
-      If the current document readiness is not yet set to the string "complete", let the Document's pending state object be another structured clone of the specified data. (If there was already a pending state object, the previous one is discarded.)
-
-      This ensures that the popstate event that will be fired when the document finally loads will accurately reflect the pushed or replaced state object.
+         1. Update the current entry in the session history so that cloned data
+            is the entry's new state object, the given title is the new title,
+            and, if the third argument is present, the absolute URL that was
+            found earlier in this algorithm is the entry's new URL.
+   4. If the third argument is present, set the document's current address to
+      the absolute URL that was found earlier in this algorithm.
+      
+      Since this is neither a navigation of the browsing context nor a history
+      traversal, it does not cause a hashchange event to be fired.
+   5. If the current document readiness is not yet set to the string
+      "complete", let the Document's pending state object be another structured
+      clone of the specified data. (If there was already a pending state
+      object, the previous one is discarded.)
+      
+      This ensures that the popstate event that will be fired when the
+      document finally loads will accurately reflect the pushed or replaced
+      state object.
 
 The title is purely advisory. User agents might use the title in the user
 interface.
@@ -30688,7 +31302,8 @@ the following:
  <a href="?x=4">retreat to 4</a>?
 </p>
 
-The problem with such a system is that each time the user clicks, the whole page has to be reloaded. Here instead is another way of doing it, using script:
+The problem with such a system is that each time the user clicks, the whole
+page has to be reloaded. Here instead is another way of doing it, using script:
 
 <!DOCTYPE HTML>
 <!-- this starts off as http://example.com/line?x=5 -->
@@ -30754,9 +31369,16 @@ title.
 State: <OUTPUT NAME=I>1</OUTPUT> <INPUT VALUE="Increment" TYPE=BUTTON ONCLICK="inc()">
 </FORM>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.4.3 The Location interface
 
-Each Document object in a browsing context's session history is associated with a unique instance of a Location object.
+Each Document object in a browsing context's session history is associated with
+a unique instance of a Location object.
 
 document . location [ = value ]
 window . location [ = value ]
@@ -30800,15 +31422,20 @@ location . href [ = value ]
     Returns the current page's location.
 
     Can be set, to navigate to another page.
+
 location . assign(url)
 
     Navigates to the given page.
+
 location . replace(url)
 
-    Removes the current page from the session history and navigates to the given page.
+    Removes the current page from the session history and navigates to the
+    given page.
+
 location . reload()
 
     Reloads the current page.
+
 url = location . resolveURL(url)
 
     Resolves the given relative URL to an absolute URL.
@@ -30847,27 +31474,63 @@ If the currently executing task is the dispatch of a resize event in response
 to the user resizing the browsing context
 
     Repaint the browsing context and abort these steps. 
+
 If the browsing context's active document is an iframe srcdoc document
 
-    Reprocess the iframe attributes of the browsing context's browsing context container. 
+    Reprocess the iframe attributes of the browsing context's browsing context
+    container.
+
 If the browsing context's active document has its reload override flag set
 
     Perform an overridden reload. 
+
 Otherwise
 
-    Navigate the browsing context to the document's current address with replacement enabled. The source browsing context must be the browsing context being navigated. 
+    Navigate the browsing context to the document's current address with
+    replacement enabled. The source browsing context must be the browsing
+    context being navigated.
 
-When a user requests that the current page of a browsing context be reloaded through a user interface element, the user agent should navigate the browsing context to the same resource as Document, with replacement enabled. In the case of non-idempotent methods (e.g. HTTP POST), the user agent should prompt the user to confirm the operation first, since otherwise transactions (e.g. purchases or database modifications) could be repeated. User agents may allow the user to explicitly override any caches when reloading. If browsing context's active document's reload override flag is set, then the user agent may instead perform an overridden reload rather than the navigation described in this paragraph.
+When a user requests that the current page of a browsing context be reloaded
+through a user interface element, the user agent should navigate the browsing
+context to the same resource as Document, with replacement enabled. In the case
+of non-idempotent methods (e.g. HTTP POST), the user agent should prompt the
+user to confirm the operation first, since otherwise transactions (e.g.
+purchases or database modifications) could be repeated. User agents may allow
+the user to explicitly override any caches when reloading. If browsing
+context's active document's reload override flag is set, then the user agent
+may instead perform an overridden reload rather than the navigation described
+in this paragraph.
 
-The Location interface also has the complement of URL decomposition IDL attributes, protocol, host, port, hostname, pathname, search, and hash. These must follow the rules given for URL decomposition IDL attributes, with the input being the current address of the associated Document object, as an absolute URL (same as the href attribute), and the common setter action being the same as setting the href attribute to the new output value.
+The Location interface also has the complement of URL decomposition IDL
+attributes, protocol, host, port, hostname, pathname, search, and hash. These
+must follow the rules given for URL decomposition IDL attributes, with the
+input being the current address of the associated Document object, as an
+absolute URL (same as the href attribute), and the common setter action being
+the same as setting the href attribute to the new output value.
 
-The resolveURL(url) method must resolve its url argument, relative to the entry script's base URL, and if that succeeds, return the resulting absolute URL. If it fails, it must throw a SYNTAX_ERR exception instead.
+The resolveURL(url) method must resolve its url argument, relative to the entry
+script's base URL, and if that succeeds, return the resulting absolute URL. If
+it fails, it must throw a SYNTAX_ERR exception instead.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.4.3.1 Security
 
-User agents must raise a SECURITY_ERR exception whenever any of the members of a Location object are accessed by scripts whose effective script origin is not the same as the Location object's associated Document's effective script origin, with the following exceptions:
+User agents must raise a SECURITY_ERR exception whenever any of the members of
+a Location object are accessed by scripts whose effective script origin is not
+the same as the Location object's associated Document's effective script
+origin, with the following exceptions:
 
-    * The href setter, if the script is running in a browsing context that is allowed to navigate the browsing context with which the Location object is associated
-    * The replace() method, if the script is running in a browsing context that is allowed to navigate the browsing context with which the Location object is associated 
+    * The href setter, if the script is running in a browsing context that is
+      allowed to navigate the browsing context with which the Location object
+      is associated
+    * The replace() method, if the script is running in a browsing context that
+      is allowed to navigate the browsing context with which the Location
+      object is associated
 
 5.4.4 Implementation notes for session history
 
@@ -30899,7 +31562,19 @@ In addition, a user agent could ignore calls to pushState() that are invoked
 on a timer, or from event listeners that are not triggered in response to a
 clear user action, or that are invoked in rapid succession.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.5 Browsing the Web
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.5.1 Navigating across documents
 
@@ -30917,97 +31592,180 @@ specification.
 When a browsing context is navigated to a new resource, the user agent must
 run the following steps:
 
-   1.
+   1. Release the storage mutex.
+   2. If the source browsing context is not the same as the browsing context
+      being navigated, and the source browsing context is not one of the
+      ancestor browsing contexts of the browsing context being navigated, and
+      the browsing context being navigated is not both a top-level browsing
+      context and one of the ancestor browsing contexts of the source browsing
+      context, and the source browsing context had its sandboxed navigation
+      browsing context flag set when its active document was created, then
+      abort these steps.
+      
+       Otherwise, if the browsing context being navigated is a top-level
+      browsing context, and is one of the ancestor browsing contexts of the
+      source browsing context, and the source browsing context had its
+      sandboxed top-level navigation browsing context flag set when its active
+      document was created, then abort these steps.
+      
+       In both cases, the user agent may additionally offer to open the new
+      resource in a new top-level browsing context or in the top-level browsing
+      context of the source browsing context, at the user's option, in which
+      case the user agent must navigate that designated top-level browsing
+      context to the new resource as if the user had requested it
+      independently.
+   3. If the source browsing context is the same as the browsing context being
+      navigated, and this browsing context has its seamless browsing context
+      flag set, and the browsing context being navigated was not chosen using
+      an explicit self-navigation override, then find the nearest ancestor
+      browsing context that does not have its seamless browsing context flag
+      set, and continue these steps as if that browsing context was the one
+      that was going to be navigated instead.
+   4. If there is a preexisting attempt to navigate the browsing context, and
+      the source browsing context is the same as the browsing context being
+      navigated, and that attempt is currently running the unload a document
+      algorithm, and the origin of the URL of the resource being loaded in that
+      navigation is not the same origin as the origin of the URL of the
+      resource being loaded in this navigation, then abort these steps without
+      affecting the preexisting attempt to navigate the browsing context.
+   5. If a task queued by the traverse the history by a delta algorithm is
+      running the unload a document algorithm for the active document of the
+      browsing context being navigated, then abort these steps without
+      affecting the unload a document algorithm or the aforementioned history
+      traversal task.
+   6. If there is a preexisting attempt to navigate the browsing context, and
+      either that attempt has not yet matured (i.e. it has not passed the point
+      of making its Document the active document), or that navigation's
+      resource is not to be fetched using HTTP GET or equivalent, or its
+      resource's absolute URL differs from this attempt's by more than the
+      presence, absence, or value of the <fragment> component, then cancel that
+      preexisting attempt to navigate the browsing context.
+   7. Fragment identifiers: If the absolute URL of the new resource is the same
+      as the address of the active document of the browsing context being
+      navigated, ignoring any <fragment> components of those URLs, and the new
+      resource is to be fetched using HTTP GET or equivalent, and the absolute
+      URL of the new resource has a <fragment> component (even if it is empty),
+      then navigate to that fragment identifier and abort these steps.
+   8. Cancel any preexisting attempt to navigate the browsing context.
+   9. Abort the active document of the browsing context.
+  10. If the new resource is to be handled using a mechanism that does not
+      affect the browsing context, e.g. ignoring the navigation request
+      altogether because the specified scheme is not one of the supported
+      protocols, then abort these steps and proceed with that mechanism
+      instead.
+  11. Prompt to unload the Document object. If the user refused to allow the
+      document to be unloaded, then these steps must be aborted.
+  12. If the new resource is to be handled by displaying some sort of inline
+      content, e.g. an error message because the specified scheme is not one of
+      the supported protocols, or an inline prompt to allow the user to select
+      a registered handler for the given scheme, then display the inline
+      content and abort these steps.
+      
+      In the case of a registered handler being used, the algorithm will be
+      reinvoked with a new URL to handle the request.
+  13. If the new resource is to be fetched using HTTP GET or equivalent, then
+      check if there are any relevant application caches that are identified by
+      a URL with the same origin as the URL in question, and that have this URL
+      as one of their entries, excluding entries marked as foreign. If so, then
+      the user agent must then get the resource from the most appropriate
+      application cache of those that match.
+      
+       For example, imagine an HTML page with an associated application cache
+      displaying an image and a form, where the image is also used by several
+      other application caches. If the user right-clicks on the image and
+      chooses "View Image", then the user agent could decide to show the image
+      from any of those caches, but it is likely that the most useful cache for
+      the user would be the one that was used for the aforementioned HTML page.
+      On the other hand, if the user submits the form, and the form does a POST
+      submission, then the user agent will not use an application cache at all;
+      the submission will be made to the network.
+      
+       Otherwise, unless it has already been obtained, fetch the new resource,
+      with the manual redirect flag set.
+      
+       If the resource is being fetched using a method other than one
+      equivalent to HTTP's GET, or, if the navigation algorithm was invoked as
+      a result of the form submission algorithm, then the fetching algorithm
+      must be invoked from the origin of the active document of the source
+      browsing context, if any.
+      
+       If the browsing context being navigated is a child browsing context for
+      an iframe or object element, then the fetching algorithm must be invoked
+      from the iframe or object element's browsing context scope origin, if it
+      has one.
+      
+       The fetch algorithm must delay the load event of the browsing context.
+  14. At this point, unless this step has already been reached once before in
+      the execution of this instance of the algorithm, the user agents must
+      return to whatever algorithm invoked the navigation steps and must
+      continue these steps asynchronously.
+  15. If fetching the resource results in a redirect, and either the URL of the
+      target of the redirect has the same origin as the original resource, or
+      the resource is being obtained using the POST method or a safe method (in
+      HTTP terms), return to the step labeled "fragment identifiers" with the
+      new resource.
+      
+       Otherwise, if fetching the resource results in a redirect but the URL of
+      the target of the redirect does not have the same origin as the original
+      resource and the resource is being obtained using a method that is
+      neither the POST method nor a safe method (in HTTP terms), then abort
+      these steps. The user agent may indicate to the user that the navigation
+      has been aborted for security reasons.
+  16. Wait for one or more bytes to be available or for the user agent to
+      establish that the resource in question is empty. During this time, the
+      user agent may allow the user to cancel this navigation attempt or start
+      other navigation attempts.
+  17. If the resource was not fetched from an application cache, and was to be
+      fetched using HTTP GET or equivalent, and its URL matches the fallback
+      namespace of one or more relevant application caches, and the most
+      appropriate application cache of those that match does not have an entry
+      in its online whitelist that has the same origin as the resource's URL
+      and that is a prefix match for the resource's URL, and the user didn't
+      cancel the navigation attempt during the previous step, and the
+      navigation attempt failed (e.g. the server returned a 4xx or 5xx status
+      code or equivalent, or there was a DNS error), then:
+      
+       Let candidate be the fallback resource specified for the fallback
+      namespace in question. If multiple application caches match, the user
+      agent must use the fallback of the most appropriate application cache of
+      those that match.
+      
+       If candidate is not marked as foreign, then the user agent must discard
+      the failed load and instead continue along these steps using candidate as
+      the resource. The document's address, if appropriate, will still be the
+      originally requested URL, not the fallback URL, but the user agent may
+      indicate to the user that the original page load failed, that the page
+      used was a fallback resource, and what the URL of the fallback resource
+      actually is.
+  18. If the document's out-of-band metadata (e.g. HTTP headers), not counting
+      any type information (such as the Content-Type HTTP header), requires
+      some sort of processing that will not affect the browsing context, then
+      perform that processing and abort these steps.
 
-      Release the storage mutex.
-   2.
-
-      If the source browsing context is not the same as the browsing context being navigated, and the source browsing context is not one of the ancestor browsing contexts of the browsing context being navigated, and the browsing context being navigated is not both a top-level browsing context and one of the ancestor browsing contexts of the source browsing context, and the source browsing context had its sandboxed navigation browsing context flag set when its active document was created, then abort these steps.
-
-      Otherwise, if the browsing context being navigated is a top-level browsing context, and is one of the ancestor browsing contexts of the source browsing context, and the source browsing context had its sandboxed top-level navigation browsing context flag set when its active document was created, then abort these steps.
-
-      In both cases, the user agent may additionally offer to open the new resource in a new top-level browsing context or in the top-level browsing context of the source browsing context, at the user's option, in which case the user agent must navigate that designated top-level browsing context to the new resource as if the user had requested it independently.
-   3.
-
-      If the source browsing context is the same as the browsing context being navigated, and this browsing context has its seamless browsing context flag set, and the browsing context being navigated was not chosen using an explicit self-navigation override, then find the nearest ancestor browsing context that does not have its seamless browsing context flag set, and continue these steps as if that browsing context was the one that was going to be navigated instead.
-   4.
-
-      If there is a preexisting attempt to navigate the browsing context, and the source browsing context is the same as the browsing context being navigated, and that attempt is currently running the unload a document algorithm, and the origin of the URL of the resource being loaded in that navigation is not the same origin as the origin of the URL of the resource being loaded in this navigation, then abort these steps without affecting the preexisting attempt to navigate the browsing context.
-   5.
-
-      If a task queued by the traverse the history by a delta algorithm is running the unload a document algorithm for the active document of the browsing context being navigated, then abort these steps without affecting the unload a document algorithm or the aforementioned history traversal task.
-   6.
-
-      If there is a preexisting attempt to navigate the browsing context, and either that attempt has not yet matured (i.e. it has not passed the point of making its Document the active document), or that navigation's resource is not to be fetched using HTTP GET or equivalent, or its resource's absolute URL differs from this attempt's by more than the presence, absence, or value of the <fragment> component, then cancel that preexisting attempt to navigate the browsing context.
-   7.
-
-      Fragment identifiers: If the absolute URL of the new resource is the same as the address of the active document of the browsing context being navigated, ignoring any <fragment> components of those URLs, and the new resource is to be fetched using HTTP GET or equivalent, and the absolute URL of the new resource has a <fragment> component (even if it is empty), then navigate to that fragment identifier and abort these steps.
-   8.
-
-      Cancel any preexisting attempt to navigate the browsing context.
-   9.
-
-      Abort the active document of the browsing context.
-  10.
-
-      If the new resource is to be handled using a mechanism that does not affect the browsing context, e.g. ignoring the navigation request altogether because the specified scheme is not one of the supported protocols, then abort these steps and proceed with that mechanism instead.
-  11.
-
-      Prompt to unload the Document object. If the user refused to allow the document to be unloaded, then these steps must be aborted.
-  12.
-
-      If the new resource is to be handled by displaying some sort of inline content, e.g. an error message because the specified scheme is not one of the supported protocols, or an inline prompt to allow the user to select a registered handler for the given scheme, then display the inline content and abort these steps.
-
-      In the case of a registered handler being used, the algorithm will be reinvoked with a new URL to handle the request.
-  13.
-
-      If the new resource is to be fetched using HTTP GET or equivalent, then check if there are any relevant application caches that are identified by a URL with the same origin as the URL in question, and that have this URL as one of their entries, excluding entries marked as foreign. If so, then the user agent must then get the resource from the most appropriate application cache of those that match.
-
-      For example, imagine an HTML page with an associated application cache displaying an image and a form, where the image is also used by several other application caches. If the user right-clicks on the image and chooses "View Image", then the user agent could decide to show the image from any of those caches, but it is likely that the most useful cache for the user would be the one that was used for the aforementioned HTML page. On the other hand, if the user submits the form, and the form does a POST submission, then the user agent will not use an application cache at all; the submission will be made to the network.
-
-      Otherwise, unless it has already been obtained, fetch the new resource, with the manual redirect flag set.
-
-      If the resource is being fetched using a method other than one equivalent to HTTP's GET, or, if the navigation algorithm was invoked as a result of the form submission algorithm, then the fetching algorithm must be invoked from the origin of the active document of the source browsing context, if any.
-
-      If the browsing context being navigated is a child browsing context for an iframe or object element, then the fetching algorithm must be invoked from the iframe or object element's browsing context scope origin, if it has one.
-
-      The fetch algorithm must delay the load event of the browsing context.
-  14.
-
-      At this point, unless this step has already been reached once before in the execution of this instance of the algorithm, the user agents must return to whatever algorithm invoked the navigation steps and must continue these steps asynchronously.
-  15.
-
-      If fetching the resource results in a redirect, and either the URL of the target of the redirect has the same origin as the original resource, or the resource is being obtained using the POST method or a safe method (in HTTP terms), return to the step labeled "fragment identifiers" with the new resource.
-
-      Otherwise, if fetching the resource results in a redirect but the URL of the target of the redirect does not have the same origin as the original resource and the resource is being obtained using a method that is neither the POST method nor a safe method (in HTTP terms), then abort these steps. The user agent may indicate to the user that the navigation has been aborted for security reasons.
-  16.
-
-      Wait for one or more bytes to be available or for the user agent to establish that the resource in question is empty. During this time, the user agent may allow the user to cancel this navigation attempt or start other navigation attempts.
-  17.
-
-      If the resource was not fetched from an application cache, and was to be fetched using HTTP GET or equivalent, and its URL matches the fallback namespace of one or more relevant application caches, and the most appropriate application cache of those that match does not have an entry in its online whitelist that has the same origin as the resource's URL and that is a prefix match for the resource's URL, and the user didn't cancel the navigation attempt during the previous step, and the navigation attempt failed (e.g. the server returned a 4xx or 5xx status code or equivalent, or there was a DNS error), then:
-
-      Let candidate be the fallback resource specified for the fallback namespace in question. If multiple application caches match, the user agent must use the fallback of the most appropriate application cache of those that match.
-
-      If candidate is not marked as foreign, then the user agent must discard the failed load and instead continue along these steps using candidate as the resource. The document's address, if appropriate, will still be the originally requested URL, not the fallback URL, but the user agent may indicate to the user that the original page load failed, that the page used was a fallback resource, and what the URL of the fallback resource actually is.
-  18.
-
-      If the document's out-of-band metadata (e.g. HTTP headers), not counting any type information (such as the Content-Type HTTP header), requires some sort of processing that will not affect the browsing context, then perform that processing and abort these steps.
-
-      Such processing might be triggered by, amongst other things, the following:
+      Such processing might be triggered by, amongst other things, the
+      following:
           * HTTP status codes (e.g. 204 No Content or 205 Reset Content)
           * HTTP Content-Disposition headers
           * Network errors
 
-      HTTP 401 responses that do not include a challenge recognized by the user agent must be processed as if they had no challenge, e.g. rendering the entity body as if the response had been 200 OK.
-
-      User agents may show the entity body of an HTTP 401 response even when the response do include a recognized challenge, with the option to login being included in a non-modal fashion, to enable the information provided by the server to be used by the user before authenticating. Similarly, user agents should allow the user to authenticate (in a non-modal fashion) against authentication challenges included in other responses such as HTTP 200 OK responses, effectively allowing resources to present HTTP login forms without requiring their use.
-  19.
-
-      Let type be the sniffed type of the resource.
-  20.
-
-      If the user agent has been configured to process resources of the given type using some mechanism other than rendering the content in a browsing context, then skip this step. Otherwise, if the type is one of the following types, jump to the appropriate entry in the following list, and process the resource as described there:
+      HTTP 401 responses that do not include a challenge recognized by the user
+      agent must be processed as if they had no challenge, e.g. rendering the
+      entity body as if the response had been 200 OK.
+      
+       User agents may show the entity body of an HTTP 401 response even when
+      the response do include a recognized challenge, with the option to login
+      being included in a non-modal fashion, to enable the information provided
+      by the server to be used by the user before authenticating. Similarly,
+      user agents should allow the user to authenticate (in a non-modal
+      fashion) against authentication challenges included in other responses
+      such as HTTP 200 OK responses, effectively allowing resources to present
+      HTTP login forms without requiring their use.
+  19. Let type be the sniffed type of the resource.
+  20. If the user agent has been configured to process resources of the given
+      type using some mechanism other than rendering the content in a browsing
+      context, then skip this step. Otherwise, if the type is one of the
+      following types, jump to the appropriate entry in the following list, and
+      process the resource as described there:
 
       "text/html"
       "text/html-sandboxed"
@@ -31023,66 +31781,91 @@ run the following steps:
       A type that will use an external application to render the content in the browsing context
           Follow the steps given in the plugin section, and abort these steps.
 
-      Setting the document's address: If there is no override URL, then any Document created by these steps must have its address set to the URL that was originally to be fetched, ignoring any other data that was used to obtain the resource (e.g. the entity body in the case of a POST submission is not part of the document's address, nor is the URL of the fallback resource in the case of the original load having failed and that URL having been found to match a fallback namespace). However, if there is an override URL, then any Document created by these steps must have its address set to that URL instead.
+      Setting the document's address: If there is no override URL, then any
+      Document created by these steps must have its address set to the URL that
+      was originally to be fetched, ignoring any other data that was used to
+      obtain the resource (e.g. the entity body in the case of a POST
+      submission is not part of the document's address, nor is the URL of the
+      fallback resource in the case of the original load having failed and that
+      URL having been found to match a fallback namespace). However, if there
+      is an override URL, then any Document created by these steps must have
+      its address set to that URL instead.
 
       An override URL is set when dereferencing a javascript: URL.
 
-      Creating a new Document object: When a Document is created as part of the above steps, a new Window object must be created and associated with the Document, with one exception: if the browsing context's only entry in its session history is the about:blank Document that was added when the browsing context was created, and navigation is occurring with replacement enabled, and that Document has the same origin as the new Document, then the Window object of that Document must be used instead, and the document attribute of the Window object must be changed to point to the new Document instead.
-  21.
+      Creating a new Document object: When a Document is created as part of the
+      above steps, a new Window object must be created and associated with the
+      Document, with one exception: if the browsing context's only entry in its
+      session history is the about:blank Document that was added when the
+      browsing context was created, and navigation is occurring with
+      replacement enabled, and that Document has the same origin as the new
+      Document, then the Window object of that Document must be used instead,
+      and the document attribute of the Window object must be changed to point
+      to the new Document instead.
+  21. Non-document content: If, given type, the new resource is to be handled
+      by displaying some sort of inline content, e.g. a native rendering of the
+      content, an error message because the specified type is not supported, or
+      an inline prompt to allow the user to select a registered handler for the
+      given type, then display the inline content and abort these steps.
+      
+       In the case of a registered handler being used, the algorithm will be
+      reinvoked with a new URL to handle the request.
+  22. Otherwise, the document's type is such that the resource will not affect
+      the browsing context, e.g. because the resource is to be handed to an
+      external application. Process the resource appropriately.
 
-      Non-document content: If, given type, the new resource is to be handled by displaying some sort of inline content, e.g. a native rendering of the content, an error message because the specified type is not supported, or an inline prompt to allow the user to select a registered handler for the given type, then display the inline content and abort these steps.
+Some of the sections below, to which the above algorithm defers in certain
+cases, require the user agent to update the session history with the new page.
+When a user agent is required to do this, it must queue a task (associated with
+the Document object of the current entry, not the new one) to run the following
+steps:
 
-      In the case of a registered handler being used, the algorithm will be reinvoked with a new URL to handle the request.
-  22.
+   1. Unload the Document object of the current entry, with the recycle
+      parameter set to false.
+   2. If the navigation was initiated for entry update of an entry
+             1. Replace the Document of the entry being updated, and any other
+                entries that referenced the same document as that entry, with
+                the new Document.
+             2. Traverse the history to the new entry. 
 
-      Otherwise, the document's type is such that the resource will not affect the browsing context, e.g. because the resource is to be handed to an external application. Process the resource appropriately.
-
-Some of the sections below, to which the above algorithm defers in certain cases, require the user agent to update the session history with the new page. When a user agent is required to do this, it must queue a task (associated with the Document object of the current entry, not the new one) to run the following steps:
-
-   1.
-
-      Unload the Document object of the current entry, with the recycle parameter set to false.
-   2.
-
-      If the navigation was initiated for entry update of an entry
-             1.
-
-                Replace the Document of the entry being updated, and any other entries that referenced the same document as that entry, with the new Document.
-             2.
-
-                Traverse the history to the new entry. 
-
-          This can only happen if the entry being updated is no the current entry, and can never happen with replacement enabled. (It happens when the user tried to traverse to a session history entry that no longer had a Document object.)
+          This can only happen if the entry being updated is no the current
+          entry, and can never happen with replacement enabled. (It happens
+          when the user tried to traverse to a session history entry that no
+          longer had a Document object.)
       Otherwise
-             1.
+             1. Remove all the entries in the browsing context's session
+                history after the current entry. If the current entry is the
+                last entry in the session history, then no entries are removed.
+                
+                This doesn't necessarily have to affect the user agent's user
+                interface.
+             2. Remove any tasks queued by the history traversal task source.
+             3. Append a new entry at the end of the History object
+                representing the new resource and its Document object and
+                related state.
+             4. Traverse the history to the new entry. If the navigation was
+                initiated with replacement enabled, then the traversal must
+                itself be initiated with replacement enabled.
 
-                Remove all the entries in the browsing context's session history after the current entry. If the current entry is the last entry in the session history, then no entries are removed.
-
-                This doesn't necessarily have to affect the user agent's user interface.
-             2.
-
-                Remove any tasks queued by the history traversal task source.
-             3.
-
-                Append a new entry at the end of the History object representing the new resource and its Document object and related state.
-             4.
-
-                Traverse the history to the new entry. If the navigation was initiated with replacement enabled, then the traversal must itself be initiated with replacement enabled.
-
-   3.
-
-      The navigation algorithm has now matured.
-   4.
-
-      Fragment identifier loop: Spin the event loop for a user-agent-defined amount of time, as desired by the user agent implementor. (This is intended to allow the user agent to optimize the user experience in the face of performance concerns.)
-   5.
-
-      If the Document object has no parser, or its parser has stopped parsing, or the user agent has reason to believe the user is no longer interested in scrolling to the fragment identifier, then abort these steps.
-   6.
-
-      Scroll to the fragment identifier given in the document's current address. If this fails to find an indicated part of the document, then return to the fragment identifier loop step. 
+   3. The navigation algorithm has now matured.
+   4. Fragment identifier loop: Spin the event loop for a user-agent-defined
+      amount of time, as desired by the user agent implementor. (This is
+      intended to allow the user agent to optimize the user experience in the
+      face of performance concerns.)
+   5. If the Document object has no parser, or its parser has stopped parsing,
+      or the user agent has reason to believe the user is no longer interested
+      in scrolling to the fragment identifier, then abort these steps.
+   6. Scroll to the fragment identifier given in the document's current
+      address. If this fails to find an indicated part of the document, then
+      return to the fragment identifier loop step.
 
 The task source for this task is the networking task source.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.5.2 Page load processing model for HTML files
 
@@ -31201,6 +31984,12 @@ using, e.g., an XBL binding or a CSS extension.
 The task source for the two tasks mentioned in this section must be the
 networking task source.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.5.5 Page load processing model for images
 
 When an image resource is to be loaded in a browsing context, the user agent
@@ -31222,6 +32011,12 @@ the new page.
 User agents may add content to the head element of the Document, or
 attributes to the img element, e.g. to link to a style sheet or an XBL
 binding, to provide a script, to give the document a title, etc.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.5.6 Page load processing model for content that uses plugins
 
@@ -31250,6 +32045,12 @@ If the sandboxed plugins browsing context flag was set on the browsing
 context when the Document was created, the synthesized embed element will
 fail to render the content.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.5.7 Page load processing model for inline content that doesn't have a DOM
 
 When the user agent is to display a user agent page inline in a browsing
@@ -31270,142 +32071,209 @@ After creating the Document object, but potentially before the page has been
 completely set up, the user agent must update the session history with the
 new page.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.5.8 Navigating to a fragment identifier
 
-When a user agent is supposed to navigate to a fragment identifier, then the user agent must queue a task to run the following steps:
+When a user agent is supposed to navigate to a fragment identifier, then the
+user agent must queue a task to run the following steps:
 
-   1.
-
-      Remove all the entries in the browsing context's session history after the current entry. If the current entry is the last entry in the session history, then no entries are removed.
-
+   1. Remove all the entries in the browsing context's session history after
+      the current entry. If the current entry is the last entry in the session
+      history, then no entries are removed.
+      
       This doesn't necessarily have to affect the user agent's user interface.
-   2.
+   2. Remove any tasks queued by the history traversal task source.
+   3. Append a new entry at the end of the History object representing the new
+      resource and its Document object and related state. Its URL must be set
+      to the address to which the user agent was navigating. The title must be
+      left unset.
+   4. Traverse the history to the new entry. This will scroll to the fragment
+      identifier given in what is now the document's current address.
 
-      Remove any tasks queued by the history traversal task source.
-   3.
+If the scrolling fails because the relevant ID has not yet been parsed, then
+the original navigation algorithm will take care of the scrolling instead, as
+the last few steps of its update the session history with the new page
+algorithm.
 
-      Append a new entry at the end of the History object representing the new resource and its Document object and related state. Its URL must be set to the address to which the user agent was navigating. The title must be left unset.
-   4.
+When the user agent is required to scroll to the fragment identifier, it must
+change the scrolling position of the document using the scroll an element into
+view algorithm defined in the CSSOM View specification, or perform some other
+action, such that the indicated part of the document is brought to the user's
+attention. If there is no indicated part, then the user agent must not scroll
+anywhere. [CSSOMVIEW]
 
-      Traverse the history to the new entry. This will scroll to the fragment identifier given in what is now the document's current address. 
+The indicated part of the document is the one that the fragment identifier, if
+any, identifies. The semantics of the fragment identifier in terms of mapping
+it to a specific DOM Node is defined by the specification that defines the MIME
+type used by the Document (for example, the processing of fragment identifiers
+for XML MIME types is the responsibility of RFC3023). [RFC3023]
 
-If the scrolling fails because the relevant ID has not yet been parsed, then the original navigation algorithm will take care of the scrolling instead, as the last few steps of its update the session history with the new page algorithm.
+For HTML documents (and HTML MIME types), the following processing model must
+be followed to determine what the indicated part of the document is.
 
-When the user agent is required to scroll to the fragment identifier, it must change the scrolling position of the document using the scroll an element into view algorithm defined in the CSSOM View specification, or perform some other action, such that the indicated part of the document is brought to the user's attention. If there is no indicated part, then the user agent must not scroll anywhere. [CSSOMVIEW]
+   1. Parse the URL, and let fragid be the <fragment> component of the URL.
+   2. If fragid is the empty string, then the indicated part of the document is
+      the top of the document; stop the algorithm here.
+   3. Let decoded fragid be the result of expanding any sequences of
+      percent-encoded octets in fragid that are valid UTF-8 sequences into
+      Unicode characters as defined by UTF-8. If any percent-encoded octets in
+      that string are not valid UTF-8 sequences, then skip this step and the
+      next one.
+   4. If this step was not skipped and there is an element in the DOM that has
+      an ID exactly equal to decoded fragid, then the first such element in
+      tree order is the indicated part of the document; stop the algorithm
+      here.
+   5. If there is an a element in the DOM that has a name attribute whose value
+      is exactly equal to fragid (not decoded fragid), then the first such
+      element in tree order is the indicated part of the document; stop the
+      algorithm here.
+   6. If fragid is an ASCII case-insensitive match for the string top, then the
+      indicated part of the document is the top of the document; stop the
+      algorithm here.
+   7. Otherwise, there is no indicated part of the document. 
 
-The indicated part of the document is the one that the fragment identifier, if any, identifies. The semantics of the fragment identifier in terms of mapping it to a specific DOM Node is defined by the specification that defines the MIME type used by the Document (for example, the processing of fragment identifiers for XML MIME types is the responsibility of RFC3023). [RFC3023]
+For the purposes of the interaction of HTML with Selectors' :target
+pseudo-class, the target element is the indicated part of the document, if that
+is an element; otherwise there is no target element. [SELECTORS]
 
-For HTML documents (and HTML MIME types), the following processing model must be followed to determine what the indicated part of the document is.
+******************************************************************************/
+test('TODO: ', function(){
 
-   1.
+});
+/******************************************************************************
 
-      Parse the URL, and let fragid be the <fragment> component of the URL.
-   2.
-
-      If fragid is the empty string, then the indicated part of the document is the top of the document; stop the algorithm here.
-   3.
-
-      Let decoded fragid be the result of expanding any sequences of percent-encoded octets in fragid that are valid UTF-8 sequences into Unicode characters as defined by UTF-8. If any percent-encoded octets in that string are not valid UTF-8 sequences, then skip this step and the next one.
-   4.
-
-      If this step was not skipped and there is an element in the DOM that has an ID exactly equal to decoded fragid, then the first such element in tree order is the indicated part of the document; stop the algorithm here.
-   5.
-
-      If there is an a element in the DOM that has a name attribute whose value is exactly equal to fragid (not decoded fragid), then the first such element in tree order is the indicated part of the document; stop the algorithm here.
-   6.
-
-      If fragid is an ASCII case-insensitive match for the string top, then the indicated part of the document is the top of the document; stop the algorithm here.
-   7.
-
-      Otherwise, there is no indicated part of the document. 
-
-For the purposes of the interaction of HTML with Selectors' :target pseudo-class, the target element is the indicated part of the document, if that is an element; otherwise there is no target element. [SELECTORS]
 5.5.9 History traversal
 
-When a user agent is required to traverse the history to a specified entry, optionally with replacement enabled, the user agent must act as follows.
+When a user agent is required to traverse the history to a specified entry,
+optionally with replacement enabled, the user agent must act as follows.
 
-This algorithm is not just invoked when explicitly going back or forwards in the session history — it is also invoked in other situations, for example when navigating a browsing context, as part of updating the session history with the new page.
+This algorithm is not just invoked when explicitly going back or forwards in
+the session history — it is also invoked in other situations, for example when
+navigating a browsing context, as part of updating the session history with the
+new page.
 
-   1.
-
-      If there is no longer a Document object for the entry in question, the user agent must navigate the browsing context to the location for that entry to perform an entry update of that entry, and abort these steps. The "navigate" algorithm reinvokes this "traverse" algorithm to complete the traversal, at which point there is a Document object and so this step gets skipped. The navigation must be done using the same source browsing context as was used the first time this entry was created. (This can never happen with replacement enabled.)
-   2.
-
-      If the current entry's title was not set by the pushState() or replaceState() methods, then set its title to the value returned by the document.title IDL attribute.
-   3.
-
-      If appropriate, update the current entry in the browsing context's Document object's History object to reflect any state that the user agent wishes to persist. The entry is then said to be an entry with persisted user state.
-   4.
-
-      If the specified entry has a different Document object than the current entry then the user agent must run the following substeps:
-         1. If the browsing context is a top-level browsing context, but not an auxiliary browsing context, and the origin of the Document of the specified entry is not the same as the origin of the Document of the current entry, then the following sub-sub-steps must be run:
-               1. The current browsing context name must be stored with all the entries in the history that are associated with Document objects with the same origin as the active document and that are contiguous with the current entry.
+   1. If there is no longer a Document object for the entry in question, the
+      user agent must navigate the browsing context to the location for that
+      entry to perform an entry update of that entry, and abort these steps.
+      The "navigate" algorithm reinvokes this "traverse" algorithm to complete
+      the traversal, at which point there is a Document object and so this step
+      gets skipped. The navigation must be done using the same source browsing
+      context as was used the first time this entry was created. (This can
+      never happen with replacement enabled.)
+   2. If the current entry's title was not set by the pushState() or
+      replaceState() methods, then set its title to the value returned by the
+      document.title IDL attribute.
+   3. If appropriate, update the current entry in the browsing context's
+      Document object's History object to reflect any state that the user agent
+      wishes to persist. The entry is then said to be an entry with persisted
+      user state.
+   4. If the specified entry has a different Document object than the current
+      entry then the user agent must run the following substeps:
+         1. If the browsing context is a top-level browsing context, but not 
+            an auxiliary browsing context, and the origin of the Document of 
+            the specified entry is not the same as the origin of the Document 
+            of the current entry, then the following sub-sub-steps must be run:
+               1. The current browsing context name must be stored with all the 
+                  entries in the history that are associated with Document 
+                  objects with the same origin as the active document and that  
+                  are contiguous with the current entry.
                2. The browsing context's browsing context name must be unset.
-         2. The user agent must make the specified entry's Document object the active document of the browsing context.
-         3. If the specified entry has a browsing context name stored with it, then the following sub-sub-steps must be run:
-               1. The browsing context's browsing context name must be set to the name stored with the specified entry.
-               2. Any browsing context name stored with the entries in the history that are associated with Document objects with the same origin as the new active document, and that are contiguous with the specified entry, must be cleared.
-         4.
-
-            If the specified entry's Document has any input elements whose resulting autocompletion state is off, invoke the reset algorithm of each of those elements.
-         5.
-
-            If the current document readiness of the specified entry's Document is "complete", queue a task to fire a pageshow event at the Window object of that Document, but with its target set to the Document object (and the currentTarget set to the Window object), using the PageTransitionEvent interface, with the persisted attribute set to true. This event must not bubble, must not be cancelable, and has no default action. 
-   5.
-
-      Set the document's current address to the URL of the specified entry.
-   6.
-
-      If the specified entry has a URL whose fragment identifier differs from that of the current entry's when compared in a case-sensitive manner, and the two share the same Document object, then let hash changed be true, and let old URL be the URL of the current entry and new URL be the URL of the specified entry. Otherwise, let hash changed be false.
-   7.
-
-      If the traversal was initiated with replacement enabled, remove the entry immediately before the specified entry in the session history.
-   8.
-
-      If the specified entry is not an entry with persisted user state, but its URL has a fragment identifier, scroll to the fragment identifier.
-   9.
-
-      If the entry is an entry with persisted user state, the user agent may update aspects of the document and its rendering, for instance the scroll position or values of form fields, that it had previously recorded.
-
-      This can even include updating the dir attribute of textarea elements or input elements whose type attribute is in either the Text state or the Search state, if the persisted state includes the directionality of user input in such controls.
-  10.
-
-      If the entry is a state object entry, let state be a structured clone of that state object. Otherwise, let state be null.
-  11.
-
-      Run the appropriate steps according to the conditions described:
+         2. The user agent must make the specified entry's Document object the 
+            active document of the browsing context.
+         3. If the specified entry has a browsing context name stored with it, 
+            then the following sub-sub-steps must be run:
+               1. The browsing context's browsing context name must be set to 
+                  the name stored with the specified entry.
+               2. Any browsing context name stored with the entries in the 
+                  history that are associated with Document objects with the 
+                  same origin as the new active document, and that are 
+                  contiguous with the specified entry, must be cleared.
+         4. If the specified entry's Document has any input elements whose
+            resulting autocompletion state is off, invoke the reset algorithm
+            of each of those elements.
+         5. If the current document readiness of the specified entry's Document
+            is "complete", queue a task to fire a pageshow event at the Window
+            object of that Document, but with its target set to the Document
+            object (and the currentTarget set to the Window object), using the
+            PageTransitionEvent interface, with the persisted attribute set to
+            true. This event must not bubble, must not be cancelable, and has
+            no default action.
+   5. Set the document's current address to the URL of the specified entry.
+   6. If the specified entry has a URL whose fragment identifier differs from
+      that of the current entry's when compared in a case-sensitive manner, and
+      the two share the same Document object, then let hash changed be true,
+      and let old URL be the URL of the current entry and new URL be the URL of
+      the specified entry. Otherwise, let hash changed be false.
+   7. If the traversal was initiated with replacement enabled, remove the entry
+      immediately before the specified entry in the session history.
+   8. If the specified entry is not an entry with persisted user state, but its
+      URL has a fragment identifier, scroll to the fragment identifier.
+   9. If the entry is an entry with persisted user state, the user agent may
+      update aspects of the document and its rendering, for instance the scroll
+      position or values of form fields, that it had previously recorded.
+      
+       This can even include updating the dir attribute of textarea elements or
+      input elements whose type attribute is in either the Text state or the
+      Search state, if the persisted state includes the directionality of user
+      input in such controls.
+  10. If the entry is a state object entry, let state be a structured clone of
+      that state object. Otherwise, let state be null.
+  11. Run the appropriate steps according to the conditions described:
 
       If the current document readiness is set to the string "complete"
 
-          Queue a task to fire a popstate event at the Window object of the Document, using the PopStateEvent interface, with the state attribute set to the value of state. This event must bubble but not be cancelable and has no default action. 
+          Queue a task to fire a popstate event at the Window object of the
+          Document, using the PopStateEvent interface, with the state attribute
+          set to the value of state. This event must bubble but not be
+          cancelable and has no default action.
+
       Otherwise
 
-          Let the Document's pending state object be state. (If there was already a pending state object, the previous one is discarded.)
+          Let the Document's pending state object be state. (If there was
+          already a pending state object, the previous one is discarded.)
 
           The event will then be fired just after the load event. 
 
-  12.
+  12. If hash changed is true, then queue a task to fire a hashchange event at
+      the browsing context's Window object, using the HashChangeEvent
+      interface, with the oldURL attribute set to old URL and the newURL
+      attribute set to new URL. This event must bubble but not be cancelable
+      and has no default action.
+  13. The current entry is now the specified entry. 
 
-      If hash changed is true, then queue a task to fire a hashchange event at the browsing context's Window object, using the HashChangeEvent interface, with the oldURL attribute set to old URL and the newURL attribute set to new URL. This event must bubble but not be cancelable and has no default action.
-  13.
+The pending state object is used to keep track of what state object to use in
+the inital popstate event fired by the parser once it stops parsing. The
+pending state object must be initially null.
 
-      The current entry is now the specified entry. 
+The task source for the tasks mentioned above is the DOM manipulation task
+source.
 
-The pending state object is used to keep track of what state object to use in the inital popstate event fired by the parser once it stops parsing. The pending state object must be initially null.
+******************************************************************************/
+test('TODO: ', function(){
 
-The task source for the tasks mentioned above is the DOM manipulation task source.
+});
+/******************************************************************************
+
 5.5.9.1 Event definitions
 
-The popstate event is fired in certain cases when navigating to a session history entry.
+The popstate event is fired in certain cases when navigating to a session
+history entry.
 
 interface PopStateEvent : Event {
   readonly attribute any state;
-  void initPopStateEvent(in DOMString typeArg, in boolean canBubbleArg, in boolean cancelableArg, in any stateArg);
+  void initPopStateEvent(in DOMString typeArg, in boolean canBubbleArg, 
+    in boolean cancelableArg, in any stateArg);
 };
 
 event . state
 
-    Returns a copy of the information that was provided to pushState() or replaceState().
+    Returns a copy of the information that was provided to pushState() or
+    replaceState().
 
 The initPopStateEvent() method must initialize the event in a manner
 analogous to the similarly-named method in the DOM Events interfaces.
@@ -31421,12 +32289,14 @@ identifier.
 interface HashChangeEvent : Event {
   readonly attribute DOMString oldURL;
   readonly attribute DOMString newURL;
-  void initHashChangeEvent(in DOMString typeArg, in boolean canBubbleArg, in boolean cancelableArg, in DOMString oldURLArg, in DOMString newURLArg);
+  void initHashChangeEvent(in DOMString typeArg, in boolean canBubbleArg, 
+    in boolean cancelableArg, in DOMString oldURLArg, in DOMString newURLArg);
 };
 
 event . oldURL
 
     Returns the URL of the session history entry that was previously current.
+
 event . newURL
 
     Returns the URL of the session history entry that is now current.
@@ -31447,103 +32317,117 @@ The pagehide event is fired when traversing from a session history entry.
 
 interface PageTransitionEvent : Event {
   readonly attribute boolean persisted;
-  void initPageTransitionEvent(in DOMString typeArg, in boolean canBubbleArg, in boolean cancelableArg, in boolean persistedArg);
+  void initPageTransitionEvent(in DOMString typeArg, in boolean canBubbleArg, 
+    in boolean cancelableArg, in boolean persistedArg);
 };
 
 event . persisted
 
-    Returns false if the page is newly being loaded (and the load event will fire). Otherwise, returns true.
+    Returns false if the page is newly being loaded (and the load event will 
+    fire). Otherwise, returns true.
 
-The initPageTransitionEvent() method must initialize the event in a manner analogous to the similarly-named method in the DOM Events interfaces. [DOMEVENTS]
+The initPageTransitionEvent() method must initialize the event in a manner 
+analogous to the similarly-named method in the DOM Events interfaces. 
+[DOMEVENTS]
 
 The persisted attribute represents the context information for the event.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.5.10 Unloading documents
 
 A Document has a salvageable state, which is initially true.
 
-When a user agent is to prompt to unload a document, it must run the following steps.
+When a user agent is to prompt to unload a document, it must run the following
+steps.
 
-   1.
-
-      Let event be a new BeforeUnloadEvent event object with the name beforeunload, which does not bubble but is cancelable.
-   2.
-
-      Dispatch: Dispatch event at the Document's Window object.
-   3.
-
-      Release the storage mutex.
-   4.
-
-      If any event listeners were triggered by the earlier dispatch step, then set the Document's salvageable state to false.
-   5.
-
-      If the returnValue attribute of the event object is not the empty string, or if the event was canceled, then the user agent should ask the user to confirm that they wish to unload the document.
-
-      The prompt shown by the user agent may include the string of the returnValue attribute, or some leading subset thereof. (A user agent may want to truncate the string to 1024 characters for display, for instance.)
-
+   1. Let event be a new BeforeUnloadEvent event object with the name
+      beforeunload, which does not bubble but is cancelable.
+   2. Dispatch: Dispatch event at the Document's Window object.
+   3. Release the storage mutex.
+   4. If any event listeners were triggered by the earlier dispatch step, then
+      set the Document's salvageable state to false.
+   5. If the returnValue attribute of the event object is not the empty string,
+      or if the event was canceled, then the user agent should ask the user to
+      confirm that they wish to unload the document.
+      
+      The prompt shown by the user agent may include the string of the
+      returnValue attribute, or some leading subset thereof. (A user agent may
+      want to truncate the string to 1024 characters for display, for
+      instance.)
+      
       The user agent must pause while waiting for the user's response.
+      
+      If the user did not confirm the page navigation, then the user agent
+      refused to allow the document to be unloaded.
+   6. If this algorithm was invoked by another instance of the "prompt to
+      unload a document" algorithm (i.e. through the steps below that invoke
+      this algorithm for all descendant browsing contexts), then abort these
+      steps here.
+   7. Let descendants be the list of the descendant browsing contexts of the
+      Document.
+   8. If descendants is not an empty list, then for each browsing context b in
+      descendants run the following substeps:
+         1. Prompt to unload the active document of the browsing context b. If
+            the user refused to allow the document to be unloaded, then the
+            user implicitly also refused to allow this document to be unloaded;
+            abort these steps.
+         2. If salvageable state of the active document of the browsing context
+            b is false, then set the salvageable state of this document to
+            false also.
 
-      If the user did not confirm the page navigation, then the user agent refused to allow the document to be unloaded.
-   6.
+When a user agent is to unload a document, it must run the following steps.
+These steps are passed an argument, recycle, which is either true or false,
+indicating whether the Document object is going to be re-used. (This is set by
+the document.open() method.)
 
-      If this algorithm was invoked by another instance of the "prompt to unload a document" algorithm (i.e. through the steps below that invoke this algorithm for all descendant browsing contexts), then abort these steps here.
-   7.
+   1. Fire a pagehide event at the Window object of the Document, but with its
+      target set to the Document object (and the currentTarget set to the
+      Window object), using the PageTransitionEvent interface, with the
+      persisted attribute set to true. This event must not bubble, must not be
+      cancelable, and has no default action.
+   2. Unload event: Fire a simple event named unload at the Document's Window
+      object.
+   3. Release the storage mutex.
+   4. If any event listeners were triggered by the earlier unload event step,
+      then set the Document object's salvageable state to false.
+   5. Run any unloading document cleanup steps for Document that are defined by
+      this specification and other applicable specifications.
+   6. If this algorithm was invoked by another instance of the "unload a
+      document" algorithm (i.e. through the steps below that invoke this
+      algorithm for all descendant browsing contexts), then abort these steps
+      here.
+   7. Let descendants be the list of the descendant browsing contexts of the
+      Document.
+   8. If descendants is not an empty list, then for each browsing context b in
+      descendants run the following substeps:
+         1. Unload the active document of the browsing context b with the
+            recycle parameter set to false.
+         2. If salvageable state of the active document of the browsing context
+            b is false, then set the salvageable state of this document to
+            false also.
+   9. If salvageable and recycle are both false, then the Document's browsing
+      context must discard the Document.
 
-      Let descendants be the list of the descendant browsing contexts of the Document.
-   8.
+This specification defines the following unloading document cleanup steps.
+Other specifications can define more.
 
-      If descendants is not an empty list, then for each browsing context b in descendants run the following substeps:
-         1.
+   1. Close the WebSocket connection of any WebSocket objects that were created
+      by the WebSocket() constructor visible on the Document's Window object.
+      If this affected any WebSocket objects, the set Document's salvageable
+      state to false. [WEBSOCKET]
+   2. If the Document's salvageable state is false, empty the Document's
+      Window's list of active timeouts and its list of active intervals.
 
-            Prompt to unload the active document of the browsing context b. If the user refused to allow the document to be unloaded, then the user implicitly also refused to allow this document to be unloaded; abort these steps.
-         2.
+******************************************************************************/
+test('TODO: ', function(){
 
-            If salvageable state of the active document of the browsing context b is false, then set the salvageable state of this document to false also. 
-
-When a user agent is to unload a document, it must run the following steps. These steps are passed an argument, recycle, which is either true or false, indicating whether the Document object is going to be re-used. (This is set by the document.open() method.)
-
-   1.
-
-      Fire a pagehide event at the Window object of the Document, but with its target set to the Document object (and the currentTarget set to the Window object), using the PageTransitionEvent interface, with the persisted attribute set to true. This event must not bubble, must not be cancelable, and has no default action.
-   2.
-
-      Unload event: Fire a simple event named unload at the Document's Window object.
-   3.
-
-      Release the storage mutex.
-   4.
-
-      If any event listeners were triggered by the earlier unload event step, then set the Document object's salvageable state to false.
-   5.
-
-      Run any unloading document cleanup steps for Document that are defined by this specification and other applicable specifications.
-   6.
-
-      If this algorithm was invoked by another instance of the "unload a document" algorithm (i.e. through the steps below that invoke this algorithm for all descendant browsing contexts), then abort these steps here.
-   7.
-
-      Let descendants be the list of the descendant browsing contexts of the Document.
-   8.
-
-      If descendants is not an empty list, then for each browsing context b in descendants run the following substeps:
-         1.
-
-            Unload the active document of the browsing context b with the recycle parameter set to false.
-         2.
-
-            If salvageable state of the active document of the browsing context b is false, then set the salvageable state of this document to false also. 
-   9.
-
-      If salvageable and recycle are both false, then the Document's browsing context must discard the Document. 
-
-This specification defines the following unloading document cleanup steps. Other specifications can define more.
-
-   1.
-
-      Close the WebSocket connection of any WebSocket objects that were created by the WebSocket() constructor visible on the Document's Window object. If this affected any WebSocket objects, the set Document's salvageable state to false. [WEBSOCKET]
-   2.
-
-      If the Document's salvageable state is false, empty the Document's Window's list of active timeouts and its list of active intervals. 
+});
+/******************************************************************************
 
 5.5.10.1 Event definition
 
@@ -31553,29 +32437,52 @@ interface BeforeUnloadEvent : Event {
 
 event . returnValue [ = value ]
 
-    Returns the current return value of the event (the message to show the user).
+    Returns the current return value of the event (the message to show the 
+    user).
 
     Can be set, to update the message.
 
 There are no BeforeUnloadEvent-specific initialization methods.
 
-The returnValue attribute represents the message to show the user. When the event is created, the attribute must be set to the empty string. On getting, it must return the last value it was set to. On setting, the attribute must be set to the new value.
+The returnValue attribute represents the message to show the user. When the
+event is created, the attribute must be set to the empty string. On getting, it
+must return the last value it was set to. On setting, the attribute must be set
+to the new value.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.5.11 Aborting a document load
 
 If a Document is aborted, the user agent must run the following steps:
 
-   1.
+   1. Abort the active documents of every child browsing context.
+   2. Cancel any instances of the fetch algorithm in the context of this
+      Document, discarding any tasks queued for them, and discarding any
+      further data received from the network for them.
+   3. If the Document has an active parser, then abort that parser. 
 
-      Abort the active documents of every child browsing context.
-   2.
+User agents may allow users to explicitly invoke the abort a document algorithm
+for a Document. If the user does so, then, if that Document is an active
+document, the user agent should queue a task to fire a simple event named abort
+at that Document's Window object before invoking the abort algorithm.
 
-      Cancel any instances of the fetch algorithm in the context of this Document, discarding any tasks queued for them, and discarding any further data received from the network for them.
-   3.
+******************************************************************************/
+test('TODO: ', function(){
 
-      If the Document has an active parser, then abort that parser. 
+});
+/******************************************************************************
 
-User agents may allow users to explicitly invoke the abort a document algorithm for a Document. If the user does so, then, if that Document is an active document, the user agent should queue a task to fire a simple event named abort at that Document's Window object before invoking the abort algorithm.
 5.6 Offline Web applications
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.1 Introduction
 
 This section is non-normative.
@@ -31614,7 +32521,9 @@ setTimeout(function () {
     document.getElementById('clock').value = new Date();
 }, 1000);
 
-If the user tries to open the "clock.html" page while offline, though, the user agent (unless it happens to have it still in the local cache) will fail with an error.
+If the user tries to open the "clock.html" page while offline, though, the user
+agent (unless it happens to have it still in the local cache) will fail with an
+error.
 
 The author can instead provide a manifest of the three files:
 
@@ -31623,7 +32532,8 @@ clock.html
 clock.css
 clock.js
 
-With a small change to the HTML file, the manifest (served as text/cache-manifest) is linked to the application:
+With a small change to the HTML file, the manifest (served as
+text/cache-manifest) is linked to the application:
 
 <!-- clock.html -->
 <!DOCTYPE HTML>
@@ -31650,6 +32560,12 @@ HTTP cache headers and restrictions on caching pages served over TLS
 expire from an application cache before the user agent has updated it, and
 even applications served over TLS can be made to work offline.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.1.1 Event summary
 
 This section is non-normative.
@@ -31659,58 +32575,94 @@ update the cache. It does this by fetching a copy of the manifest and, if the
 manifest has changed since the user agent last saw it, redownloading all the
 resources it mentions and caching them anew.
 
-As this is going on, a number of events get fired on the ApplicationCache object to keep the script updated as to the state of the cache update, so that the user can be notified appropriately. The events are as follows:
-Event name 	Interface 	Dispatched when... 	Next events
-checking 	Event 	The user agent is checking for an update, or attempting to download the manifest for the first time. This is always the first event in the sequence. 	noupdate, downloading, obsolete, error
-noupdate 	Event 	The manifest hadn't changed. 	Last event in sequence.
-downloading 	Event 	The user agent has found an update and is fetching it, or is downloading the resources listed by the manifest for the first time. 	progress, error, cached, updateready
-progress 	ProgressEvent 	The user agent is downloading resources listed by the manifest. 	progress, error, cached, updateready
-cached 	Event 	The resources listed in the manifest have been downloaded, and the application is now cached. 	Last event in sequence.
-updateready 	Event 	The resources listed in the manifest have been newly redownloaded, and the script can use swapCache() to switch to the new cache. 	Last event in sequence.
-obsolete 	Event 	The manifest was found to have become a 404 or 410 page, so the application cache is being deleted. 	Last event in sequence.
-error 	Event 	The manifest was a 404 or 410 page, so the attempt to cache the application has been aborted. 	Last event in sequence.
-The manifest hadn't changed, but the page referencing the manifest failed to download properly.
+As this is going on, a number of events get fired on the ApplicationCache
+object to keep the script updated as to the state of the cache update, so that
+the user can be notified appropriately. The events are as follows:
+
+Event name      Interface   Dispatched when...  Next events
+checking        Event   The user agent is checking for an update, or attempting to download the manifest for the first time. This is always the first event in the sequence.    noupdate, downloading, obsolete, error
+noupdate        Event   The manifest hadn't changed.    Last event in sequence.
+downloading     Event   The user agent has found an update and is fetching it, or is downloading the resources listed by the manifest for the first time.   progress, error, cached, updateready
+progress        ProgressEvent   The user agent is downloading resources listed by the manifest.     progress, error, cached, updateready
+cached          Event   The resources listed in the manifest have been downloaded, and the application is now cached.   Last event in sequence.
+updateready     Event   The resources listed in the manifest have been newly redownloaded, and the script can use swapCache() to switch to the new cache.   Last event in sequence.
+obsolete        Event   The manifest was found to have become a 404 or 410 page, so the application cache is being deleted.     Last event in sequence.
+error           Event   The manifest was a 404 or 410 page, so the attempt to cache the application has been aborted.   Last event in sequence.
+
+The manifest hadn't changed, but the page referencing the manifest failed to
+download properly.
+
 A fatal error occurred while fetching the resources listed in the manifest.
-The manifest changed while the update was being run. 	The user agent will try fetching the files again momentarily.
+
+The manifest changed while the update was being run. The user agent will try
+fetching the files again momentarily.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.2 Application caches
 
 An application cache is a set of cached resources consisting of:
 
-    *
-
-      One or more resources (including their out-of-band metadata, such as HTTP headers, if any), identified by URLs, each falling into one (or more) of the following categories:
+    * One or more resources (including their out-of-band metadata, such as HTTP
+      headers, if any), identified by URLs, each falling into one (or more) of
+      the following categories:
 
       Master entries
 
-          These are documents that were added to the cache because a browsing context was navigated to that document and the document indicated that this was its cache, using the manifest attribute.
+          These are documents that were added to the cache because a browsing
+          context was navigated to that document and the document indicated
+          that this was its cache, using the manifest attribute.
+
       The manifest
 
-          This is the resource corresponding to the URL that was given in a master entry's html element's manifest attribute. The manifest is fetched and processed during the application cache download process. All the master entries have the same origin as the manifest.
+          This is the resource corresponding to the URL that was given in a
+          master entry's html element's manifest attribute. The manifest is
+          fetched and processed during the application cache download process.
+          All the master entries have the same origin as the manifest.
+
       Explicit entries
 
-          These are the resources that were listed in the cache's manifest in an explicit section.
+          These are the resources that were listed in the cache's manifest in
+          an explicit section.
+
       Fallback entries
 
-          These are the resources that were listed in the cache's manifest in a fallback section.
+          These are the resources that were listed in the cache's manifest in a
+          fallback section.
 
-      Explicit entries and Fallback entries can be marked as foreign, which means that they have a manifest attribute but that it doesn't point at this cache's manifest.
+      Explicit entries and Fallback entries can be marked as foreign, which
+      means that they have a manifest attribute but that it doesn't point at
+      this cache's manifest.
+      
+      A URL in the list can be flagged with multiple different types, and thus
+      an entry can end up being categorized as multiple entries. For example,
+      an entry can be a manifest entry and an explicit entry at the same time,
+      if the manifest is listed within the manifest.
 
-      A URL in the list can be flagged with multiple different types, and thus an entry can end up being categorized as multiple entries. For example, an entry can be a manifest entry and an explicit entry at the same time, if the manifest is listed within the manifest.
-    *
+    * Zero or more fallback namespaces, each of which is mapped to a fallback
+      entry.
 
-      Zero or more fallback namespaces, each of which is mapped to a fallback entry.
+      These are URLs used as prefix match patterns for resources that are to be
+      fetched from the network if possible, or to be replaced by the
+      corresponding fallback entry if not. Each namespace URL has the same
+      origin as the manifest.
 
-      These are URLs used as prefix match patterns for resources that are to be fetched from the network if possible, or to be replaced by the corresponding fallback entry if not. Each namespace URL has the same origin as the manifest.
-    *
+    * Zero or more URLs that form the online whitelist namespaces.
 
-      Zero or more URLs that form the online whitelist namespaces.
+      These are used as prefix match patterns, and declare URLs that the user
+      agent will never load from the cache but will instead always attempt to
+      obtain from the network.
 
-      These are used as prefix match patterns, and declare URLs that the user agent will never load from the cache but will instead always attempt to obtain from the network.
-    *
+    * An online whitelist wildcard flag, which is either open or blocking.
 
-      An online whitelist wildcard flag, which is either open or blocking.
-
-      The open state indicates that any URL not listed as cached is to be implicitly treated as being in the online whitelist namespaces; the blocking state indicates that URLs not listed explicitly in the manifest are to be treated as unavailable.
+      The open state indicates that any URL not listed as cached is to be
+      implicitly treated as being in the online whitelist namespaces; the
+      blocking state indicates that URLs not listed explicitly in the manifest
+      are to be treated as unavailable.
 
 Each application cache has a completeness flag, which is either complete or
 incomplete.
@@ -31761,18 +32713,43 @@ application cache that the user most likely wants to see the resource from,
 taking into account the following:
 
     * which application cache was most recently updated,
-    * which application cache was being used to display the resource from which the user decided to look at the new resource, and
+    * which application cache was being used to display the resource from which
+      the user decided to look at the new resource, and
     * which application cache the user prefers. 
 
-A URL matches a fallback namespace if there exists a relevant application cache whose manifest's URL has the same origin as the URL in question, and that has a fallback namespace that is a prefix match for the URL being examined. If multiple fallback namespaces match the same URL, the longest one is the one that matches. A URL looking for a fallback namespace can match more than one application cache at a time, but only matches one namespace in each cache.
+A URL matches a fallback namespace if there exists a relevant application cache
+whose manifest's URL has the same origin as the URL in question, and that has a
+fallback namespace that is a prefix match for the URL being examined. If
+multiple fallback namespaces match the same URL, the longest one is the one
+that matches. A URL looking for a fallback namespace can match more than one
+application cache at a time, but only matches one namespace in each cache.
 
-If a manifest http://example.com/app1/manifest declares that http://example.com/resources/images is a fallback namespace, and the user navigates to HTTP://EXAMPLE.COM:80/resources/images/cat.png, then the user agent will decide that the application cache identified by http://example.com/app1/manifest contains a namespace with a match for that URL.
+If a manifest http://example.com/app1/manifest declares that
+http://example.com/resources/images is a fallback namespace, and the user
+navigates to HTTP://EXAMPLE.COM:80/resources/images/cat.png, then the user
+agent will decide that the application cache identified by
+http://example.com/app1/manifest contains a namespace with a match for that
+URL.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.3 The cache manifest syntax
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.3.1 Some sample manifests
 
 This section is non-normative.
 
-This example manifest requires two images and a style sheet to be cached and whitelists a CGI script.
+This example manifest requires two images and a style sheet to be cached and
+whitelists a CGI script.
 
 CACHE MANIFEST
 # the above line is required
@@ -31846,6 +32823,12 @@ FALLBACK:
 NETWORK:
 *
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.3.2 Writing cache manifests
 
 Manifests must be served using the text/cache-manifest MIME type. All
@@ -31874,15 +32857,24 @@ Subsequent lines, if any, must all be one of the following:
 
 A blank line
 
-    Blank lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters only.
+    Blank lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER
+    TABULATION (tab) characters only.
+
 A comment
 
-    Comment lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters, followed by a single U+0023 NUMBER SIGN character (#), followed by zero or more characters other than U+000A LINE FEED (LF) and U+000D CARRIAGE RETURN (CR) characters.
+    Comment lines must consist of zero or more U+0020 SPACE and U+0009
+    CHARACTER TABULATION (tab) characters, followed by a single U+0023 NUMBER
+    SIGN character (#), followed by zero or more characters other than U+000A
+    LINE FEED (LF) and U+000D CARRIAGE RETURN (CR) characters.
+    
+    Comments must be on a line on their own. If they were to be included on a
+    line with a URL, the "#" would be mistaken for part of a fragment
+    identifier.
 
-    Comments must be on a line on their own. If they were to be included on a line with a URL, the "#" would be mistaken for part of a fragment identifier.
 A section header
 
-    Section headers change the current section. There are three possible section headers:
+    Section headers change the current section. There are three possible
+    section headers:
 
     CACHE:
         Switches to the explicit section. 
@@ -31891,18 +32883,36 @@ A section header
     NETWORK:
         Switches to the online whitelist section. 
 
-    Section header lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters, followed by one of the names above (including the U+003A COLON character (:)) followed by zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters.
-
+    Section header lines must consist of zero or more U+0020 SPACE and U+0009
+    CHARACTER TABULATION (tab) characters, followed by one of the names above
+    (including the U+003A COLON character (:)) followed by zero or more U+0020
+    SPACE and U+0009 CHARACTER TABULATION (tab) characters.
+    
     Ironically, by default, the current section is the explicit section.
+
 Data for the current section
 
     The format that data lines must take depends on the current section.
 
-    When the current section is the explicit section, data lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters, a valid URL identifying a resource other than the manifest itself, and then zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters.
-
-    When the current section is the fallback section, data lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters, a valid URL identifying a resource other than the manifest itself, one or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters, another valid URL identifying a resource other than the manifest itself, and then zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters.
-
-    When the current section is the online whitelist section, data lines must consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters, either a single U+002A ASTERISK character (*) or a valid URL identifying a resource other than the manifest itself, and then zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters.
+    When the current section is the explicit section, data lines must consist
+    of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab)
+    characters, a valid URL identifying a resource other than the manifest
+    itself, and then zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION
+    (tab) characters.
+    
+     When the current section is the fallback section, data lines must consist
+    of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab)
+    characters, a valid URL identifying a resource other than the manifest
+    itself, one or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab)
+    characters, another valid URL identifying a resource other than the
+    manifest itself, and then zero or more U+0020 SPACE and U+0009 CHARACTER
+    TABULATION (tab) characters.
+    
+     When the current section is the online whitelist section, data lines must
+    consist of zero or more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab)
+    characters, either a single U+002A ASTERISK character (*) or a valid URL
+    identifying a resource other than the manifest itself, and then zero or
+    more U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters.
 
 Manifests may contain sections more than once. Sections may be empty.
 
@@ -31940,156 +32950,159 @@ SIGN character isn't allowed in URLs in manifests).
 Fallback namespaces and namespaces in the online whitelist are matched by
 prefix match.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.3.3 Parsing cache manifests
 
-When a user agent is to parse a manifest, it means that the user agent must run the following steps:
+When a user agent is to parse a manifest, it means that the user agent must run
+the following steps:
 
-   1.
-
-      The user agent must decode the byte stream corresponding with the manifest to be parsed as UTF-8, with error handling.
-   2.
-
-      Let base URL be the absolute URL representing the manifest.
-   3.
-
-      Let explicit URLs be an initially empty list of absolute URLs for explicit entries.
-   4.
-
-      Let fallback URLs be an initially empty mapping of fallback namespaces to absolute URLs for fallback entries.
-   5.
-
-      Let online whitelist namespaces be an initially empty list of absolute URLs for an online whitelist.
-   6.
-
-      Let online whitelist wildcard flag be blocking.
-   7.
-
-      Let input be the decoded text of the manifest's byte stream.
-   8.
-
-      Let position be a pointer into input, initially pointing at the first character.
-   9.
-
-      If position is pointing at a U+FEFF BYTE ORDER MARK (BOM) character, then advance position to the next character.
-  10.
-
-      If the characters starting from position are "CACHE", followed by a U+0020 SPACE character, followed by "MANIFEST", then advance position to the next character after those. Otherwise, this isn't a cache manifest; abort this algorithm with a failure while checking for the magic signature.
-  11.
-
-      If the character at position is neither a U+0020 SPACE character, a U+0009 CHARACTER TABULATION (tab) character, U+000A LINE FEED (LF) character, nor a U+000D CARRIAGE RETURN (CR) character, then this isn't a cache manifest; abort this algorithm with a failure while checking for the magic signature.
-  12.
-
-      This is a cache manifest. The algorithm cannot fail beyond this point (though bogus lines can get ignored).
-  13.
-
-      Collect a sequence of characters that are not U+000A LINE FEED (LF) or U+000D CARRIAGE RETURN (CR) characters, and ignore those characters. (Extra text on the first line, after the signature, is ignored.)
-  14.
-
-      Let mode be "explicit".
-  15.
-
-      Start of line: If position is past the end of input, then jump to the last step. Otherwise, collect a sequence of characters that are U+000A LINE FEED (LF), U+000D CARRIAGE RETURN (CR), U+0020 SPACE, or U+0009 CHARACTER TABULATION (tab) characters.
-  16.
-
-      Now, collect a sequence of characters that are not U+000A LINE FEED (LF) or U+000D CARRIAGE RETURN (CR) characters, and let the result be line.
-  17.
-
-      Drop any trailing U+0020 SPACE and U+0009 CHARACTER TABULATION (tab) characters at the end of line.
-  18.
-
-      If line is the empty string, then jump back to the step labeled "start of line".
-  19.
-
-      If the first character in line is a U+0023 NUMBER SIGN character (#), then jump back to the step labeled "start of line".
-  20.
-
-      If line equals "CACHE:" (the word "CACHE" followed by a U+003A COLON character (:)), then set mode to "explicit" and jump back to the step labeled "start of line".
-  21.
-
-      If line equals "FALLBACK:" (the word "FALLBACK" followed by a U+003A COLON character (:)), then set mode to "fallback" and jump back to the step labeled "start of line".
-  22.
-
-      If line equals "NETWORK:" (the word "NETWORK" followed by a U+003A COLON character (:)), then set mode to "online whitelist" and jump back to the step labeled "start of line".
-  23.
-
-      If line ends with a U+003A COLON character (:), then set mode to "unknown" and jump back to the step labeled "start of line".
-  24.
-
-      This is either a data line or it is syntactically incorrect.
-  25.
-
-      Let position be a pointer into line, initially pointing at the start of the string.
-  26.
-
-      Let tokens be a list of strings, initially empty.
-  27.
-
-      While position doesn't point past the end of line:
-         1.
-
-            Let current token be an empty string.
-         2.
-
-            While position doesn't point past the end of line and the character at position is neither a U+0020 SPACE nor a U+0009 CHARACTER TABULATION (tab) character, add the character at position to current token and advance position to the next character in input.
-         3.
-
-            Add current token to the tokens list.
-         4.
-
-            While position doesn't point past the end of line and the character at position is either a U+0020 SPACE or a U+0009 CHARACTER TABULATION (tab) character, advance position to the next character in input. 
-  28.
-
-      Process tokens as follows:
+   1. The user agent must decode the byte stream corresponding with the
+      manifest to be parsed as UTF-8, with error handling.
+   2. Let base URL be the absolute URL representing the manifest.
+   3. Let explicit URLs be an initially empty list of absolute URLs for
+      explicit entries.
+   4. Let fallback URLs be an initially empty mapping of fallback namespaces to
+      absolute URLs for fallback entries.
+   5. Let online whitelist namespaces be an initially empty list of absolute
+      URLs for an online whitelist.
+   6. Let online whitelist wildcard flag be blocking.
+   7. Let input be the decoded text of the manifest's byte stream.
+   8. Let position be a pointer into input, initially pointing at the first
+      character.
+   9. If position is pointing at a U+FEFF BYTE ORDER MARK (BOM) character, then
+      advance position to the next character.
+  10. If the characters starting from position are "CACHE", followed by a
+      U+0020 SPACE character, followed by "MANIFEST", then advance position to
+      the next character after those. Otherwise, this isn't a cache manifest;
+      abort this algorithm with a failure while checking for the magic
+      signature.
+  11. If the character at position is neither a U+0020 SPACE character, a
+      U+0009 CHARACTER TABULATION (tab) character, U+000A LINE FEED (LF)
+      character, nor a U+000D CARRIAGE RETURN (CR) character, then this isn't a
+      cache manifest; abort this algorithm with a failure while checking for
+      the magic signature.
+  12. This is a cache manifest. The algorithm cannot fail beyond this point
+      (though bogus lines can get ignored).
+  13. Collect a sequence of characters that are not U+000A LINE FEED (LF) or
+      U+000D CARRIAGE RETURN (CR) characters, and ignore those characters.
+      (Extra text on the first line, after the signature, is ignored.)
+  14. Let mode be "explicit".
+  15. Start of line: If position is past the end of input, then jump to the
+      last step. Otherwise, collect a sequence of characters that are U+000A
+      LINE FEED (LF), U+000D CARRIAGE RETURN (CR), U+0020 SPACE, or U+0009
+      CHARACTER TABULATION (tab) characters.
+  16. Now, collect a sequence of characters that are not U+000A LINE FEED (LF)
+      or U+000D CARRIAGE RETURN (CR) characters, and let the result be line.
+  17. Drop any trailing U+0020 SPACE and U+0009 CHARACTER TABULATION (tab)
+      characters at the end of line.
+  18. If line is the empty string, then jump back to the step labeled "start of
+      line".
+  19. If the first character in line is a U+0023 NUMBER SIGN character (#),
+      then jump back to the step labeled "start of line".
+  20. If line equals "CACHE:" (the word "CACHE" followed by a U+003A COLON
+      character (:)), then set mode to "explicit" and jump back to the step
+      labeled "start of line".
+  21. If line equals "FALLBACK:" (the word "FALLBACK" followed by a U+003A
+      COLON character (:)), then set mode to "fallback" and jump back to the
+      step labeled "start of line".
+  22. If line equals "NETWORK:" (the word "NETWORK" followed by a U+003A COLON
+      character (:)), then set mode to "online whitelist" and jump back to the
+      step labeled "start of line".
+  23. If line ends with a U+003A COLON character (:), then set mode to
+      "unknown" and jump back to the step labeled "start of line".
+  24. This is either a data line or it is syntactically incorrect.
+  25. Let position be a pointer into line, initially pointing at the start of
+      the string.
+  26. Let tokens be a list of strings, initially empty.
+  27. While position doesn't point past the end of line:
+         1. Let current token be an empty string.
+         2. While position doesn't point past the end of line and the character
+            at position is neither a U+0020 SPACE nor a U+0009 CHARACTER
+            TABULATION (tab) character, add the character at position to
+            current token and advance position to the next character in input.
+         3. Add current token to the tokens list.
+         4. While position doesn't point past the end of line and the character
+            at position is either a U+0020 SPACE or a U+0009 CHARACTER
+            TABULATION (tab) character, advance position to the next character
+            in input.
+  28. Process tokens as follows:
 
       If mode is "explicit"
 
-          Resolve the first item in tokens, relative to base URL; ignore the rest.
-
+          Resolve the first item in tokens, relative to base URL; ignore the
+          rest.
+          
           If this fails, then jump back to the step labeled "start of line".
-
-          If the resulting absolute URL has a different <scheme> component than the manifest's URL (compared in an ASCII case-insensitive manner), then jump back to the step labeled "start of line". If the manifest's <scheme> is https: or another scheme intended for encrypted data transfer, and the resulting absolute URL does not have the same origin as the manifest's URL, then jump back to the step labeled "start of line".
-
-          Drop the <fragment> component of the resulting absolute URL, if it has one.
-
+          
+          If the resulting absolute URL has a different <scheme> component
+          than the manifest's URL (compared in an ASCII case-insensitive
+          manner), then jump back to the step labeled "start of line". If the
+          manifest's <scheme> is https: or another scheme intended for
+          encrypted data transfer, and the resulting absolute URL does not have
+          the same origin as the manifest's URL, then jump back to the step
+          labeled "start of line".
+          
+          Drop the <fragment> component of the resulting absolute URL, if it
+          has one.
+          
           Add the resulting absolute URL to the explicit URLs.
+
       If mode is "fallback"
 
-          Let part one be the first token in tokens, and let part two be the second token in tokens.
-
+          Let part one be the first token in tokens, and let part two be the
+          second token in tokens.
+          
           Resolve part one and part two, relative to base URL.
-
+          
           If either fails, then jump back to the step labeled "start of line".
-
-          If the absolute URL corresponding to either part one or part two does not have the same origin as the manifest's URL, then jump back to the step labeled "start of line".
-
+          
+          If the absolute URL corresponding to either part one or part two
+          does not have the same origin as the manifest's URL, then jump back
+          to the step labeled "start of line".
+          
           Drop any <fragment> components of the resulting absolute URLs.
+          
+          If the absolute URL corresponding to part one is already in the
+          fallback URLs mapping as a fallback namespace, then jump back to the
+          step labeled "start of line".
+          
+          Otherwise, add the absolute URL corresponding to part one to the
+          fallback URLs mapping as a fallback namespace, mapped to the absolute
+          URL corresponding to part two as the fallback entry.
 
-          If the absolute URL corresponding to part one is already in the fallback URLs mapping as a fallback namespace, then jump back to the step labeled "start of line".
-
-          Otherwise, add the absolute URL corresponding to part one to the fallback URLs mapping as a fallback namespace, mapped to the absolute URL corresponding to part two as the fallback entry.
       If mode is "online whitelist"
 
-          If the first item in tokens is a U+002A ASTERISK character (*), then set online whitelist wildcard flag to open and jump back to the step labeled "start of line".
-
-          Otherwise, resolve the first item in tokens, relative to base URL; ignore the rest.
-
+          If the first item in tokens is a U+002A ASTERISK character (*), then
+          set online whitelist wildcard flag to open and jump back to the step
+          labeled "start of line".
+          
+          Otherwise, resolve the first item in tokens, relative to base URL;
+          ignore the rest.
+          
           If this fails, then jump back to the step labeled "start of line".
-
-          If the resulting absolute URL has a different <scheme> component than the manifest's URL (compared in an ASCII case-insensitive manner), then jump back to the step labeled "start of line".
-
-          Drop the <fragment> component of the resulting absolute URL, if it has one.
-
+          
+          If the resulting absolute URL has a different <scheme> component
+          than the manifest's URL (compared in an ASCII case-insensitive
+          manner), then jump back to the step labeled "start of line".
+          
+          Drop the <fragment> component of the resulting absolute URL, if it
+          has one.
+          
           Add the resulting absolute URL to the online whitelist namespaces.
+
       If mode is "unknown"
 
           Do nothing. The line is ignored.
 
-  29.
-
-      Jump back to the step labeled "start of line". (That step jumps to the next, and last, step when the end of the file is reached.)
-  30.
-
-      Return the explicit URLs list, the fallback URLs mapping, the online whitelist namespaces, and the online whitelist wildcard flag. 
+  29. Jump back to the step labeled "start of line". (That step jumps to the
+      next, and last, step when the end of the file is reached.)
+  30. Return the explicit URLs list, the fallback URLs mapping, the online
+      whitelist namespaces, and the online whitelist wildcard flag.
 
 The resource that declares the manifest (with the manifest attribute) will
 always get taken from the cache, whether it is listed in the cache or not,
@@ -32130,321 +33143,384 @@ These events are delayed until after the load event has fired.
 
 The application cache download process steps are as follows:
 
-   1.
+   1. Optionally, wait until the permission to start the application cache
+      download process has been obtained from the user and until the user agent
+      is confident that the network is available. This could include doing
+      nothing until the user explicitly opts-in to caching the site, or could
+      involve prompting the user for permission. The algorithm might never get
+      past this point. (This step is particularly intended to be used by user
+      agents running on severely space-constrained devices or in highly
+      privacy-sensitive environments).
+   2. Atomically, so as to avoid race conditions, perform the following
+      substeps:
+         1. Pick the appropriate substeps:
 
-      Optionally, wait until the permission to start the application cache download process has been obtained from the user and until the user agent is confident that the network is available. This could include doing nothing until the user explicitly opts-in to caching the site, or could involve prompting the user for permission. The algorithm might never get past this point. (This step is particularly intended to be used by user agents running on severely space-constrained devices or in highly privacy-sensitive environments).
-   2.
-
-      Atomically, so as to avoid race conditions, perform the following substeps:
-         1.
-
-            Pick the appropriate substeps:
-
-            If these steps were invoked with an absolute URL purported to identify a manifest
+            If these steps were invoked with an absolute URL purported to
+            identify a manifest
 
                 Let manifest URL be that absolute URL.
 
-                If there is no application cache group identified by manifest URL, then create a new application cache group identified by manifest URL. Initially, it has no application caches. One will be created later in this algorithm.
+                If there is no application cache group identified by manifest
+                URL, then create a new application cache group identified by
+                manifest URL. Initially, it has no application caches. One will
+                be created later in this algorithm.
+
             If these steps were invoked with an application cache group
 
-                Let manifest URL be the absolute URL of the manifest used to identify the application cache group to be updated.
+                Let manifest URL be the absolute URL of the manifest used to
+                identify the application cache group to be updated.
+                
+                If that application cache group is obsolete, then abort this
+                instance of the application cache download process. This can
+                happen if another instance of this algorithm found the manifest
+                to be 404 or 410 while this algorithm was waiting in the first
+                step above.
 
-                If that application cache group is obsolete, then abort this instance of the application cache download process. This can happen if another instance of this algorithm found the manifest to be 404 or 410 while this algorithm was waiting in the first step above.
-
-         2.
-
-            Let cache group be the application cache group identified by manifest URL.
-         3.
-
-            If these steps were invoked with a master resource, then add the resource, along with the resource's Document, to cache group's list of pending master entries.
-         4.
-
-            If these steps were invoked with a cache host, and the status of cache group is checking or downloading, then queue a post-load task to fire a simple event named checking that is cancelable at the ApplicationCache singleton of that cache host. The default action of this event must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent is checking to see if it can download the application.
-         5.
-
-            If these steps were invoked with a cache host, and the status of cache group is downloading, then also queue a post-load task to fire a simple event named downloading that is cancelable at the ApplicationCache singleton of that cache host. The default action of this event must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user the application is being downloaded.
-         6.
-
-            If the status of the cache group is either checking or downloading, then abort this instance of the application cache download process, as an update is already in progress.
-         7.
-
-            Set the status of cache group to checking.
-         8.
-
-            For each cache host associated with an application cache in cache group, queue a post-load task to fire a simple event that is cancelable named checking at the ApplicationCache singleton of the cache host. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent is checking for the availability of updates. 
+         2. Let cache group be the application cache group identified by
+            manifest URL.
+         3. If these steps were invoked with a master resource, then add the
+            resource, along with the resource's Document, to cache group's list
+            of pending master entries.
+         4. If these steps were invoked with a cache host, and the status of
+            cache group is checking or downloading, then queue a post-load task
+            to fire a simple event named checking that is cancelable at the
+            ApplicationCache singleton of that cache host. The default action
+            of this event must be, if the user agent shows caching progress,
+            the display of some sort of user interface indicating to the user
+            that the user agent is checking to see if it can download the
+            application.
+         5. If these steps were invoked with a cache host, and the status of
+            cache group is downloading, then also queue a post-load task to
+            fire a simple event named downloading that is cancelable at the
+            ApplicationCache singleton of that cache host. The default action
+            of this event must be, if the user agent shows caching progress,
+            the display of some sort of user interface indicating to the user
+            the application is being downloaded.
+         6. If the status of the cache group is either checking or downloading,
+            then abort this instance of the application cache download process,
+            as an update is already in progress.
+         7. Set the status of cache group to checking.
+         8. For each cache host associated with an application cache in cache
+            group, queue a post-load task to fire a simple event that is
+            cancelable named checking at the ApplicationCache singleton of the
+            cache host. The default action of these events must be, if the user
+            agent shows caching progress, the display of some sort of user
+            interface indicating to the user that the user agent is checking
+            for the availability of updates.
 
       The remainder of the steps run asynchronously.
 
-      If cache group already has an application cache in it, then this is an upgrade attempt. Otherwise, this is a cache attempt.
-   3.
+      If cache group already has an application cache in it, then this is an
+      upgrade attempt. Otherwise, this is a cache attempt.
+   3. If this is a cache attempt, then this algorithm was invoked with a cache
+      host; queue a post-load task to fire a simple event named checking that
+      is cancelable at the ApplicationCache singleton of that cache host. The
+      default action of this event must be, if the user agent shows caching
+      progress, the display of some sort of user interface indicating to the
+      user that the user agent is checking for the availability of updates.
+   4. Fetching the manifest: Fetch the resource from manifest URL with the
+      synchronous flag set, and let manifest be that resource.
 
-      If this is a cache attempt, then this algorithm was invoked with a cache host; queue a post-load task to fire a simple event named checking that is cancelable at the ApplicationCache singleton of that cache host. The default action of this event must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent is checking for the availability of updates.
-   4.
-
-      Fetching the manifest: Fetch the resource from manifest URL with the synchronous flag set, and let manifest be that resource.
-
-      If the resource is labeled with the MIME type text/cache-manifest, parse manifest according to the rules for parsing manifests, obtaining a list of explicit entries, fallback entries and the fallback namespaces that map to them, entries for the online whitelist, and a value for the online whitelist wildcard flag.
-   5.
-
-      If fetching the manifest fails due to a 404 or 410 response or equivalent, then run these substeps:
-         1.
-
-            Mark cache group as obsolete. This cache group no longer exists for any purpose other than the processing of Document objects already associated with an application cache in the cache group.
-         2.
-
-            Let task list be an empty list of tasks.
-         3.
-
-            For each cache host associated with an application cache in cache group, create a task to fire a simple event named obsolete that is cancelable at the ApplicationCache singleton of the cache host, and append it to task list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the application is no longer available for offline use.
-         4.
-
-            For each entry in cache group's list of pending master entries, create a task to fire a simple event that is cancelable named error (not obsolete!) at the ApplicationCache singleton of the cache host the Document for this entry, if there still is one, and append it to task list. The default action of this event must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent failed to save the application for offline use.
-         5.
-
-            If cache group has an application cache whose completeness flag is incomplete, then discard that application cache.
-         6.
-
-            If appropriate, remove any user interface indicating that an update for this cache is in progress.
-         7.
-
-            Let the status of cache group be idle.
-         8.
-
-            For each task in task list, queue that task as a post-load task.
-         9.
-
-            Abort the application cache download process. 
-   6.
-
-      Otherwise, if fetching the manifest fails in some other way (e.g. the server returns another 4xx or 5xx response or equivalent, or there is a DNS error, or the connection times out, or the user cancels the download, or the parser for manifests fails when checking the magic signature), or if the server returned a redirect, or if the resource is labeled with a MIME type other than text/cache-manifest, then run the cache failure steps.
-   7.
-
-      If this is an upgrade attempt and the newly downloaded manifest is byte-for-byte identical to the manifest found in the newest application cache in cache group, or the server reported it as "304 Not Modified" or equivalent, then run these substeps:
-         1.
-
-            Let cache be the newest application cache in cache group.
-         2.
-
-            Let task list be an empty list of tasks.
-         3.
-
-            For each entry in cache group's list of pending master entries, wait for the resource for this entry to have either completely downloaded or failed.
-
-            If the download failed (e.g. the connection times out, or the user cancels the download), then create a task to fire a simple event that is cancelable named error at the ApplicationCache singleton of the cache host the Document for this entry, if there still is one, and append it to task list. The default action of this event must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent failed to save the application for offline use.
-
-            Otherwise, associate the Document for this entry with cache; store the resource for this entry in cache, if it isn't already there, and categorize its entry as a master entry. If the resource's URL has a <fragment> component, it must be removed from the entry in cache (application caches never include fragment identifiers).
-
-            HTTP caching rules, such as Cache-Control: no-store, are ignored for the purposes of the application cache download process.
-         4.
-
-            For each cache host associated with an application cache in cache group, create a task to fire a simple event that is cancelable named noupdate at the ApplicationCache singleton of the cache host, and append it to task list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the application is up to date.
-         5.
-
-            Empty cache group's list of pending master entries.
-         6.
-
-            If appropriate, remove any user interface indicating that an update for this cache is in progress.
-         7.
-
-            Let the status of cache group be idle.
-         8.
-
-            For each task in task list, queue that task as a post-load task.
-         9.
-
-            Abort the application cache download process. 
-   8.
-
-      Let new cache be a newly created application cache in cache group. Set its completeness flag to incomplete.
-   9.
-
-      For each entry in cache group's list of pending master entries, associate the Document for this entry with new cache.
-  10.
-
-      Set the status of cache group to downloading.
-  11.
-
-      For each cache host associated with an application cache in cache group, queue a post-load task to fire a simple event that is cancelable named downloading at the ApplicationCache singleton of the cache host. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that a new version is being downloaded.
-  12.
-
-      Let file list be an empty list of URLs with flags.
-  13.
-
-      Add all the URLs in the list of explicit entries obtained by parsing manifest to file list, each flagged with "explicit entry".
-  14.
-
-      Add all the URLs in the list of fallback entries obtained by parsing manifest to file list, each flagged with "fallback entry".
-  15.
-
-      If this is an upgrade attempt, then add all the URLs of master entries in the newest application cache in cache group whose completeness flag is complete to file list, each flagged with "master entry".
-  16.
-
-      If any URL is in file list more than once, then merge the entries into one entry for that URL, that entry having all the flags that the original entries had.
-  17.
-
-      For each URL in file list, run the following steps. These steps may be run in parallel for two or more of the URLs at a time.
-         1.
-
-            If the resource URL being processed was flagged as neither an "explicit entry" nor or a "fallback entry", then the user agent may skip this URL.
-
-            This is intended to allow user agents to expire resources not listed in the manifest from the cache. Generally, implementors are urged to use an approach that expires lesser-used resources first.
-         2.
-
-            For each cache host associated with an application cache in cache group, queue a post-load task to fire an event with the name progress, which does not bubble, which is cancelable, and which uses the ProgressEvent interface, at the ApplicationCache singleton of the cache host. The lengthComputable attribute must be set to true, the total attribute must be set to the number of files in file list, and the loaded attribute must be set to the number of number of files in file list that have been either downloaded or skipped so far. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that a file is being downloaded in preparation for updating the application. [PROGRESS]
-         3.
-
-            Fetch the resource, from the origin of the URL manifest URL, with the synchronous flag set and the manual redirect flag set. If this is an upgrade attempt, then use the newest application cache in cache group as an HTTP cache, and honor HTTP caching semantics (such as expiration, ETags, and so forth) with respect to that cache. User agents may also have other caches in place that are also honored.
-
-            If the resource in question is already being downloaded for other reasons then the existing download process can sometimes be used for the purposes of this step, as defined by the fetching algorithm.
-
-            An example of a resource that might already be being downloaded is a large image on a Web page that is being seen for the first time. The image would get downloaded to satisfy the img element on the page, as well as being listed in the cache manifest. According to the rules for fetching that image only need be downloaded once, and it can be used both for the cache and for the rendered Web page.
-         4.
-
-            If the previous step fails (e.g. the server returns a 4xx or 5xx response or equivalent, or there is a DNS error, or the connection times out, or the user cancels the download), or if the server returned a redirect, then run the first appropriate step from the following list:
-
-            If the URL being processed was flagged as an "explicit entry" or a "fallback entry"
+      If the resource is labeled with the MIME type text/cache-manifest, parse
+      manifest according to the rules for parsing manifests, obtaining a list
+      of explicit entries, fallback entries and the fallback namespaces that
+      map to them, entries for the online whitelist, and a value for the online
+      whitelist wildcard flag.
+   5. If fetching the manifest fails due to a 404 or 410 response or
+      equivalent, then run these substeps:
+         1. Mark cache group as obsolete. This cache group no longer exists for
+            any purpose other than the processing of Document objects already
+            associated with an application cache in the cache group.
+         2. Let task list be an empty list of tasks.
+         3. For each cache host associated with an application cache in cache
+            group, create a task to fire a simple event named obsolete that is
+            cancelable at the ApplicationCache singleton of the cache host, and
+            append it to task list. The default action of these events must be,
+            if the user agent shows caching progress, the display of some sort
+            of user interface indicating to the user that the application is no
+            longer available for offline use.
+         4. For each entry in cache group's list of pending master entries,
+            create a task to fire a simple event that is cancelable named error
+            (not obsolete!) at the ApplicationCache singleton of the cache host
+            the Document for this entry, if there still is one, and append it
+            to task list. The default action of this event must be, if the user
+            agent shows caching progress, the display of some sort of user
+            interface indicating to the user that the user agent failed to save
+            the application for offline use.
+         5. If cache group has an application cache whose completeness flag is
+            incomplete, then discard that application cache.
+         6. If appropriate, remove any user interface indicating that an update
+            for this cache is in progress.
+         7. Let the status of cache group be idle.
+         8. For each task in task list, queue that task as a post-load task.
+         9. Abort the application cache download process. 
+   6. Otherwise, if fetching the manifest fails in some other way (e.g. the
+      server returns another 4xx or 5xx response or equivalent, or there is a
+      DNS error, or the connection times out, or the user cancels the download,
+      or the parser for manifests fails when checking the magic signature), or
+      if the server returned a redirect, or if the resource is labeled with a
+      MIME type other than text/cache-manifest, then run the cache failure
+      steps.
+   7. If this is an upgrade attempt and the newly downloaded manifest is
+      byte-for-byte identical to the manifest found in the newest application
+      cache in cache group, or the server reported it as "304 Not Modified" or
+      equivalent, then run these substeps:
+         1. Let cache be the newest application cache in cache group.
+         2. Let task list be an empty list of tasks.
+         3. For each entry in cache group's list of pending master entries,
+            wait for the resource for this entry to have either completely
+            downloaded or failed.
+            
+            If the download failed (e.g. the connection times out, or the user
+            cancels the download), then create a task to fire a simple event
+            that is cancelable named error at the ApplicationCache singleton of
+            the cache host the Document for this entry, if there still is one,
+            and append it to task list. The default action of this event must
+            be, if the user agent shows caching progress, the display of some
+            sort of user interface indicating to the user that the user agent
+            failed to save the application for offline use.
+            
+            Otherwise, associate the Document for this entry with cache; store
+            the resource for this entry in cache, if it isn't already there,
+            and categorize its entry as a master entry. If the resource's URL
+            has a <fragment> component, it must be removed from the entry in
+            cache (application caches never include fragment identifiers).
+            
+            HTTP caching rules, such as Cache-Control: no-store, are ignored
+            for the purposes of the application cache download process.        
+         4. For each cache host associated with an application cache in cache
+            group, create a task to fire a simple event that is cancelable
+            named noupdate at the ApplicationCache singleton of the cache host,
+            and append it to task list. The default action of these events must
+            be, if the user agent shows caching progress, the display of some
+            sort of user interface indicating to the user that the application
+            is up to date.
+         5. Empty cache group's list of pending master entries.
+         6. If appropriate, remove any user interface indicating that an update
+            for this cache is in progress.
+         7. Let the status of cache group be idle.
+         8. For each task in task list, queue that task as a post-load task.
+         9. Abort the application cache download process. 
+   8. Let new cache be a newly created application cache in cache group. Set
+      its completeness flag to incomplete.
+   9. For each entry in cache group's list of pending master entries, associate
+      the Document for this entry with new cache.
+  10. Set the status of cache group to downloading.
+  11. For each cache host associated with an application cache in cache group,
+      queue a post-load task to fire a simple event that is cancelable named
+      downloading at the ApplicationCache singleton of the cache host. The
+      default action of these events must be, if the user agent shows caching
+      progress, the display of some sort of user interface indicating to the
+      user that a new version is being downloaded.
+  12. Let file list be an empty list of URLs with flags.
+  13. Add all the URLs in the list of explicit entries obtained by parsing
+      manifest to file list, each flagged with "explicit entry".
+  14. Add all the URLs in the list of fallback entries obtained by parsing
+      manifest to file list, each flagged with "fallback entry".
+  15. If this is an upgrade attempt, then add all the URLs of master entries in
+      the newest application cache in cache group whose completeness flag is
+      complete to file list, each flagged with "master entry".
+  16. If any URL is in file list more than once, then merge the entries into
+      one entry for that URL, that entry having all the flags that the original
+      entries had.
+  17. For each URL in file list, run the following steps. These steps may be
+      run in parallel for two or more of the URLs at a time.
+         1. If the resource URL being processed was flagged as neither an
+            "explicit entry" nor or a "fallback entry", then the user agent may
+            skip this URL.
+            
+            This is intended to allow user agents to expire resources not
+            listed in the manifest from the cache. Generally, implementors are
+            urged to use an approach that expires lesser-used resources first.
+         2. For each cache host associated with an application cache in cache
+            group, queue a post-load task to fire an event with the name
+            progress, which does not bubble, which is cancelable, and which
+            uses the ProgressEvent interface, at the ApplicationCache singleton
+            of the cache host. The lengthComputable attribute must be set to
+            true, the total attribute must be set to the number of files in
+            file list, and the loaded attribute must be set to the number of
+            number of files in file list that have been either downloaded or
+            skipped so far. The default action of these events must be, if the
+            user agent shows caching progress, the display of some sort of user
+            interface indicating to the user that a file is being downloaded in
+            preparation for updating the application. [PROGRESS]
+         3. Fetch the resource, from the origin of the URL manifest URL, with
+            the synchronous flag set and the manual redirect flag set. If this
+            is an upgrade attempt, then use the newest application cache in
+            cache group as an HTTP cache, and honor HTTP caching semantics
+            (such as expiration, ETags, and so forth) with respect to that
+            cache. User agents may also have other caches in place that are
+            also honored.
+            
+            If the resource in question is already being downloaded for other
+            reasons then the existing download process can sometimes be used
+            for the purposes of this step, as defined by the fetching
+            algorithm.
+            
+            An example of a resource that might already be being downloaded is
+            a large image on a Web page that is being seen for the first time.
+            The image would get downloaded to satisfy the img element on the
+            page, as well as being listed in the cache manifest. According to
+            the rules for fetching that image only need be downloaded once, and
+            it can be used both for the cache and for the rendered Web page.
+         4. If the previous step fails (e.g. the server returns a 4xx or 5xx
+            response or equivalent, or there is a DNS error, or the connection
+            times out, or the user cancels the download), or if the server
+            returned a redirect, then run the first appropriate step from the
+            following list:
+            
+            If the URL being processed was flagged as an "explicit entry" or a
+            "fallback entry"
 
                 Run the cache failure steps.
 
-                Redirects are fatal because they are either indicative of a network problem (e.g. a captive portal); or would allow resources to be added to the cache under URLs that differ from any URL that the networking model will allow access to, leaving orphan entries; or would allow resources to be stored under URLs different than their true URLs. All of these situations are bad.
+                Redirects are fatal because they are either indicative of a
+                network problem (e.g. a captive portal); or would allow
+                resources to be added to the cache under URLs that differ from
+                any URL that the networking model will allow access to, leaving
+                orphan entries; or would allow resources to be stored under
+                URLs different than their true URLs. All of these situations
+                are bad.
+
             If the error was a 404 or 410 HTTP response or equivalent
 
                 Skip this resource. It is dropped from the cache.
+            
             Otherwise
 
-                Copy the resource and its metadata from the newest application cache in cache group whose completeness flag is complete, and act as if that was the fetched resource, ignoring the resource obtained from the network.
+                Copy the resource and its metadata from the newest application
+                cache in cache group whose completeness flag is complete, and
+                act as if that was the fetched resource, ignoring the resource
+                obtained from the network.
 
-            User agents may warn the user of these errors as an aid to development.
+            User agents may warn the user of these errors as an aid to
+            development.
+            
+            These rules make errors for resources listed in the manifest
+            fatal, while making it possible for other resources to be removed
+            from caches when they are removed from the server, without errors,
+            and making non-manifest resources survive server-side errors.
+         5. Otherwise, the fetching succeeded. Store the resource in the new
+            cache.
+            
+            If the user agent is not able to store the resource (e.g. because
+            of quota restrictions), the user agent may prompt the user or try
+            to resolve the problem in some other manner (e.g. automatically
+            pruning content in other caches). If the problem cannot be
+            resolved, the user agent must run the cache failure steps.
+         6. If the URL being processed was flagged as an "explicit entry" in
+            file list, then categorize the entry as an explicit entry.
+         7. If the URL being processed was flagged as a "fallback entry" in
+            file list, then categorize the entry as a fallback entry.
+         8. If the URL being processed was flagged as an "master entry" in file
+            list, then categorize the entry as a master entry.
+         9. As an optimization, if the resource is an HTML or XML file whose
+            root element is an html element with a manifest attribute whose
+            value doesn't match the manifest URL of the application cache being
+            processed, then the user agent should mark the entry as being
+            foreign.
+  18. For each cache host associated with an application cache in cache group,
+      queue a post-load task to fire an event with the name progress, which
+      does not bubble, which is cancelable, and which uses the ProgressEvent
+      interface, at the ApplicationCache singleton of the cache host. The
+      lengthComputable attribute must be set to true, the total and the loaded
+      attributes must be set to the number of number of files in file list. The
+      default action of these events must be, if the user agent shows caching
+      progress, the display of some sort of user interface indicating to the
+      user that all the files have been downloaded. [PROGRESS]
+  19. Store the list of fallback namespaces, and the URLs of the fallback
+      entries that they map to, in new cache.
+  20. Store the URLs that form the new online whitelist in new cache.
+  21. Store the value of the new online whitelist wildcard flag in new cache.
+  22. For each entry in cache group's list of pending master entries, wait for
+      the resource for this entry to have either completely downloaded or
+      failed.
+      
+      If the download failed (e.g. the connection times out, or the user
+      cancels the download), then run these substeps:
+         1. Unassociate the Document for this entry from new cache.
+         2. Queue a post-load task to fire a simple event that is cancelable
+            named error at the ApplicationCache singleton of the Document for
+            this entry, if there still is one. The default action of this event
+            must be, if the user agent shows caching progress, the display of
+            some sort of user interface indicating to the user that the user
+            agent failed to save the application for offline use.      
+         3. If this is a cache attempt and this entry is the last entry in
+            cache group's list of pending master entries, then run these
+            further substeps:
+               1. Discard cache group and its only application cache, new cache.
+               2. If appropriate, remove any user interface indicating that an
+                  update for this cache is in progress.
+               3. bort the application cache download process. 
+         4. Otherwise, remove this entry from cache group's list of pending
+            master entries.
 
-            These rules make errors for resources listed in the manifest fatal, while making it possible for other resources to be removed from caches when they are removed from the server, without errors, and making non-manifest resources survive server-side errors.
-         5.
-
-            Otherwise, the fetching succeeded. Store the resource in the new cache.
-
-            If the user agent is not able to store the resource (e.g. because of quota restrictions), the user agent may prompt the user or try to resolve the problem in some other manner (e.g. automatically pruning content in other caches). If the problem cannot be resolved, the user agent must run the cache failure steps.
-         6.
-
-            If the URL being processed was flagged as an "explicit entry" in file list, then categorize the entry as an explicit entry.
-         7.
-
-            If the URL being processed was flagged as a "fallback entry" in file list, then categorize the entry as a fallback entry.
-         8.
-
-            If the URL being processed was flagged as an "master entry" in file list, then categorize the entry as a master entry.
-         9.
-
-            As an optimization, if the resource is an HTML or XML file whose root element is an html element with a manifest attribute whose value doesn't match the manifest URL of the application cache being processed, then the user agent should mark the entry as being foreign.
-  18.
-
-      For each cache host associated with an application cache in cache group, queue a post-load task to fire an event with the name progress, which does not bubble, which is cancelable, and which uses the ProgressEvent interface, at the ApplicationCache singleton of the cache host. The lengthComputable attribute must be set to true, the total and the loaded attributes must be set to the number of number of files in file list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that all the files have been downloaded. [PROGRESS]
-  19.
-
-      Store the list of fallback namespaces, and the URLs of the fallback entries that they map to, in new cache.
-  20.
-
-      Store the URLs that form the new online whitelist in new cache.
-  21.
-
-      Store the value of the new online whitelist wildcard flag in new cache.
-  22.
-
-      For each entry in cache group's list of pending master entries, wait for the resource for this entry to have either completely downloaded or failed.
-
-      If the download failed (e.g. the connection times out, or the user cancels the download), then run these substeps:
-         1.
-
-            Unassociate the Document for this entry from new cache.
-         2.
-
-            Queue a post-load task to fire a simple event that is cancelable named error at the ApplicationCache singleton of the Document for this entry, if there still is one. The default action of this event must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent failed to save the application for offline use.
-         3.
-
-            If this is a cache attempt and this entry is the last entry in cache group's list of pending master entries, then run these further substeps:
-               1.
-
-                  Discard cache group and its only application cache, new cache.
-               2.
-
-                  If appropriate, remove any user interface indicating that an update for this cache is in progress.
-               3.
-
-                  Abort the application cache download process. 
-         4.
-
-            Otherwise, remove this entry from cache group's list of pending master entries. 
-
-      Otherwise, store the resource for this entry in new cache, if it isn't already there, and categorize its entry as a master entry.
-  23.
-
-      Fetch the resource from manifest URL again, with the synchronous flag set, and let second manifest be that resource.
-  24.
-
-      If the previous step failed for any reason, or if the fetching attempt involved a redirect, or if second manifest and manifest are not byte-for-byte identical, then schedule a rerun of the entire algorithm with the same parameters after a short delay, and run the cache failure steps.
-  25.
-
-      Otherwise, store manifest in new cache, if it's not there already, and categorize its entry as the manifest.
-  26.
-
-      Set the completeness flag of new cache to complete.
-  27.
-
-      Let task list be an empty list of tasks.
-  28.
-
-      If this is a cache attempt, then for each cache host associated with an application cache in cache group, create a task to fire a simple event that is cancelable named cached at the ApplicationCache singleton of the cache host, and append it to task list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the application has been cached and that they can now use it offline.
-
-      Otherwise, it is an upgrade attempt. For each cache host associated with an application cache in cache group, create a task to fire a simple event that is cancelable named updateready at the ApplicationCache singleton of the cache host, and append it to task list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that a new version is available and that they can activate it by reloading the page.
-  29.
-
-      If appropriate, remove any user interface indicating that an update for this cache is in progress.
-  30.
-
-      Set the update status of cache group to idle.
-  31.
-
-      For each task in task list, queue that task as a post-load task. 
+      Otherwise, store the resource for this entry in new cache, if it isn't
+      already there, and categorize its entry as a master entry.
+  23. Fetch the resource from manifest URL again, with the synchronous flag
+      set, and let second manifest be that resource.
+  24. If the previous step failed for any reason, or if the fetching attempt
+      involved a redirect, or if second manifest and manifest are not
+      byte-for-byte identical, then schedule a rerun of the entire algorithm
+      with the same parameters after a short delay, and run the cache failure
+      steps.
+  25. Otherwise, store manifest in new cache, if it's not there already, and
+      categorize its entry as the manifest.
+  26. Set the completeness flag of new cache to complete.
+  27. Let task list be an empty list of tasks.
+  28. If this is a cache attempt, then for each cache host associated with an
+      application cache in cache group, create a task to fire a simple event
+      that is cancelable named cached at the ApplicationCache singleton of the
+      cache host, and append it to task list. The default action of these
+      events must be, if the user agent shows caching progress, the display of
+      some sort of user interface indicating to the user that the application
+      has been cached and that they can now use it offline.
+      
+      Otherwise, it is an upgrade attempt. For each cache host associated with
+      an application cache in cache group, create a task to fire a simple event
+      that is cancelable named updateready at the ApplicationCache singleton of
+      the cache host, and append it to task list. The default action of these
+      events must be, if the user agent shows caching progress, the display of
+      some sort of user interface indicating to the user that a new version is
+      available and that they can activate it by reloading the page.
+  29. If appropriate, remove any user interface indicating that an update for
+      this cache is in progress.
+  30. Set the update status of cache group to idle.
+  31. For each task in task list, queue that task as a post-load task. 
 
 The cache failure steps are as follows:
 
-   1.
-
-      Let task list be an empty list of tasks.
-   2.
-
-      For each entry in cache group's list of pending master entries, run the following further substeps. These steps may be run in parallel for two or more entries at a time.
-         1.
-
-            Wait for the resource for this entry to have either completely downloaded or failed.
-         2.
-
-            Unassociate the Document for this entry from its application cache, if it has one.
-         3.
-
-            Create a task to fire a simple event that is cancelable named error at the ApplicationCache singleton of the Document for this entry, if there still is one, and append it to task list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent failed to save the application for offline use.
-   3.
-
-      For each cache host still associated with an application cache in cache group, create a task to fire a simple event that is cancelable named error at the ApplicationCache singleton of the cache host, and append it to task list. The default action of these events must be, if the user agent shows caching progress, the display of some sort of user interface indicating to the user that the user agent failed to save the application for offline use.
-   4.
-
-      Empty cache group's list of pending master entries.
-   5.
-
-      If cache group has an application cache whose completeness flag is incomplete, then discard that application cache.
-   6.
-
-      If appropriate, remove any user interface indicating that an update for this cache is in progress.
-   7.
-
-      Let the status of cache group be idle.
-   8.
-
-      If this was a cache attempt, discard cache group altogether.
-   9.
-
-      For each task in task list, queue that task as a post-load task.
-  10.
-
-      Abort the application cache download process. 
+   1. Let task list be an empty list of tasks.
+   2. For each entry in cache group's list of pending master entries, run the
+      following further substeps. These steps may be run in parallel for two or
+      more entries at a time.
+         1. Wait for the resource for this entry to have either completely
+            downloaded or failed.
+         2. Unassociate the Document for this entry from its application cache,
+            if it has one.
+         3. Create a task to fire a simple event that is cancelable named error
+            at the ApplicationCache singleton of the Document for this entry,
+            if there still is one, and append it to task list. The default
+            action of these events must be, if the user agent shows caching
+            progress, the display of some sort of user interface indicating to
+            the user that the user agent failed to save the application for
+            offline use.
+   3. For each cache host still associated with an application cache in cache
+      group, create a task to fire a simple event that is cancelable named
+      error at the ApplicationCache singleton of the cache host, and append it
+      to task list. The default action of these events must be, if the user
+      agent shows caching progress, the display of some sort of user interface
+      indicating to the user that the user agent failed to save the application
+      for offline use.
+   4. Empty cache group's list of pending master entries.
+   5. If cache group has an application cache whose completeness flag is
+      incomplete, then discard that application cache.
+   6. If appropriate, remove any user interface indicating that an update for
+      this cache is in progress.
+   7. Let the status of cache group be idle.
+   8. If this was a cache attempt, discard cache group altogether.
+   9. For each task in task list, queue that task as a post-load task.
+  10. Abort the application cache download process. 
 
 Attempts to fetch resources as part of the application cache download process
 may be done with cache-defeating semantics, to avoid problems with stale or
@@ -32467,65 +33543,116 @@ agent must run the appropriate steps from the following list:
 If target's Document is ready for post-load tasks
 
     Queue the task task. 
+
 Otherwise
 
-    Add task to target's Document's list of pending application cache download process tasks. 
+    Add task to target's Document's list of pending application cache download
+    process tasks.
 
 The task source for these tasks is the networking task source.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.5 The application cache selection algorithm
 
-When the application cache selection algorithm algorithm is invoked with a Document document and optionally a manifest URL manifest URL, the user agent must run the first applicable set of steps from the following list:
+When the application cache selection algorithm algorithm is invoked with a
+Document document and optionally a manifest URL manifest URL, the user agent
+must run the first applicable set of steps from the following list:
 
-If there is a manifest URL, and document was loaded from an application cache, and the URL of the manifest of that cache's application cache group is not the same as manifest URL
+If there is a manifest URL, and document was loaded from an application cache,
+and the URL of the manifest of that cache's application cache group is not the
+same as manifest URL
 
-    Mark the entry for the resource from which document was taken in the application cache from which it was loaded as foreign.
+    Mark the entry for the resource from which document was taken in the
+    application cache from which it was loaded as foreign.
+    
+     Restart the current navigation from the top of the navigation algorithm,
+    undoing any changes that were made as part of the initial load (changes can
+    be avoided by ensuring that the step to update the session history with the
+    new page is only ever completed after this application cache selection
+    algorithm is run, though this is not required).
+    
+     The navigation will not result in the same resource being loaded, because
+    "foreign" entries are never picked during navigation.
+    
+     User agents may notify the user of the inconsistency between the cache
+    manifest and the document's own metadata, to aid in application
+    development.
 
-    Restart the current navigation from the top of the navigation algorithm, undoing any changes that were made as part of the initial load (changes can be avoided by ensuring that the step to update the session history with the new page is only ever completed after this application cache selection algorithm is run, though this is not required).
+If document was loaded from an application cache, and that application cache
+still exists (it is not now obsolete)
 
-    The navigation will not result in the same resource being loaded, because "foreign" entries are never picked during navigation.
+    Associate document with the application cache from which it was loaded.
+    Invoke, in the background, the application cache download process for that
+    application cache's application cache group, with document as the cache
+    host.
 
-    User agents may notify the user of the inconsistency between the cache manifest and the document's own metadata, to aid in application development.
-If document was loaded from an application cache, and that application cache still exists (it is not now obsolete)
+If document was loaded using HTTP GET or equivalent, and, there is a manifest
+URL, and manifest URL has the same origin as document
 
-    Associate document with the application cache from which it was loaded. Invoke, in the background, the application cache download process for that application cache's application cache group, with document as the cache host.
-If document was loaded using HTTP GET or equivalent, and, there is a manifest URL, and manifest URL has the same origin as document
+    Invoke, in the background, the application cache download process for
+    manifest URL, with document as the cache host and with the resource from
+    which document was parsed as the master resource.
 
-    Invoke, in the background, the application cache download process for manifest URL, with document as the cache host and with the resource from which document was parsed as the master resource.
 Otherwise
 
     The Document is not associated with any application cache.
 
-    If there was a manifest URL, the user agent may report to the user that it was ignored, to aid in application development.
+    If there was a manifest URL, the user agent may report to the user that it
+    was ignored, to aid in application development.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.6.6 Changes to the networking model
 
-When a cache host is associated with an application cache whose completeness flag is complete, any and all loads for resources related to that cache host other than those for child browsing contexts must go through the following steps instead of immediately invoking the mechanisms appropriate to that resource's scheme:
+When a cache host is associated with an application cache whose completeness
+flag is complete, any and all loads for resources related to that cache host
+other than those for child browsing contexts must go through the following
+steps instead of immediately invoking the mechanisms appropriate to that
+resource's scheme:
 
-   1.
-
-      If the resource is not to be fetched using the HTTP GET mechanism or equivalent, or if its URL has a different <scheme> component than the application cache's manifest, then fetch the resource normally and abort these steps.
-   2.
-
-      If the resource's URL is a master entry, the manifest, an explicit entry, or a fallback entry in the application cache, then get the resource from the cache (instead of fetching it), and abort these steps.
-   3.
-
-      If there is an entry in the application cache's online whitelist that has the same origin as the resource's URL and that is a prefix match for the resource's URL, then fetch the resource normally and abort these steps.
-   4.
-
-      If the resource's URL has the same origin as the manifest's URL, and there is a fallback namespace f in the application cache that is a prefix match for the resource's URL, then:
-
-      Fetch the resource normally. If this results in a redirect to a resource with another origin (indicative of a captive portal), or a 4xx or 5xx status code or equivalent, or if there were network errors (but not if the user canceled the download), then instead get, from the cache, the resource of the fallback entry corresponding to the fallback namespace f. Abort these steps.
-   5.
-
-      If the application cache's online whitelist wildcard flag is open, then fetch the resource normally and abort these steps.
-   6.
-
-      Fail the resource load as if there had been a generic network error. 
+   1. If the resource is not to be fetched using the HTTP GET mechanism or
+      equivalent, or if its URL has a different <scheme> component than the
+      application cache's manifest, then fetch the resource normally and abort
+      these steps.
+   2. If the resource's URL is a master entry, the manifest, an explicit entry,
+      or a fallback entry in the application cache, then get the resource from
+      the cache (instead of fetching it), and abort these steps.
+   3. If there is an entry in the application cache's online whitelist that has
+      the same origin as the resource's URL and that is a prefix match for the
+      resource's URL, then fetch the resource normally and abort these steps.
+   4. If the resource's URL has the same origin as the manifest's URL, and
+      there is a fallback namespace f in the application cache that is a prefix
+      match for the resource's URL, then:
+      
+      Fetch the resource normally. If this results in a redirect to a resource
+      with another origin (indicative of a captive portal), or a 4xx or 5xx
+      status code or equivalent, or if there were network errors (but not if
+      the user canceled the download), then instead get, from the cache, the
+      resource of the fallback entry corresponding to the fallback namespace f.
+      Abort these steps.
+   5. If the application cache's online whitelist wildcard flag is open, then
+      fetch the resource normally and abort these steps.
+   6. Fail the resource load as if there had been a generic network error. 
 
 The above algorithm ensures that so long as the online whitelist wildcard flag
 is blocking, resources that are not present in the manifest will always fail
 to load (at least, after the application cache has been primed the first
 time), making the testing of offline applications simpler.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.6.7 Expiring application caches
 
@@ -32544,6 +33671,12 @@ For example, a user agent could have a "delete site-specific data" feature
 that clears all cookies, application caches, local storage, databases, etc,
 from an origin all at once.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5.6.8 Disk space
 
 User agents should consider applying constraints on disk usage of application
@@ -32559,6 +33692,12 @@ indicate that certain sites are trusted to use more than the default quota,
 e.g. by asynchronously presenting a user interface while a cache is being
 updated, or by having an explicit whitelist in the user agent's configuration
 interface.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 5.6.9 Application cache API
 
@@ -32591,23 +33730,34 @@ ApplicationCache implements EventTarget;
 
 cache = window . applicationCache
 
-    (In a window.) Returns the ApplicationCache object that applies to the active document of that Window.
+    (In a window.) Returns the ApplicationCache object that applies to the
+    active document of that Window.
+
 cache = self . applicationCache
 
-    (In a shared worker.) Returns the ApplicationCache object that applies to the current shared worker. [WEBWORKERS]
+    (In a shared worker.) Returns the ApplicationCache object that applies to
+    the current shared worker. [WEBWORKERS]
+
 cache . status
 
-    Returns the current status of the application cache, as given by the constants defined below.
+    Returns the current status of the application cache, as given by the
+    constants defined below.
+
 cache . update()
 
     Invokes the application cache download process.
 
     Throws an INVALID_STATE_ERR exception if there is no application cache to update.
+
 cache . swapCache()
 
-    Switches to the most recent application cache, if there is a newer one. If there isn't, throws an INVALID_STATE_ERR exception.
-
-    This does not cause previously-loaded resources to be reloaded; for example, images do not suddenly get reloaded and style sheets and scripts do not get reparsed or reevaluated. The only change is that subsequent requests for cached resources will obtain the newer copies.
+    Switches to the most recent application cache, if there is a newer one. If
+    there isn't, throws an INVALID_STATE_ERR exception.
+    
+    This does not cause previously-loaded resources to be reloaded; for
+    example, images do not suddenly get reloaded and style sheets and scripts
+    do not get reparsed or reevaluated. The only change is that subsequent
+    requests for cached resources will obtain the newer copies.
 
 There is a one-to-one mapping from cache hosts to ApplicationCache objects.
 The applicationCache attribute on Window objects must return the
@@ -32624,56 +33774,87 @@ with, if any. This must be the appropriate value from the following list:
 
 UNCACHED (numeric value 0)
 
-    The ApplicationCache object's cache host is not associated with an application cache at this time. 
+    The ApplicationCache object's cache host is not associated with an
+    application cache at this time.
+
 IDLE (numeric value 1)
 
-    The ApplicationCache object's cache host is associated with an application cache whose application cache group's update status is idle, and that application cache is the newest cache in its application cache group, and the application cache group is not marked as obsolete. 
+    The ApplicationCache object's cache host is associated with an application
+    cache whose application cache group's update status is idle, and that
+    application cache is the newest cache in its application cache group, and
+    the application cache group is not marked as obsolete.
+
 CHECKING (numeric value 2)
 
-    The ApplicationCache object's cache host is associated with an application cache whose application cache group's update status is checking. 
+    The ApplicationCache object's cache host is associated with an application
+    cache whose application cache group's update status is checking.
+
 DOWNLOADING (numeric value 3)
 
-    The ApplicationCache object's cache host is associated with an application cache whose application cache group's update status is downloading. 
+    The ApplicationCache object's cache host is associated with an application
+    cache whose application cache group's update status is downloading.
+
 UPDATEREADY (numeric value 4)
 
-    The ApplicationCache object's cache host is associated with an application cache whose application cache group's update status is idle, and whose application cache group is not marked as obsolete, but that application cache is not the newest cache in its group. 
+    The ApplicationCache object's cache host is associated with an application
+    cache whose application cache group's update status is idle, and whose
+    application cache group is not marked as obsolete, but that application
+    cache is not the newest cache in its group.
+
 OBSOLETE (numeric value 5)
 
-    The ApplicationCache object's cache host is associated with an application cache whose application cache group is marked as obsolete. 
+    The ApplicationCache object's cache host is associated with an application
+    cache whose application cache group is marked as obsolete.
 
-If the update() method is invoked, the user agent must invoke the application cache download process, in the background, for the application cache with which the ApplicationCache object's cache host is associated, but without giving that cache host to the algorithm. If there is no such application cache, or if it is marked as obsolete, then the method must raise an INVALID_STATE_ERR exception instead.
+If the update() method is invoked, the user agent must invoke the application
+cache download process, in the background, for the application cache with which
+the ApplicationCache object's cache host is associated, but without giving that
+cache host to the algorithm. If there is no such application cache, or if it is
+marked as obsolete, then the method must raise an INVALID_STATE_ERR exception
+instead.
 
-If the swapCache() method is invoked, the user agent must run the following steps:
+If the swapCache() method is invoked, the user agent must run the following
+steps:
 
-   1.
+   1. Check that ApplicationCache object's cache host is associated with an
+      application cache. If it is not, then raise an INVALID_STATE_ERR
+      exception and abort these steps.
+   2. Let cache be the application cache with which the ApplicationCache
+      object's cache host is associated. (By definition, this is the same as
+      the one that was found in the previous step.)
+   3. If cache's application cache group is marked as obsolete, then
+      unassociate the ApplicationCache object's cache host from cache and abort
+      these steps. (Resources will now load from the network instead of the
+      cache.)
+   4. Check that there is an application cache in the same application cache
+      group as cache whose completeness flag is complete and that is newer than
+      cache. If there is not, then raise an INVALID_STATE_ERR exception and
+      abort these steps.
+   5. Let new cache be the newest application cache in the same application
+      cache group as cache whose completeness flag is complete.
+   6. Unassociate the ApplicationCache object's cache host from cache and
+      instead associate it with new cache.
 
-      Check that ApplicationCache object's cache host is associated with an application cache. If it is not, then raise an INVALID_STATE_ERR exception and abort these steps.
-   2.
+The following are the event handlers (and their corresponding event handler
+event types) that must be supported, as IDL attributes, by all objects
+implementing the ApplicationCache interface:
 
-      Let cache be the application cache with which the ApplicationCache object's cache host is associated. (By definition, this is the same as the one that was found in the previous step.)
-   3.
+Event handler   Event handler event type
+onchecking      checking
+onerror         error
+onnoupdate      noupdate
+ondownloading   downloading
+onprogress      progress
+onupdateready   updateready
+oncached        cached
+onobsolete      obsolete
 
-      If cache's application cache group is marked as obsolete, then unassociate the ApplicationCache object's cache host from cache and abort these steps. (Resources will now load from the network instead of the cache.)
-   4.
+******************************************************************************/
+test('TODO: ', function(){
 
-      Check that there is an application cache in the same application cache group as cache whose completeness flag is complete and that is newer than cache. If there is not, then raise an INVALID_STATE_ERR exception and abort these steps.
-   5.
+});
+/******************************************************************************
 
-      Let new cache be the newest application cache in the same application cache group as cache whose completeness flag is complete.
-   6.
-
-      Unassociate the ApplicationCache object's cache host from cache and instead associate it with new cache. 
-
-The following are the event handlers (and their corresponding event handler event types) that must be supported, as IDL attributes, by all objects implementing the ApplicationCache interface:
-Event handler 	Event handler event type
-onchecking 	checking
-onerror 	error
-onnoupdate 	noupdate
-ondownloading 	downloading
-onprogress 	progress
-onupdateready 	updateready
-oncached 	cached
-onobsolete 	obsolete
 5.6.10 Browser state
 
 [Supplemental, NoInterfaceObject]
@@ -32683,9 +33864,11 @@ interface NavigatorOnLine {
 
 window . navigator . onLine
 
-    Returns false if the user agent is definitely offline (disconnected from the network). Returns true if the user agent might be online.
-
-    The events online and offline are fired when the value of this attribute changes.
+    Returns false if the user agent is definitely offline (disconnected from
+    the network). Returns true if the user agent might be online.
+    
+    The events online and offline are fired when the value of this attribute
+    changes.
 
 The navigator.onLine attribute must return false if the user agent will not
 contact the network when the user follows links or when a script requests a
@@ -32716,33 +33899,70 @@ offline.
   <title>Online status</title>
   <script>
    function updateIndicator() {
-     document.getElementById('indicator').textContext = navigator.onLine ? 'online' : 'offline';
+     document.getElementById('indicator').textContext = navigator.onLine ? 
+        'online' : 'offline';
    }
   </script>
  </head>
- <body onload="updateIndicator()" ononline="updateIndicator()" onoffline="updateIndicator()">
+ <body  onload="updateIndicator()" 
+        ononline="updateIndicator()" 
+        onoffline="updateIndicator()">
   <p>The network is: <span id="indicator">(state unknown)</span>
  </body>
 </html>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6 Web application APIs
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1 Scripting
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.1 Introduction
 
-Various mechanisms can cause author-provided executable code to run in the context of a document. These mechanisms include, but are probably not limited to:
+Various mechanisms can cause author-provided executable code to run in the
+context of a document. These mechanisms include, but are probably not limited
+to:
 
     * Processing of script elements.
-    * Processing of inline javascript: URLs (e.g. the src attribute of img elements, or an @import rule in a CSS style element block).
-    * Event handlers, whether registered through the DOM using addEventListener(), by explicit event handler content attributes, by event handler IDL attributes, or otherwise.
-    * Processing of technologies like XBL or SVG that have their own scripting features.
+    * Processing of inline javascript: URLs (e.g. the src attribute of img
+      elements, or an @import rule in a CSS style element block).
+    * Event handlers, whether registered through the DOM using
+      addEventListener(), by explicit event handler content attributes, by
+      event handler IDL attributes, or otherwise.
+    * Processing of technologies like XBL or SVG that have their own scripting
+      features.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.2 Enabling and disabling scripting
 
-Scripting is enabled in a browsing context when all of the following conditions are true:
+Scripting is enabled in a browsing context when all of the following conditions
+are true:
 
     * The user agent supports scripting.
-    * The user has not disabled scripting for this browsing context at this time. (User agents may provide users with the option to disable scripting globally, or in a finer-grained manner, e.g. on a per-origin basis.)
-    * The browsing context did not have the sandboxed scripts browsing context flag set when the browsing context's active document was created.
+    * The user has not disabled scripting for this browsing context at this
+      time. (User agents may provide users with the option to disable scripting
+      globally, or in a finer-grained manner, e.g. on a per-origin basis.)
+    * The browsing context did not have the sandboxed scripts browsing context
+      flag set when the browsing context's active document was created.
 
 Scripting is disabled in a browsing context when any of the above conditions
 are false (i.e. when scripting is not enabled).
@@ -32754,7 +33974,19 @@ context, and scripting is enabled in that browsing context.
 Scripting is disabled for a node if there is no such browsing context, or if
 scripting is disabled in that browsing context.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.3 Processing model
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.3.1 Definitions
 
@@ -32762,45 +33994,85 @@ A script has:
 
 A script execution environment
 
-    The characteristics of the script execution environment depend on the language, and are not defined by this specification.
+    The characteristics of the script execution environment depend on the
+    language, and are not defined by this specification.
+    
+    In JavaScript, the script execution environment consists of the
+    interpreter, the stack of execution contexts, the global code and function
+    code and the Function objects resulting, and so forth.
 
-    In JavaScript, the script execution environment consists of the interpreter, the stack of execution contexts, the global code and function code and the Function objects resulting, and so forth.
 A list of code entry-points
 
-    Each code entry-point represents a block of executable code that the script exposes to other scripts and to the user agent.
+    Each code entry-point represents a block of executable code that the script
+    exposes to other scripts and to the user agent.
+    
+    Each Function object in a JavaScript script execution environment has a
+    corresponding code entry-point, for instance.
+    
+    The main program code of the script, if any, is the initial code
+    entry-point. Typically, the code corresponding to this entry-point is
+    executed immediately after the script is parsed.
+    
+    In JavaScript, this corresponds to the execution context of the global
+    code.
 
-    Each Function object in a JavaScript script execution environment has a corresponding code entry-point, for instance.
-
-    The main program code of the script, if any, is the initial code entry-point. Typically, the code corresponding to this entry-point is executed immediately after the script is parsed.
-
-    In JavaScript, this corresponds to the execution context of the global code.
 A relationship with the script's global object
 
     An object that provides the APIs that the code can use.
+    
+    This is typically a Window object. In JavaScript, this corresponds to the
+    global object.
+    
+    When a script's global object is an empty object, it can't do anything
+    that interacts with the environment.
+    
+    If the script's global object is a Window object, then in JavaScript, the
+    ThisBinding of the global execution context for this script must be the
+    Window object's WindowProxy object, rather than the global object.
+    [ECMA262]
+    
+    This is a willful violation of the JavaScript specification current at the
+    time of writing (ECMAScript edition 5, as defined in section 10.4.1.1
+    Initial Global Execution Context, step 3). The JavaScript specification
+    requires that the this keyword in the global scope return the global
+    object, but this is not compatible with the security design prevalent in
+    implementations as specified herein. [ECMA262]
 
-    This is typically a Window object. In JavaScript, this corresponds to the global object.
-
-    When a script's global object is an empty object, it can't do anything that interacts with the environment.
-
-    If the script's global object is a Window object, then in JavaScript, the ThisBinding of the global execution context for this script must be the Window object's WindowProxy object, rather than the global object. [ECMA262]
-
-    This is a willful violation of the JavaScript specification current at the time of writing (ECMAScript edition 5, as defined in section 10.4.1.1 Initial Global Execution Context, step 3). The JavaScript specification requires that the this keyword in the global scope return the global object, but this is not compatible with the security design prevalent in implementations as specified herein. [ECMA262]
 A relationship with the script's browsing context
 
-    A browsing context that is assigned responsibility for actions taken by the script.
+    A browsing context that is assigned responsibility for actions taken by the
+    script.
+    
+    When a script creates and navigates a new top-level browsing context, the
+    opener attribute of the new browsing context's Window object will be set to
+    the script's browsing context's WindowProxy object.
 
-    When a script creates and navigates a new top-level browsing context, the opener attribute of the new browsing context's Window object will be set to the script's browsing context's WindowProxy object.
 A relationship with the script's document
 
     A Document that is assigned responsibility for actions taken by the script.
+    
+    When a script fetches a resource, the current address of the script's
+    document will be used to set the Referer (sic) header.
 
-    When a script fetches a resource, the current address of the script's document will be used to set the Referer (sic) header.
 A URL character encoding
 
-    A character encoding, set when the script is created, used to encode URLs. If the character encoding is set from another source, e.g. a document's character encoding, then the script's URL character encoding must follow the source, so that if the source's changes, so does the script's.
+    A character encoding, set when the script is created, used to encode URLs.
+    If the character encoding is set from another source, e.g. a document's
+    character encoding, then the script's URL character encoding must follow
+    the source, so that if the source's changes, so does the script's.
+
 A base URL
 
-    A URL, set when the script is created, used to resolve relative URLs. If the base URL is set from another source, e.g. a document base URL, then the script's base URL must follow the source, so that if the source's changes, so does the script's.
+    A URL, set when the script is created, used to resolve relative URLs. If
+    the base URL is set from another source, e.g. a document base URL, then the
+    script's base URL must follow the source, so that if the source's changes,
+    so does the script's.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.3.2 Calling scripts
 
@@ -32808,20 +34080,21 @@ When a user agent is to jump to a code entry-point for a script, for example
 to invoke an event listener defined in that script, the user agent must run
 the following steps:
 
-   1.
-
-      If the script's global object is a Window object whose Document object is not fully active, then abort these steps without doing anything. The callback is not fired.
-   2.
-
-      Set the entry script to be the script being invoked.
-   3.
-
-      Make the script execution environment for the script execute the code for the given code entry-point.
-   4.
-
-      Set the entry script back to whatever it was when this algorithm started. 
+   1. If the script's global object is a Window object whose Document object is
+      not fully active, then abort these steps without doing anything. The
+      callback is not fired.
+   2. Set the entry script to be the script being invoked.
+   3. Make the script execution environment for the script execute the code for
+      the given code entry-point.
+   4. Set the entry script back to whatever it was when this algorithm started.
 
 This algorithm is not invoked by one script calling another.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.3.3 Creating scripts
 
@@ -32830,23 +34103,25 @@ source, its scripting language, a global object, a browsing context, a URL
 character encoding, and a base URL, the user agent must run the following
 steps:
 
-   1.
-
-      If scripting is disabled for browsing context passed to this algorithm, then abort these steps, as if the script did nothing but return void.
-   2.
-
-      Set up a script execution environment as appropriate for the scripting language.
-   3.
-
-      Parse/compile/initialize the source of the script using the script execution environment, as appropriate for the scripting language, and thus obtain the list of code entry-points for the script. If the semantics of the scripting language and the given source code are such that there is executable code to be immediately run, then the initial code entry-point is the entry-point for that code.
-   4.
-
-      Set up the script's global object, the script's browsing context, the script's document, the script's URL character encoding, and the script's base URL from the settings passed to this algorithm.
-   5.
-
-      If all the steps above succeeded (in particular, if the script was compiled successfully), Jump to the script's initial code entry-point.
-
-      Otherwise, report the error using the onerror event handler of the script's global object. If the error is still not handled after this, then the error may be reported to the user.
+   1. If scripting is disabled for browsing context passed to this algorithm,
+      then abort these steps, as if the script did nothing but return void.
+   2. Set up a script execution environment as appropriate for the scripting
+      language.
+   3. Parse/compile/initialize the source of the script using the script
+      execution environment, as appropriate for the scripting language, and
+      thus obtain the list of code entry-points for the script. If the
+      semantics of the scripting language and the given source code are such
+      that there is executable code to be immediately run, then the initial
+      code entry-point is the entry-point for that code.
+   4. Set up the script's global object, the script's browsing context, the
+      script's document, the script's URL character encoding, and the script's
+      base URL from the settings passed to this algorithm.
+   5. If all the steps above succeeded (in particular, if the script was
+      compiled successfully), Jump to the script's initial code entry-point.
+      
+      Otherwise, report the error using the onerror event handler of the
+      script's global object. If the error is still not handled after this,
+      then the error may be reported to the user.
 
 When the user agent is to create an impotent script, given some script
 source, its scripting language, and a browsing context, the user agent must
@@ -32862,21 +34137,20 @@ using the script settings determined from the node node.
 
 The script settings determined from the node node are computed as follows:
 
-   1.
+   1. Let document be the Document of node (or node itself if it is a
+      Document).
+   2. The browsing context is the browsing context of document.
+   3. The global object is the Window object of document.
+   4. The URL character encoding is the character encoding of document. (This
+      is a reference, not a copy.)
+   5. The base URL is the base URL of document. (This is a reference, not a
+      copy.)
 
-      Let document be the Document of node (or node itself if it is a Document).
-   2.
+******************************************************************************/
+test('TODO: ', function(){
 
-      The browsing context is the browsing context of document.
-   3.
-
-      The global object is the Window object of document.
-   4.
-
-      The URL character encoding is the character encoding of document. (This is a reference, not a copy.)
-   5.
-
-      The base URL is the base URL of document. (This is a reference, not a copy.) 
+});
+/******************************************************************************
 
 6.1.3.4 Killing scripts
 
@@ -32903,6 +34177,12 @@ because of a script's actions (e.g. because it has exceeded a time limit).
 If scripting is disabled while a script is executing, the script should be
 terminated immediately.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.3.5 Runtime script errors
 
 Whenever an uncaught runtime script error occurs in one of the scripts
@@ -32916,16 +34196,37 @@ handled or not handled:
 
 If the value of onerror is a Function
 
-    The function must be invoked with three arguments. The three arguments passed to the function are all DOMStrings; the first must give the message that the UA is considering reporting, the second must give the absolute URL of the resource in which the error occurred, and the third must give the line number in that resource on which the error occurred.
+    The function must be invoked with three arguments. The three arguments
+    passed to the function are all DOMStrings; the first must give the message
+    that the UA is considering reporting, the second must give the absolute URL
+    of the resource in which the error occurred, and the third must give the
+    line number in that resource on which the error occurred.
+    
+    If the function returns false, then the error is handled. Otherwise, the
+    error is not handled.
+    
+    Any uncaught exceptions thrown or errors caused by this function may be
+    reported to the user immediately after the error that the function was
+    called for; the report an error algorithm must not be used to handle
+    exceptions thrown or errors caused by this function.
 
-    If the function returns false, then the error is handled. Otherwise, the error is not handled.
-
-    Any uncaught exceptions thrown or errors caused by this function may be reported to the user immediately after the error that the function was called for; the report an error algorithm must not be used to handle exceptions thrown or errors caused by this function.
 Otherwise
 
     The error is not handled.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.4 Event loops
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.4.1 Definitions
 
@@ -32954,21 +34255,31 @@ tasks, which can be:
 
 Events
 
-    Asynchronously dispatching an Event object at a particular EventTarget object is a task.
+    Asynchronously dispatching an Event object at a particular EventTarget
+    object is a task.
 
-    Not all events are dispatched using the task queue, many are dispatched synchronously during other tasks.
+    Not all events are dispatched using the task queue, many are dispatched
+    synchronously during other tasks.
+
 Parsing
 
-    The HTML parser tokenizing one or more bytes, and then processing any resulting tokens, is typically a task. 
+    The HTML parser tokenizing one or more bytes, and then processing any
+    resulting tokens, is typically a task.
+
 Callbacks
 
     Calling a callback asynchronously is a task. 
+
 Using a resource
 
-    When an algorithm fetches a resource, if the fetching occurs asynchronously then the processing of the resource once some or all of the resource is available is a task. 
+    When an algorithm fetches a resource, if the fetching occurs asynchronously
+    then the processing of the resource once some or all of the resource is
+    available is a task.
+
 Reacting to DOM manipulation
 
-    Some elements have tasks that trigger in response to DOM manipulation, e.g. when that element is inserted into the document.
+    Some elements have tasks that trigger in response to DOM manipulation, e.g.
+    when that element is inserted into the document.
 
 When a user agent is to queue a task, it must add the given task to one of
 the task queues of the relevant event loop. All the tasks from one particular
@@ -32999,139 +34310,179 @@ fetching algorithm.
 Whenever a script calls into a plugin, and whenever a plugin calls into a
 script, the user agent must release the storage mutex.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.4.2 Processing model
 
-An event loop must continually run through the following steps for as long as it exists:
+An event loop must continually run through the following steps for as long as
+it exists:
 
-   1.
+   1. Run the oldest task on one of the event loop's task queues, ignoring
+      tasks whose associated Documents are not fully active. The user agent may
+      pick any task queue.
+   2. If the storage mutex is now owned by the event loop, release it so that
+      it is once again free.
+   3. Remove that task from its task queue.
+   4. Provide a stable state.
+   5. If necessary, update the rendering or user interface of any Document or
+      browsing context to reflect the current state.
+   6. Return to the first step of the event loop. 
 
-      Run the oldest task on one of the event loop's task queues, ignoring tasks whose associated Documents are not fully active. The user agent may pick any task queue.
-   2.
+When the user agent is to provide a stable state, if any asynchronously-running
+algorithms are awaiting a stable state, then the user agent must run their
+synchronous section and then resume running their asynchronous algorithm (if
+appopriate).
 
-      If the storage mutex is now owned by the event loop, release it so that it is once again free.
-   3.
-
-      Remove that task from its task queue.
-   4.
-
-      Provide a stable state.
-   5.
-
-      If necessary, update the rendering or user interface of any Document or browsing context to reflect the current state.
-   6.
-
-      Return to the first step of the event loop. 
-
-When the user agent is to provide a stable state, if any asynchronously-running algorithms are awaiting a stable state, then the user agent must run their synchronous section and then resume running their asynchronous algorithm (if appopriate).
-
-A synchronous section never mutates the DOM, runs any script, or has any other side-effects.
+A synchronous section never mutates the DOM, runs any script, or has any other
+side-effects.
 
 Steps in synchronous sections are marked with ⌛.
 
-When an algorithm says to spin the event loop until a condition goal is met, the user agent must run the following steps:
+When an algorithm says to spin the event loop until a condition goal is met,
+the user agent must run the following steps:
 
-   1.
+   1. Let task source be the task source of the currently running task.
+   2. Stop the currently running task, allowing the event loop to resume, but
+      continue these steps asynchronously.
+      
+      This causes the event loop to move on to the second step of its
+      processing model (defined above).
+   3. Wait until the condition goal is met.
+   4. Queue a task to continue running these steps, using the task source task
+      source. Wait until this task runs before continuing these steps.
+   5. Return to the caller. 
 
-      Let task source be the task source of the currently running task.
-   2.
+Some of the algorithms in this specification, for historical reasons, require
+the user agent to pause while running a task until a condition goal is met.
+This means running the following steps:
 
-      Stop the currently running task, allowing the event loop to resume, but continue these steps asynchronously.
+   1. If any asynchronously-running algorithms are awaiting a stable state,
+      then run their synchronous section and then resume running their
+      asynchronous algorithm. (See the event loop processing model definition
+      above for details.)
+   2. If necessary, update the rendering or user interface of any Document or
+      browsing context to reflect the current state.
+   3. Wait until the condition goal is met. While a user agent has a paused
+      task, the corresponding event loop must not run further tasks, and any
+      script in the currently running task must block. User agents should
+      remain responsive to user input while paused, however, albeit in a
+      reduced capacity since the event loop will not be doing anything.
 
-      This causes the event loop to move on to the second step of its processing model (defined above).
-   3.
+When a user agent is to obtain the storage mutex as part of running a task, it
+must run through the following steps:
 
-      Wait until the condition goal is met.
-   4.
+   1. If the storage mutex is already owned by this task's event loop, then
+      abort these steps.
+   2. Otherwise, pause until the storage mutex can be taken by the event loop.
+   3. Take ownership of the storage mutex. 
 
-      Queue a task to continue running these steps, using the task source task source. Wait until this task runs before continuing these steps.
-   5.
+******************************************************************************/
+test('TODO: ', function(){
 
-      Return to the caller. 
-
-Some of the algorithms in this specification, for historical reasons, require the user agent to pause while running a task until a condition goal is met. This means running the following steps:
-
-   1.
-
-      If any asynchronously-running algorithms are awaiting a stable state, then run their synchronous section and then resume running their asynchronous algorithm. (See the event loop processing model definition above for details.)
-   2.
-
-      If necessary, update the rendering or user interface of any Document or browsing context to reflect the current state.
-   3.
-
-      Wait until the condition goal is met. While a user agent has a paused task, the corresponding event loop must not run further tasks, and any script in the currently running task must block. User agents should remain responsive to user input while paused, however, albeit in a reduced capacity since the event loop will not be doing anything. 
-
-When a user agent is to obtain the storage mutex as part of running a task, it must run through the following steps:
-
-   1.
-
-      If the storage mutex is already owned by this task's event loop, then abort these steps.
-   2.
-
-      Otherwise, pause until the storage mutex can be taken by the event loop.
-   3.
-
-      Take ownership of the storage mutex. 
+});
+/******************************************************************************
 
 6.1.4.3 Generic task sources
 
-The following task sources are used by a number of mostly unrelated features in this and other specifications.
+The following task sources are used by a number of mostly unrelated features in
+this and other specifications.
 
 The DOM manipulation task source
 
-    This task source is used for features that react to DOM manipulations, such as things that happen asynchronously when an element is inserted into the document.
+    This task source is used for features that react to DOM manipulations, such
+    as things that happen asynchronously when an element is inserted into the
+    document.
+
 The user interaction task source
 
-    This task source is used for features that react to user interaction, for example keyboard or mouse input.
+    This task source is used for features that react to user interaction, for
+    example keyboard or mouse input.
+    
+    Asynchronous events sent in response to user input (e.g. click events)
+    must be dispatched using tasks queued with the user interaction task
+    source. [DOMEVENTS]
 
-    Asynchronous events sent in response to user input (e.g. click events) must be dispatched using tasks queued with the user interaction task source. [DOMEVENTS]
 The networking task source
 
-    This task source is used for features that trigger in response to network activity.
+    This task source is used for features that trigger in response to network
+    activity.
+
 The history traversal task source
 
     This task source is used to queue calls to history.back() and similar APIs.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.5 The javascript: URL scheme
 
-When a URL using the javascript: scheme is dereferenced, the user agent must run the following steps:
+When a URL using the javascript: scheme is dereferenced, the user agent must
+run the following steps:
 
-   1.
+   1. Let the script source be the string obtained using the content retrieval
+      operation defined for javascript: URLs. [JSURL]
+   2. Use the appropriate step from the following list:
 
-      Let the script source be the string obtained using the content retrieval operation defined for javascript: URLs. [JSURL]
-   2.
-
-      Use the appropriate step from the following list:
-
-      If a browsing context is being navigated to a javascript: URL, and the source browsing context for that navigation, if any, has scripting disabled
+      If a browsing context is being navigated to a javascript: URL, and the
+      source browsing context for that navigation, if any, has scripting
+      disabled
 
           Let result be void.
-      If a browsing context is being navigated to a javascript: URL, and the active document of that browsing context has the same origin as the script given by that URL
 
-          Let address be the address of the active document of the browsing context being navigated.
+      If a browsing context is being navigated to a javascript: URL, and the
+      active document of that browsing context has the same origin as the
+      script given by that URL
 
-          If address is about:blank, and the browsing context being navigated has a creator browsing context, then let address be the address of the creator Document instead.
+          Let address be the address of the active document of the browsing
+          context being navigated.
+          
+          If address is about:blank, and the browsing context being navigated
+          has a creator browsing context, then let address be the address of
+          the creator Document instead.
+          
+          Create a script from the Document node of the active document, using
+          the aforementioned script source, and assuming the scripting language
+          is JavaScript.
+          
+          Let result be the return value of the initial code entry-point of
+          this script. If an exception was raised, let result be void instead.
+          (The result will be void also if scripting is disabled.)
+          
+          When it comes time to set the document's address in the navigation
+          algorithm, use address as the override URL.
+      
+      If the Document object of the element, attribute, or style sheet from
+      which the javascript: URL was reached has an associated browsing context
 
-          Create a script from the Document node of the active document, using the aforementioned script source, and assuming the scripting language is JavaScript.
+          Create an impotent script using the aforementioned script source,
+          with the scripting language set to JavaScript, and with the
+          Document's object's browsing context as the browsing context.
+          
+          Let result be the return value of the initial code entry-point of
+          this script. If an exception was raised, let result be void instead.
+          (The result will be void also if scripting is disabled.)
 
-          Let result be the return value of the initial code entry-point of this script. If an exception was raised, let result be void instead. (The result will be void also if scripting is disabled.)
-
-          When it comes time to set the document's address in the navigation algorithm, use address as the override URL.
-      If the Document object of the element, attribute, or style sheet from which the javascript: URL was reached has an associated browsing context
-
-          Create an impotent script using the aforementioned script source, with the scripting language set to JavaScript, and with the Document's object's browsing context as the browsing context.
-
-          Let result be the return value of the initial code entry-point of this script. If an exception was raised, let result be void instead. (The result will be void also if scripting is disabled.)
       Otherwise
 
           Let result be void.
 
-   3.
-
-      If the result of executing the script is void (there is no return value), then the URL must be treated in a manner equivalent to an HTTP resource with an HTTP 204 No Content response.
-
-      Otherwise, the URL must be treated in a manner equivalent to an HTTP resource with a 200 OK response whose Content-Type metadata is text/html and whose response body is the return value converted to a string value.
-
-      Certain contexts, in particular img elements, ignore the Content-Type metadata.
+   3. If the result of executing the script is void (there is no return value),
+      then the URL must be treated in a manner equivalent to an HTTP resource
+      with an HTTP 204 No Content response.
+      
+      Otherwise, the URL must be treated in a manner equivalent to an HTTP
+      resource with a 200 OK response whose Content-Type metadata is text/html
+      and whose response body is the return value converted to a string value.
+      
+      Certain contexts, in particular img elements, ignore the Content-Type
+      metadata.
 
 So for example a javascript: URL for a src attribute of an img element would
 be evaluated in the context of an empty object as soon as the attribute is
@@ -33146,7 +34497,19 @@ the iframe's own browsing context; once evaluated, its return value (if it
 was not void) would replace that browsing context's document, thus changing
 the variables visible in that browsing context.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.6 Events
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.6.1 Event handlers
 
@@ -33188,41 +34551,45 @@ Document that is in a browsing context, and scripting is enabled for that
 browsing context, the user agent must run the following steps to create a
 script after setting the content attribute to its new value:
 
-   1.
-
-      Set up a script execution environment for JavaScript.
-   2.
-
-      Using this script execution environment, create a function object (as defined in ECMAScript edition 5 section 13.2 Creating Function Objects), with:
+   1. Set up a script execution environment for JavaScript.
+   2. Using this script execution environment, create a function object (as
+      defined in ECMAScript edition 5 section 13.2 Creating Function Objects),
+      with:
 
       Parameter list FormalParameterList
 
           If the attribute is the onerror attribute of the Window object
-              Let the function have three arguments, named event, source, and fileno.
+              Let the function have three arguments, named event, source, and
+              fileno.
           Otherwise
               Let the function have a single argument called event. 
 
       Function body FunctionBody
           The event handler content attribute's new value.
+      
       Lexical Environment Scope
-             1. Let Scope be the result of NewObjectEnvironment(the element's Document, the global environment).
-             2. If the element has a form owner, let Scope be the result of NewObjectEnvironment(the element's form owner, Scope).
-             3. Let Scope be the result of NewObjectEnvironment(the element's object, Scope).
+             1. Let Scope be the result of NewObjectEnvironment(the element's
+                Document, the global environment).
+             2. If the element has a form owner, let Scope be the result of
+                NewObjectEnvironment(the element's form owner, Scope).
+             3. Let Scope be the result of NewObjectEnvironment(the element's
+                object, Scope).
 
-          NewObjectEnvironment() is defined in ECMAScript edition 5 section 10.2.2.3 NewObjectEnvironment (O, E). [ECMA262]
+          NewObjectEnvironment() is defined in ECMAScript edition 5 section
+          10.2.2.3 NewObjectEnvironment (O, E). [ECMA262]
+
       Boolean flag Strict
           False.
 
-      Let this new function be the only entry in the script's list of code entry-points.
-   3.
-
-      If the previous steps failed to compile the script, then set the corresponding event handler to null and abort these steps.
-   4.
-
-      Set up the script's global object, the script's browsing context, the script's document, the script's URL character encoding, and the script's base URL from the script settings determined from the node on which the attribute is being set.
-   5.
-
-      Set the corresponding event handler to the aforementioned function. 
+      Let this new function be the only entry in the script's list of code
+      entry-points.
+   3. If the previous steps failed to compile the script, then set the
+      corresponding event handler to null and abort these steps.
+   4. Set up the script's global object, the script's browsing context, the
+      script's document, the script's URL character encoding, and the script's
+      base URL from the script settings determined from the node on which the
+      attribute is being set.
+   5. Set the corresponding event handler to the aforementioned function. 
 
 When an event handler content attribute is removed, the user agent must set
 the corresponding event handler to null.
@@ -33258,14 +34625,19 @@ The handler's return value must then be processed as follows:
 
 If the event type is mouseover
 
-    If the return value is a boolean with the value true, then the event must be canceled. 
+    If the return value is a boolean with the value true, then the event must
+    be canceled.
+
 If the event object is a BeforeUnloadEvent object
 
-    If the return value is a string, and the event object's returnValue attribute's value is the empty string, then set the returnValue attribute's value to the return value. 
+    If the return value is a string, and the event object's returnValue
+    attribute's value is the empty string, then set the returnValue attribute's
+    value to the return value.
 
 Otherwise
 
-    If the return value is a boolean with the value false, then the event must be canceled. 
+    If the return value is a boolean with the value false, then the event must
+    be canceled.
 
 The Function interface represents a function in the scripting language being
 used. It is represented in IDL as follows:
@@ -33298,6 +34670,12 @@ not: as described above, if the return value is false, the event is canceled
 the event). With beforeunload events, the value is instead used to determine
 the message to show the user.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.6.2 Event handlers on elements, Document objects, and Window objects
 
 The following are the event handlers (and their corresponding event handler
@@ -33305,99 +34683,105 @@ event types) that must be supported by all HTML elements, as both content
 attributes and IDL attributes, and on Document and Window objects, as IDL
 attributes.
 
-Event handler 	Event handler event type
-onabort 	abort
-oncanplay 	canplay
-oncanplaythrough 	canplaythrough
-onchange 	change
-onclick 	click
-oncontextmenu 	contextmenu
-oncuechange 	cuechange
-ondblclick 	dblclick
-ondrag 	drag
-ondragend 	dragend
-ondragenter 	dragenter
-ondragleave 	dragleave
-ondragover 	dragover
-ondragstart 	dragstart
-ondrop 	drop
-ondurationchange 	durationchange
-onemptied 	emptied
-onended 	ended
-onformchange 	formchange
-onforminput 	forminput
-oninput 	input
-oninvalid 	invalid
-onkeydown 	keydown
-onkeypress 	keypress
-onkeyup 	keyup
-onloadeddata 	loadeddata
-onloadedmetadata 	loadedmetadata
-onloadstart 	loadstart
-onmousedown 	mousedown
-onmousemove 	mousemove
-onmouseout 	mouseout
-onmouseover 	mouseover
-onmouseup 	mouseup
-onmousewheel 	mousewheel
-onpause 	pause
-onplay 	play
-onplaying 	playing
-onprogress 	progress
-onratechange 	ratechange
-onreadystatechange 	readystatechange
-onreset 	reset
-onseeked 	seeked
-onseeking 	seeking
-onselect 	select
-onshow 	show
-onstalled 	stalled
-onsubmit 	submit
-onsuspend 	suspend
-ontimeupdate 	timeupdate
-onvolumechange 	volumechange
-onwaiting 	waiting
+Event handler       Event handler event type
+onabort             abort
+oncanplay           canplay
+oncanplaythrough    canplaythrough
+onchange            change
+onclick             click
+oncontextmenu       contextmenu
+oncuechange         cuechange
+ondblclick          dblclick
+ondrag              drag
+ondragend           dragend
+ondragenter         dragenter
+ondragleave         dragleave
+ondragover          dragover
+ondragstart         dragstart
+ondrop              drop
+ondurationchange    durationchange
+onemptied           emptied
+onended             ended
+onformchange        formchange
+onforminput         forminput
+oninput             input
+oninvalid           invalid
+onkeydown           keydown
+onkeypress          keypress
+onkeyup             keyup
+onloadeddata        loadeddata
+onloadedmetadata    loadedmetadata
+onloadstart         loadstart
+onmousedown         mousedown
+onmousemove         mousemove
+onmouseout          mouseout
+onmouseover         mouseover
+onmouseup           mouseup
+onmousewheel        mousewheel
+onpause             pause
+onplay              play
+onplaying           playing
+onprogress          progress
+onratechange        ratechange
+onreadystatechange  readystatechange
+onreset             reset
+onseeked            seeked
+onseeking           seeking
+onselect            select
+onshow              show
+onstalled           stalled
+onsubmit            submit
+onsuspend           suspend
+ontimeupdate        timeupdate
+onvolumechange      volumechange
+onwaiting           waiting
 
 The following are the event handlers (and their corresponding event handler
 event types) that must be supported by all HTML elements other than body, as
 both content attributes and IDL attributes, and on Document objects, as IDL
 attributes:
 
-Event handler 	Event handler event type
-onblur 	blur
-onerror 	error
-onfocus 	focus
-onload 	load
-onscroll 	scroll
+Event handler   Event handler event type
+onblur          blur
+onerror         error
+onfocus         focus
+onload          load
+onscroll        scroll
 
 The following are the event handlers (and their corresponding event handler
 event types) that must be supported by Window objects, as IDL attributes on
 the Window object, and with corresponding content attributes and IDL
 attributes exposed on the body and frameset elements:
 
-Event handler 	Event handler event type
-onafterprint 	afterprint
-onbeforeprint 	beforeprint
-onbeforeunload 	beforeunload
-onblur 	blur
-onerror 	error
-onfocus 	focus
-onhashchange 	hashchange
-onload 	load
-onmessage 	message
-onoffline 	offline
-ononline 	online
-onpagehide 	pagehide
-onpageshow 	pageshow
-onpopstate 	popstate
-onredo 	redo
-onresize 	resize
-onscroll 	scroll
-onstorage 	storage
-onundo 	undo
-onunload 	unload
+Event handler   Event handler event type
+onafterprint    afterprint
+onbeforeprint   beforeprint
+onbeforeunload  beforeunload
+onblur          blur
+onerror         error
+onfocus         focus
+onhashchange    hashchange
+onload          load
+onmessage       message
+onoffline       offline
+ononline        online
+onpagehide      pagehide
+onpageshow      pageshow
+onpopstate      popstate
+onredo          redo
+onresize        resize
+onscroll        scroll
+onstorage       storage
+onundo          undo
+onunload        unload
 
 The onerror handler is also used for reporting script errors.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.1.6.3 Event firing
 
@@ -33428,14 +34812,30 @@ bubbles and is cancelable.
 The default action of these events is to do nothing except where otherwise
 stated.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.1.6.4 Events and the Window object
 
 When an event is dispatched at a DOM node in a Document in a browsing
 context, if the event is not a load event, the user agent must also dispatch
 the event to the Window, as follows:
 
-   1. In the capture phase, the event must propagate to the Window object before propagating to any of the nodes, as if the Window object was the parent of the Document in the dispatch chain.
-   2. In the bubble phase, the event must propagate up to the Window object at the end of the phase, unless bubbling has been prevented, again as if the Window object was the parent of the Document in the dispatch chain.
+   1. In the capture phase, the event must propagate to the Window object
+      before propagating to any of the nodes, as if the Window object was the
+      parent of the Document in the dispatch chain.
+   2. In the bubble phase, the event must propagate up to the Window object at
+      the end of the phase, unless bubbling has been prevented, again as if the
+      Window object was the parent of the Document in the dispatch chain.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.2 Base64 utility methods
 
@@ -33488,117 +34888,111 @@ base64 algorithm to that sequence of octets, and return the result. [RFC4648]
 The atob() method must run the following steps to parse the string passed in
 the method's first argument:
 
-   1.
-
-      Let input be the string being parsed.
-   2.
-
-      Let position be a pointer into input, initially pointing at the start of the string.
-   3.
-
-      If the length of input divides by 4 leaving no remainder, then: if input ends with one or two U+003D EQUALS SIGN (=) characters, remove them from input.
-   4.
-
-      If the length of input divides by 4 leaving a remainder of 1, throw an INVALID_CHARACTER_ERR exception and abort these steps.
-   5.
-
-      If input contains a character that is not in the following list of characters and character ranges, throw an INVALID_CHARACTER_ERR exception and abort these steps:
+   1. Let input be the string being parsed.
+   2. Let position be a pointer into input, initially pointing at the start of
+      the string.
+   3. If the length of input divides by 4 leaving no remainder, then: if input
+      ends with one or two U+003D EQUALS SIGN (=) characters, remove them from
+      input.
+   4. If the length of input divides by 4 leaving a remainder of 1, throw an
+      INVALID_CHARACTER_ERR exception and abort these steps.
+   5. If input contains a character that is not in the following list of
+      characters and character ranges, throw an INVALID_CHARACTER_ERR exception
+      and abort these steps:
           * U+002B PLUS SIGN (+)
           * U+002F SOLIDUS (/)
           * U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE (9)
           * U+0041 LATIN CAPITAL LETTER A to U+005A LATIN CAPITAL LETTER Z
           * U+0061 LATIN SMALL LETTER A to U+007A LATIN SMALL LETTER Z 
-   6.
+   6. Let output be a string, initially empty.
+   7. Let buffer be a buffer that can have bits appended to it, initially
+      empty.
+   8. While position does not point past the end of input, run these substeps:
+         1. Find the character pointed to by position in the first column of
+            the following table. Let n be the number given in the second cell
+            of the same row.
+            
+            Character   Number
+            A   0
+            B   1
+            C   2
+            D   3
+            E   4
+            F   5
+            G   6
+            H   7
+            I   8
+            J   9
+            K   10
+            L   11
+            M   12
+            N   13
+            O   14
+            P   15
+            Q   16
+            R   17
+            S   18
+            T   19
+            U   20
+            V   21
+            W   22
+            X   23
+            Y   24
+            Z   25
+            a   26
+            b   27
+            c   28
+            d   29
+            e   30
+            f   31
+            g   32
+            h   33
+            i   34
+            j   35
+            k   36
+            l   37
+            m   38
+            n   39
+            o   40
+            p   41
+            q   42
+            r   43
+            s   44
+            t   45
+            u   46
+            v   47
+            w   48
+            x   49
+            y   50
+            z   51
+            0   52
+            1   53
+            2   54
+            3   55
+            4   56
+            5   57
+            6   58
+            7   59
+            8   60
+            9   61
+            +   62
+            /   63
+         2. Append to buffer the six bits corresponding to number, most
+            significant bit first.
+         3. If buffer has accumulated 24 bits, interpret them as three 8-bit
+            big-endian numbers. Append the three characters with code points
+            equal to those numbers to output, in the same order, and then empty
+            buffer.
+         4. Advance position by one character. 
+   9. If buffer is not empty, it contains either 12 or 18 bits. If it contains
+      12 bits, discard the last four and interpret the remaining eight as an
+      8-bit big-endian number. If it contains 18 bits, discard the last two and
+      interpret the remaining 16 as two 8-bit big-endian numbers. Append the
+      one or two characters with code points equal to those one or two numbers
+      to output, in the same order.
 
-      Let output be a string, initially empty.
-   7.
-
-      Let buffer be a buffer that can have bits appended to it, initially empty.
-   8.
-
-      While position does not point past the end of input, run these substeps:
-         1.
-
-            Find the character pointed to by position in the first column of the following table. Let n be the number given in the second cell of the same row.
-            Character 	Number
-            A	0
-            B	1
-            C	2
-            D	3
-            E	4
-            F	5
-            G	6
-            H	7
-            I	8
-            J	9
-            K	10
-            L	11
-            M	12
-            N	13
-            O	14
-            P	15
-            Q	16
-            R	17
-            S	18
-            T	19
-            U	20
-            V	21
-            W	22
-            X	23
-            Y	24
-            Z	25
-            a	26
-            b	27
-            c	28
-            d	29
-            e	30
-            f	31
-            g	32
-            h	33
-            i	34
-            j	35
-            k	36
-            l	37
-            m	38
-            n	39
-            o	40
-            p	41
-            q	42
-            r	43
-            s	44
-            t	45
-            u	46
-            v	47
-            w	48
-            x	49
-            y	50
-            z	51
-            0	52
-            1	53
-            2	54
-            3	55
-            4	56
-            5	57
-            6	58
-            7	59
-            8	60
-            9	61
-            +	62
-            /	63
-         2.
-
-            Append to buffer the six bits corresponding to number, most significant bit first.
-         3.
-
-            If buffer has accumulated 24 bits, interpret them as three 8-bit big-endian numbers. Append the three characters with code points equal to those numbers to output, in the same order, and then empty buffer.
-         4.
-
-            Advance position by one character. 
-   9.
-
-      If buffer is not empty, it contains either 12 or 18 bits. If it contains 12 bits, discard the last four and interpret the remaining eight as an 8-bit big-endian number. If it contains 18 bits, discard the last two and interpret the remaining 16 as two 8-bit big-endian numbers. Append the one or two characters with code points equal to those one or two numbers to output, in the same order.
-
-      The discarded bits mean that, for instance, atob("YQ") and atob("YR") both return "a".
+      The discarded bits mean that, for instance, atob("YQ") and atob("YR")
+      both return "a".
   10.
 
       Return output. 
@@ -33607,6 +35001,12 @@ Some base64 encoders add newlines or other whitespace to their output. The
 atob() method throws an exception if its input contains characters other than
 those described by the regular expression bracket expression [+/=0-9A-Za-z],
 so other characters need to be removed before atob() is used for decoding.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.3 Timers
 
@@ -33624,19 +35024,26 @@ Window implements WindowTimers;
 
 handle = window . setTimeout( handler [, timeout [, arguments ] ] )
 
-    Schedules a timeout to run handler after timeout milliseconds. Any arguments are passed straight through to the handler.
+    Schedules a timeout to run handler after timeout milliseconds. Any
+    arguments are passed straight through to the handler.
+
 handle = window . setTimeout( code [, timeout ] )
 
     Schedules a timeout to compile and run code after timeout milliseconds.
+
 window . clearTimeout( handle )
 
     Cancels the timeout set with setTimeout() identified by handle.
+
 handle = window . setInterval( handler [, timeout [, arguments ] ] )
 
-    Schedules a timeout to run handler every timeout milliseconds. Any arguments are passed straight through to the handler.
+    Schedules a timeout to run handler every timeout milliseconds. Any
+    arguments are passed straight through to the handler.
+
 handle = window . setInterval( code [, timeout ] )
 
     Schedules a timeout to compile and run code every timeout milliseconds.
+
 window . clearInterval( handle )
 
     Cancels the timeout set with setInterval() identified by handle.
@@ -33654,42 +35061,37 @@ of the object that implements the WindowTimers interface.
 
 The setTimeout() method must run the following steps:
 
-   1.
-
-      Let handle be a user-agent-defined integer that is greater than zero that will identify the timeout to be set by this call.
-   2.
-
-      Add an entry to the list of active timeouts for handle.
-   3.
-
-      Get the timed task handle in the list of active timeouts, and let task be the result.
-   4.
-
-      Get the timeout, and let timeout be the result.
-   5.
-
-      If the currently running task is a task that was created by the setTimeout() method, and timeout is less than 4, then increase timeout to 4.
-   6.
-
-      Return handle, and then continue running this algorithm asynchronously.
-   7.
-
-      If the method context is a Window object, wait until the Document associated with the method context has been fully active for a further timeout milliseconds (not necessarily consecutively).
-
-      Otherwise, if the method context is a WorkerUtils object, wait until timeout milliseconds have passed with the worker not suspended (not necessarily consecutively).
-
-      Otherwise, act as described in the specification that defines that the WindowTimers interface is implemented by some other object.
-   8.
-
-      Wait until any invocations of this algorithm started before this one whose timeout is equal to or less than this one's have completed.
-   9.
-
-      Optionally, wait a further user-agent defined length of time.
-
-      This is intended to allow user agents to pad timeouts as needed to optimise the power usage of the device. For example, some processors have a low-power mode where the granularity of timers is reduced; on such platforms, user agents can slow timers down to fit this schedule instead of requiring the processor to use the more accurate mode with its associated higher power usage.
-  10.
-
-      Queue the task task. 
+   1. Let handle be a user-agent-defined integer that is greater than zero that
+      will identify the timeout to be set by this call.
+   2. Add an entry to the list of active timeouts for handle.
+   3. Get the timed task handle in the list of active timeouts, and let task be
+      the result.
+   4. Get the timeout, and let timeout be the result.
+   5. If the currently running task is a task that was created by the
+      setTimeout() method, and timeout is less than 4, then increase timeout to
+      4.
+   6. Return handle, and then continue running this algorithm asynchronously.
+   7. If the method context is a Window object, wait until the Document
+      associated with the method context has been fully active for a further
+      timeout milliseconds (not necessarily consecutively).
+      
+      Otherwise, if the method context is a WorkerUtils object, wait until
+      timeout milliseconds have passed with the worker not suspended (not
+      necessarily consecutively).
+      
+      Otherwise, act as described in the specification that defines that the
+      WindowTimers interface is implemented by some other object.
+   8. Wait until any invocations of this algorithm started before this one
+      whose timeout is equal to or less than this one's have completed.
+   9. Optionally, wait a further user-agent defined length of time.
+      
+      This is intended to allow user agents to pad timeouts as needed to
+      optimise the power usage of the device. For example, some processors have
+      a low-power mode where the granularity of timers is reduced; on such
+      platforms, user agents can slow timers down to fit this schedule instead
+      of requiring the processor to use the more accurate mode with its
+      associated higher power usage.
+  10. Queue the task task. 
 
 The clearTimeout() method must clear the entry identified as handle from the
 list of active timeouts of the WindowTimers object on which the method was
@@ -33700,42 +35102,33 @@ nothing.)
 
 The setInterval() method must run the following steps:
 
-   1.
+   1. Let handle be a user-agent-defined integer that is greater than zero that
+      will identify the interval to be set by this call.
+   2. Add an entry to the list of active intervals for handle.
+   3. Get the timed task handle in the list of active intervals, and let task be the result.
+   4. Get the timeout, and let timeout be the result.
+   5. If timeout is less than 10, then increase timeout to 10.
+   6. Return handle, and then continue running this algorithm asynchronously.
+   7. Wait: If the method context is a Window object, wait until the Document
+      associated with the method context has been fully active for a further
+      interval milliseconds (not necessarily consecutively).
+      
+      Otherwise, if the method context is a WorkerUtils object, wait until
+      interval milliseconds have passed with the worker not suspended (not
+      necessarily consecutively).
+      
+      Otherwise, act as described in the specification that defines that the
+      WindowTimers interface is implemented by some other object.
+   8. Optionally, wait a further user-agent defined length of time.
 
-      Let handle be a user-agent-defined integer that is greater than zero that will identify the interval to be set by this call.
-   2.
-
-      Add an entry to the list of active intervals for handle.
-   3.
-
-      Get the timed task handle in the list of active intervals, and let task be the result.
-   4.
-
-      Get the timeout, and let timeout be the result.
-   5.
-
-      If timeout is less than 10, then increase timeout to 10.
-   6.
-
-      Return handle, and then continue running this algorithm asynchronously.
-   7.
-
-      Wait: If the method context is a Window object, wait until the Document associated with the method context has been fully active for a further interval milliseconds (not necessarily consecutively).
-
-      Otherwise, if the method context is a WorkerUtils object, wait until interval milliseconds have passed with the worker not suspended (not necessarily consecutively).
-
-      Otherwise, act as described in the specification that defines that the WindowTimers interface is implemented by some other object.
-   8.
-
-      Optionally, wait a further user-agent defined length of time.
-
-      This is intended to allow user agents to pad timeouts as needed to optimise the power usage of the device. For example, some processors have a low-power mode where the granularity of timers is reduced; on such platforms, user agents can slow timers down to fit this schedule instead of requiring the processor to use the more accurate mode with its associated higher power usage.
-   9.
-
-      Queue the task task.
-  10.
-
-      Return to the step labeled wait. 
+      This is intended to allow user agents to pad timeouts as needed to
+      optimise the power usage of the device. For example, some processors have
+      a low-power mode where the granularity of timers is reduced; on such
+      platforms, user agents can slow timers down to fit this schedule instead
+      of requiring the processor to use the more accurate mode with its
+      associated higher power usage.
+   9. Queue the task task.
+  10. Return to the step labeled wait. 
 
 The clearInterval() method must clear the entry identified as handle from the
 list of active intervals of the WindowTimers object on which the method was
@@ -33751,73 +35144,102 @@ object on which the method for which the algorithm is running is implemented
 When the above methods are invoked and try to get the timed task handle in
 list list, they must run the following steps:
 
-   1.
-
-      If the first argument to the invoked method is an object that has an internal [[Call]] method, then return a task that checks if the entry for handle in list has been cleared, and if it has not, calls the aforementioned [[Call]] method with as its arguments the third and subsequent arguments to the invoked method (if any), and with an undefined thisArg, and abort these steps. [ECMA262]
-
-      Setting thisArg to undefined means that the function code will be executed with the this keyword bound to the WindowProxy or the WorkerGlobalScope object, as if the code was running in the global scope.
-
+   1. If the first argument to the invoked method is an object that has an
+      internal [[Call]] method, then return a task that checks if the entry for
+      handle in list has been cleared, and if it has not, calls the
+      aforementioned [[Call]] method with as its arguments the third and
+      subsequent arguments to the invoked method (if any), and with an
+      undefined thisArg, and abort these steps. [ECMA262]
+      
+      Setting thisArg to undefined means that the function code will be
+      executed with the this keyword bound to the WindowProxy or the
+      WorkerGlobalScope object, as if the code was running in the global scope.
+      
       Otherwise, continue with the remaining steps.
-   2.
-
-      Apply the ToString() abstract operation to the first argument to the method, and let script source be the result. [ECMA262]
-   3.
-
-      Let script language be JavaScript.
-   4.
-
-      If the method context is a Window object, let global object be the method context, let browsing context be the browsing context with which global object is associated, let character encoding be the character encoding of the Document associated with global object (this is a reference, not a copy), and let base URL be the base URL of the Document associated with global object (this is a reference, not a copy).
-
-      Otherwise, if the method context is a WorkerUtils object, let global object, browsing context, document, character encoding, and base URL be the script's global object, script's browsing context, script's document, script's URL character encoding, and script's base URL (respectively) of the script that the run a worker algorithm created when it created the method context.
-
-      Otherwise, act as described in the specification that defines that the WindowTimers interface is implemented by some other object.
-   5.
-
-      Return a task that checks if the entry for handle in list has been cleared, and if it has not, creates a script using script source as the script source, scripting language as the scripting language, global object as the global object, browsing context as the browsing context, document as the document, character encoding as the URL character encoding, and base URL as the base URL. 
+   2. Apply the ToString() abstract operation to the first argument to the
+      method, and let script source be the result. [ECMA262]
+   3. Let script language be JavaScript.
+   4. If the method context is a Window object, let global object be the method
+      context, let browsing context be the browsing context with which global
+      object is associated, let character encoding be the character encoding of
+      the Document associated with global object (this is a reference, not a
+      copy), and let base URL be the base URL of the Document associated with
+      global object (this is a reference, not a copy).
+      
+      Otherwise, if the method context is a WorkerUtils object, let global
+      object, browsing context, document, character encoding, and base URL be
+      the script's global object, script's browsing context, script's document,
+      script's URL character encoding, and script's base URL (respectively) of
+      the script that the run a worker algorithm created when it created the
+      method context.
+      
+      Otherwise, act as described in the specification that defines that the
+      WindowTimers interface is implemented by some other object.
+   5. Return a task that checks if the entry for handle in list has been
+      cleared, and if it has not, creates a script using script source as the
+      script source, scripting language as the scripting language, global
+      object as the global object, browsing context as the browsing context,
+      document as the document, character encoding as the URL character
+      encoding, and base URL as the base URL.
 
 When the above methods are to get the timeout, they must run the following
 steps:
 
-   1.
-
-      Let timeout be the second argument to the method, or zero if the argument was omitted.
-   2.
-
-      Apply the ToString() abstract operation to timeout, and let timeout be the result. [ECMA262]
-   3.
-
-      Apply the ToNumber() abstract operation to timeout, and let timeout be the result. [ECMA262]
-   4.
-
-      If timeout is an Infinity value, a Not-a-Number (NaN) value, or negative, let timeout be zero.
-   5.
-
-      Round timeout down to the nearest integer, and let timeout be the result.
-   6.
-
-      Return timeout. 
+   1. Let timeout be the second argument to the method, or zero if the argument
+      was omitted.
+   2. Apply the ToString() abstract operation to timeout, and let timeout be
+      the result. [ECMA262]
+   3. Apply the ToNumber() abstract operation to timeout, and let timeout be
+      the result. [ECMA262]
+   4. If timeout is an Infinity value, a Not-a-Number (NaN) value, or negative,
+      let timeout be zero.
+   5. Round timeout down to the nearest integer, and let timeout be the result.
+   6. Return timeout. 
 
 The task source for these tasks is the timer task source.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.4 User prompts
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.4.1 Simple dialogs
 
 window . alert(message)
 
-    Displays a modal alert with the given message, and waits for the user to dismiss it.
+    Displays a modal alert with the given message, and waits for the user to
+    dismiss it.
+    
+    A call to the navigator.yieldForStorageUpdates() method is implied when
+    this method is invoked.
 
-    A call to the navigator.yieldForStorageUpdates() method is implied when this method is invoked.
 result = window . confirm(message)
 
-    Displays a modal OK/Cancel prompt with the given message, waits for the user to dismiss it, and returns true if the user clicks OK and false if the user clicks Cancel.
+    Displays a modal OK/Cancel prompt with the given message, waits for the
+    user to dismiss it, and returns true if the user clicks OK and false if the
+    user clicks Cancel.
+    
+    A call to the navigator.yieldForStorageUpdates() method is implied when
+    this method is invoked.
 
-    A call to the navigator.yieldForStorageUpdates() method is implied when this method is invoked.
 result = window . prompt(message [, default] )
 
-    Displays a modal text field prompt with the given message, waits for the user to dismiss it, and returns the value that the user entered. If the user cancels the prompt, then returns null instead. If the second argument is present, then the given value is used as a default.
-
-    A call to the navigator.yieldForStorageUpdates() method is implied when this method is invoked.
+    Displays a modal text field prompt with the given message, waits for the
+    user to dismiss it, and returns the value that the user entered. If the
+    user cancels the prompt, then returns null instead. If the second argument
+    is present, then the given value is used as a default.
+    
+    A call to the navigator.yieldForStorageUpdates() method is implied when
+    this method is invoked.
 
 The alert(message) method, when invoked, must release the storage mutex and
 show the given message to the user. The user agent may make the method wait
@@ -33839,13 +35261,20 @@ argument (default) is present, then the response must be defaulted to the
 value given by default. If the user aborts, then the method must return null;
 otherwise, the method must return the string that the user responded with.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.4.2 Printing
 
 window . print()
 
     Prompts the user to print the page.
 
-    A call to the navigator.yieldForStorageUpdates() method is implied when this method is invoked.
+    A call to the navigator.yieldForStorageUpdates() method is implied when
+    this method is invoked.
 
 The print() method, when invoked, must run the printing steps.
 
@@ -33855,86 +35284,110 @@ representation of a physical form (e.g. PDF copy), of a document.
 
 The printing steps are as follows:
 
-   1.
+   1. The user agent may display a message to the user and/or may abort these
+      steps.
+      
+      For instance, a kiosk browser could silently ignore any invocations of
+      the print() method.
+      
+      For instance, a browser on a mobile device could detect that there are
+      no printers in the vicinity and display a message saying so before
+      continuing to offer a "save to PDF" option.
+   2. The user agent must fire a simple event named beforeprint at the Window
+      object of the Document that is being printed, as well as any nested
+      browsing contexts in it.
+      
+      The beforeprint event can be used to annotate the printed copy, for
+      instance adding the time at which the document was printed.
+   3. The user agent must release the storage mutex.
+   4. The user agent should offer the user the opportunity to obtain a physical
+      form (or the representation of a physical form) of the document. The user
+      agent may wait for the user to either accept or decline before returning;
+      if so, the user agent must pause while the method is waiting. Even if the
+      user agent doesn't wait at this point, the user agent must use the state
+      of the relevant documents as they are at this point in the algorithm if
+      and when it eventually creates the alternate form.
+   5. The user agent must fire a simple event named afterprint at the Window
+      object of the Document that is being printed, as well as any nested
+      browsing contexts in it.
+      
+      The afterprint event can be used to revert annotations added in the
+      earlier event, as well as showing post-printing UI. For instance, if a
+      page is walking the user through the steps of applying for a home loan,
+      the script could automatically advance to the next step after having
+      printed a form or other.
 
-      The user agent may display a message to the user and/or may abort these steps.
+******************************************************************************/
+test('TODO: ', function(){
 
-      For instance, a kiosk browser could silently ignore any invocations of the print() method.
-
-      For instance, a browser on a mobile device could detect that there are no printers in the vicinity and display a message saying so before continuing to offer a "save to PDF" option.
-   2.
-
-      The user agent must fire a simple event named beforeprint at the Window object of the Document that is being printed, as well as any nested browsing contexts in it.
-
-      The beforeprint event can be used to annotate the printed copy, for instance adding the time at which the document was printed.
-   3.
-
-      The user agent must release the storage mutex.
-   4.
-
-      The user agent should offer the user the opportunity to obtain a physical form (or the representation of a physical form) of the document. The user agent may wait for the user to either accept or decline before returning; if so, the user agent must pause while the method is waiting. Even if the user agent doesn't wait at this point, the user agent must use the state of the relevant documents as they are at this point in the algorithm if and when it eventually creates the alternate form.
-   5.
-
-      The user agent must fire a simple event named afterprint at the Window object of the Document that is being printed, as well as any nested browsing contexts in it.
-
-      The afterprint event can be used to revert annotations added in the earlier event, as well as showing post-printing UI. For instance, if a page is walking the user through the steps of applying for a home loan, the script could automatically advance to the next step after having printed a form or other.
+});
+/******************************************************************************
 
 6.4.3 Dialogs implemented using separate documents
 
 result = window . showModalDialog(url [, argument] )
 
-    Prompts the user with the given page, waits for that page to close, and returns the return value.
+    Prompts the user with the given page, waits for that page to close, and
+    returns the return value.
+    
+    A call to the navigator.yieldForStorageUpdates() method is implied when
+    this method is invoked.
 
-    A call to the navigator.yieldForStorageUpdates() method is implied when this method is invoked.
+The showModalDialog(url, argument) method, when invoked, must cause the user
+agent to run the following steps:
 
-The showModalDialog(url, argument) method, when invoked, must cause the user agent to run the following steps:
-
-   1.
-
-      Resolve url relative to the entry script's base URL.
+   1. Resolve url relative to the entry script's base URL.
 
       If this fails, then throw a SYNTAX_ERR exception and abort these steps.
-   2.
+   2. Release the storage mutex.
+   3. If the user agent is configured such that this invocation of
+      showModalDialog() is somehow disabled, then return the empty string and
+      abort these steps.
+      
+      User agents are expected to disable this method in certain cases to
+      avoid user annoyance (e.g. as part of their popup blocker feature). For
+      instance, a user agent could require that a site be white-listed before
+      enabling this method, or the user agent could be configured to only allow
+      one modal dialog at a time.
+   4. Let the list of background browsing contexts be a list of all the
+      browsing contexts that:
+          * are part of the same unit of related browsing contexts as the
+            browsing context of the Window object on which the
+            showModalDialog() method was called, and that
+          * have an active document whose origin is the same as the origin of
+            the script that called the showModalDialog() method at the time the
+            method was called,
 
-      Release the storage mutex.
-   3.
-
-      If the user agent is configured such that this invocation of showModalDialog() is somehow disabled, then return the empty string and abort these steps.
-
-      User agents are expected to disable this method in certain cases to avoid user annoyance (e.g. as part of their popup blocker feature). For instance, a user agent could require that a site be white-listed before enabling this method, or the user agent could be configured to only allow one modal dialog at a time.
-   4.
-
-      Let the list of background browsing contexts be a list of all the browsing contexts that:
-          * are part of the same unit of related browsing contexts as the browsing context of the Window object on which the showModalDialog() method was called, and that
-          * have an active document whose origin is the same as the origin of the script that called the showModalDialog() method at the time the method was called,
-
-      ...as well as any browsing contexts that are nested inside any of the browsing contexts matching those conditions.
-   5.
-
-      Disable the user interface for all the browsing contexts in the list of background browsing contexts. This should prevent the user from navigating those browsing contexts, causing events to be sent to those browsing context, or editing any content in those browsing contexts. However, it does not prevent those browsing contexts from receiving events from sources other than the user, from running scripts, from running animations, and so forth.
-   6.
-
-      Create a new auxiliary browsing context, with the opener browsing context being the browsing context of the Window object on which the showModalDialog() method was called. The new auxiliary browsing context has no name.
-
-      This browsing context's Documents' Window objects all implement the WindowModal interface.
-   7.
-
-      Let the dialog arguments of the new browsing context be set to the value of argument, or the 'undefined' value if the argument was omitted.
-   8.
-
-      Let the dialog arguments' origin be the origin of the script that called the showModalDialog() method.
-   9.
-
-      Navigate the new browsing context to the absolute URL that resulted from resolving url earlier, with replacement enabled, and with the browsing context of the script that invoked the method as the source browsing context.
-  10.
-
-      Spin the event loop until the new browsing context is closed. (The user agent must allow the user to indicate that the browsing context is to be closed.)
-  11.
-
-      Reenable the user interface for all the browsing contexts in the list of background browsing contexts.
-  12.
-
-      Return the auxiliary browsing context's return value.
+      ...as well as any browsing contexts that are nested inside any of the
+      browsing contexts matching those conditions.
+   5. Disable the user interface for all the browsing contexts in the list of
+      background browsing contexts. This should prevent the user from
+      navigating those browsing contexts, causing events to be sent to those
+      browsing context, or editing any content in those browsing contexts.
+      However, it does not prevent those browsing contexts from receiving
+      events from sources other than the user, from running scripts, from
+      running animations, and so forth.
+   6. Create a new auxiliary browsing context, with the opener browsing context
+      being the browsing context of the Window object on which the
+      showModalDialog() method was called. The new auxiliary browsing context
+      has no name.
+      
+      This browsing context's Documents' Window objects all implement the
+      WindowModal interface.
+   7. Let the dialog arguments of the new browsing context be set to the value
+      of argument, or the 'undefined' value if the argument was omitted.
+   8. Let the dialog arguments' origin be the origin of the script that called
+      the showModalDialog() method.
+   9. Navigate the new browsing context to the absolute URL that resulted from
+      resolving url earlier, with replacement enabled, and with the browsing
+      context of the script that invoked the method as the source browsing
+      context.
+  10. Spin the event loop until the new browsing context is closed. (The user
+      agent must allow the user to indicate that the browsing context is to be
+      closed.)
+  11. Reenable the user interface for all the browsing contexts in the list of
+      background browsing contexts.
+  12. Return the auxiliary browsing context's return value.
 
 The Window objects of Documents hosted by browsing contexts created by the
 above algorithm must also implement the WindowModal interface.
@@ -33950,12 +35403,15 @@ are on the same prototype chain as the window.alert() method).
 
 window . dialogArguments
 
-    Returns the argument argument that was passed to the showModalDialog() method.
+    Returns the argument argument that was passed to the showModalDialog()
+    method.
+
 window . returnValue [ = value ]
 
     Returns the current return value for the window.
 
-    Can be set, to change the value that will be returned by the showModalDialog() method.
+    Can be set, to change the value that will be returned by the
+    showModalDialog() method.
 
 Such browsing contexts have associated dialog arguments, which are stored
 along with the dialog arguments' origin. These values are set by the
@@ -33979,6 +35435,12 @@ new value.
 
 The window.close() method can be used to close the browsing context.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.5 System state and capabilities: the Navigator object
 
 The navigator attribute of the Window interface must return an instance of
@@ -33987,7 +35449,8 @@ agent (the client), and allows Web pages to register themselves as potential
 protocol and content handlers:
 
 interface Navigator {
-  // objects implementing this interface also implement the interfaces given below
+  // objects implementing this interface also implement the interfaces given
+  // below
 };
 Navigator implements NavigatorID;
 Navigator implements NavigatorOnLine;
@@ -33996,6 +35459,12 @@ Navigator implements NavigatorStorageUtils;
 
 These interfaces are defined separately so that other specifications can
 re-use parts of the Navigator interface.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.5.1 Client identification
 
@@ -34022,33 +35491,50 @@ fully compliant.
 window . navigator . appName
 
     Returns the name of the browser.
+
 window . navigator . appVersion
 
     Returns the version of the browser.
+
 window . navigator . platform
 
     Returns the name of the platform.
+
 window . navigator . userAgent
 
     Returns the complete User-Agent header.
 
 appName
 
-    Must return either the string "Netscape" or the full name of the browser, e.g. "Mellblom Browsernator". 
+    Must return either the string "Netscape" or the full name of the browser,
+    e.g. "Mellblom Browsernator".
+
 appVersion
 
-    Must return either the string "4.0" or a string representing the version of the browser in detail, e.g. "1.0 (VMS; en-US) Mellblomenator/9000". 
+    Must return either the string "4.0" or a string representing the version of
+    the browser in detail, e.g. "1.0 (VMS; en-US) Mellblomenator/9000".
+
 platform
 
-    Must return either the empty string or a string representing the platform on which the browser is executing, e.g. "MacIntel", "Win32", "FreeBSD i386", "WebTV OS". 
+    Must return either the empty string or a string representing the platform
+    on which the browser is executing, e.g. "MacIntel", "Win32", "FreeBSD
+    i386", "WebTV OS".
+
 userAgent
 
-    Must return the string used for the value of the "User-Agent" header in HTTP requests, or the empty string if no such header is ever sent. 
+    Must return the string used for the value of the "User-Agent" header in
+    HTTP requests, or the empty string if no such header is ever sent.
 
 Any information in this API that varies from user to user can be used to
 profile the user. In fact, if enough such information is available, a user
 can actually be uniquely identified. For this reason, user agent implementors
 are strongly urged to include as little information in this API as possible.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.5.2 Custom scheme and content handlers
 
@@ -34074,12 +35560,16 @@ site to view contact information stored on vCards that he opens.
 window . navigator . registerProtocolHandler(scheme, url, title)
 window . navigator . registerContentHandler(mimeType, url, title)
 
-    Registers a handler for the given scheme or content type, at the given URL, with the given title.
-
-    The string "%s" in the URL is used as a placeholder for where to put the URL of the content to be handled.
-
-    Throws a SECURITY_ERR exception if the user agent blocks the registration (this might happen if trying to register as a handler for "http", for instance).
-
+    Registers a handler for the given scheme or content type, at the given URL,
+    with the given title.
+    
+    The string "%s" in the URL is used as a placeholder for where to put the
+    URL of the content to be handled.
+    
+    Throws a SECURITY_ERR exception if the user agent blocks the registration
+    (this might happen if trying to register as a handler for "http", for
+    instance).
+    
     Throws a SYNTAX_ERR if the "%s" string is missing in the URL.
 
 User agents may, within the constraints described in this section, do
@@ -34099,42 +35589,74 @@ implementation requirements:
 
 protocol (registerProtocolHandler() only)
 
-    A scheme, such as ftp or sms. The scheme must be compared in an ASCII case-insensitive manner by user agents for the purposes of comparing with the scheme part of URLs that they consider against the list of registered handlers.
-
-    The scheme value, if it contains a colon (as in "ftp:"), will never match anything, since schemes don't contain colons.
+    A scheme, such as ftp or sms. The scheme must be compared in an ASCII
+    case-insensitive manner by user agents for the purposes of comparing with
+    the scheme part of URLs that they consider against the list of registered
+    handlers.
+    
+    The scheme value, if it contains a colon (as in "ftp:"), will never match
+    anything, since schemes don't contain colons.
 
     This feature is not intended to be used with non-standard protocols.
+
 mimeType (registerContentHandler() only)
 
-    A MIME type, such as model/vnd.flatland.3dml or application/vnd.google-earth.kml+xml. The MIME type must be compared in an ASCII case-insensitive manner by user agents for the purposes of comparing with MIME types of documents that they consider against the list of registered handlers.
+    A MIME type, such as model/vnd.flatland.3dml or
+    application/vnd.google-earth.kml+xml. The MIME type must be compared in an
+    ASCII case-insensitive manner by user agents for the purposes of comparing
+    with MIME types of documents that they consider against the list of
+    registered handlers.
+    
+    User agents must compare the given values only to the MIME type/subtype
+    parts of content types, not to the complete type including parameters.
+    Thus, if mimeType values passed to this method include characters such as
+    commas or whitespace, or include MIME parameters, then the handler being
+    registered will never be used.
+    
+    The type is compared to the MIME type used by the user agent after the
+    sniffing algorithms have been applied.
 
-    User agents must compare the given values only to the MIME type/subtype parts of content types, not to the complete type including parameters. Thus, if mimeType values passed to this method include characters such as commas or whitespace, or include MIME parameters, then the handler being registered will never be used.
-
-    The type is compared to the MIME type used by the user agent after the sniffing algorithms have been applied.
 url
 
     A string used to build the URL of the page that will handle the requests.
+    
+     When the user agent uses this URL, it must replace the first occurrence of
+    the exact literal string "%s" with an escaped version of the absolute URL
+    of the content in question (as defined below), then resolve the resulting
+    URL, relative to the base URL of the entry script at the time the
+    registerContentHandler() or registerProtocolHandler() methods were invoked,
+    and then navigate an appropriate browsing context to the resulting URL
+    using the GET method (or equivalent for non-HTTP URLs).
+    
+     To get the escaped version of the absolute URL of the content in question,
+    the user agent must replace every character in that absolute URL that
+    doesn't match the <query> production defined in RFC 3986 by the
+    percent-encoded form of that character. [RFC3986]
+    
+     If the user had visited a site at http://example.com/ that made the
+    following call:
+    
+     navigator.registerContentHandler('application/x-soup', 'soup?url=%s',
+    'SoupWeb™')
+    
+     ...and then, much later, while visiting http://www.example.net/, clicked
+    on a link such as:
+    
+     <a href="chickenkïwi.soup">Download our Chicken Kïwi soup!</a>
+    
+     ...then, assuming this chickenkïwi.soup file was served with the MIME type
+    application/x-soup, the UA might navigate to the following URL:
+    
+     http://example.com/soup?url=http://www.example.net/chickenk%C3%AFwi.soup
+    
+     This site could then fetch the chickenkïwi.soup file and do whatever it is
+    that it does with soup (synthesize it and ship it to the user, or
+    whatever).
 
-    When the user agent uses this URL, it must replace the first occurrence of the exact literal string "%s" with an escaped version of the absolute URL of the content in question (as defined below), then resolve the resulting URL, relative to the base URL of the entry script at the time the registerContentHandler() or registerProtocolHandler() methods were invoked, and then navigate an appropriate browsing context to the resulting URL using the GET method (or equivalent for non-HTTP URLs).
-
-    To get the escaped version of the absolute URL of the content in question, the user agent must replace every character in that absolute URL that doesn't match the <query> production defined in RFC 3986 by the percent-encoded form of that character. [RFC3986]
-
-    If the user had visited a site at http://example.com/ that made the following call:
-
-    navigator.registerContentHandler('application/x-soup', 'soup?url=%s', 'SoupWeb™')
-
-    ...and then, much later, while visiting http://www.example.net/, clicked on a link such as:
-
-    <a href="chickenkïwi.soup">Download our Chicken Kïwi soup!</a>
-
-    ...then, assuming this chickenkïwi.soup file was served with the MIME type application/x-soup, the UA might navigate to the following URL:
-
-    http://example.com/soup?url=http://www.example.net/chickenk%C3%AFwi.soup
-
-    This site could then fetch the chickenkïwi.soup file and do whatever it is that it does with soup (synthesize it and ship it to the user, or whatever).
 title
 
-    A descriptive title of the handler, which the UA might use to remind the user what the site in question is.
+    A descriptive title of the handler, which the UA might use to remind the
+    user what the site in question is.
 
 User agents should raise SECURITY_ERR exceptions if the methods are called
 with scheme or mimeType values that the UA deems to be "privileged". For
@@ -34161,6 +35683,12 @@ UAs must not use registered content handlers to handle content that was
 returned as part of a non-GET transaction (or rather, as part of any
 non-idempotent transaction), as the remote site would not be able to fetch
 the same data.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.5.2.1 Security and privacy
 
@@ -34201,9 +35729,12 @@ overruns, and so forth.
 Leaking Intranet URLs. The mechanism described in this section can result in
 secret Intranet URLs being leaked, in the following manner:
 
-   1. The user registers a third-party content handler as the default handler for a content type.
-   2. The user then browses his corporate Intranet site and accesses a document that uses that content type.
-   3. The user agent contacts the third party and hands the third party the URL to the Intranet content.
+   1. The user registers a third-party content handler as the default handler 
+      for a content type.
+   2. The user then browses his corporate Intranet site and accesses a document 
+      that uses that content type.
+   3. The user agent contacts the third party and hands the third party the URL 
+      to the Intranet content.
 
 No actual confidential file data is leaked in this manner, but the URLs
 themselves could contain confidential information. For example, the URL could
@@ -34225,6 +35756,12 @@ such sites would be unable to access the resources in question without
 prompting the user for credentials themselves (a practice that would require
 the user to know whether to trust the third-party handler, a decision many
 users are unable to make or even understand).
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 6.5.2.2 Sample user interface
 
@@ -34279,6 +35816,12 @@ to
 The registerProtocolHandler() method would work equivalently, but for schemes
 instead of unknown content types.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 6.5.3 Manually releasing the storage mutex
 
 [Supplemental, NoInterfaceObject]
@@ -34305,7 +35848,19 @@ is owned by the event loop of the task that resulted in the method being
 called, release the storage mutex so that it is once again free. Otherwise,
 it must do nothing.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7 User interaction
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.1 The hidden attribute
 
@@ -34363,6 +35918,12 @@ respectively. Only their presentation to the user changes.
 
 The hidden IDL attribute must reflect the content attribute of the same name.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.2 Activation
 
 element . click()
@@ -34373,18 +35934,19 @@ Each element has a click in progress flag, initially set to false.
 
 The click() method must run these steps:
 
-   1.
+   1. If the element's click in progress flag is set to true, then abort these
+      steps.
+   2. Set the click in progress flag on the element to true.
+   3. If the element has a defined activation behavior, run synthetic click
+      activation steps on the element. Otherwise, fire a click event at the
+      element.
+   4. Set the click in progress flag on the element to false. 
 
-      If the element's click in progress flag is set to true, then abort these steps.
-   2.
+******************************************************************************/
+test('TODO: ', function(){
 
-      Set the click in progress flag on the element to true.
-   3.
-
-      If the element has a defined activation behavior, run synthetic click activation steps on the element. Otherwise, fire a click event at the element.
-   4.
-
-      Set the click in progress flag on the element to false. 
+});
+/******************************************************************************
 
 7.3 Focus
 
@@ -34402,6 +35964,12 @@ be independent of whether or not the top-level browsing context itself has
 the system focus.
 
 When an element is focused, the element matches the CSS :focus pseudo-class.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.3.1 Sequential focus navigation and the tabindex attribute
 
@@ -34421,23 +35989,43 @@ integers. The attribute's values have the following meanings:
 
 If the attribute is omitted or parsing the value returns an error
 
-    The user agent should follow platform conventions to determine if the element is to be focusable and, if so, whether the element can be reached using sequential focus navigation, and if so, what its relative order should be.
+    The user agent should follow platform conventions to determine if the
+    element is to be focusable and, if so, whether the element can be reached
+    using sequential focus navigation, and if so, what its relative order
+    should be.
+
 If the value is a negative integer
 
-    The user agent must allow the element to be focused, but should not allow the element to be reached using sequential focus navigation.
+    The user agent must allow the element to be focused, but should not allow
+    the element to be reached using sequential focus navigation.
+
 If the value is a zero
 
-    The user agent must allow the element to be focused, should allow the element to be reached using sequential focus navigation, and should follow platform conventions to determine the element's relative order.
+    The user agent must allow the element to be focused, should allow the
+    element to be reached using sequential focus navigation, and should follow
+    platform conventions to determine the element's relative order.
+
 If the value is greater than zero
 
-    The user agent must allow the element to be focused, should allow the element to be reached using sequential focus navigation, and should place the element in the sequential focus navigation order so that it is:
+    The user agent must allow the element to be focused, should allow the
+    element to be reached using sequential focus navigation, and should place
+    the element in the sequential focus navigation order so that it is:
 
-        * before any focusable element whose tabindex attribute has been omitted or whose value, when parsed, returns an error,
-        * before any focusable element whose tabindex attribute has a value equal to or less than zero,
-        * after any element whose tabindex attribute has a value greater than zero but less than the value of the tabindex attribute on the element,
-        * after any element whose tabindex attribute has a value equal to the value of the tabindex attribute on the element but that is earlier in the document in tree order than the element,
-        * before any element whose tabindex attribute has a value equal to the value of the tabindex attribute on the element but that is later in the document in tree order than the element, and
-        * before any element whose tabindex attribute has a value greater than the value of the tabindex attribute on the element.
+        * before any focusable element whose tabindex attribute has been
+          omitted or whose value, when parsed, returns an error,
+        * before any focusable element whose tabindex attribute has a value
+          equal to or less than zero,
+        * after any element whose tabindex attribute has a value greater than
+          zero but less than the value of the tabindex attribute on the
+          element,
+        * after any element whose tabindex attribute has a value equal to the
+          value of the tabindex attribute on the element but that is earlier in
+          the document in tree order than the element,
+        * before any element whose tabindex attribute has a value equal to the
+          value of the tabindex attribute on the element but that is later in
+          the document in tree order than the element, and
+        * before any element whose tabindex attribute has a value greater than
+          the value of the tabindex attribute on the element.
 
 An element is specially focusable if the tabindex attribute's definition
 above defines the element to be focusable.
@@ -34453,6 +36041,12 @@ The tabIndex IDL attribute must reflect the value of the tabindex content
 attribute. Its default value is 0 for elements that are focusable and −1 for
 elements that are not focusable.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.3.2 Focus management
 
 An element is focusable if the user agent's default behavior allows it to be
@@ -34466,11 +36060,14 @@ conventions dictate otherwise:
     * a elements that have an href attribute
     * link elements that have an href attribute
     * button elements that are not disabled
-    * input elements whose type attribute are not in the Hidden state and that are not disabled
+    * input elements whose type attribute are not in the Hidden state and that
+      are not disabled
     * select elements that are not disabled
     * textarea elements that are not disabled
     * command elements that do not have a disabled attribute
-    * Elements with a draggable attribute set, if that would enable the user agent to allow the user to begin a drag operations for those elements without the use of a pointing device
+    * Elements with a draggable attribute set, if that would enable the user
+      agent to allow the user to begin a drag operations for those elements
+      without the use of a pointing device
     * Editing hosts
 
 In addition, each shape that is generated for an area element should be
@@ -34484,40 +36081,39 @@ this is distinct from the details or summary element being focusable.
 
 The focusing steps are as follows:
 
-   1.
+   1. If the element is not in a Document, or if the element's Document has no
+      browsing context, or if the element's Document' browsing context has no
+      top-level browsing context, then abort these steps.
+   2. If focusing the element will remove the focus from another element, then
+      run the unfocusing steps for that element.
+   3. Make the element the currently focused element in its top-level browsing
+      context.
 
-      If the element is not in a Document, or if the element's Document has no browsing context, or if the element's Document' browsing context has no top-level browsing context, then abort these steps.
-   2.
+      Some elements, most notably area, can correspond to more than one
+      distinct focusable area. If a particular area was indicated when the
+      element was focused, then that is the area that must get focus;
+      otherwise, e.g. when using the focus() method, the first such region in
+      tree order is the one that must be focused.
+   4. The user agent may apply relevant platform-specific conventions for
+      focusing widgets.
 
-      If focusing the element will remove the focus from another element, then run the unfocusing steps for that element.
-   3.
-
-      Make the element the currently focused element in its top-level browsing context.
-
-      Some elements, most notably area, can correspond to more than one distinct focusable area. If a particular area was indicated when the element was focused, then that is the area that must get focus; otherwise, e.g. when using the focus() method, the first such region in tree order is the one that must be focused.
-   4.
-
-      The user agent may apply relevant platform-specific conventions for focusing widgets.
-
-      For example, some platforms select the contents of a text field when that field is focused.
-   5.
-
-      Fire a simple event named focus at the element. 
+      For example, some platforms select the contents of a text field when that
+      field is focused.
+   5. Fire a simple event named focus at the element. 
 
 User agents must synchronously run the focusing steps for an element whenever
 the user moves the focus to a focusable element.
 
 The unfocusing steps are as follows:
 
-   1.
-
-      If the element is an input element, and the change event applies to the element, and the element does not have a defined activation behavior, and the user has changed the element's value or its list of selected files while the control was focused without committing that change, then fire a simple event that bubbles named change at the element, then broadcast formchange events at the element's form owner.
-   2.
-
-      Unfocus the element.
-   3.
-
-      Fire a simple event named blur at the element. 
+   1. If the element is an input element, and the change event applies to the
+      element, and the element does not have a defined activation behavior, and
+      the user has changed the element's value or its list of selected files
+      while the control was focused without committing that change, then fire a
+      simple event that bubbles named change at the element, then broadcast
+      formchange events at the element's form owner.
+   2. Unfocus the element.
+   3. Fire a simple event named blur at the element. 
 
 When an element that is focused stops being a focusable element, or stops
 being focused without another element being explicitly focused in its stead,
@@ -34528,6 +36124,12 @@ synchronously run the unfocusing steps for the affected element only.
 For example, this might happen because the element is removed from its
 Document, or has a hidden attribute added. It would also happen to an input
 element when the element gets disabled.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.3.3 Document-level focus APIs
 
@@ -34541,11 +36143,13 @@ document . hasFocus()
 
 window . focus()
 
-    Focuses the window. Use of this method is discouraged. Allow the user to control window focus instead.
+    Focuses the window. Use of this method is discouraged. Allow the user to
+    control window focus instead.
 
 window . blur()
 
-    Unfocuses the window. Use of this method is discouraged. Allow the user to control window focus instead.
+    Unfocuses the window. Use of this method is discouraged. Allow the user to
+    control window focus instead.
 
 The activeElement attribute on HTMLDocument objects must return the element
 in the document that is focused. If no element in the Document is focused,
@@ -34576,16 +36180,25 @@ User agents are encouraged to ignore calls to this blur() method entirely.
 Historically the focus() and blur() methods actually affected the system
 focus, but hostile sites widely abuse this behavior to the user's detriment.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.3.4 Element-level focus APIs
 
 element . focus()
 
     Focuses the element.
+
 element . blur()
 
-    Unfocuses the element. Use of this method is discouraged. Focus another element instead.
+    Unfocuses the element. Use of this method is discouraged. Focus another
+    element instead.
 
-    Do not use this method to hide the focus ring if you find the focus ring unsightly. Instead, use a CSS rule to override the 'outline' property.
+    Do not use this method to hide the focus ring if you find the focus ring
+    unsightly. Instead, use a CSS rule to override the 'outline' property.
 
     For example, to hide the outline from links, you could use:
 
@@ -34593,21 +36206,12 @@ element . blur()
 
 The focus() method, when invoked, must run the following algorithm:
 
-   1.
-
-      If the element is marked as locked for focus, then abort these steps.
-   2.
-
-      If the element is not focusable, then abort these steps.
-   3.
-
-      Mark the element as locked for focus.
-   4.
-
-      If the element is not already focused, run the focusing steps for the element.
-   5.
-
-      Unmark the element as locked for focus. 
+   1. If the element is marked as locked for focus, then abort these steps.
+   2. If the element is not focusable, then abort these steps.
+   3. Mark the element as locked for focus.
+   4. If the element is not already focused, run the focusing steps for the
+      element.
+   5. Unmark the element as locked for focus. 
 
 The blur() method, when invoked, should run the focusing steps for the body
 element, if there is one; if there is not, then it should run the unfocusing
@@ -34619,7 +36223,19 @@ ring for aesthetics reasons, the page would become unusable by keyboard
 users. Ignoring calls to this method would thus allow keyboard users to
 interact with the page.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.4 Assigning keyboard shortcuts
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.4.1 Introduction
 
@@ -34643,6 +36259,12 @@ User agents can provide users with a list of the keyboard shortcuts, but
 authors are encouraged to do so also. The accessKeyLabel IDL attribute
 returns a string representing the actual key combination assigned by the user
 agent.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.4.2 The accesskey attribute
 
@@ -34702,6 +36324,12 @@ assign a key, it will be just "Compose". The exact string depends on what the
 assigned access key is, and on how the user agent represents that key
 combination.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.4.3 Processing model
 
 An element's assigned access key is a key combination derived from the
@@ -34712,30 +36340,24 @@ Whenever an element's accesskey attribute is set, changed, or removed, the
 user agent must update the element's assigned access key by running the
 following steps:
 
-   1.
-
-      If the element has no accesskey attribute, then skip to the fallback step below.
-   2.
-
-      Otherwise, split the attribute's value on spaces, and let keys be the resulting tokens.
-   3.
-
-      For each value in keys in turn, in the order the tokens appeared in the attribute's value, run the following substeps:
-         1.
-
-            If the value is not a string exactly one Unicode code point in length, then skip the remainder of these steps for this value.
-         2.
-
-            If the value does not correspond to a key on the system's keyboard, then skip the remainder of these steps for this value.
-         3.
-
-            If the user agent can find a combination of modifier keys that, with the key that corresponds to the value given in the attribute, can be used as a shortcut key, then the user agent may assign that combination of keys as the element's assigned access key and abort these steps. 
-   4.
-
-      Fallback: Optionally, the user agent may assign a key combination of its choosing as the element's assigned access key and then abort these steps.
-   5.
-
-      If this step is reached, the element has no assigned access key. 
+   1. If the element has no accesskey attribute, then skip to the fallback step
+      below.
+   2. Otherwise, split the attribute's value on spaces, and let keys be the
+      resulting tokens.
+   3. For each value in keys in turn, in the order the tokens appeared in the
+      attribute's value, run the following substeps:
+         1. If the value is not a string exactly one Unicode code point in
+            length, then skip the remainder of these steps for this value.
+         2. If the value does not correspond to a key on the system's keyboard,
+            then skip the remainder of these steps for this value.
+         3. If the user agent can find a combination of modifier keys that,
+            with the key that corresponds to the value given in the attribute,
+            can be used as a shortcut key, then the user agent may assign that
+            combination of keys as the element's assigned access key and abort
+            these steps.
+   4. Fallback: Optionally, the user agent may assign a key combination of its
+      choosing as the element's assigned access key and then abort these steps.
+   5. If this step is reached, the element has no assigned access key. 
 
 Once a user agent has selected and assigned an access key for an element, the
 user agent should not change the element's assigned access key unless the
@@ -34757,6 +36379,12 @@ The accessKey IDL attribute must reflect the accesskey content attribute.
 The accessKeyLabel IDL attribute must return a string that represents the
 element's assigned access key, if any. If the element does not have one, then
 the IDL attribute must return the empty string.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.5 The contenteditable attribute
 
@@ -34788,11 +36416,13 @@ element is not editable.
 
 element . contentEditable [ = value ]
 
-    Returns "true", "false", or "inherit", based on the state of the contenteditable attribute.
+    Returns "true", "false", or "inherit", based on the state of the
+    contenteditable attribute.
 
     Can be set, to change that state.
 
     Throws a SYNTAX_ERR exception if the new value isn't one of those strings.
+
 element . isContentEditable
 
     Returns true if the element is editable; otherwise, returns false.
@@ -34823,23 +36453,52 @@ where the current editing position is. It may also have a selection.
 
 How the caret and selection are represented depends entirely on the UA.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.5.1 User editing actions
 
-There are several actions that the user agent should allow the user to perform while the user is interacting with an editing host. How exactly each action is triggered is not defined for every action, but when it is not defined, suggested key bindings are provided to guide implementors.
+There are several actions that the user agent should allow the user to perform
+while the user is interacting with an editing host. How exactly each action is
+triggered is not defined for every action, but when it is not defined,
+suggested key bindings are provided to guide implementors.
 
 Move the caret
 
-    User agents must allow users to move the caret to any position within an editing host, even into nested editable elements. This could be triggered as the default action of keydown events with various key identifiers and as the default action of mousedown events. 
+    User agents must allow users to move the caret to any position within an
+    editing host, even into nested editable elements. This could be triggered
+    as the default action of keydown events with various key identifiers and as
+    the default action of mousedown events.
+
 Change the selection
 
-    User agents must allow users to change the selection within an editing host, even into nested editable elements. User agents may prevent selections from being made in ways that cross from editable elements into non-editable elements (e.g. by making each non-editable descendant atomically selectable, but not allowing text selection within them). This could be triggered as the default action of keydown events with various key identifiers and as the default action of mousedown events. 
+    User agents must allow users to change the selection within an editing
+    host, even into nested editable elements. User agents may prevent
+    selections from being made in ways that cross from editable elements into
+    non-editable elements (e.g. by making each non-editable descendant
+    atomically selectable, but not allowing text selection within them). This
+    could be triggered as the default action of keydown events with various key
+    identifiers and as the default action of mousedown events.
+
 Insert text
 
-    This action must be triggered as the default action of a textInput event, and may be triggered by other commands as well. It must cause the user agent to insert the specified text (given by the event object's data attribute in the case of the textInput event) at the caret.
-
-    If the caret is positioned somewhere where phrasing content is not allowed (e.g. inside an empty ol element), then the user agent must not insert the text directly at the caret position. In such cases the behavior is UA-dependent, but user agents must not, in response to a request to insert text, generate a DOM that is less conformant than the DOM prior to the request.
-
-    User agents should allow users to insert new paragraphs into elements that contains only content other than paragraphs.
+    This action must be triggered as the default action of a textInput event,
+    and may be triggered by other commands as well. It must cause the user
+    agent to insert the specified text (given by the event object's data
+    attribute in the case of the textInput event) at the caret.
+    
+    If the caret is positioned somewhere where phrasing content is not allowed
+    (e.g. inside an empty ol element), then the user agent must not insert the
+    text directly at the caret position. In such cases the behavior is
+    UA-dependent, but user agents must not, in response to a request to insert
+    text, generate a DOM that is less conformant than the DOM prior to the
+    request.
+    
+    User agents should allow users to insert new paragraphs into elements that
+    contains only content other than paragraphs.
 
     For example, given the markup:
 
@@ -34850,43 +36509,96 @@ Insert text
      </dl>
     </section>
 
-    ...the user agent should allow the user to insert p elements before and after the dl element, as children of the section element.
+    ...the user agent should allow the user to insert p elements before and
+    after the dl element, as children of the section element.
+
 Break block
 
-    UAs should offer a way for the user to request that the current paragraph be broken at the caret, e.g. as the default action of a keydown event whose identifier is the "Enter" key and that has no modifiers set.
+    UAs should offer a way for the user to request that the current paragraph
+    be broken at the caret, e.g. as the default action of a keydown event whose
+    identifier is the "Enter" key and that has no modifiers set.
+    
+    The exact behavior is UA-dependent, but user agents must not, in response
+    to a request to break a paragraph, generate a DOM that is less conformant
+    than the DOM prior to the request.
 
-    The exact behavior is UA-dependent, but user agents must not, in response to a request to break a paragraph, generate a DOM that is less conformant than the DOM prior to the request. 
 Insert a line separator
 
-    UAs should offer a way for the user to request an explicit line break at the caret position without breaking the paragraph, e.g. as the default action of a keydown event whose identifier is the "Enter" key and that has a shift modifier set. Line separators are typically found within a poem verse or an address. To insert a line break, the user agent must insert a br element.
+    UAs should offer a way for the user to request an explicit line break at
+    the caret position without breaking the paragraph, e.g. as the default
+    action of a keydown event whose identifier is the "Enter" key and that has
+    a shift modifier set. Line separators are typically found within a poem
+    verse or an address. To insert a line break, the user agent must insert a
+    br element.
+    
+    If the caret is positioned somewhere where phrasing content is not allowed
+    (e.g. in an empty ol element), then the user agent must not insert the br
+    element directly at the caret position. In such cases the behavior is
+    UA-dependent, but user agents must not, in response to a request to insert
+    a line separator, generate a DOM that is less conformant than the DOM prior
+    to the request.
 
-    If the caret is positioned somewhere where phrasing content is not allowed (e.g. in an empty ol element), then the user agent must not insert the br element directly at the caret position. In such cases the behavior is UA-dependent, but user agents must not, in response to a request to insert a line separator, generate a DOM that is less conformant than the DOM prior to the request. 
 Delete
 
-    UAs should offer a way for the user to delete text and elements, including non-editable descendants, e.g. as the default action of keydown events whose identifiers are "U+0008" or "U+007F".
+    UAs should offer a way for the user to delete text and elements, including
+    non-editable descendants, e.g. as the default action of keydown events
+    whose identifiers are "U+0008" or "U+007F".
+    
+    Five edge cases in particular need to be considered carefully when
+    implementing this feature: backspacing at the start of an element,
+    backspacing when the caret is immediately after an element,
+    forward-deleting at the end of an element, forward-deleting when the caret
+    is immediately before an element, and deleting a selection whose start and
+    end points do not share a common parent node.
+    
+    In any case, the exact behavior is UA-dependent, but user agents must not,
+    in response to a request to delete text or an element, generate a DOM that
+    is less conformant than the DOM prior to the request.
 
-    Five edge cases in particular need to be considered carefully when implementing this feature: backspacing at the start of an element, backspacing when the caret is immediately after an element, forward-deleting at the end of an element, forward-deleting when the caret is immediately before an element, and deleting a selection whose start and end points do not share a common parent node.
-
-    In any case, the exact behavior is UA-dependent, but user agents must not, in response to a request to delete text or an element, generate a DOM that is less conformant than the DOM prior to the request. 
 Insert, and wrap text in, semantic elements
 
-    UAs should offer the user the ability to mark text and paragraphs with semantics that HTML can express.
+    UAs should offer the user the ability to mark text and paragraphs with
+    semantics that HTML can express.
+    
+    UAs should similarly offer a way for the user to insert empty semantic
+    elements to subsequently fill by entering text manually.
+    
+    UAs should also offer a way to remove those semantics from marked up text,
+    and to remove empty semantic element that have been inserted.
+    
+    In response to a request from a user to mark text up in italics, user
+    agents should use the i element to represent the semantic. The em element
+    should be used only if the user agent is sure that the user means to
+    indicate stress emphasis.
+    
+    In response to a request from a user to mark text up in bold, user agents
+    should use the b element to represent the semantic. The strong element
+    should be used only if the user agent is sure that the user means to
+    indicate importance.
+    
+    The exact behavior is UA-dependent, but user agents must not, in response
+    to a request to wrap semantics around some text or to insert or remove a
+    semantic element, generate a DOM that is less conformant than the DOM prior
+    to the request.
 
-    UAs should similarly offer a way for the user to insert empty semantic elements to subsequently fill by entering text manually.
-
-    UAs should also offer a way to remove those semantics from marked up text, and to remove empty semantic element that have been inserted.
-
-    In response to a request from a user to mark text up in italics, user agents should use the i element to represent the semantic. The em element should be used only if the user agent is sure that the user means to indicate stress emphasis.
-
-    In response to a request from a user to mark text up in bold, user agents should use the b element to represent the semantic. The strong element should be used only if the user agent is sure that the user means to indicate importance.
-
-    The exact behavior is UA-dependent, but user agents must not, in response to a request to wrap semantics around some text or to insert or remove a semantic element, generate a DOM that is less conformant than the DOM prior to the request. 
 Select and move non-editable elements nested inside editing hosts
 
-    UAs should offer a way for the user to move images and other non-editable parts around the content within an editing host. This may be done using the drag and drop mechanism. User agents must not, in response to a request to move non-editable elements nested inside editing hosts, generate a DOM that is less conformant than the DOM prior to the request. 
+    UAs should offer a way for the user to move images and other non-editable
+    parts around the content within an editing host. This may be done using the
+    drag and drop mechanism. User agents must not, in response to a request to
+    move non-editable elements nested inside editing hosts, generate a DOM that
+    is less conformant than the DOM prior to the request.
+
 Edit form controls nested inside editing hosts
 
-    When an editable form control is edited, the changes must be reflected in both its current value and its default value. For input elements this means updating the defaultValue IDL attribute as well as the value IDL attribute; for select elements it means updating the option elements' defaultSelected IDL attribute as well as the selected IDL attribute; for textarea elements this means updating the defaultValue IDL attribute as well as the value IDL attribute. (Updating the default* IDL attributes causes content attributes to be updated as well.) 
+    When an editable form control is edited, the changes must be reflected in
+    both its current value and its default value. For input elements this means
+    updating the defaultValue IDL attribute as well as the value IDL attribute;
+    for select elements it means updating the option elements' defaultSelected
+    IDL attribute as well as the selected IDL attribute; for textarea elements
+    this means updating the defaultValue IDL attribute as well as the value IDL
+    attribute. (Updating the default* IDL attributes causes content attributes
+    to be updated as well.)
 
 User agents may perform several commands per user request; for example if the
 user selects a block of text and hits Enter, the UA might interpret that as a
@@ -34899,6 +36611,12 @@ the editing host's Document object each time an action is triggered.
 All of the actions defined above, whether triggered by the user or
 programmatically (e.g. by execCommand() commands), must fire mutation events
 as appropriate.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.5.2 Making entire documents editable
 
@@ -34919,7 +36637,15 @@ designMode must be disabled. Other values must be ignored.
 When designMode is enabled, the IDL attribute must return the value "on", and
 when it is disabled, it must return the value "off".
 
-The last state set must persist until the document is destroyed or the state is changed. Initially, documents must have their designMode disabled.
+The last state set must persist until the document is destroyed or the state is
+changed. Initially, documents must have their designMode disabled.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.6 Spelling and grammar checking
 
 User agents can support the checking of spelling and grammar of editable
@@ -34931,11 +36657,14 @@ through defaults or through preferences expressed by the user. There are
 three possible default behaviors for each element:
 
 true-by-default
-    The element will be checked for spelling and grammar if its contents are editable. 
+    The element will be checked for spelling and grammar if its contents are
+    editable.
 false-by-default
     The element will never be checked for spelling and grammar. 
 inherit-by-default
-    The element's default behavior is the same as its parent element's. Elements that have no parent element cannot have this as their default behavior. 
+    The element's default behavior is the same as its parent element's.
+    Elements that have no parent element cannot have this as their default
+    behavior.
 
 The spellcheck attribute is an enumerated attribute whose keywords are the
 empty string, true and false. The empty string and the true keyword map to
@@ -34950,9 +36679,11 @@ state. The false state indicates that the element is not to be checked.
 
 element . spellcheck [ = value ]
 
-    Returns true if the element is to have its spelling and grammar checked; otherwise, returns false.
-
-    Can be set, to override the default and set the spellcheck content attribute.
+    Returns true if the element is to have its spelling and grammar checked;
+    otherwise, returns false.
+    
+    Can be set, to override the default and set the spellcheck content
+    attribute.
 
 The spellcheck IDL attribute, on getting, must return true if the element's
 spellcheck content attribute is in the true state, or if the element's
@@ -34974,8 +36705,12 @@ to the literal string "false".
 User agents must only consider the following pieces of text as checkable for
 the purposes of this feature:
 
-    * The value of input elements to which the readonly attribute applies, whose type attributes are not in the Password state, and that are not immutable (i.e. that do not have the readonly attribute specified and that are not disabled).
-    * The value of textarea elements that do not have a readonly attribute and that are not disabled.
+    * The value of input elements to which the readonly attribute applies,
+      whose type attributes are not in the Password state, and that are not
+      immutable (i.e. that do not have the readonly attribute specified and
+      that are not disabled).
+    * The value of textarea elements that do not have a readonly attribute and
+      that are not disabled.
     * Text in text nodes that are children of editable elements.
     * Text in attributes of editable elements.
 
@@ -34989,13 +36724,24 @@ To determine if a word, sentence, or other piece of text in an applicable
 element (as defined above) is to have spelling- and/or grammar-checking
 enabled, the UA must use the following algorithm:
 
-   1. If the user has disabled the checking for this text, then the checking is disabled.
-   2. Otherwise, if the user has forced the checking for this text to always be enabled, then the checking is enabled.
-   3. Otherwise, if the element with which the text is associated has a spellcheck content attribute, then: if that attribute is in the true state, then checking is enabled; otherwise, if that attribute is in the false state, then checking is disabled.
-   4. Otherwise, if there is an ancestor element with a spellcheck content attribute that is not in the default state, then: if the nearest such ancestor's spellcheck content attribute is in the true state, then checking is enabled; otherwise, checking is disabled.
-   5. Otherwise, if the element's default behavior is true-by-default, then checking is enabled.
-   6. Otherwise, if the element's default behavior is false-by-default, then checking is disabled.
-   7. Otherwise, if the element's parent element has its checking enabled, then checking is enabled.
+   1. If the user has disabled the checking for this text, then the checking is
+      disabled.
+   2. Otherwise, if the user has forced the checking for this text to always be
+      enabled, then the checking is enabled.
+   3. Otherwise, if the element with which the text is associated has a
+      spellcheck content attribute, then: if that attribute is in the true state,
+      then checking is enabled; otherwise, if that attribute is in the false
+      state, then checking is disabled.
+   4. Otherwise, if there is an ancestor element with a spellcheck content
+      attribute that is not in the default state, then: if the nearest such
+      ancestor's spellcheck content attribute is in the true state, then checking
+      is enabled; otherwise, checking is disabled.
+   5. Otherwise, if the element's default behavior is true-by-default, then
+      checking is enabled.
+   6. Otherwise, if the element's default behavior is false-by-default, then
+      checking is disabled.
+   7. Otherwise, if the element's parent element has its checking enabled, then
+      checking is enabled.
    8. Otherwise, checking is disabled.
 
 If the checking is enabled for a word/sentence/text, the user agent should
@@ -35031,6 +36777,12 @@ grammar checkers. A user agent could offer on-demand checking, could perform
 continuous checking while the checking is enabled, or could use other
 interfaces.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.7 Drag and drop
 
 This section defines an event-based drag-and-drop mechanism.
@@ -35056,6 +36808,12 @@ released, or the element that was finally selected), or be canceled. The end
 point must be the last element selected as a possible drop point before the
 drop occurs (so if the operation is not canceled, there must be at least one
 element in the middle step).
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.7.1 Introduction
 
@@ -35090,7 +36848,16 @@ For example:
   }
 </script>
 
-To accept a drop, the drop target has to listen to at least three events. First, the dragenter event, which is used to determine whether or not the drop target is to accept the drop. If the drop is to be accepted, then this event has to be canceled. Second, the dragover event, which is used to determine what feedback is to be shown to the user. If the event is canceled, then the feedback (typically the cursor) is updated based on the dropEffect attribute's value, as set by the event handler; otherwise, the default behavior (typically to do nothing) is used instead. Finally, the drop event, which allows the actual drop to be performed. This event also needs to be canceled, so that the dropEffect attribute's value can be used by the source (otherwise it's reset).
+To accept a drop, the drop target has to listen to at least three events.
+First, the dragenter event, which is used to determine whether or not the drop
+target is to accept the drop. If the drop is to be accepted, then this event
+has to be canceled. Second, the dragover event, which is used to determine what
+feedback is to be shown to the user. If the event is canceled, then the
+feedback (typically the cursor) is updated based on the dropEffect attribute's
+value, as set by the event handler; otherwise, the default behavior (typically
+to do nothing) is used instead. Finally, the drop event, which allows the
+actual drop to be performed. This event also needs to be canceled, so that the
+dropEffect attribute's value can be used by the source (otherwise it's reset).
 
 For example:
 
@@ -35148,14 +36915,19 @@ event:
   }
 </script>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.7.2 The drag data store
 
 The data that underlies a drag-and-drop operation, known as the drag data
 store, consists of the following information:
 
-    *
-
-      A drag data store item list, which is a list of items representing the dragged data, each consisting of the following information:
+    * A drag data store item list, which is a list of items representing the
+      dragged data, each consisting of the following information:
 
       The drag data item kind
 
@@ -35164,45 +36936,62 @@ store, consists of the following information:
           Plain Unicode string
 
               Text.
+          
           File
 
               Binary data with a file name.
 
       The drag data item type string
 
-          A Unicode string giving the type or format of the data, generally given by a MIME type. Some values that are not MIME types are special-cased for legacy reasons. The API does not enforce the use of MIME types; other values can be used as well. In all cases, however, the values are all converted to ASCII lowercase by the API.
+          A Unicode string giving the type or format of the data, generally
+          given by a MIME type. Some values that are not MIME types are
+          special-cased for legacy reasons. The API does not enforce the use of
+          MIME types; other values can be used as well. In all cases, however,
+          the values are all converted to ASCII lowercase by the API.
+          
+          Strings that contain space characters cannot be used with the
+          dropzone attribute, so authors are encouraged to use only MIME types
+          or custom strings (without spaces).
+          
+          There is a limit of one Plain Unicode string item per item type
+          string.
 
-          Strings that contain space characters cannot be used with the dropzone attribute, so authors are encouraged to use only MIME types or custom strings (without spaces).
-
-          There is a limit of one Plain Unicode string item per item type string.
       The actual data
 
-          A Unicode or binary string, in some cases with a file name (itself a Unicode string), as per the drag data item kind. 
+          A Unicode or binary string, in some cases with a file name (itself a
+          Unicode string), as per the drag data item kind.
 
-      The drag data store item list is ordered in the order that the items were added to the list; most recently added last.
-    *
-
-      The following information, used to generate the UI feedback during the drag:
-          o User-agent-defined default feedback information, known as the drag data store default feedback.
-          o A list of zero or more elements known as the drag data store elements list.
-          o Optionally, a bitmap image and the coordinate of a point within that image, known as the drag data store bitmap and drag data store hot spot coordinate.
-    *
-
-      A drag data store mode, which is one of the following:
+      The drag data store item list is ordered in the order that the items were
+      added to the list; most recently added last.
+    
+    * The following information, used to generate the UI feedback during the
+      drag:
+          o User-agent-defined default feedback information, known as the drag
+            data store default feedback.
+          o A list of zero or more elements known as the drag data store
+            elements list.
+          o Optionally, a bitmap image and the coordinate of a point within
+            that image, known as the drag data store bitmap and drag data store
+            hot spot coordinate.
+    * A drag data store mode, which is one of the following:
 
       Read/write mode
 
-          For the dragstart event. New data can be added to the drag data store.
+          For the dragstart event. New data can be added to the drag data
+          store.
+
       Read-only mode
 
-          For the drop event. The list of items representing dragged data can be read, including the data. No new data can be added.
+          For the drop event. The list of items representing dragged data can
+          be read, including the data. No new data can be added.
+
       Protected mode
 
-          For all other events. The formats and kinds in the drag data store list of items representing dragged data can be enumerated, but the data itself is unavailable and no new data can be added.
+          For all other events. The formats and kinds in the drag data store
+          list of items representing dragged data can be enumerated, but the
+          data itself is unavailable and no new data can be added.
 
-    *
-
-      A drag data store allowed effects state, which is a string.
+    * A drag data store allowed effects state, which is a string.
 
 When a drag data store is created, it must be initialized such that its drag
 data store item list is empty, it has no drag data store default feedback,
@@ -35235,39 +37024,57 @@ interface DataTransfer {
 
 dataTransfer . dropEffect [ = value ]
 
-    Returns the kind of operation that is currently selected. If the kind of operation isn't one of those that is allowed by the effectAllowed attribute, then the operation will fail.
+    Returns the kind of operation that is currently selected. If the kind of
+    operation isn't one of those that is allowed by the effectAllowed
+    attribute, then the operation will fail.
 
     Can be set, to change the selected operation.
 
     The possible values are "none", "copy", "link", and "move".
+
 dataTransfer . effectAllowed [ = value ]
 
     Returns the kinds of operations that are to be allowed.
 
     Can be set, to change the allowed operations.
 
-    The possible values are "none", "copy", "copyLink", "copyMove", "link", "linkMove", "move", "all", and "uninitialized",
+    The possible values are "none", "copy", "copyLink", "copyMove", "link",
+    "linkMove", "move", "all", and "uninitialized",
+
 dataTransfer . items
 
     Returns a DataTransferItems object, with the drag data.
+
 dataTransfer . setDragImage(element, x, y)
 
-    Uses the given element to update the drag feedback, replacing any previously specified feedback.
+    Uses the given element to update the drag feedback, replacing any
+    previously specified feedback.
+
 dataTransfer . addElement(element)
 
-    Adds the given element to the list of elements used to render the drag feedback.
+    Adds the given element to the list of elements used to render the drag
+    feedback.
+
 dataTransfer . types
 
-    Returns a DOMStringList listing the formats that were set in the dragstart event. In addition, if any files are being dragged, then one of the types will be the string "Files".
+    Returns a DOMStringList listing the formats that were set in the dragstart
+    event. In addition, if any files are being dragged, then one of the types
+    will be the string "Files".
+
 data = dataTransfer . getData(format)
 
-    Returns the specified data. If there is no such data, returns the empty string.
+    Returns the specified data. If there is no such data, returns the empty
+    string.
+
 dataTransfer . setData(format, data)
 
     Adds the specified data.
+
 dataTransfer . clearData( [ format ] )
 
-    Removes the data of the specified formats. Removes all data if the argument is omitted.
+    Removes the data of the specified formats. Removes all data if the argument
+    is omitted.
+
 dataTransfer . files
 
     Returns a FileList of the files being dragged, if any.
@@ -35297,32 +37104,25 @@ the DataTransfer object. The same object must be returned each time.
 
 The setDragImage(element, x, y) method must run the following steps:
 
-   1.
-
-      If the DataTransfer object is no longer associated with a drag data store, abort these steps. Nothing happens.
-   2.
-
-      If the drag data store's mode is not in the read/write mode, abort these steps. Nothing happens.
-   3.
-
-      If the element argument is an img element, then set the drag data store bitmap to the element's image (at its intrinsic size); otherwise, set the drag data store bitmap to an image generated from the given element (the exact mechanism for doing so is not currently specified).
-   4.
-
-      Set the drag data store hot spot coordinate to the given x, y coordinate. 
+   1. If the DataTransfer object is no longer associated with a drag data
+      store, abort these steps. Nothing happens.
+   2. If the drag data store's mode is not in the read/write mode, abort these
+      steps. Nothing happens.
+   3. If the element argument is an img element, then set the drag data store
+      bitmap to the element's image (at its intrinsic size); otherwise, set the
+      drag data store bitmap to an image generated from the given element (the
+      exact mechanism for doing so is not currently specified).
+   4. Set the drag data store hot spot coordinate to the given x, y coordinate.
 
 The addElement(element) method is an alternative way of specifying how the
 user agent is to render the drag feedback. The method must run the following
 steps:
 
-   1.
-
-      If the DataTransfer object is no longer associated with a drag data store, abort these steps. Nothing happens.
-   2.
-
-      If the drag data store's mode is not in the read/write mode, abort these steps. Nothing happens.
-   3.
-
-      Add the given element to the element's drag data store elements list. 
+   1. If the DataTransfer object is no longer associated with a drag data
+      store, abort these steps. Nothing happens.
+   2. If the drag data store's mode is not in the read/write mode, abort these
+      steps. Nothing happens.
+   3. Add the given element to the element's drag data store elements list.
 
 The difference between setDragImage() and addElement() is that the latter
 automatically generates the image based on the current rendering of the
@@ -35334,100 +37134,71 @@ The types attribute must return a live DOMStringList giving the strings that
 the following steps would produce. The same object must be returned each
 time.
 
-   1.
-
-      Start with an empty list L.
-   2.
-
-      If the DataTransfer object is no longer associated with a drag data store, the DOMStringList is empty. Abort these steps; return the empty list L.
-   3.
-
-      For each item in the drag data store item list whose kind is Plain Unicode string, add an entry to the list L consisting of the item's type string.
-   4.
-
-      If there are any items in the drag data store item list whose kind is File, then add an entry to the list L consisting of the string "Files". (This value can be distinguished from the other values because it is not lowercase.)
-   5.
-
-      The strings produced by these steps are those in the list L. 
+   1. Start with an empty list L.
+   2. If the DataTransfer object is no longer associated with a drag data
+      store, the DOMStringList is empty. Abort these steps; return the empty
+      list L.
+   3. For each item in the drag data store item list whose kind is Plain
+      Unicode string, add an entry to the list L consisting of the item's type
+      string.
+   4. If there are any items in the drag data store item list whose kind is
+      File, then add an entry to the list L consisting of the string "Files".
+      (This value can be distinguished from the other values because it is not
+      lowercase.)
+   5. The strings produced by these steps are those in the list L. 
 
 The getData(format, data) method must run the following steps:
 
-   1.
-
-      If the DataTransfer object is no longer associated with a drag data store, return the empty string and abort these steps.
-   2.
-
-      If the drag data store's mode is in the protected mode, return the empty string and abort these steps.
-   3.
-
-      Let format be the first argument, converted to ASCII lowercase.
-   4.
-
-      Let convert-to-URL be false.
-   5.
-
-      If format equals "text", change it to "text/plain".
-   6.
-
-      If format equals "url", change it to "text/uri-list" and set convert-to-URL to true.
-   7.
-
-      If there is no item in the drag data store item list whose kind is Plain Unicode string and whose type string is equal to format, return the empty string and abort these steps.
-   8.
-
-      Let result be the data of the item in the drag data store item list whose kind is Plain Unicode string and whose type string is equal to format.
-   9.
-
-      If convert-to-URL is true, then parse result as appropriate for text/uri-list data, and then set result to the first URL from the list, if any, or the empty string otherwise. [RFC2483]
-  10.
-
-      Return result. 
+   1. If the DataTransfer object is no longer associated with a drag data
+      store, return the empty string and abort these steps.
+   2. If the drag data store's mode is in the protected mode, return the empty
+      string and abort these steps.
+   3. Let format be the first argument, converted to ASCII lowercase.
+   4. Let convert-to-URL be false.
+   5. If format equals "text", change it to "text/plain".
+   6. If format equals "url", change it to "text/uri-list" and set
+      convert-to-URL to true.
+   7. If there is no item in the drag data store item list whose kind is Plain
+      Unicode string and whose type string is equal to format, return the empty
+      string and abort these steps.
+   8. Let result be the data of the item in the drag data store item list whose
+      kind is Plain Unicode string and whose type string is equal to format.
+   9. If convert-to-URL is true, then parse result as appropriate for
+      text/uri-list data, and then set result to the first URL from the list,
+      if any, or the empty string otherwise. [RFC2483]
+  10. Return result. 
 
 The setData(format, data) method must run the following steps:
 
-   1.
-
-      If the DataTransfer object is no longer associated with a drag data store, abort these steps. Nothing happens.
-   2.
-
-      If the drag data store's mode is not the read/write mode, abort these steps. Nothing happens.
-   3.
-
-      Let format be the first argument, converted to ASCII lowercase.
-   4.
-
-      If format equals "text", change it to "text/plain".
+   1. If the DataTransfer object is no longer associated with a drag data
+      store, abort these steps. Nothing happens.
+   2. If the drag data store's mode is not the read/write mode, abort these
+      steps. Nothing happens.
+   3. Let format be the first argument, converted to ASCII lowercase.
+   4. If format equals "text", change it to "text/plain".
 
       If format equals "url", change it to "text/uri-list".
-   5.
-
-      Remove the item in the drag data store item list whose kind is Plain Unicode string and whose type string is equal to format, if there is one.
-   6.
-
-      Add an item to the drag data store item list whose kind is Plain Unicode string, whose type string is equal to format, and whose data is the string given by the method's second argument. 
+   5. Remove the item in the drag data store item list whose kind is Plain
+      Unicode string and whose type string is equal to format, if there is one.
+   6. Add an item to the drag data store item list whose kind is Plain Unicode
+      string, whose type string is equal to format, and whose data is the
+      string given by the method's second argument.
 
 The clearData() method must run the following steps:
 
-   1.
-
-      If the DataTransfer object is no longer associated with a drag data store, abort these steps. Nothing happens.
-   2.
-
-      If the drag data store's mode is not the read/write mode, abort these steps. Nothing happens.
-   3.
-
-      If the method was called with no arguments, remove each item in the drag data store item list whose kind is Plain Unicode string, and abort these steps.
-   4.
-
-      Let format be the first argument, converted to ASCII lowercase.
-   5.
-
-      If format equals "text", change it to "text/plain".
+   1. If the DataTransfer object is no longer associated with a drag data
+      store, abort these steps. Nothing happens.
+   2. If the drag data store's mode is not the read/write mode, abort these
+      steps. Nothing happens.
+   3. If the method was called with no arguments, remove each item in the drag
+      data store item list whose kind is Plain Unicode string, and abort these
+      steps.
+   4. Let format be the first argument, converted to ASCII lowercase.
+   5. If format equals "text", change it to "text/plain".
 
       If format equals "url", change it to "text/uri-list".
-   6.
-
-      Remove the item in the drag data store item list whose kind is Plain Unicode string and whose type string is equal to format, if there is one. 
+   6. Remove the item in the drag data store item list whose kind is Plain
+      Unicode string and whose type string is equal to format, if there is one.
 
 The clearData() method does not affect whether any files were included in the
 drag, so the types attribute's list might still not be empty after calling
@@ -35439,23 +37210,23 @@ objects representing the files found by the following steps. The same object
 must be returned each time. Furthermore, for a given FileList object and a
 given underlying file, the same File object must be used each time.
 
-   1.
-
-      Start with an empty list L.
-   2.
-
-      If the DataTransfer object is no longer associated with a drag data store, the FileList is empty. Abort these steps; return the empty list L.
-   3.
-
-      If the drag data store's mode is in the protected mode, abort these steps; return the empty list L.
-   4.
-
-      For each item in the drag data store item list whose kind is File , add the item's data (the file, in particular its name and contents, as well as its type) to the list L.
-   5.
-
-      The files found by these steps are those in the list L. 
+   1. Start with an empty list L.
+   2. If the DataTransfer object is no longer associated with a drag data
+      store, the FileList is empty. Abort these steps; return the empty list L.
+   3. If the drag data store's mode is in the protected mode, abort these
+      steps; return the empty list L.
+   4. For each item in the drag data store item list whose kind is File , add
+      the item's data (the file, in particular its name and contents, as well
+      as its type) to the list L.
+   5. The files found by these steps are those in the list L. 
 
 This version of the API does not expose the types of the files during the drag.
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.7.3.1 The DataTransferItems interface
 
 Each DataTransfer object is associated with a DataTransferItems object.
@@ -35473,60 +37244,93 @@ interface DataTransferItems {
 items . length
 
     Returns the number of items in the drag data store. 
+
 items[index]
 
-    Returns the DataTransferItem object representing the indexth entry in the drag data store.
+    Returns the DataTransferItem object representing the indexth entry in the
+    drag data store.
+
 delete items[index]
 
     Removes the indexth entry in the drag data store.
+
 items . clear()
 
     Removes all the entries in the drag data store.
+
 items . add(data)
 items . add(data, type)
 
-    Adds a new entry for the given data to the drag data store. If the data is plain text then a type string has to be provided also.
+    Adds a new entry for the given data to the drag data store. If the data is
+    plain text then a type string has to be provided also.
 
-While the DataTransferItems object's DataTransfer object is associated with a drag data store, the DataTransferItems object's mode is the same as the drag data store mode. When the DataTransferItems object's DataTransfer object is not associated with a drag data store, the DataTransferItems object's mode is the disabled mode. The drag data store referenced in this section (which is used only when the DataTransferItems object is not in the disabled mode) is the drag data store with which the DataTransferItems object's DataTransfer object is associated.
+While the DataTransferItems object's DataTransfer object is associated with a
+drag data store, the DataTransferItems object's mode is the same as the drag
+data store mode. When the DataTransferItems object's DataTransfer object is not
+associated with a drag data store, the DataTransferItems object's mode is the
+disabled mode. The drag data store referenced in this section (which is used
+only when the DataTransferItems object is not in the disabled mode) is the drag
+data store with which the DataTransferItems object's DataTransfer object is
+associated.
 
-The length attribute must return zero if the object is in the disabled mode; otherwise it must return the number of items in the drag data store item list.
+The length attribute must return zero if the object is in the disabled mode;
+otherwise it must return the number of items in the drag data store item list.
 
-When a DataTransferItems object is not in the disabled mode, its supported property indices are the numbers in the range 0 .. n-1, where n is the number of items in the drag data store item list.
+When a DataTransferItems object is not in the disabled mode, its supported
+property indices are the numbers in the range 0 .. n-1, where n is the number
+of items in the drag data store item list.
 
-To determine the value of an indexed property i of a DataTransferItems object, the user agent must return a DataTransferItem object representing the ith item in the drag data store. The same object must be returned each time a particular item is obtained from this DataTransferItems object. The DataTransferItem object must be associated with the same DataTransfer object as the DataTransferItems object when it is first created.
+To determine the value of an indexed property i of a DataTransferItems object,
+the user agent must return a DataTransferItem object representing the ith item
+in the drag data store. The same object must be returned each time a particular
+item is obtained from this DataTransferItems object. The DataTransferItem
+object must be associated with the same DataTransfer object as the
+DataTransferItems object when it is first created.
 
-To delete an existing indexed property i of a DataTransferItems object, the user agent must run these steps:
+To delete an existing indexed property i of a DataTransferItems object, the
+user agent must run these steps:
 
-   1.
+   1. If the DataTransferItems object is not in the read/write mode, throw an
+      INVALID_STATE_ERR exception and abort these steps.
+   2. Remove the ith item from the drag data store. 
 
-      If the DataTransferItems object is not in the read/write mode, throw an INVALID_STATE_ERR exception and abort these steps.
-   2.
-
-      Remove the ith item from the drag data store. 
-
-The clear method, if the DataTransferItems object is in the read/write mode, must remove all the items from the drag data store. Otherwise, it must do nothing.
+The clear method, if the DataTransferItems object is in the read/write mode,
+must remove all the items from the drag data store. Otherwise, it must do
+nothing.
 
 The add() method must run the following steps:
 
-   1.
-
-      If the DataTransferItems object is not in the read/write mode, return null and abort these steps.
-   2.
-
-      Jump to the appropriate set of steps from the following list:
+   1. If the DataTransferItems object is not in the read/write mode, return
+      null and abort these steps.
+   2. Jump to the appropriate set of steps from the following list:
 
       If the first argument to the method is a string
 
-          If there is already an item in the drag data store item list whose kind is Plain Unicode string and whose type string is equal to the value of the method's second argument, converted to ASCII lowercase, then throw a NOT_SUPPORTED_ERR exception and abort these steps.
-
-          Otherwise, add an item to the drag data store item list whose kind is Plain Unicode string, whose type string is equal to the value of the method's second argument, converted to ASCII lowercase, and whose data is the string given by the method's first argument.
+          If there is already an item in the drag data store item list whose
+          kind is Plain Unicode string and whose type string is equal to the
+          value of the method's second argument, converted to ASCII lowercase,
+          then throw a NOT_SUPPORTED_ERR exception and abort these steps.
+          
+          Otherwise, add an item to the drag data store item list whose kind
+          is Plain Unicode string, whose type string is equal to the value of
+          the method's second argument, converted to ASCII lowercase, and whose
+          data is the string given by the method's first argument.
+      
       If the first argument to the method is a File
 
-          Add an item to the drag data store item list whose kind is File, whose type string is the type of the File, converted to ASCII lowercase, and whose data is the same as the File's data.
+          Add an item to the drag data store item list whose kind is File,
+          whose type string is the type of the File, converted to ASCII
+          lowercase, and whose data is the same as the File's data.
 
-   3.
+   3. Determine the value of the indexed property corresponding to the newly
+      added item, and return that value (a newly created DataTransferItem
+      object).
 
-      Determine the value of the indexed property corresponding to the newly added item, and return that value (a newly created DataTransferItem object). 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.7.3.2 The DataTransferItem interface
 
@@ -35547,55 +37351,69 @@ interface FunctionStringCallback {
 item . kind
 
     Returns the drag data item kind, one of: "string", "file".
+
 item . type
 
     Returns the drag data item type string.
+
 item . getAsString(callback)
 
-    Invokes the callback with the string data as the argument, if the drag data item kind is Plain Unicode string.
+    Invokes the callback with the string data as the argument, if the drag data
+    item kind is Plain Unicode string.
+
 file = item . getAsFile()
 
     Returns a File object, if the drag data item kind is File.
 
-While the DataTransferItem object's DataTransfer object is associated with a drag data store and that drag data store's drag data store item list still contains the item that the DataTransferItem object represents, the DataTransferItem object's mode is the same as the drag data store mode. When the DataTransferItem object's DataTransfer object is not associated with a drag data store, or if the item that the DataTransferItem object represents has been removed from the relevant drag data store item list, the DataTransferItem object's mode is the disabled mode. The drag data store referenced in this section (which is used only when the DataTransferItem object is not in the disabled mode) is the drag data store with which the DataTransferItem object's DataTransfer object is associated.
+While the DataTransferItem object's DataTransfer object is associated with a
+drag data store and that drag data store's drag data store item list still
+contains the item that the DataTransferItem object represents, the
+DataTransferItem object's mode is the same as the drag data store mode. When
+the DataTransferItem object's DataTransfer object is not associated with a drag
+data store, or if the item that the DataTransferItem object represents has been
+removed from the relevant drag data store item list, the DataTransferItem
+object's mode is the disabled mode. The drag data store referenced in this
+section (which is used only when the DataTransferItem object is not in the
+disabled mode) is the drag data store with which the DataTransferItem object's
+DataTransfer object is associated.
 
-The kind attribute must return the empty string if the DataTransferItem object is in the disabled mode; otherwise it must return the string given in the cell from the second column of the following table from the row whose cell in the first column contains the drag data item kind of the item represented by the DataTransferItem object:
-Kind 	String
-Plain Unicode string 	"string"
-File 	"file"
+The kind attribute must return the empty string if the DataTransferItem object
+is in the disabled mode; otherwise it must return the string given in the cell
+from the second column of the following table from the row whose cell in the
+first column contains the drag data item kind of the item represented by the
+DataTransferItem object:
 
-The type attribute must return the empty string if the DataTransferItem object is in the disabled mode; otherwise it must return the drag data item type string of the item represented by the DataTransferItem object.
+Kind                    String
+Plain Unicode string    "string"
+File                    "file"
+
+The type attribute must return the empty string if the DataTransferItem object
+is in the disabled mode; otherwise it must return the drag data item type
+string of the item represented by the DataTransferItem object.
 
 The getAsString(callback) method must run the following steps:
 
-   1.
-
-      If the callback is null, abort these steps.
-   2.
-
-      If the DataTransferItem object is not in the read/write mode or the read-only mode, abort these steps. The callback is never invoked.
-   3.
-
-      If the drag data item kind is not Plain Unicode string, abort these steps. The callback is never invoked.
-   4.
-
-      Otherwise, queue a task to invoke callback, passing the actual data of the item represented by the DataTransferItem object as the argument. 
+   1. If the callback is null, abort these steps.
+   2. If the DataTransferItem object is not in the read/write mode or the
+      read-only mode, abort these steps. The callback is never invoked.
+   3. If the drag data item kind is not Plain Unicode string, abort these
+      steps. The callback is never invoked.
+   4. Otherwise, queue a task to invoke callback, passing the actual data of
+      the item represented by the DataTransferItem object as the argument.
 
 The getAsFile() method must run the following steps:
 
-   1.
-
-      If the DataTransferItem object is not in the read/write mode or the read-only mode, return null and abort these steps.
-   2.
-
-      If the drag data item kind is not File, then return null and abort these steps.
-   3.
-
-      Return a new File object representing the actual data of the item represented by the DataTransferItem object.
+   1. If the DataTransferItem object is not in the read/write mode or the
+      read-only mode, return null and abort these steps.
+   2. If the drag data item kind is not File, then return null and abort these
+      steps.
+   3. Return a new File object representing the actual data of the item
+      represented by the DataTransferItem object.
 
 7.7.4 The DragEvent interface
 
-The drag-and-drop processing model involves several events. They all use the DragEvent interface.
+The drag-and-drop processing model involves several events. They all use the
+DragEvent interface.
 
 interface DragEvent : MouseEvent {
   readonly attribute DataTransfer dataTransfer;
@@ -35607,92 +37425,118 @@ event . dataTransfer
 
     Returns the DataTransfer object for the event.
 
-The initDragEvent() method must initialize the event in a manner analogous to the similarly-named method in the DOM Events interfaces, except that the dummyArg argument must be ignored. [DOMEVENTS]
+The initDragEvent() method must initialize the event in a manner analogous to
+the similarly-named method in the DOM Events interfaces, except that the
+dummyArg argument must be ignored. [DOMEVENTS]
 
-The dataTransfer attribute of the DragEvent interface represents the context information for the event.
+The dataTransfer attribute of the DragEvent interface represents the context
+information for the event.
 
-When a user agent is required to fire a DND event named e at an element, using a particular drag data store, the user agent must run the following steps:
+When a user agent is required to fire a DND event named e at an element, using
+a particular drag data store, the user agent must run the following steps:
 
-   1.
-
-      If e is dragstart, set the drag data store mode to the read/write mode.
+   1. If e is dragstart, set the drag data store mode to the read/write mode.
 
       If e is drop, set the drag data store mode to the read-only mode.
-   2.
+   2. Let dataTransfer be a newly created DataTransfer object associated with
+      the given drag data store.
+   3. Set the effectAllowed attribute to the drag data store's drag data store
+      allowed effects state.
+   4. Set the dropEffect attribute to "none" if e is dragstart, drag, or
+      dragleave; to the value corresponding to the current drag operation if e
+      is drop or dragend; and to a value based on the effectAllowed attribute's
+      value and to the drag-and-drop source, as given by the following table,
+      otherwise (i.e. if e is dragenter or dragover):
+      
+      effectAllowed     dropEffect
+      "none"            "none"
+      "copy",           "copyLink", "copyMove", "all"     "copy"
+      "link",           "linkMove"    "link"
+      "move"            "move"
+      "uninitialized" when what is being dragged is a selection from a text field   "move"
+      "uninitialized" when what is being dragged is a selection     "copy"
+      "uninitialized" when what is being dragged is an a element with an href attribute     "link"
+      Any other case    "copy"
+   5. Create a DragEvent object and initialize it to have the given name e, to
+      bubble, to be cancelable unless e is dragleave or dragend, and to have
+      the detail attribute set to zero, the mouse and key attributes set
+      according to the state of the input devices as they would be for user
+      interaction events, the relatedTarget attribute set to null, and the
+      dataTransfer attribute set to dataTransfer, the DataTransfer object
+      created above.
+      
+      If there is no relevant pointing device, the object must have its
+      screenX, screenY, clientX, clientY, and button attributes set to 0.
+   6. Dispatch the newly created DragEvent object at the specified target
+      element.
+   7. Set the drag data store allowed effects state to the current value of
+      dataTransfer's effectAllowed attribute.
+   8. Set the drag data store mode back to the protected mode if it was changed
+      in the first step.
+   9. Break the association between dataTransfer and the drag data store. 
 
-      Let dataTransfer be a newly created DataTransfer object associated with the given drag data store.
-   3.
+******************************************************************************/
+test('TODO: ', function(){
 
-      Set the effectAllowed attribute to the drag data store's drag data store allowed effects state.
-   4.
-
-      Set the dropEffect attribute to "none" if e is dragstart, drag, or dragleave; to the value corresponding to the current drag operation if e is drop or dragend; and to a value based on the effectAllowed attribute's value and to the drag-and-drop source, as given by the following table, otherwise (i.e. if e is dragenter or dragover):
-      effectAllowed 	dropEffect
-      "none" 	"none"
-      "copy", "copyLink", "copyMove", "all" 	"copy"
-      "link", "linkMove" 	"link"
-      "move" 	"move"
-      "uninitialized" when what is being dragged is a selection from a text field 	"move"
-      "uninitialized" when what is being dragged is a selection 	"copy"
-      "uninitialized" when what is being dragged is an a element with an href attribute 	"link"
-      Any other case 	"copy"
-   5.
-
-      Create a DragEvent object and initialize it to have the given name e, to bubble, to be cancelable unless e is dragleave or dragend, and to have the detail attribute set to zero, the mouse and key attributes set according to the state of the input devices as they would be for user interaction events, the relatedTarget attribute set to null, and the dataTransfer attribute set to dataTransfer, the DataTransfer object created above.
-
-      If there is no relevant pointing device, the object must have its screenX, screenY, clientX, clientY, and button attributes set to 0.
-   6.
-
-      Dispatch the newly created DragEvent object at the specified target element.
-   7.
-
-      Set the drag data store allowed effects state to the current value of dataTransfer's effectAllowed attribute.
-   8.
-
-      Set the drag data store mode back to the protected mode if it was changed in the first step.
-   9.
-
-      Break the association between dataTransfer and the drag data store. 
+});
+/******************************************************************************
 
 7.7.5 Drag-and-drop processing model
 
-When the user attempts to begin a drag operation, the user agent must run the following steps. User agents must act as if these steps were run even if the drag actually started in another document or application and the user agent was not aware that the drag was occuring until it intersected with a document under the user agent's purview.
+When the user attempts to begin a drag operation, the user agent must run the
+following steps. User agents must act as if these steps were run even if the
+drag actually started in another document or application and the user agent was
+not aware that the drag was occuring until it intersected with a document under
+the user agent's purview.
 
-   1.
+   1. Determine what is being dragged, as follows:
 
-      Determine what is being dragged, as follows:
+      If the drag operation was invoked on a selection, then it is the
+      selection that is being dragged.
+      
+      Otherwise, if the drag operation was invoked on a Document, it is the
+      first element, going up the ancestor chain, starting at the node that the
+      user tried to drag, that has the IDL attribute draggable set to true. If
+      there is no such element, then nothing is being dragged; abort these
+      steps, the drag-and-drop operation is never started.
+      
+      Otherwise, the drag operation was invoked outside the user agent's
+      purview. What is being dragged is defined by the document or application
+      where the drag was started.
+      
+      img elements and a elements with an href attribute have their draggable
+      attribute set to true by default.
+   2. Create a drag data store. All the DND events fired subsequently by the
+      steps in this section must use this drag data store.
+   3. Establish which DOM node is the source node, as follows:
+      
+      If it is a selection that is being dragged, then the source node is the
+      text node that the user started the drag on (typically the text node that
+      the user originally clicked). If the user did not specify a particular
+      node, for example if the user just told the user agent to begin a drag of
+      "the selection", then the source node is the first text node containing a
+      part of the selection.
+      
+      Otherwise, if it is an element that is being dragged, then the source
+      node is the element that is being dragged.
+      
+      Otherwise, the source node is part of another document or application.
+      When this specification requires that an event be dispatched at the
+      source node in this case, the user agent must instead follow the
+      platform-specific conventions relevant to that situation.
+      
+      Multiple events are fired on the source node during the course of the
+      drag-and-drop operation.
+   4. Determine the list of dragged nodes, as follows:
 
-      If the drag operation was invoked on a selection, then it is the selection that is being dragged.
-
-      Otherwise, if the drag operation was invoked on a Document, it is the first element, going up the ancestor chain, starting at the node that the user tried to drag, that has the IDL attribute draggable set to true. If there is no such element, then nothing is being dragged; abort these steps, the drag-and-drop operation is never started.
-
-      Otherwise, the drag operation was invoked outside the user agent's purview. What is being dragged is defined by the document or application where the drag was started.
-
-      img elements and a elements with an href attribute have their draggable attribute set to true by default.
-   2.
-
-      Create a drag data store. All the DND events fired subsequently by the steps in this section must use this drag data store.
-   3.
-
-      Establish which DOM node is the source node, as follows:
-
-      If it is a selection that is being dragged, then the source node is the text node that the user started the drag on (typically the text node that the user originally clicked). If the user did not specify a particular node, for example if the user just told the user agent to begin a drag of "the selection", then the source node is the first text node containing a part of the selection.
-
-      Otherwise, if it is an element that is being dragged, then the source node is the element that is being dragged.
-
-      Otherwise, the source node is part of another document or application. When this specification requires that an event be dispatched at the source node in this case, the user agent must instead follow the platform-specific conventions relevant to that situation.
-
-      Multiple events are fired on the source node during the course of the drag-and-drop operation.
-   4.
-
-      Determine the list of dragged nodes, as follows:
-
-      If it is a selection that is being dragged, then the list of dragged nodes contains, in tree order, every node that is partially or completely included in the selection (including all their ancestors).
-
-      Otherwise, the list of dragged nodes contains only the source node, if any.
-   5.
-
-      If it is a selection that is being dragged, then add an item to the drag data store item list, with its properties set as follows:
+      If it is a selection that is being dragged, then the list of dragged
+      nodes contains, in tree order, every node that is partially or completely
+      included in the selection (including all their ancestors).
+      
+      Otherwise, the list of dragged nodes contains only the source node, if
+      any.
+   5. If it is a selection that is being dragged, then add an item to the drag
+      data store item list, with its properties set as follows:
 
       The drag data item type string
           "text/plain"
@@ -35701,43 +37545,46 @@ When the user attempts to begin a drag operation, the user agent must run the fo
       The actual data
           The text of the selection
 
-      Otherwise, if any files are being dragged, then add one item per file to the drag data store item list, with their properties set as follows:
+      Otherwise, if any files are being dragged, then add one item per file to
+      the drag data store item list, with their properties set as follows:
 
       The drag data item type string
-          The MIME type of the file, if known, or "application/octet-stream" otherwise.
+          The MIME type of the file, if known, or "application/octet-stream"
+          otherwise.
       The drag data item kind
           File
       The actual data
           The file's contents and name.
 
-      Dragging files can currently only happen from outside a browsing context, for example from a file system manager application.
+      Dragging files can currently only happen from outside a browsing context,
+      for example from a file system manager application.
 
-      If the drag initiated outside of the application, the user agent must add items to the drag data store item list as appropriate for the data being dragged, honoring platform conventions where appropriate; however, if the platform conventions do not use MIME types to label dragged data, the user agent must make a best-effort attempt to map the types to MIME types, and, in any case, all the drag data item type strings must be converted to ASCII lowercase.
-   6. Perform drag-and-drop initialization steps defined in any other applicable specifications.
-   7.
-
-      Run the following substeps:
-         1.
-
-            Let urls be an empty list of absolute URLs.
-         2.
-
-            For each node in the list of dragged nodes:
+      If the drag initiated outside of the application, the user agent must add
+      items to the drag data store item list as appropriate for the data being
+      dragged, honoring platform conventions where appropriate; however, if the
+      platform conventions do not use MIME types to label dragged data, the
+      user agent must make a best-effort attempt to map the types to MIME
+      types, and, in any case, all the drag data item type strings must be
+      converted to ASCII lowercase.
+   6. Perform drag-and-drop initialization steps defined in any other applicable 
+      specifications.
+   7. Run the following substeps:
+         1. Let urls be an empty list of absolute URLs.
+         2. For each node in the list of dragged nodes:
 
             If the node is an a element with an href attribute
-                Add to urls the result of resolving the element's href content attribute relative to the element.
+                Add to urls the result of resolving the element's href content
+                attribute relative to the element.
             If the node is an img element with an src attribute
-                Add to urls the result of resolving the element's src content attribute relative to the element.
+                Add to urls the result of resolving the element's src content
+                attribute relative to the element.
 
-         3.
-
-            If urls is still empty, abort these substeps.
-         4.
-
-            Let url string be the result of concatenating the strings in urls, in the order they were added, separated by a U+000D CARRIAGE RETURN U+000A LINE FEED character pair (CRLF).
-         5.
-
-            Add one item to the drag data store item list, with its properties set as follows:
+         3. If urls is still empty, abort these substeps.
+         4. Let url string be the result of concatenating the strings in urls,
+            in the order they were added, separated by a U+000D CARRIAGE RETURN
+            U+000A LINE FEED character pair (CRLF).
+         5. Add one item to the drag data store item list, with its properties
+            set as follows:
 
             The drag data item type string
                 text/uri-list
@@ -35746,26 +37593,36 @@ When the user attempts to begin a drag operation, the user agent must run the fo
             The actual data
                 url string
 
-   8.
+   8. If it is an element that is being dragged, then set the drag data store
+      elements list to contain just the source node.
+      
+      Otherwise, update the drag data store default feedback as appropriate
+      for the user agent (if the user is dragging the selection, then the
+      selection would likely be the basis for this feedback; if the drag began
+      outside the user agent, then the platform conventions for determining the
+      drag feedback should be used).
+      
+      Script can use the addElement() method to add further elements to the
+      list of what is being dragged. (This list is only used for rendering the
+      drag feedback.)
+   9. Fire a DND event named dragstart at the source node.
 
-      If it is an element that is being dragged, then set the drag data store elements list to contain just the source node.
+      If the event is canceled, then the drag-and-drop operation should not
+      occur; abort these steps.
+      
+      Since events with no event listeners registered are, almost by
+      definition, never canceled, drag-and-drop is always available to the user
+      if the author does not specifically prevent it.
+  10. Initiate the drag-and-drop operation in a manner consistent with platform
+      conventions, and as described below.
 
-      Otherwise, update the drag data store default feedback as appropriate for the user agent (if the user is dragging the selection, then the selection would likely be the basis for this feedback; if the drag began outside the user agent, then the platform conventions for determining the drag feedback should be used).
-
-      Script can use the addElement() method to add further elements to the list of what is being dragged. (This list is only used for rendering the drag feedback.)
-   9.
-
-      Fire a DND event named dragstart at the source node.
-
-      If the event is canceled, then the drag-and-drop operation should not occur; abort these steps.
-
-      Since events with no event listeners registered are, almost by definition, never canceled, drag-and-drop is always available to the user if the author does not specifically prevent it.
-  10.
-
-      Initiate the drag-and-drop operation in a manner consistent with platform conventions, and as described below.
-
-      The drag-and-drop feedback must be generated from the first of the following sources that is available:
-         1. The drag data store bitmap, if any. In this case, the drag data store hot spot coordinate should be used as hints for where to put the cursor relative to the resulting image. The values are expressed as distances in CSS pixels from the left side and from the top side of the image respectively. [CSS]
+      The drag-and-drop feedback must be generated from the first of the
+      following sources that is available:
+         1. The drag data store bitmap, if any. In this case, the drag data 
+            store hot spot coordinate should be used as hints for where to put 
+            the cursor relative to the resulting image. The values are 
+            expressed as distances in CSS pixels from the left side and from 
+            the top side of the image respectively. [CSS]
          2. The elements in the drag data store elements list, if any.
          3. The drag data store default feedback.
 
@@ -35803,131 +37660,193 @@ User agents must, as soon as the drag operation is initiated and every 350ms
 (±200ms) thereafter for as long as the drag operation is ongoing, queue a
 task to perform the following steps in sequence:
 
-   1.
-
-      If the user agent is still performing the previous iteration of the sequence (if any) when the next iteration becomes due, abort these steps for this iteration (effectively "skipping missed frames" of the drag-and-drop operation).
-   2.
-
-      Fire a DND event named drag event at the source node. If this event is canceled, the user agent must set the current drag operation to "none" (no drag operation).
-   3.
-
-      If the drag event was not canceled and the user has not ended the drag-and-drop operation, check the state of the drag-and-drop operation, as follows:
-         1.
-
-            If the user is indicating a different immediate user selection than during the last iteration (or if this is the first iteration), and if this immediate user selection is not the same as the current target element, then update the current target element as follows:
+   1. If the user agent is still performing the previous iteration of the
+      sequence (if any) when the next iteration becomes due, abort these steps
+      for this iteration (effectively "skipping missed frames" of the
+      drag-and-drop operation).
+   2. Fire a DND event named drag event at the source node. If this event is
+      canceled, the user agent must set the current drag operation to "none"
+      (no drag operation).
+   3. If the drag event was not canceled and the user has not ended the
+      drag-and-drop operation, check the state of the drag-and-drop operation,
+      as follows:
+         1. If the user is indicating a different immediate user selection than
+            during the last iteration (or if this is the first iteration), and
+            if this immediate user selection is not the same as the current
+            target element, then update the current target element as follows:
 
             If the new immediate user selection is null
 
                 Set the current target element to null also. 
-            If the new immediate user selection is in a non-DOM document or application
 
-                Set the current target element to the immediate user selection. 
+            If the new immediate user selection is in a non-DOM document or
+            application
+
+                Set the current target element to the immediate user selection.
+
             Otherwise
 
-                Fire a DND event named dragenter at the immediate user selection.
-
-                If the event is canceled, then set the current target element to the immediate user selection.
+                Fire a DND event named dragenter at the immediate user
+                selection.
+                
+                If the event is canceled, then set the current target element
+                to the immediate user selection.
 
                 Otherwise, run the appropriate step from the following list:
 
-                If the current target element is a text field (e.g. textarea, or an input element whose type attribute is in the Text state) or an editable element, and the drag data store item list has an item with the drag data item type string "text/plain" and the drag data item kind Plain Unicode string
+                If the current target element is a text field (e.g. textarea,
+                or an input element whose type attribute is in the Text state)
+                or an editable element, and the drag data store item list has
+                an item with the drag data item type string "text/plain" and
+                the drag data item kind Plain Unicode string
 
-                    Set the current target element to the immediate user selection anyway. 
-                If the current target element is an element with a dropzone attribute that matches the drag data store
+                    Set the current target element to the immediate user
+                    selection anyway.
 
-                    Set the current target element to the immediate user selection anyway. 
+                If the current target element is an element with a dropzone
+                attribute that matches the drag data store
+
+                    Set the current target element to the immediate user
+                    selection anyway.
+
                 If the current target element is the body element
 
                     Leave the current target element unchanged. 
+
                 Otherwise
 
-                    Fire a DND event named dragenter at the body element, and set the current target element to the body element, regardless of whether that event was canceled or not.
+                    Fire a DND event named dragenter at the body element, and
+                    set the current target element to the body element,
+                    regardless of whether that event was canceled or not.
+                    
+                    If the body element is null, then the event will be fired
+                    at the Document object (as required by the definition of
+                    the body element), but the current target element would be
+                    set to null, not the Document object.
 
-                    If the body element is null, then the event will be fired at the Document object (as required by the definition of the body element), but the current target element would be set to null, not the Document object. 
+         2. If the previous step caused the current target element to change,
+            and if the previous target element was not null or a part of a
+            non-DOM document, then fire a DND event named dragleave at the
+            previous target element.
+         3. If the current target element is a DOM element, then fire a DND
+            event named dragover at this current target element.
+            
+            If the dragover event is not canceled, run the appropriate step
+            from the following list:
+            
+            If the current target element is a text field (e.g. textarea, or
+            an input element whose type attribute is in the Text state) or an
+            editable element, and the drag data store item list has an item
+            with the drag data item type string "text/plain" and the drag data
+            item kind Plain Unicode string
 
-         2.
+                Set the current drag operation to either "copy" or "move", as
+                appropriate given the platform conventions.
+            
+            If the current target element is an element with a dropzone
+            attribute that matches the drag data store and specifies an
+            operation
 
-            If the previous step caused the current target element to change, and if the previous target element was not null or a part of a non-DOM document, then fire a DND event named dragleave at the previous target element.
-         3.
-
-            If the current target element is a DOM element, then fire a DND event named dragover at this current target element.
-
-            If the dragover event is not canceled, run the appropriate step from the following list:
-
-            If the current target element is a text field (e.g. textarea, or an input element whose type attribute is in the Text state) or an editable element, and the drag data store item list has an item with the drag data item type string "text/plain" and the drag data item kind Plain Unicode string
-
-                Set the current drag operation to either "copy" or "move", as appropriate given the platform conventions. 
-            If the current target element is an element with a dropzone attribute that matches the drag data store and specifies an operation
-
-                Set the current drag operation to the operation specified by the dropzone attribute of the current target element.
-            If the current target element is an element with a dropzone attribute that matches the drag data store and does not specify an operation
+                Set the current drag operation to the operation specified by
+                the dropzone attribute of the current target element.
+            
+            If the current target element is an element with a dropzone
+            attribute that matches the drag data store and does not specify an
+            operation
 
                 Set the current drag operation to "copy".
+            
             Otherwise
 
                 Reset the current drag operation to "none". 
 
-            Otherwise (if the dragover event is canceled), set the current drag operation based on the values of the effectAllowed and dropEffect attributes of the DragEvent object's dataTransfer object as they stood after the event dispatch finished, as per the following table:
-            effectAllowed 	dropEffect 	Drag operation
-            "uninitialized", "copy", "copyLink", "copyMove", or "all" 	"copy" 	"copy"
-            "uninitialized", "link", "copyLink", "linkMove", or "all" 	"link" 	"link"
-            "uninitialized", "move", "copyMove", "linkMove", or "all" 	"move" 	"move"
-            Any other case 	"none"
-         4.
+            Otherwise (if the dragover event is canceled), set the current drag
+            operation based on the values of the effectAllowed and dropEffect
+            attributes of the DragEvent object's dataTransfer object as they
+            stood after the event dispatch finished, as per the following
+            table:
 
-            Otherwise, if the current target element is not a DOM element, use platform-specific mechanisms to determine what drag operation is being performed (none, copy, link, or move), and set the current drag operation accordingly.
+            effectAllowed   dropEffect  Drag operation
+            "uninitialized", "copy", "copyLink", "copyMove", or "all"   "copy"  "copy"
+            "uninitialized", "link", "copyLink", "linkMove", or "all"   "link"  "link"
+            "uninitialized", "move", "copyMove", "linkMove", or "all"   "move"  "move"
+            Any other case  "none"
+            
+         4. Otherwise, if the current target element is not a DOM element, use
+            platform-specific mechanisms to determine what drag operation is
+            being performed (none, copy, link, or move), and set the current
+            drag operation accordingly.
          5.
 
-            Update the drag feedback (e.g. the mouse cursor) to match the current drag operation, as follows:
-            Drag operation 	Feedback
-            "copy" 	Data will be copied if dropped here.
-            "link" 	Data will be linked if dropped here.
-            "move" 	Data will be moved if dropped here.
-            "none" 	No operation allowed, dropping here will cancel the drag-and-drop operation.
-   4.
+            Update the drag feedback (e.g. the mouse cursor) to match the
+            current drag operation, as follows:
+            Drag operation  Feedback
+            "copy"  Data will be copied if dropped here.
+            "link"  Data will be linked if dropped here.
+            "move"  Data will be moved if dropped here.
+            "none"  No operation allowed, dropping here will cancel the drag-and-drop operation.
+   4. Otherwise, if the user ended the drag-and-drop operation (e.g. by
+      releasing the mouse button in a mouse-driven drag-and-drop interface), or
+      if the drag event was canceled, then this will be the last iteration. Run
+      the following steps, then stop the drag-and-drop operation: 1.
 
-      Otherwise, if the user ended the drag-and-drop operation (e.g. by releasing the mouse button in a mouse-driven drag-and-drop interface), or if the drag event was canceled, then this will be the last iteration. Run the following steps, then stop the drag-and-drop operation:
-         1.
-
-            If the current drag operation is "none" (no drag operation), or, if the user ended the drag-and-drop operation by canceling it (e.g. by hitting the Escape key), or if the current target element is null, then the drag operation failed. Run these substeps:
-               1.
-
-                  Let dropped be false.
-               2.
-
-                  If the current target element is a DOM element, fire a DND event named dragleave at it; otherwise, if it is not null, use platform-specific conventions for drag cancellation.
+            If the current drag operation is "none" (no drag operation), or, if
+            the user ended the drag-and-drop operation by canceling it (e.g. by
+            hitting the Escape key), or if the current target element is null,
+            then the drag operation failed. Run these substeps:
+               1. Let dropped be false.
+               2. If the current target element is a DOM element, fire a DND
+                  event named dragleave at it; otherwise, if it is not null,
+                  use platform-specific conventions for drag cancellation.
 
             Otherwise, the drag operation was as success; run these substeps:
-               1.
+               1. Let dropped be true.
+               2. If the current target element is a DOM element, fire a DND
+                  event named drop at it; otherwise, use platform-specific
+                  conventions for indicating a drop.
+               3. If the event is canceled, set the current drag operation to
+                  the value of the dropEffect attribute of the DragEvent
+                  object's dataTransfer object as it stood after the event
+                  dispatch finished.
+                  
+                   Otherwise, the event is not canceled; perform the event's
+                  default action, which depends on the exact target as follows:
+                  
+                   If the current target element is a text field (e.g.
+                  textarea, or an input element whose type attribute is in the
+                  Text state) or an editable element, and the drag data store
+                  item list has an item with the drag data item type string
+                  "text/plain" and the drag data item kind Plain Unicode string
 
-                  Let dropped be true.
-               2.
+                      Insert the actual data of the first item in the drag data
+                      store item list to have a drag data item type string of
+                      "text/plain" and a drag data item kind that is Plain
+                      Unicode string into the text field or editable element in
+                      a manner consistent with platform-specific conventions
+                      (e.g. inserting it at the current mouse cursor position,
+                      or inserting it at the end of the field).
 
-                  If the current target element is a DOM element, fire a DND event named drop at it; otherwise, use platform-specific conventions for indicating a drop.
-               3.
-
-                  If the event is canceled, set the current drag operation to the value of the dropEffect attribute of the DragEvent object's dataTransfer object as it stood after the event dispatch finished.
-
-                  Otherwise, the event is not canceled; perform the event's default action, which depends on the exact target as follows:
-
-                  If the current target element is a text field (e.g. textarea, or an input element whose type attribute is in the Text state) or an editable element, and the drag data store item list has an item with the drag data item type string "text/plain" and the drag data item kind Plain Unicode string
-
-                      Insert the actual data of the first item in the drag data store item list to have a drag data item type string of "text/plain" and a drag data item kind that is Plain Unicode string into the text field or editable element in a manner consistent with platform-specific conventions (e.g. inserting it at the current mouse cursor position, or inserting it at the end of the field). 
                   Otherwise
 
                       Reset the current drag operation to "none". 
 
-         2.
+         2. Fire a DND event named dragend at the source node.
+         3. Run the appropriate steps from the following list as the default
+            action of the dragend event:
 
-            Fire a DND event named dragend at the source node.
-         3.
-
-            Run the appropriate steps from the following list as the default action of the dragend event:
-
-            If the current target element is a text field (e.g. textarea, or an input element whose type attribute is in the Text state), and dropped is true, and the current drag operation is "move", and the source of the drag-and-drop operation is a selection in the DOM
-                The user agent should delete the range representing the dragged selection from the DOM.
-            If the current target element is a text field (e.g. textarea, or an input element whose type attribute is in the Text state), and dropped is true, and the current drag operation is "move", and the source of the drag-and-drop operation is a selection in a text field
-                The user agent should delete the dragged selection from the relevant text field.
+            If the current target element is a text field (e.g. textarea, or an
+            input element whose type attribute is in the Text state), and
+            dropped is true, and the current drag operation is "move", and the
+            source of the drag-and-drop operation is a selection in the DOM
+                The user agent should delete the range representing the dragged
+                selection from the DOM.
+            If the current target element is a text field (e.g. textarea, or an
+            input element whose type attribute is in the Text state), and
+            dropped is true, and the current drag operation is "move", and the
+            source of the drag-and-drop operation is a selection in a text
+            field
+                The user agent should delete the dragged selection from the
+                relevant text field.
             Otherwise
                 The event has no default action.
 
@@ -35941,23 +37860,36 @@ from; the events are fired as described above and the rest of the processing
 model runs as described above, irrespective of how many documents are
 involved in the operation.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.7.6 Events summary
 
 This section is non-normative.
 
 The following events are involved in the drag-and-drop model.
-Event Name 	Target 	Cancelable? 	Drag data store mode 	dropEffect 	Default Action
-dragstart 	Source node 	✓ Cancelable 	Read/write mode 	"none" 	Initiate the drag-and-drop operation
-drag 	Source node 	✓ Cancelable 	Protected mode 	"none" 	Continue the drag-and-drop operation
-dragenter 	Immediate user selection or the body element 	✓ Cancelable 	Protected mode 	Based on effectAllowed value 	Reject immediate user selection as potential target element
-dragleave 	Previous target element 	— 	Protected mode 	"none" 	None
-dragover 	Current target element 	✓ Cancelable 	Protected mode 	Based on effectAllowed value 	Reset the current drag operation to "none"
-drop 	Current target element 	✓ Cancelable 	Read-only mode 	Current drag operation 	Varies
-dragend 	Source node 	— 	Protected mode 	Current drag operation 	Varies
+
+Event Name  Target  Cancelable?     Drag data store mode    dropEffect  Default Action
+dragstart   Source node     ✓ Cancelable    Read/write mode     "none"  Initiate the drag-and-drop operation
+drag        Source node     ✓ Cancelable    Protected mode  "none"  Continue the drag-and-drop operation
+dragenter   Immediate user selection or the body element    ✓ Cancelable    Protected mode  Based on effectAllowed value    Reject immediate user selection as potential target element
+dragleave   Previous target element     —   Protected mode  "none"  None
+dragover    Current target element  ✓ Cancelable    Protected mode  Based on effectAllowed value    Reset the current drag operation to "none"
+drop        Current target element  ✓ Cancelable    Read-only mode  Current drag operation  Varies
+dragend     Source node     —   Protected mode  Current drag operation  Varies
 
 Not shown in the above table: all these events bubble, and the effectAllowed
 attribute always has the value it had after the previous event was fired,
 defaulting to "uninitialized" in the dragstart event.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.7.7 The draggable attribute
 
@@ -35998,25 +37930,48 @@ content attribute must be set to the literal value false. If the draggable
 IDL attribute is set to the value true, the draggable content attribute must
 be set to the literal value true.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 7.7.8 The dropzone attribute
 
-All HTML elements may have the dropzone content attribute set. When specified, its value must be an unordered set of unique space-separated tokens that are ASCII case-insensitive. The allowed values are the following:
+All HTML elements may have the dropzone content attribute set. When specified,
+its value must be an unordered set of unique space-separated tokens that are
+ASCII case-insensitive. The allowed values are the following:
 
 copy
 
-    Indicates that dropping an accepted item on the element will result in a copy of the dragged data.
+    Indicates that dropping an accepted item on the element will result in a
+    copy of the dragged data.
+
 move
 
-    Indicates that dropping an accepted item on the element will result in the dragged data being moved to the new location.
+    Indicates that dropping an accepted item on the element will result in the
+    dragged data being moved to the new location.
+
 link
 
-    Indicates that dropping an accepted item on the element will result in a link to the original data.
-Any keyword with three characters or more, beginning with the two characters U+0073 LATIN SMALL LETTER S and U+003A COLON or U+0053 LATIN CAPITAL LETTER S and U+003A COLON (i.e. an ASCII case-insensitive match for the string "s:")
+    Indicates that dropping an accepted item on the element will result in a
+    link to the original data.
 
-    Indicates that items with the drag data item kind Plain Unicode string and the drag data item type string set to a value that matches the remainder of the keyword are accepted. 
-Any keyword with three characters or more, beginning with the two characters U+0066 LATIN SMALL LETTER F and U+003A COLON or U+0046 LATIN CAPITAL LETTER F and U+003A COLON (i.e. an ASCII case-insensitive match for the string "f:")
+Any keyword with three characters or more, beginning with the two characters
+U+0073 LATIN SMALL LETTER S and U+003A COLON or U+0053 LATIN CAPITAL LETTER S
+and U+003A COLON (i.e. an ASCII case-insensitive match for the string "s:")
 
-    Indicates that items with the drag data item kind File and the drag data item type string set to a value that matches the remainder of the keyword are accepted. 
+    Indicates that items with the drag data item kind Plain Unicode string and
+    the drag data item type string set to a value that matches the remainder of
+    the keyword are accepted.
+
+Any keyword with three characters or more, beginning with the two characters
+U+0066 LATIN SMALL LETTER F and U+003A COLON or U+0046 LATIN CAPITAL LETTER F
+and U+003A COLON (i.e. an ASCII case-insensitive match for the string "f:")
+
+    Indicates that items with the drag data item kind File and the drag data
+    item type string set to a value that matches the remainder of the keyword
+    are accepted.
 
 The dropzone content attribute's values must not have more than one of the
 three feedback values (copy, move, and link) specified. If none are
@@ -36033,70 +37988,52 @@ The dropzone processing steps are as follows. They either result in a match
 or not, and separate from this result either in a specified operation or not,
 as defined below.
 
-   1.
-
-      Let value be the value of the dropzone attribute.
-   2.
-
-      Let keywords be the result of splitting value on spaces.
-   3.
-
-      Let matched be false.
-   4.
-
-      Let operation be unspecified.
-   5.
-
-      For each value in keywords, if any, in the order that they were found in value, run the following steps.
-         1.
-
-            Let keyword be the keyword.
-         2.
-
-            If keyword is one of "copy", "move", or "link", then: run the following substeps:
-               1.
-
-                  If operation is still unspecified, then let operation be the string given by keyword.
-               2.
-
-                  Skip to the step labeled end of keyword below. 
-         3.
-
-            If keyword is shorter than three characters in length, then skip to the step labeled end of keyword below.
-         4.
-
-            If the second character in keyword is not a U+003A COLON character (:), then skip to the step labeled end of keyword below.
-         5.
-
-            Let kind code be the first character in keyword, converted to ASCII lowercase.
-         6.
-
-            Jump to the appropriate step from the list below, based on the value of kind code:
+   1. Let value be the value of the dropzone attribute.
+   2. Let keywords be the result of splitting value on spaces.
+   3. Let matched be false.
+   4. Let operation be unspecified.
+   5. For each value in keywords, if any, in the order that they were found in
+      value, run the following steps.
+         1. Let keyword be the keyword.
+         2. If keyword is one of "copy", "move", or "link", then: run the
+            following substeps:
+               1. If operation is still unspecified, then let operation be the
+                  string given by keyword.
+               2. Skip to the step labeled end of keyword below. 
+         3. If keyword is shorter than three characters in length, then skip to
+            the step labeled end of keyword below.
+         4. If the second character in keyword is not a U+003A COLON character
+            (:), then skip to the step labeled end of keyword below.
+         5. Let kind code be the first character in keyword, converted to ASCII
+            lowercase.
+         6. Jump to the appropriate step from the list below, based on the
+            value of kind code:
 
             If kind code is a U+0073 LATIN SMALL LETTER S character
 
                 Let kind be Plain Unicode string.
+
             If kind code is a U+0066 LATIN SMALL LETTER F character
 
                 Let kind be File.
+
             Otherwise
 
                 Skip to the step labeled end of keyword below.
 
-         7.
-
-            Let type be the string consisting of all but the first two characters of keyword, converted to ASCII lowercase.
-         8.
-
-            If there exist any items in the drag data store item list whose drag data item kind is the kind given in kind and whose drag data item type is type, then let matched be true.
-         9.
-
-            End of keyword: Go on to the next keyword, if any, or the next step in the overall algorithm, if there are no more. 
-   6.
-
-      The algorithm results in a match if matched is true, and does not otherwise.
-
-      The algorithm results in a specified operation if operation is not unspecified. The specified operation, if one is specified, is the one given by operation.
+         7. Let type be the string consisting of all but the first two
+            characters of keyword, converted to ASCII lowercase.
+         8. If there exist any items in the drag data store item list whose
+            drag data item kind is the kind given in kind and whose drag data
+            item type is type, then let matched be true.
+         9. End of keyword: Go on to the next keyword, if any, or the next step
+            in the overall algorithm, if there are no more.
+   6. The algorithm results in a match if matched is true, and does not
+      otherwise.
+      
+       The algorithm results in a specified operation if operation is not
+      unspecified. The specified operation, if one is specified, is the one
+      given by operation.
 
 The dropzone IDL attribute must reflect the content attribute of the same
 name.
@@ -36120,6 +38057,12 @@ displayed.
    }
  }
 </script>
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 7.7.9 Security risks in the drag-and-drop model
 
@@ -36182,7 +38125,9 @@ except where otherwise stated.
 
 When execCommand() is invoked, the user agent must run the following steps:
 
-   1. If the given commandId maps to an entry in the list below whose "Enabled When" entry has a condition that is currently false, do nothing; abort these steps.
+   1. If the given commandId maps to an entry in the list below whose 
+     "Enabled When" entry has a condition that is currently false, do 
+     nothing; abort these steps.
    2. Otherwise, execute the "Action" listed below for the given commandId.
 
 A document is ready for editing host commands if it has a selection that is
@@ -36212,80 +38157,113 @@ case-insensitive manner.
 
 bold
     Summary: Toggles whether the selection is bold.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the b element (or, again, unwrapped, or have that semantic inserted or removed, as defined by the UA).
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the b element (or, again,
+      unwrapped, or have that semantic inserted or removed, as defined by the
+      UA).
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
-    State: True if the selection, or the caret, if there is no selection, is, or is contained within, a b element. False otherwise.
-    Value: The string "true" if the expression given for the "State" above is true, the string "false" otherwise.
+    State: True if the selection, or the caret, if there is no selection, is,
+      or is contained within, a b element. False otherwise.
+    Value: The string "true" if the expression given for the "State" above is
+      true, the string "false" otherwise.
 createLink
-    Summary: Toggles whether the selection is a link or not. If the second argument is true, and a link is to be added, the user agent will ask the user for the address. Otherwise, the third argument will be used as the address.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the a element (or, again, unwrapped, or have that semantic inserted or removed, as defined by the UA). If the user agent creates an a element or modifies an existing a element, then if the showUI argument is present and has the value false, then the value of the value argument must be used as the URL of the link. Otherwise, the user agent should prompt the user for the URL of the link.
+    Summary: Toggles whether the selection is a link or not. If the second
+      argument is true, and a link is to be added, the user agent will ask the
+      user for the address. Otherwise, the third argument will be used as the
+      address.
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the a element (or, again,
+      unwrapped, or have that semantic inserted or removed, as defined by the
+      UA). If the user agent creates an a element or modifies an existing a
+      element, then if the showUI argument is present and has the value false,
+      then the value of the value argument must be used as the URL of the link.
+      Otherwise, the user agent should prompt the user for the URL of the link.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 delete
     Summary: Deletes the selection or the character before the cursor.
-    Action: The user agent must act as if the user had performed a backspace operation.
+    Action: The user agent must act as if the user had performed a backspace
+      operation.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 formatBlock
-    Summary: Wraps the selection in the element given by the third argument. If the third argument doesn't specify an element that is a formatBlock candidate, does nothing.
+    Summary: Wraps the selection in the element given by the third argument. If
+      the third argument doesn't specify an element that is a formatBlock
+      candidate, does nothing.
 
     Action: The user agent must run the following steps:
 
-       1.
-
-          If the value argument wasn't specified, abort these steps without doing anything.
-       2.
-
-          If the value argument has a leading U+003C LESS-THAN SIGN character (<) and a trailing U+003E GREATER-THAN SIGN character (>), then remove the first and last characters from value.
-       3.
-
-          If value is (now) an ASCII case-insensitive match for the tag name of an element defined by this specification that is defined to be a formatBlock candidate, then, for every position in the selection, take the nearest formatBlock candidate ancestor element of that position that contains only phrasing content, and, if that element is editable, is not an editing host, and has a parent element whose content model allows that parent to contain any flow content, replace it with an element in the HTML namespace whose name is value, and move all the children that were in it to the new element, and copy all the attributes that were on it to the new element.
-
-          If there is no selection, then, where in the description above refers to the selection, the user agent must act as if the selection was an empty range (with just one position) at the caret position.
+       1. If the value argument wasn't specified, abort these steps without
+          doing anything.
+       2. If the value argument has a leading U+003C LESS-THAN SIGN character
+          (<) and a trailing U+003E GREATER-THAN SIGN character (>), then
+          remove the first and last characters from value.
+       3. If value is (now) an ASCII case-insensitive match for the tag name of
+          an element defined by this specification that is defined to be a
+          formatBlock candidate, then, for every position in the selection,
+          take the nearest formatBlock candidate ancestor element of that
+          position that contains only phrasing content, and, if that element is
+          editable, is not an editing host, and has a parent element whose
+          content model allows that parent to contain any flow content, replace
+          it with an element in the HTML namespace whose name is value, and
+          move all the children that were in it to the new element, and copy
+          all the attributes that were on it to the new element.
+          
+           If there is no selection, then, where in the description above
+          refers to the selection, the user agent must act as if the selection
+          was an empty range (with just one position) at the caret position.
 
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
+
 forwardDelete
     Summary: Deletes the selection or the character after the cursor.
-    Action: The user agent must act as if the user had performed a forward delete operation.
+    Action: The user agent must act as if the user had performed a forward 
+      delete operation.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 insertImage
-    Summary: Toggles whether the selection is an image or not. If the second argument is true, and an image is to be added, the user agent will ask the user for the address. Otherwise, the third argument will be used as the address.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the img element (or, again, unwrapped, or have that semantic inserted or removed, as defined by the UA). If the user agent creates an img element or modifies an existing img element, then if the showUI argument is present and has the value false, then the value of the value argument must be used as the URL of the image. Otherwise, the user agent should prompt the user for the URL of the image.
+    Summary: Toggles whether the selection is an image or not. If the second
+      argument is true, and an image is to be added, the user agent will ask the
+      user for the address. Otherwise, the third argument will be used as the
+      address.
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the img element (or, again,
+      unwrapped, or have that semantic inserted or removed, as defined by the
+      UA). If the user agent creates an img element or modifies an existing img
+      element, then if the showUI argument is present and has the value false,
+      then the value of the value argument must be used as the URL of the image.
+      Otherwise, the user agent should prompt the user for the URL of the image.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 insertHTML
-    Summary: Replaces the selection with the value of the third argument parsed as HTML.
+    Summary: Replaces the selection with the value of the third argument parsed
+      as HTML.
 
     Action: The user agent must run the following steps:
 
-       1.
-
-          If the document is an XML document, then throw an INVALID_ACCESS_ERR exception and abort these steps.
-       2.
-
-          If the value argument wasn't specified, abort these steps without doing anything.
-       3.
-
-          If there is a selection, act as if the user had requested that the selection be deleted.
-       4.
-
-          Invoke the HTML fragment parsing algorithm with an arbitrary orphan body element owned by the same Document as the context element and with the value argument as input.
-       5.
-
-          Insert the nodes returned by the previous step into the document at the location of the caret, firing any mutation events as appropriate. 
+       1. If the document is an XML document, then throw an INVALID_ACCESS_ERR
+          exception and abort these steps.
+       2. If the value argument wasn't specified, abort these steps without
+          doing anything.
+       3. If there is a selection, act as if the user had requested that the
+          selection be deleted.
+       4. Invoke the HTML fragment parsing algorithm with an arbitrary orphan
+          body element owned by the same Document as the context element and
+          with the value argument as input.
+       5. Insert the nodes returned by the previous step into the document at
+          the location of the caret, firing any mutation events as appropriate.
 
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
@@ -36293,97 +38271,136 @@ insertHTML
     Value: Always the string "false".
 insertLineBreak
     Summary: Inserts a line break.
-    Action: The user agent must act as if the user had requested a line separator.
+    Action: The user agent must act as if the user had requested a line
+      separator.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 insertOrderedList
     Summary: Toggles whether the selection is an ordered list.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the ol element (or unwrapped, or, if there is no selection, have that semantic inserted or removed — the exact behavior is UA-defined).
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the ol element (or unwrapped, or,
+      if there is no selection, have that semantic inserted or removed — the
+      exact behavior is UA-defined).
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 insertUnorderedList
     Summary: Toggles whether the selection is an unordered list.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the ul element (or unwrapped, or, if there is no selection, have that semantic inserted or removed — the exact behavior is UA-defined).
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the ul element (or unwrapped, or,
+      if there is no selection, have that semantic inserted or removed — the
+      exact behavior is UA-defined).
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 insertParagraph
     Summary: Inserts a paragraph break.
-    Action: The user agent must act as if the user had performed a break block editing action.
+    Action: The user agent must act as if the user had performed a break block
+      editing action.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 insertText
     Summary: Inserts the text given in the third parameter.
-    Action: The user agent must act as if the user had inserted text corresponding to the value parameter.
+    Action: The user agent must act as if the user had inserted text
+      corresponding to the value parameter.
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 italic
     Summary: Toggles whether the selection is italic.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the i element (or, again, unwrapped, or have that semantic inserted or removed, as defined by the UA).
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the i element (or, again,
+      unwrapped, or have that semantic inserted or removed, as defined by the
+      UA).
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
-    State: True if the selection, or the caret, if there is no selection, is, or is contained within, a i element. False otherwise.
-    Value: The string "true" if the expression given for the "State" above is true, the string "false" otherwise.
+    State: True if the selection, or the caret, if there is no selection, is,
+      or is contained within, a i element. False otherwise.
+    Value: The string "true" if the expression given for the "State" above is
+      true, the string "false" otherwise.
 redo
     Summary: Acts as if the user had requested a redo.
-    Action: The user agent must move forward one step in its undo transaction history, restoring the associated state. If the undo position is at the end of the undo transaction history, the user agent must do nothing. 
-    Enabled When: The undo position is not at the end of the undo transaction history.
+    Action: The user agent must move forward one step in its undo transaction
+      history, restoring the associated state. If the undo position is at the end
+      of the undo transaction history, the user agent must do nothing.
+    Enabled When: The undo position is not at the end of the undo transaction
+      history.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 selectAll
     Summary: Selects all the editable content.
-    Action: The user agent must change the selection so that all the content in the currently focused editing host is selected. If no editing host is focused, then the content of the entire document must be selected.
+    Action: The user agent must change the selection so that all the content in
+      the currently focused editing host is selected. If no editing host is
+      focused, then the content of the entire document must be selected.
     Enabled When: Always.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 subscript
     Summary: Toggles whether the selection is subscripted.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the sub element (or, again, unwrapped, or have that semantic inserted or removed, as defined by the UA).
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the sub element (or, again,
+      unwrapped, or have that semantic inserted or removed, as defined by the
+      UA).
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
-    State: True if the selection, or the caret, if there is no selection, is, or is contained within, a sub element. False otherwise.
-    Value: The string "true" if the expression given for the "State" above is true, the string "false" otherwise.
+    State: True if the selection, or the caret, if there is no selection, is,
+      or is contained within, a sub element. False otherwise.
+    Value: The string "true" if the expression given for the "State" above is
+      true, the string "false" otherwise.
 superscript
     Summary: Toggles whether the selection is superscripted.
-    Action: The user agent must act as if the user had requested that the selection be wrapped in the semantics of the sup element (or unwrapped, or, if there is no selection, have that semantic inserted or removed — the exact behavior is UA-defined).
+    Action: The user agent must act as if the user had requested that the
+      selection be wrapped in the semantics of the sup element (or unwrapped, or,
+      if there is no selection, have that semantic inserted or removed — the
+      exact behavior is UA-defined).
     Enabled When: The document is ready for editing host commands.
     Indeterminate When: Never.
-    State: True if the selection, or the caret, if there is no selection, is, or is contained within, a sup element. False otherwise.
-    Value: The string "true" if the expression given for the "State" above is true, the string "false" otherwise.
+    State: True if the selection, or the caret, if there is no selection, is,
+      or is contained within, a sup element. False otherwise.
+    Value: The string "true" if the expression given for the "State" above is
+      true, the string "false" otherwise.
 undo
     Summary: Acts as if the user had requested an undo.
-    Action: The user agent must move back one step in its undo transaction history, restoring the associated state. If the undo position is at the start of the undo transaction history, the user agent must do nothing. 
-    Enabled When: The undo position is not at the start of the undo transaction history.
+    Action: The user agent must move back one step in its undo transaction
+      history, restoring the associated state. If the undo position is at the
+      start of the undo transaction history, the user agent must do nothing.
+    Enabled When: The undo position is not at the start of the undo transaction
+      history.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 unlink
     Summary: Removes all links from the selection.
-    Action: The user agent must remove all a elements that have href attributes and that are partially or completely included in the current selection.
-    Enabled When: The document has a selection that is entirely within an editing host and that contains (either partially or completely) at least one a element that has an href attribute.
+    Action: The user agent must remove all a elements that have href attributes
+      and that are partially or completely included in the current selection.
+    Enabled When: The document has a selection that is entirely within an
+      editing host and that contains (either partially or completely) at least
+      one a element that has an href attribute.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 unselect
     Summary: Unselects everything.
-    Action: The user agent must change the selection so that nothing is selected.
+    Action: The user agent must change the selection so that nothing is
+      selected.
     Enabled When: Always.
     Indeterminate When: Never.
     State: Always false.
     Value: Always the string "false".
 vendorID-customCommandID
-    Action: User agents may implement vendor-specific extensions to this API. Vendor-specific extensions to the list of commands should use the syntax vendorID-customCommandID so as to prevent clashes between extensions from different vendors and future additions to this specification.
+    Action: User agents may implement vendor-specific extensions to this API.
+      Vendor-specific extensions to the list of commands should use the syntax
+      vendorID-customCommandID so as to prevent clashes between extensions from
+      different vendors and future additions to this specification.
     Enabled When: UA-defined.
     Indeterminate When: UA-defined.
     State: UA-defined.
@@ -36395,11 +38412,23 @@ Anything else
     State: Always false.
     Value: Always the string "false".
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8 The HTML syntax
 
 This section only describes the rules for resources labeled with an HTML MIME
 type. Rules for XML resources are discussed in the section below entitled
 "The XHTML syntax".
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.1 Writing HTML documents
 
@@ -36440,64 +38469,104 @@ U+0041 to U+005A (LATIN CAPITAL LETTER A to LATIN CAPITAL LETTER Z) and
 U+0061 to U+007A (LATIN SMALL LETTER A to LATIN SMALL LETTER Z). For
 convenience, in this section this is just referred to as "case-insensitive".
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.1 The DOCTYPE
 
 A DOCTYPE is a required preamble.
 
-DOCTYPEs are required for legacy reasons. When omitted, browsers tend to use a different rendering mode that is incompatible with some specifications. Including the DOCTYPE in a document ensures that the browser makes a best-effort attempt at following the relevant specifications.
+DOCTYPEs are required for legacy reasons. When omitted, browsers tend to use a
+different rendering mode that is incompatible with some specifications.
+Including the DOCTYPE in a document ensures that the browser makes a
+best-effort attempt at following the relevant specifications.
 
 A DOCTYPE must consist of the following characters, in this order:
 
-   1. A string that is an ASCII case-insensitive match for the string "<!DOCTYPE".
+   1. A string that is an ASCII case-insensitive match for the string 
+      "<!DOCTYPE".
    2. One or more space characters.
    3. A string that is an ASCII case-insensitive match for the string "html".
-   4. Optionally, a DOCTYPE legacy string or an obsolete permitted DOCTYPE string (defined below).
+   4. Optionally, a DOCTYPE legacy string or an obsolete permitted DOCTYPE 
+      string (defined below).
    5. Zero or more space characters.
    6. A U+003E GREATER-THAN SIGN character (>).
 
 In other words, <!DOCTYPE html>, case-insensitively.
 
-For the purposes of HTML generators that cannot output HTML markup with the short DOCTYPE "<!DOCTYPE html>", a DOCTYPE legacy string may be inserted into the DOCTYPE (in the position defined above). This string must consist of:
+For the purposes of HTML generators that cannot output HTML markup with the
+short DOCTYPE "<!DOCTYPE html>", a DOCTYPE legacy string may be inserted into
+the DOCTYPE (in the position defined above). This string must consist of:
 
    1. One or more space characters.
    2. A string that is an ASCII case-insensitive match for the string "SYSTEM".
    3. One or more space characters.
    4. A U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (the quote mark).
    5. The literal string "about:legacy-compat".
-   6. A matching U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (i.e. the same character as in the earlier step labeled quote mark).
+   6. A matching U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (i.e. 
+      the same character as in the earlier step labeled quote mark).
 
-In other words, <!DOCTYPE html SYSTEM "about:legacy-compat"> or <!DOCTYPE html SYSTEM 'about:legacy-compat'>, case-insensitively except for the part in single or double quotes.
+In other words, <!DOCTYPE html SYSTEM "about:legacy-compat"> or <!DOCTYPE html
+SYSTEM 'about:legacy-compat'>, case-insensitively except for the part in single
+or double quotes.
 
-The DOCTYPE legacy string should not be used unless the document is generated from a system that cannot output the shorter string.
+The DOCTYPE legacy string should not be used unless the document is generated
+from a system that cannot output the shorter string.
 
-To help authors transition from HTML4 and XHTML1, an obsolete permitted DOCTYPE string can be inserted into the DOCTYPE (in the position defined above). This string must consist of:
+To help authors transition from HTML4 and XHTML1, an obsolete permitted DOCTYPE
+string can be inserted into the DOCTYPE (in the position defined above). This
+string must consist of:
 
    1. One or more space characters.
    2. A string that is an ASCII case-insensitive match for the string "PUBLIC".
    3. One or more space characters.
-   4. A U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (the first quote mark).
-   5. The string from one of the cells in the first column of the table below. The row to which this cell belongs is the selected row.
-   6. A matching U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (i.e. the same character as in the earlier step labeled first quote mark).
-   7. If the cell in the second column of the selected row is not blank, one or more space characters.
-   8. If the cell in the second column of the selected row is not blank, a U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (the third quote mark).
-   9. If the cell in the second column of the selected row is not blank, the string from the cell in the second column of the selected row.
-  10. If the cell in the second column of the selected row is not blank, a matching U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (i.e. the same character as in the earlier step labeled third quote mark).
+   4. A U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (the first quote 
+      mark).
+   5. The string from one of the cells in the first column of the table below. 
+      The row to which this cell belongs is the selected row.
+   6. A matching U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (i.e. 
+      the same character as in the earlier step labeled first quote mark).
+   7. If the cell in the second column of the selected row is not blank, one 
+      or more space characters.
+   8. If the cell in the second column of the selected row is not blank, a 
+      U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (the third quote 
+      mark).
+   9. If the cell in the second column of the selected row is not blank, the 
+      string from the cell in the second column of the selected row.
+  10. If the cell in the second column of the selected row is not blank, a 
+      matching U+0022 QUOTATION MARK or U+0027 APOSTROPHE character (i.e. the 
+      same character as in the earlier step labeled third quote mark).
 
-Allowed values for public and system identifiers in an obsolete permitted DOCTYPE string. Public identifier 	System identifier
--//W3C//DTD HTML 4.0//EN 	
--//W3C//DTD HTML 4.0//EN 	http://www.w3.org/TR/REC-html40/strict.dtd
--//W3C//DTD HTML 4.01//EN 	
--//W3C//DTD HTML 4.01//EN 	http://www.w3.org/TR/html4/strict.dtd
--//W3C//DTD XHTML 1.0 Strict//EN 	http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
--//W3C//DTD XHTML 1.1//EN 	http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd
+Allowed values for public and system identifiers in an obsolete permitted
+DOCTYPE string. Public identifier System identifier
+-//W3C//DTD HTML 4.0//EN    
+-//W3C//DTD HTML 4.0//EN    http://www.w3.org/TR/REC-html40/strict.dtd
+-//W3C//DTD HTML 4.01//EN   
+-//W3C//DTD HTML 4.01//EN   http://www.w3.org/TR/html4/strict.dtd
+-//W3C//DTD XHTML 1.0 Strict//EN    http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
+-//W3C//DTD XHTML 1.1//EN   http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd
 
-A DOCTYPE containing an obsolete permitted DOCTYPE string is an obsolete permitted DOCTYPE. Authors should not use obsolete permitted DOCTYPEs, as they are unnecessarily long.
+A DOCTYPE containing an obsolete permitted DOCTYPE string is an obsolete
+permitted DOCTYPE. Authors should not use obsolete permitted DOCTYPEs, as they
+are unnecessarily long.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.2 Elements
 
-There are five different kinds of elements: void elements, raw text elements, RCDATA elements, foreign elements, and normal elements.
+There are five different kinds of elements: void elements, raw text elements,
+RCDATA elements, foreign elements, and normal elements.
 
 Void elements
-    area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr
+    area, base, br, col, command, embed, hr, img, input, keygen, link, meta,
+    param, source, track, wbr
 Raw text elements
     script, style
 RCDATA elements
@@ -36577,27 +38646,57 @@ any mix of lower- and uppercase letters that, when converted to
 all-lowercase, matches the element's tag name; tag names are
 case-insensitive.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.2.1 Start tags
 
 Start tags must have the following format:
 
-   1. The first character of a start tag must be a U+003C LESS-THAN SIGN character (<).
+   1. 
+      The first character of a start tag must be a U+003C LESS-THAN SIGN character (<).
    2. The next few characters of a start tag must be the element's tag name.
-   3. If there are to be any attributes in the next step, there must first be one or more space characters.
-   4. Then, the start tag may have a number of attributes, the syntax for which is described below. Attributes must be separated from each other by one or more space characters.
-   5. After the attributes, or after the tag name if there are no attributes, there may be one or more space characters. (Some attributes are required to be followed by a space. See the attributes section below.)
-   6. Then, if the element is one of the void elements, or if the element is a foreign element, then there may be a single U+002F SOLIDUS character (/). This character has no effect on void elements, but on foreign elements it marks the start tag as self-closing.
-   7. Finally, start tags must be closed by a U+003E GREATER-THAN SIGN character (>).
+   3. If there are to be any attributes in the next step, there must first be
+      one or more space characters.
+   4. Then, the start tag may have a number of attributes, the syntax for which
+      is described below. Attributes must be separated from each other by one
+      or more space characters.
+   5. After the attributes, or after the tag name if there are no attributes,
+      there may be one or more space characters. (Some attributes are required
+      to be followed by a space. See the attributes section below.)
+   6. Then, if the element is one of the void elements, or if the element is a
+      foreign element, then there may be a single U+002F SOLIDUS character (/).
+      This character has no effect on void elements, but on foreign elements it
+      marks the start tag as self-closing.
+   7. Finally, start tags must be closed by a U+003E GREATER-THAN SIGN
+      character (>).
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.1.2.2 End tags
 
 End tags must have the following format:
 
-   1. The first character of an end tag must be a U+003C LESS-THAN SIGN character (<).
+   1. The first character of an end tag must be a U+003C LESS-THAN SIGN 
+      character (<).
    2. The second character of an end tag must be a U+002F SOLIDUS character (/).
    3. The next few characters of an end tag must be the element's tag name.
    4. After the tag name, there may be one or more space characters.
-   5. Finally, end tags must be closed by a U+003E GREATER-THAN SIGN character (>).
+   5. Finally, end tags must be closed by a U+003E GREATER-THAN SIGN 
+      character (>).
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.1.2.3 Attributes
 
@@ -36622,57 +38721,102 @@ Empty attribute syntax
 
     Just the attribute name. The value is implicitly the empty string.
 
-    In the following example, the disabled attribute is given with the empty attribute syntax:
+    In the following example, the disabled attribute is given with the empty
+    attribute syntax:
 
     <input disabled>
 
-    If an attribute using the empty attribute syntax is to be followed by another attribute, then there must be a space character separating the two.
+    If an attribute using the empty attribute syntax is to be followed by
+    another attribute, then there must be a space character separating the two.
+
 Unquoted attribute value syntax
 
-    The attribute name, followed by zero or more space characters, followed by a single U+003D EQUALS SIGN character, followed by zero or more space characters, followed by the attribute value, which, in addition to the requirements given above for attribute values, must not contain any literal space characters, any U+0022 QUOTATION MARK characters ("), U+0027 APOSTROPHE characters ('), U+003D EQUALS SIGN characters (=), U+003C LESS-THAN SIGN characters (<), U+003E GREATER-THAN SIGN characters (>), or U+0060 GRAVE ACCENT characters (`), and must not be the empty string.
+    The attribute name, followed by zero or more space characters, followed by
+    a single U+003D EQUALS SIGN character, followed by zero or more space
+    characters, followed by the attribute value, which, in addition to the
+    requirements given above for attribute values, must not contain any literal
+    space characters, any U+0022 QUOTATION MARK characters ("), U+0027
+    APOSTROPHE characters ('), U+003D EQUALS SIGN characters (=), U+003C
+    LESS-THAN SIGN characters (<), U+003E GREATER-THAN SIGN characters (>), or
+    U+0060 GRAVE ACCENT characters (`), and must not be the empty string.
 
-    In the following example, the value attribute is given with the unquoted attribute value syntax:
+    In the following example, the value attribute is given with the unquoted
+    attribute value syntax:
 
     <input value=yes>
 
-    If an attribute using the unquoted attribute syntax is to be followed by another attribute or by the optional U+002F SOLIDUS character (/) allowed in step 6 of the start tag syntax above, then there must be a space character separating the two.
+    If an attribute using the unquoted attribute syntax is to be followed by
+    another attribute or by the optional U+002F SOLIDUS character (/) allowed
+    in step 6 of the start tag syntax above, then there must be a space
+    character separating the two.
+
 Single-quoted attribute value syntax
 
-    The attribute name, followed by zero or more space characters, followed by a single U+003D EQUALS SIGN character, followed by zero or more space characters, followed by a single U+0027 APOSTROPHE character ('), followed by the attribute value, which, in addition to the requirements given above for attribute values, must not contain any literal U+0027 APOSTROPHE characters ('), and finally followed by a second single U+0027 APOSTROPHE character (').
-
-    In the following example, the type attribute is given with the single-quoted attribute value syntax:
-
+    The attribute name, followed by zero or more space characters, followed by
+    a single U+003D EQUALS SIGN character, followed by zero or more space
+    characters, followed by a single U+0027 APOSTROPHE character ('), followed
+    by the attribute value, which, in addition to the requirements given above
+    for attribute values, must not contain any literal U+0027 APOSTROPHE
+    characters ('), and finally followed by a second single U+0027 APOSTROPHE
+    character (').
+    
+    In the following example, the type attribute is given with the
+    single-quoted attribute value syntax:
+    
     <input type='checkbox'>
+    
+    If an attribute using the single-quoted attribute syntax is to be followed
+    by another attribute, then there must be a space character separating the
+    two.
 
-    If an attribute using the single-quoted attribute syntax is to be followed by another attribute, then there must be a space character separating the two.
 Double-quoted attribute value syntax
 
-    The attribute name, followed by zero or more space characters, followed by a single U+003D EQUALS SIGN character, followed by zero or more space characters, followed by a single U+0022 QUOTATION MARK character ("), followed by the attribute value, which, in addition to the requirements given above for attribute values, must not contain any literal U+0022 QUOTATION MARK characters ("), and finally followed by a second single U+0022 QUOTATION MARK character (").
+    The attribute name, followed by zero or more space characters, followed by
+    a single U+003D EQUALS SIGN character, followed by zero or more space
+    characters, followed by a single U+0022 QUOTATION MARK character ("),
+    followed by the attribute value, which, in addition to the requirements
+    given above for attribute values, must not contain any literal U+0022
+    QUOTATION MARK characters ("), and finally followed by a second single
+    U+0022 QUOTATION MARK character (").
 
-    In the following example, the name attribute is given with the double-quoted attribute value syntax:
+    In the following example, the name attribute is given with the
+    double-quoted attribute value syntax:
 
     <input name="be evil">
 
-    If an attribute using the double-quoted attribute syntax is to be followed by another attribute, then there must be a space character separating the two.
+    If an attribute using the double-quoted attribute syntax is to be followed
+    by another attribute, then there must be a space character separating the
+    two.
 
-There must never be two or more attributes on the same start tag whose names are an ASCII case-insensitive match for each other.
+There must never be two or more attributes on the same start tag whose names
+are an ASCII case-insensitive match for each other.
 
-When a foreign element has one of the namespaced attributes given by the local name and namespace of the first and second cells of a row from the following table, it must be written using the name given by the third cell from the same row.
-Local name 	Namespace 	Attribute name
-actuate 	XLink namespace 	xlink:actuate
-arcrole 	XLink namespace 	xlink:arcrole
-href 	XLink namespace 	xlink:href
-role 	XLink namespace 	xlink:role
-show 	XLink namespace 	xlink:show
-title 	XLink namespace 	xlink:title
-type 	XLink namespace 	xlink:type
-base 	XML namespace 	xml:base
-lang 	XML namespace 	xml:lang
-space 	XML namespace 	xml:space
-xmlns 	XMLNS namespace 	xmlns
-xlink 	XMLNS namespace 	xmlns:xlink
+When a foreign element has one of the namespaced attributes given by the local
+name and namespace of the first and second cells of a row from the following
+table, it must be written using the name given by the third cell from the same
+row.
+
+Local name  Namespace   Attribute name
+actuate     XLink namespace     xlink:actuate
+arcrole     XLink namespace     xlink:arcrole
+href    XLink namespace     xlink:href
+role    XLink namespace     xlink:role
+show    XLink namespace     xlink:show
+title   XLink namespace     xlink:title
+type    XLink namespace     xlink:type
+base    XML namespace   xml:base
+lang    XML namespace   xml:lang
+space   XML namespace   xml:space
+xmlns   XMLNS namespace     xmlns
+xlink   XMLNS namespace     xmlns:xlink
 
 No other namespaced attribute can be expressed in the HTML syntax.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.1.2.4 Optional tags
 
@@ -36774,6 +38918,12 @@ element.
 
 However, a start tag must never be omitted if it has any attributes.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.2.5 Restrictions on content models
 
 For historical reasons, certain elements have extra restrictions beyond even
@@ -36797,6 +38947,12 @@ The following two pre blocks are equivalent:
 <pre>
 Hello</pre>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.2.6 Restrictions on the contents of raw text and RCDATA elements
 
 The text in raw text and RCDATA elements must not contain any occurrences of
@@ -36806,6 +38962,12 @@ by one of U+0009 CHARACTER TABULATION, U+000A LINE FEED (LF), U+000C FORM
 FEED (FF), U+000D CARRIAGE RETURN (CR), U+0020 SPACE, U+003E GREATER-THAN
 SIGN (>), or U+002F SOLIDUS (/).
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.3 Text
 
 Text is allowed inside elements, attribute values, and comments. Text must
@@ -36814,6 +38976,12 @@ must not contain permanently undefined Unicode characters (noncharacters).
 Text must not contain control characters other than space characters. Extra
 constraints are placed on what is and what is not allowed in text based on
 where the text is to be put, as described in the other sections.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.1.3.1 Newlines
 
@@ -36825,6 +38993,12 @@ Where character references are allowed, a character reference of a U+000A
 LINE FEED (LF) character (but not a U+000D CARRIAGE RETURN (CR) character)
 also represents a newline.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.4 Character references
 
 In certain cases described in other sections, text may be mixed with
@@ -36835,11 +39009,25 @@ Character references must start with a U+0026 AMPERSAND character (&).
 Following this, there are three possible kinds of character references:
 
 Named character references
-    The ampersand must be followed by one of the names given in the named character references section, using the same case. The name must be one that is terminated by a U+003B SEMICOLON character (;).
+    The ampersand must be followed by one of the names given in the named
+    character references section, using the same case. The name must be one
+    that is terminated by a U+003B SEMICOLON character (;).
 Decimal numeric character reference
-    The ampersand must be followed by a U+0023 NUMBER SIGN character (#), followed by one or more digits in the range U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE (9), representing a base-ten integer that corresponds to a Unicode code point that is allowed according to the definition below. The digits must then be followed by a U+003B SEMICOLON character (;).
+    The ampersand must be followed by a U+0023 NUMBER SIGN character (#),
+    followed by one or more digits in the range U+0030 DIGIT ZERO (0) to U+0039
+    DIGIT NINE (9), representing a base-ten integer that corresponds to a
+    Unicode code point that is allowed according to the definition below. The
+    digits must then be followed by a U+003B SEMICOLON character (;).
 Hexadecimal numeric character reference
-    The ampersand must be followed by a U+0023 NUMBER SIGN character (#), which must be followed by either a U+0078 LATIN SMALL LETTER X character (x) or a U+0058 LATIN CAPITAL LETTER X character (X), which must then be followed by one or more digits in the range U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE (9), U+0061 LATIN SMALL LETTER A to U+0066 LATIN SMALL LETTER F, and U+0041 LATIN CAPITAL LETTER A to U+0046 LATIN CAPITAL LETTER F, representing a base-sixteen integer that corresponds to a Unicode code point that is allowed according to the definition below. The digits must then be followed by a U+003B SEMICOLON character (;).
+    The ampersand must be followed by a U+0023 NUMBER SIGN character (#), which
+    must be followed by either a U+0078 LATIN SMALL LETTER X character (x) or a
+    U+0058 LATIN CAPITAL LETTER X character (X), which must then be followed by
+    one or more digits in the range U+0030 DIGIT ZERO (0) to U+0039 DIGIT NINE
+    (9), U+0061 LATIN SMALL LETTER A to U+0066 LATIN SMALL LETTER F, and U+0041
+    LATIN CAPITAL LETTER A to U+0046 LATIN CAPITAL LETTER F, representing a
+    base-sixteen integer that corresponds to a Unicode code point that is
+    allowed according to the definition below. The digits must then be followed
+    by a U+003B SEMICOLON character (;).
 
 The numeric character reference forms described above are allowed to
 reference any Unicode code point other than U+0000, U+000D, permanently
@@ -36852,6 +39040,12 @@ NINE (9), U+0061 LATIN SMALL LETTER A to U+007A LATIN SMALL LETTER Z, and
 U+0041 LATIN CAPITAL LETTER A to U+005A LATIN CAPITAL LETTER Z, followed by a
 U+003B SEMICOLON character (;), where these characters do not match any of
 the names given in the named character references section.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.1.5 CDATA sections
 
@@ -36878,6 +39072,12 @@ example, a CDATA section is used to escape the contents of an ms element:
  <ms><![CDATA[x<y3]]></ms>
 </math>
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.1.6 Comments
 
 Comments must start with the four character sequence U+003C LESS-THAN SIGN,
@@ -36890,6 +39090,12 @@ consecutive U+002D HYPHEN-MINUS characters (--), nor end with a U+002D
 HYPHEN-MINUS character (-). Finally, the comment must be ended by the three
 character sequence U+002D HYPHEN-MINUS, U+002D HYPHEN-MINUS, U+003E
 GREATER-THAN SIGN (-->).
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.2 Parsing HTML documents
 
@@ -36940,6 +39146,12 @@ obeys all the other conformance requirements described in this specification.
 For the purposes of conformance checkers, if a resource is determined to be
 in the HTML syntax, then it is an HTML document.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.2.1 Overview of the parsing model
 
 The input to the HTML parsing process consists of a stream of Unicode
@@ -36973,6 +39185,12 @@ To handle these cases, parsers have a script nesting level, which must be
 initially set to zero, and a parser pause flag, which must be initially set
 to false.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.2.2 The input stream
 
 The stream of Unicode characters that comprises the input to the tokenization
@@ -36984,6 +39202,12 @@ which the user agent must use to decode the bytes into characters.
 For XML documents, the algorithm user agents must use to determine the
 character encoding is given by the XML specification. This section does not
 apply to XML documents. [XML]
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.2.2.1 Determining the character encoding
 
@@ -37010,165 +39234,198 @@ encoding. If no encoding is necessary, e.g. because the parser is operating
 on a stream of Unicode characters and doesn't have to use an encoding at all,
 then the confidence is irrelevant.
 
-   1.
+   1. If the user has explicitly instructed the user agent to override the
+      document's character encoding with a specific encoding, optionally return
+      that encoding with the confidence certain and abort these steps.
+   2. If the transport layer specifies an encoding, and it is supported, return
+      that encoding with the confidence certain, and abort these steps.
+   3. The user agent may wait for more bytes of the resource to be available,
+      either in this step or at any later step in this algorithm. For instance,
+      a user agent might wait 500ms or 1024 bytes, whichever came first. In
+      general preparsing the source to find the encoding improves performance,
+      as it reduces the need to throw away the data structures used when
+      parsing upon finding the encoding information. However, if the user agent
+      delays too long to obtain data to determine the encoding, then the cost
+      of the delay could outweigh any performance improvements from the
+      preparse.
 
-      If the user has explicitly instructed the user agent to override the document's character encoding with a specific encoding, optionally return that encoding with the confidence certain and abort these steps.
-   2.
+      The authoring conformance requirements for character encoding
+      declarations limit them to only appearing in the first 1024 bytes. User
+      agents are therefore encouraged to use the preparse algorithm below (part
+      of these steps) on the first 1024 bytes, but not to stall beyond that.
+   4. For each of the rows in the following table, starting with the first one
+      and going down, if there are as many or more bytes available than the
+      number of bytes in the first column, and the first bytes of the file
+      match the bytes given in the first column, then return the encoding given
+      in the cell in the second column of that row, with the confidence
+      certain, and abort these steps:
 
-      If the transport layer specifies an encoding, and it is supported, return that encoding with the confidence certain, and abort these steps.
-   3.
-
-      The user agent may wait for more bytes of the resource to be available, either in this step or at any later step in this algorithm. For instance, a user agent might wait 500ms or 1024 bytes, whichever came first. In general preparsing the source to find the encoding improves performance, as it reduces the need to throw away the data structures used when parsing upon finding the encoding information. However, if the user agent delays too long to obtain data to determine the encoding, then the cost of the delay could outweigh any performance improvements from the preparse.
-
-      The authoring conformance requirements for character encoding declarations limit them to only appearing in the first 1024 bytes. User agents are therefore encouraged to use the preparse algorithm below (part of these steps) on the first 1024 bytes, but not to stall beyond that.
-   4.
-
-      For each of the rows in the following table, starting with the first one and going down, if there are as many or more bytes available than the number of bytes in the first column, and the first bytes of the file match the bytes given in the first column, then return the encoding given in the cell in the second column of that row, with the confidence certain, and abort these steps:
-      Bytes in Hexadecimal 	Encoding
-      FE FF 	Big-endian UTF-16
-      FF FE 	Little-endian UTF-16
-      EF BB BF 	UTF-8
+      Bytes in Hexadecimal  Encoding
+      FE FF     Big-endian UTF-16
+      FF FE     Little-endian UTF-16
+      EF BB BF  UTF-8
 
       This step looks for Unicode Byte Order Marks (BOMs).
-   5.
+   5. Otherwise, the user agent will have to search for explicit character
+      encoding information in the file itself. This should proceed as follows:
 
-      Otherwise, the user agent will have to search for explicit character encoding information in the file itself. This should proceed as follows:
+      Let position be a pointer to a byte in the input stream, initially
+      pointing at the first byte. If at any point during these substeps the
+      user agent either runs out of bytes or decides that scanning further
+      bytes would not be efficient, then skip to the next step of the overall
+      character encoding detection algorithm. User agents may decide that
+      scanning any bytes is not efficient, in which case these substeps are
+      entirely skipped.
 
-      Let position be a pointer to a byte in the input stream, initially pointing at the first byte. If at any point during these substeps the user agent either runs out of bytes or decides that scanning further bytes would not be efficient, then skip to the next step of the overall character encoding detection algorithm. User agents may decide that scanning any bytes is not efficient, in which case these substeps are entirely skipped.
+      Now, repeat the following "two" steps until the algorithm aborts (either
+      because user agent aborts, as described above, or because a character
+      encoding is found):
+         1. If position points to:
 
-      Now, repeat the following "two" steps until the algorithm aborts (either because user agent aborts, as described above, or because a character encoding is found):
-         1.
+            A sequence of bytes starting with: 0x3C 0x21 0x2D 0x2D (ASCII
+            '<!--')
 
-            If position points to:
+                Advance the position pointer so that it points at the first
+                0x3E byte which is preceded by two 0x2D bytes (i.e. at the end
+                of an ASCII '-->' sequence) and comes after the 0x3C byte that
+                was found. (The two 0x2D bytes can be the same as the those in
+                the '<!--' sequence.)
 
-            A sequence of bytes starting with: 0x3C 0x21 0x2D 0x2D (ASCII '<!--')
-
-                Advance the position pointer so that it points at the first 0x3E byte which is preceded by two 0x2D bytes (i.e. at the end of an ASCII '-->' sequence) and comes after the 0x3C byte that was found. (The two 0x2D bytes can be the same as the those in the '<!--' sequence.)
-            A sequence of bytes starting with: 0x3C, 0x4D or 0x6D, 0x45 or 0x65, 0x54 or 0x74, 0x41 or 0x61, and finally one of 0x09, 0x0A, 0x0C, 0x0D, 0x20, 0x2F (case-insensitive ASCII '<meta' followed by a space or slash)
-                   1.
-
-                      Advance the position pointer so that it points at the next 0x09, 0x0A, 0x0C, 0x0D, 0x20, or 0x2F byte (the one in sequence of characters matched above).
-                   2.
-
-                      Let attribute list be an empty list of strings.
-                   3.
-
-                      Let got pragma be false.
-                   4.
-
-                      Let need pragma be null.
-                   5.
-
-                      Let charset be the null value (which, for the purposes of this algorithm, is distinct from an unrecognised encoding or the empty string).
-                   6.
-
-                      Attributes: Get an attribute and its value. If no attribute was sniffed, then jump to the processing step below.
-                   7.
-
-                      If the attribute's name is already in attribute list, then return to the step labeled attributes.
-                   8.
-
-                      Add the attribute's name to attribute list.
-                   9.
-
-                      Run the appropriate step from the following list, if one applies:
+            A sequence of bytes starting with: 0x3C, 0x4D or 0x6D, 0x45 or
+            0x65, 0x54 or 0x74, 0x41 or 0x61, and finally one of 0x09, 0x0A,
+            0x0C, 0x0D, 0x20, 0x2F (case-insensitive ASCII '<meta' followed by
+            a space or slash)
+                   1. Advance the position pointer so that it points at the
+                      next 0x09, 0x0A, 0x0C, 0x0D, 0x20, or 0x2F byte (the one
+                      in sequence of characters matched above).
+                   2. Let attribute list be an empty list of strings.
+                   3. Let got pragma be false.
+                   4. Let need pragma be null.
+                   5. Let charset be the null value (which, for the purposes of
+                      this algorithm, is distinct from an unrecognised encoding
+                      or the empty string).
+                   6. Attributes: Get an attribute and its value. If no
+                      attribute was sniffed, then jump to the processing step
+                      below.
+                   7. If the attribute's name is already in attribute list,
+                      then return to the step labeled attributes.
+                   8. Add the attribute's name to attribute list.
+                   9. Run the appropriate step from the following list, if one
+                      applies:
 
                       If the attribute's name is "http-equiv"
 
-                          If the attribute's value is "content-type", then set got pragma to true. 
+                          If the attribute's value is "content-type", then set
+                          got pragma to true.
+
                       If the attribute's name is "content"
 
-                          Apply the algorithm for extracting an encoding from a Content-Type, giving the attribute's value as the string to parse. If an encoding is returned, and if charset is still set to null, let charset be the encoding returned, and set need pragma to true. 
+                          Apply the algorithm for extracting an encoding from a
+                          Content-Type, giving the attribute's value as the
+                          string to parse. If an encoding is returned, and if
+                          charset is still set to null, let charset be the
+                          encoding returned, and set need pragma to true.
+
                       If the attribute's name is "charset"
 
-                          Let charset be the encoding corresponding to the attribute's value, and set need pragma to false. 
+                          Let charset be the encoding corresponding to the
+                          attribute's value, and set need pragma to false.
 
-                  10.
-
-                      Return to the step labeled attributes.
-                  11.
-
-                      Processing: If need pragma is null, then jump to the second step of the overall "two step" algorithm.
-                  12.
-
-                      If mode is true but got pragma is false, then jump to the second step of the overall "two step" algorithm.
-                  13.
-
-                      If charset is a UTF-16 encoding, change the value of charset to UTF-8.
-                  14.
-
-                      If charset is not a supported character encoding, then jump to the second step of the overall "two step" algorithm.
-                  15.
-
-                      Return the encoding given by charset, with confidence tentative, and abort all these steps. 
+                  10. Return to the step labeled attributes.
+                  11. Processing: If need pragma is null, then jump to the
+                      second step of the overall "two step" algorithm.
+                  12. If mode is true but got pragma is false, then jump to the
+                      second step of the overall "two step" algorithm.
+                  13. If charset is a UTF-16 encoding, change the value of
+                      charset to UTF-8.
+                  14. If charset is not a supported character encoding, then
+                      jump to the second step of the overall "two step"
+                      algorithm.
+                  15. Return the encoding given by charset, with confidence
+                      tentative, and abort all these steps.
             A sequence of bytes starting with a 0x3C byte (ASCII <), optionally a 0x2F byte (ASCII /), and finally a byte in the range 0x41-0x5A or 0x61-0x7A (an ASCII letter)
-                   1.
-
-                      Advance the position pointer so that it points at the next 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), 0x20 (ASCII space), or 0x3E (ASCII >) byte.
-                   2.
-
-                      Repeatedly get an attribute until no further attributes can be found, then jump to the second step in the overall "two step" algorithm. 
+                   1. Advance the position pointer so that it points at the
+                      next 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF),
+                      0x0D (ASCII CR), 0x20 (ASCII space), or 0x3E (ASCII >)
+                      byte.
+                   2. Repeatedly get an attribute until no further attributes
+                      can be found, then jump to the second step in the overall
+                      "two step" algorithm.
             A sequence of bytes starting with: 0x3C 0x21 (ASCII '<!')
             A sequence of bytes starting with: 0x3C 0x2F (ASCII '</')
             A sequence of bytes starting with: 0x3C 0x3F (ASCII '<?')
 
-                Advance the position pointer so that it points at the first 0x3E byte (ASCII >) that comes after the 0x3C byte that was found.
+                Advance the position pointer so that it points at the first
+                0x3E byte (ASCII >) that comes after the 0x3C byte that was
+                found.
+
             Any other byte
 
                 Do nothing with that byte.
 
-         2. Move position so it points at the next byte in the input stream, and return to the first step of this "two step" algorithm.
+         2. Move position so it points at the next byte in the input stream,
+         and return to the first step of this "two step" algorithm.
 
-      When the above "two step" algorithm says to get an attribute, it means doing this:
-         1.
+      When the above "two step" algorithm says to get an attribute, it means
+      doing this:
+         1. If the byte at position is one of 0x09 (ASCII TAB), 0x0A (ASCII
+            LF), 0x0C (ASCII FF), 0x0D (ASCII CR), 0x20 (ASCII space), or 0x2F
+            (ASCII /) then advance position to the next byte and redo this
+            substep.
+         2. If the byte at position is 0x3E (ASCII >), then abort the "get an
+            attribute" algorithm. There isn't one.
+         3. Otherwise, the byte at position is the start of the attribute name.
+            Let attribute name and attribute value be the empty string.
+         4. Attribute name: Process the byte at position as follows:
 
-            If the byte at position is one of 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), 0x20 (ASCII space), or 0x2F (ASCII /) then advance position to the next byte and redo this substep.
-         2.
-
-            If the byte at position is 0x3E (ASCII >), then abort the "get an attribute" algorithm. There isn't one.
-         3.
-
-            Otherwise, the byte at position is the start of the attribute name. Let attribute name and attribute value be the empty string.
-         4.
-
-            Attribute name: Process the byte at position as follows:
-
-            If it is 0x3D (ASCII =), and the attribute name is longer than the empty string
-                Advance position to the next byte and jump to the step below labeled value.
-            If it is 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), or 0x20 (ASCII space)
+            If it is 0x3D (ASCII =), and the attribute name is longer than the
+            empty string
+                Advance position to the next byte and jump to the step below
+                labeled value.
+            If it is 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D
+            (ASCII CR), or 0x20 (ASCII space)
                 Jump to the step below labeled spaces.
             If it is 0x2F (ASCII /) or 0x3E (ASCII >)
-                Abort the "get an attribute" algorithm. The attribute's name is the value of attribute name, its value is the empty string.
+                Abort the "get an attribute" algorithm. The attribute's name is
+                the value of attribute name, its value is the empty string.
             If it is in the range 0x41 (ASCII A) to 0x5A (ASCII Z)
-                Append the Unicode character with code point b+0x20 to attribute name (where b is the value of the byte at position).
+                Append the Unicode character with code point b+0x20 to
+                attribute name (where b is the value of the byte at position).
             Anything else
-                Append the Unicode character with the same code point as the value of the byte at position) to attribute name. (It doesn't actually matter how bytes outside the ASCII range are handled here, since only ASCII characters can contribute to the detection of a character encoding.)
+                Append the Unicode character with the same code point as the
+                value of the byte at position) to attribute name. (It doesn't
+                actually matter how bytes outside the ASCII range are handled
+                here, since only ASCII characters can contribute to the
+                detection of a character encoding.)
 
-         5.
-
-            Advance position to the next byte and return to the previous step.
-         6.
-
-            Spaces: If the byte at position is one of 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), or 0x20 (ASCII space) then advance position to the next byte, then, repeat this step.
-         7.
-
-            If the byte at position is not 0x3D (ASCII =), abort the "get an attribute" algorithm. The attribute's name is the value of attribute name, its value is the empty string.
-         8.
-
-            Advance position past the 0x3D (ASCII =) byte.
-         9.
-
-            Value: If the byte at position is one of 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), or 0x20 (ASCII space) then advance position to the next byte, then, repeat this step.
-        10.
-
-            Process the byte at position as follows:
+         5. Advance position to the next byte and return to the previous step.
+         6. Spaces: If the byte at position is one of 0x09 (ASCII TAB), 0x0A
+            (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), or 0x20 (ASCII space)
+            then advance position to the next byte, then, repeat this step.
+         7. If the byte at position is not 0x3D (ASCII =), abort the "get an
+            attribute" algorithm. The attribute's name is the value of
+            attribute name, its value is the empty string.
+         8. Advance position past the 0x3D (ASCII =) byte.
+         9. Value: If the byte at position is one of 0x09 (ASCII TAB), 0x0A
+            (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), or 0x20 (ASCII space)
+            then advance position to the next byte, then, repeat this step.
+        10. Process the byte at position as follows:
 
             If it is 0x22 (ASCII ") or 0x27 (ASCII ')
                    1. Let b be the value of the byte at position.
                    2. Advance position to the next byte.
-                   3. If the value of the byte at position is the value of b, then advance position to the next byte and abort the "get an attribute" algorithm. The attribute's name is the value of attribute name, and its value is the value of attribute value.
-                   4. Otherwise, if the value of the byte at position is in the range 0x41 (ASCII A) to 0x5A (ASCII Z), then append a Unicode character to attribute value whose code point is 0x20 more than the value of the byte at position.
-                   5. Otherwise, append a Unicode character to attribute value whose code point is the same as the value of the byte at position.
+                   3. If the value of the byte at position is the value of b,
+                   then advance position to the next byte and abort the "get an
+                   attribute" algorithm. The attribute's name is the value of
+                   attribute name, and its value is the value of attribute
+                   value.
+                   4. Otherwise, if the value of the byte at position is in the
+                   range 0x41 (ASCII A) to 0x5A (ASCII Z), then append a
+                   Unicode character to attribute value whose code point is
+                   0x20 more than the value of the byte at position.
+                   5. Otherwise, append a Unicode character to attribute value
+                   whose code point is the same as the value of the byte at
+                   position.
                    6. Return to the second step in these substeps.
             If it is 0x3E (ASCII >)
                 Abort the "get an attribute" algorithm. The attribute's name is the value of attribute name, its value is the empty string.
@@ -37177,68 +39434,89 @@ then the confidence is irrelevant.
             Anything else
                 Append the Unicode character with the same code point as the value of the byte at position) to attribute value. Advance position to the next byte.
 
-        11.
+        11. Process the byte at position as follows:
 
-            Process the byte at position as follows:
-
-            If it is 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D (ASCII CR), 0x20 (ASCII space), or 0x3E (ASCII >)
-                Abort the "get an attribute" algorithm. The attribute's name is the value of attribute name and its value is the value of attribute value.
+            If it is 0x09 (ASCII TAB), 0x0A (ASCII LF), 0x0C (ASCII FF), 0x0D
+            (ASCII CR), 0x20 (ASCII space), or 0x3E (ASCII >)
+                Abort the "get an attribute" algorithm. The attribute's name is
+                the value of attribute name and its value is the value of
+                attribute value.
             If it is in the range 0x41 (ASCII A) to 0x5A (ASCII Z)
-                Append the Unicode character with code point b+0x20 to attribute value (where b is the value of the byte at position).
+                Append the Unicode character with code point b+0x20 to
+                attribute value (where b is the value of the byte at position).
             Anything else
-                Append the Unicode character with the same code point as the value of the byte at position) to attribute value.
+                Append the Unicode character with the same code point as the
+                value of the byte at position) to attribute value.
 
-        12.
+        12. Advance position to the next byte and return to the previous step.
 
-            Advance position to the next byte and return to the previous step. 
+      For the sake of interoperability, user agents should not use a pre-scan
+      algorithm that returns different results than the one described above.
+      (But, if you do, please at least let us know, so that we can improve this
+      algorithm and benefit everyone...)
+   6. If the user agent has information on the likely encoding for this page,
+      e.g. based on the encoding of the page when it was last visited, then
+      return that encoding, with the confidence tentative, and abort these
+      steps.
+   7. The user agent may attempt to autodetect the character encoding from
+      applying frequency analysis or other algorithms to the data stream. Such
+      algorithms may use information about the resource other than the
+      resource's contents, including the address of the resource. If
+      autodetection succeeds in determining a character encoding, then return
+      that encoding, with the confidence tentative, and abort these steps.
+      [UNIVCHARDET]
 
-      For the sake of interoperability, user agents should not use a pre-scan algorithm that returns different results than the one described above. (But, if you do, please at least let us know, so that we can improve this algorithm and benefit everyone...)
-   6.
+      The UTF-8 encoding has a highly detectable bit pattern. Documents that
+      contain bytes with values greater than 0x7F which match the UTF-8 pattern
+      are very likely to be UTF-8, while documents with byte sequences that do
+      not match it are very likely not. User-agents are therefore encouraged to
+      search for this common encoding. [PPUTF8] [UTF8DET]
+   8. Otherwise, return an implementation-defined or user-specified default
+      character encoding, with the confidence tentative.
 
-      If the user agent has information on the likely encoding for this page, e.g. based on the encoding of the page when it was last visited, then return that encoding, with the confidence tentative, and abort these steps.
-   7.
+      In controlled environments or in environments where the encoding of
+      documents can be prescribed (for example, for user agents intended for
+      dedicated use in new networks), the comprehensive UTF-8 encoding is
+      suggested.
 
-      The user agent may attempt to autodetect the character encoding from applying frequency analysis or other algorithms to the data stream. Such algorithms may use information about the resource other than the resource's contents, including the address of the resource. If autodetection succeeds in determining a character encoding, then return that encoding, with the confidence tentative, and abort these steps. [UNIVCHARDET]
+      In other environments, the default encoding is typically dependent on the
+      user's locale (an approximation of the languages, and thus often
+      encodings, of the pages that the user is likely to frequent). The
+      following table gives suggested defaults based on the user's locale, for
+      compatibility with legacy content. Locales are identified by BCP 47
+      language tags. [BCP47]
 
-      The UTF-8 encoding has a highly detectable bit pattern. Documents that contain bytes with values greater than 0x7F which match the UTF-8 pattern are very likely to be UTF-8, while documents with byte sequences that do not match it are very likely not. User-agents are therefore encouraged to search for this common encoding. [PPUTF8] [UTF8DET]
-   8.
-
-      Otherwise, return an implementation-defined or user-specified default character encoding, with the confidence tentative.
-
-      In controlled environments or in environments where the encoding of documents can be prescribed (for example, for user agents intended for dedicated use in new networks), the comprehensive UTF-8 encoding is suggested.
-
-      In other environments, the default encoding is typically dependent on the user's locale (an approximation of the languages, and thus often encodings, of the pages that the user is likely to frequent). The following table gives suggested defaults based on the user's locale, for compatibility with legacy content. Locales are identified by BCP 47 language tags. [BCP47]
-      Locale language 	Suggested default encoding
-      ar 	UTF-8
-      be 	ISO-8859-5
-      bg 	windows-1251
-      cs 	ISO-8859-2
-      cy 	UTF-8
-      fa 	UTF-8
-      he 	windows-1255
-      hr 	UTF-8
-      hu 	ISO-8859-2
-      ja 	Windows-31J
-      kk 	UTF-8
-      ko 	windows-949
-      ku 	windows-1254
-      lt 	windows-1257
-      lv 	ISO-8859-13
-      mk 	UTF-8
-      or 	UTF-8
-      pl 	ISO-8859-2
-      ro 	UTF-8
-      ru 	windows-1251
-      sk 	windows-1250
-      sl 	ISO-8859-2
-      sr 	UTF-8
-      th 	windows-874
-      tr 	windows-1254
-      uk 	windows-1251
-      vi 	UTF-8
-      zh-CN 	GB18030
-      zh-TW 	Big5
-      All other locales 	windows-1252
+      Locale language   Suggested default encoding
+      ar    UTF-8
+      be    ISO-8859-5
+      bg    windows-1251
+      cs    ISO-8859-2
+      cy    UTF-8
+      fa    UTF-8
+      he    windows-1255
+      hr    UTF-8
+      hu    ISO-8859-2
+      ja    Windows-31J
+      kk    UTF-8
+      ko    windows-949
+      ku    windows-1254
+      lt    windows-1257
+      lv    ISO-8859-13
+      mk    UTF-8
+      or    UTF-8
+      pl    ISO-8859-2
+      ro    UTF-8
+      ru    windows-1251
+      sk    windows-1250
+      sl    ISO-8859-2
+      sr    UTF-8
+      th    windows-874
+      tr    windows-1254
+      uk    windows-1251
+      vi    UTF-8
+      zh-CN     GB18030
+      zh-TW     Big5
+      All other locales     windows-1252
 
 The document's character encoding must immediately be set to the value
 returned from this algorithm, at the same time as the user agent uses the
@@ -37251,6 +39529,12 @@ requires that the encoding be assumed to be US-ASCII in the absence of a
 character encoding declaration to the contrary. This specification's third
 approach is motivated by a desire to be maximally compatible with legacy
 content. [HTTP] [RFC2046]
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.2.2.2 Character encodings
 
@@ -37276,18 +39560,18 @@ in the cell in the second column of the same row. When a byte or sequence of
 bytes is treated differently due to this encoding aliasing, it is said to
 have been misinterpreted for compatibility.
 
-Character encoding overrides Input encoding 	Replacement encoding 	References
-EUC-KR 	windows-949 	[EUCKR] [WIN949]
-EUC-JP 	CP51932 	[EUCJP] [CP51932]
-GB2312 	GBK 	[RFC1345] [GBK]
-GB_2312-80 	GBK 	[RFC1345] [GBK]
-ISO-8859-1 	windows-1252 	[RFC1345] [WIN1252]
-ISO-8859-9 	windows-1254 	[RFC1345] [WIN1254]
-ISO-8859-11 	windows-874 	[ISO885911] [WIN874]
-KS_C_5601-1987 	windows-949 	[RFC1345] [WIN949]
-Shift_JIS 	Windows-31J 	[SHIFTJIS] [WIN31J]
-TIS-620 	windows-874 	[TIS620] [WIN874]
-US-ASCII 	windows-1252 	[RFC1345] [WIN1252]
+Character encoding overrides Input encoding     Replacement encoding    References
+EUC-KR  windows-949     [EUCKR] [WIN949]
+EUC-JP  CP51932     [EUCJP] [CP51932]
+GB2312  GBK     [RFC1345] [GBK]
+GB_2312-80  GBK     [RFC1345] [GBK]
+ISO-8859-1  windows-1252    [RFC1345] [WIN1252]
+ISO-8859-9  windows-1254    [RFC1345] [WIN1254]
+ISO-8859-11     windows-874     [ISO885911] [WIN874]
+KS_C_5601-1987  windows-949     [RFC1345] [WIN949]
+Shift_JIS   Windows-31J     [SHIFTJIS] [WIN31J]
+TIS-620     windows-874     [TIS620] [WIN874]
+US-ASCII    windows-1252    [RFC1345] [WIN1252]
 
 The requirement to treat certain encodings as other encodings according to
 the table above is a willful violation of the W3C Character Model
@@ -37314,6 +39598,12 @@ This specification does not make any attempt to support EBCDIC-based
 encodings and UTF-32 in its algorithms; support and use of these encodings
 can thus lead to unexpected behavior in implementations of this
 specification.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.2.2.3 Preprocessing the input stream
 
@@ -37376,17 +39666,64 @@ character (inserted by the document.close() method) is consumed. Otherwise,
 the "EOF" character is not a real character in the stream, but rather the
 lack of any further characters.
 
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.2.2.4 Changing the encoding while parsing
 
-When the parser requires the user agent to change the encoding, it must run the following steps. This might happen if the encoding sniffing algorithm described above failed to find an encoding, or if it found an encoding that was not the actual encoding of the file.
+When the parser requires the user agent to change the encoding, it must run the
+following steps. This might happen if the encoding sniffing algorithm described
+above failed to find an encoding, or if it found an encoding that was not the
+actual encoding of the file.
 
-   1. If the new encoding is identical or equivalent to the encoding that is already being used to interpret the input stream, then set the confidence to certain and abort these steps. This happens when the encoding information found in the file matches what the encoding sniffing algorithm determined to be the encoding, and in the second pass through the parser if the first pass found that the encoding sniffing algorithm described in the earlier section failed to find the right encoding.
-   2. If the encoding that is already being used to interpret the input stream is a UTF-16 encoding, then set the confidence to certain and abort these steps. The new encoding is ignored; if it was anything but the same encoding, then it would be clearly incorrect.
+   1. If the new encoding is identical or equivalent to the encoding that is
+   already being used to interpret the input stream, then set the confidence to
+   certain and abort these steps. This happens when the encoding information
+   found in the file matches what the encoding sniffing algorithm determined to
+   be the encoding, and in the second pass through the parser if the first pass
+   found that the encoding sniffing algorithm described in the earlier section
+   failed to find the right encoding.
+   2. If the encoding that is already being used to interpret the input stream
+   is a UTF-16 encoding, then set the confidence to certain and abort these
+   steps. The new encoding is ignored; if it was anything but the same
+   encoding, then it would be clearly incorrect.
    3. If the new encoding is a UTF-16 encoding, change it to UTF-8.
-   4. If all the bytes up to the last byte converted by the current decoder have the same Unicode interpretations in both the current encoding and the new encoding, and if the user agent supports changing the converter on the fly, then the user agent may change to the new converter for the encoding on the fly. Set the document's character encoding and the encoding used to convert the input stream to the new encoding, set the confidence to certain, and abort these steps.
-   5. Otherwise, navigate to the document again, with replacement enabled, and using the same source browsing context, but this time skip the encoding sniffing algorithm and instead just set the encoding to the new encoding and the confidence to certain. Whenever possible, this should be done without actually contacting the network layer (the bytes should be re-parsed from memory), even if, e.g., the document is marked as not being cacheable. If this is not possible and contacting the network layer would involve repeating a request that uses a method other than HTTP GET (or equivalent for non-HTTP URLs), then instead set the confidence to certain and ignore the new encoding. The resource will be misinterpreted. User agents may notify the user of the situation, to aid in application development.
+   4. If all the bytes up to the last byte converted by the current decoder
+   have the same Unicode interpretations in both the current encoding and the
+   new encoding, and if the user agent supports changing the converter on the
+   fly, then the user agent may change to the new converter for the encoding on
+   the fly. Set the document's character encoding and the encoding used to
+   convert the input stream to the new encoding, set the confidence to certain,
+   and abort these steps.
+   5. Otherwise, navigate to the document again, with replacement enabled, and
+   using the same source browsing context, but this time skip the encoding
+   sniffing algorithm and instead just set the encoding to the new encoding and
+   the confidence to certain. Whenever possible, this should be done without
+   actually contacting the network layer (the bytes should be re-parsed from
+   memory), even if, e.g., the document is marked as not being cacheable. If
+   this is not possible and contacting the network layer would involve
+   repeating a request that uses a method other than HTTP GET (or equivalent
+   for non-HTTP URLs), then instead set the confidence to certain and ignore
+   the new encoding. The resource will be misinterpreted. User agents may
+   notify the user of the situation, to aid in application development.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.2.3 Parse state
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 8.2.3.1 The insertion mode
 
 The insertion mode is a state variable that controls the primary operation of
@@ -37418,22 +39755,42 @@ appropriately, it means the UA must follow these steps:
 
    1. Let last be false.
    2. Let node be the last node in the stack of open elements.
-   3. Loop: If node is the first node in the stack of open elements, then set last to true and set node to the context element. (fragment case)
-   4. If node is a select element, then switch the insertion mode to "in select" and abort these steps. (fragment case)
-   5. If node is a td or th element and last is false, then switch the insertion mode to "in cell" and abort these steps.
-   6. If node is a tr element, then switch the insertion mode to "in row" and abort these steps.
-   7. If node is a tbody, thead, or tfoot element, then switch the insertion mode to "in table body" and abort these steps.
-   8. If node is a caption element, then switch the insertion mode to "in caption" and abort these steps.
-   9. If node is a colgroup element, then switch the insertion mode to "in column group" and abort these steps. (fragment case)
-  10. If node is a table element, then switch the insertion mode to "in table" and abort these steps.
-  11. If node is a head element, then switch the insertion mode to "in body" ("in body"! not "in head"!) and abort these steps. (fragment case)
-  12. If node is a body element, then switch the insertion mode to "in body" and abort these steps.
-  13. If node is a frameset element, then switch the insertion mode to "in frameset" and abort these steps. (fragment case)
-  14. If node is an html element, then switch the insertion mode to "before head" Then, abort these steps. (fragment case)
-  15. If node is an element from the MathML namespace or the SVG namespace, then switch the insertion mode to "in foreign content" and abort these steps.
-  16. If last is true, then switch the insertion mode to "in body" and abort these steps. (fragment case)
+   3. Loop: If node is the first node in the stack of open elements, then set
+   last to true and set node to the context element. (fragment case)
+   4. If node is a select element, then switch the insertion mode to "in
+   select" and abort these steps. (fragment case)
+   5. If node is a td or th element and last is false, then switch the
+   insertion mode to "in cell" and abort these steps.
+   6. If node is a tr element, then switch the insertion mode to "in row" and
+   abort these steps.
+   7. If node is a tbody, thead, or tfoot element, then switch the insertion
+   mode to "in table body" and abort these steps.
+   8. If node is a caption element, then switch the insertion mode to "in
+   caption" and abort these steps.
+   9. If node is a colgroup element, then switch the insertion mode to "in
+   column group" and abort these steps. (fragment case)
+  10. If node is a table element, then switch the insertion mode to "in table"
+  and abort these steps.
+  11. If node is a head element, then switch the insertion mode to "in body"
+  ("in body"! not "in head"!) and abort these steps. (fragment case)
+  12. If node is a body element, then switch the insertion mode to "in body"
+  and abort these steps.
+  13. If node is a frameset element, then switch the insertion mode to "in
+  frameset" and abort these steps. (fragment case)
+  14. If node is an html element, then switch the insertion mode to "before
+  head" Then, abort these steps. (fragment case)
+  15. If node is an element from the MathML namespace or the SVG namespace,
+  then switch the insertion mode to "in foreign content" and abort these steps.
+  16. If last is true, then switch the insertion mode to "in body" and abort
+  these steps. (fragment case)
   17. Let node now be the node before node in the stack of open elements.
   18. Return to the step labeled loop.
+
+******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 8.2.3.2 The stack of open elements
 
@@ -38734,41 +41091,41 @@ U+0023 NUMBER SIGN (#)
     If one or more characters match the range, then take them all and interpret the string of characters as a number (either hexadecimal or decimal as appropriate).
 
     If that number is one of the numbers in the first column of the following table, then this is a parse error. Find the row with that number in the first column, and return a character token for the Unicode character given in the second column of that row.
-    Number 	Unicode character
-    0x00 	U+FFFD 	REPLACEMENT CHARACTER
-    0x0D 	U+000D 	CARRIAGE RETURN (CR)
-    0x80 	U+20AC 	EURO SIGN (€)
-    0x81 	U+0081 	<control>
-    0x82 	U+201A 	SINGLE LOW-9 QUOTATION MARK (‚)
-    0x83 	U+0192 	LATIN SMALL LETTER F WITH HOOK (ƒ)
-    0x84 	U+201E 	DOUBLE LOW-9 QUOTATION MARK („)
-    0x85 	U+2026 	HORIZONTAL ELLIPSIS (…)
-    0x86 	U+2020 	DAGGER (†)
-    0x87 	U+2021 	DOUBLE DAGGER (‡)
-    0x88 	U+02C6 	MODIFIER LETTER CIRCUMFLEX ACCENT (ˆ)
-    0x89 	U+2030 	PER MILLE SIGN (‰)
-    0x8A 	U+0160 	LATIN CAPITAL LETTER S WITH CARON (Š)
-    0x8B 	U+2039 	SINGLE LEFT-POINTING ANGLE QUOTATION MARK (‹)
-    0x8C 	U+0152 	LATIN CAPITAL LIGATURE OE (Œ)
-    0x8D 	U+008D 	<control>
-    0x8E 	U+017D 	LATIN CAPITAL LETTER Z WITH CARON (Ž)
-    0x8F 	U+008F 	<control>
-    0x90 	U+0090 	<control>
-    0x91 	U+2018 	LEFT SINGLE QUOTATION MARK (‘)
-    0x92 	U+2019 	RIGHT SINGLE QUOTATION MARK (’)
-    0x93 	U+201C 	LEFT DOUBLE QUOTATION MARK (“)
-    0x94 	U+201D 	RIGHT DOUBLE QUOTATION MARK (”)
-    0x95 	U+2022 	BULLET (•)
-    0x96 	U+2013 	EN DASH (–)
-    0x97 	U+2014 	EM DASH (—)
-    0x98 	U+02DC 	SMALL TILDE (˜)
-    0x99 	U+2122 	TRADE MARK SIGN (™)
-    0x9A 	U+0161 	LATIN SMALL LETTER S WITH CARON (š)
-    0x9B 	U+203A 	SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (›)
-    0x9C 	U+0153 	LATIN SMALL LIGATURE OE (œ)
-    0x9D 	U+009D 	<control>
-    0x9E 	U+017E 	LATIN SMALL LETTER Z WITH CARON (ž)
-    0x9F 	U+0178 	LATIN CAPITAL LETTER Y WITH DIAERESIS (Ÿ)
+    Number  Unicode character
+    0x00    U+FFFD  REPLACEMENT CHARACTER
+    0x0D    U+000D  CARRIAGE RETURN (CR)
+    0x80    U+20AC  EURO SIGN (€)
+    0x81    U+0081  <control>
+    0x82    U+201A  SINGLE LOW-9 QUOTATION MARK (‚)
+    0x83    U+0192  LATIN SMALL LETTER F WITH HOOK (ƒ)
+    0x84    U+201E  DOUBLE LOW-9 QUOTATION MARK („)
+    0x85    U+2026  HORIZONTAL ELLIPSIS (…)
+    0x86    U+2020  DAGGER (†)
+    0x87    U+2021  DOUBLE DAGGER (‡)
+    0x88    U+02C6  MODIFIER LETTER CIRCUMFLEX ACCENT (ˆ)
+    0x89    U+2030  PER MILLE SIGN (‰)
+    0x8A    U+0160  LATIN CAPITAL LETTER S WITH CARON (Š)
+    0x8B    U+2039  SINGLE LEFT-POINTING ANGLE QUOTATION MARK (‹)
+    0x8C    U+0152  LATIN CAPITAL LIGATURE OE (Œ)
+    0x8D    U+008D  <control>
+    0x8E    U+017D  LATIN CAPITAL LETTER Z WITH CARON (Ž)
+    0x8F    U+008F  <control>
+    0x90    U+0090  <control>
+    0x91    U+2018  LEFT SINGLE QUOTATION MARK (‘)
+    0x92    U+2019  RIGHT SINGLE QUOTATION MARK (’)
+    0x93    U+201C  LEFT DOUBLE QUOTATION MARK (“)
+    0x94    U+201D  RIGHT DOUBLE QUOTATION MARK (”)
+    0x95    U+2022  BULLET (•)
+    0x96    U+2013  EN DASH (–)
+    0x97    U+2014  EM DASH (—)
+    0x98    U+02DC  SMALL TILDE (˜)
+    0x99    U+2122  TRADE MARK SIGN (™)
+    0x9A    U+0161  LATIN SMALL LETTER S WITH CARON (š)
+    0x9B    U+203A  SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (›)
+    0x9C    U+0153  LATIN SMALL LIGATURE OE (œ)
+    0x9D    U+009D  <control>
+    0x9E    U+017E  LATIN SMALL LETTER Z WITH CARON (ž)
+    0x9F    U+0178  LATIN CAPITAL LETTER Y WITH DIAERESIS (Ÿ)
 
     Otherwise, if the number is in the range 0xD800 to 0xDFFF or is greater
     than 0x10FFFF, then this is a parse error. Return a U+FFFD REPLACEMENT
@@ -38843,21 +41200,21 @@ character must be inserted in the appropriate place.
 Here are some sample inputs to the parser and the corresponding number of
 text nodes that they result in, assuming a user agent that executes scripts.
 
-Input 	Number of text nodes
+Input   Number of text nodes
 
 A<script>
 var script = document.getElementsByTagName('script')[0];
 document.body.removeChild(script);
 </script>B
 
-	One text node in the document, containing "AB".
+    One text node in the document, containing "AB".
 
 A<script>
 var text = document.createTextNode('B');
 document.body.appendChild(text);
 </script>C
 
-	Three text nodes; "A" before the script, the script's contents, and "BC" after the script (the parser appends to the text node created by the script).
+    Three text nodes; "A" before the script, the script's contents, and "BC" after the script (the parser appends to the text node created by the script).
 
 A<script>
 var text = document.getElementsByTagName('script')[0].firstChild;
@@ -38865,19 +41222,19 @@ text.data = 'B';
 document.body.appendChild(text);
 </script>C
 
-	Two adjacent text nodes in the document, containing "A" and "BC".
+    Two adjacent text nodes in the document, containing "A" and "BC".
 
 A<table>B<tr>C</tr>D</table>
 
-	One text node before the table, containing "ABCD". (This is caused by foster parenting.)
+    One text node before the table, containing "ABCD". (This is caused by foster parenting.)
 
 A<table><tr> B</tr> C</table>
 
-	One text node before the table, containing "A B C" (A-space-B-space-C). (This is caused by foster parenting.)
+    One text node before the table, containing "A B C" (A-space-B-space-C). (This is caused by foster parenting.)
 
 A<table><tr> B</tr> </em>C</table>
 
-	One text node before the table, containing "A BC" (A-space-B-C), and one text node inside the table (as a child of a tbody) with a single space character. (Space characters separated from non-space characters by non-character tokens are not affected by foster parenting, even if those other tokens then get ignored.)
+    One text node before the table, containing "A BC" (A-space-B-C), and one text node inside the table (as a child of a tbody) with a single space character. (Space characters separated from non-space characters by non-character tokens are not affected by foster parenting, even if those other tokens then get ignored.)
 
 DOM mutation events must not fire for changes caused by the UA parsing the
 document. (Conceptually, the parser is not mutating the DOM, it is
@@ -38952,84 +41309,84 @@ the ones in the first column of the following table, change the attribute's
 name to the name given in the corresponding cell in the second column. (This
 fixes the case of SVG attributes that are not all lowercase.)
 
-Attribute name on token 	Attribute name on element
-attributename 	attributeName
-attributetype 	attributeType
-basefrequency 	baseFrequency
-baseprofile 	baseProfile
-calcmode 	calcMode
-clippathunits 	clipPathUnits
-contentscripttype 	contentScriptType
-contentstyletype 	contentStyleType
-diffuseconstant 	diffuseConstant
-edgemode 	edgeMode
-externalresourcesrequired 	externalResourcesRequired
-filterres 	filterRes
-filterunits 	filterUnits
-glyphref 	glyphRef
-gradienttransform 	gradientTransform
-gradientunits 	gradientUnits
-kernelmatrix 	kernelMatrix
-kernelunitlength 	kernelUnitLength
-keypoints 	keyPoints
-keysplines 	keySplines
-keytimes 	keyTimes
-lengthadjust 	lengthAdjust
-limitingconeangle 	limitingConeAngle
-markerheight 	markerHeight
-markerunits 	markerUnits
-markerwidth 	markerWidth
-maskcontentunits 	maskContentUnits
-maskunits 	maskUnits
-numoctaves 	numOctaves
-pathlength 	pathLength
-patterncontentunits 	patternContentUnits
-patterntransform 	patternTransform
-patternunits 	patternUnits
-pointsatx 	pointsAtX
-pointsaty 	pointsAtY
-pointsatz 	pointsAtZ
-preservealpha 	preserveAlpha
-preserveaspectratio 	preserveAspectRatio
-primitiveunits 	primitiveUnits
-refx 	refX
-refy 	refY
-repeatcount 	repeatCount
-repeatdur 	repeatDur
-requiredextensions 	requiredExtensions
-requiredfeatures 	requiredFeatures
-specularconstant 	specularConstant
-specularexponent 	specularExponent
-spreadmethod 	spreadMethod
-startoffset 	startOffset
-stddeviation 	stdDeviation
-stitchtiles 	stitchTiles
-surfacescale 	surfaceScale
-systemlanguage 	systemLanguage
-tablevalues 	tableValues
-targetx 	targetX
-targety 	targetY
-textlength 	textLength
-viewbox 	viewBox
-viewtarget 	viewTarget
-xchannelselector 	xChannelSelector
-ychannelselector 	yChannelSelector
-zoomandpan 	zoomAndPan
+Attribute name on token     Attribute name on element
+attributename   attributeName
+attributetype   attributeType
+basefrequency   baseFrequency
+baseprofile     baseProfile
+calcmode    calcMode
+clippathunits   clipPathUnits
+contentscripttype   contentScriptType
+contentstyletype    contentStyleType
+diffuseconstant     diffuseConstant
+edgemode    edgeMode
+externalresourcesrequired   externalResourcesRequired
+filterres   filterRes
+filterunits     filterUnits
+glyphref    glyphRef
+gradienttransform   gradientTransform
+gradientunits   gradientUnits
+kernelmatrix    kernelMatrix
+kernelunitlength    kernelUnitLength
+keypoints   keyPoints
+keysplines  keySplines
+keytimes    keyTimes
+lengthadjust    lengthAdjust
+limitingconeangle   limitingConeAngle
+markerheight    markerHeight
+markerunits     markerUnits
+markerwidth     markerWidth
+maskcontentunits    maskContentUnits
+maskunits   maskUnits
+numoctaves  numOctaves
+pathlength  pathLength
+patterncontentunits     patternContentUnits
+patterntransform    patternTransform
+patternunits    patternUnits
+pointsatx   pointsAtX
+pointsaty   pointsAtY
+pointsatz   pointsAtZ
+preservealpha   preserveAlpha
+preserveaspectratio     preserveAspectRatio
+primitiveunits  primitiveUnits
+refx    refX
+refy    refY
+repeatcount     repeatCount
+repeatdur   repeatDur
+requiredextensions  requiredExtensions
+requiredfeatures    requiredFeatures
+specularconstant    specularConstant
+specularexponent    specularExponent
+spreadmethod    spreadMethod
+startoffset     startOffset
+stddeviation    stdDeviation
+stitchtiles     stitchTiles
+surfacescale    surfaceScale
+systemlanguage  systemLanguage
+tablevalues     tableValues
+targetx     targetX
+targety     targetY
+textlength  textLength
+viewbox     viewBox
+viewtarget  viewTarget
+xchannelselector    xChannelSelector
+ychannelselector    yChannelSelector
+zoomandpan  zoomAndPan
 
 When the steps below require the user agent to adjust foreign attributes for a token, then, if any of the attributes on the token match the strings given in the first column of the following table, let the attribute be a namespaced attribute, with the prefix being the string given in the corresponding cell in the second column, the local name being the string given in the corresponding cell in the third column, and the namespace being the namespace given in the corresponding cell in the fourth column. (This fixes the use of namespaced attributes, in particular lang attributes in the XML namespace.)
-Attribute name 	Prefix 	Local name 	Namespace
-xlink:actuate 	xlink 	actuate 	XLink namespace
-xlink:arcrole 	xlink 	arcrole 	XLink namespace
-xlink:href 	xlink 	href 	XLink namespace
-xlink:role 	xlink 	role 	XLink namespace
-xlink:show 	xlink 	show 	XLink namespace
-xlink:title 	xlink 	title 	XLink namespace
-xlink:type 	xlink 	type 	XLink namespace
-xml:base 	xml 	base 	XML namespace
-xml:lang 	xml 	lang 	XML namespace
-xml:space 	xml 	space 	XML namespace
-xmlns 	(none) 	xmlns 	XMLNS namespace
-xmlns:xlink 	xmlns 	xlink 	XMLNS namespace
+Attribute name  Prefix  Local name  Namespace
+xlink:actuate   xlink   actuate     XLink namespace
+xlink:arcrole   xlink   arcrole     XLink namespace
+xlink:href  xlink   href    XLink namespace
+xlink:role  xlink   role    XLink namespace
+xlink:show  xlink   show    XLink namespace
+xlink:title     xlink   title   XLink namespace
+xlink:type  xlink   type    XLink namespace
+xml:base    xml     base    XML namespace
+xml:lang    xml     lang    XML namespace
+xml:space   xml     space   XML namespace
+xmlns   (none)  xmlns   XMLNS namespace
+xmlns:xlink     xmlns   xlink   XMLNS namespace
 
 The generic raw text element parsing algorithm and the generic RCDATA element parsing algorithm consist of the following steps. These algorithms are always invoked in response to a start tag token.
 
@@ -40578,43 +42935,43 @@ Any other start tag
     If the current node is an element in the MathML namespace, adjust MathML attributes for the token. (This fixes the case of MathML attributes that are not all lowercase.)
 
     If the current node is an element in the SVG namespace, and the token's tag name is one of the ones in the first column of the following table, change the tag name to the name given in the corresponding cell in the second column. (This fixes the case of SVG elements that are not all lowercase.)
-    Tag name 	Element name
-    altglyph 	altGlyph
-    altglyphdef 	altGlyphDef
-    altglyphitem 	altGlyphItem
-    animatecolor 	animateColor
-    animatemotion 	animateMotion
-    animatetransform 	animateTransform
-    clippath 	clipPath
-    feblend 	feBlend
-    fecolormatrix 	feColorMatrix
-    fecomponenttransfer 	feComponentTransfer
-    fecomposite 	feComposite
-    feconvolvematrix 	feConvolveMatrix
-    fediffuselighting 	feDiffuseLighting
-    fedisplacementmap 	feDisplacementMap
-    fedistantlight 	feDistantLight
-    feflood 	feFlood
-    fefunca 	feFuncA
-    fefuncb 	feFuncB
-    fefuncg 	feFuncG
-    fefuncr 	feFuncR
-    fegaussianblur 	feGaussianBlur
-    feimage 	feImage
-    femerge 	feMerge
-    femergenode 	feMergeNode
-    femorphology 	feMorphology
-    feoffset 	feOffset
-    fepointlight 	fePointLight
-    fespecularlighting 	feSpecularLighting
-    fespotlight 	feSpotLight
-    fetile 	feTile
-    feturbulence 	feTurbulence
-    foreignobject 	foreignObject
-    glyphref 	glyphRef
-    lineargradient 	linearGradient
-    radialgradient 	radialGradient
-    textpath 	textPath
+    Tag name    Element name
+    altglyph    altGlyph
+    altglyphdef     altGlyphDef
+    altglyphitem    altGlyphItem
+    animatecolor    animateColor
+    animatemotion   animateMotion
+    animatetransform    animateTransform
+    clippath    clipPath
+    feblend     feBlend
+    fecolormatrix   feColorMatrix
+    fecomponenttransfer     feComponentTransfer
+    fecomposite     feComposite
+    feconvolvematrix    feConvolveMatrix
+    fediffuselighting   feDiffuseLighting
+    fedisplacementmap   feDisplacementMap
+    fedistantlight  feDistantLight
+    feflood     feFlood
+    fefunca     feFuncA
+    fefuncb     feFuncB
+    fefuncg     feFuncG
+    fefuncr     feFuncR
+    fegaussianblur  feGaussianBlur
+    feimage     feImage
+    femerge     feMerge
+    femergenode     feMergeNode
+    femorphology    feMorphology
+    feoffset    feOffset
+    fepointlight    fePointLight
+    fespecularlighting  feSpecularLighting
+    fespotlight     feSpotLight
+    fetile  feTile
+    feturbulence    feTurbulence
+    foreignobject   foreignObject
+    glyphref    glyphRef
+    lineargradient  linearGradient
+    radialgradient  radialGradient
+    textpath    textPath
 
     If the current node is an element in the SVG namespace, adjust SVG attributes for the token. (This fixes the case of SVG attributes that are not all lowercase.)
 
@@ -41568,2238 +43925,2238 @@ This table lists the character reference names that are supported by HTML,
 and the code points to which they refer. It is referenced by the previous
 sections.
 
-Name 	Character(s) 	Glyph
-AElig; 	U+000C6 	Æ
-AMP; 	U+00026 	&
-Aacute; 	U+000C1 	Á
-Abreve; 	U+00102 	Ă
-Acirc; 	U+000C2 	Â
-Acy; 	U+00410 	А
-Afr; 	U+1D504 	������
-Agrave; 	U+000C0 	À
-Alpha; 	U+00391 	Α
-Amacr; 	U+00100 	Ā
-And; 	U+02A53 	⩓
-Aogon; 	U+00104 	Ą
-Aopf; 	U+1D538 	������
-ApplyFunction; 	U+02061 	⁡
-Aring; 	U+000C5 	Å
-Ascr; 	U+1D49C 	������
-Assign; 	U+02254 	≔
-Atilde; 	U+000C3 	Ã
-Auml; 	U+000C4 	Ä
-Backslash; 	U+02216 	∖
-Barv; 	U+02AE7 	⫧
-Barwed; 	U+02306 	⌆
-Bcy; 	U+00411 	Б
-Because; 	U+02235 	∵
-Bernoullis; 	U+0212C 	ℬ
-Beta; 	U+00392 	Β
-Bfr; 	U+1D505 	������
-Bopf; 	U+1D539 	������
-Breve; 	U+002D8 	˘
-Bscr; 	U+0212C 	ℬ
-Bumpeq; 	U+0224E 	≎
-CHcy; 	U+00427 	Ч
-COPY; 	U+000A9 	©
-Cacute; 	U+00106 	Ć
-Cap; 	U+022D2 	⋒
-CapitalDifferentialD; 	U+02145 	ⅅ
-Cayleys; 	U+0212D 	ℭ
-Ccaron; 	U+0010C 	Č
-Ccedil; 	U+000C7 	Ç
-Ccirc; 	U+00108 	Ĉ
-Cconint; 	U+02230 	∰
-Cdot; 	U+0010A 	Ċ
-Cedilla; 	U+000B8 	¸
-CenterDot; 	U+000B7 	·
-Cfr; 	U+0212D 	ℭ
-Chi; 	U+003A7 	Χ
-CircleDot; 	U+02299 	⊙
-CircleMinus; 	U+02296 	⊖
-CirclePlus; 	U+02295 	⊕
-CircleTimes; 	U+02297 	⊗
-ClockwiseContourIntegral; 	U+02232 	∲
-CloseCurlyDoubleQuote; 	U+0201D 	”
-CloseCurlyQuote; 	U+02019 	’
-Colon; 	U+02237 	∷
-Colone; 	U+02A74 	⩴
-Congruent; 	U+02261 	≡
-Conint; 	U+0222F 	∯
-ContourIntegral; 	U+0222E 	∮
-Copf; 	U+02102 	ℂ
-Coproduct; 	U+02210 	∐
-CounterClockwiseContourIntegral; 	U+02233 	∳
-Cross; 	U+02A2F 	⨯
-Cscr; 	U+1D49E 	������
-Cup; 	U+022D3 	⋓
-CupCap; 	U+0224D 	≍
-DD; 	U+02145 	ⅅ
-DDotrahd; 	U+02911 	⤑
-DJcy; 	U+00402 	Ђ
-DScy; 	U+00405 	Ѕ
-DZcy; 	U+0040F 	Џ
-Dagger; 	U+02021 	‡
-Darr; 	U+021A1 	↡
-Dashv; 	U+02AE4 	⫤
-Dcaron; 	U+0010E 	Ď
-Dcy; 	U+00414 	Д
-Del; 	U+02207 	∇
-Delta; 	U+00394 	Δ
-Dfr; 	U+1D507 	������
-DiacriticalAcute; 	U+000B4 	´
-DiacriticalDot; 	U+002D9 	˙
-DiacriticalDoubleAcute; 	U+002DD 	˝
-DiacriticalGrave; 	U+00060 	`
-DiacriticalTilde; 	U+002DC 	˜
-Diamond; 	U+022C4 	⋄
-DifferentialD; 	U+02146 	ⅆ
-Dopf; 	U+1D53B 	������
-Dot; 	U+000A8 	¨
-DotDot; 	U+020DC 	◌⃜
-DotEqual; 	U+02250 	≐
-DoubleContourIntegral; 	U+0222F 	∯
-DoubleDot; 	U+000A8 	¨
-DoubleDownArrow; 	U+021D3 	⇓
-DoubleLeftArrow; 	U+021D0 	⇐
-DoubleLeftRightArrow; 	U+021D4 	⇔
-DoubleLeftTee; 	U+02AE4 	⫤
-DoubleLongLeftArrow; 	U+027F8 	⟸
-DoubleLongLeftRightArrow; 	U+027FA 	⟺
-DoubleLongRightArrow; 	U+027F9 	⟹
-DoubleRightArrow; 	U+021D2 	⇒
-DoubleRightTee; 	U+022A8 	⊨
-DoubleUpArrow; 	U+021D1 	⇑
-DoubleUpDownArrow; 	U+021D5 	⇕
-DoubleVerticalBar; 	U+02225 	∥
-DownArrow; 	U+02193 	↓
-DownArrowBar; 	U+02913 	⤓
-DownArrowUpArrow; 	U+021F5 	⇵
-DownBreve; 	U+00311 	◌̑
-DownLeftRightVector; 	U+02950 	⥐
-DownLeftTeeVector; 	U+0295E 	⥞
-DownLeftVector; 	U+021BD 	↽
-DownLeftVectorBar; 	U+02956 	⥖
-DownRightTeeVector; 	U+0295F 	⥟
-DownRightVector; 	U+021C1 	⇁
-DownRightVectorBar; 	U+02957 	⥗
-DownTee; 	U+022A4 	⊤
-DownTeeArrow; 	U+021A7 	↧
-Downarrow; 	U+021D3 	⇓
-Dscr; 	U+1D49F 	������
-Dstrok; 	U+00110 	Đ
-ENG; 	U+0014A 	Ŋ
-ETH; 	U+000D0 	Ð
-Eacute; 	U+000C9 	É
-Ecaron; 	U+0011A 	Ě
-Ecirc; 	U+000CA 	Ê
-Ecy; 	U+0042D 	Э
-Edot; 	U+00116 	Ė
-Efr; 	U+1D508 	������
-Egrave; 	U+000C8 	È
-Element; 	U+02208 	∈
-Emacr; 	U+00112 	Ē
-EmptySmallSquare; 	U+025FB 	◻
-EmptyVerySmallSquare; 	U+025AB 	▫
-Eogon; 	U+00118 	Ę
-Eopf; 	U+1D53C 	������
-Epsilon; 	U+00395 	Ε
-Equal; 	U+02A75 	⩵
-EqualTilde; 	U+02242 	≂
-Equilibrium; 	U+021CC 	⇌
-Escr; 	U+02130 	ℰ
-Esim; 	U+02A73 	⩳
-Eta; 	U+00397 	Η
-Euml; 	U+000CB 	Ë
-Exists; 	U+02203 	∃
-ExponentialE; 	U+02147 	ⅇ
-Fcy; 	U+00424 	Ф
-Ffr; 	U+1D509 	������
-FilledSmallSquare; 	U+025FC 	◼
-FilledVerySmallSquare; 	U+025AA 	▪
-Fopf; 	U+1D53D 	������
-ForAll; 	U+02200 	∀
-Fouriertrf; 	U+02131 	ℱ
-Fscr; 	U+02131 	ℱ
-GJcy; 	U+00403 	Ѓ
-GT; 	U+0003E 	>
-Gamma; 	U+00393 	Γ
-Gammad; 	U+003DC 	Ϝ
-Gbreve; 	U+0011E 	Ğ
-Gcedil; 	U+00122 	Ģ
-Gcirc; 	U+0011C 	Ĝ
-Gcy; 	U+00413 	Г
-Gdot; 	U+00120 	Ġ
-Gfr; 	U+1D50A 	������
-Gg; 	U+022D9 	⋙
-Gopf; 	U+1D53E 	������
-GreaterEqual; 	U+02265 	≥
-GreaterEqualLess; 	U+022DB 	⋛
-GreaterFullEqual; 	U+02267 	≧
-GreaterGreater; 	U+02AA2 	⪢
-GreaterLess; 	U+02277 	≷
-GreaterSlantEqual; 	U+02A7E 	⩾
-GreaterTilde; 	U+02273 	≳
-Gscr; 	U+1D4A2 	������
-Gt; 	U+0226B 	≫
-HARDcy; 	U+0042A 	Ъ
-Hacek; 	U+002C7 	ˇ
-Hat; 	U+0005E 	^
-Hcirc; 	U+00124 	Ĥ
-Hfr; 	U+0210C 	ℌ
-HilbertSpace; 	U+0210B 	ℋ
-Hopf; 	U+0210D 	ℍ
-HorizontalLine; 	U+02500 	─
-Hscr; 	U+0210B 	ℋ
-Hstrok; 	U+00126 	Ħ
-HumpDownHump; 	U+0224E 	≎
-HumpEqual; 	U+0224F 	≏
-IEcy; 	U+00415 	Е
-IJlig; 	U+00132 	Ĳ
-IOcy; 	U+00401 	Ё
-Iacute; 	U+000CD 	Í
-Icirc; 	U+000CE 	Î
-Icy; 	U+00418 	И
-Idot; 	U+00130 	İ
-Ifr; 	U+02111 	ℑ
-Igrave; 	U+000CC 	Ì
-Im; 	U+02111 	ℑ
-Imacr; 	U+0012A 	Ī
-ImaginaryI; 	U+02148 	ⅈ
-Implies; 	U+021D2 	⇒
-Int; 	U+0222C 	∬
-Integral; 	U+0222B 	∫
-Intersection; 	U+022C2 	⋂
-InvisibleComma; 	U+02063 	⁣
-InvisibleTimes; 	U+02062 	⁢
-Iogon; 	U+0012E 	Į
-Iopf; 	U+1D540 	������
-Iota; 	U+00399 	Ι
-Iscr; 	U+02110 	ℐ
-Itilde; 	U+00128 	Ĩ
-Iukcy; 	U+00406 	І
-Iuml; 	U+000CF 	Ï
-Jcirc; 	U+00134 	Ĵ
-Jcy; 	U+00419 	Й
-Jfr; 	U+1D50D 	������
-Jopf; 	U+1D541 	������
-Jscr; 	U+1D4A5 	������
-Jsercy; 	U+00408 	Ј
-Jukcy; 	U+00404 	Є
-KHcy; 	U+00425 	Х
-KJcy; 	U+0040C 	Ќ
-Kappa; 	U+0039A 	Κ
-Kcedil; 	U+00136 	Ķ
-Kcy; 	U+0041A 	К
-Kfr; 	U+1D50E 	������
-Kopf; 	U+1D542 	������
-Kscr; 	U+1D4A6 	������
-LJcy; 	U+00409 	Љ
-LT; 	U+0003C 	<
-Lacute; 	U+00139 	Ĺ
-Lambda; 	U+0039B 	Λ
-Lang; 	U+027EA 	⟪
-Laplacetrf; 	U+02112 	ℒ
-Larr; 	U+0219E 	↞
-Lcaron; 	U+0013D 	Ľ
-Lcedil; 	U+0013B 	Ļ
-Lcy; 	U+0041B 	Л
-LeftAngleBracket; 	U+027E8 	〈
-LeftArrow; 	U+02190 	←
-LeftArrowBar; 	U+021E4 	⇤
-LeftArrowRightArrow; 	U+021C6 	⇆
-LeftCeiling; 	U+02308 	⌈
-LeftDoubleBracket; 	U+027E6 	⟦
-LeftDownTeeVector; 	U+02961 	⥡
-LeftDownVector; 	U+021C3 	⇃
-LeftDownVectorBar; 	U+02959 	⥙
-LeftFloor; 	U+0230A 	⌊
-LeftRightArrow; 	U+02194 	↔
-LeftRightVector; 	U+0294E 	⥎
-LeftTee; 	U+022A3 	⊣
-LeftTeeArrow; 	U+021A4 	↤
-LeftTeeVector; 	U+0295A 	⥚
-LeftTriangle; 	U+022B2 	⊲
-LeftTriangleBar; 	U+029CF 	⧏
-LeftTriangleEqual; 	U+022B4 	⊴
-LeftUpDownVector; 	U+02951 	⥑
-LeftUpTeeVector; 	U+02960 	⥠
-LeftUpVector; 	U+021BF 	↿
-LeftUpVectorBar; 	U+02958 	⥘
-LeftVector; 	U+021BC 	↼
-LeftVectorBar; 	U+02952 	⥒
-Leftarrow; 	U+021D0 	⇐
-Leftrightarrow; 	U+021D4 	⇔
-LessEqualGreater; 	U+022DA 	⋚
-LessFullEqual; 	U+02266 	≦
-LessGreater; 	U+02276 	≶
-LessLess; 	U+02AA1 	⪡
-LessSlantEqual; 	U+02A7D 	⩽
-LessTilde; 	U+02272 	≲
-Lfr; 	U+1D50F 	������
-Ll; 	U+022D8 	⋘
-Lleftarrow; 	U+021DA 	⇚
-Lmidot; 	U+0013F 	Ŀ
-LongLeftArrow; 	U+027F5 	⟵
-LongLeftRightArrow; 	U+027F7 	⟷
-LongRightArrow; 	U+027F6 	⟶
-Longleftarrow; 	U+027F8 	⟸
-Longleftrightarrow; 	U+027FA 	⟺
-Longrightarrow; 	U+027F9 	⟹
-Lopf; 	U+1D543 	������
-LowerLeftArrow; 	U+02199 	↙
-LowerRightArrow; 	U+02198 	↘
-Lscr; 	U+02112 	ℒ
-Lsh; 	U+021B0 	↰
-Lstrok; 	U+00141 	Ł
-Lt; 	U+0226A 	≪
-Map; 	U+02905 	⤅
-Mcy; 	U+0041C 	М
-MediumSpace; 	U+0205F 	 
-Mellintrf; 	U+02133 	ℳ
-Mfr; 	U+1D510 	������
-MinusPlus; 	U+02213 	∓
-Mopf; 	U+1D544 	������
-Mscr; 	U+02133 	ℳ
-Mu; 	U+0039C 	Μ
-NJcy; 	U+0040A 	Њ
-Nacute; 	U+00143 	Ń
-Ncaron; 	U+00147 	Ň
-Ncedil; 	U+00145 	Ņ
-Ncy; 	U+0041D 	Н
-NegativeMediumSpace; 	U+0200B 	​
-NegativeThickSpace; 	U+0200B 	​
-NegativeThinSpace; 	U+0200B 	​
-NegativeVeryThinSpace; 	U+0200B 	​
-NestedGreaterGreater; 	U+0226B 	≫
-NestedLessLess; 	U+0226A 	≪
-NewLine; 	U+0000A 	␊
-Nfr; 	U+1D511 	������
-NoBreak; 	U+02060 	⁠
-NonBreakingSpace; 	U+000A0 	 
-Nopf; 	U+02115 	ℕ
-Not; 	U+02AEC 	⫬
-NotCongruent; 	U+02262 	≢
-NotCupCap; 	U+0226D 	≭
-NotDoubleVerticalBar; 	U+02226 	∦
-NotElement; 	U+02209 	∉
-NotEqual; 	U+02260 	≠
-NotEqualTilde; 	U+02242 U+00338 	≂̸
-NotExists; 	U+02204 	∄
-NotGreater; 	U+0226F 	≯
-NotGreaterEqual; 	U+02271 	≱
-NotGreaterFullEqual; 	U+02267 U+00338 	≧̸
-NotGreaterGreater; 	U+0226B U+00338 	≫̸
-NotGreaterLess; 	U+02279 	≹
-NotGreaterSlantEqual; 	U+02A7E U+00338 	⩾̸
-NotGreaterTilde; 	U+02275 	≵
-NotHumpDownHump; 	U+0224E U+00338 	≎̸
-NotHumpEqual; 	U+0224F U+00338 	≏̸
-NotLeftTriangle; 	U+022EA 	⋪
-NotLeftTriangleBar; 	U+029CF U+00338 	⧏̸
-NotLeftTriangleEqual; 	U+022EC 	⋬
-NotLess; 	U+0226E 	≮
-NotLessEqual; 	U+02270 	≰
-NotLessGreater; 	U+02278 	≸
-NotLessLess; 	U+0226A U+00338 	≪̸
-NotLessSlantEqual; 	U+02A7D U+00338 	⩽̸
-NotLessTilde; 	U+02274 	≴
-NotNestedGreaterGreater; 	U+02AA2 U+00338 	⪢̸
-NotNestedLessLess; 	U+02AA1 U+00338 	⪡̸
-NotPrecedes; 	U+02280 	⊀
-NotPrecedesEqual; 	U+02AAF U+00338 	⪯̸
-NotPrecedesSlantEqual; 	U+022E0 	⋠
-NotReverseElement; 	U+0220C 	∌
-NotRightTriangle; 	U+022EB 	⋫
-NotRightTriangleBar; 	U+029D0 U+00338 	⧐̸
-NotRightTriangleEqual; 	U+022ED 	⋭
-NotSquareSubset; 	U+0228F U+00338 	⊏̸
-NotSquareSubsetEqual; 	U+022E2 	⋢
-NotSquareSuperset; 	U+02290 U+00338 	⊐̸
-NotSquareSupersetEqual; 	U+022E3 	⋣
-NotSubset; 	U+02282 U+020D2 	⊂⃒
-NotSubsetEqual; 	U+02288 	⊈
-NotSucceeds; 	U+02281 	⊁
-NotSucceedsEqual; 	U+02AB0 U+00338 	⪰̸
-NotSucceedsSlantEqual; 	U+022E1 	⋡
-NotSucceedsTilde; 	U+0227F U+00338 	≿̸
-NotSuperset; 	U+02283 U+020D2 	⊃⃒
-NotSupersetEqual; 	U+02289 	⊉
-NotTilde; 	U+02241 	≁
-NotTildeEqual; 	U+02244 	≄
-NotTildeFullEqual; 	U+02247 	≇
-NotTildeTilde; 	U+02249 	≉
-NotVerticalBar; 	U+02224 	∤
-Nscr; 	U+1D4A9 	������
-Ntilde; 	U+000D1 	Ñ
-Nu; 	U+0039D 	Ν
-OElig; 	U+00152 	Œ
-Oacute; 	U+000D3 	Ó
-Ocirc; 	U+000D4 	Ô
-Ocy; 	U+0041E 	О
-Odblac; 	U+00150 	Ő
-Ofr; 	U+1D512 	������
-Ograve; 	U+000D2 	Ò
-Omacr; 	U+0014C 	Ō
-Omega; 	U+003A9 	Ω
-Omicron; 	U+0039F 	Ο
-Oopf; 	U+1D546 	������
-OpenCurlyDoubleQuote; 	U+0201C 	“
-OpenCurlyQuote; 	U+02018 	‘
-Or; 	U+02A54 	⩔
-Oscr; 	U+1D4AA 	������
-Oslash; 	U+000D8 	Ø
-Otilde; 	U+000D5 	Õ
-Otimes; 	U+02A37 	⨷
-Ouml; 	U+000D6 	Ö
-OverBar; 	U+0203E 	‾
-OverBrace; 	U+023DE 	⏞
-OverBracket; 	U+023B4 	⎴
-OverParenthesis; 	U+023DC 	⏜
-PartialD; 	U+02202 	∂
-Pcy; 	U+0041F 	П
-Pfr; 	U+1D513 	������
-Phi; 	U+003A6 	Φ
-Pi; 	U+003A0 	Π
-PlusMinus; 	U+000B1 	±
-Poincareplane; 	U+0210C 	ℌ
-Popf; 	U+02119 	ℙ
-Pr; 	U+02ABB 	⪻
-Precedes; 	U+0227A 	≺
-PrecedesEqual; 	U+02AAF 	⪯
-PrecedesSlantEqual; 	U+0227C 	≼
-PrecedesTilde; 	U+0227E 	≾
-Prime; 	U+02033 	″
-Product; 	U+0220F 	∏
-Proportion; 	U+02237 	∷
-Proportional; 	U+0221D 	∝
-Pscr; 	U+1D4AB 	������
-Psi; 	U+003A8 	Ψ
-QUOT; 	U+00022 	"
-Qfr; 	U+1D514 	������
-Qopf; 	U+0211A 	ℚ
-Qscr; 	U+1D4AC 	������
-RBarr; 	U+02910 	⤐
-REG; 	U+000AE 	®
-Racute; 	U+00154 	Ŕ
-Rang; 	U+027EB 	⟫
-Rarr; 	U+021A0 	↠
-Rarrtl; 	U+02916 	⤖
-Rcaron; 	U+00158 	Ř
-Rcedil; 	U+00156 	Ŗ
-Rcy; 	U+00420 	Р
-Re; 	U+0211C 	ℜ
-ReverseElement; 	U+0220B 	∋
-ReverseEquilibrium; 	U+021CB 	⇋
-ReverseUpEquilibrium; 	U+0296F 	⥯
-Rfr; 	U+0211C 	ℜ
-Rho; 	U+003A1 	Ρ
-RightAngleBracket; 	U+027E9 	〉
-RightArrow; 	U+02192 	→
-RightArrowBar; 	U+021E5 	⇥
-RightArrowLeftArrow; 	U+021C4 	⇄
-RightCeiling; 	U+02309 	⌉
-RightDoubleBracket; 	U+027E7 	⟧
-RightDownTeeVector; 	U+0295D 	⥝
-RightDownVector; 	U+021C2 	⇂
-RightDownVectorBar; 	U+02955 	⥕
-RightFloor; 	U+0230B 	⌋
-RightTee; 	U+022A2 	⊢
-RightTeeArrow; 	U+021A6 	↦
-RightTeeVector; 	U+0295B 	⥛
-RightTriangle; 	U+022B3 	⊳
-RightTriangleBar; 	U+029D0 	⧐
-RightTriangleEqual; 	U+022B5 	⊵
-RightUpDownVector; 	U+0294F 	⥏
-RightUpTeeVector; 	U+0295C 	⥜
-RightUpVector; 	U+021BE 	↾
-RightUpVectorBar; 	U+02954 	⥔
-RightVector; 	U+021C0 	⇀
-RightVectorBar; 	U+02953 	⥓
-Rightarrow; 	U+021D2 	⇒
-Ropf; 	U+0211D 	ℝ
-RoundImplies; 	U+02970 	⥰
-Rrightarrow; 	U+021DB 	⇛
-Rscr; 	U+0211B 	ℛ
-Rsh; 	U+021B1 	↱
-RuleDelayed; 	U+029F4 	⧴
-SHCHcy; 	U+00429 	Щ
-SHcy; 	U+00428 	Ш
-SOFTcy; 	U+0042C 	Ь
-Sacute; 	U+0015A 	Ś
-Sc; 	U+02ABC 	⪼
-Scaron; 	U+00160 	Š
-Scedil; 	U+0015E 	Ş
-Scirc; 	U+0015C 	Ŝ
-Scy; 	U+00421 	С
-Sfr; 	U+1D516 	������
-ShortDownArrow; 	U+02193 	↓
-ShortLeftArrow; 	U+02190 	←
-ShortRightArrow; 	U+02192 	→
-ShortUpArrow; 	U+02191 	↑
-Sigma; 	U+003A3 	Σ
-SmallCircle; 	U+02218 	∘
-Sopf; 	U+1D54A 	������
-Sqrt; 	U+0221A 	√
-Square; 	U+025A1 	□
-SquareIntersection; 	U+02293 	⊓
-SquareSubset; 	U+0228F 	⊏
-SquareSubsetEqual; 	U+02291 	⊑
-SquareSuperset; 	U+02290 	⊐
-SquareSupersetEqual; 	U+02292 	⊒
-SquareUnion; 	U+02294 	⊔
-Sscr; 	U+1D4AE 	������
-Star; 	U+022C6 	⋆
-Sub; 	U+022D0 	⋐
-Subset; 	U+022D0 	⋐
-SubsetEqual; 	U+02286 	⊆
-Succeeds; 	U+0227B 	≻
-SucceedsEqual; 	U+02AB0 	⪰
-SucceedsSlantEqual; 	U+0227D 	≽
-SucceedsTilde; 	U+0227F 	≿
-SuchThat; 	U+0220B 	∋
-Sum; 	U+02211 	∑
-Sup; 	U+022D1 	⋑
-Superset; 	U+02283 	⊃
-SupersetEqual; 	U+02287 	⊇
-Supset; 	U+022D1 	⋑
-THORN; 	U+000DE 	Þ
-TRADE; 	U+02122 	™
-TSHcy; 	U+0040B 	Ћ
-TScy; 	U+00426 	Ц
-Tab; 	U+00009 	␉
-Tau; 	U+003A4 	Τ
-Tcaron; 	U+00164 	Ť
-Tcedil; 	U+00162 	Ţ
-Tcy; 	U+00422 	Т
-Tfr; 	U+1D517 	������
-Therefore; 	U+02234 	∴
-Theta; 	U+00398 	Θ
-ThickSpace; 	U+0205F U+0200A 	  
-ThinSpace; 	U+02009 	 
-Tilde; 	U+0223C 	∼
-TildeEqual; 	U+02243 	≃
-TildeFullEqual; 	U+02245 	≅
-TildeTilde; 	U+02248 	≈
-Topf; 	U+1D54B 	������
-TripleDot; 	U+020DB 	◌⃛
-Tscr; 	U+1D4AF 	������
-Tstrok; 	U+00166 	Ŧ
-Uacute; 	U+000DA 	Ú
-Uarr; 	U+0219F 	↟
-Uarrocir; 	U+02949 	⥉
-Ubrcy; 	U+0040E 	Ў
-Ubreve; 	U+0016C 	Ŭ
-Ucirc; 	U+000DB 	Û
-Ucy; 	U+00423 	У
-Udblac; 	U+00170 	Ű
-Ufr; 	U+1D518 	������
-Ugrave; 	U+000D9 	Ù
-Umacr; 	U+0016A 	Ū
-UnderBar; 	U+0005F 	_
-UnderBrace; 	U+023DF 	⏟
-UnderBracket; 	U+023B5 	⎵
-UnderParenthesis; 	U+023DD 	⏝
-Union; 	U+022C3 	⋃
-UnionPlus; 	U+0228E 	⊎
-Uogon; 	U+00172 	Ų
-Uopf; 	U+1D54C 	������
-UpArrow; 	U+02191 	↑
-UpArrowBar; 	U+02912 	⤒
-UpArrowDownArrow; 	U+021C5 	⇅
-UpDownArrow; 	U+02195 	↕
-UpEquilibrium; 	U+0296E 	⥮
-UpTee; 	U+022A5 	⊥
-UpTeeArrow; 	U+021A5 	↥
-Uparrow; 	U+021D1 	⇑
-Updownarrow; 	U+021D5 	⇕
-UpperLeftArrow; 	U+02196 	↖
-UpperRightArrow; 	U+02197 	↗
-Upsi; 	U+003D2 	ϒ
-Upsilon; 	U+003A5 	Υ
-Uring; 	U+0016E 	Ů
-Uscr; 	U+1D4B0 	������
-Utilde; 	U+00168 	Ũ
-Uuml; 	U+000DC 	Ü
-VDash; 	U+022AB 	⊫
-Vbar; 	U+02AEB 	⫫
-Vcy; 	U+00412 	В
-Vdash; 	U+022A9 	⊩
-Vdashl; 	U+02AE6 	⫦
-Vee; 	U+022C1 	⋁
-Verbar; 	U+02016 	‖
-Vert; 	U+02016 	‖
-VerticalBar; 	U+02223 	∣
-VerticalLine; 	U+0007C 	|
-VerticalSeparator; 	U+02758 	❘
-VerticalTilde; 	U+02240 	≀
-VeryThinSpace; 	U+0200A 	 
-Vfr; 	U+1D519 	������
-Vopf; 	U+1D54D 	������
-Vscr; 	U+1D4B1 	������
-Vvdash; 	U+022AA 	⊪
-Wcirc; 	U+00174 	Ŵ
-Wedge; 	U+022C0 	⋀
-Wfr; 	U+1D51A 	������
-Wopf; 	U+1D54E 	������
-Wscr; 	U+1D4B2 	������
-Xfr; 	U+1D51B 	������
-Xi; 	U+0039E 	Ξ
-Xopf; 	U+1D54F 	������
-Xscr; 	U+1D4B3 	������
-YAcy; 	U+0042F 	Я
-YIcy; 	U+00407 	Ї
-YUcy; 	U+0042E 	Ю
-Yacute; 	U+000DD 	Ý
-Ycirc; 	U+00176 	Ŷ
-Ycy; 	U+0042B 	Ы
-Yfr; 	U+1D51C 	������
-Yopf; 	U+1D550 	������
-Yscr; 	U+1D4B4 	������
-Yuml; 	U+00178 	Ÿ
-ZHcy; 	U+00416 	Ж
-Zacute; 	U+00179 	Ź
-Zcaron; 	U+0017D 	Ž
-Zcy; 	U+00417 	З
-Zdot; 	U+0017B 	Ż
-ZeroWidthSpace; 	U+0200B 	​
-Zeta; 	U+00396 	Ζ
-Zfr; 	U+02128 	ℨ
-Zopf; 	U+02124 	ℤ
-Zscr; 	U+1D4B5 	������
-aacute; 	U+000E1 	á
-abreve; 	U+00103 	ă
-ac; 	U+0223E 	∾
-acE; 	U+0223E U+00333 	∾̳
-acd; 	U+0223F 	∿
-acirc; 	U+000E2 	â
-acute; 	U+000B4 	´
-acy; 	U+00430 	а
-aelig; 	U+000E6 	æ
-af; 	U+02061 	⁡
-afr; 	U+1D51E 	������
-agrave; 	U+000E0 	à
-alefsym; 	U+02135 	ℵ
-aleph; 	U+02135 	ℵ
-alpha; 	U+003B1 	α
-amacr; 	U+00101 	ā
-amalg; 	U+02A3F 	⨿
-amp; 	U+00026 	&
-and; 	U+02227 	∧
-andand; 	U+02A55 	⩕
-andd; 	U+02A5C 	⩜
-andslope; 	U+02A58 	⩘
-andv; 	U+02A5A 	⩚
-ang; 	U+02220 	∠
-ange; 	U+029A4 	⦤
-angle; 	U+02220 	∠
-angmsd; 	U+02221 	∡
-angmsdaa; 	U+029A8 	⦨
-angmsdab; 	U+029A9 	⦩
-angmsdac; 	U+029AA 	⦪
-angmsdad; 	U+029AB 	⦫
-angmsdae; 	U+029AC 	⦬
-angmsdaf; 	U+029AD 	⦭
-angmsdag; 	U+029AE 	⦮
-angmsdah; 	U+029AF 	⦯
-angrt; 	U+0221F 	∟
-angrtvb; 	U+022BE 	⊾
-angrtvbd; 	U+0299D 	⦝
-angsph; 	U+02222 	∢
-angst; 	U+000C5 	Å
-angzarr; 	U+0237C 	⍼
-aogon; 	U+00105 	ą
-aopf; 	U+1D552 	������
-ap; 	U+02248 	≈
-apE; 	U+02A70 	⩰
-apacir; 	U+02A6F 	⩯
-ape; 	U+0224A 	≊
-apid; 	U+0224B 	≋
-apos; 	U+00027 	'
-approx; 	U+02248 	≈
-approxeq; 	U+0224A 	≊
-aring; 	U+000E5 	å
-ascr; 	U+1D4B6 	������
-ast; 	U+0002A 	*
-asymp; 	U+02248 	≈
-asympeq; 	U+0224D 	≍
-atilde; 	U+000E3 	ã
-auml; 	U+000E4 	ä
-awconint; 	U+02233 	∳
-awint; 	U+02A11 	⨑
-bNot; 	U+02AED 	⫭
-backcong; 	U+0224C 	≌
-backepsilon; 	U+003F6 	϶
-backprime; 	U+02035 	‵
-backsim; 	U+0223D 	∽
-backsimeq; 	U+022CD 	⋍
-barvee; 	U+022BD 	⊽
-barwed; 	U+02305 	⌅
-barwedge; 	U+02305 	⌅
-bbrk; 	U+023B5 	⎵
-bbrktbrk; 	U+023B6 	⎶
-bcong; 	U+0224C 	≌
-bcy; 	U+00431 	б
-bdquo; 	U+0201E 	„
-becaus; 	U+02235 	∵
-because; 	U+02235 	∵
-bemptyv; 	U+029B0 	⦰
-bepsi; 	U+003F6 	϶
-bernou; 	U+0212C 	ℬ
-beta; 	U+003B2 	β
-beth; 	U+02136 	ℶ
-between; 	U+0226C 	≬
-bfr; 	U+1D51F 	������
-bigcap; 	U+022C2 	⋂
-bigcirc; 	U+025EF 	◯
-bigcup; 	U+022C3 	⋃
-bigodot; 	U+02A00 	⨀
-bigoplus; 	U+02A01 	⨁
-bigotimes; 	U+02A02 	⨂
-bigsqcup; 	U+02A06 	⨆
-bigstar; 	U+02605 	★
-bigtriangledown; 	U+025BD 	▽
-bigtriangleup; 	U+025B3 	△
-biguplus; 	U+02A04 	⨄
-bigvee; 	U+022C1 	⋁
-bigwedge; 	U+022C0 	⋀
-bkarow; 	U+0290D 	⤍
-blacklozenge; 	U+029EB 	⧫
-blacksquare; 	U+025AA 	▪
-blacktriangle; 	U+025B4 	▴
-blacktriangledown; 	U+025BE 	▾
-blacktriangleleft; 	U+025C2 	◂
-blacktriangleright; 	U+025B8 	▸
-blank; 	U+02423 	␣
-blk12; 	U+02592 	▒
-blk14; 	U+02591 	░
-blk34; 	U+02593 	▓
-block; 	U+02588 	█
-bne; 	U+0003D U+020E5 	=⃥
-bnequiv; 	U+02261 U+020E5 	≡⃥
-bnot; 	U+02310 	⌐
-bopf; 	U+1D553 	������
-bot; 	U+022A5 	⊥
-bottom; 	U+022A5 	⊥
-bowtie; 	U+022C8 	⋈
-boxDL; 	U+02557 	╗
-boxDR; 	U+02554 	╔
-boxDl; 	U+02556 	╖
-boxDr; 	U+02553 	╓
-boxH; 	U+02550 	═
-boxHD; 	U+02566 	╦
-boxHU; 	U+02569 	╩
-boxHd; 	U+02564 	╤
-boxHu; 	U+02567 	╧
-boxUL; 	U+0255D 	╝
-boxUR; 	U+0255A 	╚
-boxUl; 	U+0255C 	╜
-boxUr; 	U+02559 	╙
-boxV; 	U+02551 	║
-boxVH; 	U+0256C 	╬
-boxVL; 	U+02563 	╣
-boxVR; 	U+02560 	╠
-boxVh; 	U+0256B 	╫
-boxVl; 	U+02562 	╢
-boxVr; 	U+0255F 	╟
-boxbox; 	U+029C9 	⧉
-boxdL; 	U+02555 	╕
-boxdR; 	U+02552 	╒
-boxdl; 	U+02510 	┐
-boxdr; 	U+0250C 	┌
-boxh; 	U+02500 	─
-boxhD; 	U+02565 	╥
-boxhU; 	U+02568 	╨
-boxhd; 	U+0252C 	┬
-boxhu; 	U+02534 	┴
-boxminus; 	U+0229F 	⊟
-boxplus; 	U+0229E 	⊞
-boxtimes; 	U+022A0 	⊠
-boxuL; 	U+0255B 	╛
-boxuR; 	U+02558 	╘
-boxul; 	U+02518 	┘
-boxur; 	U+02514 	└
-boxv; 	U+02502 	│
-boxvH; 	U+0256A 	╪
-boxvL; 	U+02561 	╡
-boxvR; 	U+0255E 	╞
-boxvh; 	U+0253C 	┼
-boxvl; 	U+02524 	┤
-boxvr; 	U+0251C 	├
-bprime; 	U+02035 	‵
-breve; 	U+002D8 	˘
-brvbar; 	U+000A6 	¦
-bscr; 	U+1D4B7 	������
-bsemi; 	U+0204F 	⁏
-bsim; 	U+0223D 	∽
-bsime; 	U+022CD 	⋍
-bsol; 	U+0005C 	\
-bsolb; 	U+029C5 	⧅
-bsolhsub; 	U+027C8 	⟈
-bull; 	U+02022 	•
-bullet; 	U+02022 	•
-bump; 	U+0224E 	≎
-bumpE; 	U+02AAE 	⪮
-bumpe; 	U+0224F 	≏
-bumpeq; 	U+0224F 	≏
-cacute; 	U+00107 	ć
-cap; 	U+02229 	∩
-capand; 	U+02A44 	⩄
-capbrcup; 	U+02A49 	⩉
-capcap; 	U+02A4B 	⩋
-capcup; 	U+02A47 	⩇
-capdot; 	U+02A40 	⩀
-caps; 	U+02229 U+0FE00 	∩︀
-caret; 	U+02041 	⁁
-caron; 	U+002C7 	ˇ
-ccaps; 	U+02A4D 	⩍
-ccaron; 	U+0010D 	č
-ccedil; 	U+000E7 	ç
-ccirc; 	U+00109 	ĉ
-ccups; 	U+02A4C 	⩌
-ccupssm; 	U+02A50 	⩐
-cdot; 	U+0010B 	ċ
-cedil; 	U+000B8 	¸
-cemptyv; 	U+029B2 	⦲
-cent; 	U+000A2 	¢
-centerdot; 	U+000B7 	·
-cfr; 	U+1D520 	������
-chcy; 	U+00447 	ч
-check; 	U+02713 	✓
-checkmark; 	U+02713 	✓
-chi; 	U+003C7 	χ
-cir; 	U+025CB 	○
-cirE; 	U+029C3 	⧃
-circ; 	U+002C6 	ˆ
-circeq; 	U+02257 	≗
-circlearrowleft; 	U+021BA 	↺
-circlearrowright; 	U+021BB 	↻
-circledR; 	U+000AE 	®
-circledS; 	U+024C8 	Ⓢ
-circledast; 	U+0229B 	⊛
-circledcirc; 	U+0229A 	⊚
-circleddash; 	U+0229D 	⊝
-cire; 	U+02257 	≗
-cirfnint; 	U+02A10 	⨐
-cirmid; 	U+02AEF 	⫯
-cirscir; 	U+029C2 	⧂
-clubs; 	U+02663 	♣
-clubsuit; 	U+02663 	♣
-colon; 	U+0003A 	:
-colone; 	U+02254 	≔
-coloneq; 	U+02254 	≔
-comma; 	U+0002C 	,
-commat; 	U+00040 	@
-comp; 	U+02201 	∁
-compfn; 	U+02218 	∘
-complement; 	U+02201 	∁
-complexes; 	U+02102 	ℂ
-cong; 	U+02245 	≅
-congdot; 	U+02A6D 	⩭
-conint; 	U+0222E 	∮
-copf; 	U+1D554 	������
-coprod; 	U+02210 	∐
-copy; 	U+000A9 	©
-copysr; 	U+02117 	℗
-crarr; 	U+021B5 	↵
-cross; 	U+02717 	✗
-cscr; 	U+1D4B8 	������
-csub; 	U+02ACF 	⫏
-csube; 	U+02AD1 	⫑
-csup; 	U+02AD0 	⫐
-csupe; 	U+02AD2 	⫒
-ctdot; 	U+022EF 	⋯
-cudarrl; 	U+02938 	⤸
-cudarrr; 	U+02935 	⤵
-cuepr; 	U+022DE 	⋞
-cuesc; 	U+022DF 	⋟
-cularr; 	U+021B6 	↶
-cularrp; 	U+0293D 	⤽
-cup; 	U+0222A 	∪
-cupbrcap; 	U+02A48 	⩈
-cupcap; 	U+02A46 	⩆
-cupcup; 	U+02A4A 	⩊
-cupdot; 	U+0228D 	⊍
-cupor; 	U+02A45 	⩅
-cups; 	U+0222A U+0FE00 	∪︀
-curarr; 	U+021B7 	↷
-curarrm; 	U+0293C 	⤼
-curlyeqprec; 	U+022DE 	⋞
-curlyeqsucc; 	U+022DF 	⋟
-curlyvee; 	U+022CE 	⋎
-curlywedge; 	U+022CF 	⋏
-curren; 	U+000A4 	¤
-curvearrowleft; 	U+021B6 	↶
-curvearrowright; 	U+021B7 	↷
-cuvee; 	U+022CE 	⋎
-cuwed; 	U+022CF 	⋏
-cwconint; 	U+02232 	∲
-cwint; 	U+02231 	∱
-cylcty; 	U+0232D 	⌭
-dArr; 	U+021D3 	⇓
-dHar; 	U+02965 	⥥
-dagger; 	U+02020 	†
-daleth; 	U+02138 	ℸ
-darr; 	U+02193 	↓
-dash; 	U+02010 	‐
-dashv; 	U+022A3 	⊣
-dbkarow; 	U+0290F 	⤏
-dblac; 	U+002DD 	˝
-dcaron; 	U+0010F 	ď
-dcy; 	U+00434 	д
-dd; 	U+02146 	ⅆ
-ddagger; 	U+02021 	‡
-ddarr; 	U+021CA 	⇊
-ddotseq; 	U+02A77 	⩷
-deg; 	U+000B0 	°
-delta; 	U+003B4 	δ
-demptyv; 	U+029B1 	⦱
-dfisht; 	U+0297F 	⥿
-dfr; 	U+1D521 	������
-dharl; 	U+021C3 	⇃
-dharr; 	U+021C2 	⇂
-diam; 	U+022C4 	⋄
-diamond; 	U+022C4 	⋄
-diamondsuit; 	U+02666 	♦
-diams; 	U+02666 	♦
-die; 	U+000A8 	¨
-digamma; 	U+003DD 	ϝ
-disin; 	U+022F2 	⋲
-div; 	U+000F7 	÷
-divide; 	U+000F7 	÷
-divideontimes; 	U+022C7 	⋇
-divonx; 	U+022C7 	⋇
-djcy; 	U+00452 	ђ
-dlcorn; 	U+0231E 	⌞
-dlcrop; 	U+0230D 	⌍
-dollar; 	U+00024 	$
-dopf; 	U+1D555 	������
-dot; 	U+002D9 	˙
-doteq; 	U+02250 	≐
-doteqdot; 	U+02251 	≑
-dotminus; 	U+02238 	∸
-dotplus; 	U+02214 	∔
-dotsquare; 	U+022A1 	⊡
-doublebarwedge; 	U+02306 	⌆
-downarrow; 	U+02193 	↓
-downdownarrows; 	U+021CA 	⇊
-downharpoonleft; 	U+021C3 	⇃
-downharpoonright; 	U+021C2 	⇂
-drbkarow; 	U+02910 	⤐
-drcorn; 	U+0231F 	⌟
-drcrop; 	U+0230C 	⌌
-dscr; 	U+1D4B9 	������
-dscy; 	U+00455 	ѕ
-dsol; 	U+029F6 	⧶
-dstrok; 	U+00111 	đ
-dtdot; 	U+022F1 	⋱
-dtri; 	U+025BF 	▿
-dtrif; 	U+025BE 	▾
-duarr; 	U+021F5 	⇵
-duhar; 	U+0296F 	⥯
-dwangle; 	U+029A6 	⦦
-dzcy; 	U+0045F 	џ
-dzigrarr; 	U+027FF 	⟿
-eDDot; 	U+02A77 	⩷
-eDot; 	U+02251 	≑
-eacute; 	U+000E9 	é
-easter; 	U+02A6E 	⩮
-ecaron; 	U+0011B 	ě
-ecir; 	U+02256 	≖
-ecirc; 	U+000EA 	ê
-ecolon; 	U+02255 	≕
-ecy; 	U+0044D 	э
-edot; 	U+00117 	ė
-ee; 	U+02147 	ⅇ
-efDot; 	U+02252 	≒
-efr; 	U+1D522 	������
-eg; 	U+02A9A 	⪚
-egrave; 	U+000E8 	è
-egs; 	U+02A96 	⪖
-egsdot; 	U+02A98 	⪘
-el; 	U+02A99 	⪙
-elinters; 	U+023E7 	⏧
-ell; 	U+02113 	ℓ
-els; 	U+02A95 	⪕
-elsdot; 	U+02A97 	⪗
-emacr; 	U+00113 	ē
-empty; 	U+02205 	∅
-emptyset; 	U+02205 	∅
-emptyv; 	U+02205 	∅
-emsp; 	U+02003 	 
-emsp13; 	U+02004 	 
-emsp14; 	U+02005 	 
-eng; 	U+0014B 	ŋ
-ensp; 	U+02002 	 
-eogon; 	U+00119 	ę
-eopf; 	U+1D556 	������
-epar; 	U+022D5 	⋕
-eparsl; 	U+029E3 	⧣
-eplus; 	U+02A71 	⩱
-epsi; 	U+003B5 	ε
-epsilon; 	U+003B5 	ε
-epsiv; 	U+003F5 	ϵ
-eqcirc; 	U+02256 	≖
-eqcolon; 	U+02255 	≕
-eqsim; 	U+02242 	≂
-eqslantgtr; 	U+02A96 	⪖
-eqslantless; 	U+02A95 	⪕
-equals; 	U+0003D 	=
-equest; 	U+0225F 	≟
-equiv; 	U+02261 	≡
-equivDD; 	U+02A78 	⩸
-eqvparsl; 	U+029E5 	⧥
-erDot; 	U+02253 	≓
-erarr; 	U+02971 	⥱
-escr; 	U+0212F 	ℯ
-esdot; 	U+02250 	≐
-esim; 	U+02242 	≂
-eta; 	U+003B7 	η
-eth; 	U+000F0 	ð
-euml; 	U+000EB 	ë
-euro; 	U+020AC 	€
-excl; 	U+00021 	!
-exist; 	U+02203 	∃
-expectation; 	U+02130 	ℰ
-exponentiale; 	U+02147 	ⅇ
-fallingdotseq; 	U+02252 	≒
-fcy; 	U+00444 	ф
-female; 	U+02640 	♀
-ffilig; 	U+0FB03 	ﬃ
-fflig; 	U+0FB00 	ﬀ
-ffllig; 	U+0FB04 	ﬄ
-ffr; 	U+1D523 	������
-filig; 	U+0FB01 	ﬁ
-fjlig; 	U+00066 U+0006A 	fj
-flat; 	U+0266D 	♭
-fllig; 	U+0FB02 	ﬂ
-fltns; 	U+025B1 	▱
-fnof; 	U+00192 	ƒ
-fopf; 	U+1D557 	������
-forall; 	U+02200 	∀
-fork; 	U+022D4 	⋔
-forkv; 	U+02AD9 	⫙
-fpartint; 	U+02A0D 	⨍
-frac12; 	U+000BD 	½
-frac13; 	U+02153 	⅓
-frac14; 	U+000BC 	¼
-frac15; 	U+02155 	⅕
-frac16; 	U+02159 	⅙
-frac18; 	U+0215B 	⅛
-frac23; 	U+02154 	⅔
-frac25; 	U+02156 	⅖
-frac34; 	U+000BE 	¾
-frac35; 	U+02157 	⅗
-frac38; 	U+0215C 	⅜
-frac45; 	U+02158 	⅘
-frac56; 	U+0215A 	⅚
-frac58; 	U+0215D 	⅝
-frac78; 	U+0215E 	⅞
-frasl; 	U+02044 	⁄
-frown; 	U+02322 	⌢
-fscr; 	U+1D4BB 	������
-gE; 	U+02267 	≧
-gEl; 	U+02A8C 	⪌
-gacute; 	U+001F5 	ǵ
-gamma; 	U+003B3 	γ
-gammad; 	U+003DD 	ϝ
-gap; 	U+02A86 	⪆
-gbreve; 	U+0011F 	ğ
-gcirc; 	U+0011D 	ĝ
-gcy; 	U+00433 	г
-gdot; 	U+00121 	ġ
-ge; 	U+02265 	≥
-gel; 	U+022DB 	⋛
-geq; 	U+02265 	≥
-geqq; 	U+02267 	≧
-geqslant; 	U+02A7E 	⩾
-ges; 	U+02A7E 	⩾
-gescc; 	U+02AA9 	⪩
-gesdot; 	U+02A80 	⪀
-gesdoto; 	U+02A82 	⪂
-gesdotol; 	U+02A84 	⪄
-gesl; 	U+022DB U+0FE00 	⋛︀
-gesles; 	U+02A94 	⪔
-gfr; 	U+1D524 	������
-gg; 	U+0226B 	≫
-ggg; 	U+022D9 	⋙
-gimel; 	U+02137 	ℷ
-gjcy; 	U+00453 	ѓ
-gl; 	U+02277 	≷
-glE; 	U+02A92 	⪒
-gla; 	U+02AA5 	⪥
-glj; 	U+02AA4 	⪤
-gnE; 	U+02269 	≩
-gnap; 	U+02A8A 	⪊
-gnapprox; 	U+02A8A 	⪊
-gne; 	U+02A88 	⪈
-gneq; 	U+02A88 	⪈
-gneqq; 	U+02269 	≩
-gnsim; 	U+022E7 	⋧
-gopf; 	U+1D558 	������
-grave; 	U+00060 	`
-gscr; 	U+0210A 	ℊ
-gsim; 	U+02273 	≳
-gsime; 	U+02A8E 	⪎
-gsiml; 	U+02A90 	⪐
-gt; 	U+0003E 	>
-gtcc; 	U+02AA7 	⪧
-gtcir; 	U+02A7A 	⩺
-gtdot; 	U+022D7 	⋗
-gtlPar; 	U+02995 	⦕
-gtquest; 	U+02A7C 	⩼
-gtrapprox; 	U+02A86 	⪆
-gtrarr; 	U+02978 	⥸
-gtrdot; 	U+022D7 	⋗
-gtreqless; 	U+022DB 	⋛
-gtreqqless; 	U+02A8C 	⪌
-gtrless; 	U+02277 	≷
-gtrsim; 	U+02273 	≳
-gvertneqq; 	U+02269 U+0FE00 	≩︀
-gvnE; 	U+02269 U+0FE00 	≩︀
-hArr; 	U+021D4 	⇔
-hairsp; 	U+0200A 	 
-half; 	U+000BD 	½
-hamilt; 	U+0210B 	ℋ
-hardcy; 	U+0044A 	ъ
-harr; 	U+02194 	↔
-harrcir; 	U+02948 	⥈
-harrw; 	U+021AD 	↭
-hbar; 	U+0210F 	ℏ
-hcirc; 	U+00125 	ĥ
-hearts; 	U+02665 	♥
-heartsuit; 	U+02665 	♥
-hellip; 	U+02026 	…
-hercon; 	U+022B9 	⊹
-hfr; 	U+1D525 	������
-hksearow; 	U+02925 	⤥
-hkswarow; 	U+02926 	⤦
-hoarr; 	U+021FF 	⇿
-homtht; 	U+0223B 	∻
-hookleftarrow; 	U+021A9 	↩
-hookrightarrow; 	U+021AA 	↪
-hopf; 	U+1D559 	������
-horbar; 	U+02015 	―
-hscr; 	U+1D4BD 	������
-hslash; 	U+0210F 	ℏ
-hstrok; 	U+00127 	ħ
-hybull; 	U+02043 	⁃
-hyphen; 	U+02010 	‐
-iacute; 	U+000ED 	í
-ic; 	U+02063 	⁣
-icirc; 	U+000EE 	î
-icy; 	U+00438 	и
-iecy; 	U+00435 	е
-iexcl; 	U+000A1 	¡
-iff; 	U+021D4 	⇔
-ifr; 	U+1D526 	������
-igrave; 	U+000EC 	ì
-ii; 	U+02148 	ⅈ
-iiiint; 	U+02A0C 	⨌
-iiint; 	U+0222D 	∭
-iinfin; 	U+029DC 	⧜
-iiota; 	U+02129 	℩
-ijlig; 	U+00133 	ĳ
-imacr; 	U+0012B 	ī
-image; 	U+02111 	ℑ
-imagline; 	U+02110 	ℐ
-imagpart; 	U+02111 	ℑ
-imath; 	U+00131 	ı
-imof; 	U+022B7 	⊷
-imped; 	U+001B5 	Ƶ
-in; 	U+02208 	∈
-incare; 	U+02105 	℅
-infin; 	U+0221E 	∞
-infintie; 	U+029DD 	⧝
-inodot; 	U+00131 	ı
-int; 	U+0222B 	∫
-intcal; 	U+022BA 	⊺
-integers; 	U+02124 	ℤ
-intercal; 	U+022BA 	⊺
-intlarhk; 	U+02A17 	⨗
-intprod; 	U+02A3C 	⨼
-iocy; 	U+00451 	ё
-iogon; 	U+0012F 	į
-iopf; 	U+1D55A 	������
-iota; 	U+003B9 	ι
-iprod; 	U+02A3C 	⨼
-iquest; 	U+000BF 	¿
-iscr; 	U+1D4BE 	������
-isin; 	U+02208 	∈
-isinE; 	U+022F9 	⋹
-isindot; 	U+022F5 	⋵
-isins; 	U+022F4 	⋴
-isinsv; 	U+022F3 	⋳
-isinv; 	U+02208 	∈
-it; 	U+02062 	⁢
-itilde; 	U+00129 	ĩ
-iukcy; 	U+00456 	і
-iuml; 	U+000EF 	ï
-jcirc; 	U+00135 	ĵ
-jcy; 	U+00439 	й
-jfr; 	U+1D527 	������
-jmath; 	U+00237 	ȷ
-jopf; 	U+1D55B 	������
-jscr; 	U+1D4BF 	������
-jsercy; 	U+00458 	ј
-jukcy; 	U+00454 	є
-kappa; 	U+003BA 	κ
-kappav; 	U+003F0 	ϰ
-kcedil; 	U+00137 	ķ
-kcy; 	U+0043A 	к
-kfr; 	U+1D528 	������
-kgreen; 	U+00138 	ĸ
-khcy; 	U+00445 	х
-kjcy; 	U+0045C 	ќ
-kopf; 	U+1D55C 	������
-kscr; 	U+1D4C0 	������
-lAarr; 	U+021DA 	⇚
-lArr; 	U+021D0 	⇐
-lAtail; 	U+0291B 	⤛
-lBarr; 	U+0290E 	⤎
-lE; 	U+02266 	≦
-lEg; 	U+02A8B 	⪋
-lHar; 	U+02962 	⥢
-lacute; 	U+0013A 	ĺ
-laemptyv; 	U+029B4 	⦴
-lagran; 	U+02112 	ℒ
-lambda; 	U+003BB 	λ
-lang; 	U+027E8 	〈
-langd; 	U+02991 	⦑
-langle; 	U+027E8 	〈
-lap; 	U+02A85 	⪅
-laquo; 	U+000AB 	«
-larr; 	U+02190 	←
-larrb; 	U+021E4 	⇤
-larrbfs; 	U+0291F 	⤟
-larrfs; 	U+0291D 	⤝
-larrhk; 	U+021A9 	↩
-larrlp; 	U+021AB 	↫
-larrpl; 	U+02939 	⤹
-larrsim; 	U+02973 	⥳
-larrtl; 	U+021A2 	↢
-lat; 	U+02AAB 	⪫
-latail; 	U+02919 	⤙
-late; 	U+02AAD 	⪭
-lates; 	U+02AAD U+0FE00 	⪭︀
-lbarr; 	U+0290C 	⤌
-lbbrk; 	U+02772 	❲
-lbrace; 	U+0007B 	{
-lbrack; 	U+0005B 	[
-lbrke; 	U+0298B 	⦋
-lbrksld; 	U+0298F 	⦏
-lbrkslu; 	U+0298D 	⦍
-lcaron; 	U+0013E 	ľ
-lcedil; 	U+0013C 	ļ
-lceil; 	U+02308 	⌈
-lcub; 	U+0007B 	{
-lcy; 	U+0043B 	л
-ldca; 	U+02936 	⤶
-ldquo; 	U+0201C 	“
-ldquor; 	U+0201E 	„
-ldrdhar; 	U+02967 	⥧
-ldrushar; 	U+0294B 	⥋
-ldsh; 	U+021B2 	↲
-le; 	U+02264 	≤
-leftarrow; 	U+02190 	←
-leftarrowtail; 	U+021A2 	↢
-leftharpoondown; 	U+021BD 	↽
-leftharpoonup; 	U+021BC 	↼
-leftleftarrows; 	U+021C7 	⇇
-leftrightarrow; 	U+02194 	↔
-leftrightarrows; 	U+021C6 	⇆
-leftrightharpoons; 	U+021CB 	⇋
-leftrightsquigarrow; 	U+021AD 	↭
-leftthreetimes; 	U+022CB 	⋋
-leg; 	U+022DA 	⋚
-leq; 	U+02264 	≤
-leqq; 	U+02266 	≦
-leqslant; 	U+02A7D 	⩽
-les; 	U+02A7D 	⩽
-lescc; 	U+02AA8 	⪨
-lesdot; 	U+02A7F 	⩿
-lesdoto; 	U+02A81 	⪁
-lesdotor; 	U+02A83 	⪃
-lesg; 	U+022DA U+0FE00 	⋚︀
-lesges; 	U+02A93 	⪓
-lessapprox; 	U+02A85 	⪅
-lessdot; 	U+022D6 	⋖
-lesseqgtr; 	U+022DA 	⋚
-lesseqqgtr; 	U+02A8B 	⪋
-lessgtr; 	U+02276 	≶
-lesssim; 	U+02272 	≲
-lfisht; 	U+0297C 	⥼
-lfloor; 	U+0230A 	⌊
-lfr; 	U+1D529 	������
-lg; 	U+02276 	≶
-lgE; 	U+02A91 	⪑
-lhard; 	U+021BD 	↽
-lharu; 	U+021BC 	↼
-lharul; 	U+0296A 	⥪
-lhblk; 	U+02584 	▄
-ljcy; 	U+00459 	љ
-ll; 	U+0226A 	≪
-llarr; 	U+021C7 	⇇
-llcorner; 	U+0231E 	⌞
-llhard; 	U+0296B 	⥫
-lltri; 	U+025FA 	◺
-lmidot; 	U+00140 	ŀ
-lmoust; 	U+023B0 	⎰
-lmoustache; 	U+023B0 	⎰
-lnE; 	U+02268 	≨
-lnap; 	U+02A89 	⪉
-lnapprox; 	U+02A89 	⪉
-lne; 	U+02A87 	⪇
-lneq; 	U+02A87 	⪇
-lneqq; 	U+02268 	≨
-lnsim; 	U+022E6 	⋦
-loang; 	U+027EC 	⟬
-loarr; 	U+021FD 	⇽
-lobrk; 	U+027E6 	⟦
-longleftarrow; 	U+027F5 	⟵
-longleftrightarrow; 	U+027F7 	⟷
-longmapsto; 	U+027FC 	⟼
-longrightarrow; 	U+027F6 	⟶
-looparrowleft; 	U+021AB 	↫
-looparrowright; 	U+021AC 	↬
-lopar; 	U+02985 	⦅
-lopf; 	U+1D55D 	������
-loplus; 	U+02A2D 	⨭
-lotimes; 	U+02A34 	⨴
-lowast; 	U+02217 	∗
-lowbar; 	U+0005F 	_
-loz; 	U+025CA 	◊
-lozenge; 	U+025CA 	◊
-lozf; 	U+029EB 	⧫
-lpar; 	U+00028 	(
-lparlt; 	U+02993 	⦓
-lrarr; 	U+021C6 	⇆
-lrcorner; 	U+0231F 	⌟
-lrhar; 	U+021CB 	⇋
-lrhard; 	U+0296D 	⥭
-lrm; 	U+0200E 	‎
-lrtri; 	U+022BF 	⊿
-lsaquo; 	U+02039 	‹
-lscr; 	U+1D4C1 	������
-lsh; 	U+021B0 	↰
-lsim; 	U+02272 	≲
-lsime; 	U+02A8D 	⪍
-lsimg; 	U+02A8F 	⪏
-lsqb; 	U+0005B 	[
-lsquo; 	U+02018 	‘
-lsquor; 	U+0201A 	‚
-lstrok; 	U+00142 	ł
-lt; 	U+0003C 	<
-ltcc; 	U+02AA6 	⪦
-ltcir; 	U+02A79 	⩹
-ltdot; 	U+022D6 	⋖
-lthree; 	U+022CB 	⋋
-ltimes; 	U+022C9 	⋉
-ltlarr; 	U+02976 	⥶
-ltquest; 	U+02A7B 	⩻
-ltrPar; 	U+02996 	⦖
-ltri; 	U+025C3 	◃
-ltrie; 	U+022B4 	⊴
-ltrif; 	U+025C2 	◂
-lurdshar; 	U+0294A 	⥊
-luruhar; 	U+02966 	⥦
-lvertneqq; 	U+02268 U+0FE00 	≨︀
-lvnE; 	U+02268 U+0FE00 	≨︀
-mDDot; 	U+0223A 	∺
-macr; 	U+000AF 	¯
-male; 	U+02642 	♂
-malt; 	U+02720 	✠
-maltese; 	U+02720 	✠
-map; 	U+021A6 	↦
-mapsto; 	U+021A6 	↦
-mapstodown; 	U+021A7 	↧
-mapstoleft; 	U+021A4 	↤
-mapstoup; 	U+021A5 	↥
-marker; 	U+025AE 	▮
-mcomma; 	U+02A29 	⨩
-mcy; 	U+0043C 	м
-mdash; 	U+02014 	—
-measuredangle; 	U+02221 	∡
-mfr; 	U+1D52A 	������
-mho; 	U+02127 	℧
-micro; 	U+000B5 	µ
-mid; 	U+02223 	∣
-midast; 	U+0002A 	*
-midcir; 	U+02AF0 	⫰
-middot; 	U+000B7 	·
-minus; 	U+02212 	−
-minusb; 	U+0229F 	⊟
-minusd; 	U+02238 	∸
-minusdu; 	U+02A2A 	⨪
-mlcp; 	U+02ADB 	⫛
-mldr; 	U+02026 	…
-mnplus; 	U+02213 	∓
-models; 	U+022A7 	⊧
-mopf; 	U+1D55E 	������
-mp; 	U+02213 	∓
-mscr; 	U+1D4C2 	������
-mstpos; 	U+0223E 	∾
-mu; 	U+003BC 	μ
-multimap; 	U+022B8 	⊸
-mumap; 	U+022B8 	⊸
-nGg; 	U+022D9 U+00338 	⋙̸
-nGt; 	U+0226B U+020D2 	≫⃒
-nGtv; 	U+0226B U+00338 	≫̸
-nLeftarrow; 	U+021CD 	⇍
-nLeftrightarrow; 	U+021CE 	⇎
-nLl; 	U+022D8 U+00338 	⋘̸
-nLt; 	U+0226A U+020D2 	≪⃒
-nLtv; 	U+0226A U+00338 	≪̸
-nRightarrow; 	U+021CF 	⇏
-nVDash; 	U+022AF 	⊯
-nVdash; 	U+022AE 	⊮
-nabla; 	U+02207 	∇
-nacute; 	U+00144 	ń
-nang; 	U+02220 U+020D2 	∠⃒
-nap; 	U+02249 	≉
-napE; 	U+02A70 U+00338 	⩰̸
-napid; 	U+0224B U+00338 	≋̸
-napos; 	U+00149 	ŉ
-napprox; 	U+02249 	≉
-natur; 	U+0266E 	♮
-natural; 	U+0266E 	♮
-naturals; 	U+02115 	ℕ
-nbsp; 	U+000A0 	 
-nbump; 	U+0224E U+00338 	≎̸
-nbumpe; 	U+0224F U+00338 	≏̸
-ncap; 	U+02A43 	⩃
-ncaron; 	U+00148 	ň
-ncedil; 	U+00146 	ņ
-ncong; 	U+02247 	≇
-ncongdot; 	U+02A6D U+00338 	⩭̸
-ncup; 	U+02A42 	⩂
-ncy; 	U+0043D 	н
-ndash; 	U+02013 	–
-ne; 	U+02260 	≠
-neArr; 	U+021D7 	⇗
-nearhk; 	U+02924 	⤤
-nearr; 	U+02197 	↗
-nearrow; 	U+02197 	↗
-nedot; 	U+02250 U+00338 	≐̸
-nequiv; 	U+02262 	≢
-nesear; 	U+02928 	⤨
-nesim; 	U+02242 U+00338 	≂̸
-nexist; 	U+02204 	∄
-nexists; 	U+02204 	∄
-nfr; 	U+1D52B 	������
-ngE; 	U+02267 U+00338 	≧̸
-nge; 	U+02271 	≱
-ngeq; 	U+02271 	≱
-ngeqq; 	U+02267 U+00338 	≧̸
-ngeqslant; 	U+02A7E U+00338 	⩾̸
-nges; 	U+02A7E U+00338 	⩾̸
-ngsim; 	U+02275 	≵
-ngt; 	U+0226F 	≯
-ngtr; 	U+0226F 	≯
-nhArr; 	U+021CE 	⇎
-nharr; 	U+021AE 	↮
-nhpar; 	U+02AF2 	⫲
-ni; 	U+0220B 	∋
-nis; 	U+022FC 	⋼
-nisd; 	U+022FA 	⋺
-niv; 	U+0220B 	∋
-njcy; 	U+0045A 	њ
-nlArr; 	U+021CD 	⇍
-nlE; 	U+02266 U+00338 	≦̸
-nlarr; 	U+0219A 	↚
-nldr; 	U+02025 	‥
-nle; 	U+02270 	≰
-nleftarrow; 	U+0219A 	↚
-nleftrightarrow; 	U+021AE 	↮
-nleq; 	U+02270 	≰
-nleqq; 	U+02266 U+00338 	≦̸
-nleqslant; 	U+02A7D U+00338 	⩽̸
-nles; 	U+02A7D U+00338 	⩽̸
-nless; 	U+0226E 	≮
-nlsim; 	U+02274 	≴
-nlt; 	U+0226E 	≮
-nltri; 	U+022EA 	⋪
-nltrie; 	U+022EC 	⋬
-nmid; 	U+02224 	∤
-nopf; 	U+1D55F 	������
-not; 	U+000AC 	¬
-notin; 	U+02209 	∉
-notinE; 	U+022F9 U+00338 	⋹̸
-notindot; 	U+022F5 U+00338 	⋵̸
-notinva; 	U+02209 	∉
-notinvb; 	U+022F7 	⋷
-notinvc; 	U+022F6 	⋶
-notni; 	U+0220C 	∌
-notniva; 	U+0220C 	∌
-notnivb; 	U+022FE 	⋾
-notnivc; 	U+022FD 	⋽
-npar; 	U+02226 	∦
-nparallel; 	U+02226 	∦
-nparsl; 	U+02AFD U+020E5 	⫽⃥
-npart; 	U+02202 U+00338 	∂̸
-npolint; 	U+02A14 	⨔
-npr; 	U+02280 	⊀
-nprcue; 	U+022E0 	⋠
-npre; 	U+02AAF U+00338 	⪯̸
-nprec; 	U+02280 	⊀
-npreceq; 	U+02AAF U+00338 	⪯̸
-nrArr; 	U+021CF 	⇏
-nrarr; 	U+0219B 	↛
-nrarrc; 	U+02933 U+00338 	⤳̸
-nrarrw; 	U+0219D U+00338 	↝̸
-nrightarrow; 	U+0219B 	↛
-nrtri; 	U+022EB 	⋫
-nrtrie; 	U+022ED 	⋭
-nsc; 	U+02281 	⊁
-nsccue; 	U+022E1 	⋡
-nsce; 	U+02AB0 U+00338 	⪰̸
-nscr; 	U+1D4C3 	������
-nshortmid; 	U+02224 	∤
-nshortparallel; 	U+02226 	∦
-nsim; 	U+02241 	≁
-nsime; 	U+02244 	≄
-nsimeq; 	U+02244 	≄
-nsmid; 	U+02224 	∤
-nspar; 	U+02226 	∦
-nsqsube; 	U+022E2 	⋢
-nsqsupe; 	U+022E3 	⋣
-nsub; 	U+02284 	⊄
-nsubE; 	U+02AC5 U+00338 	⫅̸
-nsube; 	U+02288 	⊈
-nsubset; 	U+02282 U+020D2 	⊂⃒
-nsubseteq; 	U+02288 	⊈
-nsubseteqq; 	U+02AC5 U+00338 	⫅̸
-nsucc; 	U+02281 	⊁
-nsucceq; 	U+02AB0 U+00338 	⪰̸
-nsup; 	U+02285 	⊅
-nsupE; 	U+02AC6 U+00338 	⫆̸
-nsupe; 	U+02289 	⊉
-nsupset; 	U+02283 U+020D2 	⊃⃒
-nsupseteq; 	U+02289 	⊉
-nsupseteqq; 	U+02AC6 U+00338 	⫆̸
-ntgl; 	U+02279 	≹
-ntilde; 	U+000F1 	ñ
-ntlg; 	U+02278 	≸
-ntriangleleft; 	U+022EA 	⋪
-ntrianglelefteq; 	U+022EC 	⋬
-ntriangleright; 	U+022EB 	⋫
-ntrianglerighteq; 	U+022ED 	⋭
-nu; 	U+003BD 	ν
-num; 	U+00023 	#
-numero; 	U+02116 	№
-numsp; 	U+02007 	 
-nvDash; 	U+022AD 	⊭
-nvHarr; 	U+02904 	⤄
-nvap; 	U+0224D U+020D2 	≍⃒
-nvdash; 	U+022AC 	⊬
-nvge; 	U+02265 U+020D2 	≥⃒
-nvgt; 	U+0003E U+020D2 	>⃒
-nvinfin; 	U+029DE 	⧞
-nvlArr; 	U+02902 	⤂
-nvle; 	U+02264 U+020D2 	≤⃒
-nvlt; 	U+0003C U+020D2 	<⃒
-nvltrie; 	U+022B4 U+020D2 	⊴⃒
-nvrArr; 	U+02903 	⤃
-nvrtrie; 	U+022B5 U+020D2 	⊵⃒
-nvsim; 	U+0223C U+020D2 	∼⃒
-nwArr; 	U+021D6 	⇖
-nwarhk; 	U+02923 	⤣
-nwarr; 	U+02196 	↖
-nwarrow; 	U+02196 	↖
-nwnear; 	U+02927 	⤧
-oS; 	U+024C8 	Ⓢ
-oacute; 	U+000F3 	ó
-oast; 	U+0229B 	⊛
-ocir; 	U+0229A 	⊚
-ocirc; 	U+000F4 	ô
-ocy; 	U+0043E 	о
-odash; 	U+0229D 	⊝
-odblac; 	U+00151 	ő
-odiv; 	U+02A38 	⨸
-odot; 	U+02299 	⊙
-odsold; 	U+029BC 	⦼
-oelig; 	U+00153 	œ
-ofcir; 	U+029BF 	⦿
-ofr; 	U+1D52C 	������
-ogon; 	U+002DB 	˛
-ograve; 	U+000F2 	ò
-ogt; 	U+029C1 	⧁
-ohbar; 	U+029B5 	⦵
-ohm; 	U+003A9 	Ω
-oint; 	U+0222E 	∮
-olarr; 	U+021BA 	↺
-olcir; 	U+029BE 	⦾
-olcross; 	U+029BB 	⦻
-oline; 	U+0203E 	‾
-olt; 	U+029C0 	⧀
-omacr; 	U+0014D 	ō
-omega; 	U+003C9 	ω
-omicron; 	U+003BF 	ο
-omid; 	U+029B6 	⦶
-ominus; 	U+02296 	⊖
-oopf; 	U+1D560 	������
-opar; 	U+029B7 	⦷
-operp; 	U+029B9 	⦹
-oplus; 	U+02295 	⊕
-or; 	U+02228 	∨
-orarr; 	U+021BB 	↻
-ord; 	U+02A5D 	⩝
-order; 	U+02134 	ℴ
-orderof; 	U+02134 	ℴ
-ordf; 	U+000AA 	ª
-ordm; 	U+000BA 	º
-origof; 	U+022B6 	⊶
-oror; 	U+02A56 	⩖
-orslope; 	U+02A57 	⩗
-orv; 	U+02A5B 	⩛
-oscr; 	U+02134 	ℴ
-oslash; 	U+000F8 	ø
-osol; 	U+02298 	⊘
-otilde; 	U+000F5 	õ
-otimes; 	U+02297 	⊗
-otimesas; 	U+02A36 	⨶
-ouml; 	U+000F6 	ö
-ovbar; 	U+0233D 	⌽
-par; 	U+02225 	∥
-para; 	U+000B6 	¶
-parallel; 	U+02225 	∥
-parsim; 	U+02AF3 	⫳
-parsl; 	U+02AFD 	⫽
-part; 	U+02202 	∂
-pcy; 	U+0043F 	п
-percnt; 	U+00025 	%
-period; 	U+0002E 	.
-permil; 	U+02030 	‰
-perp; 	U+022A5 	⊥
-pertenk; 	U+02031 	‱
-pfr; 	U+1D52D 	������
-phi; 	U+003C6 	φ
-phiv; 	U+003D5 	ϕ
-phmmat; 	U+02133 	ℳ
-phone; 	U+0260E 	☎
-pi; 	U+003C0 	π
-pitchfork; 	U+022D4 	⋔
-piv; 	U+003D6 	ϖ
-planck; 	U+0210F 	ℏ
-planckh; 	U+0210E 	ℎ
-plankv; 	U+0210F 	ℏ
-plus; 	U+0002B 	+
-plusacir; 	U+02A23 	⨣
-plusb; 	U+0229E 	⊞
-pluscir; 	U+02A22 	⨢
-plusdo; 	U+02214 	∔
-plusdu; 	U+02A25 	⨥
-pluse; 	U+02A72 	⩲
-plusmn; 	U+000B1 	±
-plussim; 	U+02A26 	⨦
-plustwo; 	U+02A27 	⨧
-pm; 	U+000B1 	±
-pointint; 	U+02A15 	⨕
-popf; 	U+1D561 	������
-pound; 	U+000A3 	£
-pr; 	U+0227A 	≺
-prE; 	U+02AB3 	⪳
-prap; 	U+02AB7 	⪷
-prcue; 	U+0227C 	≼
-pre; 	U+02AAF 	⪯
-prec; 	U+0227A 	≺
-precapprox; 	U+02AB7 	⪷
-preccurlyeq; 	U+0227C 	≼
-preceq; 	U+02AAF 	⪯
-precnapprox; 	U+02AB9 	⪹
-precneqq; 	U+02AB5 	⪵
-precnsim; 	U+022E8 	⋨
-precsim; 	U+0227E 	≾
-prime; 	U+02032 	′
-primes; 	U+02119 	ℙ
-prnE; 	U+02AB5 	⪵
-prnap; 	U+02AB9 	⪹
-prnsim; 	U+022E8 	⋨
-prod; 	U+0220F 	∏
-profalar; 	U+0232E 	⌮
-profline; 	U+02312 	⌒
-profsurf; 	U+02313 	⌓
-prop; 	U+0221D 	∝
-propto; 	U+0221D 	∝
-prsim; 	U+0227E 	≾
-prurel; 	U+022B0 	⊰
-pscr; 	U+1D4C5 	������
-psi; 	U+003C8 	ψ
-puncsp; 	U+02008 	 
-qfr; 	U+1D52E 	������
-qint; 	U+02A0C 	⨌
-qopf; 	U+1D562 	������
-qprime; 	U+02057 	⁗
-qscr; 	U+1D4C6 	������
-quaternions; 	U+0210D 	ℍ
-quatint; 	U+02A16 	⨖
-quest; 	U+0003F 	?
-questeq; 	U+0225F 	≟
-quot; 	U+00022 	"
-rAarr; 	U+021DB 	⇛
-rArr; 	U+021D2 	⇒
-rAtail; 	U+0291C 	⤜
-rBarr; 	U+0290F 	⤏
-rHar; 	U+02964 	⥤
-race; 	U+0223D U+00331 	∽̱
-racute; 	U+00155 	ŕ
-radic; 	U+0221A 	√
-raemptyv; 	U+029B3 	⦳
-rang; 	U+027E9 	〉
-rangd; 	U+02992 	⦒
-range; 	U+029A5 	⦥
-rangle; 	U+027E9 	〉
-raquo; 	U+000BB 	»
-rarr; 	U+02192 	→
-rarrap; 	U+02975 	⥵
-rarrb; 	U+021E5 	⇥
-rarrbfs; 	U+02920 	⤠
-rarrc; 	U+02933 	⤳
-rarrfs; 	U+0291E 	⤞
-rarrhk; 	U+021AA 	↪
-rarrlp; 	U+021AC 	↬
-rarrpl; 	U+02945 	⥅
-rarrsim; 	U+02974 	⥴
-rarrtl; 	U+021A3 	↣
-rarrw; 	U+0219D 	↝
-ratail; 	U+0291A 	⤚
-ratio; 	U+02236 	∶
-rationals; 	U+0211A 	ℚ
-rbarr; 	U+0290D 	⤍
-rbbrk; 	U+02773 	❳
-rbrace; 	U+0007D 	}
-rbrack; 	U+0005D 	]
-rbrke; 	U+0298C 	⦌
-rbrksld; 	U+0298E 	⦎
-rbrkslu; 	U+02990 	⦐
-rcaron; 	U+00159 	ř
-rcedil; 	U+00157 	ŗ
-rceil; 	U+02309 	⌉
-rcub; 	U+0007D 	}
-rcy; 	U+00440 	р
-rdca; 	U+02937 	⤷
-rdldhar; 	U+02969 	⥩
-rdquo; 	U+0201D 	”
-rdquor; 	U+0201D 	”
-rdsh; 	U+021B3 	↳
-real; 	U+0211C 	ℜ
-realine; 	U+0211B 	ℛ
-realpart; 	U+0211C 	ℜ
-reals; 	U+0211D 	ℝ
-rect; 	U+025AD 	▭
-reg; 	U+000AE 	®
-rfisht; 	U+0297D 	⥽
-rfloor; 	U+0230B 	⌋
-rfr; 	U+1D52F 	������
-rhard; 	U+021C1 	⇁
-rharu; 	U+021C0 	⇀
-rharul; 	U+0296C 	⥬
-rho; 	U+003C1 	ρ
-rhov; 	U+003F1 	ϱ
-rightarrow; 	U+02192 	→
-rightarrowtail; 	U+021A3 	↣
-rightharpoondown; 	U+021C1 	⇁
-rightharpoonup; 	U+021C0 	⇀
-rightleftarrows; 	U+021C4 	⇄
-rightleftharpoons; 	U+021CC 	⇌
-rightrightarrows; 	U+021C9 	⇉
-rightsquigarrow; 	U+0219D 	↝
-rightthreetimes; 	U+022CC 	⋌
-ring; 	U+002DA 	˚
-risingdotseq; 	U+02253 	≓
-rlarr; 	U+021C4 	⇄
-rlhar; 	U+021CC 	⇌
-rlm; 	U+0200F 	‏
-rmoust; 	U+023B1 	⎱
-rmoustache; 	U+023B1 	⎱
-rnmid; 	U+02AEE 	⫮
-roang; 	U+027ED 	⟭
-roarr; 	U+021FE 	⇾
-robrk; 	U+027E7 	⟧
-ropar; 	U+02986 	⦆
-ropf; 	U+1D563 	������
-roplus; 	U+02A2E 	⨮
-rotimes; 	U+02A35 	⨵
-rpar; 	U+00029 	)
-rpargt; 	U+02994 	⦔
-rppolint; 	U+02A12 	⨒
-rrarr; 	U+021C9 	⇉
-rsaquo; 	U+0203A 	›
-rscr; 	U+1D4C7 	������
-rsh; 	U+021B1 	↱
-rsqb; 	U+0005D 	]
-rsquo; 	U+02019 	’
-rsquor; 	U+02019 	’
-rthree; 	U+022CC 	⋌
-rtimes; 	U+022CA 	⋊
-rtri; 	U+025B9 	▹
-rtrie; 	U+022B5 	⊵
-rtrif; 	U+025B8 	▸
-rtriltri; 	U+029CE 	⧎
-ruluhar; 	U+02968 	⥨
-rx; 	U+0211E 	℞
-sacute; 	U+0015B 	ś
-sbquo; 	U+0201A 	‚
-sc; 	U+0227B 	≻
-scE; 	U+02AB4 	⪴
-scap; 	U+02AB8 	⪸
-scaron; 	U+00161 	š
-sccue; 	U+0227D 	≽
-sce; 	U+02AB0 	⪰
-scedil; 	U+0015F 	ş
-scirc; 	U+0015D 	ŝ
-scnE; 	U+02AB6 	⪶
-scnap; 	U+02ABA 	⪺
-scnsim; 	U+022E9 	⋩
-scpolint; 	U+02A13 	⨓
-scsim; 	U+0227F 	≿
-scy; 	U+00441 	с
-sdot; 	U+022C5 	⋅
-sdotb; 	U+022A1 	⊡
-sdote; 	U+02A66 	⩦
-seArr; 	U+021D8 	⇘
-searhk; 	U+02925 	⤥
-searr; 	U+02198 	↘
-searrow; 	U+02198 	↘
-sect; 	U+000A7 	§
-semi; 	U+0003B 	;
-seswar; 	U+02929 	⤩
-setminus; 	U+02216 	∖
-setmn; 	U+02216 	∖
-sext; 	U+02736 	✶
-sfr; 	U+1D530 	������
-sfrown; 	U+02322 	⌢
-sharp; 	U+0266F 	♯
-shchcy; 	U+00449 	щ
-shcy; 	U+00448 	ш
-shortmid; 	U+02223 	∣
-shortparallel; 	U+02225 	∥
-shy; 	U+000AD 	­
-sigma; 	U+003C3 	σ
-sigmaf; 	U+003C2 	ς
-sigmav; 	U+003C2 	ς
-sim; 	U+0223C 	∼
-simdot; 	U+02A6A 	⩪
-sime; 	U+02243 	≃
-simeq; 	U+02243 	≃
-simg; 	U+02A9E 	⪞
-simgE; 	U+02AA0 	⪠
-siml; 	U+02A9D 	⪝
-simlE; 	U+02A9F 	⪟
-simne; 	U+02246 	≆
-simplus; 	U+02A24 	⨤
-simrarr; 	U+02972 	⥲
-slarr; 	U+02190 	←
-smallsetminus; 	U+02216 	∖
-smashp; 	U+02A33 	⨳
-smeparsl; 	U+029E4 	⧤
-smid; 	U+02223 	∣
-smile; 	U+02323 	⌣
-smt; 	U+02AAA 	⪪
-smte; 	U+02AAC 	⪬
-smtes; 	U+02AAC U+0FE00 	⪬︀
-softcy; 	U+0044C 	ь
-sol; 	U+0002F 	/
-solb; 	U+029C4 	⧄
-solbar; 	U+0233F 	⌿
-sopf; 	U+1D564 	������
-spades; 	U+02660 	♠
-spadesuit; 	U+02660 	♠
-spar; 	U+02225 	∥
-sqcap; 	U+02293 	⊓
-sqcaps; 	U+02293 U+0FE00 	⊓︀
-sqcup; 	U+02294 	⊔
-sqcups; 	U+02294 U+0FE00 	⊔︀
-sqsub; 	U+0228F 	⊏
-sqsube; 	U+02291 	⊑
-sqsubset; 	U+0228F 	⊏
-sqsubseteq; 	U+02291 	⊑
-sqsup; 	U+02290 	⊐
-sqsupe; 	U+02292 	⊒
-sqsupset; 	U+02290 	⊐
-sqsupseteq; 	U+02292 	⊒
-squ; 	U+025A1 	□
-square; 	U+025A1 	□
-squarf; 	U+025AA 	▪
-squf; 	U+025AA 	▪
-srarr; 	U+02192 	→
-sscr; 	U+1D4C8 	������
-ssetmn; 	U+02216 	∖
-ssmile; 	U+02323 	⌣
-sstarf; 	U+022C6 	⋆
-star; 	U+02606 	☆
-starf; 	U+02605 	★
-straightepsilon; 	U+003F5 	ϵ
-straightphi; 	U+003D5 	ϕ
-strns; 	U+000AF 	¯
-sub; 	U+02282 	⊂
-subE; 	U+02AC5 	⫅
-subdot; 	U+02ABD 	⪽
-sube; 	U+02286 	⊆
-subedot; 	U+02AC3 	⫃
-submult; 	U+02AC1 	⫁
-subnE; 	U+02ACB 	⫋
-subne; 	U+0228A 	⊊
-subplus; 	U+02ABF 	⪿
-subrarr; 	U+02979 	⥹
-subset; 	U+02282 	⊂
-subseteq; 	U+02286 	⊆
-subseteqq; 	U+02AC5 	⫅
-subsetneq; 	U+0228A 	⊊
-subsetneqq; 	U+02ACB 	⫋
-subsim; 	U+02AC7 	⫇
-subsub; 	U+02AD5 	⫕
-subsup; 	U+02AD3 	⫓
-succ; 	U+0227B 	≻
-succapprox; 	U+02AB8 	⪸
-succcurlyeq; 	U+0227D 	≽
-succeq; 	U+02AB0 	⪰
-succnapprox; 	U+02ABA 	⪺
-succneqq; 	U+02AB6 	⪶
-succnsim; 	U+022E9 	⋩
-succsim; 	U+0227F 	≿
-sum; 	U+02211 	∑
-sung; 	U+0266A 	♪
-sup; 	U+02283 	⊃
-sup1; 	U+000B9 	¹
-sup2; 	U+000B2 	²
-sup3; 	U+000B3 	³
-supE; 	U+02AC6 	⫆
-supdot; 	U+02ABE 	⪾
-supdsub; 	U+02AD8 	⫘
-supe; 	U+02287 	⊇
-supedot; 	U+02AC4 	⫄
-suphsol; 	U+027C9 	⟉
-suphsub; 	U+02AD7 	⫗
-suplarr; 	U+0297B 	⥻
-supmult; 	U+02AC2 	⫂
-supnE; 	U+02ACC 	⫌
-supne; 	U+0228B 	⊋
-supplus; 	U+02AC0 	⫀
-supset; 	U+02283 	⊃
-supseteq; 	U+02287 	⊇
-supseteqq; 	U+02AC6 	⫆
-supsetneq; 	U+0228B 	⊋
-supsetneqq; 	U+02ACC 	⫌
-supsim; 	U+02AC8 	⫈
-supsub; 	U+02AD4 	⫔
-supsup; 	U+02AD6 	⫖
-swArr; 	U+021D9 	⇙
-swarhk; 	U+02926 	⤦
-swarr; 	U+02199 	↙
-swarrow; 	U+02199 	↙
-swnwar; 	U+0292A 	⤪
-szlig; 	U+000DF 	ß
-target; 	U+02316 	⌖
-tau; 	U+003C4 	τ
-tbrk; 	U+023B4 	⎴
-tcaron; 	U+00165 	ť
-tcedil; 	U+00163 	ţ
-tcy; 	U+00442 	т
-tdot; 	U+020DB 	◌⃛
-telrec; 	U+02315 	⌕
-tfr; 	U+1D531 	������
-there4; 	U+02234 	∴
-therefore; 	U+02234 	∴
-theta; 	U+003B8 	θ
-thetasym; 	U+003D1 	ϑ
-thetav; 	U+003D1 	ϑ
-thickapprox; 	U+02248 	≈
-thicksim; 	U+0223C 	∼
-thinsp; 	U+02009 	 
-thkap; 	U+02248 	≈
-thksim; 	U+0223C 	∼
-thorn; 	U+000FE 	þ
-tilde; 	U+002DC 	˜
-times; 	U+000D7 	×
-timesb; 	U+022A0 	⊠
-timesbar; 	U+02A31 	⨱
-timesd; 	U+02A30 	⨰
-tint; 	U+0222D 	∭
-toea; 	U+02928 	⤨
-top; 	U+022A4 	⊤
-topbot; 	U+02336 	⌶
-topcir; 	U+02AF1 	⫱
-topf; 	U+1D565 	������
-topfork; 	U+02ADA 	⫚
-tosa; 	U+02929 	⤩
-tprime; 	U+02034 	‴
-trade; 	U+02122 	™
-triangle; 	U+025B5 	▵
-triangledown; 	U+025BF 	▿
-triangleleft; 	U+025C3 	◃
-trianglelefteq; 	U+022B4 	⊴
-triangleq; 	U+0225C 	≜
-triangleright; 	U+025B9 	▹
-trianglerighteq; 	U+022B5 	⊵
-tridot; 	U+025EC 	◬
-trie; 	U+0225C 	≜
-triminus; 	U+02A3A 	⨺
-triplus; 	U+02A39 	⨹
-trisb; 	U+029CD 	⧍
-tritime; 	U+02A3B 	⨻
-trpezium; 	U+023E2 	⏢
-tscr; 	U+1D4C9 	������
-tscy; 	U+00446 	ц
-tshcy; 	U+0045B 	ћ
-tstrok; 	U+00167 	ŧ
-twixt; 	U+0226C 	≬
-twoheadleftarrow; 	U+0219E 	↞
-twoheadrightarrow; 	U+021A0 	↠
-uArr; 	U+021D1 	⇑
-uHar; 	U+02963 	⥣
-uacute; 	U+000FA 	ú
-uarr; 	U+02191 	↑
-ubrcy; 	U+0045E 	ў
-ubreve; 	U+0016D 	ŭ
-ucirc; 	U+000FB 	û
-ucy; 	U+00443 	у
-udarr; 	U+021C5 	⇅
-udblac; 	U+00171 	ű
-udhar; 	U+0296E 	⥮
-ufisht; 	U+0297E 	⥾
-ufr; 	U+1D532 	������
-ugrave; 	U+000F9 	ù
-uharl; 	U+021BF 	↿
-uharr; 	U+021BE 	↾
-uhblk; 	U+02580 	▀
-ulcorn; 	U+0231C 	⌜
-ulcorner; 	U+0231C 	⌜
-ulcrop; 	U+0230F 	⌏
-ultri; 	U+025F8 	◸
-umacr; 	U+0016B 	ū
-uml; 	U+000A8 	¨
-uogon; 	U+00173 	ų
-uopf; 	U+1D566 	������
-uparrow; 	U+02191 	↑
-updownarrow; 	U+02195 	↕
-upharpoonleft; 	U+021BF 	↿
-upharpoonright; 	U+021BE 	↾
-uplus; 	U+0228E 	⊎
-upsi; 	U+003C5 	υ
-upsih; 	U+003D2 	ϒ
-upsilon; 	U+003C5 	υ
-upuparrows; 	U+021C8 	⇈
-urcorn; 	U+0231D 	⌝
-urcorner; 	U+0231D 	⌝
-urcrop; 	U+0230E 	⌎
-uring; 	U+0016F 	ů
-urtri; 	U+025F9 	◹
-uscr; 	U+1D4CA 	������
-utdot; 	U+022F0 	⋰
-utilde; 	U+00169 	ũ
-utri; 	U+025B5 	▵
-utrif; 	U+025B4 	▴
-uuarr; 	U+021C8 	⇈
-uuml; 	U+000FC 	ü
-uwangle; 	U+029A7 	⦧
-vArr; 	U+021D5 	⇕
-vBar; 	U+02AE8 	⫨
-vBarv; 	U+02AE9 	⫩
-vDash; 	U+022A8 	⊨
-vangrt; 	U+0299C 	⦜
-varepsilon; 	U+003F5 	ϵ
-varkappa; 	U+003F0 	ϰ
-varnothing; 	U+02205 	∅
-varphi; 	U+003D5 	ϕ
-varpi; 	U+003D6 	ϖ
-varpropto; 	U+0221D 	∝
-varr; 	U+02195 	↕
-varrho; 	U+003F1 	ϱ
-varsigma; 	U+003C2 	ς
-varsubsetneq; 	U+0228A U+0FE00 	⊊︀
-varsubsetneqq; 	U+02ACB U+0FE00 	⫋︀
-varsupsetneq; 	U+0228B U+0FE00 	⊋︀
-varsupsetneqq; 	U+02ACC U+0FE00 	⫌︀
-vartheta; 	U+003D1 	ϑ
-vartriangleleft; 	U+022B2 	⊲
-vartriangleright; 	U+022B3 	⊳
-vcy; 	U+00432 	в
-vdash; 	U+022A2 	⊢
-vee; 	U+02228 	∨
-veebar; 	U+022BB 	⊻
-veeeq; 	U+0225A 	≚
-vellip; 	U+022EE 	⋮
-verbar; 	U+0007C 	|
-vert; 	U+0007C 	|
-vfr; 	U+1D533 	������
-vltri; 	U+022B2 	⊲
-vnsub; 	U+02282 U+020D2 	⊂⃒
-vnsup; 	U+02283 U+020D2 	⊃⃒
-vopf; 	U+1D567 	������
-vprop; 	U+0221D 	∝
-vrtri; 	U+022B3 	⊳
-vscr; 	U+1D4CB 	������
-vsubnE; 	U+02ACB U+0FE00 	⫋︀
-vsubne; 	U+0228A U+0FE00 	⊊︀
-vsupnE; 	U+02ACC U+0FE00 	⫌︀
-vsupne; 	U+0228B U+0FE00 	⊋︀
-vzigzag; 	U+0299A 	⦚
-wcirc; 	U+00175 	ŵ
-wedbar; 	U+02A5F 	⩟
-wedge; 	U+02227 	∧
-wedgeq; 	U+02259 	≙
-weierp; 	U+02118 	℘
-wfr; 	U+1D534 	������
-wopf; 	U+1D568 	������
-wp; 	U+02118 	℘
-wr; 	U+02240 	≀
-wreath; 	U+02240 	≀
-wscr; 	U+1D4CC 	������
-xcap; 	U+022C2 	⋂
-xcirc; 	U+025EF 	◯
-xcup; 	U+022C3 	⋃
-xdtri; 	U+025BD 	▽
-xfr; 	U+1D535 	������
-xhArr; 	U+027FA 	⟺
-xharr; 	U+027F7 	⟷
-xi; 	U+003BE 	ξ
-xlArr; 	U+027F8 	⟸
-xlarr; 	U+027F5 	⟵
-xmap; 	U+027FC 	⟼
-xnis; 	U+022FB 	⋻
-xodot; 	U+02A00 	⨀
-xopf; 	U+1D569 	������
-xoplus; 	U+02A01 	⨁
-xotime; 	U+02A02 	⨂
-xrArr; 	U+027F9 	⟹
-xrarr; 	U+027F6 	⟶
-xscr; 	U+1D4CD 	������
-xsqcup; 	U+02A06 	⨆
-xuplus; 	U+02A04 	⨄
-xutri; 	U+025B3 	△
-xvee; 	U+022C1 	⋁
-xwedge; 	U+022C0 	⋀
-yacute; 	U+000FD 	ý
-yacy; 	U+0044F 	я
-ycirc; 	U+00177 	ŷ
-ycy; 	U+0044B 	ы
-yen; 	U+000A5 	¥
-yfr; 	U+1D536 	������
-yicy; 	U+00457 	ї
-yopf; 	U+1D56A 	������
-yscr; 	U+1D4CE 	������
-yucy; 	U+0044E 	ю
-yuml; 	U+000FF 	ÿ
-zacute; 	U+0017A 	ź
-zcaron; 	U+0017E 	ž
-zcy; 	U+00437 	з
-zdot; 	U+0017C 	ż
-zeetrf; 	U+02128 	ℨ
-zeta; 	U+003B6 	ζ
-zfr; 	U+1D537 	������
-zhcy; 	U+00436 	ж
-zigrarr; 	U+021DD 	⇝
-zopf; 	U+1D56B 	������
-zscr; 	U+1D4CF 	������
-zwj; 	U+0200D 	‍
-zwnj; 	U+0200C 	‌
-AElig 	U+000C6 	Æ
-AMP 	U+00026 	&
-Aacute 	U+000C1 	Á
-Acirc 	U+000C2 	Â
-Agrave 	U+000C0 	À
-Aring 	U+000C5 	Å
-Atilde 	U+000C3 	Ã
-Auml 	U+000C4 	Ä
-COPY 	U+000A9 	©
-Ccedil 	U+000C7 	Ç
-ETH 	U+000D0 	Ð
-Eacute 	U+000C9 	É
-Ecirc 	U+000CA 	Ê
-Egrave 	U+000C8 	È
-Euml 	U+000CB 	Ë
-GT 	U+0003E 	>
-Iacute 	U+000CD 	Í
-Icirc 	U+000CE 	Î
-Igrave 	U+000CC 	Ì
-Iuml 	U+000CF 	Ï
-LT 	U+0003C 	<
-Ntilde 	U+000D1 	Ñ
-Oacute 	U+000D3 	Ó
-Ocirc 	U+000D4 	Ô
-Ograve 	U+000D2 	Ò
-Oslash 	U+000D8 	Ø
-Otilde 	U+000D5 	Õ
-Ouml 	U+000D6 	Ö
-QUOT 	U+00022 	"
-REG 	U+000AE 	®
-THORN 	U+000DE 	Þ
-Uacute 	U+000DA 	Ú
-Ucirc 	U+000DB 	Û
-Ugrave 	U+000D9 	Ù
-Uuml 	U+000DC 	Ü
-Yacute 	U+000DD 	Ý
-aacute 	U+000E1 	á
-acirc 	U+000E2 	â
-acute 	U+000B4 	´
-aelig 	U+000E6 	æ
-agrave 	U+000E0 	à
-amp 	U+00026 	&
-aring 	U+000E5 	å
-atilde 	U+000E3 	ã
-auml 	U+000E4 	ä
-brvbar 	U+000A6 	¦
-ccedil 	U+000E7 	ç
-cedil 	U+000B8 	¸
-cent 	U+000A2 	¢
-copy 	U+000A9 	©
-curren 	U+000A4 	¤
-deg 	U+000B0 	°
-divide 	U+000F7 	÷
-eacute 	U+000E9 	é
-ecirc 	U+000EA 	ê
-egrave 	U+000E8 	è
-eth 	U+000F0 	ð
-euml 	U+000EB 	ë
-frac12 	U+000BD 	½
-frac14 	U+000BC 	¼
-frac34 	U+000BE 	¾
-gt 	U+0003E 	>
-iacute 	U+000ED 	í
-icirc 	U+000EE 	î
-iexcl 	U+000A1 	¡
-igrave 	U+000EC 	ì
-iquest 	U+000BF 	¿
-iuml 	U+000EF 	ï
-laquo 	U+000AB 	«
-lt 	U+0003C 	<
-macr 	U+000AF 	¯
-micro 	U+000B5 	µ
-middot 	U+000B7 	·
-nbsp 	U+000A0 	 
-not 	U+000AC 	¬
-ntilde 	U+000F1 	ñ
-oacute 	U+000F3 	ó
-ocirc 	U+000F4 	ô
-ograve 	U+000F2 	ò
-ordf 	U+000AA 	ª
-ordm 	U+000BA 	º
-oslash 	U+000F8 	ø
-otilde 	U+000F5 	õ
-ouml 	U+000F6 	ö
-para 	U+000B6 	¶
-plusmn 	U+000B1 	±
-pound 	U+000A3 	£
-quot 	U+00022 	"
-raquo 	U+000BB 	»
-reg 	U+000AE 	®
-sect 	U+000A7 	§
-shy 	U+000AD 	­
-sup1 	U+000B9 	¹
-sup2 	U+000B2 	²
-sup3 	U+000B3 	³
-szlig 	U+000DF 	ß
-thorn 	U+000FE 	þ
-times 	U+000D7 	×
-uacute 	U+000FA 	ú
-ucirc 	U+000FB 	û
-ugrave 	U+000F9 	ù
-uml 	U+000A8 	¨
-uuml 	U+000FC 	ü
-yacute 	U+000FD 	ý
-yen 	U+000A5 	¥
-yuml 	U+000FF 	ÿ
+Name    Character(s)    Glyph
+AElig;  U+000C6     Æ
+AMP;    U+00026     &
+Aacute;     U+000C1     Á
+Abreve;     U+00102     Ă
+Acirc;  U+000C2     Â
+Acy;    U+00410     А
+Afr;    U+1D504     ������
+Agrave;     U+000C0     À
+Alpha;  U+00391     Α
+Amacr;  U+00100     Ā
+And;    U+02A53     ⩓
+Aogon;  U+00104     Ą
+Aopf;   U+1D538     ������
+ApplyFunction;  U+02061     ⁡
+Aring;  U+000C5     Å
+Ascr;   U+1D49C     ������
+Assign;     U+02254     ≔
+Atilde;     U+000C3     Ã
+Auml;   U+000C4     Ä
+Backslash;  U+02216     ∖
+Barv;   U+02AE7     ⫧
+Barwed;     U+02306     ⌆
+Bcy;    U+00411     Б
+Because;    U+02235     ∵
+Bernoullis;     U+0212C     ℬ
+Beta;   U+00392     Β
+Bfr;    U+1D505     ������
+Bopf;   U+1D539     ������
+Breve;  U+002D8     ˘
+Bscr;   U+0212C     ℬ
+Bumpeq;     U+0224E     ≎
+CHcy;   U+00427     Ч
+COPY;   U+000A9     ©
+Cacute;     U+00106     Ć
+Cap;    U+022D2     ⋒
+CapitalDifferentialD;   U+02145     ⅅ
+Cayleys;    U+0212D     ℭ
+Ccaron;     U+0010C     Č
+Ccedil;     U+000C7     Ç
+Ccirc;  U+00108     Ĉ
+Cconint;    U+02230     ∰
+Cdot;   U+0010A     Ċ
+Cedilla;    U+000B8     ¸
+CenterDot;  U+000B7     ·
+Cfr;    U+0212D     ℭ
+Chi;    U+003A7     Χ
+CircleDot;  U+02299     ⊙
+CircleMinus;    U+02296     ⊖
+CirclePlus;     U+02295     ⊕
+CircleTimes;    U+02297     ⊗
+ClockwiseContourIntegral;   U+02232     ∲
+CloseCurlyDoubleQuote;  U+0201D     ”
+CloseCurlyQuote;    U+02019     ’
+Colon;  U+02237     ∷
+Colone;     U+02A74     ⩴
+Congruent;  U+02261     ≡
+Conint;     U+0222F     ∯
+ContourIntegral;    U+0222E     ∮
+Copf;   U+02102     ℂ
+Coproduct;  U+02210     ∐
+CounterClockwiseContourIntegral;    U+02233     ∳
+Cross;  U+02A2F     ⨯
+Cscr;   U+1D49E     ������
+Cup;    U+022D3     ⋓
+CupCap;     U+0224D     ≍
+DD;     U+02145     ⅅ
+DDotrahd;   U+02911     ⤑
+DJcy;   U+00402     Ђ
+DScy;   U+00405     Ѕ
+DZcy;   U+0040F     Џ
+Dagger;     U+02021     ‡
+Darr;   U+021A1     ↡
+Dashv;  U+02AE4     ⫤
+Dcaron;     U+0010E     Ď
+Dcy;    U+00414     Д
+Del;    U+02207     ∇
+Delta;  U+00394     Δ
+Dfr;    U+1D507     ������
+DiacriticalAcute;   U+000B4     ´
+DiacriticalDot;     U+002D9     ˙
+DiacriticalDoubleAcute;     U+002DD     ˝
+DiacriticalGrave;   U+00060     `
+DiacriticalTilde;   U+002DC     ˜
+Diamond;    U+022C4     ⋄
+DifferentialD;  U+02146     ⅆ
+Dopf;   U+1D53B     ������
+Dot;    U+000A8     ¨
+DotDot;     U+020DC     ◌⃜
+DotEqual;   U+02250     ≐
+DoubleContourIntegral;  U+0222F     ∯
+DoubleDot;  U+000A8     ¨
+DoubleDownArrow;    U+021D3     ⇓
+DoubleLeftArrow;    U+021D0     ⇐
+DoubleLeftRightArrow;   U+021D4     ⇔
+DoubleLeftTee;  U+02AE4     ⫤
+DoubleLongLeftArrow;    U+027F8     ⟸
+DoubleLongLeftRightArrow;   U+027FA     ⟺
+DoubleLongRightArrow;   U+027F9     ⟹
+DoubleRightArrow;   U+021D2     ⇒
+DoubleRightTee;     U+022A8     ⊨
+DoubleUpArrow;  U+021D1     ⇑
+DoubleUpDownArrow;  U+021D5     ⇕
+DoubleVerticalBar;  U+02225     ∥
+DownArrow;  U+02193     ↓
+DownArrowBar;   U+02913     ⤓
+DownArrowUpArrow;   U+021F5     ⇵
+DownBreve;  U+00311     ◌̑
+DownLeftRightVector;    U+02950     ⥐
+DownLeftTeeVector;  U+0295E     ⥞
+DownLeftVector;     U+021BD     ↽
+DownLeftVectorBar;  U+02956     ⥖
+DownRightTeeVector;     U+0295F     ⥟
+DownRightVector;    U+021C1     ⇁
+DownRightVectorBar;     U+02957     ⥗
+DownTee;    U+022A4     ⊤
+DownTeeArrow;   U+021A7     ↧
+Downarrow;  U+021D3     ⇓
+Dscr;   U+1D49F     ������
+Dstrok;     U+00110     Đ
+ENG;    U+0014A     Ŋ
+ETH;    U+000D0     Ð
+Eacute;     U+000C9     É
+Ecaron;     U+0011A     Ě
+Ecirc;  U+000CA     Ê
+Ecy;    U+0042D     Э
+Edot;   U+00116     Ė
+Efr;    U+1D508     ������
+Egrave;     U+000C8     È
+Element;    U+02208     ∈
+Emacr;  U+00112     Ē
+EmptySmallSquare;   U+025FB     ◻
+EmptyVerySmallSquare;   U+025AB     ▫
+Eogon;  U+00118     Ę
+Eopf;   U+1D53C     ������
+Epsilon;    U+00395     Ε
+Equal;  U+02A75     ⩵
+EqualTilde;     U+02242     ≂
+Equilibrium;    U+021CC     ⇌
+Escr;   U+02130     ℰ
+Esim;   U+02A73     ⩳
+Eta;    U+00397     Η
+Euml;   U+000CB     Ë
+Exists;     U+02203     ∃
+ExponentialE;   U+02147     ⅇ
+Fcy;    U+00424     Ф
+Ffr;    U+1D509     ������
+FilledSmallSquare;  U+025FC     ◼
+FilledVerySmallSquare;  U+025AA     ▪
+Fopf;   U+1D53D     ������
+ForAll;     U+02200     ∀
+Fouriertrf;     U+02131     ℱ
+Fscr;   U+02131     ℱ
+GJcy;   U+00403     Ѓ
+GT;     U+0003E     >
+Gamma;  U+00393     Γ
+Gammad;     U+003DC     Ϝ
+Gbreve;     U+0011E     Ğ
+Gcedil;     U+00122     Ģ
+Gcirc;  U+0011C     Ĝ
+Gcy;    U+00413     Г
+Gdot;   U+00120     Ġ
+Gfr;    U+1D50A     ������
+Gg;     U+022D9     ⋙
+Gopf;   U+1D53E     ������
+GreaterEqual;   U+02265     ≥
+GreaterEqualLess;   U+022DB     ⋛
+GreaterFullEqual;   U+02267     ≧
+GreaterGreater;     U+02AA2     ⪢
+GreaterLess;    U+02277     ≷
+GreaterSlantEqual;  U+02A7E     ⩾
+GreaterTilde;   U+02273     ≳
+Gscr;   U+1D4A2     ������
+Gt;     U+0226B     ≫
+HARDcy;     U+0042A     Ъ
+Hacek;  U+002C7     ˇ
+Hat;    U+0005E     ^
+Hcirc;  U+00124     Ĥ
+Hfr;    U+0210C     ℌ
+HilbertSpace;   U+0210B     ℋ
+Hopf;   U+0210D     ℍ
+HorizontalLine;     U+02500     ─
+Hscr;   U+0210B     ℋ
+Hstrok;     U+00126     Ħ
+HumpDownHump;   U+0224E     ≎
+HumpEqual;  U+0224F     ≏
+IEcy;   U+00415     Е
+IJlig;  U+00132     Ĳ
+IOcy;   U+00401     Ё
+Iacute;     U+000CD     Í
+Icirc;  U+000CE     Î
+Icy;    U+00418     И
+Idot;   U+00130     İ
+Ifr;    U+02111     ℑ
+Igrave;     U+000CC     Ì
+Im;     U+02111     ℑ
+Imacr;  U+0012A     Ī
+ImaginaryI;     U+02148     ⅈ
+Implies;    U+021D2     ⇒
+Int;    U+0222C     ∬
+Integral;   U+0222B     ∫
+Intersection;   U+022C2     ⋂
+InvisibleComma;     U+02063     ⁣
+InvisibleTimes;     U+02062     ⁢
+Iogon;  U+0012E     Į
+Iopf;   U+1D540     ������
+Iota;   U+00399     Ι
+Iscr;   U+02110     ℐ
+Itilde;     U+00128     Ĩ
+Iukcy;  U+00406     І
+Iuml;   U+000CF     Ï
+Jcirc;  U+00134     Ĵ
+Jcy;    U+00419     Й
+Jfr;    U+1D50D     ������
+Jopf;   U+1D541     ������
+Jscr;   U+1D4A5     ������
+Jsercy;     U+00408     Ј
+Jukcy;  U+00404     Є
+KHcy;   U+00425     Х
+KJcy;   U+0040C     Ќ
+Kappa;  U+0039A     Κ
+Kcedil;     U+00136     Ķ
+Kcy;    U+0041A     К
+Kfr;    U+1D50E     ������
+Kopf;   U+1D542     ������
+Kscr;   U+1D4A6     ������
+LJcy;   U+00409     Љ
+LT;     U+0003C     <
+Lacute;     U+00139     Ĺ
+Lambda;     U+0039B     Λ
+Lang;   U+027EA     ⟪
+Laplacetrf;     U+02112     ℒ
+Larr;   U+0219E     ↞
+Lcaron;     U+0013D     Ľ
+Lcedil;     U+0013B     Ļ
+Lcy;    U+0041B     Л
+LeftAngleBracket;   U+027E8     〈
+LeftArrow;  U+02190     ←
+LeftArrowBar;   U+021E4     ⇤
+LeftArrowRightArrow;    U+021C6     ⇆
+LeftCeiling;    U+02308     ⌈
+LeftDoubleBracket;  U+027E6     ⟦
+LeftDownTeeVector;  U+02961     ⥡
+LeftDownVector;     U+021C3     ⇃
+LeftDownVectorBar;  U+02959     ⥙
+LeftFloor;  U+0230A     ⌊
+LeftRightArrow;     U+02194     ↔
+LeftRightVector;    U+0294E     ⥎
+LeftTee;    U+022A3     ⊣
+LeftTeeArrow;   U+021A4     ↤
+LeftTeeVector;  U+0295A     ⥚
+LeftTriangle;   U+022B2     ⊲
+LeftTriangleBar;    U+029CF     ⧏
+LeftTriangleEqual;  U+022B4     ⊴
+LeftUpDownVector;   U+02951     ⥑
+LeftUpTeeVector;    U+02960     ⥠
+LeftUpVector;   U+021BF     ↿
+LeftUpVectorBar;    U+02958     ⥘
+LeftVector;     U+021BC     ↼
+LeftVectorBar;  U+02952     ⥒
+Leftarrow;  U+021D0     ⇐
+Leftrightarrow;     U+021D4     ⇔
+LessEqualGreater;   U+022DA     ⋚
+LessFullEqual;  U+02266     ≦
+LessGreater;    U+02276     ≶
+LessLess;   U+02AA1     ⪡
+LessSlantEqual;     U+02A7D     ⩽
+LessTilde;  U+02272     ≲
+Lfr;    U+1D50F     ������
+Ll;     U+022D8     ⋘
+Lleftarrow;     U+021DA     ⇚
+Lmidot;     U+0013F     Ŀ
+LongLeftArrow;  U+027F5     ⟵
+LongLeftRightArrow;     U+027F7     ⟷
+LongRightArrow;     U+027F6     ⟶
+Longleftarrow;  U+027F8     ⟸
+Longleftrightarrow;     U+027FA     ⟺
+Longrightarrow;     U+027F9     ⟹
+Lopf;   U+1D543     ������
+LowerLeftArrow;     U+02199     ↙
+LowerRightArrow;    U+02198     ↘
+Lscr;   U+02112     ℒ
+Lsh;    U+021B0     ↰
+Lstrok;     U+00141     Ł
+Lt;     U+0226A     ≪
+Map;    U+02905     ⤅
+Mcy;    U+0041C     М
+MediumSpace;    U+0205F      
+Mellintrf;  U+02133     ℳ
+Mfr;    U+1D510     ������
+MinusPlus;  U+02213     ∓
+Mopf;   U+1D544     ������
+Mscr;   U+02133     ℳ
+Mu;     U+0039C     Μ
+NJcy;   U+0040A     Њ
+Nacute;     U+00143     Ń
+Ncaron;     U+00147     Ň
+Ncedil;     U+00145     Ņ
+Ncy;    U+0041D     Н
+NegativeMediumSpace;    U+0200B     ​
+NegativeThickSpace;     U+0200B     ​
+NegativeThinSpace;  U+0200B     ​
+NegativeVeryThinSpace;  U+0200B     ​
+NestedGreaterGreater;   U+0226B     ≫
+NestedLessLess;     U+0226A     ≪
+NewLine;    U+0000A     ␊
+Nfr;    U+1D511     ������
+NoBreak;    U+02060     ⁠
+NonBreakingSpace;   U+000A0      
+Nopf;   U+02115     ℕ
+Not;    U+02AEC     ⫬
+NotCongruent;   U+02262     ≢
+NotCupCap;  U+0226D     ≭
+NotDoubleVerticalBar;   U+02226     ∦
+NotElement;     U+02209     ∉
+NotEqual;   U+02260     ≠
+NotEqualTilde;  U+02242 U+00338     ≂̸
+NotExists;  U+02204     ∄
+NotGreater;     U+0226F     ≯
+NotGreaterEqual;    U+02271     ≱
+NotGreaterFullEqual;    U+02267 U+00338     ≧̸
+NotGreaterGreater;  U+0226B U+00338     ≫̸
+NotGreaterLess;     U+02279     ≹
+NotGreaterSlantEqual;   U+02A7E U+00338     ⩾̸
+NotGreaterTilde;    U+02275     ≵
+NotHumpDownHump;    U+0224E U+00338     ≎̸
+NotHumpEqual;   U+0224F U+00338     ≏̸
+NotLeftTriangle;    U+022EA     ⋪
+NotLeftTriangleBar;     U+029CF U+00338     ⧏̸
+NotLeftTriangleEqual;   U+022EC     ⋬
+NotLess;    U+0226E     ≮
+NotLessEqual;   U+02270     ≰
+NotLessGreater;     U+02278     ≸
+NotLessLess;    U+0226A U+00338     ≪̸
+NotLessSlantEqual;  U+02A7D U+00338     ⩽̸
+NotLessTilde;   U+02274     ≴
+NotNestedGreaterGreater;    U+02AA2 U+00338     ⪢̸
+NotNestedLessLess;  U+02AA1 U+00338     ⪡̸
+NotPrecedes;    U+02280     ⊀
+NotPrecedesEqual;   U+02AAF U+00338     ⪯̸
+NotPrecedesSlantEqual;  U+022E0     ⋠
+NotReverseElement;  U+0220C     ∌
+NotRightTriangle;   U+022EB     ⋫
+NotRightTriangleBar;    U+029D0 U+00338     ⧐̸
+NotRightTriangleEqual;  U+022ED     ⋭
+NotSquareSubset;    U+0228F U+00338     ⊏̸
+NotSquareSubsetEqual;   U+022E2     ⋢
+NotSquareSuperset;  U+02290 U+00338     ⊐̸
+NotSquareSupersetEqual;     U+022E3     ⋣
+NotSubset;  U+02282 U+020D2     ⊂⃒
+NotSubsetEqual;     U+02288     ⊈
+NotSucceeds;    U+02281     ⊁
+NotSucceedsEqual;   U+02AB0 U+00338     ⪰̸
+NotSucceedsSlantEqual;  U+022E1     ⋡
+NotSucceedsTilde;   U+0227F U+00338     ≿̸
+NotSuperset;    U+02283 U+020D2     ⊃⃒
+NotSupersetEqual;   U+02289     ⊉
+NotTilde;   U+02241     ≁
+NotTildeEqual;  U+02244     ≄
+NotTildeFullEqual;  U+02247     ≇
+NotTildeTilde;  U+02249     ≉
+NotVerticalBar;     U+02224     ∤
+Nscr;   U+1D4A9     ������
+Ntilde;     U+000D1     Ñ
+Nu;     U+0039D     Ν
+OElig;  U+00152     Œ
+Oacute;     U+000D3     Ó
+Ocirc;  U+000D4     Ô
+Ocy;    U+0041E     О
+Odblac;     U+00150     Ő
+Ofr;    U+1D512     ������
+Ograve;     U+000D2     Ò
+Omacr;  U+0014C     Ō
+Omega;  U+003A9     Ω
+Omicron;    U+0039F     Ο
+Oopf;   U+1D546     ������
+OpenCurlyDoubleQuote;   U+0201C     “
+OpenCurlyQuote;     U+02018     ‘
+Or;     U+02A54     ⩔
+Oscr;   U+1D4AA     ������
+Oslash;     U+000D8     Ø
+Otilde;     U+000D5     Õ
+Otimes;     U+02A37     ⨷
+Ouml;   U+000D6     Ö
+OverBar;    U+0203E     ‾
+OverBrace;  U+023DE     ⏞
+OverBracket;    U+023B4     ⎴
+OverParenthesis;    U+023DC     ⏜
+PartialD;   U+02202     ∂
+Pcy;    U+0041F     П
+Pfr;    U+1D513     ������
+Phi;    U+003A6     Φ
+Pi;     U+003A0     Π
+PlusMinus;  U+000B1     ±
+Poincareplane;  U+0210C     ℌ
+Popf;   U+02119     ℙ
+Pr;     U+02ABB     ⪻
+Precedes;   U+0227A     ≺
+PrecedesEqual;  U+02AAF     ⪯
+PrecedesSlantEqual;     U+0227C     ≼
+PrecedesTilde;  U+0227E     ≾
+Prime;  U+02033     ″
+Product;    U+0220F     ∏
+Proportion;     U+02237     ∷
+Proportional;   U+0221D     ∝
+Pscr;   U+1D4AB     ������
+Psi;    U+003A8     Ψ
+QUOT;   U+00022     "
+Qfr;    U+1D514     ������
+Qopf;   U+0211A     ℚ
+Qscr;   U+1D4AC     ������
+RBarr;  U+02910     ⤐
+REG;    U+000AE     ®
+Racute;     U+00154     Ŕ
+Rang;   U+027EB     ⟫
+Rarr;   U+021A0     ↠
+Rarrtl;     U+02916     ⤖
+Rcaron;     U+00158     Ř
+Rcedil;     U+00156     Ŗ
+Rcy;    U+00420     Р
+Re;     U+0211C     ℜ
+ReverseElement;     U+0220B     ∋
+ReverseEquilibrium;     U+021CB     ⇋
+ReverseUpEquilibrium;   U+0296F     ⥯
+Rfr;    U+0211C     ℜ
+Rho;    U+003A1     Ρ
+RightAngleBracket;  U+027E9     〉
+RightArrow;     U+02192     →
+RightArrowBar;  U+021E5     ⇥
+RightArrowLeftArrow;    U+021C4     ⇄
+RightCeiling;   U+02309     ⌉
+RightDoubleBracket;     U+027E7     ⟧
+RightDownTeeVector;     U+0295D     ⥝
+RightDownVector;    U+021C2     ⇂
+RightDownVectorBar;     U+02955     ⥕
+RightFloor;     U+0230B     ⌋
+RightTee;   U+022A2     ⊢
+RightTeeArrow;  U+021A6     ↦
+RightTeeVector;     U+0295B     ⥛
+RightTriangle;  U+022B3     ⊳
+RightTriangleBar;   U+029D0     ⧐
+RightTriangleEqual;     U+022B5     ⊵
+RightUpDownVector;  U+0294F     ⥏
+RightUpTeeVector;   U+0295C     ⥜
+RightUpVector;  U+021BE     ↾
+RightUpVectorBar;   U+02954     ⥔
+RightVector;    U+021C0     ⇀
+RightVectorBar;     U+02953     ⥓
+Rightarrow;     U+021D2     ⇒
+Ropf;   U+0211D     ℝ
+RoundImplies;   U+02970     ⥰
+Rrightarrow;    U+021DB     ⇛
+Rscr;   U+0211B     ℛ
+Rsh;    U+021B1     ↱
+RuleDelayed;    U+029F4     ⧴
+SHCHcy;     U+00429     Щ
+SHcy;   U+00428     Ш
+SOFTcy;     U+0042C     Ь
+Sacute;     U+0015A     Ś
+Sc;     U+02ABC     ⪼
+Scaron;     U+00160     Š
+Scedil;     U+0015E     Ş
+Scirc;  U+0015C     Ŝ
+Scy;    U+00421     С
+Sfr;    U+1D516     ������
+ShortDownArrow;     U+02193     ↓
+ShortLeftArrow;     U+02190     ←
+ShortRightArrow;    U+02192     →
+ShortUpArrow;   U+02191     ↑
+Sigma;  U+003A3     Σ
+SmallCircle;    U+02218     ∘
+Sopf;   U+1D54A     ������
+Sqrt;   U+0221A     √
+Square;     U+025A1     □
+SquareIntersection;     U+02293     ⊓
+SquareSubset;   U+0228F     ⊏
+SquareSubsetEqual;  U+02291     ⊑
+SquareSuperset;     U+02290     ⊐
+SquareSupersetEqual;    U+02292     ⊒
+SquareUnion;    U+02294     ⊔
+Sscr;   U+1D4AE     ������
+Star;   U+022C6     ⋆
+Sub;    U+022D0     ⋐
+Subset;     U+022D0     ⋐
+SubsetEqual;    U+02286     ⊆
+Succeeds;   U+0227B     ≻
+SucceedsEqual;  U+02AB0     ⪰
+SucceedsSlantEqual;     U+0227D     ≽
+SucceedsTilde;  U+0227F     ≿
+SuchThat;   U+0220B     ∋
+Sum;    U+02211     ∑
+Sup;    U+022D1     ⋑
+Superset;   U+02283     ⊃
+SupersetEqual;  U+02287     ⊇
+Supset;     U+022D1     ⋑
+THORN;  U+000DE     Þ
+TRADE;  U+02122     ™
+TSHcy;  U+0040B     Ћ
+TScy;   U+00426     Ц
+Tab;    U+00009     ␉
+Tau;    U+003A4     Τ
+Tcaron;     U+00164     Ť
+Tcedil;     U+00162     Ţ
+Tcy;    U+00422     Т
+Tfr;    U+1D517     ������
+Therefore;  U+02234     ∴
+Theta;  U+00398     Θ
+ThickSpace;     U+0205F U+0200A       
+ThinSpace;  U+02009      
+Tilde;  U+0223C     ∼
+TildeEqual;     U+02243     ≃
+TildeFullEqual;     U+02245     ≅
+TildeTilde;     U+02248     ≈
+Topf;   U+1D54B     ������
+TripleDot;  U+020DB     ◌⃛
+Tscr;   U+1D4AF     ������
+Tstrok;     U+00166     Ŧ
+Uacute;     U+000DA     Ú
+Uarr;   U+0219F     ↟
+Uarrocir;   U+02949     ⥉
+Ubrcy;  U+0040E     Ў
+Ubreve;     U+0016C     Ŭ
+Ucirc;  U+000DB     Û
+Ucy;    U+00423     У
+Udblac;     U+00170     Ű
+Ufr;    U+1D518     ������
+Ugrave;     U+000D9     Ù
+Umacr;  U+0016A     Ū
+UnderBar;   U+0005F     _
+UnderBrace;     U+023DF     ⏟
+UnderBracket;   U+023B5     ⎵
+UnderParenthesis;   U+023DD     ⏝
+Union;  U+022C3     ⋃
+UnionPlus;  U+0228E     ⊎
+Uogon;  U+00172     Ų
+Uopf;   U+1D54C     ������
+UpArrow;    U+02191     ↑
+UpArrowBar;     U+02912     ⤒
+UpArrowDownArrow;   U+021C5     ⇅
+UpDownArrow;    U+02195     ↕
+UpEquilibrium;  U+0296E     ⥮
+UpTee;  U+022A5     ⊥
+UpTeeArrow;     U+021A5     ↥
+Uparrow;    U+021D1     ⇑
+Updownarrow;    U+021D5     ⇕
+UpperLeftArrow;     U+02196     ↖
+UpperRightArrow;    U+02197     ↗
+Upsi;   U+003D2     ϒ
+Upsilon;    U+003A5     Υ
+Uring;  U+0016E     Ů
+Uscr;   U+1D4B0     ������
+Utilde;     U+00168     Ũ
+Uuml;   U+000DC     Ü
+VDash;  U+022AB     ⊫
+Vbar;   U+02AEB     ⫫
+Vcy;    U+00412     В
+Vdash;  U+022A9     ⊩
+Vdashl;     U+02AE6     ⫦
+Vee;    U+022C1     ⋁
+Verbar;     U+02016     ‖
+Vert;   U+02016     ‖
+VerticalBar;    U+02223     ∣
+VerticalLine;   U+0007C     |
+VerticalSeparator;  U+02758     ❘
+VerticalTilde;  U+02240     ≀
+VeryThinSpace;  U+0200A      
+Vfr;    U+1D519     ������
+Vopf;   U+1D54D     ������
+Vscr;   U+1D4B1     ������
+Vvdash;     U+022AA     ⊪
+Wcirc;  U+00174     Ŵ
+Wedge;  U+022C0     ⋀
+Wfr;    U+1D51A     ������
+Wopf;   U+1D54E     ������
+Wscr;   U+1D4B2     ������
+Xfr;    U+1D51B     ������
+Xi;     U+0039E     Ξ
+Xopf;   U+1D54F     ������
+Xscr;   U+1D4B3     ������
+YAcy;   U+0042F     Я
+YIcy;   U+00407     Ї
+YUcy;   U+0042E     Ю
+Yacute;     U+000DD     Ý
+Ycirc;  U+00176     Ŷ
+Ycy;    U+0042B     Ы
+Yfr;    U+1D51C     ������
+Yopf;   U+1D550     ������
+Yscr;   U+1D4B4     ������
+Yuml;   U+00178     Ÿ
+ZHcy;   U+00416     Ж
+Zacute;     U+00179     Ź
+Zcaron;     U+0017D     Ž
+Zcy;    U+00417     З
+Zdot;   U+0017B     Ż
+ZeroWidthSpace;     U+0200B     ​
+Zeta;   U+00396     Ζ
+Zfr;    U+02128     ℨ
+Zopf;   U+02124     ℤ
+Zscr;   U+1D4B5     ������
+aacute;     U+000E1     á
+abreve;     U+00103     ă
+ac;     U+0223E     ∾
+acE;    U+0223E U+00333     ∾̳
+acd;    U+0223F     ∿
+acirc;  U+000E2     â
+acute;  U+000B4     ´
+acy;    U+00430     а
+aelig;  U+000E6     æ
+af;     U+02061     ⁡
+afr;    U+1D51E     ������
+agrave;     U+000E0     à
+alefsym;    U+02135     ℵ
+aleph;  U+02135     ℵ
+alpha;  U+003B1     α
+amacr;  U+00101     ā
+amalg;  U+02A3F     ⨿
+amp;    U+00026     &
+and;    U+02227     ∧
+andand;     U+02A55     ⩕
+andd;   U+02A5C     ⩜
+andslope;   U+02A58     ⩘
+andv;   U+02A5A     ⩚
+ang;    U+02220     ∠
+ange;   U+029A4     ⦤
+angle;  U+02220     ∠
+angmsd;     U+02221     ∡
+angmsdaa;   U+029A8     ⦨
+angmsdab;   U+029A9     ⦩
+angmsdac;   U+029AA     ⦪
+angmsdad;   U+029AB     ⦫
+angmsdae;   U+029AC     ⦬
+angmsdaf;   U+029AD     ⦭
+angmsdag;   U+029AE     ⦮
+angmsdah;   U+029AF     ⦯
+angrt;  U+0221F     ∟
+angrtvb;    U+022BE     ⊾
+angrtvbd;   U+0299D     ⦝
+angsph;     U+02222     ∢
+angst;  U+000C5     Å
+angzarr;    U+0237C     ⍼
+aogon;  U+00105     ą
+aopf;   U+1D552     ������
+ap;     U+02248     ≈
+apE;    U+02A70     ⩰
+apacir;     U+02A6F     ⩯
+ape;    U+0224A     ≊
+apid;   U+0224B     ≋
+apos;   U+00027     '
+approx;     U+02248     ≈
+approxeq;   U+0224A     ≊
+aring;  U+000E5     å
+ascr;   U+1D4B6     ������
+ast;    U+0002A     *
+asymp;  U+02248     ≈
+asympeq;    U+0224D     ≍
+atilde;     U+000E3     ã
+auml;   U+000E4     ä
+awconint;   U+02233     ∳
+awint;  U+02A11     ⨑
+bNot;   U+02AED     ⫭
+backcong;   U+0224C     ≌
+backepsilon;    U+003F6     ϶
+backprime;  U+02035     ‵
+backsim;    U+0223D     ∽
+backsimeq;  U+022CD     ⋍
+barvee;     U+022BD     ⊽
+barwed;     U+02305     ⌅
+barwedge;   U+02305     ⌅
+bbrk;   U+023B5     ⎵
+bbrktbrk;   U+023B6     ⎶
+bcong;  U+0224C     ≌
+bcy;    U+00431     б
+bdquo;  U+0201E     „
+becaus;     U+02235     ∵
+because;    U+02235     ∵
+bemptyv;    U+029B0     ⦰
+bepsi;  U+003F6     ϶
+bernou;     U+0212C     ℬ
+beta;   U+003B2     β
+beth;   U+02136     ℶ
+between;    U+0226C     ≬
+bfr;    U+1D51F     ������
+bigcap;     U+022C2     ⋂
+bigcirc;    U+025EF     ◯
+bigcup;     U+022C3     ⋃
+bigodot;    U+02A00     ⨀
+bigoplus;   U+02A01     ⨁
+bigotimes;  U+02A02     ⨂
+bigsqcup;   U+02A06     ⨆
+bigstar;    U+02605     ★
+bigtriangledown;    U+025BD     ▽
+bigtriangleup;  U+025B3     △
+biguplus;   U+02A04     ⨄
+bigvee;     U+022C1     ⋁
+bigwedge;   U+022C0     ⋀
+bkarow;     U+0290D     ⤍
+blacklozenge;   U+029EB     ⧫
+blacksquare;    U+025AA     ▪
+blacktriangle;  U+025B4     ▴
+blacktriangledown;  U+025BE     ▾
+blacktriangleleft;  U+025C2     ◂
+blacktriangleright;     U+025B8     ▸
+blank;  U+02423     ␣
+blk12;  U+02592     ▒
+blk14;  U+02591     ░
+blk34;  U+02593     ▓
+block;  U+02588     █
+bne;    U+0003D U+020E5     =⃥
+bnequiv;    U+02261 U+020E5     ≡⃥
+bnot;   U+02310     ⌐
+bopf;   U+1D553     ������
+bot;    U+022A5     ⊥
+bottom;     U+022A5     ⊥
+bowtie;     U+022C8     ⋈
+boxDL;  U+02557     ╗
+boxDR;  U+02554     ╔
+boxDl;  U+02556     ╖
+boxDr;  U+02553     ╓
+boxH;   U+02550     ═
+boxHD;  U+02566     ╦
+boxHU;  U+02569     ╩
+boxHd;  U+02564     ╤
+boxHu;  U+02567     ╧
+boxUL;  U+0255D     ╝
+boxUR;  U+0255A     ╚
+boxUl;  U+0255C     ╜
+boxUr;  U+02559     ╙
+boxV;   U+02551     ║
+boxVH;  U+0256C     ╬
+boxVL;  U+02563     ╣
+boxVR;  U+02560     ╠
+boxVh;  U+0256B     ╫
+boxVl;  U+02562     ╢
+boxVr;  U+0255F     ╟
+boxbox;     U+029C9     ⧉
+boxdL;  U+02555     ╕
+boxdR;  U+02552     ╒
+boxdl;  U+02510     ┐
+boxdr;  U+0250C     ┌
+boxh;   U+02500     ─
+boxhD;  U+02565     ╥
+boxhU;  U+02568     ╨
+boxhd;  U+0252C     ┬
+boxhu;  U+02534     ┴
+boxminus;   U+0229F     ⊟
+boxplus;    U+0229E     ⊞
+boxtimes;   U+022A0     ⊠
+boxuL;  U+0255B     ╛
+boxuR;  U+02558     ╘
+boxul;  U+02518     ┘
+boxur;  U+02514     └
+boxv;   U+02502     │
+boxvH;  U+0256A     ╪
+boxvL;  U+02561     ╡
+boxvR;  U+0255E     ╞
+boxvh;  U+0253C     ┼
+boxvl;  U+02524     ┤
+boxvr;  U+0251C     ├
+bprime;     U+02035     ‵
+breve;  U+002D8     ˘
+brvbar;     U+000A6     ¦
+bscr;   U+1D4B7     ������
+bsemi;  U+0204F     ⁏
+bsim;   U+0223D     ∽
+bsime;  U+022CD     ⋍
+bsol;   U+0005C     \
+bsolb;  U+029C5     ⧅
+bsolhsub;   U+027C8     ⟈
+bull;   U+02022     •
+bullet;     U+02022     •
+bump;   U+0224E     ≎
+bumpE;  U+02AAE     ⪮
+bumpe;  U+0224F     ≏
+bumpeq;     U+0224F     ≏
+cacute;     U+00107     ć
+cap;    U+02229     ∩
+capand;     U+02A44     ⩄
+capbrcup;   U+02A49     ⩉
+capcap;     U+02A4B     ⩋
+capcup;     U+02A47     ⩇
+capdot;     U+02A40     ⩀
+caps;   U+02229 U+0FE00     ∩︀
+caret;  U+02041     ⁁
+caron;  U+002C7     ˇ
+ccaps;  U+02A4D     ⩍
+ccaron;     U+0010D     č
+ccedil;     U+000E7     ç
+ccirc;  U+00109     ĉ
+ccups;  U+02A4C     ⩌
+ccupssm;    U+02A50     ⩐
+cdot;   U+0010B     ċ
+cedil;  U+000B8     ¸
+cemptyv;    U+029B2     ⦲
+cent;   U+000A2     ¢
+centerdot;  U+000B7     ·
+cfr;    U+1D520     ������
+chcy;   U+00447     ч
+check;  U+02713     ✓
+checkmark;  U+02713     ✓
+chi;    U+003C7     χ
+cir;    U+025CB     ○
+cirE;   U+029C3     ⧃
+circ;   U+002C6     ˆ
+circeq;     U+02257     ≗
+circlearrowleft;    U+021BA     ↺
+circlearrowright;   U+021BB     ↻
+circledR;   U+000AE     ®
+circledS;   U+024C8     Ⓢ
+circledast;     U+0229B     ⊛
+circledcirc;    U+0229A     ⊚
+circleddash;    U+0229D     ⊝
+cire;   U+02257     ≗
+cirfnint;   U+02A10     ⨐
+cirmid;     U+02AEF     ⫯
+cirscir;    U+029C2     ⧂
+clubs;  U+02663     ♣
+clubsuit;   U+02663     ♣
+colon;  U+0003A     :
+colone;     U+02254     ≔
+coloneq;    U+02254     ≔
+comma;  U+0002C     ,
+commat;     U+00040     @
+comp;   U+02201     ∁
+compfn;     U+02218     ∘
+complement;     U+02201     ∁
+complexes;  U+02102     ℂ
+cong;   U+02245     ≅
+congdot;    U+02A6D     ⩭
+conint;     U+0222E     ∮
+copf;   U+1D554     ������
+coprod;     U+02210     ∐
+copy;   U+000A9     ©
+copysr;     U+02117     ℗
+crarr;  U+021B5     ↵
+cross;  U+02717     ✗
+cscr;   U+1D4B8     ������
+csub;   U+02ACF     ⫏
+csube;  U+02AD1     ⫑
+csup;   U+02AD0     ⫐
+csupe;  U+02AD2     ⫒
+ctdot;  U+022EF     ⋯
+cudarrl;    U+02938     ⤸
+cudarrr;    U+02935     ⤵
+cuepr;  U+022DE     ⋞
+cuesc;  U+022DF     ⋟
+cularr;     U+021B6     ↶
+cularrp;    U+0293D     ⤽
+cup;    U+0222A     ∪
+cupbrcap;   U+02A48     ⩈
+cupcap;     U+02A46     ⩆
+cupcup;     U+02A4A     ⩊
+cupdot;     U+0228D     ⊍
+cupor;  U+02A45     ⩅
+cups;   U+0222A U+0FE00     ∪︀
+curarr;     U+021B7     ↷
+curarrm;    U+0293C     ⤼
+curlyeqprec;    U+022DE     ⋞
+curlyeqsucc;    U+022DF     ⋟
+curlyvee;   U+022CE     ⋎
+curlywedge;     U+022CF     ⋏
+curren;     U+000A4     ¤
+curvearrowleft;     U+021B6     ↶
+curvearrowright;    U+021B7     ↷
+cuvee;  U+022CE     ⋎
+cuwed;  U+022CF     ⋏
+cwconint;   U+02232     ∲
+cwint;  U+02231     ∱
+cylcty;     U+0232D     ⌭
+dArr;   U+021D3     ⇓
+dHar;   U+02965     ⥥
+dagger;     U+02020     †
+daleth;     U+02138     ℸ
+darr;   U+02193     ↓
+dash;   U+02010     ‐
+dashv;  U+022A3     ⊣
+dbkarow;    U+0290F     ⤏
+dblac;  U+002DD     ˝
+dcaron;     U+0010F     ď
+dcy;    U+00434     д
+dd;     U+02146     ⅆ
+ddagger;    U+02021     ‡
+ddarr;  U+021CA     ⇊
+ddotseq;    U+02A77     ⩷
+deg;    U+000B0     °
+delta;  U+003B4     δ
+demptyv;    U+029B1     ⦱
+dfisht;     U+0297F     ⥿
+dfr;    U+1D521     ������
+dharl;  U+021C3     ⇃
+dharr;  U+021C2     ⇂
+diam;   U+022C4     ⋄
+diamond;    U+022C4     ⋄
+diamondsuit;    U+02666     ♦
+diams;  U+02666     ♦
+die;    U+000A8     ¨
+digamma;    U+003DD     ϝ
+disin;  U+022F2     ⋲
+div;    U+000F7     ÷
+divide;     U+000F7     ÷
+divideontimes;  U+022C7     ⋇
+divonx;     U+022C7     ⋇
+djcy;   U+00452     ђ
+dlcorn;     U+0231E     ⌞
+dlcrop;     U+0230D     ⌍
+dollar;     U+00024     $
+dopf;   U+1D555     ������
+dot;    U+002D9     ˙
+doteq;  U+02250     ≐
+doteqdot;   U+02251     ≑
+dotminus;   U+02238     ∸
+dotplus;    U+02214     ∔
+dotsquare;  U+022A1     ⊡
+doublebarwedge;     U+02306     ⌆
+downarrow;  U+02193     ↓
+downdownarrows;     U+021CA     ⇊
+downharpoonleft;    U+021C3     ⇃
+downharpoonright;   U+021C2     ⇂
+drbkarow;   U+02910     ⤐
+drcorn;     U+0231F     ⌟
+drcrop;     U+0230C     ⌌
+dscr;   U+1D4B9     ������
+dscy;   U+00455     ѕ
+dsol;   U+029F6     ⧶
+dstrok;     U+00111     đ
+dtdot;  U+022F1     ⋱
+dtri;   U+025BF     ▿
+dtrif;  U+025BE     ▾
+duarr;  U+021F5     ⇵
+duhar;  U+0296F     ⥯
+dwangle;    U+029A6     ⦦
+dzcy;   U+0045F     џ
+dzigrarr;   U+027FF     ⟿
+eDDot;  U+02A77     ⩷
+eDot;   U+02251     ≑
+eacute;     U+000E9     é
+easter;     U+02A6E     ⩮
+ecaron;     U+0011B     ě
+ecir;   U+02256     ≖
+ecirc;  U+000EA     ê
+ecolon;     U+02255     ≕
+ecy;    U+0044D     э
+edot;   U+00117     ė
+ee;     U+02147     ⅇ
+efDot;  U+02252     ≒
+efr;    U+1D522     ������
+eg;     U+02A9A     ⪚
+egrave;     U+000E8     è
+egs;    U+02A96     ⪖
+egsdot;     U+02A98     ⪘
+el;     U+02A99     ⪙
+elinters;   U+023E7     ⏧
+ell;    U+02113     ℓ
+els;    U+02A95     ⪕
+elsdot;     U+02A97     ⪗
+emacr;  U+00113     ē
+empty;  U+02205     ∅
+emptyset;   U+02205     ∅
+emptyv;     U+02205     ∅
+emsp;   U+02003      
+emsp13;     U+02004      
+emsp14;     U+02005      
+eng;    U+0014B     ŋ
+ensp;   U+02002      
+eogon;  U+00119     ę
+eopf;   U+1D556     ������
+epar;   U+022D5     ⋕
+eparsl;     U+029E3     ⧣
+eplus;  U+02A71     ⩱
+epsi;   U+003B5     ε
+epsilon;    U+003B5     ε
+epsiv;  U+003F5     ϵ
+eqcirc;     U+02256     ≖
+eqcolon;    U+02255     ≕
+eqsim;  U+02242     ≂
+eqslantgtr;     U+02A96     ⪖
+eqslantless;    U+02A95     ⪕
+equals;     U+0003D     =
+equest;     U+0225F     ≟
+equiv;  U+02261     ≡
+equivDD;    U+02A78     ⩸
+eqvparsl;   U+029E5     ⧥
+erDot;  U+02253     ≓
+erarr;  U+02971     ⥱
+escr;   U+0212F     ℯ
+esdot;  U+02250     ≐
+esim;   U+02242     ≂
+eta;    U+003B7     η
+eth;    U+000F0     ð
+euml;   U+000EB     ë
+euro;   U+020AC     €
+excl;   U+00021     !
+exist;  U+02203     ∃
+expectation;    U+02130     ℰ
+exponentiale;   U+02147     ⅇ
+fallingdotseq;  U+02252     ≒
+fcy;    U+00444     ф
+female;     U+02640     ♀
+ffilig;     U+0FB03     ﬃ
+fflig;  U+0FB00     ﬀ
+ffllig;     U+0FB04     ﬄ
+ffr;    U+1D523     ������
+filig;  U+0FB01     ﬁ
+fjlig;  U+00066 U+0006A     fj
+flat;   U+0266D     ♭
+fllig;  U+0FB02     ﬂ
+fltns;  U+025B1     ▱
+fnof;   U+00192     ƒ
+fopf;   U+1D557     ������
+forall;     U+02200     ∀
+fork;   U+022D4     ⋔
+forkv;  U+02AD9     ⫙
+fpartint;   U+02A0D     ⨍
+frac12;     U+000BD     ½
+frac13;     U+02153     ⅓
+frac14;     U+000BC     ¼
+frac15;     U+02155     ⅕
+frac16;     U+02159     ⅙
+frac18;     U+0215B     ⅛
+frac23;     U+02154     ⅔
+frac25;     U+02156     ⅖
+frac34;     U+000BE     ¾
+frac35;     U+02157     ⅗
+frac38;     U+0215C     ⅜
+frac45;     U+02158     ⅘
+frac56;     U+0215A     ⅚
+frac58;     U+0215D     ⅝
+frac78;     U+0215E     ⅞
+frasl;  U+02044     ⁄
+frown;  U+02322     ⌢
+fscr;   U+1D4BB     ������
+gE;     U+02267     ≧
+gEl;    U+02A8C     ⪌
+gacute;     U+001F5     ǵ
+gamma;  U+003B3     γ
+gammad;     U+003DD     ϝ
+gap;    U+02A86     ⪆
+gbreve;     U+0011F     ğ
+gcirc;  U+0011D     ĝ
+gcy;    U+00433     г
+gdot;   U+00121     ġ
+ge;     U+02265     ≥
+gel;    U+022DB     ⋛
+geq;    U+02265     ≥
+geqq;   U+02267     ≧
+geqslant;   U+02A7E     ⩾
+ges;    U+02A7E     ⩾
+gescc;  U+02AA9     ⪩
+gesdot;     U+02A80     ⪀
+gesdoto;    U+02A82     ⪂
+gesdotol;   U+02A84     ⪄
+gesl;   U+022DB U+0FE00     ⋛︀
+gesles;     U+02A94     ⪔
+gfr;    U+1D524     ������
+gg;     U+0226B     ≫
+ggg;    U+022D9     ⋙
+gimel;  U+02137     ℷ
+gjcy;   U+00453     ѓ
+gl;     U+02277     ≷
+glE;    U+02A92     ⪒
+gla;    U+02AA5     ⪥
+glj;    U+02AA4     ⪤
+gnE;    U+02269     ≩
+gnap;   U+02A8A     ⪊
+gnapprox;   U+02A8A     ⪊
+gne;    U+02A88     ⪈
+gneq;   U+02A88     ⪈
+gneqq;  U+02269     ≩
+gnsim;  U+022E7     ⋧
+gopf;   U+1D558     ������
+grave;  U+00060     `
+gscr;   U+0210A     ℊ
+gsim;   U+02273     ≳
+gsime;  U+02A8E     ⪎
+gsiml;  U+02A90     ⪐
+gt;     U+0003E     >
+gtcc;   U+02AA7     ⪧
+gtcir;  U+02A7A     ⩺
+gtdot;  U+022D7     ⋗
+gtlPar;     U+02995     ⦕
+gtquest;    U+02A7C     ⩼
+gtrapprox;  U+02A86     ⪆
+gtrarr;     U+02978     ⥸
+gtrdot;     U+022D7     ⋗
+gtreqless;  U+022DB     ⋛
+gtreqqless;     U+02A8C     ⪌
+gtrless;    U+02277     ≷
+gtrsim;     U+02273     ≳
+gvertneqq;  U+02269 U+0FE00     ≩︀
+gvnE;   U+02269 U+0FE00     ≩︀
+hArr;   U+021D4     ⇔
+hairsp;     U+0200A      
+half;   U+000BD     ½
+hamilt;     U+0210B     ℋ
+hardcy;     U+0044A     ъ
+harr;   U+02194     ↔
+harrcir;    U+02948     ⥈
+harrw;  U+021AD     ↭
+hbar;   U+0210F     ℏ
+hcirc;  U+00125     ĥ
+hearts;     U+02665     ♥
+heartsuit;  U+02665     ♥
+hellip;     U+02026     …
+hercon;     U+022B9     ⊹
+hfr;    U+1D525     ������
+hksearow;   U+02925     ⤥
+hkswarow;   U+02926     ⤦
+hoarr;  U+021FF     ⇿
+homtht;     U+0223B     ∻
+hookleftarrow;  U+021A9     ↩
+hookrightarrow;     U+021AA     ↪
+hopf;   U+1D559     ������
+horbar;     U+02015     ―
+hscr;   U+1D4BD     ������
+hslash;     U+0210F     ℏ
+hstrok;     U+00127     ħ
+hybull;     U+02043     ⁃
+hyphen;     U+02010     ‐
+iacute;     U+000ED     í
+ic;     U+02063     ⁣
+icirc;  U+000EE     î
+icy;    U+00438     и
+iecy;   U+00435     е
+iexcl;  U+000A1     ¡
+iff;    U+021D4     ⇔
+ifr;    U+1D526     ������
+igrave;     U+000EC     ì
+ii;     U+02148     ⅈ
+iiiint;     U+02A0C     ⨌
+iiint;  U+0222D     ∭
+iinfin;     U+029DC     ⧜
+iiota;  U+02129     ℩
+ijlig;  U+00133     ĳ
+imacr;  U+0012B     ī
+image;  U+02111     ℑ
+imagline;   U+02110     ℐ
+imagpart;   U+02111     ℑ
+imath;  U+00131     ı
+imof;   U+022B7     ⊷
+imped;  U+001B5     Ƶ
+in;     U+02208     ∈
+incare;     U+02105     ℅
+infin;  U+0221E     ∞
+infintie;   U+029DD     ⧝
+inodot;     U+00131     ı
+int;    U+0222B     ∫
+intcal;     U+022BA     ⊺
+integers;   U+02124     ℤ
+intercal;   U+022BA     ⊺
+intlarhk;   U+02A17     ⨗
+intprod;    U+02A3C     ⨼
+iocy;   U+00451     ё
+iogon;  U+0012F     į
+iopf;   U+1D55A     ������
+iota;   U+003B9     ι
+iprod;  U+02A3C     ⨼
+iquest;     U+000BF     ¿
+iscr;   U+1D4BE     ������
+isin;   U+02208     ∈
+isinE;  U+022F9     ⋹
+isindot;    U+022F5     ⋵
+isins;  U+022F4     ⋴
+isinsv;     U+022F3     ⋳
+isinv;  U+02208     ∈
+it;     U+02062     ⁢
+itilde;     U+00129     ĩ
+iukcy;  U+00456     і
+iuml;   U+000EF     ï
+jcirc;  U+00135     ĵ
+jcy;    U+00439     й
+jfr;    U+1D527     ������
+jmath;  U+00237     ȷ
+jopf;   U+1D55B     ������
+jscr;   U+1D4BF     ������
+jsercy;     U+00458     ј
+jukcy;  U+00454     є
+kappa;  U+003BA     κ
+kappav;     U+003F0     ϰ
+kcedil;     U+00137     ķ
+kcy;    U+0043A     к
+kfr;    U+1D528     ������
+kgreen;     U+00138     ĸ
+khcy;   U+00445     х
+kjcy;   U+0045C     ќ
+kopf;   U+1D55C     ������
+kscr;   U+1D4C0     ������
+lAarr;  U+021DA     ⇚
+lArr;   U+021D0     ⇐
+lAtail;     U+0291B     ⤛
+lBarr;  U+0290E     ⤎
+lE;     U+02266     ≦
+lEg;    U+02A8B     ⪋
+lHar;   U+02962     ⥢
+lacute;     U+0013A     ĺ
+laemptyv;   U+029B4     ⦴
+lagran;     U+02112     ℒ
+lambda;     U+003BB     λ
+lang;   U+027E8     〈
+langd;  U+02991     ⦑
+langle;     U+027E8     〈
+lap;    U+02A85     ⪅
+laquo;  U+000AB     «
+larr;   U+02190     ←
+larrb;  U+021E4     ⇤
+larrbfs;    U+0291F     ⤟
+larrfs;     U+0291D     ⤝
+larrhk;     U+021A9     ↩
+larrlp;     U+021AB     ↫
+larrpl;     U+02939     ⤹
+larrsim;    U+02973     ⥳
+larrtl;     U+021A2     ↢
+lat;    U+02AAB     ⪫
+latail;     U+02919     ⤙
+late;   U+02AAD     ⪭
+lates;  U+02AAD U+0FE00     ⪭︀
+lbarr;  U+0290C     ⤌
+lbbrk;  U+02772     ❲
+lbrace;     U+0007B     {
+lbrack;     U+0005B     [
+lbrke;  U+0298B     ⦋
+lbrksld;    U+0298F     ⦏
+lbrkslu;    U+0298D     ⦍
+lcaron;     U+0013E     ľ
+lcedil;     U+0013C     ļ
+lceil;  U+02308     ⌈
+lcub;   U+0007B     {
+lcy;    U+0043B     л
+ldca;   U+02936     ⤶
+ldquo;  U+0201C     “
+ldquor;     U+0201E     „
+ldrdhar;    U+02967     ⥧
+ldrushar;   U+0294B     ⥋
+ldsh;   U+021B2     ↲
+le;     U+02264     ≤
+leftarrow;  U+02190     ←
+leftarrowtail;  U+021A2     ↢
+leftharpoondown;    U+021BD     ↽
+leftharpoonup;  U+021BC     ↼
+leftleftarrows;     U+021C7     ⇇
+leftrightarrow;     U+02194     ↔
+leftrightarrows;    U+021C6     ⇆
+leftrightharpoons;  U+021CB     ⇋
+leftrightsquigarrow;    U+021AD     ↭
+leftthreetimes;     U+022CB     ⋋
+leg;    U+022DA     ⋚
+leq;    U+02264     ≤
+leqq;   U+02266     ≦
+leqslant;   U+02A7D     ⩽
+les;    U+02A7D     ⩽
+lescc;  U+02AA8     ⪨
+lesdot;     U+02A7F     ⩿
+lesdoto;    U+02A81     ⪁
+lesdotor;   U+02A83     ⪃
+lesg;   U+022DA U+0FE00     ⋚︀
+lesges;     U+02A93     ⪓
+lessapprox;     U+02A85     ⪅
+lessdot;    U+022D6     ⋖
+lesseqgtr;  U+022DA     ⋚
+lesseqqgtr;     U+02A8B     ⪋
+lessgtr;    U+02276     ≶
+lesssim;    U+02272     ≲
+lfisht;     U+0297C     ⥼
+lfloor;     U+0230A     ⌊
+lfr;    U+1D529     ������
+lg;     U+02276     ≶
+lgE;    U+02A91     ⪑
+lhard;  U+021BD     ↽
+lharu;  U+021BC     ↼
+lharul;     U+0296A     ⥪
+lhblk;  U+02584     ▄
+ljcy;   U+00459     љ
+ll;     U+0226A     ≪
+llarr;  U+021C7     ⇇
+llcorner;   U+0231E     ⌞
+llhard;     U+0296B     ⥫
+lltri;  U+025FA     ◺
+lmidot;     U+00140     ŀ
+lmoust;     U+023B0     ⎰
+lmoustache;     U+023B0     ⎰
+lnE;    U+02268     ≨
+lnap;   U+02A89     ⪉
+lnapprox;   U+02A89     ⪉
+lne;    U+02A87     ⪇
+lneq;   U+02A87     ⪇
+lneqq;  U+02268     ≨
+lnsim;  U+022E6     ⋦
+loang;  U+027EC     ⟬
+loarr;  U+021FD     ⇽
+lobrk;  U+027E6     ⟦
+longleftarrow;  U+027F5     ⟵
+longleftrightarrow;     U+027F7     ⟷
+longmapsto;     U+027FC     ⟼
+longrightarrow;     U+027F6     ⟶
+looparrowleft;  U+021AB     ↫
+looparrowright;     U+021AC     ↬
+lopar;  U+02985     ⦅
+lopf;   U+1D55D     ������
+loplus;     U+02A2D     ⨭
+lotimes;    U+02A34     ⨴
+lowast;     U+02217     ∗
+lowbar;     U+0005F     _
+loz;    U+025CA     ◊
+lozenge;    U+025CA     ◊
+lozf;   U+029EB     ⧫
+lpar;   U+00028     (
+lparlt;     U+02993     ⦓
+lrarr;  U+021C6     ⇆
+lrcorner;   U+0231F     ⌟
+lrhar;  U+021CB     ⇋
+lrhard;     U+0296D     ⥭
+lrm;    U+0200E     ‎
+lrtri;  U+022BF     ⊿
+lsaquo;     U+02039     ‹
+lscr;   U+1D4C1     ������
+lsh;    U+021B0     ↰
+lsim;   U+02272     ≲
+lsime;  U+02A8D     ⪍
+lsimg;  U+02A8F     ⪏
+lsqb;   U+0005B     [
+lsquo;  U+02018     ‘
+lsquor;     U+0201A     ‚
+lstrok;     U+00142     ł
+lt;     U+0003C     <
+ltcc;   U+02AA6     ⪦
+ltcir;  U+02A79     ⩹
+ltdot;  U+022D6     ⋖
+lthree;     U+022CB     ⋋
+ltimes;     U+022C9     ⋉
+ltlarr;     U+02976     ⥶
+ltquest;    U+02A7B     ⩻
+ltrPar;     U+02996     ⦖
+ltri;   U+025C3     ◃
+ltrie;  U+022B4     ⊴
+ltrif;  U+025C2     ◂
+lurdshar;   U+0294A     ⥊
+luruhar;    U+02966     ⥦
+lvertneqq;  U+02268 U+0FE00     ≨︀
+lvnE;   U+02268 U+0FE00     ≨︀
+mDDot;  U+0223A     ∺
+macr;   U+000AF     ¯
+male;   U+02642     ♂
+malt;   U+02720     ✠
+maltese;    U+02720     ✠
+map;    U+021A6     ↦
+mapsto;     U+021A6     ↦
+mapstodown;     U+021A7     ↧
+mapstoleft;     U+021A4     ↤
+mapstoup;   U+021A5     ↥
+marker;     U+025AE     ▮
+mcomma;     U+02A29     ⨩
+mcy;    U+0043C     м
+mdash;  U+02014     —
+measuredangle;  U+02221     ∡
+mfr;    U+1D52A     ������
+mho;    U+02127     ℧
+micro;  U+000B5     µ
+mid;    U+02223     ∣
+midast;     U+0002A     *
+midcir;     U+02AF0     ⫰
+middot;     U+000B7     ·
+minus;  U+02212     −
+minusb;     U+0229F     ⊟
+minusd;     U+02238     ∸
+minusdu;    U+02A2A     ⨪
+mlcp;   U+02ADB     ⫛
+mldr;   U+02026     …
+mnplus;     U+02213     ∓
+models;     U+022A7     ⊧
+mopf;   U+1D55E     ������
+mp;     U+02213     ∓
+mscr;   U+1D4C2     ������
+mstpos;     U+0223E     ∾
+mu;     U+003BC     μ
+multimap;   U+022B8     ⊸
+mumap;  U+022B8     ⊸
+nGg;    U+022D9 U+00338     ⋙̸
+nGt;    U+0226B U+020D2     ≫⃒
+nGtv;   U+0226B U+00338     ≫̸
+nLeftarrow;     U+021CD     ⇍
+nLeftrightarrow;    U+021CE     ⇎
+nLl;    U+022D8 U+00338     ⋘̸
+nLt;    U+0226A U+020D2     ≪⃒
+nLtv;   U+0226A U+00338     ≪̸
+nRightarrow;    U+021CF     ⇏
+nVDash;     U+022AF     ⊯
+nVdash;     U+022AE     ⊮
+nabla;  U+02207     ∇
+nacute;     U+00144     ń
+nang;   U+02220 U+020D2     ∠⃒
+nap;    U+02249     ≉
+napE;   U+02A70 U+00338     ⩰̸
+napid;  U+0224B U+00338     ≋̸
+napos;  U+00149     ŉ
+napprox;    U+02249     ≉
+natur;  U+0266E     ♮
+natural;    U+0266E     ♮
+naturals;   U+02115     ℕ
+nbsp;   U+000A0      
+nbump;  U+0224E U+00338     ≎̸
+nbumpe;     U+0224F U+00338     ≏̸
+ncap;   U+02A43     ⩃
+ncaron;     U+00148     ň
+ncedil;     U+00146     ņ
+ncong;  U+02247     ≇
+ncongdot;   U+02A6D U+00338     ⩭̸
+ncup;   U+02A42     ⩂
+ncy;    U+0043D     н
+ndash;  U+02013     –
+ne;     U+02260     ≠
+neArr;  U+021D7     ⇗
+nearhk;     U+02924     ⤤
+nearr;  U+02197     ↗
+nearrow;    U+02197     ↗
+nedot;  U+02250 U+00338     ≐̸
+nequiv;     U+02262     ≢
+nesear;     U+02928     ⤨
+nesim;  U+02242 U+00338     ≂̸
+nexist;     U+02204     ∄
+nexists;    U+02204     ∄
+nfr;    U+1D52B     ������
+ngE;    U+02267 U+00338     ≧̸
+nge;    U+02271     ≱
+ngeq;   U+02271     ≱
+ngeqq;  U+02267 U+00338     ≧̸
+ngeqslant;  U+02A7E U+00338     ⩾̸
+nges;   U+02A7E U+00338     ⩾̸
+ngsim;  U+02275     ≵
+ngt;    U+0226F     ≯
+ngtr;   U+0226F     ≯
+nhArr;  U+021CE     ⇎
+nharr;  U+021AE     ↮
+nhpar;  U+02AF2     ⫲
+ni;     U+0220B     ∋
+nis;    U+022FC     ⋼
+nisd;   U+022FA     ⋺
+niv;    U+0220B     ∋
+njcy;   U+0045A     њ
+nlArr;  U+021CD     ⇍
+nlE;    U+02266 U+00338     ≦̸
+nlarr;  U+0219A     ↚
+nldr;   U+02025     ‥
+nle;    U+02270     ≰
+nleftarrow;     U+0219A     ↚
+nleftrightarrow;    U+021AE     ↮
+nleq;   U+02270     ≰
+nleqq;  U+02266 U+00338     ≦̸
+nleqslant;  U+02A7D U+00338     ⩽̸
+nles;   U+02A7D U+00338     ⩽̸
+nless;  U+0226E     ≮
+nlsim;  U+02274     ≴
+nlt;    U+0226E     ≮
+nltri;  U+022EA     ⋪
+nltrie;     U+022EC     ⋬
+nmid;   U+02224     ∤
+nopf;   U+1D55F     ������
+not;    U+000AC     ¬
+notin;  U+02209     ∉
+notinE;     U+022F9 U+00338     ⋹̸
+notindot;   U+022F5 U+00338     ⋵̸
+notinva;    U+02209     ∉
+notinvb;    U+022F7     ⋷
+notinvc;    U+022F6     ⋶
+notni;  U+0220C     ∌
+notniva;    U+0220C     ∌
+notnivb;    U+022FE     ⋾
+notnivc;    U+022FD     ⋽
+npar;   U+02226     ∦
+nparallel;  U+02226     ∦
+nparsl;     U+02AFD U+020E5     ⫽⃥
+npart;  U+02202 U+00338     ∂̸
+npolint;    U+02A14     ⨔
+npr;    U+02280     ⊀
+nprcue;     U+022E0     ⋠
+npre;   U+02AAF U+00338     ⪯̸
+nprec;  U+02280     ⊀
+npreceq;    U+02AAF U+00338     ⪯̸
+nrArr;  U+021CF     ⇏
+nrarr;  U+0219B     ↛
+nrarrc;     U+02933 U+00338     ⤳̸
+nrarrw;     U+0219D U+00338     ↝̸
+nrightarrow;    U+0219B     ↛
+nrtri;  U+022EB     ⋫
+nrtrie;     U+022ED     ⋭
+nsc;    U+02281     ⊁
+nsccue;     U+022E1     ⋡
+nsce;   U+02AB0 U+00338     ⪰̸
+nscr;   U+1D4C3     ������
+nshortmid;  U+02224     ∤
+nshortparallel;     U+02226     ∦
+nsim;   U+02241     ≁
+nsime;  U+02244     ≄
+nsimeq;     U+02244     ≄
+nsmid;  U+02224     ∤
+nspar;  U+02226     ∦
+nsqsube;    U+022E2     ⋢
+nsqsupe;    U+022E3     ⋣
+nsub;   U+02284     ⊄
+nsubE;  U+02AC5 U+00338     ⫅̸
+nsube;  U+02288     ⊈
+nsubset;    U+02282 U+020D2     ⊂⃒
+nsubseteq;  U+02288     ⊈
+nsubseteqq;     U+02AC5 U+00338     ⫅̸
+nsucc;  U+02281     ⊁
+nsucceq;    U+02AB0 U+00338     ⪰̸
+nsup;   U+02285     ⊅
+nsupE;  U+02AC6 U+00338     ⫆̸
+nsupe;  U+02289     ⊉
+nsupset;    U+02283 U+020D2     ⊃⃒
+nsupseteq;  U+02289     ⊉
+nsupseteqq;     U+02AC6 U+00338     ⫆̸
+ntgl;   U+02279     ≹
+ntilde;     U+000F1     ñ
+ntlg;   U+02278     ≸
+ntriangleleft;  U+022EA     ⋪
+ntrianglelefteq;    U+022EC     ⋬
+ntriangleright;     U+022EB     ⋫
+ntrianglerighteq;   U+022ED     ⋭
+nu;     U+003BD     ν
+num;    U+00023     #
+numero;     U+02116     №
+numsp;  U+02007      
+nvDash;     U+022AD     ⊭
+nvHarr;     U+02904     ⤄
+nvap;   U+0224D U+020D2     ≍⃒
+nvdash;     U+022AC     ⊬
+nvge;   U+02265 U+020D2     ≥⃒
+nvgt;   U+0003E U+020D2     >⃒
+nvinfin;    U+029DE     ⧞
+nvlArr;     U+02902     ⤂
+nvle;   U+02264 U+020D2     ≤⃒
+nvlt;   U+0003C U+020D2     <⃒
+nvltrie;    U+022B4 U+020D2     ⊴⃒
+nvrArr;     U+02903     ⤃
+nvrtrie;    U+022B5 U+020D2     ⊵⃒
+nvsim;  U+0223C U+020D2     ∼⃒
+nwArr;  U+021D6     ⇖
+nwarhk;     U+02923     ⤣
+nwarr;  U+02196     ↖
+nwarrow;    U+02196     ↖
+nwnear;     U+02927     ⤧
+oS;     U+024C8     Ⓢ
+oacute;     U+000F3     ó
+oast;   U+0229B     ⊛
+ocir;   U+0229A     ⊚
+ocirc;  U+000F4     ô
+ocy;    U+0043E     о
+odash;  U+0229D     ⊝
+odblac;     U+00151     ő
+odiv;   U+02A38     ⨸
+odot;   U+02299     ⊙
+odsold;     U+029BC     ⦼
+oelig;  U+00153     œ
+ofcir;  U+029BF     ⦿
+ofr;    U+1D52C     ������
+ogon;   U+002DB     ˛
+ograve;     U+000F2     ò
+ogt;    U+029C1     ⧁
+ohbar;  U+029B5     ⦵
+ohm;    U+003A9     Ω
+oint;   U+0222E     ∮
+olarr;  U+021BA     ↺
+olcir;  U+029BE     ⦾
+olcross;    U+029BB     ⦻
+oline;  U+0203E     ‾
+olt;    U+029C0     ⧀
+omacr;  U+0014D     ō
+omega;  U+003C9     ω
+omicron;    U+003BF     ο
+omid;   U+029B6     ⦶
+ominus;     U+02296     ⊖
+oopf;   U+1D560     ������
+opar;   U+029B7     ⦷
+operp;  U+029B9     ⦹
+oplus;  U+02295     ⊕
+or;     U+02228     ∨
+orarr;  U+021BB     ↻
+ord;    U+02A5D     ⩝
+order;  U+02134     ℴ
+orderof;    U+02134     ℴ
+ordf;   U+000AA     ª
+ordm;   U+000BA     º
+origof;     U+022B6     ⊶
+oror;   U+02A56     ⩖
+orslope;    U+02A57     ⩗
+orv;    U+02A5B     ⩛
+oscr;   U+02134     ℴ
+oslash;     U+000F8     ø
+osol;   U+02298     ⊘
+otilde;     U+000F5     õ
+otimes;     U+02297     ⊗
+otimesas;   U+02A36     ⨶
+ouml;   U+000F6     ö
+ovbar;  U+0233D     ⌽
+par;    U+02225     ∥
+para;   U+000B6     ¶
+parallel;   U+02225     ∥
+parsim;     U+02AF3     ⫳
+parsl;  U+02AFD     ⫽
+part;   U+02202     ∂
+pcy;    U+0043F     п
+percnt;     U+00025     %
+period;     U+0002E     .
+permil;     U+02030     ‰
+perp;   U+022A5     ⊥
+pertenk;    U+02031     ‱
+pfr;    U+1D52D     ������
+phi;    U+003C6     φ
+phiv;   U+003D5     ϕ
+phmmat;     U+02133     ℳ
+phone;  U+0260E     ☎
+pi;     U+003C0     π
+pitchfork;  U+022D4     ⋔
+piv;    U+003D6     ϖ
+planck;     U+0210F     ℏ
+planckh;    U+0210E     ℎ
+plankv;     U+0210F     ℏ
+plus;   U+0002B     +
+plusacir;   U+02A23     ⨣
+plusb;  U+0229E     ⊞
+pluscir;    U+02A22     ⨢
+plusdo;     U+02214     ∔
+plusdu;     U+02A25     ⨥
+pluse;  U+02A72     ⩲
+plusmn;     U+000B1     ±
+plussim;    U+02A26     ⨦
+plustwo;    U+02A27     ⨧
+pm;     U+000B1     ±
+pointint;   U+02A15     ⨕
+popf;   U+1D561     ������
+pound;  U+000A3     £
+pr;     U+0227A     ≺
+prE;    U+02AB3     ⪳
+prap;   U+02AB7     ⪷
+prcue;  U+0227C     ≼
+pre;    U+02AAF     ⪯
+prec;   U+0227A     ≺
+precapprox;     U+02AB7     ⪷
+preccurlyeq;    U+0227C     ≼
+preceq;     U+02AAF     ⪯
+precnapprox;    U+02AB9     ⪹
+precneqq;   U+02AB5     ⪵
+precnsim;   U+022E8     ⋨
+precsim;    U+0227E     ≾
+prime;  U+02032     ′
+primes;     U+02119     ℙ
+prnE;   U+02AB5     ⪵
+prnap;  U+02AB9     ⪹
+prnsim;     U+022E8     ⋨
+prod;   U+0220F     ∏
+profalar;   U+0232E     ⌮
+profline;   U+02312     ⌒
+profsurf;   U+02313     ⌓
+prop;   U+0221D     ∝
+propto;     U+0221D     ∝
+prsim;  U+0227E     ≾
+prurel;     U+022B0     ⊰
+pscr;   U+1D4C5     ������
+psi;    U+003C8     ψ
+puncsp;     U+02008      
+qfr;    U+1D52E     ������
+qint;   U+02A0C     ⨌
+qopf;   U+1D562     ������
+qprime;     U+02057     ⁗
+qscr;   U+1D4C6     ������
+quaternions;    U+0210D     ℍ
+quatint;    U+02A16     ⨖
+quest;  U+0003F     ?
+questeq;    U+0225F     ≟
+quot;   U+00022     "
+rAarr;  U+021DB     ⇛
+rArr;   U+021D2     ⇒
+rAtail;     U+0291C     ⤜
+rBarr;  U+0290F     ⤏
+rHar;   U+02964     ⥤
+race;   U+0223D U+00331     ∽̱
+racute;     U+00155     ŕ
+radic;  U+0221A     √
+raemptyv;   U+029B3     ⦳
+rang;   U+027E9     〉
+rangd;  U+02992     ⦒
+range;  U+029A5     ⦥
+rangle;     U+027E9     〉
+raquo;  U+000BB     »
+rarr;   U+02192     →
+rarrap;     U+02975     ⥵
+rarrb;  U+021E5     ⇥
+rarrbfs;    U+02920     ⤠
+rarrc;  U+02933     ⤳
+rarrfs;     U+0291E     ⤞
+rarrhk;     U+021AA     ↪
+rarrlp;     U+021AC     ↬
+rarrpl;     U+02945     ⥅
+rarrsim;    U+02974     ⥴
+rarrtl;     U+021A3     ↣
+rarrw;  U+0219D     ↝
+ratail;     U+0291A     ⤚
+ratio;  U+02236     ∶
+rationals;  U+0211A     ℚ
+rbarr;  U+0290D     ⤍
+rbbrk;  U+02773     ❳
+rbrace;     U+0007D     }
+rbrack;     U+0005D     ]
+rbrke;  U+0298C     ⦌
+rbrksld;    U+0298E     ⦎
+rbrkslu;    U+02990     ⦐
+rcaron;     U+00159     ř
+rcedil;     U+00157     ŗ
+rceil;  U+02309     ⌉
+rcub;   U+0007D     }
+rcy;    U+00440     р
+rdca;   U+02937     ⤷
+rdldhar;    U+02969     ⥩
+rdquo;  U+0201D     ”
+rdquor;     U+0201D     ”
+rdsh;   U+021B3     ↳
+real;   U+0211C     ℜ
+realine;    U+0211B     ℛ
+realpart;   U+0211C     ℜ
+reals;  U+0211D     ℝ
+rect;   U+025AD     ▭
+reg;    U+000AE     ®
+rfisht;     U+0297D     ⥽
+rfloor;     U+0230B     ⌋
+rfr;    U+1D52F     ������
+rhard;  U+021C1     ⇁
+rharu;  U+021C0     ⇀
+rharul;     U+0296C     ⥬
+rho;    U+003C1     ρ
+rhov;   U+003F1     ϱ
+rightarrow;     U+02192     →
+rightarrowtail;     U+021A3     ↣
+rightharpoondown;   U+021C1     ⇁
+rightharpoonup;     U+021C0     ⇀
+rightleftarrows;    U+021C4     ⇄
+rightleftharpoons;  U+021CC     ⇌
+rightrightarrows;   U+021C9     ⇉
+rightsquigarrow;    U+0219D     ↝
+rightthreetimes;    U+022CC     ⋌
+ring;   U+002DA     ˚
+risingdotseq;   U+02253     ≓
+rlarr;  U+021C4     ⇄
+rlhar;  U+021CC     ⇌
+rlm;    U+0200F     ‏
+rmoust;     U+023B1     ⎱
+rmoustache;     U+023B1     ⎱
+rnmid;  U+02AEE     ⫮
+roang;  U+027ED     ⟭
+roarr;  U+021FE     ⇾
+robrk;  U+027E7     ⟧
+ropar;  U+02986     ⦆
+ropf;   U+1D563     ������
+roplus;     U+02A2E     ⨮
+rotimes;    U+02A35     ⨵
+rpar;   U+00029     )
+rpargt;     U+02994     ⦔
+rppolint;   U+02A12     ⨒
+rrarr;  U+021C9     ⇉
+rsaquo;     U+0203A     ›
+rscr;   U+1D4C7     ������
+rsh;    U+021B1     ↱
+rsqb;   U+0005D     ]
+rsquo;  U+02019     ’
+rsquor;     U+02019     ’
+rthree;     U+022CC     ⋌
+rtimes;     U+022CA     ⋊
+rtri;   U+025B9     ▹
+rtrie;  U+022B5     ⊵
+rtrif;  U+025B8     ▸
+rtriltri;   U+029CE     ⧎
+ruluhar;    U+02968     ⥨
+rx;     U+0211E     ℞
+sacute;     U+0015B     ś
+sbquo;  U+0201A     ‚
+sc;     U+0227B     ≻
+scE;    U+02AB4     ⪴
+scap;   U+02AB8     ⪸
+scaron;     U+00161     š
+sccue;  U+0227D     ≽
+sce;    U+02AB0     ⪰
+scedil;     U+0015F     ş
+scirc;  U+0015D     ŝ
+scnE;   U+02AB6     ⪶
+scnap;  U+02ABA     ⪺
+scnsim;     U+022E9     ⋩
+scpolint;   U+02A13     ⨓
+scsim;  U+0227F     ≿
+scy;    U+00441     с
+sdot;   U+022C5     ⋅
+sdotb;  U+022A1     ⊡
+sdote;  U+02A66     ⩦
+seArr;  U+021D8     ⇘
+searhk;     U+02925     ⤥
+searr;  U+02198     ↘
+searrow;    U+02198     ↘
+sect;   U+000A7     §
+semi;   U+0003B     ;
+seswar;     U+02929     ⤩
+setminus;   U+02216     ∖
+setmn;  U+02216     ∖
+sext;   U+02736     ✶
+sfr;    U+1D530     ������
+sfrown;     U+02322     ⌢
+sharp;  U+0266F     ♯
+shchcy;     U+00449     щ
+shcy;   U+00448     ш
+shortmid;   U+02223     ∣
+shortparallel;  U+02225     ∥
+shy;    U+000AD     ­
+sigma;  U+003C3     σ
+sigmaf;     U+003C2     ς
+sigmav;     U+003C2     ς
+sim;    U+0223C     ∼
+simdot;     U+02A6A     ⩪
+sime;   U+02243     ≃
+simeq;  U+02243     ≃
+simg;   U+02A9E     ⪞
+simgE;  U+02AA0     ⪠
+siml;   U+02A9D     ⪝
+simlE;  U+02A9F     ⪟
+simne;  U+02246     ≆
+simplus;    U+02A24     ⨤
+simrarr;    U+02972     ⥲
+slarr;  U+02190     ←
+smallsetminus;  U+02216     ∖
+smashp;     U+02A33     ⨳
+smeparsl;   U+029E4     ⧤
+smid;   U+02223     ∣
+smile;  U+02323     ⌣
+smt;    U+02AAA     ⪪
+smte;   U+02AAC     ⪬
+smtes;  U+02AAC U+0FE00     ⪬︀
+softcy;     U+0044C     ь
+sol;    U+0002F     /
+solb;   U+029C4     ⧄
+solbar;     U+0233F     ⌿
+sopf;   U+1D564     ������
+spades;     U+02660     ♠
+spadesuit;  U+02660     ♠
+spar;   U+02225     ∥
+sqcap;  U+02293     ⊓
+sqcaps;     U+02293 U+0FE00     ⊓︀
+sqcup;  U+02294     ⊔
+sqcups;     U+02294 U+0FE00     ⊔︀
+sqsub;  U+0228F     ⊏
+sqsube;     U+02291     ⊑
+sqsubset;   U+0228F     ⊏
+sqsubseteq;     U+02291     ⊑
+sqsup;  U+02290     ⊐
+sqsupe;     U+02292     ⊒
+sqsupset;   U+02290     ⊐
+sqsupseteq;     U+02292     ⊒
+squ;    U+025A1     □
+square;     U+025A1     □
+squarf;     U+025AA     ▪
+squf;   U+025AA     ▪
+srarr;  U+02192     →
+sscr;   U+1D4C8     ������
+ssetmn;     U+02216     ∖
+ssmile;     U+02323     ⌣
+sstarf;     U+022C6     ⋆
+star;   U+02606     ☆
+starf;  U+02605     ★
+straightepsilon;    U+003F5     ϵ
+straightphi;    U+003D5     ϕ
+strns;  U+000AF     ¯
+sub;    U+02282     ⊂
+subE;   U+02AC5     ⫅
+subdot;     U+02ABD     ⪽
+sube;   U+02286     ⊆
+subedot;    U+02AC3     ⫃
+submult;    U+02AC1     ⫁
+subnE;  U+02ACB     ⫋
+subne;  U+0228A     ⊊
+subplus;    U+02ABF     ⪿
+subrarr;    U+02979     ⥹
+subset;     U+02282     ⊂
+subseteq;   U+02286     ⊆
+subseteqq;  U+02AC5     ⫅
+subsetneq;  U+0228A     ⊊
+subsetneqq;     U+02ACB     ⫋
+subsim;     U+02AC7     ⫇
+subsub;     U+02AD5     ⫕
+subsup;     U+02AD3     ⫓
+succ;   U+0227B     ≻
+succapprox;     U+02AB8     ⪸
+succcurlyeq;    U+0227D     ≽
+succeq;     U+02AB0     ⪰
+succnapprox;    U+02ABA     ⪺
+succneqq;   U+02AB6     ⪶
+succnsim;   U+022E9     ⋩
+succsim;    U+0227F     ≿
+sum;    U+02211     ∑
+sung;   U+0266A     ♪
+sup;    U+02283     ⊃
+sup1;   U+000B9     ¹
+sup2;   U+000B2     ²
+sup3;   U+000B3     ³
+supE;   U+02AC6     ⫆
+supdot;     U+02ABE     ⪾
+supdsub;    U+02AD8     ⫘
+supe;   U+02287     ⊇
+supedot;    U+02AC4     ⫄
+suphsol;    U+027C9     ⟉
+suphsub;    U+02AD7     ⫗
+suplarr;    U+0297B     ⥻
+supmult;    U+02AC2     ⫂
+supnE;  U+02ACC     ⫌
+supne;  U+0228B     ⊋
+supplus;    U+02AC0     ⫀
+supset;     U+02283     ⊃
+supseteq;   U+02287     ⊇
+supseteqq;  U+02AC6     ⫆
+supsetneq;  U+0228B     ⊋
+supsetneqq;     U+02ACC     ⫌
+supsim;     U+02AC8     ⫈
+supsub;     U+02AD4     ⫔
+supsup;     U+02AD6     ⫖
+swArr;  U+021D9     ⇙
+swarhk;     U+02926     ⤦
+swarr;  U+02199     ↙
+swarrow;    U+02199     ↙
+swnwar;     U+0292A     ⤪
+szlig;  U+000DF     ß
+target;     U+02316     ⌖
+tau;    U+003C4     τ
+tbrk;   U+023B4     ⎴
+tcaron;     U+00165     ť
+tcedil;     U+00163     ţ
+tcy;    U+00442     т
+tdot;   U+020DB     ◌⃛
+telrec;     U+02315     ⌕
+tfr;    U+1D531     ������
+there4;     U+02234     ∴
+therefore;  U+02234     ∴
+theta;  U+003B8     θ
+thetasym;   U+003D1     ϑ
+thetav;     U+003D1     ϑ
+thickapprox;    U+02248     ≈
+thicksim;   U+0223C     ∼
+thinsp;     U+02009      
+thkap;  U+02248     ≈
+thksim;     U+0223C     ∼
+thorn;  U+000FE     þ
+tilde;  U+002DC     ˜
+times;  U+000D7     ×
+timesb;     U+022A0     ⊠
+timesbar;   U+02A31     ⨱
+timesd;     U+02A30     ⨰
+tint;   U+0222D     ∭
+toea;   U+02928     ⤨
+top;    U+022A4     ⊤
+topbot;     U+02336     ⌶
+topcir;     U+02AF1     ⫱
+topf;   U+1D565     ������
+topfork;    U+02ADA     ⫚
+tosa;   U+02929     ⤩
+tprime;     U+02034     ‴
+trade;  U+02122     ™
+triangle;   U+025B5     ▵
+triangledown;   U+025BF     ▿
+triangleleft;   U+025C3     ◃
+trianglelefteq;     U+022B4     ⊴
+triangleq;  U+0225C     ≜
+triangleright;  U+025B9     ▹
+trianglerighteq;    U+022B5     ⊵
+tridot;     U+025EC     ◬
+trie;   U+0225C     ≜
+triminus;   U+02A3A     ⨺
+triplus;    U+02A39     ⨹
+trisb;  U+029CD     ⧍
+tritime;    U+02A3B     ⨻
+trpezium;   U+023E2     ⏢
+tscr;   U+1D4C9     ������
+tscy;   U+00446     ц
+tshcy;  U+0045B     ћ
+tstrok;     U+00167     ŧ
+twixt;  U+0226C     ≬
+twoheadleftarrow;   U+0219E     ↞
+twoheadrightarrow;  U+021A0     ↠
+uArr;   U+021D1     ⇑
+uHar;   U+02963     ⥣
+uacute;     U+000FA     ú
+uarr;   U+02191     ↑
+ubrcy;  U+0045E     ў
+ubreve;     U+0016D     ŭ
+ucirc;  U+000FB     û
+ucy;    U+00443     у
+udarr;  U+021C5     ⇅
+udblac;     U+00171     ű
+udhar;  U+0296E     ⥮
+ufisht;     U+0297E     ⥾
+ufr;    U+1D532     ������
+ugrave;     U+000F9     ù
+uharl;  U+021BF     ↿
+uharr;  U+021BE     ↾
+uhblk;  U+02580     ▀
+ulcorn;     U+0231C     ⌜
+ulcorner;   U+0231C     ⌜
+ulcrop;     U+0230F     ⌏
+ultri;  U+025F8     ◸
+umacr;  U+0016B     ū
+uml;    U+000A8     ¨
+uogon;  U+00173     ų
+uopf;   U+1D566     ������
+uparrow;    U+02191     ↑
+updownarrow;    U+02195     ↕
+upharpoonleft;  U+021BF     ↿
+upharpoonright;     U+021BE     ↾
+uplus;  U+0228E     ⊎
+upsi;   U+003C5     υ
+upsih;  U+003D2     ϒ
+upsilon;    U+003C5     υ
+upuparrows;     U+021C8     ⇈
+urcorn;     U+0231D     ⌝
+urcorner;   U+0231D     ⌝
+urcrop;     U+0230E     ⌎
+uring;  U+0016F     ů
+urtri;  U+025F9     ◹
+uscr;   U+1D4CA     ������
+utdot;  U+022F0     ⋰
+utilde;     U+00169     ũ
+utri;   U+025B5     ▵
+utrif;  U+025B4     ▴
+uuarr;  U+021C8     ⇈
+uuml;   U+000FC     ü
+uwangle;    U+029A7     ⦧
+vArr;   U+021D5     ⇕
+vBar;   U+02AE8     ⫨
+vBarv;  U+02AE9     ⫩
+vDash;  U+022A8     ⊨
+vangrt;     U+0299C     ⦜
+varepsilon;     U+003F5     ϵ
+varkappa;   U+003F0     ϰ
+varnothing;     U+02205     ∅
+varphi;     U+003D5     ϕ
+varpi;  U+003D6     ϖ
+varpropto;  U+0221D     ∝
+varr;   U+02195     ↕
+varrho;     U+003F1     ϱ
+varsigma;   U+003C2     ς
+varsubsetneq;   U+0228A U+0FE00     ⊊︀
+varsubsetneqq;  U+02ACB U+0FE00     ⫋︀
+varsupsetneq;   U+0228B U+0FE00     ⊋︀
+varsupsetneqq;  U+02ACC U+0FE00     ⫌︀
+vartheta;   U+003D1     ϑ
+vartriangleleft;    U+022B2     ⊲
+vartriangleright;   U+022B3     ⊳
+vcy;    U+00432     в
+vdash;  U+022A2     ⊢
+vee;    U+02228     ∨
+veebar;     U+022BB     ⊻
+veeeq;  U+0225A     ≚
+vellip;     U+022EE     ⋮
+verbar;     U+0007C     |
+vert;   U+0007C     |
+vfr;    U+1D533     ������
+vltri;  U+022B2     ⊲
+vnsub;  U+02282 U+020D2     ⊂⃒
+vnsup;  U+02283 U+020D2     ⊃⃒
+vopf;   U+1D567     ������
+vprop;  U+0221D     ∝
+vrtri;  U+022B3     ⊳
+vscr;   U+1D4CB     ������
+vsubnE;     U+02ACB U+0FE00     ⫋︀
+vsubne;     U+0228A U+0FE00     ⊊︀
+vsupnE;     U+02ACC U+0FE00     ⫌︀
+vsupne;     U+0228B U+0FE00     ⊋︀
+vzigzag;    U+0299A     ⦚
+wcirc;  U+00175     ŵ
+wedbar;     U+02A5F     ⩟
+wedge;  U+02227     ∧
+wedgeq;     U+02259     ≙
+weierp;     U+02118     ℘
+wfr;    U+1D534     ������
+wopf;   U+1D568     ������
+wp;     U+02118     ℘
+wr;     U+02240     ≀
+wreath;     U+02240     ≀
+wscr;   U+1D4CC     ������
+xcap;   U+022C2     ⋂
+xcirc;  U+025EF     ◯
+xcup;   U+022C3     ⋃
+xdtri;  U+025BD     ▽
+xfr;    U+1D535     ������
+xhArr;  U+027FA     ⟺
+xharr;  U+027F7     ⟷
+xi;     U+003BE     ξ
+xlArr;  U+027F8     ⟸
+xlarr;  U+027F5     ⟵
+xmap;   U+027FC     ⟼
+xnis;   U+022FB     ⋻
+xodot;  U+02A00     ⨀
+xopf;   U+1D569     ������
+xoplus;     U+02A01     ⨁
+xotime;     U+02A02     ⨂
+xrArr;  U+027F9     ⟹
+xrarr;  U+027F6     ⟶
+xscr;   U+1D4CD     ������
+xsqcup;     U+02A06     ⨆
+xuplus;     U+02A04     ⨄
+xutri;  U+025B3     △
+xvee;   U+022C1     ⋁
+xwedge;     U+022C0     ⋀
+yacute;     U+000FD     ý
+yacy;   U+0044F     я
+ycirc;  U+00177     ŷ
+ycy;    U+0044B     ы
+yen;    U+000A5     ¥
+yfr;    U+1D536     ������
+yicy;   U+00457     ї
+yopf;   U+1D56A     ������
+yscr;   U+1D4CE     ������
+yucy;   U+0044E     ю
+yuml;   U+000FF     ÿ
+zacute;     U+0017A     ź
+zcaron;     U+0017E     ž
+zcy;    U+00437     з
+zdot;   U+0017C     ż
+zeetrf;     U+02128     ℨ
+zeta;   U+003B6     ζ
+zfr;    U+1D537     ������
+zhcy;   U+00436     ж
+zigrarr;    U+021DD     ⇝
+zopf;   U+1D56B     ������
+zscr;   U+1D4CF     ������
+zwj;    U+0200D     ‍
+zwnj;   U+0200C     ‌
+AElig   U+000C6     Æ
+AMP     U+00026     &
+Aacute  U+000C1     Á
+Acirc   U+000C2     Â
+Agrave  U+000C0     À
+Aring   U+000C5     Å
+Atilde  U+000C3     Ã
+Auml    U+000C4     Ä
+COPY    U+000A9     ©
+Ccedil  U+000C7     Ç
+ETH     U+000D0     Ð
+Eacute  U+000C9     É
+Ecirc   U+000CA     Ê
+Egrave  U+000C8     È
+Euml    U+000CB     Ë
+GT  U+0003E     >
+Iacute  U+000CD     Í
+Icirc   U+000CE     Î
+Igrave  U+000CC     Ì
+Iuml    U+000CF     Ï
+LT  U+0003C     <
+Ntilde  U+000D1     Ñ
+Oacute  U+000D3     Ó
+Ocirc   U+000D4     Ô
+Ograve  U+000D2     Ò
+Oslash  U+000D8     Ø
+Otilde  U+000D5     Õ
+Ouml    U+000D6     Ö
+QUOT    U+00022     "
+REG     U+000AE     ®
+THORN   U+000DE     Þ
+Uacute  U+000DA     Ú
+Ucirc   U+000DB     Û
+Ugrave  U+000D9     Ù
+Uuml    U+000DC     Ü
+Yacute  U+000DD     Ý
+aacute  U+000E1     á
+acirc   U+000E2     â
+acute   U+000B4     ´
+aelig   U+000E6     æ
+agrave  U+000E0     à
+amp     U+00026     &
+aring   U+000E5     å
+atilde  U+000E3     ã
+auml    U+000E4     ä
+brvbar  U+000A6     ¦
+ccedil  U+000E7     ç
+cedil   U+000B8     ¸
+cent    U+000A2     ¢
+copy    U+000A9     ©
+curren  U+000A4     ¤
+deg     U+000B0     °
+divide  U+000F7     ÷
+eacute  U+000E9     é
+ecirc   U+000EA     ê
+egrave  U+000E8     è
+eth     U+000F0     ð
+euml    U+000EB     ë
+frac12  U+000BD     ½
+frac14  U+000BC     ¼
+frac34  U+000BE     ¾
+gt  U+0003E     >
+iacute  U+000ED     í
+icirc   U+000EE     î
+iexcl   U+000A1     ¡
+igrave  U+000EC     ì
+iquest  U+000BF     ¿
+iuml    U+000EF     ï
+laquo   U+000AB     «
+lt  U+0003C     <
+macr    U+000AF     ¯
+micro   U+000B5     µ
+middot  U+000B7     ·
+nbsp    U+000A0      
+not     U+000AC     ¬
+ntilde  U+000F1     ñ
+oacute  U+000F3     ó
+ocirc   U+000F4     ô
+ograve  U+000F2     ò
+ordf    U+000AA     ª
+ordm    U+000BA     º
+oslash  U+000F8     ø
+otilde  U+000F5     õ
+ouml    U+000F6     ö
+para    U+000B6     ¶
+plusmn  U+000B1     ±
+pound   U+000A3     £
+quot    U+00022     "
+raquo   U+000BB     »
+reg     U+000AE     ®
+sect    U+000A7     §
+shy     U+000AD     ­
+sup1    U+000B9     ¹
+sup2    U+000B2     ²
+sup3    U+000B3     ³
+szlig   U+000DF     ß
+thorn   U+000FE     þ
+times   U+000D7     ×
+uacute  U+000FA     ú
+ucirc   U+000FB     û
+ugrave  U+000F9     ù
+uml     U+000A8     ¨
+uuml    U+000FC     ü
+yacute  U+000FD     ý
+yen     U+000A5     ¥
+yuml    U+000FF     ÿ
 
 The glyphs displayed above are non-normative. Refer to the Unicode
 specifications for formal definitions of the characters listed above.
@@ -44178,17 +46535,17 @@ x x x x h1 { margin-top: 1.67em; margin-bottom: 1.67em; }
 x x x x x h1 { margin-top: 2.33em; margin-bottom: 2.33em; }
 
 For each property in the table below, given a body element, the first attribute that exists maps to the pixel length property on the body element. If none of the attributes for a property are found, or if the value of the attribute that was found cannot be parsed successfully, then a default value of 8px is expected to be used for that property instead.
-Property 	Source
-'margin-top' 	body element's marginheight attribute
+Property    Source
+'margin-top'    body element's marginheight attribute
 The body element's container frame element's marginheight attribute
 body element's topmargin attribute
-'margin-right' 	body element's marginwidth attribute
+'margin-right'  body element's marginwidth attribute
 The body element's container frame element's marginwidth attribute
 body element's rightmargin attribute
-'margin-bottom' 	body element's marginheight attribute
+'margin-bottom'     body element's marginheight attribute
 The body element's container frame element's marginheight attribute
 body element's bottommargin attribute
-'margin-left' 	body element's marginwidth attribute
+'margin-left'   body element's marginwidth attribute
 The body element's container frame element's marginwidth attribute
 body element's leftmargin attribute
 
@@ -44214,14 +46571,14 @@ agent is expected to treat that attribute as a presentational hint for the
 aforementioned root element's 'overflow' property, setting it to the value
 given in the corresponding cell on the same row in the second column:
 
-Attribute value 	'overflow' value
-on 	'scroll'
-scroll 	'scroll'
-yes 	'scroll'
-off 	'hidden'
-noscroll 	'hidden'
-no 	'hidden'
-auto 	'auto'
+Attribute value     'overflow' value
+on  'scroll'
+scroll  'scroll'
+yes     'scroll'
+off     'hidden'
+noscroll    'hidden'
+no  'hidden'
+auto    'auto'
 
 The table element's cellspacing attribute maps to the pixel length property
 'border-spacing' on the element.
@@ -44523,14 +46880,14 @@ the element's 'font-size' property:
   12. Set 'font-size' to the keyword corresponding to the value of value
       according to the following table:
 
-      value 	'font-size' keyword 	Notes
-      1 	xx-small 	
-      2 	small 	
-      3 	medium 	
-      4 	large 	
-      5 	x-large 	
-      6 	xx-large 	
-      7 	xxx-large 	see below
+      value     'font-size' keyword     Notes
+      1     xx-small    
+      2     small   
+      3     medium  
+      4     large   
+      5     x-large     
+      6     xx-large    
+      7     xxx-large   see below
 
       The 'xxx-large' value is a non-CSS value used here to indicate a font
       size one "step" larger than 'xx-large'.
@@ -44810,10 +47167,10 @@ is absent or has a value that doesn't match any of the cases in the table,
 then the position is expected to be on the right if the 'direction' property
 on this element has a computed value of 'rtl', and on the left otherwise.
 
-Attribute value 	Alignment position
-left 	On the left
-right 	On the right
-center 	In the middle
+Attribute value     Alignment position
+left    On the left
+right   On the right
+center  In the middle
 
 10.3 Replaced elements
 
@@ -45321,14 +47678,14 @@ of selectors, with the nodes being treated as follows:
       Internal Node Objects are as given by the following table, where
       objects having the concrete class given in a cell in the first column
       have the name given by the second column of the same row:
-      Concrete class 	Name
-      WebVTT Class Objects 	c
-      WebVTT Italic Objects 	i
-      WebVTT Bold Objects 	b
-      WebVTT Ruby Objects 	ruby
-      WebVTT Ruby Text Objects 	rt
-      WebVTT Voice Objects 	v
-      Other elements (specifically, Lists of WebVTT Node Objects) 	No explicit name.
+      Concrete class    Name
+      WebVTT Class Objects  c
+      WebVTT Italic Objects     i
+      WebVTT Bold Objects   b
+      WebVTT Ruby Objects   ruby
+      WebVTT Ruby Text Objects  rt
+      WebVTT Voice Objects  v
+      Other elements (specifically, Lists of WebVTT Node Objects)   No explicit name.
     * For the purposes of element type and universal selectors, WebVTT
       Internal Node Objects are considered as being in the namespace
       expressed as the empty string.
@@ -45849,11 +48206,11 @@ If the element's behavior attribute is in the alternate state
 
 The direction attribute has the meanings described in the following table:
 
-direction attribute state 	Direction of animation 	Start edge 	End edge 	Opposite direction
-left 	← Right to left 	Right 	Left 	→ Left to Right
-right 	→ Left to Right 	Left 	Right 	← Right to left
-up 	↑ Up (Bottom to Top) 	Bottom 	Top 	↓ Down (Top to Bottom)
-down 	↓ Down (Top to Bottom) 	Top 	Bottom 	↑ Up (Bottom to Top)
+direction attribute state   Direction of animation  Start edge  End edge    Opposite direction
+left    ← Right to left     Right   Left    → Left to Right
+right   → Left to Right     Left    Right   ← Right to left
+up  ↑ Up (Bottom to Top)    Bottom  Top     ↓ Down (Top to Bottom)
+down    ↓ Down (Top to Bottom)  Top     Bottom  ↑ Up (Bottom to Top)
 
 In any case, the animation should proceed such that there is a delay given by
 the marquee scroll interval between each frame, and such that the content
@@ -46814,21 +49171,21 @@ simple event named start at the element.
 The behavior content attribute on marquee elements is an enumerated attribute
 with the following keywords (all non-conforming):
 
-Keyword 	State
-scroll 	scroll
-slide 	slide
-alternate 	alternate
+Keyword     State
+scroll  scroll
+slide   slide
+alternate   alternate
 
 The missing value default is the scroll state.
 
 The direction content attribute on marquee elements is an enumerated
 attribute with the following keywords (all non-conforming):
 
-Keyword 	State
-left 	left
-right 	right
-up 	up
-down 	down
+Keyword     State
+left    left
+right   right
+up  up
+down    down
 
 The missing value default is the left state.
 
@@ -46883,10 +49240,10 @@ The following are the event handlers (and their corresponding event handler
 event types) that must be supported, as content and IDL attributes, by
 marquee elements:
 
-Event handler 	Event handler event type
-onbounce 	bounce
-onfinish 	finish
-onstart 	start
+Event handler   Event handler event type
+onbounce    bounce
+onfinish    finish
+onstart     start
 
 The behavior, direction, height, hspace, vspace, and width IDL attributes
 must reflect the respective content attributes of the same name.
@@ -47570,12 +49927,12 @@ element). When there is no body element or if it is a frameset element, the
 attributes must instead return the empty string on getting and do nothing on
 setting.
 
-IDL attribute 	Content attribute
-fgColor 	text
-bgColor 	bgcolor
-linkColor 	link
-vlinkColor 	vlink
-alinkColor 	alink
+IDL attribute   Content attribute
+fgColor     text
+bgColor     bgcolor
+linkColor   link
+vlinkColor  vlink
+alinkColor  alink
 
 The anchors attribute must return an HTMLCollection rooted at the Document
 node, whose filter matches only a elements with name attributes.
@@ -47893,481 +50250,481 @@ The following sections only cover conforming elements and features.
 Elements
 
 This section is non-normative.
-List of elements Element 	Description 	Categories 	Parents 	Children 	Attributes 	Interface
-a 	Hyperlink 	flow; phrasing*; interactive 	phrasing 	transparent* 	globals; href; target; rel; media; hreflang; type 	HTMLAnchorElement
-abbr 	Abbreviation 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-address 	Contact information for a page or section 	flow; formatBlock candidate 	flow 	flow* 	globals 	HTMLElement
-area 	Hyperlink or dead area on an image map 	flow; phrasing 	phrasing* 	empty 	globals; alt; coords; shape; href; target; rel; media; hreflang; type 	HTMLAreaElement
-article 	Self-contained syndicatable or reusable composition 	flow; sectioning; formatBlock candidate 	flow 	flow 	globals 	HTMLElement
-aside 	Sidebar for tangentially related content 	flow; sectioning; formatBlock candidate 	flow 	flow 	globals 	HTMLElement
-audio 	Audio player 	flow; phrasing; embedded; interactive 	phrasing 	source*; transparent* 	globals; src; preload; autoplay; loop; controls 	HTMLAudioElement
-b 	Keywords 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-base 	Base URL and default target browsing context for hyperlinks and forms 	metadata 	head 	empty 	globals; href; target 	HTMLBaseElement
-bdi 	Text directionality isolation 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-bdo 	Text directionality formatting 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-blockquote 	A section quoted from another source 	flow; sectioning root; formatBlock candidate 	flow 	flow 	globals; cite 	HTMLQuoteElement
-body 	Document body 	sectioning root 	html 	flow 	globals; onafterprint; onbeforeprint; onbeforeunload; onblur; onerror; onfocus; onhashchange; onload; onmessage; onoffline; ononline; onpagehide; onpageshow; onpopstate; onredo; onresize; onscroll; onstorage; onundo; onunload 	HTMLBodyElement
-br 	Line break, e.g. in poem or postal address 	flow; phrasing 	phrasing 	empty 	globals 	HTMLBRElement
-button 	Button control 	flow; phrasing; interactive; listed; labelable; submittable; form-associated 	phrasing 	phrasing* 	globals; autofocus; disabled; form; formaction; formenctype; formmethod; formnovalidate; formtarget; name; type; value 	HTMLButtonElement
-canvas 	Scriptable bitmap canvas 	flow; phrasing; embedded 	phrasing 	transparent 	globals; width; height 	HTMLCanvasElement
-caption 	Table caption 	none 	table 	flow* 	globals 	HTMLTableCaptionElement
-cite 	Title of a work 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-code 	Computer code 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-col 	Table column 	none 	colgroup 	empty 	globals; span 	HTMLTableColElement
-colgroup 	Group of columns in a table 	none 	table 	col 	globals; span 	HTMLTableColElement
-command 	Menu command 	metadata; flow; phrasing 	head; phrasing 	empty 	globals; type; label; icon; disabled; checked; radiogroup 	HTMLCommandElement
-datalist 	Container for options for combo box control 	flow; phrasing 	phrasing 	phrasing; option 	globals 	HTMLDataListElement
-dd 	Content for corresponding dt element(s) 	none 	dl 	flow 	globals 	HTMLElement
-del 	A removal from the document 	flow; phrasing* 	phrasing 	transparent 	globals; cite; datetime 	HTMLModElement
-details 	Disclosure control for hiding details 	flow; sectioning root; interactive 	flow 	summary*; flow 	globals; open 	HTMLDetailsElement
-dfn 	Defining instance 	flow; phrasing 	phrasing 	phrasing* 	globals 	HTMLElement
-div 	Generic flow container 	flow; formatBlock candidate 	flow 	flow 	globals 	HTMLDivElement
-dl 	Association list consisting of zero or more name-value groups 	flow 	flow 	dt*; dd* 	globals 	HTMLDListElement
-dt 	Legend for corresponding dd element(s) 	none 	dl 	phrasing 	globals 	HTMLElement
-em 	Stress emphasis 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-embed 	Plugin 	flow; phrasing; embedded; interactive 	phrasing 	empty 	globals; src; type; width; height; any* 	HTMLEmbedElement
-fieldset 	Group of form controls 	flow; sectioning root; listed; form-associated 	flow 	legend*; flow 	globals; disabled; form; name 	HTMLFieldSetElement
-figcaption 	Caption for figure 	none 	figure 	flow 	globals 	HTMLElement
-figure 	Figure with optional caption 	flow; sectioning root 	flow 	figcaption*; flow 	globals 	HTMLElement
-footer 	Footer for a page or section 	flow; formatBlock candidate 	flow 	flow* 	globals 	HTMLElement
-form 	User-submittable form 	flow 	flow 	flow* 	globals; accept-charset; action; autocomplete; enctype; method; name; novalidate; target 	HTMLFormElement
-h1, h2, h3, h4, h5, h6 	Section heading 	flow; heading; formatBlock candidate 	hgroup; flow 	phrasing 	globals 	HTMLHeadingElement
-head 	Container for document metadata 	none 	html 	metadata content* 	globals 	HTMLHeadElement
-header 	Introductory or navigational aids for a page or section 	flow; formatBlock candidate 	flow 	flow* 	globals 	HTMLElement
-hgroup 	heading group 	flow; heading; formatBlock candidate 	flow 	One or more h1, h2, h3, h4, h5, and/or h6 	globals 	HTMLElement
-hr 	Thematic break 	flow 	flow 	empty 	globals 	HTMLHRElement
-html 	Root element 	none 	none* 	head*; body* 	globals; manifest 	HTMLHtmlElement
-i 	Alternate voice 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-iframe 	Nested browsing context 	flow; phrasing; embedded; interactive 	phrasing 	text* 	globals; src; srcdoc; name; sandbox; seamless; width; height 	HTMLIFrameElement
-img 	Image 	flow; phrasing; embedded; interactive* 	phrasing 	empty 	globals; alt; src; usemap; ismap; width; height 	HTMLImageElement
-input 	Form control 	flow; phrasing; interactive*; listed; labelable; submittable; resettable; form-associated 	phrasing 	empty 	globals; accept; alt; autocomplete; autofocus; checked; dirname; disabled; form; formaction; formenctype; formmethod; formnovalidate; formtarget; height; list; max; maxlength; min; multiple; name; pattern; placeholder; readonly; required; size; src; step; type; value; width 	HTMLInputElement
-ins 	An addition to the document 	flow; phrasing* 	phrasing 	transparent 	globals; cite; datetime 	HTMLModElement
-kbd 	User input 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-keygen 	Cryptographic key-pair generator form control 	flow; phrasing; interactive; listed; labelable; submittable; resettable; form-associated 	phrasing 	empty 	globals; autofocus; challenge; disabled; form; keytype; name 	HTMLKeygenElement
-label 	Caption for a form control 	flow; phrasing; interactive; form-associated 	phrasing 	phrasing* 	globals; form; for 	HTMLLabelElement
-legend 	Caption for fieldset 	none 	fieldset 	phrasing 	globals 	HTMLLegendElement
-li 	List item 	none 	ol; ul; menu 	flow 	globals; value* 	HTMLLIElement
-link 	Link metadata 	metadata; flow*; phrasing* 	head; noscript*; phrasing* 	empty 	globals; href; rel; media; hreflang; type; sizes 	HTMLLinkElement
-map 	Image map 	flow; phrasing* 	phrasing 	transparent; area* 	globals; name 	HTMLMapElement
-mark 	Highlight 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-menu 	Menu of commands 	flow; interactive* 	flow 	li*; flow 	globals; type; label 	HTMLMenuElement
-meta 	Text metadata 	metadata; flow*; phrasing* 	head; noscript*; phrasing* 	empty 	globals; name; http-equiv; content; charset 	HTMLMetaElement
-meter 	Gauge 	flow; phrasing; labelable; form-associated 	phrasing 	phrasing* 	globals; value; min; max; low; high; optimum; form 	HTMLMeterElement
-nav 	Section with navigational links 	flow; sectioning; formatBlock candidate 	flow 	flow 	globals 	HTMLElement
-noscript 	Fallback content for script 	metadata; flow; phrasing 	head*; phrasing* 	varies* 	globals 	HTMLElement
-object 	Image, nested browsing context, or plugin 	flow; phrasing; embedded; interactive*; listed; submittable; form-associated 	phrasing 	param*; transparent 	globals; data; type; name; usemap; form; width; height 	HTMLObjectElement
-ol 	Ordered list 	flow 	flow 	li 	globals; reversed; start 	HTMLOListElement
-optgroup 	Group of options in a list box 	none 	select 	option 	globals; disabled; label 	HTMLOptGroupElement
-option 	Option in a list box or combo box control 	none 	select; datalist; optgroup 	text 	globals; disabled; label; selected; value 	HTMLOptionElement
-output 	Calculated output value 	flow; phrasing; listed; labelable; resettable; form-associated 	phrasing 	phrasing 	globals; for; form; name 	HTMLOutputElement
-p 	Paragraph 	flow; formatBlock candidate 	flow 	phrasing 	globals 	HTMLParagraphElement
-param 	Parameter for object 	none 	object 	empty 	globals; name; value 	HTMLParamElement
-pre 	Block of preformatted text 	flow; formatBlock candidate 	flow 	phrasing 	globals 	HTMLPreElement
-progress 	Progress bar 	flow; phrasing; labelable; form-associated 	phrasing 	phrasing* 	globals; value; max; form 	HTMLProgressElement
-q 	Quotation 	flow; phrasing 	phrasing 	phrasing 	globals; cite 	HTMLQuoteElement
-rp 	Parenthesis for ruby annotation text 	none 	ruby 	phrasing 	globals 	HTMLElement
-rt 	Ruby annotation text 	none 	ruby 	phrasing 	globals 	HTMLElement
-ruby 	Ruby annotation(s) 	flow; phrasing 	phrasing 	phrasing; rt element; rp element* 	globals 	HTMLElement
-s 	Inaccurate text 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-samp 	Computer output 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-script 	Embedded script 	metadata; flow; phrasing 	head; phrasing 	script, data, or script documentation* 	globals; src; async; defer; type; charset 	HTMLScriptElement
-section 	Generic document or application section 	flow; sectioning; formatBlock candidate 	flow 	flow 	globals 	HTMLElement
-select 	List box control 	flow; phrasing; interactive; listed; labelable; submittable; resettable; form-associated 	phrasing 	option, optgroup 	globals; autofocus; disabled; form; multiple; name; required; size 	HTMLSelectElement
-small 	Side comment 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-source 	Media source for video or audio 	none 	video; audio 	empty 	globals; src; type; media 	HTMLSourceElement
-span 	Generic phrasing container 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLSpanElement
-strong 	Importance 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-style 	Embedded styling information 	metadata; flow 	head; noscript*; flow* 	varies* 	globals; media; type; scoped 	HTMLStyleElement
-sub 	Subscript 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-summary 	Caption for details 	none 	details 	phrasing 	globals 	HTMLElement
-sup 	Superscript 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-table 	Table 	flow 	flow 	caption*; colgroup*; thead*; tbody*; tfoot*; tr* 	globals; summary 	HTMLTableElement
-tbody 	Group of rows in a table 	none 	table 	tr 	globals 	HTMLTableSectionElement
-td 	Table cell 	sectioning root 	tr 	flow 	globals; colspan; rowspan; headers 	HTMLTableDataCellElement
-textarea 	Multiline text field 	flow; phrasing; interactive; listed; labelable; submittable; resettable; form-associated 	phrasing 	text 	globals; autofocus; cols; disabled; form; maxlength; name; placeholder; readonly; required; rows; wrap 	HTMLTextAreaElement
-tfoot 	Group of footer rows in a table 	none 	table 	tr 	globals 	HTMLTableSectionElement
-th 	Table header cell 	none 	tr 	phrasing 	globals; colspan; rowspan; headers; scope 	HTMLTableHeaderCellElement
-thead 	Group of heading rows in a table 	none 	table 	tr 	globals 	HTMLTableSectionElement
-time 	Date and/or time 	flow; phrasing 	phrasing 	phrasing* 	globals; datetime; pubdate 	HTMLTimeElement
-title 	Document title 	metadata 	head 	text 	globals 	HTMLTitleElement
-tr 	Table row 	none 	table; thead; tbody; tfoot 	th*; td 	globals 	HTMLTableRowElement
-track 	Timed text track 	none 	audio; video 	empty 	globals; default; kind; label; src; srclang 	HTMLTrackElement
-ul 	List 	flow 	flow 	li 	globals 	HTMLUListElement
-var 	Variable 	flow; phrasing 	phrasing 	phrasing 	globals 	HTMLElement
-video 	Video player 	flow; phrasing; embedded; interactive 	phrasing 	source*; transparent* 	globals; src; poster; preload; autoplay; loop; controls; width; height 	HTMLVideoElement
-wbr 	Line breaking opportunity 	flow; phrasing 	phrasing 	empty 	globals 	HTMLElement
+List of elements Element    Description     Categories  Parents     Children    Attributes  Interface
+a   Hyperlink   flow; phrasing*; interactive    phrasing    transparent*    globals; href; target; rel; media; hreflang; type   HTMLAnchorElement
+abbr    Abbreviation    flow; phrasing  phrasing    phrasing    globals     HTMLElement
+address     Contact information for a page or section   flow; formatBlock candidate     flow    flow*   globals     HTMLElement
+area    Hyperlink or dead area on an image map  flow; phrasing  phrasing*   empty   globals; alt; coords; shape; href; target; rel; media; hreflang; type   HTMLAreaElement
+article     Self-contained syndicatable or reusable composition     flow; sectioning; formatBlock candidate     flow    flow    globals     HTMLElement
+aside   Sidebar for tangentially related content    flow; sectioning; formatBlock candidate     flow    flow    globals     HTMLElement
+audio   Audio player    flow; phrasing; embedded; interactive   phrasing    source*; transparent*   globals; src; preload; autoplay; loop; controls     HTMLAudioElement
+b   Keywords    flow; phrasing  phrasing    phrasing    globals     HTMLElement
+base    Base URL and default target browsing context for hyperlinks and forms   metadata    head    empty   globals; href; target   HTMLBaseElement
+bdi     Text directionality isolation   flow; phrasing  phrasing    phrasing    globals     HTMLElement
+bdo     Text directionality formatting  flow; phrasing  phrasing    phrasing    globals     HTMLElement
+blockquote  A section quoted from another source    flow; sectioning root; formatBlock candidate    flow    flow    globals; cite   HTMLQuoteElement
+body    Document body   sectioning root     html    flow    globals; onafterprint; onbeforeprint; onbeforeunload; onblur; onerror; onfocus; onhashchange; onload; onmessage; onoffline; ononline; onpagehide; onpageshow; onpopstate; onredo; onresize; onscroll; onstorage; onundo; onunload   HTMLBodyElement
+br  Line break, e.g. in poem or postal address  flow; phrasing  phrasing    empty   globals     HTMLBRElement
+button  Button control  flow; phrasing; interactive; listed; labelable; submittable; form-associated    phrasing    phrasing*   globals; autofocus; disabled; form; formaction; formenctype; formmethod; formnovalidate; formtarget; name; type; value  HTMLButtonElement
+canvas  Scriptable bitmap canvas    flow; phrasing; embedded    phrasing    transparent     globals; width; height  HTMLCanvasElement
+caption     Table caption   none    table   flow*   globals     HTMLTableCaptionElement
+cite    Title of a work     flow; phrasing  phrasing    phrasing    globals     HTMLElement
+code    Computer code   flow; phrasing  phrasing    phrasing    globals     HTMLElement
+col     Table column    none    colgroup    empty   globals; span   HTMLTableColElement
+colgroup    Group of columns in a table     none    table   col     globals; span   HTMLTableColElement
+command     Menu command    metadata; flow; phrasing    head; phrasing  empty   globals; type; label; icon; disabled; checked; radiogroup   HTMLCommandElement
+datalist    Container for options for combo box control     flow; phrasing  phrasing    phrasing; option    globals     HTMLDataListElement
+dd  Content for corresponding dt element(s)     none    dl  flow    globals     HTMLElement
+del     A removal from the document     flow; phrasing*     phrasing    transparent     globals; cite; datetime     HTMLModElement
+details     Disclosure control for hiding details   flow; sectioning root; interactive  flow    summary*; flow  globals; open   HTMLDetailsElement
+dfn     Defining instance   flow; phrasing  phrasing    phrasing*   globals     HTMLElement
+div     Generic flow container  flow; formatBlock candidate     flow    flow    globals     HTMLDivElement
+dl  Association list consisting of zero or more name-value groups   flow    flow    dt*; dd*    globals     HTMLDListElement
+dt  Legend for corresponding dd element(s)  none    dl  phrasing    globals     HTMLElement
+em  Stress emphasis     flow; phrasing  phrasing    phrasing    globals     HTMLElement
+embed   Plugin  flow; phrasing; embedded; interactive   phrasing    empty   globals; src; type; width; height; any*     HTMLEmbedElement
+fieldset    Group of form controls  flow; sectioning root; listed; form-associated  flow    legend*; flow   globals; disabled; form; name   HTMLFieldSetElement
+figcaption  Caption for figure  none    figure  flow    globals     HTMLElement
+figure  Figure with optional caption    flow; sectioning root   flow    figcaption*; flow   globals     HTMLElement
+footer  Footer for a page or section    flow; formatBlock candidate     flow    flow*   globals     HTMLElement
+form    User-submittable form   flow    flow    flow*   globals; accept-charset; action; autocomplete; enctype; method; name; novalidate; target    HTMLFormElement
+h1, h2, h3, h4, h5, h6  Section heading     flow; heading; formatBlock candidate    hgroup; flow    phrasing    globals     HTMLHeadingElement
+head    Container for document metadata     none    html    metadata content*   globals     HTMLHeadElement
+header  Introductory or navigational aids for a page or section     flow; formatBlock candidate     flow    flow*   globals     HTMLElement
+hgroup  heading group   flow; heading; formatBlock candidate    flow    One or more h1, h2, h3, h4, h5, and/or h6   globals     HTMLElement
+hr  Thematic break  flow    flow    empty   globals     HTMLHRElement
+html    Root element    none    none*   head*; body*    globals; manifest   HTMLHtmlElement
+i   Alternate voice     flow; phrasing  phrasing    phrasing    globals     HTMLElement
+iframe  Nested browsing context     flow; phrasing; embedded; interactive   phrasing    text*   globals; src; srcdoc; name; sandbox; seamless; width; height    HTMLIFrameElement
+img     Image   flow; phrasing; embedded; interactive*  phrasing    empty   globals; alt; src; usemap; ismap; width; height     HTMLImageElement
+input   Form control    flow; phrasing; interactive*; listed; labelable; submittable; resettable; form-associated   phrasing    empty   globals; accept; alt; autocomplete; autofocus; checked; dirname; disabled; form; formaction; formenctype; formmethod; formnovalidate; formtarget; height; list; max; maxlength; min; multiple; name; pattern; placeholder; readonly; required; size; src; step; type; value; width  HTMLInputElement
+ins     An addition to the document     flow; phrasing*     phrasing    transparent     globals; cite; datetime     HTMLModElement
+kbd     User input  flow; phrasing  phrasing    phrasing    globals     HTMLElement
+keygen  Cryptographic key-pair generator form control   flow; phrasing; interactive; listed; labelable; submittable; resettable; form-associated    phrasing    empty   globals; autofocus; challenge; disabled; form; keytype; name    HTMLKeygenElement
+label   Caption for a form control  flow; phrasing; interactive; form-associated    phrasing    phrasing*   globals; form; for  HTMLLabelElement
+legend  Caption for fieldset    none    fieldset    phrasing    globals     HTMLLegendElement
+li  List item   none    ol; ul; menu    flow    globals; value*     HTMLLIElement
+link    Link metadata   metadata; flow*; phrasing*  head; noscript*; phrasing*  empty   globals; href; rel; media; hreflang; type; sizes    HTMLLinkElement
+map     Image map   flow; phrasing*     phrasing    transparent; area*  globals; name   HTMLMapElement
+mark    Highlight   flow; phrasing  phrasing    phrasing    globals     HTMLElement
+menu    Menu of commands    flow; interactive*  flow    li*; flow   globals; type; label    HTMLMenuElement
+meta    Text metadata   metadata; flow*; phrasing*  head; noscript*; phrasing*  empty   globals; name; http-equiv; content; charset     HTMLMetaElement
+meter   Gauge   flow; phrasing; labelable; form-associated  phrasing    phrasing*   globals; value; min; max; low; high; optimum; form  HTMLMeterElement
+nav     Section with navigational links     flow; sectioning; formatBlock candidate     flow    flow    globals     HTMLElement
+noscript    Fallback content for script     metadata; flow; phrasing    head*; phrasing*    varies*     globals     HTMLElement
+object  Image, nested browsing context, or plugin   flow; phrasing; embedded; interactive*; listed; submittable; form-associated    phrasing    param*; transparent     globals; data; type; name; usemap; form; width; height  HTMLObjectElement
+ol  Ordered list    flow    flow    li  globals; reversed; start    HTMLOListElement
+optgroup    Group of options in a list box  none    select  option  globals; disabled; label    HTMLOptGroupElement
+option  Option in a list box or combo box control   none    select; datalist; optgroup  text    globals; disabled; label; selected; value   HTMLOptionElement
+output  Calculated output value     flow; phrasing; listed; labelable; resettable; form-associated  phrasing    phrasing    globals; for; form; name    HTMLOutputElement
+p   Paragraph   flow; formatBlock candidate     flow    phrasing    globals     HTMLParagraphElement
+param   Parameter for object    none    object  empty   globals; name; value    HTMLParamElement
+pre     Block of preformatted text  flow; formatBlock candidate     flow    phrasing    globals     HTMLPreElement
+progress    Progress bar    flow; phrasing; labelable; form-associated  phrasing    phrasing*   globals; value; max; form   HTMLProgressElement
+q   Quotation   flow; phrasing  phrasing    phrasing    globals; cite   HTMLQuoteElement
+rp  Parenthesis for ruby annotation text    none    ruby    phrasing    globals     HTMLElement
+rt  Ruby annotation text    none    ruby    phrasing    globals     HTMLElement
+ruby    Ruby annotation(s)  flow; phrasing  phrasing    phrasing; rt element; rp element*   globals     HTMLElement
+s   Inaccurate text     flow; phrasing  phrasing    phrasing    globals     HTMLElement
+samp    Computer output     flow; phrasing  phrasing    phrasing    globals     HTMLElement
+script  Embedded script     metadata; flow; phrasing    head; phrasing  script, data, or script documentation*  globals; src; async; defer; type; charset   HTMLScriptElement
+section     Generic document or application section     flow; sectioning; formatBlock candidate     flow    flow    globals     HTMLElement
+select  List box control    flow; phrasing; interactive; listed; labelable; submittable; resettable; form-associated    phrasing    option, optgroup    globals; autofocus; disabled; form; multiple; name; required; size  HTMLSelectElement
+small   Side comment    flow; phrasing  phrasing    phrasing    globals     HTMLElement
+source  Media source for video or audio     none    video; audio    empty   globals; src; type; media   HTMLSourceElement
+span    Generic phrasing container  flow; phrasing  phrasing    phrasing    globals     HTMLSpanElement
+strong  Importance  flow; phrasing  phrasing    phrasing    globals     HTMLElement
+style   Embedded styling information    metadata; flow  head; noscript*; flow*  varies*     globals; media; type; scoped    HTMLStyleElement
+sub     Subscript   flow; phrasing  phrasing    phrasing    globals     HTMLElement
+summary     Caption for details     none    details     phrasing    globals     HTMLElement
+sup     Superscript     flow; phrasing  phrasing    phrasing    globals     HTMLElement
+table   Table   flow    flow    caption*; colgroup*; thead*; tbody*; tfoot*; tr*    globals; summary    HTMLTableElement
+tbody   Group of rows in a table    none    table   tr  globals     HTMLTableSectionElement
+td  Table cell  sectioning root     tr  flow    globals; colspan; rowspan; headers  HTMLTableDataCellElement
+textarea    Multiline text field    flow; phrasing; interactive; listed; labelable; submittable; resettable; form-associated    phrasing    text    globals; autofocus; cols; disabled; form; maxlength; name; placeholder; readonly; required; rows; wrap  HTMLTextAreaElement
+tfoot   Group of footer rows in a table     none    table   tr  globals     HTMLTableSectionElement
+th  Table header cell   none    tr  phrasing    globals; colspan; rowspan; headers; scope   HTMLTableHeaderCellElement
+thead   Group of heading rows in a table    none    table   tr  globals     HTMLTableSectionElement
+time    Date and/or time    flow; phrasing  phrasing    phrasing*   globals; datetime; pubdate  HTMLTimeElement
+title   Document title  metadata    head    text    globals     HTMLTitleElement
+tr  Table row   none    table; thead; tbody; tfoot  th*; td     globals     HTMLTableRowElement
+track   Timed text track    none    audio; video    empty   globals; default; kind; label; src; srclang     HTMLTrackElement
+ul  List    flow    flow    li  globals     HTMLUListElement
+var     Variable    flow; phrasing  phrasing    phrasing    globals     HTMLElement
+video   Video player    flow; phrasing; embedded; interactive   phrasing    source*; transparent*   globals; src; poster; preload; autoplay; loop; controls; width; height  HTMLVideoElement
+wbr     Line breaking opportunity   flow; phrasing  phrasing    empty   globals     HTMLElement
 
 An asterisk (*) in a cell indicates that the actual rules are more complicated than indicated in the table above.
 Element content categories
 
 This section is non-normative.
-List of element content categories Category 	Elements 	Elements with exceptions
-Metadata content 	base; command; link; meta; noscript; script; style; title 	—
-Flow content 	a; abbr; address; article; aside; audio; b; bdi; bdo; blockquote; br; button; canvas; cite; code; command; datalist; del; details; dfn; div; dl; em; embed; fieldset; figure; footer; form; h1; h2; h3; h4; h5; h6; header; hgroup; hr; i; iframe; img; input; ins; kbd; keygen; label; map; mark; math; menu; meter; nav; noscript; object; ol; output; p; pre; progress; q; ruby; s; samp; script; section; select; small; span; strong; sub; sup; svg; table; textarea; time; ul; var; video; wbr; Text 	area (if it is a descendant of a map element); style (if the scoped attribute is present)
-Sectioning content 	article; aside; nav; section 	—
-Heading content 	h1; h2; h3; h4; h5; h6; hgroup 	—
-Phrasing content 	abbr; audio; b; bdi; bdo; br; button; canvas; cite; code; command; datalist; dfn; em; embed; i; iframe; img; input; kbd; keygen; label; mark; math; meter; noscript; object; output; progress; q; ruby; s; samp; script; select; small; span; strong; sub; sup; svg; textarea; time; var; video; wbr; Text 	a (if it contains only phrasing content); area (if it is a descendant of a map element); del (if it contains only phrasing content); ins (if it contains only phrasing content); map (if it contains only phrasing content)
-Embedded content 	audio canvas embed iframe img math object svg video 	—
-Interactive content 	a; button; details; embed; iframe; keygen; label; select; textarea; 	audio (if the controls attribute is present); img (if the usemap attribute is present); input (if the type attribute is not in the Hidden state); menu (if the type attribute is in the toolbar state); object (if the usemap attribute is present); video (if the controls attribute is present)
-Sectioning roots 	blockquote; body; details; fieldset; figure; td 	—
-Form-associated elements 	button; fieldset; input; keygen; label; meter; object; output; progress; select; textarea 	—
-Listed elements 	button; fieldset; input; keygen; object; output; select; textarea 	—
-Labelable elements 	button; input; keygen; meter; output; progress; select; textarea 	—
-Submittable elements 	button; input; keygen; object; select; textarea 	—
-Resettable elements 	input; keygen; output; select; textarea 	—
-formatBlock candidates 	section; nav; article; aside; h1; h2; h3; h4; h5; h6; hgroup; header; footer; address; p; pre; blockquote; div 	—
+List of element content categories Category     Elements    Elements with exceptions
+Metadata content    base; command; link; meta; noscript; script; style; title   —
+Flow content    a; abbr; address; article; aside; audio; b; bdi; bdo; blockquote; br; button; canvas; cite; code; command; datalist; del; details; dfn; div; dl; em; embed; fieldset; figure; footer; form; h1; h2; h3; h4; h5; h6; header; hgroup; hr; i; iframe; img; input; ins; kbd; keygen; label; map; mark; math; menu; meter; nav; noscript; object; ol; output; p; pre; progress; q; ruby; s; samp; script; section; select; small; span; strong; sub; sup; svg; table; textarea; time; ul; var; video; wbr; Text  area (if it is a descendant of a map element); style (if the scoped attribute is present)
+Sectioning content  article; aside; nav; section    —
+Heading content     h1; h2; h3; h4; h5; h6; hgroup  —
+Phrasing content    abbr; audio; b; bdi; bdo; br; button; canvas; cite; code; command; datalist; dfn; em; embed; i; iframe; img; input; kbd; keygen; label; mark; math; meter; noscript; object; output; progress; q; ruby; s; samp; script; select; small; span; strong; sub; sup; svg; textarea; time; var; video; wbr; Text  a (if it contains only phrasing content); area (if it is a descendant of a map element); del (if it contains only phrasing content); ins (if it contains only phrasing content); map (if it contains only phrasing content)
+Embedded content    audio canvas embed iframe img math object svg video     —
+Interactive content     a; button; details; embed; iframe; keygen; label; select; textarea;     audio (if the controls attribute is present); img (if the usemap attribute is present); input (if the type attribute is not in the Hidden state); menu (if the type attribute is in the toolbar state); object (if the usemap attribute is present); video (if the controls attribute is present)
+Sectioning roots    blockquote; body; details; fieldset; figure; td     —
+Form-associated elements    button; fieldset; input; keygen; label; meter; object; output; progress; select; textarea   —
+Listed elements     button; fieldset; input; keygen; object; output; select; textarea   —
+Labelable elements  button; input; keygen; meter; output; progress; select; textarea    —
+Submittable elements    button; input; keygen; object; select; textarea     —
+Resettable elements     input; keygen; output; select; textarea     —
+formatBlock candidates  section; nav; article; aside; h1; h2; h3; h4; h5; h6; hgroup; header; footer; address; p; pre; blockquote; div  —
 Attributes
 
 This section is non-normative.
-List of attributes (excluding event handler content attributes) Attribute 	Element(s) 	Description 	Value
-accept 	input 	Hint for expected file type in file upload controls 	Set of comma-separated tokens* consisting of valid MIME types with no parameters or audio/*, video/*, or image/*
-accept-charset 	form 	Character encodings to use for form submission 	Ordered set of unique space-separated tokens, ASCII case-insensitive, consisting of preferred MIME names of ASCII-compatible character encodings*
-accesskey 	HTML elements 	Keyboard shortcut to activate or focus element 	Ordered set of unique space-separated tokens, case-sensitive, consisting of one Unicode code point in length
-action 	form 	URL to use for form submission 	Valid URL potentially surrounded by spaces
-alt 	area; img; input 	Replacement text for use when images are not available 	Text*
-async 	script 	Execute script asynchronously 	Boolean attribute
-autocomplete 	form; input 	Prevent the user agent from providing autocompletions for the form control(s) 	"on"; "off"
-autofocus 	button; input; keygen; select; textarea 	Automatically focus the form control when the page is loaded 	Boolean attribute
-autoplay 	audio; video 	Hint that the media resource can be started automatically when the page is loaded 	Boolean attribute
-challenge 	keygen 	String to package with the generated and signed public key 	Text
-charset 	meta 	Character encoding declaration 	Preferred MIME name of an encoding*
-charset 	script 	Character encoding of the external script resource 	Preferred MIME name of an encoding*
-checked 	command; input 	Whether the command or control is checked 	Boolean attribute
-cite 	blockquote; del; ins; q 	Link to the source of the quotation or more information about the edit 	Valid URL potentially surrounded by spaces
-class 	HTML elements 	Classes to which the element belongs 	Set of space-separated tokens
-cols 	textarea 	Maximum number of characters per line 	Valid non-negative integer greater than zero
-colspan 	td; th 	Number of columns that the cell is to span 	Valid non-negative integer greater than zero
-content 	meta 	Value of the element 	Text*
-contenteditable 	HTML elements 	Whether the element is editable 	"true"; "false"
-contextmenu 	HTML elements 	The element's context menu 	ID*
-controls 	audio; video 	Show user agent controls 	Boolean attribute
-coords 	area 	Coordinates for the shape to be created in an image map 	Valid list of integers*
-data 	object 	Address of the resource 	Valid non-empty URL potentially surrounded by spaces
-datetime 	del; ins 	Date and (optionally) time of the change 	Valid date string with optional time
-datetime 	time 	Value of the element 	Valid date or time string*
-default 	track 	Enable the track if no other text track is more suitable. 	Boolean attribute
-defer 	script 	Defer script execution 	Boolean attribute
-dir 	HTML elements 	The text directionality of the element 	"ltr"; "rtl"
-dirname 	input; textarea 	Name of form field to use for sending the element's directionality in form submission 	Text*
-disabled 	button; command; fieldset; input; keygen; optgroup; option; select; textarea 	Whether the form control is disabled 	Boolean attribute
-draggable 	HTML elements 	Whether the element is draggable 	"true"; "false"
-dropzone 	HTML elements 	Accepted item types for drag-and-drop 	Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of accepted types and drag feedback*
-enctype 	form 	Form data set encoding type to use for form submission 	"application/x-www-form-urlencoded"; "multipart/form-data"; "text/plain"
-for 	label 	Associate the label with form control 	ID*
-for 	output 	Specifies controls from which the output was calculated 	Unordered set of unique space-separated tokens, case-sensitive, consisting of IDs*
-form 	button; fieldset; input; keygen; label; meter; object; output; progress; select; textarea 	Associates the control with a form element 	ID*
-formaction 	button; input 	URL to use for form submission 	Valid URL potentially surrounded by spaces
-formenctype 	button; input 	Form data set encoding type to use for form submission 	"application/x-www-form-urlencoded"; "multipart/form-data"; "text/plain"
-formmethod 	button; input 	HTTP method to use for form submission 	"GET"; "POST"
-formnovalidate 	button; input 	Bypass form control validation for form submission 	Boolean attribute
-formtarget 	button; input 	Browsing context for form submission 	Valid browsing context name or keyword
-headers 	td; th 	The header cells for this cell 	Unordered set of unique space-separated tokens, case-sensitive, consisting of IDs*
-height 	canvas; embed; iframe; img; input; object; video 	Vertical dimension 	Valid non-negative integer
-hidden 	HTML elements 	Whether the element is relevant 	Boolean attribute
-high 	meter 	Low limit of high range 	Valid floating point number*
-href 	a; area 	Address of the hyperlink 	Valid URL potentially surrounded by spaces
-href 	link 	Address of the hyperlink 	Valid non-empty URL potentially surrounded by spaces
-href 	base 	Document base URL 	Valid URL potentially surrounded by spaces
-hreflang 	a; area; link 	Language of the linked resource 	Valid BCP 47 language tag
-http-equiv 	meta 	Pragma directive 	Text*
-icon 	command 	Icon for the command 	Valid non-empty URL potentially surrounded by spaces
-id 	HTML elements 	The element's ID 	Text*
-ismap 	img 	Whether the image is a server-side image map 	Boolean attribute
-keytype 	keygen 	The type of cryptographic key to generate 	Text*
-kind 	track 	The type of text track 	"subtitles"; "captions"; "descriptions"; "chapters"; "metadata"
-label 	command; menu; optgroup; option; track 	User-visible label 	Text
-lang 	HTML elements 	Language of the element 	Valid BCP 47 language tag or the empty string
-list 	input 	List of autocomplete options 	ID*
-loop 	audio; video 	Whether to loop the media resource 	Boolean attribute
-low 	meter 	High limit of low range 	Valid floating point number*
-manifest 	html 	Application cache manifest 	Valid non-empty URL potentially surrounded by spaces
-max 	input 	Maximum value 	varies*
-max 	meter; progress 	Upper bound of range 	Valid floating point number*
-maxlength 	input; textarea 	Maximum length of value 	Valid non-negative integer
-media 	a; area; link; source; style 	Applicable media 	Valid media query
-method 	form 	HTTP method to use for form submission 	"GET"; "POST"
-min 	input 	Minimum value 	varies*
-min 	meter 	Lower bound of range 	Valid floating point number*
-multiple 	input; select 	Whether to allow multiple values 	Boolean attribute
-name 	button; fieldset; input; keygen; output; select; textarea 	Name of form control to use for form submission and in the form.elements API 	Text*
-name 	form 	Name of form to use in the document.forms API 	Text*
-name 	iframe; object 	Name of nested browsing context 	Valid browsing context name or keyword
-name 	map 	Name of image map to reference from the usemap attribute 	Text*
-name 	meta 	Metadata name 	Text*
-name 	param 	Name of parameter 	Text
-novalidate 	form 	Bypass form control validation for form submission 	Boolean attribute
-open 	details 	Whether the details are visible 	Boolean attribute
-optimum 	meter 	Optimum value in gauge 	Valid floating point number*
-pattern 	input 	Pattern to be matched by the form control's value 	Regular expression matching the JavaScript Pattern production
-placeholder 	input; textarea 	User-visible label to be placed within the form control 	Text*
-poster 	video 	Poster frame to show prior to video playback 	Valid non-empty URL potentially surrounded by spaces
-preload 	audio; video 	Hints how much buffering the media resource will likely need 	"none"; "metadata"; "auto"
-pubdate 	time 	Whether the element's value represents a publication time for the nearest article or body 	Boolean attribute
-radiogroup 	command 	Name of group of commands to treat as a radio button group 	Text
-readonly 	input; textarea 	Whether to allow the value to be edited by the user 	Boolean attribute
-rel 	a; area; link 	Relationship between the document containing the hyperlink and the destination resource 	Set of space-separated tokens*
-required 	input; select; textarea 	Whether the control is required for form submission 	Boolean attribute
-reversed 	ol 	Number the list backwards 	Boolean attribute
-rows 	textarea 	Number of lines to show 	Valid non-negative integer greater than zero
-rowspan 	td; th 	Number of rows that the cell is to span 	Valid non-negative integer
-sandbox 	iframe 	Security rules for nested content 	Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of "allow-same-origin", "allow-forms", and "allow-scripts"
-spellcheck 	HTML elements 	Whether the element is to have its spelling and grammar checked 	"true"; "false"
-scope 	th 	Specifies which cells the header cell applies to 	"row"; "col"; "rowgroup"; "colgroup"
-scoped 	style 	Whether the styles apply to the entire document or just the parent subtree 	Boolean attribute
-seamless 	iframe 	Whether to apply the document's styles to the nested content 	Boolean attribute
-selected 	option 	Whether the option is selected by default 	Boolean attribute
-shape 	area 	The kind of shape to be created in an image map 	"circle"; "default"; "poly"; "rect"
-size 	input; select 	Size of the control 	Valid non-negative integer greater than zero
-sizes 	link 	Sizes of the icons (for rel="icon") 	Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of sizes*
-span 	col; colgroup 	Number of columns spanned by the element 	Valid non-negative integer greater than zero
-src 	audio; embed; iframe; img; input; script; source; track; video 	Address of the resource 	Valid non-empty URL potentially surrounded by spaces
-srcdoc 	iframe 	A document to render in the iframe 	The source of an iframe srcdoc document*
-srclang 	track 	Language of the text track 	Valid BCP 47 language tag
-start 	ol 	Ordinal value of the first item 	Valid integer
-step 	input 	Granularity to be matched by the form control's value 	Valid floating point number greater than zero, or "any"
-style 	HTML elements 	Presentational and formatting instructions 	CSS declarations*
-summary 	table 	Explanatory text for complex tables for users of screen readers 	Text*
-tabindex 	HTML elements 	Whether the element is focusable, and the relative order of the element for the purposes of sequential focus navigation 	Valid integer
-target 	a; area 	Browsing context for hyperlink navigation 	Valid browsing context name or keyword
-target 	base 	Default browsing context for hyperlink navigation and form submission 	Valid browsing context name or keyword
-target 	form 	Browsing context for form submission 	Valid browsing context name or keyword
-title 	HTML elements 	Advisory information for the element 	Text
-title 	abbr; dfn 	Full term or expansion of abbreviation 	Text
-title 	command 	Hint describing the command 	Text
-title 	link 	Title of the link 	Text
-title 	link; style 	Alternative style sheet set name 	Text
-type 	a; area; link 	Hint for the type of the referenced resource 	Valid MIME type
-type 	button 	Type of button 	"submit"; "reset"; "button"
-type 	button; input 	Type of form control 	input type keyword
-type 	command 	Type of command 	"command"; "checkbox"; "radio"
-type 	embed; object; script; source; style 	Type of embedded resource 	Valid MIME type
-type 	menu 	Type of menu 	"context"; "toolbar"
-usemap 	img; object 	Name of image map to use 	Valid hash-name reference*
-value 	button; option 	Value to be used for form submission 	Text
-value 	input 	Value of the form control 	varies*
-value 	li 	Ordinal value of the list item 	Valid integer
-value 	meter; progress 	Current value of the element 	Valid floating point number
-value 	param 	Value of parameter 	Text
-width 	canvas; embed; iframe; img; input; object; video 	Horizontal dimension 	Valid non-negative integer
-wrap 	textarea 	How the value of the form control is to be wrapped for form submission 	"soft"; "hard"
+List of attributes (excluding event handler content attributes) Attribute   Element(s)  Description     Value
+accept  input   Hint for expected file type in file upload controls     Set of comma-separated tokens* consisting of valid MIME types with no parameters or audio/*, video/*, or image/*
+accept-charset  form    Character encodings to use for form submission  Ordered set of unique space-separated tokens, ASCII case-insensitive, consisting of preferred MIME names of ASCII-compatible character encodings*
+accesskey   HTML elements   Keyboard shortcut to activate or focus element  Ordered set of unique space-separated tokens, case-sensitive, consisting of one Unicode code point in length
+action  form    URL to use for form submission  Valid URL potentially surrounded by spaces
+alt     area; img; input    Replacement text for use when images are not available  Text*
+async   script  Execute script asynchronously   Boolean attribute
+autocomplete    form; input     Prevent the user agent from providing autocompletions for the form control(s)   "on"; "off"
+autofocus   button; input; keygen; select; textarea     Automatically focus the form control when the page is loaded    Boolean attribute
+autoplay    audio; video    Hint that the media resource can be started automatically when the page is loaded   Boolean attribute
+challenge   keygen  String to package with the generated and signed public key  Text
+charset     meta    Character encoding declaration  Preferred MIME name of an encoding*
+charset     script  Character encoding of the external script resource  Preferred MIME name of an encoding*
+checked     command; input  Whether the command or control is checked   Boolean attribute
+cite    blockquote; del; ins; q     Link to the source of the quotation or more information about the edit  Valid URL potentially surrounded by spaces
+class   HTML elements   Classes to which the element belongs    Set of space-separated tokens
+cols    textarea    Maximum number of characters per line   Valid non-negative integer greater than zero
+colspan     td; th  Number of columns that the cell is to span  Valid non-negative integer greater than zero
+content     meta    Value of the element    Text*
+contenteditable     HTML elements   Whether the element is editable     "true"; "false"
+contextmenu     HTML elements   The element's context menu  ID*
+controls    audio; video    Show user agent controls    Boolean attribute
+coords  area    Coordinates for the shape to be created in an image map     Valid list of integers*
+data    object  Address of the resource     Valid non-empty URL potentially surrounded by spaces
+datetime    del; ins    Date and (optionally) time of the change    Valid date string with optional time
+datetime    time    Value of the element    Valid date or time string*
+default     track   Enable the track if no other text track is more suitable.   Boolean attribute
+defer   script  Defer script execution  Boolean attribute
+dir     HTML elements   The text directionality of the element  "ltr"; "rtl"
+dirname     input; textarea     Name of form field to use for sending the element's directionality in form submission   Text*
+disabled    button; command; fieldset; input; keygen; optgroup; option; select; textarea    Whether the form control is disabled    Boolean attribute
+draggable   HTML elements   Whether the element is draggable    "true"; "false"
+dropzone    HTML elements   Accepted item types for drag-and-drop   Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of accepted types and drag feedback*
+enctype     form    Form data set encoding type to use for form submission  "application/x-www-form-urlencoded"; "multipart/form-data"; "text/plain"
+for     label   Associate the label with form control   ID*
+for     output  Specifies controls from which the output was calculated     Unordered set of unique space-separated tokens, case-sensitive, consisting of IDs*
+form    button; fieldset; input; keygen; label; meter; object; output; progress; select; textarea   Associates the control with a form element  ID*
+formaction  button; input   URL to use for form submission  Valid URL potentially surrounded by spaces
+formenctype     button; input   Form data set encoding type to use for form submission  "application/x-www-form-urlencoded"; "multipart/form-data"; "text/plain"
+formmethod  button; input   HTTP method to use for form submission  "GET"; "POST"
+formnovalidate  button; input   Bypass form control validation for form submission  Boolean attribute
+formtarget  button; input   Browsing context for form submission    Valid browsing context name or keyword
+headers     td; th  The header cells for this cell  Unordered set of unique space-separated tokens, case-sensitive, consisting of IDs*
+height  canvas; embed; iframe; img; input; object; video    Vertical dimension  Valid non-negative integer
+hidden  HTML elements   Whether the element is relevant     Boolean attribute
+high    meter   Low limit of high range     Valid floating point number*
+href    a; area     Address of the hyperlink    Valid URL potentially surrounded by spaces
+href    link    Address of the hyperlink    Valid non-empty URL potentially surrounded by spaces
+href    base    Document base URL   Valid URL potentially surrounded by spaces
+hreflang    a; area; link   Language of the linked resource     Valid BCP 47 language tag
+http-equiv  meta    Pragma directive    Text*
+icon    command     Icon for the command    Valid non-empty URL potentially surrounded by spaces
+id  HTML elements   The element's ID    Text*
+ismap   img     Whether the image is a server-side image map    Boolean attribute
+keytype     keygen  The type of cryptographic key to generate   Text*
+kind    track   The type of text track  "subtitles"; "captions"; "descriptions"; "chapters"; "metadata"
+label   command; menu; optgroup; option; track  User-visible label  Text
+lang    HTML elements   Language of the element     Valid BCP 47 language tag or the empty string
+list    input   List of autocomplete options    ID*
+loop    audio; video    Whether to loop the media resource  Boolean attribute
+low     meter   High limit of low range     Valid floating point number*
+manifest    html    Application cache manifest  Valid non-empty URL potentially surrounded by spaces
+max     input   Maximum value   varies*
+max     meter; progress     Upper bound of range    Valid floating point number*
+maxlength   input; textarea     Maximum length of value     Valid non-negative integer
+media   a; area; link; source; style    Applicable media    Valid media query
+method  form    HTTP method to use for form submission  "GET"; "POST"
+min     input   Minimum value   varies*
+min     meter   Lower bound of range    Valid floating point number*
+multiple    input; select   Whether to allow multiple values    Boolean attribute
+name    button; fieldset; input; keygen; output; select; textarea   Name of form control to use for form submission and in the form.elements API    Text*
+name    form    Name of form to use in the document.forms API   Text*
+name    iframe; object  Name of nested browsing context     Valid browsing context name or keyword
+name    map     Name of image map to reference from the usemap attribute    Text*
+name    meta    Metadata name   Text*
+name    param   Name of parameter   Text
+novalidate  form    Bypass form control validation for form submission  Boolean attribute
+open    details     Whether the details are visible     Boolean attribute
+optimum     meter   Optimum value in gauge  Valid floating point number*
+pattern     input   Pattern to be matched by the form control's value   Regular expression matching the JavaScript Pattern production
+placeholder     input; textarea     User-visible label to be placed within the form control     Text*
+poster  video   Poster frame to show prior to video playback    Valid non-empty URL potentially surrounded by spaces
+preload     audio; video    Hints how much buffering the media resource will likely need    "none"; "metadata"; "auto"
+pubdate     time    Whether the element's value represents a publication time for the nearest article or body   Boolean attribute
+radiogroup  command     Name of group of commands to treat as a radio button group  Text
+readonly    input; textarea     Whether to allow the value to be edited by the user     Boolean attribute
+rel     a; area; link   Relationship between the document containing the hyperlink and the destination resource     Set of space-separated tokens*
+required    input; select; textarea     Whether the control is required for form submission     Boolean attribute
+reversed    ol  Number the list backwards   Boolean attribute
+rows    textarea    Number of lines to show     Valid non-negative integer greater than zero
+rowspan     td; th  Number of rows that the cell is to span     Valid non-negative integer
+sandbox     iframe  Security rules for nested content   Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of "allow-same-origin", "allow-forms", and "allow-scripts"
+spellcheck  HTML elements   Whether the element is to have its spelling and grammar checked     "true"; "false"
+scope   th  Specifies which cells the header cell applies to    "row"; "col"; "rowgroup"; "colgroup"
+scoped  style   Whether the styles apply to the entire document or just the parent subtree  Boolean attribute
+seamless    iframe  Whether to apply the document's styles to the nested content    Boolean attribute
+selected    option  Whether the option is selected by default   Boolean attribute
+shape   area    The kind of shape to be created in an image map     "circle"; "default"; "poly"; "rect"
+size    input; select   Size of the control     Valid non-negative integer greater than zero
+sizes   link    Sizes of the icons (for rel="icon")     Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of sizes*
+span    col; colgroup   Number of columns spanned by the element    Valid non-negative integer greater than zero
+src     audio; embed; iframe; img; input; script; source; track; video  Address of the resource     Valid non-empty URL potentially surrounded by spaces
+srcdoc  iframe  A document to render in the iframe  The source of an iframe srcdoc document*
+srclang     track   Language of the text track  Valid BCP 47 language tag
+start   ol  Ordinal value of the first item     Valid integer
+step    input   Granularity to be matched by the form control's value   Valid floating point number greater than zero, or "any"
+style   HTML elements   Presentational and formatting instructions  CSS declarations*
+summary     table   Explanatory text for complex tables for users of screen readers     Text*
+tabindex    HTML elements   Whether the element is focusable, and the relative order of the element for the purposes of sequential focus navigation     Valid integer
+target  a; area     Browsing context for hyperlink navigation   Valid browsing context name or keyword
+target  base    Default browsing context for hyperlink navigation and form submission   Valid browsing context name or keyword
+target  form    Browsing context for form submission    Valid browsing context name or keyword
+title   HTML elements   Advisory information for the element    Text
+title   abbr; dfn   Full term or expansion of abbreviation  Text
+title   command     Hint describing the command     Text
+title   link    Title of the link   Text
+title   link; style     Alternative style sheet set name    Text
+type    a; area; link   Hint for the type of the referenced resource    Valid MIME type
+type    button  Type of button  "submit"; "reset"; "button"
+type    button; input   Type of form control    input type keyword
+type    command     Type of command     "command"; "checkbox"; "radio"
+type    embed; object; script; source; style    Type of embedded resource   Valid MIME type
+type    menu    Type of menu    "context"; "toolbar"
+usemap  img; object     Name of image map to use    Valid hash-name reference*
+value   button; option  Value to be used for form submission    Text
+value   input   Value of the form control   varies*
+value   li  Ordinal value of the list item  Valid integer
+value   meter; progress     Current value of the element    Valid floating point number
+value   param   Value of parameter  Text
+width   canvas; embed; iframe; img; input; object; video    Horizontal dimension    Valid non-negative integer
+wrap    textarea    How the value of the form control is to be wrapped for form submission  "soft"; "hard"
 
 An asterisk (*) in a cell indicates that the actual rules are more complicated than indicated in the table above.
-List of event handler content attributes Attribute 	Element(s) 	Description 	Value
-onabort 	HTML elements 	abort event handler 	Event handler content attribute
-onafterprint 	body 	afterprint event handler for Window object 	Event handler content attribute
-onbeforeprint 	body 	beforeprint event handler for Window object 	Event handler content attribute
-onbeforeunload 	body 	beforeunload event handler for Window object 	Event handler content attribute
-onblur 	body 	blur event handler for Window object 	Event handler content attribute
-onblur 	HTML elements 	blur event handler 	Event handler content attribute
-oncanplay 	HTML elements 	canplay event handler 	Event handler content attribute
-oncanplaythrough 	HTML elements 	canplaythrough event handler 	Event handler content attribute
-onchange 	HTML elements 	change event handler 	Event handler content attribute
-onclick 	HTML elements 	click event handler 	Event handler content attribute
-oncontextmenu 	HTML elements 	contextmenu event handler 	Event handler content attribute
-oncuechange 	HTML elements 	cuechange event handler 	Event handler content attribute
-ondblclick 	HTML elements 	dblclick event handler 	Event handler content attribute
-ondrag 	HTML elements 	drag event handler 	Event handler content attribute
-ondragend 	HTML elements 	dragend event handler 	Event handler content attribute
-ondragenter 	HTML elements 	dragenter event handler 	Event handler content attribute
-ondragleave 	HTML elements 	dragleave event handler 	Event handler content attribute
-ondragover 	HTML elements 	dragover event handler 	Event handler content attribute
-ondragstart 	HTML elements 	dragstart event handler 	Event handler content attribute
-ondrop 	HTML elements 	drop event handler 	Event handler content attribute
-ondurationchange 	HTML elements 	durationchange event handler 	Event handler content attribute
-onemptied 	HTML elements 	emptied event handler 	Event handler content attribute
-onended 	HTML elements 	ended event handler 	Event handler content attribute
-onerror 	body 	error event handler for Window object, and handler for script error notifications 	Event handler content attribute
-onerror 	HTML elements 	error event handler 	Event handler content attribute
-onfocus 	body 	focus event handler for Window object 	Event handler content attribute
-onfocus 	HTML elements 	focus event handler 	Event handler content attribute
-onformchange 	HTML elements 	formchange event handler 	Event handler content attribute
-onforminput 	HTML elements 	forminput event handler 	Event handler content attribute
-onhashchange 	body 	hashchange event handler for Window object 	Event handler content attribute
-oninput 	HTML elements 	input event handler 	Event handler content attribute
-oninvalid 	HTML elements 	invalid event handler 	Event handler content attribute
-onkeydown 	HTML elements 	keydown event handler 	Event handler content attribute
-onkeypress 	HTML elements 	keypress event handler 	Event handler content attribute
-onkeyup 	HTML elements 	keyup event handler 	Event handler content attribute
-onload 	body 	load event handler for Window object 	Event handler content attribute
-onload 	HTML elements 	load event handler 	Event handler content attribute
-onloadeddata 	HTML elements 	loadeddata event handler 	Event handler content attribute
-onloadedmetadata 	HTML elements 	loadedmetadata event handler 	Event handler content attribute
-onloadstart 	HTML elements 	loadstart event handler 	Event handler content attribute
-onmessage 	body 	message event handler for Window object 	Event handler content attribute
-onmousedown 	HTML elements 	mousedown event handler 	Event handler content attribute
-onmousemove 	HTML elements 	mousemove event handler 	Event handler content attribute
-onmouseout 	HTML elements 	mouseout event handler 	Event handler content attribute
-onmouseover 	HTML elements 	mouseover event handler 	Event handler content attribute
-onmouseup 	HTML elements 	mouseup event handler 	Event handler content attribute
-onmousewheel 	HTML elements 	mousewheel event handler 	Event handler content attribute
-onoffline 	body 	offline event handler for Window object 	Event handler content attribute
-ononline 	body 	online event handler for Window object 	Event handler content attribute
-onpagehide 	body 	pagehide event handler for Window object 	Event handler content attribute
-onpageshow 	body 	pageshow event handler for Window object 	Event handler content attribute
-onpause 	HTML elements 	pause event handler 	Event handler content attribute
-onplay 	HTML elements 	play event handler 	Event handler content attribute
-onplaying 	HTML elements 	playing event handler 	Event handler content attribute
-onpopstate 	body 	popstate event handler for Window object 	Event handler content attribute
-onprogress 	HTML elements 	progress event handler 	Event handler content attribute
-onratechange 	HTML elements 	ratechange event handler 	Event handler content attribute
-onreadystatechange 	HTML elements 	readystatechange event handler 	Event handler content attribute
-onredo 	body 	redo event handler for Window object 	Event handler content attribute
-onreset 	HTML elements 	reset event handler 	Event handler content attribute
-onresize 	body 	resize event handler for Window object 	Event handler content attribute
-onscroll 	body 	scroll event handler for Window object 	Event handler content attribute
-onscroll 	HTML elements 	scroll event handler 	Event handler content attribute
-onseeked 	HTML elements 	seeked event handler 	Event handler content attribute
-onseeking 	HTML elements 	seeking event handler 	Event handler content attribute
-onselect 	HTML elements 	select event handler 	Event handler content attribute
-onshow 	HTML elements 	show event handler 	Event handler content attribute
-onstalled 	HTML elements 	stalled event handler 	Event handler content attribute
-onstorage 	body 	storage event handler for Window object 	Event handler content attribute
-onsubmit 	HTML elements 	submit event handler 	Event handler content attribute
-onsuspend 	HTML elements 	suspend event handler 	Event handler content attribute
-ontimeupdate 	HTML elements 	timeupdate event handler 	Event handler content attribute
-onundo 	body 	undo event handler for Window object 	Event handler content attribute
-onunload 	body 	unload event handler for Window object 	Event handler content attribute
-onvolumechange 	HTML elements 	volumechange event handler 	Event handler content attribute
-onwaiting 	HTML elements 	waiting event handler 	Event handler content attribute
+List of event handler content attributes Attribute  Element(s)  Description     Value
+onabort     HTML elements   abort event handler     Event handler content attribute
+onafterprint    body    afterprint event handler for Window object  Event handler content attribute
+onbeforeprint   body    beforeprint event handler for Window object     Event handler content attribute
+onbeforeunload  body    beforeunload event handler for Window object    Event handler content attribute
+onblur  body    blur event handler for Window object    Event handler content attribute
+onblur  HTML elements   blur event handler  Event handler content attribute
+oncanplay   HTML elements   canplay event handler   Event handler content attribute
+oncanplaythrough    HTML elements   canplaythrough event handler    Event handler content attribute
+onchange    HTML elements   change event handler    Event handler content attribute
+onclick     HTML elements   click event handler     Event handler content attribute
+oncontextmenu   HTML elements   contextmenu event handler   Event handler content attribute
+oncuechange     HTML elements   cuechange event handler     Event handler content attribute
+ondblclick  HTML elements   dblclick event handler  Event handler content attribute
+ondrag  HTML elements   drag event handler  Event handler content attribute
+ondragend   HTML elements   dragend event handler   Event handler content attribute
+ondragenter     HTML elements   dragenter event handler     Event handler content attribute
+ondragleave     HTML elements   dragleave event handler     Event handler content attribute
+ondragover  HTML elements   dragover event handler  Event handler content attribute
+ondragstart     HTML elements   dragstart event handler     Event handler content attribute
+ondrop  HTML elements   drop event handler  Event handler content attribute
+ondurationchange    HTML elements   durationchange event handler    Event handler content attribute
+onemptied   HTML elements   emptied event handler   Event handler content attribute
+onended     HTML elements   ended event handler     Event handler content attribute
+onerror     body    error event handler for Window object, and handler for script error notifications   Event handler content attribute
+onerror     HTML elements   error event handler     Event handler content attribute
+onfocus     body    focus event handler for Window object   Event handler content attribute
+onfocus     HTML elements   focus event handler     Event handler content attribute
+onformchange    HTML elements   formchange event handler    Event handler content attribute
+onforminput     HTML elements   forminput event handler     Event handler content attribute
+onhashchange    body    hashchange event handler for Window object  Event handler content attribute
+oninput     HTML elements   input event handler     Event handler content attribute
+oninvalid   HTML elements   invalid event handler   Event handler content attribute
+onkeydown   HTML elements   keydown event handler   Event handler content attribute
+onkeypress  HTML elements   keypress event handler  Event handler content attribute
+onkeyup     HTML elements   keyup event handler     Event handler content attribute
+onload  body    load event handler for Window object    Event handler content attribute
+onload  HTML elements   load event handler  Event handler content attribute
+onloadeddata    HTML elements   loadeddata event handler    Event handler content attribute
+onloadedmetadata    HTML elements   loadedmetadata event handler    Event handler content attribute
+onloadstart     HTML elements   loadstart event handler     Event handler content attribute
+onmessage   body    message event handler for Window object     Event handler content attribute
+onmousedown     HTML elements   mousedown event handler     Event handler content attribute
+onmousemove     HTML elements   mousemove event handler     Event handler content attribute
+onmouseout  HTML elements   mouseout event handler  Event handler content attribute
+onmouseover     HTML elements   mouseover event handler     Event handler content attribute
+onmouseup   HTML elements   mouseup event handler   Event handler content attribute
+onmousewheel    HTML elements   mousewheel event handler    Event handler content attribute
+onoffline   body    offline event handler for Window object     Event handler content attribute
+ononline    body    online event handler for Window object  Event handler content attribute
+onpagehide  body    pagehide event handler for Window object    Event handler content attribute
+onpageshow  body    pageshow event handler for Window object    Event handler content attribute
+onpause     HTML elements   pause event handler     Event handler content attribute
+onplay  HTML elements   play event handler  Event handler content attribute
+onplaying   HTML elements   playing event handler   Event handler content attribute
+onpopstate  body    popstate event handler for Window object    Event handler content attribute
+onprogress  HTML elements   progress event handler  Event handler content attribute
+onratechange    HTML elements   ratechange event handler    Event handler content attribute
+onreadystatechange  HTML elements   readystatechange event handler  Event handler content attribute
+onredo  body    redo event handler for Window object    Event handler content attribute
+onreset     HTML elements   reset event handler     Event handler content attribute
+onresize    body    resize event handler for Window object  Event handler content attribute
+onscroll    body    scroll event handler for Window object  Event handler content attribute
+onscroll    HTML elements   scroll event handler    Event handler content attribute
+onseeked    HTML elements   seeked event handler    Event handler content attribute
+onseeking   HTML elements   seeking event handler   Event handler content attribute
+onselect    HTML elements   select event handler    Event handler content attribute
+onshow  HTML elements   show event handler  Event handler content attribute
+onstalled   HTML elements   stalled event handler   Event handler content attribute
+onstorage   body    storage event handler for Window object     Event handler content attribute
+onsubmit    HTML elements   submit event handler    Event handler content attribute
+onsuspend   HTML elements   suspend event handler   Event handler content attribute
+ontimeupdate    HTML elements   timeupdate event handler    Event handler content attribute
+onundo  body    undo event handler for Window object    Event handler content attribute
+onunload    body    unload event handler for Window object  Event handler content attribute
+onvolumechange  HTML elements   volumechange event handler  Event handler content attribute
+onwaiting   HTML elements   waiting event handler   Event handler content attribute
 Interfaces
 
 This section is non-normative.
-List of interfaces for elements Element(s) 	Interface(s)
-a 	HTMLAnchorElement : HTMLElement
-abbr 	HTMLElement
-address 	HTMLElement
-area 	HTMLAreaElement : HTMLElement
-article 	HTMLElement
-aside 	HTMLElement
-audio 	HTMLAudioElement : HTMLMediaElement : HTMLElement
-b 	HTMLElement
-base 	HTMLBaseElement : HTMLElement
-bdi 	HTMLElement
-bdo 	HTMLElement
-blockquote 	HTMLQuoteElement : HTMLElement
-body 	HTMLBodyElement : HTMLElement
-br 	HTMLBRElement : HTMLElement
-button 	HTMLButtonElement : HTMLElement
-canvas 	HTMLCanvasElement : HTMLElement
-caption 	HTMLTableCaptionElement : HTMLElement
-cite 	HTMLElement
-code 	HTMLElement
-col 	HTMLTableSectionElement : HTMLElement
-colgroup 	HTMLTableColElement : HTMLElement
-command 	HTMLCommandElement : HTMLElement
-datalist 	HTMLDataListElement : HTMLElement
-dd 	HTMLElement
-del 	HTMLModElement : HTMLElement
-details 	HTMLDetailsElement : HTMLElement
-div 	HTMLDivElement : HTMLElement
-dl 	HTMLDListElement : HTMLElement
-dt 	HTMLElement
-em 	HTMLElement
-embed 	HTMLEmbedElement : HTMLElement
-fieldset 	HTMLFieldSetElement : HTMLElement
-figcaption 	HTMLElement
-figure 	HTMLElement
-footer 	HTMLElement
-form 	HTMLFormElement : HTMLElement
-head 	HTMLHeadElement : HTMLElement
-h1 	HTMLHeadingElement : HTMLElement
-h2 	HTMLHeadingElement : HTMLElement
-h3 	HTMLHeadingElement : HTMLElement
-h4 	HTMLHeadingElement : HTMLElement
-h5 	HTMLHeadingElement : HTMLElement
-h6 	HTMLHeadingElement : HTMLElement
-header 	HTMLElement
-hgroup 	HTMLElement
-hr 	HTMLHRElement : HTMLElement
-html 	HTMLHtmlElement : HTMLElement
-i 	HTMLElement
-iframe 	HTMLIFrameElement : HTMLElement
-img 	HTMLImageElement : HTMLElement
-input 	HTMLInputElement : HTMLElement
-ins 	HTMLModElement : HTMLElement
-kbd 	HTMLElement
-keygen 	HTMLKeygenElement : HTMLElement
-label 	HTMLLabelElement : HTMLElement
-legend 	HTMLLegendElement : HTMLElement
-li 	HTMLLIElement : HTMLElement
-link 	HTMLLinkElement : HTMLElement
-map 	HTMLMapElement : HTMLElement
-mark 	HTMLElement
-meter 	HTMLMeterElement : HTMLElement
-nav 	HTMLElement
-noscript 	HTMLElement
-object 	HTMLObjectElement : HTMLElement
-ol 	HTMLOListElement : HTMLElement
-optgroup 	HTMLOptGroupElement : HTMLElement
-option 	HTMLOptionElement : HTMLElement
-output 	HTMLOutputElement : HTMLElement
-p 	HTMLParagraphElement : HTMLElement
-param 	HTMLParamElement : HTMLElement
-pre 	HTMLPreElement : HTMLElement
-progress 	HTMLProgressElement : HTMLElement
-q 	HTMLElement
-rp 	HTMLElement
-rt 	HTMLElement
-ruby 	HTMLElement
-s 	HTMLElement
-samp 	HTMLElement
-section 	HTMLElement
-select 	HTMLSelectElement : HTMLElement
-small 	HTMLElement
-source 	HTMLSourceElement : HTMLElement
-span 	HTMLSpanElement : HTMLElement
-strong 	HTMLElement
-style 	HTMLStyleElement : HTMLElement
-sub 	HTMLElement
-summary 	HTMLElement
-sup 	HTMLElement
-table 	HTMLTableElement : HTMLElement
-tbody 	HTMLTableSectionElement : HTMLElement
-td 	HTMLTableDataCellElement : HTMLTableCellElement : HTMLElement
-textarea 	HTMLTextAreaElement : HTMLElement
-tfoot 	HTMLTableSectionElement : HTMLElement
-th 	HTMLTableHeaderCellElement : HTMLTableCellElement : HTMLElement
-thead 	HTMLTableSectionElement : HTMLElement
-time 	HTMLTimeElement : HTMLElement
-title 	HTMLTitleElement : HTMLElement
-tr 	HTMLTableRowElement : HTMLElement
-track 	HTMLTrackElement : HTMLElement
-ul 	HTMLUListElement : HTMLElement
-var 	HTMLElement
-video 	HTMLVideoElement : HTMLMediaElement : HTMLElement
-wbr 	HTMLElement
+List of interfaces for elements Element(s)  Interface(s)
+a   HTMLAnchorElement : HTMLElement
+abbr    HTMLElement
+address     HTMLElement
+area    HTMLAreaElement : HTMLElement
+article     HTMLElement
+aside   HTMLElement
+audio   HTMLAudioElement : HTMLMediaElement : HTMLElement
+b   HTMLElement
+base    HTMLBaseElement : HTMLElement
+bdi     HTMLElement
+bdo     HTMLElement
+blockquote  HTMLQuoteElement : HTMLElement
+body    HTMLBodyElement : HTMLElement
+br  HTMLBRElement : HTMLElement
+button  HTMLButtonElement : HTMLElement
+canvas  HTMLCanvasElement : HTMLElement
+caption     HTMLTableCaptionElement : HTMLElement
+cite    HTMLElement
+code    HTMLElement
+col     HTMLTableSectionElement : HTMLElement
+colgroup    HTMLTableColElement : HTMLElement
+command     HTMLCommandElement : HTMLElement
+datalist    HTMLDataListElement : HTMLElement
+dd  HTMLElement
+del     HTMLModElement : HTMLElement
+details     HTMLDetailsElement : HTMLElement
+div     HTMLDivElement : HTMLElement
+dl  HTMLDListElement : HTMLElement
+dt  HTMLElement
+em  HTMLElement
+embed   HTMLEmbedElement : HTMLElement
+fieldset    HTMLFieldSetElement : HTMLElement
+figcaption  HTMLElement
+figure  HTMLElement
+footer  HTMLElement
+form    HTMLFormElement : HTMLElement
+head    HTMLHeadElement : HTMLElement
+h1  HTMLHeadingElement : HTMLElement
+h2  HTMLHeadingElement : HTMLElement
+h3  HTMLHeadingElement : HTMLElement
+h4  HTMLHeadingElement : HTMLElement
+h5  HTMLHeadingElement : HTMLElement
+h6  HTMLHeadingElement : HTMLElement
+header  HTMLElement
+hgroup  HTMLElement
+hr  HTMLHRElement : HTMLElement
+html    HTMLHtmlElement : HTMLElement
+i   HTMLElement
+iframe  HTMLIFrameElement : HTMLElement
+img     HTMLImageElement : HTMLElement
+input   HTMLInputElement : HTMLElement
+ins     HTMLModElement : HTMLElement
+kbd     HTMLElement
+keygen  HTMLKeygenElement : HTMLElement
+label   HTMLLabelElement : HTMLElement
+legend  HTMLLegendElement : HTMLElement
+li  HTMLLIElement : HTMLElement
+link    HTMLLinkElement : HTMLElement
+map     HTMLMapElement : HTMLElement
+mark    HTMLElement
+meter   HTMLMeterElement : HTMLElement
+nav     HTMLElement
+noscript    HTMLElement
+object  HTMLObjectElement : HTMLElement
+ol  HTMLOListElement : HTMLElement
+optgroup    HTMLOptGroupElement : HTMLElement
+option  HTMLOptionElement : HTMLElement
+output  HTMLOutputElement : HTMLElement
+p   HTMLParagraphElement : HTMLElement
+param   HTMLParamElement : HTMLElement
+pre     HTMLPreElement : HTMLElement
+progress    HTMLProgressElement : HTMLElement
+q   HTMLElement
+rp  HTMLElement
+rt  HTMLElement
+ruby    HTMLElement
+s   HTMLElement
+samp    HTMLElement
+section     HTMLElement
+select  HTMLSelectElement : HTMLElement
+small   HTMLElement
+source  HTMLSourceElement : HTMLElement
+span    HTMLSpanElement : HTMLElement
+strong  HTMLElement
+style   HTMLStyleElement : HTMLElement
+sub     HTMLElement
+summary     HTMLElement
+sup     HTMLElement
+table   HTMLTableElement : HTMLElement
+tbody   HTMLTableSectionElement : HTMLElement
+td  HTMLTableDataCellElement : HTMLTableCellElement : HTMLElement
+textarea    HTMLTextAreaElement : HTMLElement
+tfoot   HTMLTableSectionElement : HTMLElement
+th  HTMLTableHeaderCellElement : HTMLTableCellElement : HTMLElement
+thead   HTMLTableSectionElement : HTMLElement
+time    HTMLTimeElement : HTMLElement
+title   HTMLTitleElement : HTMLElement
+tr  HTMLTableRowElement : HTMLElement
+track   HTMLTrackElement : HTMLElement
+ul  HTMLUListElement : HTMLElement
+var     HTMLElement
+video   HTMLVideoElement : HTMLMediaElement : HTMLElement
+wbr     HTMLElement
 Events
 
 This section is non-normative.
-List of events Event 	Interface 	Description
-DOMContentLoaded 	Event 	Fired at the Document once it and its scripts have loaded, without waiting for other subresources
-abort 	Event 	Fired at the Window when the download was aborted by the user
-afterprint 	Event 	Fired at the Window after printing
-beforeprint 	Event 	Fired at the Window before printing
-beforeunload 	BeforeUnloadEvent 	Fired at the Window when the page is about to be unloaded, in case the page would like to show a warning prompt
-blur 	Event 	Fired at nodes losing focus
-change 	Event 	Fired at controls when the user commits a value change
-click 	Event 	Fired at an element before its activation behavior is run
-contextmenu 	Event 	Fired at elements when the user requests their context menu
-error 	Event 	Fired at elements when network and script errors occur
-focus 	Event 	Fired at nodes gaining focus
-formchange 	Event 	Fired at form controls when the user commits a value change to a control on the form
-forminput 	Event 	Fired at form controls when the user changes the value of a control on the form
-hashchange 	HashChangeEvent 	Fired at the Window when the fragment identifier part of the document's current address changes
-input 	Event 	Fired at controls when the user changes the value
-invalid 	Event 	Fired at controls during form validation if they do not satisfy their constraints
-load 	Event 	Fired at the Window when the document has finished loading; fired at an element containing a resource (e.g. img, embed) when its resource has finished loading
-message 	MessageEvent 	Fired at an object when the object receives a message
-offline 	Event 	Fired at the Window when the network connections fails
-online 	Event 	Fired at the Window when the network connections returns
-pagehide 	PageTransitionEvent 	Fired at the Window when the page's entry in the session history stops being the current entry
-pageshow 	PageTransitionEvent 	Fired at the Window when the page's entry in the session history becomes the current entry
-popstate 	PopStateEvent 	Fired at the Window when the user navigates the session history
-readystatechange 	Event 	Fired at the Document when it finishes parsing and again when all its subresources have finished loading
-reset 	Event 	Fired at a form element when it is reset
-show 	Event 	Fired at a menu element when it is shown as a context menu
-submit 	Event 	Fired at a form element when it is submitted
-unload 	Event 	Fired at the Window object when the page is going away
+List of events Event    Interface   Description
+DOMContentLoaded    Event   Fired at the Document once it and its scripts have loaded, without waiting for other subresources
+abort   Event   Fired at the Window when the download was aborted by the user
+afterprint  Event   Fired at the Window after printing
+beforeprint     Event   Fired at the Window before printing
+beforeunload    BeforeUnloadEvent   Fired at the Window when the page is about to be unloaded, in case the page would like to show a warning prompt
+blur    Event   Fired at nodes losing focus
+change  Event   Fired at controls when the user commits a value change
+click   Event   Fired at an element before its activation behavior is run
+contextmenu     Event   Fired at elements when the user requests their context menu
+error   Event   Fired at elements when network and script errors occur
+focus   Event   Fired at nodes gaining focus
+formchange  Event   Fired at form controls when the user commits a value change to a control on the form
+forminput   Event   Fired at form controls when the user changes the value of a control on the form
+hashchange  HashChangeEvent     Fired at the Window when the fragment identifier part of the document's current address changes
+input   Event   Fired at controls when the user changes the value
+invalid     Event   Fired at controls during form validation if they do not satisfy their constraints
+load    Event   Fired at the Window when the document has finished loading; fired at an element containing a resource (e.g. img, embed) when its resource has finished loading
+message     MessageEvent    Fired at an object when the object receives a message
+offline     Event   Fired at the Window when the network connections fails
+online  Event   Fired at the Window when the network connections returns
+pagehide    PageTransitionEvent     Fired at the Window when the page's entry in the session history stops being the current entry
+pageshow    PageTransitionEvent     Fired at the Window when the page's entry in the session history becomes the current entry
+popstate    PopStateEvent   Fired at the Window when the user navigates the session history
+readystatechange    Event   Fired at the Document when it finishes parsing and again when all its subresources have finished loading
+reset   Event   Fired at a form element when it is reset
+show    Event   Fired at a menu element when it is shown as a context menu
+submit  Event   Fired at a form element when it is submitted
+unload  Event   Fired at the Window object when the page is going away
 
 See also media element events, application cache events, and drag-and-drop events.
 References
