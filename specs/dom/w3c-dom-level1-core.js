@@ -2758,13 +2758,6 @@ test('1.2.5. Interface Node', function(){
         fragment1.appendChild(element1);
         clone1 = fragment1.cloneNode(true);
         ok(clone1, TEST+": deep copy ");
-        //TODO: it's arguable if these following assertions are truly
-        //      sufficient to prove deep cloning.  I suspect that we
-        //      actually have to test every property and method since 
-        //      reading properties and return values from methods are 
-        //      not guaranteed to be reducable to a finite set of 
-        //      readable values on the dom node -- though it's likely in
-        //      reality implied de facto
         equals(clone1.childNodes.length, 1, TEST+": deep copy - childNodes");
         equals(clone1.childNodes[0].nodeType, element1.nodeType, TEST+": deep copy - childNodes");
         equals(clone1.childNodes[0].nodeName, element1.nodeName, TEST+": deep copy - childNodes");
@@ -3015,13 +3008,6 @@ test('1.2.5. Interface Node', function(){
         element2.appendChild(element1);
         clone1 = element2.cloneNode(true);
         ok(clone1, TEST+": deep copy ");
-        //TODO: it's arguable if these following assertions are truly
-        //      sufficient to prove deep cloning.  I suspect that we
-        //      actually have to test every property and method since 
-        //      reading properties and return values from methods are 
-        //      not guaranteed to be reducable to a finite set of 
-        //      readable values on the dom node -- though it's likely in
-        //      reality implied de facto
         equals(clone1.childNodes.length, 1, TEST+": deep copy - childNodes");
         equals(clone1.childNodes[0].nodeType, element1.nodeType, TEST+": deep copy - childNodes");
         equals(clone1.childNodes[0].nodeName, element1.nodeName, TEST+": deep copy - childNodes");
@@ -3292,6 +3278,54 @@ test('1.2.5. Interface Node', function(){
     pi1.ownerDocument = "lmnop";
     equals(pi1.ownerDocument, doc1, TEST);
       
+    reset();
+    TEST = "ProcessingInstruction : Node Methods";
+    ok(pi1.appendChild, TEST);
+    ok(pi1.cloneNode, TEST);
+    ok(pi1.hasChildNodes, TEST);
+    ok(pi1.insertBefore, TEST);
+    ok(pi1.removeChild, TEST);
+    ok(pi1.replaceChild, TEST);
+    
+    reset();
+    TEST = "ProcessingInstruction : Node Method appendChild(newChild)";
+    //For more HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    try{
+        //Webkit and Mozilla agree this is not what the spec intends
+        ok(pi1.appendChild(text1) === text1, TEST);
+    }catch(e){
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    } finally {
+        //these approachs should work for both Webkit and Mozilla
+        pi1.nodeValue = text1.nodeValue;
+        ok(pi1.childNodes.length === 0, TEST);
+    }
+    
+    reset();
+    TEST = "ProcessingInstruction : Node Method cloneNode(deep)";
+    pi2.nodeValue = text1.nodeValue;
+    clone1 = pi2.cloneNode(false);
+    ok(clone1, TEST+": shallow copy ");
+    equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    equals(clone1.nodeValue, pi2.nodeValue, TEST+": shallow copy - childNodes");
+    
+    reset();
+    pi2.nodeValue = text1.nodeValue;
+    clone1 = pi2.cloneNode(true);
+    ok(clone1, TEST+": deep copy ");
+    equals(pi2.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.nodeType, pi2.nodeType, TEST+": deep copy - childNodes");
+    equals(clone1.nodeName, pi2.nodeName, TEST+": deep copy - childNodes");
+    equals(clone1.nodeValue, pi2.nodeValue, TEST+": deep copy - childNodes");
+
+
+    reset();
+    TEST = "ProcessingInstruction : Node Method hasChildNodes()";
+    equals(pi1.hasChildNodes(), false, TEST);
+    
+    
     /************************
      * Comment
      ***********************/
@@ -3353,6 +3387,52 @@ test('1.2.5. Interface Node', function(){
     equals(comment1.ownerDocument, doc1, TEST);
     comment1.ownerDocument = "lmnop";
     equals(comment1.ownerDocument, doc1, TEST);
+    
+    reset();
+    TEST = "Comment : Node Methods";
+    ok(comment1.appendChild, TEST);
+    ok(comment1.cloneNode, TEST);
+    ok(comment1.hasChildNodes, TEST);
+    ok(comment1.insertBefore, TEST);
+    ok(comment1.removeChild, TEST);
+    ok(comment1.replaceChild, TEST);
+    
+    reset();
+    TEST = "Comment : Node Method appendChild(newChild)";
+    //For more HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    try{
+        //Webkit and Mozilla agree this is not what the spec intends
+        ok(comment1.appendChild(text1) === text1, TEST);
+    }catch(e){
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    } finally {
+        //these approachs should work for both Webkit and Mozilla
+        comment1.nodeValue = text1.nodeValue;
+        ok(comment1.childNodes.length === 0, TEST);
+    }
+    
+    reset();
+    TEST = "Comment : Node Method cloneNode(deep)";
+    comment1.nodeValue = text1.nodeValue;
+    clone1 = comment1.cloneNode(false);
+    ok(clone1, TEST+": shallow copy ");
+    equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    equals(clone1.nodeValue, comment1.nodeValue, TEST+": shallow copy - childNodes");
+    
+    reset();
+    comment1.nodeValue = text1.nodeValue;
+    clone1 = comment1.cloneNode(true);
+    ok(clone1, TEST+": deep copy ");
+    equals(comment1.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.nodeType, comment1.nodeType, TEST+": deep copy - childNodes");
+    equals(clone1.nodeName, comment1.nodeName, TEST+": deep copy - childNodes");
+    equals(clone1.nodeValue, comment1.nodeValue, TEST+": deep copy - childNodes");
+
+    reset();
+    TEST = "Comment : Node Method hasChildNodes()";
+    equals(comment1.hasChildNodes(), false, TEST);
     
     /************************
      * Text
@@ -3416,6 +3496,52 @@ test('1.2.5. Interface Node', function(){
     text1.ownerDocument = "lmnop";
     equals(text1.ownerDocument, doc1, TEST);
     
+    reset();
+    TEST = "Text : Node Methods";
+    ok(text1.appendChild, TEST);
+    ok(text1.cloneNode, TEST);
+    ok(text1.hasChildNodes, TEST);
+    ok(text1.insertBefore, TEST);
+    ok(text1.removeChild, TEST);
+    ok(text1.replaceChild, TEST);
+    
+    reset();
+    TEST = "Text : Node Method appendChild(newChild)";
+    //For more HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    try{
+        //Webkit and Mozilla agree this is not what the spec intends
+        ok(text2.appendChild(text1) === text1, TEST);
+    }catch(e){
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    } finally {
+        //these approachs should work for both Webkit and Mozilla
+        text2.nodeValue = text1.nodeValue;
+        ok(text2.childNodes.length === 0, TEST);
+    }
+    
+    reset();
+    TEST = "Text : Node Method cloneNode(deep)";
+    text2.nodeValue = text1.nodeValue;
+    clone1 = text2.cloneNode(false);
+    ok(clone1, TEST+": shallow copy ");
+    equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    equals(clone1.nodeValue, text2.nodeValue, TEST+": shallow copy - childNodes");
+    
+    reset();
+    text2.nodeValue = text1.nodeValue;
+    clone1 = text2.cloneNode(true);
+    ok(clone1, TEST+": deep copy ");
+    equals(text2.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.nodeType, text2.nodeType, TEST+": deep copy - childNodes");
+    equals(clone1.nodeName, text2.nodeName, TEST+": deep copy - childNodes");
+    equals(clone1.nodeValue, text2.nodeValue, TEST+": deep copy - childNodes");
+
+    reset();
+    TEST = "Text : Node Method hasChildNodes()";
+    equals(text2.hasChildNodes(), false, TEST);
+    
     /************************
      * CDATASection
      ***********************/
@@ -3478,6 +3604,50 @@ test('1.2.5. Interface Node', function(){
     cdata1.ownerDocument = "lmnop";
     equals(cdata1.ownerDocument, doc1, TEST);
     
+    reset();
+    TEST = "CDATASection : Node Methods";
+    ok(cdata1.appendChild, TEST);
+    ok(cdata1.cloneNode, TEST);
+    ok(cdata1.hasChildNodes, TEST);
+    ok(cdata1.insertBefore, TEST);
+    ok(cdata1.removeChild, TEST);
+    ok(cdata1.replaceChild, TEST);
+    
+    reset();
+    TEST = "CDATASection : Node Method appendChild(newChild)";
+    //For more HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    try{
+        //Webkit and Mozilla agree this is not what the spec intends
+        ok(cdata1.appendChild(text1) === text1, TEST);
+    }catch(e){
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    } finally {
+        //these approachs should work for both Webkit and Mozilla
+        cdata1.nodeValue = text1.nodeValue;
+        ok(cdata1.childNodes.length === 0, TEST);
+    }
+    
+    reset();
+    TEST = "CDATASection : Node Method cloneNode(deep)";
+    clone1 = cdata1.cloneNode(false);
+    ok(clone1, TEST+": shallow copy ");
+    equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    equals(clone1.nodeValue, cdata1.nodeValue, TEST+": shallow copy - childNodes");
+    
+    reset();
+    clone1 = cdata1.cloneNode(true);
+    ok(clone1, TEST+": deep copy ");
+    equals(cdata1.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.childNodes.length, 0, TEST+": deep copy - childNodes");
+    equals(clone1.nodeType, cdata1.nodeType, TEST+": deep copy - childNodes");
+    equals(clone1.nodeName, cdata1.nodeName, TEST+": deep copy - childNodes");
+    equals(clone1.nodeValue, cdata1.nodeValue, TEST+": deep copy - childNodes");
+
+    reset();
+    TEST = "CDATASection : Node Method hasChildNodes()";
+    equals(cdata2.hasChildNodes(), false, TEST);
+    
     /************************
      * Entity
      ***********************/
@@ -3489,59 +3659,6 @@ test('1.2.5. Interface Node', function(){
      ***********************/
     reset();
     ok(true, "TODO:TEST Notation : Node Attributes");
-     
-    var node,
-        doc = document.implementation.createDocument('', '', null),
-        keyboardish=''+
-        '`1234567890-='+
-        '\tqwertyuiop[]\\'+
-        'asdfghjkl;\'\n'+
-        'zxcvbnm,./'+
-        ' '+
-        '~!@#$%^&*()_+'+
-        '\tQWERTYUIOP{}|'+
-        'ASDFGHJKL:"\n'+
-        'ZXCVBNM<>?'+
-        ' ';
-        
-
-//Attributes
-
-    
-
-//Methods
-    
-    //TODO: childNodes
-   
-    //TODO: firstChild
-   
-    //TODO: lastChild
-   
-    //TODO: nextSibling
-   
-    //TODO: nodeName
-   
-    //TODO: nodeType
-   
-    //TODO: nodeValue
-   
-    //TODO: ownerDocument
-   
-    //TODO: parentNode
-   
-    //TODO: previousSibling
-   
-    //TODO: appendChild
-   
-    //TODO: cloneNode
-   
-    //TODO: hasChildNodes
-   
-    //TODO: insertBefore
-   
-    //TODO: removeChild
-   
-    //TODO: replaceChild
    
 });
 /******************************************************************************           
