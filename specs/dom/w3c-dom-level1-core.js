@@ -1,6 +1,6 @@
 QUnit.module('DOM Level 1');
 /******************************************************************************
-http://www.w3.org/TR/2000/WD-DOM-Level-1-20000929/level-one-core.html
+http://www.w3.org/TR/REC-DOM-Level-1
 
 1. Document Object Model Core
 
@@ -28,34 +28,8 @@ Table of contents
             ProcessingInstruction
 
 ******************************************************************************/
-test('Fundamental Interfaces', function(){
-    expect(12);
-    ok(DOMException,            'DOMException defined');
-    ok(DOMImplementation,       'DOMImplementation defined');
-    ok(DocumentFragment,        'DocumentFragment defined');
-    ok(Document,                'Document defined');
-    ok(Node,                    'Node defined');
-    ok(NodeList,                'NodeList defined');
-    ok(NamedNodeMap,            'NamedNodeMap defined');
-    ok(CharacterData,           'CharacterData defined');
-    ok(Attr,                    'Attr defined');
-    ok(Element,                 'Element defined');
-    ok(Text,                    'Text defined');
-    ok(Comment,                 'Comment defined');
-});
-test('Extended Interfaces', function(){
-    expect(6);
-    ok(CDATASection,            'CDATASection defined');
-    ok(DocumentType,            'DocumentType defined');
-    ok(Notation,                'Notation defined');
-    ok(Entity,                  'Entity defined');
-    ok(EntityReference,         'EntityReference defined');
-    ok(ProcessingInstruction,   'ProcessingInstruction defined');
-});
-test('TODO: Move to DOM X spec', function(){
-    expect(2);
-    ok(XMLSerializer,           'XMLSerializer defined');
-    ok(Namespace,               'Namespace defined');
+test('1. Document Object Model Core', function(){
+    ok(true, 'http://www.w3.org/TR/REC-DOM-Level-1');
 });
 /******************************************************************************
             
@@ -69,6 +43,30 @@ conforming products. The DOM Core API also allows creation and population of a
 Document object using only DOM API calls; loading a Document and saving it 
 persistently is left to the product that implements the DOM API.
 
+******************************************************************************/
+test('1.1. Overview of the DOM Core Interfaces', function(){
+    expect(18);
+    ok(DOMException,            'DOMException defined');
+    ok(DOMImplementation,       'DOMImplementation defined');
+    ok(DocumentFragment,        'DocumentFragment defined');
+    ok(Document,                'Document defined');
+    ok(Node,                    'Node defined');
+    ok(NodeList,                'NodeList defined');
+    ok(NamedNodeMap,            'NamedNodeMap defined');
+    ok(CharacterData,           'CharacterData defined');
+    ok(Attr,                    'Attr defined');
+    ok(Element,                 'Element defined');
+    ok(Text,                    'Text defined');
+    ok(Comment,                 'Comment defined');
+    ok(CDATASection,            'CDATASection defined');
+    ok(DocumentType,            'DocumentType defined');
+    ok(Notation,                'Notation defined');
+    ok(Entity,                  'Entity defined');
+    ok(EntityReference,         'EntityReference defined');
+    ok(ProcessingInstruction,   'ProcessingInstruction defined');
+});
+/******************************************************************************
+
 1.1.1. The DOM Structure Model
 
 The DOM presents documents as a hierarchy of Node objects that also implement 
@@ -79,84 +77,22 @@ types they may have as children, are as follows:
 
     * Document -- Element (maximum of one), ProcessingInstruction, Comment, 
         DocumentType (maximum of one)
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * DocumentFragment -- Element, ProcessingInstruction, Comment, Text, 
         CDATASection, EntityReference
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * DocumentType -- no children
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * EntityReference -- Element, ProcessingInstruction, Comment, Text, 
         CDATASection, EntityReference
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * Element -- Element, Text, Comment, ProcessingInstruction, CDATASection, 
         EntityReference
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * Attr -- Text, EntityReference
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * ProcessingInstruction -- no children
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * Comment -- no children
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * Text -- no children
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * CDATASection -- no children
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * Entity -- Element, ProcessingInstruction, Comment, Text, CDATASection, 
         EntityReference
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     * Notation -- no children
 
-******************************************************************************/
-test('TODO: maybe test node.appendChild for HIERARCHY_REQUEST_ERR', function(){
-    //for example
-    //document.appendChild(element) - ok
-    //document.appendChild(attr) - not ok
-});
-/******************************************************************************
 The DOM also specifies a NodeList interface to handle ordered lists of Nodes, 
 such as the children of a Node, or the elements returned by the 
 getElementsByTagName method of the Element interface, and also a NamedNodeMap 
@@ -170,18 +106,897 @@ modifies them), those changes are automatically reflected in the NodeList,
 without further action on the user's part. Likewise, changes to a Node in the 
 tree are reflected in all references to that Node in NodeList and NamedNodeMap 
 objects.
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
+
 Finally, the interfaces Text, Comment, and CDATASection all inherit from the 
 CharacterData interface.
+
 ******************************************************************************/
-test('TODO: ', function(){
-   
+test('1.1.1. The DOM Structure Model', function(){
+    
+    var doc1,
+        doc2,
+        doctype1,
+        doctype2,
+        fragment1,
+        fragment2,
+        entityReference1,
+        entityReference2,
+        element1,
+        element2,
+        attr1,
+        attr2,
+        pi1,
+        pi2,
+        comment1,
+        comment2,
+        text1,
+        text2,
+        cdata1,
+        cdata2,
+        entity1,
+        entity2,
+        notation1,
+        notation2,
+        HIERARCHY_REQUEST_ERR_MSG = 
+            "Node cannot be inserted at the specified point in the hierarchy",
+        WRONG_DOCUMENT_ERR_MSG = 
+            "Node cannot be inserted at the specified point in the hierarchy",
+        TEST;
+    
+    function reset(){
+        doctype1 = document.implementation.createDocumentType('xyz', null, 
+            "-//WTF//DTD XYZ 5 Final//EN");
+        doctype2 = document.implementation.createDocumentType('xyzxyz', null, 
+            "-//WTF//DTD XYZXYZ 5 Final//EN");
+        doc1 = document.implementation.createDocument(null, 'abc', doctype1);
+        doc2 = document.implementation.createDocument(null, 'abcabc', null);
+        fragment1 = doc1.createDocumentFragment();
+        fragment2 = doc1.createDocumentFragment();
+        entityReference1 = doc1.createEntityReference('nbsg');
+        entityReference2 = doc1.createEntityReference('nbsgnbsg');
+        element1 = doc1.createElement('def');
+        element2 = doc1.createElement('defdef');
+        attr1 = doc1.createAttribute('pqr');
+        attr2 = doc1.createAttribute('pqrpqr');
+        pi1 = doc1.createProcessingInstruction('ghi', 'jkl=mno');
+        pi2 = doc1.createProcessingInstruction('ghighi', 'jkljkl=mnomno');
+        comment1 = doc1.createComment('this is a pig. oink, oink');
+        comment2 = doc1.createComment('this is a cow. moo, moo');
+        text1 = doc1.createTextNode('abcdefghi');
+        text2 = doc1.createTextNode('jklmnopqr');
+        cdata1 = doc1.createCDATASection('stuv');
+        cdata2 = doc1.createCDATASection('wxyz');
+        entity1 = null; //can't test these until dom2 or maybe use domparser?
+        entity2 = null; //can't test these until dom2 or maybe use domparser?
+        notation1 = null; //can't test these until dom2 or maybe use domparser?
+        notation2 = null; //can't test these until dom2 or maybe use domparser?
+    }
+    
+    /************************
+     * Document
+     ***********************/  
+    reset();
+    
+    TEST = "Document cant be appended to another Document";
+    try{
+        doc1.appendChild(doc2);
+        ok( false, TEST +":"+ WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+                
+    TEST = "Document cant be appended to self";
+    try{
+        doc1.appendChild(doc1);
+        ok( false, TEST +":"+ HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = 'Empty DocumentFragment can be appended to Document.';
+    ok(doc1.appendChild(fragment1), TEST);
+    fragment2.appendChild(element2);
+    
+    TEST = "DocumentFragment cannot be appended to Document";
+    try{
+        doc1.appendChild(fragment2);
+        ok( false, TEST+':'+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType can only be appended once to Document";
+    try{
+        doc1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Elements can only be appended once to Documentt";
+    try{
+        doc1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }    
+    
+    TEST = "(XML)Document may have one or more ProcessingInstruction";
+    ok(doc1.appendChild(pi1), TEST);
+    ok(doc1.appendChild(pi2), TEST);
+    
+    TEST = "Comments can be appended to Document";
+    ok(doc1.appendChild(comment1), TEST);
+    ok(doc1.appendChild(comment2), TEST);
+    
+    TEST = "Attr can be appended to Document";
+    try{
+        doc1.appendChild(attr1);
+        ok(false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text Nodes may or may not be appended to Document";
+    try{
+        doc1.appendChild(text1);
+        //Webkit is ok with this
+        ok(true, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        //Mozilla follows the dom spec here more closely
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may or may not be appended to Document";
+    try{
+        doc1.appendChild(cdata1);
+        //Webkit is ok with this
+        ok(true, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        //Mozilla follows the dom spec here more closely
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to Document";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notations may not be appended to Document";
+    ok(true, 'TODO:'+TEST);
+
+    /************************
+     * DocumentFragment
+     ***********************/
+    reset(); 
+    
+    TEST = "Another Document cant be appended to a DocumentFragment";
+    try{
+        fragment1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cant be appended to a DocumentFragment";
+    try{
+        fragment1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "An empty DocumentFragment can be appended to a DocumentFragment";
+    ok(fragment1.appendChild(fragment2), TEST);  
+    
+    TEST = "A nonempty DocumentFragment may be appended to a DocumentFragment";  
+    fragment2.appendChild(element2);
+    ok( fragment1.appendChild(fragment2), TEST);
+    
+    TEST = "DocumentType may not be appended to DocumentFragment";
+    try{
+        fragment1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    
+    TEST = "Element can be appended to DocumentFragment";
+    ok(fragment1.appendChild(element1), TEST);
+    ok(fragment1.appendChild(element2), TEST);
+    
+    TEST = "ProcessingInstruction may be appeded to (XML)DocumentFragment";
+    ok(fragment1.appendChild(pi1), TEST);
+    ok(fragment1.appendChild(pi2), TEST);
+    
+    TEST = "Comments may be appended to DocumentFragment";
+    ok(fragment1.appendChild(comment1), TEST);
+    ok(fragment1.appendChild(comment2), TEST);
+    
+    TEST = "Attr can not be appended to DocumentFragment";
+    try{
+        //No Attr on Document
+        fragment1.appendChild(attr1);
+        ok(false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may be appended to DocumentFragment";
+    ok(fragment1.appendChild(text1), TEST);
+    ok(fragment1.appendChild(text2), TEST);
+    
+    TEST = "CDATASection may be appended to DocumentFragment";
+    ok(fragment1.appendChild(cdata1), TEST);
+    ok(fragment1.appendChild(cdata2), TEST);
+    
+    TEST = "Entity may not be appended to DocumentFragment";
+    ok(true, 'TODO: How to test? '+TEST);
+    
+    TEST = "Notation may not be appended to DocumentFragment";
+    ok(true, 'TODO: How to test? '+TEST);
+    
+    /************************
+     * DocumentType
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cannot be appended to a DocumentType";
+    try{
+        doctype1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cannot be appended to a DocumentType";
+    try{
+        doctype1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "A DocumentFragment cannot be appended to a DocumentType";
+    try{
+        doctype1.appendChild(fragment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "ProcessingInstruction may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(pi1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Comment may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(comment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Attr may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(attr1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(text1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may not be appended to DocumentType";
+    try{
+        doctype1.appendChild(cdata1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to DocumentType";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notation may not be appended to DocumentType";
+    ok(true, 'TODO:'+TEST);
+    
+    /************************
+     * EntityReference
+     ***********************/
+    reset();
+    ok(true, 'TODO: One or Many * on EntityReference. Not sure how to test');
+    
+    /************************
+     * Element
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cant be appended to a Element";
+    try{
+        element1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cant be appended to a Element";
+    try{
+        element1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "An empty DocumentFragment can be appended to a Element";
+    ok(element1.appendChild(fragment1), TEST);
+    
+    TEST = "A nonempty DocumentFragment can be appended to a Element";
+    fragment2.appendChild(doc1.createElement('cdcdcdcd'));
+    ok( element1.appendChild(fragment2), TEST);
+    
+    TEST = "DocumentType may not be appended to Element";
+    try{
+        element1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element can be appended to Element";
+    ok(element1.appendChild(doc1.createElement('ababab')), TEST);
+    ok(element1.appendChild(element2), TEST);
+    
+    TEST = "ProcessingInstruction may be appeded to (XML)Element";
+    ok(element1.appendChild(pi1), TEST);
+    ok(element1.appendChild(pi2), TEST);
+    
+    TEST = "Comments may be appended to Element";
+    ok(element1.appendChild(comment1), TEST);
+    ok(element1.appendChild(comment2), TEST);
+    
+    TEST = "Attr may not be appended to Element";
+    try{
+        element1.appendChild(attr1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may be appended to Element";
+    ok(element1.appendChild(text1), TEST);
+    ok(element1.appendChild(text2), TEST);
+    
+    TEST = "CDATASection may be appended to Element";
+    ok(element1.appendChild(cdata1), TEST);
+    ok(element1.appendChild(cdata2), TEST);
+    
+    TEST = "Entity may not be appended to Element";
+    ok(true, 'TODO: How to test? '+TEST);
+    
+    TEST = "Notation may not be appended to Element";
+    ok(true, 'TODO: How to test? '+TEST);
+    
+    /************************
+     * Attr
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cannot be appended to a Attr";
+    try{
+        attr1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cannot be appended to a Attr";
+    try{
+        attr1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "A DocumentFragment cannot be appended to a Attr";
+    try{
+        fragment1.appendChild(element2);
+        attr1.appendChild(fragment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType may not be appended to Attr";
+    try{
+        attr1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element may not be appended to Attr";
+    try{
+        attr1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "ProcessingInstruction may not be appended to Attr";
+    try{
+        attr1.appendChild(pi1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Comment may not be appended to Attr";
+    try{
+        attr1.appendChild(comment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Attr may not be appended to Attr";
+    try{
+        attr1.appendChild(attr2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may not be appended to Attr";
+    try{
+        attr1.appendChild(text1);
+        //Webkit is ok with this
+        ok( true, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        //Mozilla is closer to the spec
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may not be appended to Attr";
+    try{
+        attr1.appendChild(cdata1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to Attr";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notation may not be appended to Attr";
+    ok(true, 'TODO:'+TEST);
+    
+    
+    /************************
+     * ProcessingInstruction
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cannot be appended to a ProcessingInstruction";
+    try{
+        pi1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cannot be appended to a ProcessingInstruction";
+    try{
+        pi1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "A DocumentFragment cannot be appended to a ProcessingInstruction";
+    try{
+        fragment1.appendChild(element2);
+        pi1.appendChild(fragment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "ProcessingInstruction may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(pi2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Comment may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(comment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Attr may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(attr1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(text1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may not be appended to ProcessingInstruction";
+    try{
+        pi1.appendChild(cdata1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to ProcessingInstruction";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notation may not be appended to ProcessingInstruction";
+    ok(true, 'TODO:'+TEST);
+    
+    /************************
+     * Comment
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cannot be appended to a Comment";
+    try{
+        comment1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cannot be appended to a Comment";
+    try{
+        comment1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "A DocumentFragment cannot be appended to a Comment";
+    try{
+        fragment1.appendChild(element2);
+        comment1.appendChild(fragment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType may not be appended to Comment";
+    try{
+        comment1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element may not be appended to Comment";
+    try{
+        comment1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "ProcessingInstruction may not be appended to Comment";
+    try{
+        comment1.appendChild(pi1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Comment may not be appended to Comment";
+    try{
+        comment1.appendChild(comment2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Attr may not be appended to Comment";
+    try{
+        comment1.appendChild(attr1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may not be appended to Comment";
+    try{
+        comment1.appendChild(text1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may not be appended to Comment";
+    try{
+        comment1.appendChild(cdata1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to Comment";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notation may not be appended to Comment";
+    ok(true, 'TODO:'+TEST);
+    
+    /************************
+     * Text
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cannot be appended to a Text";
+    try{
+        text1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cannot be appended to a Text";
+    try{
+        text1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "A DocumentFragment cannot be appended to a Text";
+    try{
+        fragment1.appendChild(element2);
+        text1.appendChild(fragment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType may not be appended to Text";
+    try{
+        text1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element may not be appended to Text";
+    try{
+        text1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "ProcessingInstruction may not be appended to Text";
+    try{
+        text1.appendChild(pi1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Comment may not be appended to Text";
+    try{
+        text1.appendChild(comment2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Attr may not be appended to Text";
+    try{
+        text1.appendChild(attr1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may not be appended to Text";
+    try{
+        text1.appendChild(text2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may not be appended to Text";
+    try{
+        text1.appendChild(cdata1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to Text";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notation may not be appended to Text";
+    ok(true, 'TODO:'+TEST);
+    
+    /************************
+     * CDATASection
+     ***********************/
+    reset();
+    
+    TEST = "Another Document cannot be appended to a CDATASection";
+    try{
+        cdata1.appendChild(doc2);
+        ok(false, TEST+":"+WRONG_DOCUMENT_ERR_MSG);
+    }catch(e){
+        ok( e.code == DOMException.WRONG_DOCUMENT_ERR || //Webkit
+            e.code == DOMException.HIERARCHY_REQUEST_ERR, //Mozilla
+            TEST);
+    }
+    
+    TEST = "Document cannot be appended to a CDATASection";
+    try{
+        cdata1.appendChild(doc1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "A DocumentFragment cannot be appended to a CDATASection";
+    try{
+        fragment1.appendChild(element2);
+        cdata1.appendChild(fragment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "DocumentType may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(doctype2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Element may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(element1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "ProcessingInstruction may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(pi1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Comment may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(comment1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Attr may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(attr1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Text may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(text1);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "CDATA may not be appended to CDATASection";
+    try{
+        cdata1.appendChild(cdata2);
+        ok( false, TEST+":"+HIERARCHY_REQUEST_ERR_MSG);
+    }catch(e){
+        equals( e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }
+    
+    TEST = "Entity may not be appended to CDATASection";
+    ok(true, 'TODO:'+TEST);
+    
+    TEST = "Notation may not be appended to CDATASection";
+    ok(true, 'TODO:'+TEST);
+    
+    /************************
+     * Entity
+     ***********************/
+    reset();
+    ok(true, 'TODO: One or Many * on Entity. Not sure how to test');
+    
+    /************************
+     * Notation
+     ***********************/
+    reset();
+    ok(true, 'TODO: One or Many * on Notation. Not sure how to test');
 });
 /******************************************************************************
+
 1.1.2. Memory Management
 
 Most of the APIs defined by this specification are interfaces rather than 
@@ -221,6 +1036,12 @@ for other languages (especially C or C++) may require such support. These
 extensions will be the responsibility of those adapting the DOM API to a 
 specific language, not the DOM Working Group.
 
+******************************************************************************/
+test('1.1.2. Memory Management', function(){
+   ok(true, 'Memory Management is transparent. Nothing to test.');
+});
+/******************************************************************************
+
 1.1.3. Naming Conventions
 
 While it would be nice to have attribute and method names that are short, 
@@ -238,6 +1059,12 @@ For example, we use the method name "remove" when the method changes the
 structural model, and the method name "delete" when the method gets rid of 
 something inside the structure model. The thing that is deleted is not returned. 
 The thing that is removed may be returned, when it makes sense to return it.
+
+******************************************************************************/
+test('1.1.3. Naming Conventions', function(){
+    ok(true, 'Naming Conventions is explanitory. Nothing to test.');
+});
+/******************************************************************************
 
 1.1.4. Inheritance vs. Flattened Views of the API
 
@@ -264,6 +1091,14 @@ though there is a generic nodeName attribute on the Node interface, there is
 still a tagName attribute on the Element interface; these two attributes must 
 contain the same value, but the Working Group considers it worthwhile to 
 support both, given the different constituencies the DOM API must satisfy.
+
+******************************************************************************/
+test('1.1.4. Inheritance vs. Flattened Views of the API', function(){
+    //This might be a good place to test the generic node interface 
+    //properties on all fundamental types
+    ok(true, 'Inheritance vs. Flattened Views of the API. Nothing to test.');
+});
+/******************************************************************************
 
 1.1.5. The DOMString type
 
@@ -298,6 +1133,12 @@ Note: As of August 1998, the OMG IDL specification included a wstring type.
       the DOM API since it relied on negotiation to decide the width and 
       encoding of a character.
       
+******************************************************************************/
+test('1.1.5. The DOMString type', function(){
+    ok(true, "The DOMString type is ECMAScript String type. Nothing to test.");
+});
+/******************************************************************************
+
 1.1.6. String comparisons in the DOM
 
 The DOM has many interfaces that imply string matching. HTML processors 
@@ -316,14 +1157,29 @@ Note: Besides case folding, there are additional normalizations that can be
       already be normalized. The DOM and applications built on top of it in 
       this case only have to assure that text remains normalized when being 
       changed. For further details, please see [Charmod].
+
       
+******************************************************************************/
+test('1.1.6. String comparisons in the DOM', function(){
+    //it might be worth showing utf-8 and utf-16 strings are equivalent
+    //to their ascii counterparts during string comparisions
+    ok(true, "String comparisons in the DOM are transparent. Nothing to test.");
+});
+/******************************************************************************
+
 1.2. Fundamental Interfaces
 
 The interfaces within this section are considered fundamental, and must be 
 fully implemented by all conforming implementations of the DOM, including all
 HTML DOM implementations, unless otherwise specified.
 
-Exception DOMException
+******************************************************************************/
+test('1.2. Fundamental Interfaces', function(){
+    ok(true, "Note we break 1.2 into subsections for the purpose of testing");
+});
+/******************************************************************************
+
+1.2.1. Exception DOMException
 
     DOM operations only raise exceptions in "exceptional" circumstances, i.e., 
     when an operation is impossible to perform (either for logical reasons, 
@@ -358,24 +1214,6 @@ Exception DOMException
         const unsigned short      NOT_FOUND_ERR                  = 8;
         const unsigned short      NOT_SUPPORTED_ERR              = 9;
         const unsigned short      INUSE_ATTRIBUTE_ERR            = 10;
-
-******************************************************************************/
-test('DOMException ExceptionCode', function(){
-   equals((new DOMException(DOMException.INDEX_SIZE_ERR)).code, 1, 
-        'DOMException.code'
-   );
-   equals(DOMException.INDEX_SIZE_ERR, 1);
-   equals(DOMException.DOMSTRING_SIZE_ERR, 2);
-   equals(DOMException.HIERARCHY_REQUEST_ERR, 3);
-   equals(DOMException.WRONG_DOCUMENT_ERR, 4);
-   equals(DOMException.INVALID_CHARACTER_ERR, 5);
-   equals(DOMException.NO_DATA_ALLOWED_ERR, 6);
-   equals(DOMException.NO_MODIFICATION_ALLOWED_ERR, 7);
-   equals(DOMException.NOT_FOUND_ERR, 8);
-   equals(DOMException.NOT_SUPPORTED_ERR, 9);
-   equals(DOMException.INUSE_ATTRIBUTE_ERR, 10);
-});
-/******************************************************************************
 
     Definition group ExceptionCode
 
@@ -424,11 +1262,22 @@ test('DOMException ExceptionCode', function(){
                 created it (that doesn't support it)
 
 ******************************************************************************/
-test('TODO: ', function(){
-   
+test('1.2.1. Exception DOMException', function(){
+    //IDL Definition
+    equals(DOMException.INDEX_SIZE_ERR, 1);
+    equals(DOMException.DOMSTRING_SIZE_ERR, 2);
+    equals(DOMException.HIERARCHY_REQUEST_ERR, 3);
+    equals(DOMException.WRONG_DOCUMENT_ERR, 4);
+    equals(DOMException.INVALID_CHARACTER_ERR, 5);
+    equals(DOMException.NO_DATA_ALLOWED_ERR, 6);
+    equals(DOMException.NO_MODIFICATION_ALLOWED_ERR, 7);
+    equals(DOMException.NOT_FOUND_ERR, 8);
+    equals(DOMException.NOT_SUPPORTED_ERR, 9);
+    equals(DOMException.INUSE_ATTRIBUTE_ERR, 10);
 });
 /******************************************************************************
-Interface DOMImplementation
+
+1.2.2. Interface DOMImplementation
 
     The DOMImplementation interface provides a number of methods for performing 
     operations that are independent of any particular instance of the document 
@@ -447,11 +1296,6 @@ Interface DOMImplementation
                                         in DOMString version);
         };
 
-******************************************************************************/
-test('DOMImplementation.prototype', function(){
-    ok(DOMImplementation.prototype.hasFeature, 'hasFeature');
-});
-/******************************************************************************
     Methods
 
         hasFeature
@@ -486,19 +1330,27 @@ test('DOMImplementation.prototype', function(){
             
             No Exceptions
 ******************************************************************************/
-test('DOMImplementation.prototype.hasFeature', function(){
-    equals(document.implementation.hasFeature('barf'), false, 'barf');
-    equals(document.implementation.hasFeature('xml'), true, 'xml');
-    equals(document.implementation.hasFeature('html'), true, 'html');
-    equals(document.implementation.hasFeature('xml', '1.0'), true, 
-        'xml 1.0'
-    );
-    equals(document.implementation.hasFeature('html', '1.0'), true, 
-        'html 1.0'
-    );
+test('1.2.2. Interface DOMImplementation', function(){
+    //IDL Definition
+    ok(DOMImplementation.prototype.hasFeature, 'hasFeature');
+    
+    //Methods
+    //hasFeature
+    equals(document.implementation.hasFeature('xml', '1.0'), true, 'xml');
+    equals(document.implementation.hasFeature('html', '1.0'), true, 'html');
+    equals(document.implementation.hasFeature('xml', '1.0'), true, 'xml 1.0');
+    equals(document.implementation.hasFeature('html', '1.0'), true, 'html 1.0');
+    equals(document.implementation.hasFeature('abc', '1.0'), false, 'abc 1.0');
+    
+    equals(document.implementation.hasFeature('XML', '1.0'), true, 'xml');
+    equals(document.implementation.hasFeature('HTML', '1.0'), true, 'html');
+    equals(document.implementation.hasFeature('Xml', '1.0'), true, 'xml 1.0');
+    equals(document.implementation.hasFeature('hTMl', '1.0'), true, 'html 1.0');
+    equals(document.implementation.hasFeature('AbC', '1.0'), false, 'abc 1.0');
 });
 /******************************************************************************
-Interface DocumentFragment
+
+1.2.3. Interface DocumentFragment
 
     DocumentFragment is a "lightweight" or "minimal" Document object. It is 
     very common to want to be able to extract a portion of a document's tree or
@@ -539,8 +1391,11 @@ Interface DocumentFragment
         interface DocumentFragment : Node {
         };
 ******************************************************************************/
-test('DocumentFragment.prototype.cloneNode', function(){
+test('1.2.3. Interface DocumentFragment', function(){
 
+    //IDL Definition
+    ok(true, "Please se IDL Definition for Node");
+    
     var doc,
         fragment,
         elementA,
@@ -570,9 +1425,6 @@ test('DocumentFragment.prototype.cloneNode', function(){
     equals(fragment.prefix, null, '.prefix');
     equals(fragment.previousSibling, null, '.previousSibling');
     equals(fragment.textContent, "abcdef", '.textContent');
-    equals(xmlserializer.serializeToString(fragment),
-        "<elementA>abc</elementA><elementB>def</elementB>", 
-        'serializeToString');
 
     var clone = fragment.cloneNode(false);//shallow
 
@@ -590,9 +1442,6 @@ test('DocumentFragment.prototype.cloneNode', function(){
     equals(clone.prefix, null, '.prefix');
     equals(clone.previousSibling, null, '.previousSibling');
     equals(clone.textContent, "", '.textContent');
-    equals(xmlserializer.serializeToString(clone),
-        "", 'serializeToString');
-
 
     clone = fragment.cloneNode(true);//deep
 
@@ -614,15 +1463,30 @@ test('DocumentFragment.prototype.cloneNode', function(){
     equals(clone.prefix, null, '.prefix');
     equals(clone.previousSibling, null, '.previousSibling');
     equals(clone.textContent, "abcdef", '.textContent');
-    equals(xmlserializer.serializeToString(clone),
-        "<elementA>abc</elementA><elementB>def</elementB>", 'serializeToString');
-
+    
+    var fragment = doc.createDocumentFragment();
+    ok(fragment, 'fragment');
+    equals(fragment.attributes, null, '.attributes');
+    equals(fragment.baseURI, 'about:blank', '.baseURI');
+    ok(fragment.childNodes,  '.childNodes');
+    equals(fragment.childNodes.length, 0, '.childNodes.length');
+    equals(fragment.firstChild, null, '.firstChild');
+    equals(fragment.lastChild, null, '.lastChild');
+    equals(fragment.localName, null, '.localName');
+    equals(fragment.namespaceURI, null, '.namespaceURI');
+    equals(fragment.nextSibling, null, '.nextSibling');
+    equals(fragment.nodeName, '#document-fragment', '.nodeName');
+    equals(fragment.nodeType, 11, '.nodeType');
+    equals(fragment.nodeValue, null, '.nodeValue');
+    equals(fragment.ownerDocument, doc, '.ownerDocument');
+    equals(fragment.parentNode, null, '.parentNode');
+    equals(fragment.prefix, null, '.prefix');
+    equals(fragment.previousSibling, null, '.previousSibling');
+    equals(fragment.textContent, "", '.textContent');
 });
 
-
-
 /******************************************************************************
-Interface Document
+1.2.4. Interface Document
 
     The Document interface represents the entire HTML or XML document. 
     Conceptually, it is the root of the document tree, and provides the primary 
@@ -657,22 +1521,6 @@ Interface Document
                                                 raises(DOMException);
           NodeList           getElementsByTagName(in DOMString tagname);
         };
-******************************************************************************/
-test('Document.prototype', function(){
-    equals(document.doctype, null, 'doctype');
-    ok(document.implementation, 'implementation');
-    ok(document.documentElement !== undefined, 'documentElement');
-    ok(document.createElement, 'createElement');
-    ok(document.createDocumentFragment, 'createDocumentFragment');
-    ok(document.createTextNode, 'createTextNode');
-    ok(document.createComment, 'createComment');
-    ok(document.createCDATASection, 'createCDATASection');
-    ok(document.createProcessingInstruction, 'createProcessingInstruction');
-    ok(document.createAttribute, 'createAttribute');
-    ok(document.createEntityReference, 'createEntityReference');
-    ok(document.getElementsByTagName, 'getElementsByTagName');
-});
-/******************************************************************************
 
     Attributes
 
@@ -694,11 +1542,6 @@ test('Document.prototype', function(){
             The DOMImplementation object that handles this document. A DOM 
             application may use objects from multiple implementations.
 
-******************************************************************************/
-test('TODO: ', function(){
-   
-});
-/******************************************************************************
     Methods
 
         createAttribute
@@ -712,7 +1555,7 @@ test('TODO: ', function(){
             Return Value
 
             Attr
-            		
+                    
 
             A new Attr object with the NodeName attribute set to name. The 
             value of the attribute is the empty string.
@@ -720,42 +1563,11 @@ test('TODO: ', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             INVALID_CHARACTER_ERR: Raised if the specified name contains an 
             illegal character.
-******************************************************************************/
-test('Document.prototype.createAttribute', function(){
-
-    var doc,
-        attribute;
-
-    doc = document.implementation.createDocument('', '', null);
-    attribute = doc.createAttribute('envjs');
-
-    ok(attribute, 'attribute created');
-    ok(attribute instanceof(Attr), 'instanceof Attr');
-    equals(attribute.attributes, null, '.attributes');
-    equals(attribute.name, 'envjs', '.name');
-    equals(attribute.value, '', '.value');
-    equals(attribute.specified, true, '.specified');
-    equals(attribute.ownerElement, null, '.ownerElement');
-    equals(attribute.childNodes.length, 0, '.childNodes');
-    equals(attribute.localName, 'envjs', '.localName');
-    equals(attribute.namespaceURI, null, '.namespaceURI');
-    equals(attribute.nodeName, 'envjs', '.nodeName');
-    equals(attribute.nodeType, Node.ATTRIBUTE_NODE, 'nodeType');
-    equals(attribute.ownerDocument, doc, '.ownerDocument');
-    equals(attribute.parentNode, null, '.parentNode');
-    equals(attribute.prefix, null, '.prefix');
-    ok(attribute.value = 'abc123', 'set value');
-    equals(attribute.value, 'abc123', '.value');
-    equals(attribute.name, 'envjs', '.name');
-    equals(attribute.toString(), '[object Attr]', '.toString');
-    equals(xmlserializer.serializeToString(attribute), 'abc123');
-
-});
-/******************************************************************************
+            
         createCDATASection
             Creates a CDATASection node whose value is the specified string.
             Parameters
@@ -766,55 +1578,16 @@ test('Document.prototype.createAttribute', function(){
             Return Value
 
             CDATASection
-            		
+                    
 
             The new CDATASection object.
             Exceptions
 
             DOMException
-            		
+                    
 
             NOT_SUPPORTED_ERR: Raised if this document is an HTML document.
-******************************************************************************/
-test('createCDATASection', function(){
-
-    var doc,
-        cdata,
-        keyboardish=''+
-        '`1234567890-='+
-        '\tqwertyuiop[]\\'+
-        'asdfghjkl;\'\n'+
-        'zxcvbnm,./'+
-        ' '+
-        '~!@#$%^&*()_+'+
-        '\tQWERTYUIOP{}|'+
-        'ASDFGHJKL:"\n'+
-        'ZXCVBNM<>?'+
-        ' ';
-
-    doc = document.implementation.createDocument('', '', null);
-    cdata = doc.createCDATASection(keyboardish);
-
-    ok(cdata, 'node was created');
-    equals(cdata.attributes, null, '.attributes');
-    equals(cdata.baseURI, 'about:blank', '.baseURI');
-    equals(cdata.childNodes.length, 0, '.childNodes');
-    equals(cdata.data, keyboardish, '.data');
-    equals(cdata.length, 100, '.length');
-    equals(cdata.localName, null, '.localName');
-    equals(cdata.namespaceURI, null, '.namespaceURI');
-    equals(cdata.nodeName, '#cdata-section', '.nodeName');
-    equals(cdata.nodeType, Node.CDATA_SECTION_NODE, 'nodeType');
-    equals(cdata.nodeValue, keyboardish, '.nodeValue');
-    equals(cdata.ownerDocument, doc, '.ownerDocument');
-    equals(cdata.parentNode, null, '.parentNode');
-    equals(cdata.prefix, null, '.prefix');
-    equals(cdata.textContent, keyboardish, '.textContent');
-    equals(xmlserializer.serializeToString(cdata),
-        "<![CDATA["+keyboardish+"]]>", 'serializeToString');
-
-});
-/******************************************************************************
+            
         createComment
             Creates a Comment node given the specified string.
             Parameters
@@ -825,123 +1598,22 @@ test('createCDATASection', function(){
             Return Value
 
             Comment
-            		
+                    
 
             The new Comment object.
             No Exceptions
-******************************************************************************/
-test('createComment', function(){
-
-    var doc,
-        comment,
-        keyboardish=''+
-        '`1234567890-='+
-        '\tqwertyuiop[]\\'+
-        'asdfghjkl;\'\n'+
-        'zxcvbnm,./'+
-        ' '+
-        '~!@#$%^&*()_+'+
-        '\tQWERTYUIOP{}|'+
-        'ASDFGHJKL:"\n'+
-        'ZXCVBNM<>?'+
-        ' ';
-
-    doc = document.implementation.createDocument('', '', null);
-    comment = doc.createComment(keyboardish);
-
-    ok(comment, 'node was created');
-    equals(comment.attributes, null, '.attributes');
-    equals(comment.baseURI, 'about:blank', '.baseURI');
-    equals(comment.childNodes.length, 0, '.childNodes');
-    equals(comment.data, keyboardish, '.data');
-    equals(comment.length, 100, '.length');
-    equals(comment.localName, null, '.localName');
-    equals(comment.namespaceURI, null, '.namespaceURI');
-    equals(comment.nodeName, '#comment', '.nodeName');
-    equals(comment.nodeType, Node.COMMENT_NODE, 'nodeType');
-    equals(comment.nodeValue, keyboardish, '.nodeValue');
-    equals(comment.ownerDocument, doc, '.ownerDocument');
-    equals(comment.parentNode, null, '.parentNode');
-    equals(comment.prefix, null, '.prefix');
-    equals(comment.textContent, keyboardish, '.textContent');
-
-    doc = document.implementation.createDocument('', '', null);
-    comment = doc.createComment("This is a pig, 'oink, oink'");
-
-    ok(comment, 'comment');
-    equals(comment.data, "This is a pig, 'oink, oink'", '.data');
-    equals(comment.length, 27, '.length');
-    ok(comment.appendData,  '.appendData');
-    ok(comment.deleteData,  '.deleteData');
-    ok(comment.insertData,  '.insertData');
-    ok(comment.replaceData,  '.replaceData');
-    ok(comment.substringData,  '.substringData');
-    equals(comment.attributes, null, '.attributes');
-    equals(comment.baseURI, 'about:blank', '.baseURI');
-    ok(comment.childNodes,  '.childNodes');
-    equals(comment.childNodes.length, 0, '.childNodes.length');
-    equals(comment.firstChild, null, '.firstChild');
-    equals(comment.lastChild, null, '.lastChild');
-    equals(comment.localName, null, '.localName');
-    equals(comment.namespaceURI, null, '.namespaceURI');
-    equals(comment.nextSibling, null, '.nextSibling');
-    equals(comment.nodeName, '#comment', '.nodeName');
-    equals(comment.nodeType, 8, '.nodeType');
-    equals(comment.nodeValue, "This is a pig, 'oink, oink'", '.nodeValue');
-    equals(comment.ownerDocument, doc, '.ownerDocument');
-    equals(comment.parentNode, null, '.parentNode');
-    equals(comment.prefix, null, '.prefix');
-    equals(comment.previousSibling, null, '.previousSibling');
-    equals(comment.textContent, "This is a pig, 'oink, oink'", '.textContent');
-    equals(xmlserializer.serializeToString(comment),
-        "<!--This is a pig, 'oink, oink'-->", 'serializeToString');
-});
-/******************************************************************************
+            
         createDocumentFragment
             Creates an empty DocumentFragment object.
             Return Value
 
             DocumentFragment
-            		
+                    
 
             A new DocumentFragment.
             No Parameters
             No Exceptions
-******************************************************************************/
-test('createDocumentFragment', function(){
-
-    var doc,
-        fragment;
-
-    doc = document.implementation.createDocument('', '', null);
-    fragment = doc.createDocumentFragment();
-
-    ok(fragment, 'fragment');
-    //pending implementation in Envjs
-    //ok(fragment.querySelector, '.querySelector');
-    //ok(fragment.querySelectorAll, '.querySelectorAll');
-    equals(fragment.attributes, null, '.attributes');
-    equals(fragment.baseURI, 'about:blank', '.baseURI');
-    ok(fragment.childNodes,  '.childNodes');
-    equals(fragment.childNodes.length, 0, '.childNodes.length');
-    equals(fragment.firstChild, null, '.firstChild');
-    equals(fragment.lastChild, null, '.lastChild');
-    equals(fragment.localName, null, '.localName');
-    equals(fragment.namespaceURI, null, '.namespaceURI');
-    equals(fragment.nextSibling, null, '.nextSibling');
-    equals(fragment.nodeName, '#document-fragment', '.nodeName');
-    equals(fragment.nodeType, 11, '.nodeType');
-    equals(fragment.nodeValue, null, '.nodeValue');
-    equals(fragment.ownerDocument, doc, '.ownerDocument');
-    equals(fragment.parentNode, null, '.parentNode');
-    equals(fragment.prefix, null, '.prefix');
-    equals(fragment.previousSibling, null, '.previousSibling');
-    equals(fragment.textContent, "", '.textContent');
-    equals(xmlserializer.serializeToString(fragment),
-        "", 'serializeToString');
-
-});
-/******************************************************************************
+            
         createElement
             Creates an element of the type specified. Note that the instance 
             returned implements the Element interface, so attributes can be 
@@ -961,39 +1633,17 @@ test('createDocumentFragment', function(){
             Return Value
 
             Element
-            		
+                    
 
             A new Element object with the nodeName attribute set to tagName.
             Exceptions
 
             DOMException
-            		
+                    
 
             INVALID_CHARACTER_ERR: Raised if the specified name contains an 
             illegal character.
-******************************************************************************/
-test('Document.prototype.createElement', function(){
-    var doc,
-        element;
-
-    doc = document.implementation.createDocument('', '', null);
-    element = doc.createElement('envjs');
-
-    ok(element, 'element created');
-    equals(element.attributes.length, 0, '.attributes.length');
-    equals(element.tagName, 'envjs', '.name');
-    equals(element.childNodes.length, 0, '.childNodes');
-    equals(element.localName, 'envjs', '.localName');
-    equals(element.namespaceURI, null, '.namespaceURI');
-    equals(element.nodeName, 'envjs', '.nodeName');
-    equals(element.nodeType, Node.ELEMENT_NODE, 'nodeType');
-    equals(element.ownerDocument, doc, '.ownerDocument');
-    equals(element.parentNode, null, '.parentNode');
-    equals(element.prefix, null, '.prefix');
-    equals(element.toString(), '[object Element]', '.toString');
-    equals(xmlserializer.serializeToString(element), '<envjs/>', 'xmlserializer');
-});
-/******************************************************************************
+            
         createEntityReference
             Creates an EntityReference object. In addition, if the referenced 
             entity is known, the child list of the EntityReference node is made 
@@ -1007,23 +1657,19 @@ test('Document.prototype.createElement', function(){
             Return Value
 
             EntityReference
-            		
+                    
 
             The new EntityReference object.
             Exceptions
 
             DOMException
-            		
+                    
 
             INVALID_CHARACTER_ERR: Raised if the specified name contains an 
             illegal character.
 
             NOT_SUPPORTED_ERR: Raised if this document is an HTML document.
-******************************************************************************/
-test('TODO: Document.prototype.createEntityReference', function(){
-    
-});
-/******************************************************************************
+            
         createProcessingInstruction
             Creates a ProcessingInstruction node given the specified name and 
             data strings.
@@ -1039,49 +1685,19 @@ test('TODO: Document.prototype.createEntityReference', function(){
             Return Value
 
             ProcessingInstruction
-            		
+                    
 
             The new ProcessingInstruction object.
             Exceptions
 
             DOMException
-            		
+                    
 
             INVALID_CHARACTER_ERR: Raised if the specified target contains an 
             illegal character.
 
             NOT_SUPPORTED_ERR: Raised if this document is an HTML document.
 
-******************************************************************************/
-test('Document.implementation.createProcessingInstruction', function(){
-
-    var doc,
-        pi,
-        target = 'foo',
-        data = 'bar="pooh"';
-        //seriously i never use pi's--is there a better example
-
-    doc = document.implementation.createDocument('', '', null);
-    pi = doc.createProcessingInstruction(target, data);
-
-    ok(pi, 'node was created');
-    equals(pi.attributes, null, '.attributes');
-    equals(pi.baseURI, 'about:blank', '.baseURI');
-    equals(pi.childNodes.length, 0, '.childNodes');
-    equals(pi.data, data, '.data');
-    equals(pi.localName, null, '.localName');
-    equals(pi.namespaceURI, null, '.namespaceURI');
-    equals(pi.nodeName, target, '.nodeName');
-    equals(pi.nodeType, Node.PROCESSING_INSTRUCTION_NODE, 'nodeType');
-    equals(pi.nodeValue, data, '.nodeValue');
-    equals(pi.ownerDocument, doc, '.ownerDocument');
-    equals(pi.parentNode, null, '.parentNode');
-    equals(pi.prefix, null, '.prefix');
-    equals(pi.textContent, data, '.textContent');
-    equals(xmlserializer.serializeToString(pi),
-         '<'+'?foo bar="pooh"?>', '.serializeToString');
-});
-/******************************************************************************
         createTextNode
             Creates a Text node given the specified string.
             Parameters
@@ -1092,47 +1708,11 @@ test('Document.implementation.createProcessingInstruction', function(){
             Return Value
 
             Text
-            		
+                    
 
             The new Text object.
             No Exceptions
 
-******************************************************************************/
-test('Document.prototype.createTextNode', function(){
-    var doc,
-        text,
-        keyboardish=''+
-        '`1234567890-='+
-        '\tqwertyuiop[]\\'+
-        'asdfghjkl;\'\n'+
-        'zxcvbnm,./'+
-        ' '+
-        '~!@#$%^&*()_+'+
-        '\tQWERTYUIOP{}|'+
-        'ASDFGHJKL:"\n'+
-        'ZXCVBNM<>?'+
-        ' ';
-
-    doc = document.implementation.createDocument('', '', null);
-    text = doc.createTextNode(keyboardish);
-
-    ok(text, 'text node was created');
-    equals(text.attributes, null, '.attributes');
-    equals(text.baseURI, 'about:blank', '.baseURI');
-    equals(text.childNodes.length, 0, '.childNodes');
-    equals(text.data, keyboardish, '.data');
-    equals(text.length, 100, '.length');
-    equals(text.localName, null, '.localName');
-    equals(text.namespaceURI, null, '.namespaceURI');
-    equals(text.nodeName, '#text', '.nodeName');
-    equals(text.nodeType, Node.TEXT_NODE, 'nodeType');
-    equals(text.nodeValue, keyboardish, '.nodeValue');
-    equals(text.ownerDocument, doc, '.ownerDocument');
-    equals(text.parentNode, null, '.parentNode');
-    equals(text.prefix, null, '.prefix');
-    equals(text.textContent, keyboardish, '.textContent');
-});
-/******************************************************************************
         getElementsByTagName
             Returns a NodeList of all the Elements with a given tag name in the
             order in which they are encountered in a preorder traversal of the 
@@ -1147,48 +1727,206 @@ test('Document.prototype.createTextNode', function(){
             Return Value
 
             NodeList
-            		
+                    
 
             A new NodeList object containing all the matched Elements.
             No Exceptions
 
 ******************************************************************************/
-test('Document.prototype.getElementsByTagName', function() {
-    var all, node, nodes, doc, expected, i;
-	doc = domparser.parseFromString(
+test('1.2.4. Interface Document', function(){
+    
+    //TODO: A lot of these tests belong in the respective interface
+    //      test, eg Interface Element, which will both reduce the 
+    //      overall size and complexity of this test, but also 
+    //      help illuminate missing assertions
+    var doc = document.implementation.createDocument('', '', null),
+        keyboardish=''+
+        '`1234567890-='+
+        '\tqwertyuiop[]\\'+
+        'asdfghjkl;\'\n'+
+        'zxcvbnm,./'+
+        ' '+
+        '~!@#$%^&*()_+'+
+        '\tQWERTYUIOP{}|'+
+        'ASDFGHJKL:"\n'+
+        'ZXCVBNM<>?'+
+        ' ',
+        illegalName = '$abc',
+        domparser = new DOMParser();
+
+    //Interface
+    ok(document.doctype !== undefined, 'doctype');
+    ok(document.implementation !== undefined, 'implementation');
+    ok(document.documentElement !== undefined, 'documentElement');
+    ok(document.createElement, 'createElement');
+    ok(document.createDocumentFragment, 'createDocumentFragment');
+    ok(document.createTextNode, 'createTextNode');
+    ok(document.createComment, 'createComment');
+    ok(document.createCDATASection, 'createCDATASection');
+    ok(document.createProcessingInstruction, 'createProcessingInstruction');
+    ok(document.createAttribute, 'createAttribute');
+    ok(document.createEntityReference, 'createEntityReference');
+    ok(document.getElementsByTagName, 'getElementsByTagName');
+    
+
+    //Attributes
+    ok(document.doctype instanceof(DocumentType), 'doctype');
+    ok(document.implementation instanceof(DOMImplementation), 'implementation');
+    ok(document.documentElement instanceof(Element), 'documentElement');
+    
+    //createAttribute
+    var attribute = doc.createAttribute('envjs');
+    ok(attribute, 'attribute created');
+    ok(attribute instanceof(Attr), 'instanceof Attr');
+    equals(attribute.ownerDocument, doc, 'ownerDocument is doc');
+    equals(attribute.nodeType, Node.ATTRIBUTE_NODE, 'Node.ATTRIBUTE_NODE');
+    equals(attribute.nodeName, 'envjs', 'name is same as arg');
+    equals(attribute.value, '', 'default value is empty string');
+    try{
+        doc.createAttribute(illegalName);
+        ok(false, 'String contains an invalid character');
+    }catch(e){
+        ok(e instanceof(DOMException), 'DOMExcpetion');
+        equals(e.code, DOMException.INVALID_CHARACTER_ERR, 'code');
+        equals(e.message, 'String contains an invalid character', 'message');
+    }
+
+    //createCDATASection
+    var cdata = doc.createCDATASection(keyboardish);
+    ok(cdata, 'node was created');
+    ok(cdata instanceof(CDATASection), 'instanceof CDATASection');
+    equals(cdata.ownerDocument, doc, 'ownerDocument');
+    equals(cdata.nodeType, Node.CDATA_SECTION_NODE, 'nodeType');
+    equals(cdata.nodeValue, keyboardish, 'nodeValue');
+    
+
+    //createComment
+    var comment = doc.createComment(keyboardish);
+    ok(comment, 'node was created');
+    ok(comment instanceof(Comment), 'instanceof Comment');
+    equals(comment.ownerDocument, doc, 'ownerDocument');
+    equals(comment.nodeType, Node.COMMENT_NODE, 'nodeType');
+    equals(comment.nodeValue, keyboardish, 'nodeValue');
+
+    //createDocumentFragment
+    var fragment = doc.createDocumentFragment();
+    ok(fragment, 'fragment');
+    ok(fragment instanceof(DocumentFragment), 'instanceof DocumentFragment');
+    equals(fragment.ownerDocument, doc, 'ownerDocument');
+    equals(fragment.nodeType, Node.DOCUMENT_FRAGMENT_NODE, 'nodeType');
+
+    //createElement
+    var element = doc.createElement('envjs');
+    ok(element, 'element created');
+    ok(element instanceof(Element), 'instanceof Element');
+    equals(element.ownerDocument, doc, 'ownerDocument');
+    equals(element.nodeType, Node.ELEMENT_NODE, 'nodeType');
+    try{
+        doc.createElement(illegalName);
+        ok(false, 'String contains an invalid character');
+    }catch(e){
+        ok(e instanceof(DOMException), 'DOMExcpetion');
+        equals(e.code, DOMException.INVALID_CHARACTER_ERR, 'code');
+        equals(e.message, 'String contains an invalid character', 'message');
+    }
+    
+    //createEntityReference
+    //TODO: this is not really supported by any browser we can
+    //      find: https://bugzilla.mozilla.org/show_bug.cgi?id=9850
+    var entityReference = doc.createEntityReference('&envjs;');
+    ok(!entityReference, 'entityReference created');//SPEC WRECK
+    try{
+        doc.createEntityReference(illegalName);
+        ok(!false, 'String contains an invalid character');//SPEC WRECK
+    }catch(e){
+        ok(e instanceof(DOMException), 'DOMExcpetion');
+        equals(e.code, DOMException.INVALID_CHARACTER_ERR, 'code');
+        equals(e.message, 'String contains an invalid character', 'message');
+    }
+    try{
+        document.createEntityReference('envjs');
+        ok(false, 'Operation is not supported');
+    }catch(e){
+        //html documents do not support this operation
+        ok(e instanceof(DOMException), 'DOMExcpetion');
+        equals(e.code, DOMException.NOT_SUPPORTED_ERR, 'code');
+        equals(e.message, 'Operation is not supported', 'message');
+    }
+    
+    //createProcessingInstruction
+    var target = 'foo', 
+        data = 'bar="pooh"',
+        pi = doc.createProcessingInstruction(target, data);
+    ok(pi, 'node was created');
+    ok(element instanceof(Element), 'instanceof Element');
+    equals(pi.ownerDocument, doc, 'ownerDocument');
+    equals(pi.nodeType, Node.PROCESSING_INSTRUCTION_NODE, 'nodeType');
+    equals(pi.nodeName, target, '.nodeName');
+    equals(pi.nodeValue, data, '.nodeValue');
+    try{
+        doc.createProcessingInstruction(illegalName, data);
+        ok(false, 'String contains an invalid character');
+    }catch(e){
+        ok(e instanceof(DOMException), 'DOMExcpetion');
+        equals(e.code, DOMException.INVALID_CHARACTER_ERR, 'code');
+        equals(e.message, 'String contains an invalid character', 'message');
+    }
+    try{
+        //html documents do not support this operation
+        document.createProcessingInstruction('envjs', data);
+        ok(false, 'Operation is not supported');
+    }catch(e){
+        ok(e instanceof(DOMException), 'DOMExcpetion');
+        equals(e.code, DOMException.NOT_SUPPORTED_ERR, 'code');
+        equals(e.message, 'Operation is not supported', 'message');
+    }
+
+    //createTextNode
+    var text = doc.createTextNode(keyboardish);
+    ok(text, 'text node was created');
+    ok(text instanceof(Text), 'instanceof Text');
+    equals(text.ownerDocument, doc, 'ownerDocument');
+    equals(text.nodeType, Node.TEXT_NODE, 'nodeType');
+    equals(text.nodeValue, keyboardish, '.nodeValue');
+
+    //getElementsByTagName
+    //TODO: should remove use of domparser for these tests
+    //TODO: should move live nodelist tests to nodelist
+    var all, node, nodes, expected, i;
+    doc = domparser.parseFromString(
         '<root>123</root>',
         'text/xml'
     );
-	all = nodes = doc.getElementsByTagName('*');
+    all = nodes = doc.getElementsByTagName('*');
     equals(nodes.length, 1, 'all elements');
     nodes = doc.getElementsByTagName('root');
     equals(nodes.length, 1, 'named index - root');
-	expected = ['root'];
-	for(i=0;i<all.length;i++){
-		equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
-	}
+    expected = ['root'];
+    for(i=0;i<all.length;i++){
+        equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
+    }
 
-	doc = domparser.parseFromString(
+    doc = domparser.parseFromString(
         '<root><a>123</a></root>',
         'text/xml'
     );
-	all = nodes = doc.getElementsByTagName('*');
+    all = nodes = doc.getElementsByTagName('*');
     equals(nodes.length, 2, 'all elements');
     nodes = doc.getElementsByTagName('root');
     equals(nodes.length, 1, 'named index - root');
     nodes = doc.getElementsByTagName('a');
     equals(nodes.length, 1, 'named index - a');
-	expected = ['root','a'];
-	for(i=0;i<all.length;i++){
-		equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
-	}
-	
-	
-	doc = domparser.parseFromString(
+    expected = ['root','a'];
+    for(i=0;i<all.length;i++){
+        equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
+    }
+    
+    
+    doc = domparser.parseFromString(
         '<root><a>123<b>456</b></a><c/></root>',
         'text/xml'
     );
-	all = nodes = doc.getElementsByTagName('*');
+    all = nodes = doc.getElementsByTagName('*');
     equals(nodes.length, 4, 'all elements');
     nodes = doc.getElementsByTagName('root');
     equals(nodes.length, 1, 'named index - root');
@@ -1198,16 +1936,16 @@ test('Document.prototype.getElementsByTagName', function() {
     equals(nodes.length, 1, 'named index - b');
     nodes = doc.getElementsByTagName('c');
     equals(nodes.length, 1, 'named index - c');
-	expected = ['root','a','b','c'];
-	for(i=0;i<all.length;i++){
-		equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
-	}
-	
-	doc = domparser.parseFromString(
+    expected = ['root','a','b','c'];
+    for(i=0;i<all.length;i++){
+        equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
+    }
+    
+    doc = domparser.parseFromString(
         '<root><a id="a1">123<b>456</b></a><c><a id="a2">789</a></c></root>',
         'text/xml'
     );
-	all = nodes = doc.getElementsByTagName('*');
+    all = nodes = doc.getElementsByTagName('*');
     equals(nodes.length, 5, 'all elements');
     nodes = doc.getElementsByTagName('root');
     equals(nodes.length, 1, 'named index - root');
@@ -1217,15 +1955,11 @@ test('Document.prototype.getElementsByTagName', function() {
     equals(nodes.length, 1, 'named index - b');
     nodes = doc.getElementsByTagName('c');
     equals(nodes.length, 1, 'named index - c');
-    nodes = doc.getElementById('a1');
-    equals(nodes.getAttribute('id'), 'a1', 'id index #a1');
-    nodes = doc.getElementById('a2');
-    equals(nodes.getAttribute('id'), 'a2', 'id index #a2');
-	expected = ['root','a','b','c', 'a'];
-	for(i=0;i<all.length;i++){
-		equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
-	}
-	
+    expected = ['root','a','b','c', 'a'];
+    for(i=0;i<all.length;i++){
+        equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
+    }
+    
     doc = domparser.parseFromString(
         '<root><div id="d0"><div id="d1">123<a>456</a></div><b>789</b></div><div id="d2"><c/></div><d>abc</d></root>',
         'text/xml'
@@ -1240,11 +1974,11 @@ test('Document.prototype.getElementsByTagName', function() {
     nodes = doc.getElementsByTagName('b');
     equals(nodes.length, 1, 'named index - b');
 
-	expected = ['root', 'div', 'div', 'a', 'b', 'div', 'c', 'd'];
-	for(i=0;i<all.length;i++){
-		equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
-	}
-	
+    expected = ['root', 'div', 'div', 'a', 'b', 'div', 'c', 'd'];
+    for(i=0;i<all.length;i++){
+        equals(all[i].tagName, expected[i], 'order of live nodelists is correct');
+    }
+    
     nodes = doc.getElementsByTagName('a');
     equals(nodes.length, 1, 'named index - a');
     doc.documentElement.appendChild(doc.createElement('a'));
@@ -1255,7 +1989,7 @@ test('Document.prototype.getElementsByTagName', function() {
     equals(all.length, 8, 'all elements');
 });
 /******************************************************************************
-Interface Node
+1.2.5. Interface Node
 
     The Node interface is the primary datatype for the entire Document Object 
     Model. It represents a single node in the document tree. While all objects 
@@ -1321,11 +2055,6 @@ Interface Node
         };
 
 
-******************************************************************************/
-test('TODO: Node.prototype.', function(){
-   
-});
-/******************************************************************************
     Definition group NodeType
 
         An integer indicating which type of node this is.
@@ -1371,173 +2100,53 @@ test('TODO: Node.prototype.', function(){
             TEXT_NODE
                 The node is a Text node.
 
-******************************************************************************/
-test('Node.NODE_TYPE ', function(){
-    equals(Node.ATTRIBUTE_NODE, 2,'The node is an Attr.');
-    equals(Node.CDATA_SECTION_NODE, 4,'The node is a CDATASection.');
-    equals(Node.COMMENT_NODE, 8,'The node is a Comment.');
-    equals(Node.DOCUMENT_FRAGMENT_NODE, 11,'The node is a DocumentFragment.');
-    equals(Node.DOCUMENT_NODE, 9,'The node is a Document.');
-    equals(Node.DOCUMENT_TYPE_NODE, 10,'The node is a DocumentType.');
-    equals(Node.ELEMENT_NODE, 1,'The node is an Element.');
-    equals(Node.ENTITY_NODE, 6,'The node is an Entity.');
-    equals(Node.ENTITY_REFERENCE_NODE, 5,'The node is an EntityReference.');
-    equals(Node.NOTATION_NODE, 12,'The node is a Notation.');
-    equals(Node.PROCESSING_INSTRUCTION_NODE, 7,'The node is a ProcessingInstruction.');
-    equals(Node.TEXT_NODE, 3,'The node is a Text node.');
-});
-/******************************************************************************
         The values of nodeName, nodeValue, and attributes vary according to 
         the node type as follows:
         
-        	nodeName	nodeValue	attributes
-        Attr	name of attribute	value of attribute	null
-        CDATASection	#cdata-section	content of the CDATA Section	null
-        Comment	#comment	content of the comment	null
-        Document	#document	null	null
-        DocumentFragment	#document-fragment	null	null
-        DocumentType	document type name	null	null
-        Element	tag name	null	NamedNodeMap
-        Entity	entity name	null	null
-        EntityReference	name of entity referenced	null	null
-        Notation	notation name	null	null
-        ProcessingInstruction   target	entire content excluding the target	null
-        Text	#text	content of the text node	null
-******************************************************************************/
-test('Node.prototype.nodeName, nodeValue, attributes ', function(){
-    var node;
-    
-    node = document.createAttribute('abc');
-    node.value = 'def';
-    equals(node.nodeName, 'abc', 'Attr.prototype.nodeName');
-    equals(node.nodeValue, 'def', 'Attr.prototype.nodeValue');
-    equals(node.attributes, null, 'Attr.prototype.attributes');
-    
-    node = document.createCDATASection('def');
-    equals(node.nodeName, '#cdata-section', 'CDATASection.prototype.nodeName');
-    equals(node.nodeValue, 'def', 'CDATASection.prototype.nodeValue');
-    equals(node.attributes, null, 'CDATASection.prototype.attributes');
-    
-    node = document.createComment('def');
-    equals(node.nodeName, '#comment', 'Comment.prototype.nodeName');
-    equals(node.nodeValue, 'def', 'Comment.prototype.nodeValue');
-    equals(node.attributes, null, 'Comment.prototype.attributes');
-    
-    node = document;
-    equals(node.nodeName, '#document', 'Document.prototype.nodeName');
-    equals(node.nodeValue, null, 'Document.prototype.nodeValue');
-    equals(node.attributes, null, 'Document.prototype.attributes');
-    
-    node = document.createDocumentFragment();
-    equals(node.nodeName, '#document-fragment', 
-        'DocumentFragment.prototype.nodeName');
-    equals(node.nodeValue, null, 'DocumentFragment.prototype.nodeValue');
-    equals(node.attributes, null, 'DocumentFragment.prototype.attributes');
-    
-    ok(true, 'TODO: document type');
-    
-    node = document.createElement('abc');
-    equals(node.nodeName, 'abc', 'Element.prototype.nodeName');
-    equals(node.nodeValue, null, 'Element.prototype.nodeValue');
-    ok(node.attributes instanceof(NamedNodeMap), 
-        'Element.prototype.attributes');
-    
-    
-    ok(true, 'TODO: entity');
-    ok(true, 'TODO: entity reference');
-    ok(true, 'TODO: notation');
-    
-    node = document.createProcessingInstruction('abc', 'def');
-    equals(node.nodeName, 'abc', 'ProcessingInstruction.prototype.nodeName');
-    equals(node.nodeValue, 'def', 'ProcessingInstruction.prototype.nodeValue');
-    equals(node.attributes, null, 
-        'ProcessingInstruction.prototype.attributes');
-    
-    node = document.createTextNode('abc def');
-    equals(node.nodeName, '#text', 'Text.prototype.nodeName');
-    equals(node.nodeValue, 'abc def', 'Text.prototype.nodeValue');
-    equals(node.attributes, null, 'Text.prototype.attributes');
-});
-/******************************************************************************
+        /                       nodeName                    nodeValue                           attributes
+        Attr                    name of attribute           value of attribute                  null
+        CDATASection            #cdata-section              content of the CDATA Section        null
+        Comment                 #comment                    content of the comment              null
+        Document                #document                   null                                null
+        DocumentFragment        #document-fragment          null                                null
+        DocumentType            document type name          null                                null
+        Element                 tag name                    null                                NamedNodeMap
+        Entity                  entity name                 null                                null
+        EntityReference         name of entity referenced   null                                null
+        Notation                notation name               null                                null
+        ProcessingInstruction   target                      entire content excluding the target null
+        Text                    #text                       content of the text node            null
+
+
+
     Attributes
 
         attributes of type NamedNodeMap, readonly
             A NamedNodeMap containing the attributes of this node (if it is an 
             Element) or null otherwise.
-******************************************************************************/
-test('attributes', function(){
-
-    var doc,
-        element;
-
-    doc = document.implementation.createDocument('', '', null);
-    element = doc.createElement('envjs');
-    equals(element.attributes.length, 0, '.attributes.length');
-
-    element.setAttribute('animal', 'pig');
-    //console.log('dom-spec setAttribute done');
-    equals(element.attributes.length, 1, '.attributes.length');
-    //console.log('dom-spec attributes.length');
-    equals(element.attributes.animal.value, 'pig', 
-        'element.attributes.animal');
-    //console.log('dom-spec attributes.getNamedItem');
-    equals(element.attributes.getNamedItem('animal').value, 'pig', 
-        'element.attributes.getNamedItem');
-});
-/******************************************************************************
 
         childNodes of type NodeList, readonly
             A NodeList that contains all children of this node. If there are no
             children, this is a NodeList containing no nodes.
-******************************************************************************/
-test('TODO: Node.prototype.childNodes', function(){
-   
-});
-/******************************************************************************
 
         firstChild of type Node, readonly
             The first child of this node. If there is no such node, this 
             returns null.
-******************************************************************************/
-test('TODO: Node.prototype.firstChild', function(){
-   
-});
-/******************************************************************************
 
         lastChild of type Node, readonly
             The last child of this node. If there is no such node, this returns 
             null.
-******************************************************************************/
-test('TODO: Node.prototype.lastChild', function(){
-   
-});
-/******************************************************************************
 
         nextSibling of type Node, readonly
             The node immediately following this node. If there is no such node, 
             this returns null.
-******************************************************************************/
-test('TODO: Node.prototype.nextSibling', function(){
-   
-});
-/******************************************************************************
-
+            
         nodeName of type DOMString, readonly
             The name of this node, depending on its type; see the table above.
-******************************************************************************/
-test('TODO: Node.prototype.nodeName', function(){
-   
-});
-/******************************************************************************
-
+            
         nodeType of type unsigned short, readonly
             A code representing the type of the underlying object, as defined 
             above.
-******************************************************************************/
-test('TODO: Node.prototype.nodeType', function(){
-   
-});
-/******************************************************************************
 
         nodeValue of type DOMString
             The value of this node, depending on its type; see the table above.
@@ -1546,52 +2155,33 @@ test('TODO: Node.prototype.nodeType', function(){
             Exceptions on setting
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised when the node is readonly.
             
             Exceptions on retrieval
 
             DOMException
-            		
+                    
 
             DOMSTRING_SIZE_ERR: Raised when it would return more characters 
             than fit in a DOMString variable on the implementation platform.
-******************************************************************************/
-test('TODO: Node.prototype.nodeValue', function(){
-   
-});
-/******************************************************************************
 
         ownerDocument of type Document, readonly
             The Document object associated with this node. This is also the 
             Document object used to create new nodes. When this node is a 
             Document, this is null.
-******************************************************************************/
-test('TODO: Node.prototype.ownerDocument', function(){
-   
-});
-/******************************************************************************
 
         parentNode of type Node, readonly
             The parent of this node. All nodes, except Attr, Document, 
             DocumentFragment, Entity, and Notation may have a parent. However, 
             if a node has just been created and not yet added to the tree, or 
             if it has been removed from the tree, this is null.
-******************************************************************************/
-test('TODO: Node.prototype.parentNode', function(){
-   
-});
-/******************************************************************************
 
         previousSibling of type Node, readonly
             The node immediately preceding this node. If there is no such node, 
             this returns null.
-******************************************************************************/
-test('TODO: Node.prototype.previousSibling', function(){
-   
-});
-/******************************************************************************
+            
     Methods
 
         appendChild
@@ -1608,13 +2198,12 @@ test('TODO: Node.prototype.previousSibling', function(){
             Return Value
 
             Node
-            		
-
+                    
             The node added.
+            
             Exceptions
 
             DOMException
-            		
 
             HIERARCHY_REQUEST_ERR: Raised if this node is of a type that does 
             not allow children of the type of the newChild node, or if the node
@@ -1625,11 +2214,6 @@ test('TODO: Node.prototype.previousSibling', function(){
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
 
-******************************************************************************/
-test('TODO: Node.prototype.appendChild', function(){
-   
-});
-/******************************************************************************
         cloneNode
             Returns a duplicate of this node, i.e., serves as a generic copy 
             constructor for nodes. The duplicate node has no parent; 
@@ -1660,23 +2244,18 @@ test('TODO: Node.prototype.appendChild', function(){
             Return Value
 
             Node
-            		
+                    
 
             The duplicate node.
             Exceptions
 
             DOMException
-            		
+                    
 
             NOT_SUPPORTED_ERR: Raised if this node is a of type DOCUMENT_NODE, 
             DOCUMENT_TYPE_NODE, ENTITY_NODE, or NOTATION_NODE and the 
             implementation does not support cloning this type of node.
 
-******************************************************************************/
-test('TODO: Node.prototype.cloneNode', function(){
-   
-});
-/******************************************************************************
         hasChildNodes
             This is a convenience method to allow easy determination of whether
             a node has any children.
@@ -1684,7 +2263,7 @@ test('TODO: Node.prototype.cloneNode', function(){
             Return Value
 
             boolean
-            		
+                    
 
             true if the node has any children, false if the node has no 
             children.
@@ -1692,11 +2271,6 @@ test('TODO: Node.prototype.cloneNode', function(){
             No Parameters
             No Exceptions
 
-******************************************************************************/
-test('TODO: Node.prototype.hasChildNodes', function(){
-   
-});
-/******************************************************************************
         insertBefore
             Inserts the node newChild before the existing child node refChild. 
             If refChild is null, insert newChild at the end of the list of 
@@ -1718,13 +2292,13 @@ test('TODO: Node.prototype.hasChildNodes', function(){
             Return Value
 
             Node
-            		
+                    
 
             The node being inserted.
             Exceptions
 
             DOMException
-            		
+                    
 
             HIERARCHY_REQUEST_ERR: Raised if this node is of a type that does 
             not allow children of the type of the newChild node, or if the node
@@ -1738,11 +2312,6 @@ test('TODO: Node.prototype.hasChildNodes', function(){
 
             NOT_FOUND_ERR: Raised if refChild is not a child of this node.
 
-******************************************************************************/
-test('TODO: Node.prototype.insertBefore', function(){
-   
-});
-/******************************************************************************
         removeChild
             Removes the child node indicated by oldChild from the list of 
             children, and returns it.
@@ -1755,23 +2324,18 @@ test('TODO: Node.prototype.insertBefore', function(){
             Return Value
 
             Node
-            		
 
             The node removed.
+            
             Exceptions
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
 
             NOT_FOUND_ERR: Raised if oldChild is not a child of this node.
 
-******************************************************************************/
-test('TODO: Node.prototype.removeChild', function(){
-   
-});
-/******************************************************************************
         replaceChild
             Replaces the child node oldChild with newChild in the list of 
             children, and returns the oldChild node.
@@ -1792,7 +2356,7 @@ test('TODO: Node.prototype.removeChild', function(){
             Return Value
 
             Node
-            		
+                    
 
             The node replaced.
             Exceptions
@@ -1811,11 +2375,1177 @@ test('TODO: Node.prototype.removeChild', function(){
 
             NOT_FOUND_ERR: Raised if oldChild is not a child of this node.
 ******************************************************************************/
-test('TODO: Node.prototype.replaceChild', function(){
+test('1.2.5. Interface Node', function(){
+    
+    //IDL Definition
+    var TEST = "IDL Definition of Node interface is elusive. "
+        "Testing instance where required.";
+    ok(true, TEST);
+    
+    //Defined Constants
+    equals(Node.ELEMENT_NODE, 1,'The node is an Element.');
+    equals(Node.ATTRIBUTE_NODE, 2,'The node is an Attr.');
+    equals(Node.TEXT_NODE, 3,'The node is a Text node.');
+    equals(Node.CDATA_SECTION_NODE, 4,'The node is a CDATASection.');
+    equals(Node.ENTITY_REFERENCE_NODE, 5,'The node is an EntityReference.');
+    equals(Node.ENTITY_NODE, 6,'The node is an Entity.');
+    equals(Node.PROCESSING_INSTRUCTION_NODE, 7,'The node is a ProcessingInstruction.');
+    equals(Node.COMMENT_NODE, 8,'The node is a Comment.');
+    equals(Node.DOCUMENT_NODE, 9,'The node is a Document.');
+    equals(Node.DOCUMENT_TYPE_NODE, 10,'The node is a DocumentType.');
+    equals(Node.DOCUMENT_FRAGMENT_NODE, 11,'The node is a DocumentFragment.');
+    equals(Node.NOTATION_NODE, 12,'The node is a Notation.');
+    
+    var doc1,
+        doc2,
+        doc3,
+        doctype1,
+        doctype2,
+        fragment1,
+        fragment2,
+        entityReference1,
+        entityReference2,
+        element1,
+        element2,
+        attr1,
+        attr2,
+        pi1,
+        pi2,
+        comment1,
+        comment2,
+        text1,
+        text2,
+        cdata1,
+        cdata2,
+        entity1,
+        entity2,
+        notation1,
+        notation2,
+        clone1,
+        clone2,
+        NO_MODIFICATION_ALLOWED_ERR_MSG = 
+            "Node cannot be inserted at the specified point in the hierarchy",
+        WRONG_DOCUMENT_ERR_MSG = 
+            "Node cannot be inserted at the specified point in the hierarchy",
+        NOT_SUPPORTED_ERR_MSG = 
+            "",
+        error;
+    
+    function reset(){
+        doctype1 = document.implementation.createDocumentType('xyz', null, 
+            "-//WTF//DTD XYZ 5 Final//EN");
+        doctype2 = document.implementation.createDocumentType('html', null, 
+            'html');
+        doctype3 = document.implementation.createDocumentType('xyz', null, 
+            "-//WTF//DTD XYZ 5 Final//EN");
+        doc1 = document.implementation.createDocument(null, null, doctype1);    
+        doc2 = document.implementation.createDocument(null, null, null);
+        doc3 = document.implementation.createDocument(null, 'html', doctype2);
+        fragment1 = doc1.createDocumentFragment();
+        fragment2 = doc1.createDocumentFragment();
+        entityReference1 = doc1.createEntityReference('nbsg');
+        entityReference2 = doc1.createEntityReference('nbsgnbsg');
+        element1 = doc1.createElement('def');
+        element2 = doc1.createElement('defdef');
+        attr1 = doc1.createAttribute('pqr');
+        attr2 = doc1.createAttribute('pqrpqr');
+        pi1 = doc1.createProcessingInstruction('ghi', 'jkl=mno');
+        pi2 = doc1.createProcessingInstruction('ghighi', 'jkljkl=mnomno');
+        comment1 = doc1.createComment('this is a pig. oink, oink');
+        comment2 = doc1.createComment('this is a cow. moo, moo');
+        text1 = doc1.createTextNode('abcdefghi');
+        text2 = doc1.createTextNode('jklmnopqr');
+        cdata1 = doc1.createCDATASection('stuv');
+        cdata2 = doc1.createCDATASection('wxyz');
+        entity1 = null; //can't test these until dom2 or maybe use domparser?
+        entity2 = null; //can't test these until dom2 or maybe use domparser?
+        notation1 = null; //can't test these until dom2 or maybe use domparser?
+        notation2 = null; //can't test these until dom2 or maybe use domparser?
+        clone1 = null;
+        clone2 = null;
+    }
+    
+    reset();
+    TEST = "Document : Method insertBefore(newChild, refChild)";
+
+    reset();
+    TEST = "Document : Method replaceChild(newChild, oldChild)";
+    
+    reset();
+    TEST = "Document : Method removeChild(oldChild)";
+    
+    
+    
+    /************************
+     * Document
+     ***********************/
+    reset();
+    
+    TEST = "Document : Node readonly attribute nodeName";
+    equals(doc1.nodeName, "#document", TEST);
+    doc1.nodeName = "lmnop";
+    equals(doc1.nodeName, "#document", TEST);
+        
+    TEST = "Document : Node attribute nodeValue";
+    ok( doc1.nodeValue === undefined || //Mozilla reports undefined
+        doc1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+    doc1.nodeValue = "lmnop";
+    ok( doc1.nodeValue === undefined || //Mozilla reports undefined
+        doc1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+        
+    TEST = "Document : Node readonly attribute nodeType";
+    equals(doc1.nodeType, Node.DOCUMENT_NODE, TEST);
+    doc1.nodeType = "lmnop";
+    equals(doc1.nodeType, Node.DOCUMENT_NODE, TEST);
+    
+    TEST = "Document : Node readonly attribute parentNode";
+    equals(doc1.parentNode, null, TEST);
+    doc1.parentNode = "lmnop";
+    equals(doc1.parentNode, null, TEST);
+    
+    TEST = "Document : Node readonly attribute childNodes";
+    ok(doc1.childNodes instanceof(NodeList), TEST+"(w/ doctype)");
+    ok(doc1.childNodes.length === 1, TEST+"(w/ doctype)");
+    doc1.childNodes = "lmnop";
+    ok(doc1.childNodes instanceof(NodeList), TEST+"(w/ doctype)");
+    ok(doc1.childNodes.length === 1, TEST+"(w/ doctype)");
+    ok(doc2.childNodes instanceof(NodeList), TEST+"(w/o doctype)");
+    ok(doc2.childNodes.length === 0, TEST+"(w/o doctype)");
+    doc2.childNodes = "lmnop";
+    ok(doc2.childNodes instanceof(NodeList), TEST+"(w/o doctype)");
+    ok(doc2.childNodes.length === 0, TEST+"(w/o doctype)");
+    ok(doc3.childNodes instanceof(NodeList), TEST+"(w/ doctype and root)");
+    ok(doc3.childNodes.length === 2, TEST+"(w/ doctype and root)");
+    doc3.childNodes = "lmnop";
+    ok(doc3.childNodes instanceof(NodeList), TEST+"(w/ doctype and root)");
+    ok(doc3.childNodes.length === 2, TEST+"(w/ doctype and root)");
+    
+    TEST = "Document : Node readonly attribute firstChild";
+    equals(doc1.firstChild, doctype1, TEST);
+    doc1.firstChild = "lmnop";
+    equals(doc1.firstChild, doctype1, TEST);
+    
+    TEST = "Document : Node readonly attribute lastChild";
+    equals(doc1.lastChild, doctype1, TEST);
+    doc1.lastChild = "lmnop";
+    equals(doc1.lastChild, doctype1, TEST);
+    
+    TEST = "Document : Node readonly attribute previousSibling";
+    equals(doc1.previousSibling, null, TEST);
+    doc1.previousSibling = "lmnop";
+    equals(doc1.previousSibling, null, TEST);
+    
+    TEST = "Document : Node readonly attribute nextSibling";
+    equals(doc1.nextSibling, null, TEST);
+    doc1.nextSibling = "lmnop";
+    equals(doc1.nextSibling, null, TEST);
+    
+    TEST = "Document : Node readonly attribute attributes";
+    equals(doc1.attributes, null, TEST);
+    doc1.attributes = "lmnop";
+    equals(doc1.attributes, null, TEST);
+    
+    TEST = "Document : Node readonly attribute ownerDocument";
+    equals(doc1.ownerDocument, null, TEST);
+    doc1.ownerDocument = "lmnop";
+    equals(doc1.ownerDocument, null, TEST);
+    
+    reset();
+    TEST = "Document : Methods";
+    ok(doc1.appendChild, TEST);
+    ok(doc1.cloneNode, TEST);
+    ok(doc1.hasChildNodes, TEST);
+    ok(doc1.insertBefore, TEST);
+    ok(doc1.removeChild, TEST);
+    ok(doc1.replaceChild, TEST);
+    
+    reset();
+    TEST = "Document : Method appendChild(newChild)";
+    //For HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    equals(doc1.appendChild(element1), element1, TEST);
+    equals(doc1.childNodes[1], element1, TEST);
+    equals(doc1.firstChild, doctype1, TEST);
+    equals(doc1.lastChild, element1, TEST);
+    element1.appendChild(comment1);
+    equals(element1.childNodes[0], comment1, TEST);
+    equals(doc1.appendChild(comment1), comment1, TEST);
+    equals(element1.childNodes.length, 0, TEST);
+    equals(doc1.childNodes[2], comment1, TEST);
+    equals(doc1.lastChild, comment1, TEST);
+    try{
+        //Both Webkit and Mozilla transfer the appended node into 
+        //the new document instead of throwing a WRONG_DOCUMENT_ERR
+        //This is likely due to higher level dom 3 implementations
+        //which provide the importNode interface
+        comment2 = doc2.createComment('brother from another mother');
+        ok(comment2.ownerDocument !== doc1, TEST+" - ownerDocument different");
+        equals(doc1.appendChild(comment2), comment2, TEST);
+        ok(comment2.ownerDocument === doc1, TEST+" - ownerDocument transfered");
+    }catch(e){
+        equals(e.code, DOMException.WRONG_DOCUMENT_ERR, TEST);
+    }
+    
+    reset();
+    TEST = "Document : Method cloneNode(deep)";
+    try{
+        element1.appendChild(text1);
+        doc1.appendChild(element1);
+        clone1 = doc1.cloneNode(false);
+        if(!clone1){
+            //Webkit will not clone a Document node, and also not
+            //throw a NOT_SUPPORTED_ERR so we are functionally forced to
+            //branch the test on an if statement - blah - Mozilla does
+            //adhere to the spec in this case, cloning the document
+            ok(clone1 === null, "Webkit: "+TEST +" NOT SUPPORTED but NO EXPECTION");
+        }else{
+            ok(clone1, TEST+": shallow copy ");
+            equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+        
+            reset();
+            element1.appendChild(text1);
+            doc1.appendChild(element1);
+            clone1 = doc1.cloneNode(true);
+            ok(clone1, TEST+": deep copy ");
+            //TODO: it's arguable if these following assertions are truly
+            //      sufficient to prove deep cloning.  I suspect that we
+            //      actually have to test every property and method since 
+            //      reading properties and return values from methods are 
+            //      not guaranteed to be reducable to a finite set of 
+            //      readable values on the dom node -- though it's likely in
+            //      reality implied de facto
+            equals(clone1.childNodes.length, 2, TEST+": deep copy - childNodes");
+            equals(clone1.childNodes[0].nodeType, doctype1.nodeType, TEST+": deep copy - childNodes");
+            equals(clone1.childNodes[0].nodeName, doctype1.nodeName, TEST+": deep copy - childNodes");
+            equals(clone1.childNodes[0].nodeValue, doctype1.nodeValue, TEST+": deep copy - childNodes");
+            equals(clone1.childNodes[1].nodeType, element1.nodeType, TEST+": deep copy - childNodes");
+            equals(clone1.childNodes[1].nodeName, element1.nodeName, TEST+": deep copy - childNodes");
+            equals(clone1.childNodes[1].nodeValue, element1.nodeValue, TEST+": deep copy - childNodes");
+            element2 = clone1.childNodes[1];
+            equals(element2.childNodes[0].nodeType, text1.nodeType, TEST+": deep copy - childNodes");
+            equals(element2.childNodes[0].nodeName, text1.nodeName, TEST+": deep copy - childNodes");
+            equals(element2.childNodes[0].nodeValue, text1.nodeValue, TEST+": deep copy - childNodes");
+        }
+    }catch(e){
+        equals(e.code, DOMException.NOT_SUPPORTED_ERR, 
+            TEST+":"+NOT_SUPPORTED_ERR_MSG);
+    }
+
+    reset();
+    TEST = "Document : Method hasChildNodes()";
+    equals(doc1.hasChildNodes(), true, TEST);
+    equals(doc2.hasChildNodes(), false, TEST);
+    doc2.appendChild(comment1);
+    equals(doc2.hasChildNodes(), true, TEST);
+    equals(doc3.hasChildNodes(), true, TEST);
+    /************************
+     * DocumentFragment
+     ***********************/
+    reset();
+    
+    TEST = "DocumentFragment : Node readonly attribute nodeName";
+    equals(fragment1.nodeName, "#document-fragment", TEST);
+    fragment1.nodeName = "lmnop";
+    equals(fragment1.nodeName, "#document-fragment", TEST);
+        
+    TEST = "DocumentFragment : Node attribute nodeValue";
+    ok( fragment1.nodeValue === undefined || //Mozilla reports undefined
+        fragment1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+    fragment1.nodeValue = "lmnop";
+    ok( fragment1.nodeValue === undefined || //Mozilla reports undefined
+        fragment1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+        
+    TEST = "DocumentFragment : Node readonly attribute nodeType";
+    equals(fragment1.nodeType, Node.DOCUMENT_FRAGMENT_NODE, TEST);
+    fragment1.nodeType = "lmnop";
+    equals(fragment1.nodeType, Node.DOCUMENT_FRAGMENT_NODE, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute parentNode";
+    equals(fragment1.parentNode, null, TEST);
+    fragment1.parentNode = "lmnop";
+    equals(fragment1.parentNode, null, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute childNodes";
+    ok(fragment1.childNodes instanceof(NodeList), TEST);
+    ok(fragment1.childNodes.length === 0, TEST);
+    fragment1.childNodes = "lmnop";
+    ok(fragment1.childNodes instanceof(NodeList), TEST);
+    ok(fragment1.childNodes.length === 0, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute firstChild";
+    equals(fragment1.firstChild, null, TEST);
+    fragment1.firstChild = "lmnop";
+    equals(fragment1.firstChild, null, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute lastChild";
+    equals(fragment1.lastChild, null, TEST);
+    fragment1.lastChild = "lmnop";
+    equals(fragment1.lastChild, null, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute previousSibling";
+    equals(fragment1.previousSibling, null, TEST);
+    fragment1.previousSibling = "lmnop";
+    equals(fragment1.previousSibling, null, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute nextSibling";
+    equals(fragment1.nextSibling, null, TEST);
+    fragment1.nextSibling = "lmnop";
+    equals(fragment1.nextSibling, null, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute attributes";
+    equals(fragment1.attributes, null, TEST);
+    fragment1.attributes = "lmnop";
+    equals(fragment1.attributes, null, TEST);
+    
+    TEST = "DocumentFragment : Node readonly attribute ownerDocument";
+    equals(fragment1.ownerDocument, doc1, TEST);
+    fragment1.ownerDocument = "lmnop";
+    equals(fragment1.ownerDocument, doc1, TEST);
+     
+    reset();
+    TEST = "DocumentFragment : Node Methods";
+    ok(fragment1.appendChild, TEST);
+    ok(fragment1.cloneNode, TEST);
+    ok(fragment1.hasChildNodes, TEST);
+    ok(fragment1.insertBefore, TEST);
+    ok(fragment1.removeChild, TEST);
+    ok(fragment1.replaceChild, TEST);
+    
+    reset();
+    TEST = "DocumentFragment : Node Method appendChild(newChild)";
+    //For HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    equals(fragment1.appendChild(element1), element1, TEST);
+    equals(fragment1.childNodes[0], element1, TEST);
+    equals(fragment1.firstChild, element1, TEST);
+    equals(fragment1.lastChild, element1, TEST);
+    element1.appendChild(comment1);
+    equals(element1.childNodes[0], comment1, TEST);
+    equals(fragment1.appendChild(comment1), comment1, TEST);
+    equals(element1.childNodes.length, 0, TEST);
+    equals(fragment1.childNodes[1], comment1, TEST);
+    equals(fragment1.lastChild, comment1, TEST);
+    try{
+        //Both Webkit and Mozilla transfer the appended node into 
+        //the new document instead of throwing a WRONG_DOCUMENT_ERR
+        //This is likely due to higher level dom 3 implementations
+        //which provide the importNode interface
+        comment2 = doc2.createComment('brother from another mother');
+        ok(comment2.ownerDocument !== fragment1.ownerDocument, 
+            TEST+" - ownerDocument different");
+        equals(fragment1.appendChild(comment2), comment2, TEST);
+        ok(comment2.ownerDocument === fragment1.ownerDocument, 
+            TEST+" - ownerDocument transfered");
+    }catch(e){
+        equals(e.code, DOMException.WRONG_DOCUMENT_ERR, TEST);
+    }
+    
+    reset();
+    TEST = "DocumentFragment : Node Method cloneNode(deep)";
+    try{
+        element1.appendChild(text1);
+        fragment1.appendChild(element1);
+        clone1 = fragment1.cloneNode(false);
+        ok(clone1, TEST+": shallow copy ");
+        equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    
+        reset();
+        element1.appendChild(text1);
+        fragment1.appendChild(element1);
+        clone1 = fragment1.cloneNode(true);
+        ok(clone1, TEST+": deep copy ");
+        //TODO: it's arguable if these following assertions are truly
+        //      sufficient to prove deep cloning.  I suspect that we
+        //      actually have to test every property and method since 
+        //      reading properties and return values from methods are 
+        //      not guaranteed to be reducable to a finite set of 
+        //      readable values on the dom node -- though it's likely in
+        //      reality implied de facto
+        equals(clone1.childNodes.length, 1, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeType, element1.nodeType, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeName, element1.nodeName, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeValue, element1.nodeValue, TEST+": deep copy - childNodes");
+        element2 = clone1.childNodes[0];
+        equals(element2.childNodes[0].nodeType, text1.nodeType, TEST+": deep copy - childNodes");
+        equals(element2.childNodes[0].nodeName, text1.nodeName, TEST+": deep copy - childNodes");
+        equals(element2.childNodes[0].nodeValue, text1.nodeValue, TEST+": deep copy - childNodes");
+    }catch(e){
+        equals(e.code, DOMException.NOT_SUPPORTED_ERR, 
+            TEST+":"+NOT_SUPPORTED_ERR_MSG);
+    }
+
+    reset();
+    TEST = "DocumentFragment : Node Method hasChildNodes()";
+    equals(fragment1.hasChildNodes(), false, TEST);
+    fragment1.appendChild(comment1);
+    equals(fragment1.hasChildNodes(), true, TEST);
+    
+    /************************
+     * DocumentType
+     ***********************/
+    reset();
+     
+    TEST = "DocumentType : Node readonly attribute nodeName";
+    equals(doctype1.nodeName, "xyz", TEST);
+    doctype1.nodeName = "lmnop";
+    equals(doctype1.nodeName, "xyz", TEST);
+
+    TEST = "DocumentType : Node attribute nodeValue";
+    ok( doctype1.nodeValue === undefined || //Mozilla reports undefined
+        doctype1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+    doctype1.nodeValue = "lmnop";
+    ok( doctype1.nodeValue === undefined || //Mozilla reports undefined
+        doctype1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+
+    TEST = "DocumentType : Node readonly attribute nodeType";
+    equals(doctype1.nodeType, Node.DOCUMENT_TYPE_NODE, TEST);
+    doctype1.nodeType = "lmnop";
+    equals(doctype1.nodeType, Node.DOCUMENT_TYPE_NODE, TEST);
+
+    TEST = "DocumentType : Node readonly attribute parentNode";
+    equals(doctype1.parentNode, doc1, TEST);
+    doctype1.parentNode = "lmnop";
+    equals(doctype1.parentNode, doc1, TEST);
+    equals(doctype3.parentNode, null, TEST);
+    doctype3.parentNode = "lmnop";
+    equals(doctype3.parentNode, null, TEST);
+
+    TEST = "DocumentType : Node readonly attribute childNodes";
+    ok(doctype1.childNodes instanceof(NodeList), TEST);
+    ok(doctype1.childNodes.length === 0, TEST);
+    doctype1.childNodes = "lmnop";
+    ok(doctype1.childNodes instanceof(NodeList), TEST);
+    ok(doctype1.childNodes.length === 0, TEST);
+
+    TEST = "DocumentType : Node readonly attribute firstChild";
+    equals(doctype1.firstChild, null, TEST);
+    doctype1.firstChild = "lmnop";
+    equals(doctype1.firstChild, null, TEST);
+
+    TEST = "DocumentType : Node readonly attribute lastChild";
+    equals(doctype1.lastChild, null, TEST);
+    doctype1.lastChild = "lmnop";
+    equals(doctype1.lastChild, null, TEST);
+
+    TEST = "DocumentType : Node readonly attribute previousSibling";
+    equals(doctype1.previousSibling, null, TEST);
+    doctype1.previousSibling = "lmnop";
+    equals(doctype1.previousSibling, null, TEST);
+
+    TEST = "DocumentType : Node readonly attribute nextSibling";
+    equals(doctype1.nextSibling, null, TEST);
+    doctype1.nextSibling = "lmnop";
+    equals(doctype1.nextSibling, null, TEST);
+
+    TEST = "DocumentType : Node readonly attribute attributes";
+    equals(doctype1.attributes, null, TEST);
+    doctype1.attributes = "lmnop";
+    equals(doctype1.attributes, null, TEST);
+
+    TEST = "DocumentType : Node readonly attribute ownerDocument";
+    equals(doctype1.ownerDocument, doc1, TEST);
+    doctype1.ownerDocument = "lmnop";
+    equals(doctype1.ownerDocument, doc1, TEST);
+    equals(doctype3.ownerDocument, null, TEST);
+    doctype3.ownerDocument = "lmnop";
+    equals(doctype3.ownerDocument, null, TEST);
+     
+    reset();
+    TEST = "DocumentType : Node Methods";
+    ok(doctype1.appendChild, TEST);
+    ok(doctype1.cloneNode, TEST);
+    ok(doctype1.hasChildNodes, TEST);
+    ok(doctype1.insertBefore, TEST);
+    ok(doctype1.removeChild, TEST);
+    ok(doctype1.replaceChild, TEST);
+    
+    reset();
+    TEST = "DocumentType : Node Method appendChild(newChild)";
+    //For HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    ok(true, TEST + 'TODO: test appending entity and entity refs?');
+    
+    reset();
+    TEST = "DocumentType : Node Method cloneNode(deep)";
+    try{
+        clone1 = doctype1.cloneNode(false);
+        ok(clone1, TEST+": shallow copy ");
+        equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    
+        reset();
+        clone1 = doctype1.cloneNode(true);
+        ok(clone1, TEST+": TODO deep copy with enity and notations?");
+    }catch(e){
+        equals(e.code, DOMException.NOT_SUPPORTED_ERR, 
+            TEST+":"+NOT_SUPPORTED_ERR_MSG);
+    }
+    
+    reset();
+    TEST = "DocumentType : Node Method hasChildNodes()";
+    equals(doctype1.hasChildNodes(), false, TEST);
+    
+    /************************
+     * EntityReference
+     ***********************/
+    reset();
+    ok(true, "TODO:TEST EntityReference : Node Attributes");
+    
+    /************************
+     * Element
+     ***********************/
+    reset();
+    TEST = "Element : Node readonly attribute nodeName";
+    equals(element1.nodeName, "def", TEST);
+    element1.nodeName = "lmnop";
+    equals(element1.nodeName, "def", TEST);
+
+    TEST = "Element : Node attribute nodeValue";
+    ok( element1.nodeValue === undefined || //Mozilla reports undefined
+        element1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+    element1.nodeValue = "lmnop";
+    ok( element1.nodeValue === undefined || //Mozilla reports undefined
+        element1.nodeValue === null, //Webkit adheres to spec with null 
+        TEST );
+
+    TEST = "Element : Node readonly attribute nodeType";
+    equals(element1.nodeType, Node.ELEMENT_NODE, TEST);
+    element1.nodeType = "lmnop";
+    equals(element1.nodeType, Node.ELEMENT_NODE, TEST);
+
+    TEST = "Element : Node readonly attribute parentNode";
+    equals(element1.parentNode, null, TEST);
+    element1.parentNode = "lmnop";
+    equals(element1.parentNode, null, TEST);
+
+    TEST = "Element : Node readonly attribute childNodes";
+    ok(element1.childNodes instanceof(NodeList), TEST);
+    ok(element1.childNodes.length === 0, TEST);
+    element1.childNodes = "lmnop";
+    ok(element1.childNodes instanceof(NodeList), TEST);
+    ok(element1.childNodes.length === 0, TEST);
+
+    TEST = "Element : Node readonly attribute firstChild";
+    equals(element1.firstChild, null, TEST);
+    element1.firstChild = "lmnop";
+    equals(element1.firstChild, null, TEST);
+
+    TEST = "Element : Node readonly attribute lastChild";
+    equals(element1.lastChild, null, TEST);
+    element1.lastChild = "lmnop";
+    equals(element1.lastChild, null, TEST);
+
+    TEST = "Element : Node readonly attribute previousSibling";
+    equals(element1.previousSibling, null, TEST);
+    element1.previousSibling = "lmnop";
+    equals(element1.previousSibling, null, TEST);
+
+    TEST = "Element : Node readonly attribute nextSibling";
+    equals(element1.nextSibling, null, TEST);
+    element1.nextSibling = "lmnop";
+    equals(element1.nextSibling, null, TEST);
+
+    TEST = "Element : Node readonly attribute attributes";
+    ok(element1.attributes instanceof(NamedNodeMap), TEST);
+    ok(element1.attributes.length === 0, TEST);
+    element1.attributes = "lmnop";
+    ok(element1.attributes instanceof(NamedNodeMap), TEST);
+    ok(element1.attributes.length === 0, TEST);
+
+    TEST = "Element : Node readonly attribute ownerDocument";
+    equals(element1.ownerDocument, doc1, TEST);
+    element1.ownerDocument = "lmnop";
+    equals(element1.ownerDocument, doc1, TEST);
+     
+    reset();
+    TEST = "Element : Node Methods";
+    ok(element1.appendChild, TEST);
+    ok(element1.cloneNode, TEST);
+    ok(element1.hasChildNodes, TEST);
+    ok(element1.insertBefore, TEST);
+    ok(element1.removeChild, TEST);
+    ok(element1.replaceChild, TEST);
+    
+    reset();
+    TEST = "Element : Node Method appendChild(newChild)";
+    //For HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    equals(element2.appendChild(element1), element1, TEST);
+    equals(element2.childNodes[0], element1, TEST);
+    equals(element2.firstChild, element1, TEST);
+    equals(element2.lastChild, element1, TEST);
+    element1.appendChild(comment1);
+    equals(element1.childNodes[0], comment1, TEST);
+    equals(element2.appendChild(comment1), comment1, TEST);
+    equals(element1.childNodes.length, 0, TEST);
+    equals(element2.childNodes[1], comment1, TEST);
+    equals(element2.lastChild, comment1, TEST);
+    try{
+        //Both Webkit and Mozilla transfer the appended node into 
+        //the new document instead of throwing a WRONG_DOCUMENT_ERR
+        //This is likely due to higher level dom 3 implementations
+        //which provide the importNode interface
+        comment2 = doc2.createComment('brother from another mother');
+        ok(comment2.ownerDocument !== element2.ownerDocument, 
+            TEST+" - ownerDocument different");
+        equals(element2.appendChild(comment2), comment2, TEST);
+        ok(comment2.ownerDocument === element2.ownerDocument, 
+            TEST+" - ownerDocument transfered");
+    }catch(e){
+        equals(e.code, DOMException.WRONG_DOCUMENT_ERR, TEST);
+    }
+    
+    reset();
+    TEST = "Element : Method cloneNode(deep)";
+    try{
+        element1.appendChild(text1);
+        element2.appendChild(element1);
+        clone1 = element2.cloneNode(false);
+        ok(clone1, TEST+": shallow copy ");
+        equals(clone1.childNodes.length, 0, TEST+": shallow copy - childNodes");
+    
+        reset();
+        element1.appendChild(text1);
+        element2.appendChild(element1);
+        clone1 = element2.cloneNode(true);
+        ok(clone1, TEST+": deep copy ");
+        //TODO: it's arguable if these following assertions are truly
+        //      sufficient to prove deep cloning.  I suspect that we
+        //      actually have to test every property and method since 
+        //      reading properties and return values from methods are 
+        //      not guaranteed to be reducable to a finite set of 
+        //      readable values on the dom node -- though it's likely in
+        //      reality implied de facto
+        equals(clone1.childNodes.length, 1, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeType, element1.nodeType, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeName, element1.nodeName, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeValue, element1.nodeValue, TEST+": deep copy - childNodes");
+        clone2 = clone1.childNodes[0];
+        equals(clone2.childNodes[0].nodeType, text1.nodeType, TEST+": deep copy - childNodes");
+        equals(clone2.childNodes[0].nodeName, text1.nodeName, TEST+": deep copy - childNodes");
+        equals(clone2.childNodes[0].nodeValue, text1.nodeValue, TEST+": deep copy - childNodes");
+    }catch(e){
+        equals(e.code, DOMException.NOT_SUPPORTED_ERR, 
+            TEST+":"+NOT_SUPPORTED_ERR_MSG);
+    }
+
+    reset();
+    TEST = "Document : Method hasChildNodes()";
+    equals(element2.hasChildNodes(), false, TEST);
+    element2.appendChild(comment1);
+    equals(element2.hasChildNodes(), true, TEST);
+    
+    /************************
+     * Attr
+     ***********************/
+    reset();
+    
+    TEST = "Attr : Node readonly attribute nodeName";
+    equals(attr1.nodeName, "pqr", TEST);
+    attr1.nodeName = "lmnop";
+    equals(attr1.nodeName, "pqr", TEST);
+
+    TEST = "Attr : Node attribute nodeValue";
+    equals( attr1.nodeValue, "", TEST );
+    //this affects the rest of the tests since now the
+    //nodeValue for attr1 is not the default nodeValue
+    //so several tests check attr2 for default value
+    attr1.nodeValue = "lmnop";
+    equals( attr1.nodeValue, "lmnop", TEST );
+
+    TEST = "Attr : Node readonly attribute nodeType";
+    equals(attr1.nodeType, Node.ATTRIBUTE_NODE, TEST);
+    attr1.nodeType = "lmnop";
+    equals(attr1.nodeType, Node.ATTRIBUTE_NODE, TEST);
+
+    TEST = "Attr : Node readonly attribute parentNode";
+    equals(attr1.parentNode, null, TEST);
+    attr1.parentNode = "lmnop";
+    equals(attr1.parentNode, null, TEST);
+
+    TEST = "Attr : Node readonly attribute childNodes";
+    ok(attr1.childNodes instanceof(NodeList), TEST);
+    ok(attr1.childNodes.length === 1, TEST);
+    attr1.childNodes = "lmnop";
+    ok(attr1.childNodes instanceof(NodeList), TEST);
+    ok(attr1.childNodes.length === 1, TEST);
+    ok(attr2.childNodes instanceof(NodeList), TEST);
+    ok(attr2.childNodes.length === 0, TEST);
+    attr2.childNodes = "lmnop";
+    ok(attr2.childNodes instanceof(NodeList), TEST);
+    ok(attr2.childNodes.length === 0, TEST);
+
+    TEST = "Attr : Node readonly attribute firstChild";
+    ok(attr1.firstChild !== null, TEST);
+    attr1.firstChild = "lmnop";
+    ok(attr1.firstChild !== "lmnop", TEST);
+    equals(attr2.firstChild, null, TEST);
+    attr2.firstChild = "lmnop";
+    equals(attr2.firstChild, null, TEST);
+
+    TEST = "Attr : Node readonly attribute lastChild";
+    ok(attr1.lastChild !== null, TEST);
+    attr1.lastChild = "lmnop";
+    ok(attr1.lastChild !== "lmnop", TEST);
+    equals(attr2.lastChild, null, TEST);
+    attr2.lastChild = "lmnop";
+    equals(attr2.lastChild, null, TEST);
+
+    TEST = "Attr : Node readonly attribute previousSibling";
+    equals(attr1.previousSibling, null, TEST);
+    attr1.previousSibling = "lmnop";
+    equals(attr1.previousSibling, null, TEST);
+
+    TEST = "Attr : Node readonly attribute nextSibling";
+    equals(attr1.nextSibling, null, TEST);
+    attr1.nextSibling = "lmnop";
+    equals(attr1.nextSibling, null, TEST);
+
+    TEST = "Attr : Node readonly attribute attributes";
+    equals(attr1.attributes, null, TEST);
+    attr1.attributes = "lmnop";
+    equals(attr1.attributes, null, TEST);
+
+    TEST = "Attr : Node readonly attribute ownerDocument";
+    equals(attr1.ownerDocument, doc1, TEST);
+    attr1.ownerDocument = "lmnop";
+    equals(attr1.ownerDocument, doc1, TEST);
+     
+    reset();
+    TEST = "Attr : Node Methods";
+    ok(attr1.appendChild, TEST);
+    ok(attr1.cloneNode, TEST);
+    ok(attr1.hasChildNodes, TEST);
+    ok(attr1.insertBefore, TEST);
+    ok(attr1.removeChild, TEST);
+    ok(attr1.replaceChild, TEST);
+    
+    reset();
+    TEST = "Attr : Node Method appendChild(newChild)";
+    //For HIERARCHY_REQUEST_ERR assertion on appendChild see
+    //DOM Level 1 - ( 1.1.1. The DOM Structure Model )
+    try{
+        //Webkit,imho, adhere's most closely to the spirit of
+        //the node interface allowing you to use appendChild
+        ok(attr1.appendChild(text1) === text1, TEST);
+        ok(attr1.childNodes[0] === text1, TEST);
+        ok(attr1.firstChild === text1, TEST);
+        ok(attr1.lastChild === text1, TEST);
+        ok(attr1.nodeValue === text1.nodeValue, TEST);
+        ok(attr1.appendChild(text2) === text2, TEST);
+        ok(attr1.childNodes[1] === text2, TEST);
+        ok(attr1.firstChild === text1, TEST);
+        ok(attr1.lastChild === text2, TEST);
+        ok(attr1.nodeValue === text1.nodeValue + text2.nodeValue, TEST);
+    }catch(e){
+        //Mozilla doesnt let you directly append a text node
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    } finally {
+        //these approachs should work for both Webkit and Mozilla
+        attr1.nodeValue = text1.nodeValue;
+        ok(attr1.childNodes[0].nodeValue === text1.nodeValue, TEST);
+        attr1.nodeValue += text2.nodeValue;
+        ok(attr1.childNodes[0].nodeValue === text1.nodeValue + text2.nodeValue, TEST);
+    }
+    try{
+        //Webkit,imho, adhere's most closely to the spirit of
+        //the node interface allowing you to use appendChild
+        text2 = doc2.createTextNode('brother from another mother');
+        ok(attr2.ownerDocument !== text2.ownerDocument, 
+            TEST+" - ownerDocument different");
+        ok(attr2.appendChild(text2) === text2, TEST);
+        ok(attr2.ownerDocument === text2.ownerDocument, 
+            TEST+" - ownerDocument transfered");
+    }catch(e){
+        //Mozilla doesnt let you directly append a text node
+        ok(e.code === DOMException.WRONG_DOCUMENT_ERR ||
+           e.code === DOMException.HIERARCHY_REQUEST_ERR, 
+            TEST+": DOMException "+e.code);
+    }finally{
+        //this is not really an issue when using string literals
+        //these approachs should work for both Webkit and Mozilla
+        text2 = doc2.createTextNode('brother from another mother');
+        attr1.nodeValue = text2.nodeValue;
+        ok(attr1.childNodes[0].nodeValue === 'brother from another mother', TEST);
+    }
+    
+    reset();
+    TEST = "Attr : Node Method cloneNode(deep)";
+    try{
+        //Webkit,imho, adhere's most closely to the spirit of
+        //the node interface allowing you to use appendChild
+        attr1.appendChild(text1);
+        clone1 = attr1.cloneNode(false);
+        ok(clone1, TEST+": shallow copy ");
+        equals(clone1.childNodes.length, 1, TEST+": shallow copy - childNodes");
+    
+        reset();
+        attr1.appendChild(text1);
+        clone1 = attr1.cloneNode(true);
+        ok(clone1, TEST+": deep copy ");
+        equals(clone1.childNodes.length, 1, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeType, text1.nodeType, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeName, text1.nodeName, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeValue, text1.nodeValue, TEST+": deep copy - childNodes");
+    }catch(e){
+        //Mozilla doesnt let you directly append a text node
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }finally{
+        attr2.nodeValue = text1.nodeValue;
+        clone1 = attr2.cloneNode(false);
+        ok(clone1, TEST+": shallow copy ");
+        equals(clone1.childNodes.length, 1, TEST+": shallow copy - childNodes");
+        
+        reset();
+        attr2.nodeValue = text1.nodeValue;
+        clone1 = attr2.cloneNode(true);
+        ok(clone1, TEST+": deep copy ");
+        equals(clone1.childNodes.length, 1, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeType, text1.nodeType, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeName, text1.nodeName, TEST+": deep copy - childNodes");
+        equals(clone1.childNodes[0].nodeValue, text1.nodeValue, TEST+": deep copy - childNodes");
+    }
+
+    reset();
+    TEST = "Attr : Node Method hasChildNodes()";
+    equals(attr1.hasChildNodes(), false, TEST);
+    try{
+        //Webkit,imho, adhere's most closely to the spirit of
+        //the node interface allowing you to use appendChild
+        attr1.appendChild(text1);
+        equals(attr1.hasChildNodes(), true, TEST);
+    }catch(e){
+        //Mozilla doesnt let you directly append a text node
+        equals(e.code, DOMException.HIERARCHY_REQUEST_ERR, TEST);
+    }finally{
+        //these approachs should work for both Webkit and Mozilla
+        equals(attr2.hasChildNodes(), false, TEST);
+        attr2.nodeValue = text2.nodeValue;
+        equals(attr2.hasChildNodes(), true, TEST);
+    }
+    
+    /************************
+     * ProcessingInstruction
+     ***********************/
+    reset();
+    
+    TEST = "ProcessingInstruction : Node readonly attribute nodeName";
+    equals(pi1.nodeName, "ghi", TEST);
+    pi1.nodeName = "lmnop";
+    equals(pi1.nodeName, "ghi", TEST);
+
+    TEST = "ProcessingInstruction : Node attribute nodeValue";
+    equals( pi1.nodeValue, "jkl=mno", TEST );
+    pi1.nodeValue = "lmn=op";
+    equals( pi1.nodeValue, "lmn=op", TEST );
+
+    TEST = "ProcessingInstruction : Node readonly attribute nodeType";
+    equals(pi1.nodeType, Node.PROCESSING_INSTRUCTION_NODE, TEST);
+    pi1.nodeType = "lmnop";
+    equals(pi1.nodeType, Node.PROCESSING_INSTRUCTION_NODE, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute parentNode";
+    equals(pi1.parentNode, null, TEST);
+    pi1.parentNode = "lmnop";
+    equals(pi1.parentNode, null, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute childNodes";
+    ok(pi1.childNodes instanceof(NodeList), TEST);
+    ok(pi1.childNodes.length === 0, TEST);
+    pi1.childNodes = "lmnop";
+    ok(pi1.childNodes instanceof(NodeList), TEST);
+    ok(pi1.childNodes.length === 0, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute firstChild";
+    equals(pi1.firstChild, null, TEST);
+    pi1.firstChild = "lmnop";
+    equals(pi1.firstChild, null, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute lastChild";
+    equals(pi1.lastChild, null, TEST);
+    pi1.lastChild = "lmnop";
+    equals(pi1.lastChild, null, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute previousSibling";
+    equals(pi1.previousSibling, null, TEST);
+    pi1.previousSibling = "lmnop";
+    equals(pi1.previousSibling, null, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute nextSibling";
+    equals(pi1.nextSibling, null, TEST);
+    pi1.nextSibling = "lmnop";
+    equals(pi1.nextSibling, null, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute attributes";
+    equals(pi1.attributes, null, TEST);
+    pi1.attributes = "lmnop";
+    equals(pi1.attributes, null, TEST);
+
+    TEST = "ProcessingInstruction : Node readonly attribute ownerDocument";
+    equals(pi1.ownerDocument, doc1, TEST);
+    pi1.ownerDocument = "lmnop";
+    equals(pi1.ownerDocument, doc1, TEST);
+      
+    /************************
+     * Comment
+     ***********************/
+    reset();
+    
+    TEST = "Comment : Node readonly attribute nodeName";
+    equals(comment1.nodeName, "#comment", TEST);
+    comment1.nodeName = "lmnop";
+    equals(comment1.nodeName, "#comment", TEST);
+
+    TEST = "Comment : Node attribute nodeValue";
+    equals( comment1.nodeValue, "this is a pig. oink, oink", TEST );
+    comment1.nodeValue = "this is a duck. quack, quack";
+    equals( comment1.nodeValue, "this is a duck. quack, quack", TEST );
+
+    TEST = "Comment : Node readonly attribute nodeType";
+    equals(comment1.nodeType, Node.COMMENT_NODE, TEST);
+    comment1.nodeType = "lmnop";
+    equals(comment1.nodeType, Node.COMMENT_NODE, TEST);
+
+    TEST = "Comment : Node readonly attribute parentNode";
+    equals(comment1.parentNode, null, TEST);
+    comment1.parentNode = "lmnop";
+    equals(comment1.parentNode, null, TEST);
+
+    TEST = "Comment : Node readonly attribute childNodes";
+    ok(comment1.childNodes instanceof(NodeList), TEST);
+    ok(comment1.childNodes.length === 0, TEST);
+    comment1.childNodes = "lmnop";
+    ok(comment1.childNodes instanceof(NodeList), TEST);
+    ok(comment1.childNodes.length === 0, TEST);
+
+    TEST = "Comment : Node readonly attribute firstChild";
+    equals(comment1.firstChild, null, TEST);
+    comment1.firstChild = "lmnop";
+    equals(comment1.firstChild, null, TEST);
+
+    TEST = "Comment : Node readonly attribute lastChild";
+    equals(comment1.lastChild, null, TEST);
+    comment1.lastChild = "lmnop";
+    equals(comment1.lastChild, null, TEST);
+
+    TEST = "Comment : Node readonly attribute previousSibling";
+    equals(comment1.previousSibling, null, TEST);
+    comment1.previousSibling = "lmnop";
+    equals(comment1.previousSibling, null, TEST);
+
+    TEST = "Comment : Node readonly attribute nextSibling";
+    equals(comment1.nextSibling, null, TEST);
+    comment1.nextSibling = "lmnop";
+    equals(comment1.nextSibling, null, TEST);
+
+    TEST = "Comment : Node readonly attribute attributes";
+    equals(comment1.attributes, null, TEST);
+    comment1.attributes = "lmnop";
+    equals(comment1.attributes, null, TEST);
+
+    TEST = "Comment : Node readonly attribute ownerDocument";
+    equals(comment1.ownerDocument, doc1, TEST);
+    comment1.ownerDocument = "lmnop";
+    equals(comment1.ownerDocument, doc1, TEST);
+    
+    /************************
+     * Text
+     ***********************/  
+    reset(); 
+    
+    TEST = "Text : Node readonly attribute nodeName";
+    equals(text1.nodeName, "#text", TEST);
+    text1.nodeName = "lmnop";
+    equals(text1.nodeName, "#text", TEST);
+
+    TEST = "Text : Node attribute nodeValue";
+    equals( text1.nodeValue, "abcdefghi", TEST );
+    text1.nodeValue = "jklmnopqrstuvwxyz";
+    equals( text1.nodeValue, "jklmnopqrstuvwxyz", TEST );
+
+    TEST = "Text : Node readonly attribute nodeType";
+    equals(text1.nodeType, Node.TEXT_NODE, TEST);
+    text1.nodeType = "lmnop";
+    equals(text1.nodeType, Node.TEXT_NODE, TEST);
+
+    TEST = "Text : Node readonly attribute parentNode";
+    equals(text1.parentNode, null, TEST);
+    text1.parentNode = "lmnop";
+    equals(text1.parentNode, null, TEST);
+
+    TEST = "Text : Node readonly attribute childNodes";
+    ok(text1.childNodes instanceof(NodeList), TEST);
+    ok(text1.childNodes.length === 0, TEST);
+    text1.childNodes = "lmnop";
+    ok(text1.childNodes instanceof(NodeList), TEST);
+    ok(text1.childNodes.length === 0, TEST);
+
+    TEST = "Text : Node readonly attribute firstChild";
+    equals(text1.firstChild, null, TEST);
+    text1.firstChild = "lmnop";
+    equals(text1.firstChild, null, TEST);
+
+    TEST = "Text : Node readonly attribute lastChild";
+    equals(text1.lastChild, null, TEST);
+    text1.lastChild = "lmnop";
+    equals(text1.lastChild, null, TEST);
+
+    TEST = "Text : Node readonly attribute previousSibling";
+    equals(text1.previousSibling, null, TEST);
+    text1.previousSibling = "lmnop";
+    equals(text1.previousSibling, null, TEST);
+
+    TEST = "Text : Node readonly attribute nextSibling";
+    equals(text1.nextSibling, null, TEST);
+    text1.nextSibling = "lmnop";
+    equals(text1.nextSibling, null, TEST);
+
+    TEST = "Text : Node readonly attribute attributes";
+    equals(text1.attributes, null, TEST);
+    text1.attributes = "lmnop";
+    equals(text1.attributes, null, TEST);
+
+    TEST = "Text : Node readonly attribute ownerDocument";
+    equals(text1.ownerDocument, doc1, TEST);
+    text1.ownerDocument = "lmnop";
+    equals(text1.ownerDocument, doc1, TEST);
+    
+    /************************
+     * CDATASection
+     ***********************/
+    reset();
+    
+    TEST = "CDATASection : Node readonly attribute nodeName";
+    equals(cdata1.nodeName, "#cdata-section", TEST);
+    cdata1.nodeName = "lmnop";
+    equals(cdata1.nodeName, "#cdata-section", TEST);
+
+    TEST = "CDATASection : Node attribute nodeValue";
+    equals( cdata1.nodeValue, "stuv", TEST );
+    cdata1.nodeValue = "wxyz";
+    equals( cdata1.nodeValue, "wxyz", TEST );
+
+    TEST = "CDATASection : Node readonly attribute nodeType";
+    equals(cdata1.nodeType, Node.CDATA_SECTION_NODE, TEST);
+    cdata1.nodeType = "lmnop";
+    equals(cdata1.nodeType, Node.CDATA_SECTION_NODE, TEST);
+
+    TEST = "CDATASection : Node readonly attribute parentNode";
+    equals(cdata1.parentNode, null, TEST);
+    cdata1.parentNode = "lmnop";
+    equals(cdata1.parentNode, null, TEST);
+
+    TEST = "CDATASection : Node readonly attribute childNodes";
+    ok(cdata1.childNodes instanceof(NodeList), TEST);
+    ok(cdata1.childNodes.length === 0, TEST);
+    cdata1.childNodes = "lmnop";
+    ok(cdata1.childNodes instanceof(NodeList), TEST);
+    ok(cdata1.childNodes.length === 0, TEST);
+
+    TEST = "CDATASection : Node readonly attribute firstChild";
+    equals(cdata1.firstChild, null, TEST);
+    cdata1.firstChild = "lmnop";
+    equals(cdata1.firstChild, null, TEST);
+
+    TEST = "CDATASection : Node readonly attribute lastChild";
+    equals(cdata1.lastChild, null, TEST);
+    cdata1.lastChild = "lmnop";
+    equals(cdata1.lastChild, null, TEST);
+
+    TEST = "CDATASection : Node readonly attribute previousSibling";
+    equals(cdata1.previousSibling, null, TEST);
+    cdata1.previousSibling = "lmnop";
+    equals(cdata1.previousSibling, null, TEST);
+
+    TEST = "CDATASection : Node readonly attribute nextSibling";
+    equals(cdata1.nextSibling, null, TEST);
+    cdata1.nextSibling = "lmnop";
+    equals(cdata1.nextSibling, null, TEST);
+
+    TEST = "CDATASection : Node readonly attribute attributes";
+    equals(cdata1.attributes, null, TEST);
+    cdata1.attributes = "lmnop";
+    equals(cdata1.attributes, null, TEST);
+
+    TEST = "CDATASection : Node readonly attribute ownerDocument";
+    equals(cdata1.ownerDocument, doc1, TEST);
+    cdata1.ownerDocument = "lmnop";
+    equals(cdata1.ownerDocument, doc1, TEST);
+    
+    /************************
+     * Entity
+     ***********************/
+    reset();
+    ok(true, "TODO:TEST DocumentType : Node Attributes");
+     
+    /************************
+     * Notation
+     ***********************/
+    reset();
+    ok(true, "TODO:TEST Notation : Node Attributes");
+     
+    var node,
+        doc = document.implementation.createDocument('', '', null),
+        keyboardish=''+
+        '`1234567890-='+
+        '\tqwertyuiop[]\\'+
+        'asdfghjkl;\'\n'+
+        'zxcvbnm,./'+
+        ' '+
+        '~!@#$%^&*()_+'+
+        '\tQWERTYUIOP{}|'+
+        'ASDFGHJKL:"\n'+
+        'ZXCVBNM<>?'+
+        ' ';
+        
+
+//Attributes
+
+    
+
+//Methods
+    
+    //TODO: childNodes
+   
+    //TODO: firstChild
+   
+    //TODO: lastChild
+   
+    //TODO: nextSibling
+   
+    //TODO: nodeName
+   
+    //TODO: nodeType
+   
+    //TODO: nodeValue
+   
+    //TODO: ownerDocument
+   
+    //TODO: parentNode
+   
+    //TODO: previousSibling
+   
+    //TODO: appendChild
+   
+    //TODO: cloneNode
+   
+    //TODO: hasChildNodes
+   
+    //TODO: insertBefore
+   
+    //TODO: removeChild
+   
+    //TODO: replaceChild
    
 });
-/******************************************************************************
-Interface NodeList
+/******************************************************************************           
+1.2.6. Interface NodeList
 
     The NodeList interface provides the abstraction of an ordered collection of
     nodes, without defining or constraining how this collection is implemented. 
@@ -1833,22 +3563,12 @@ Interface NodeList
         };
 
 
-******************************************************************************/
-test('TODO: NodeList.prototype', function(){
-   
-});
-/******************************************************************************
     Attributes
 
         length of type unsigned long, readonly
             The number of nodes in the list. The range of valid child node 
             indices is 0 to length-1 inclusive.
 
-******************************************************************************/
-test('TODO: NodeList.prototype.length', function(){
-   
-});
-/******************************************************************************
     Methods
 
         item
@@ -1864,18 +3584,25 @@ test('TODO: NodeList.prototype.length', function(){
             Return Value
 
             Node
-            		
+                    
 
             The node at the indexth position in the NodeList, or null if that 
             is not a valid index.
             
             No Exceptions
+
 ******************************************************************************/
-test('TODO: NodeList.prototype.item', function(){
-   
+test('1.2.6. Interface NodeList', function(){
+//IDL Definition
+    ok(NodeList.prototype.item, "NodeList.prototype.item");
+
+//Attributes
+
+//Methods
+//item
 });
 /******************************************************************************
-Interface NamedNodeMap
+1.2.7. Interface NamedNodeMap
 
     Objects implementing the NamedNodeMap interface are used to represent 
     collections of nodes that can be accessed by name. Note that NamedNodeMap 
@@ -1899,22 +3626,13 @@ Interface NamedNodeMap
         };
 
         NamedNodeMap objects in the DOM are live. 
-******************************************************************************/
-test('TODO: NamedNodeMap.prototype', function(){
-   
-});
-/******************************************************************************
+        
     Attributes
 
         length of type unsigned long, readonly
             The number of nodes in this map. The range of valid child node 
             indices is 0 to length-1 inclusive.
 
-******************************************************************************/
-test('TODO: NamedNodeMap.prototype.length', function(){
-   
-});
-/******************************************************************************
     Methods
 
         getNamedItem
@@ -1927,18 +3645,13 @@ test('TODO: NamedNodeMap.prototype.length', function(){
             Return Value
 
             Node
-            		
+                    
 
             A Node (of any type) with the specified nodeName, or null if it 
             does not identify any node in this map.
             
             No Exceptions
 
-******************************************************************************/
-test('TODO: NamedNodeMap.prototype.getNamedItem', function(){
-   
-});
-/******************************************************************************
         item
             Returns the indexth item in the map. If index is greater than or 
             equal to the number of nodes in this map, this returns null.
@@ -1951,18 +3664,14 @@ test('TODO: NamedNodeMap.prototype.getNamedItem', function(){
             Return Value
 
             Node
-            		
+                    
 
             The node at the indexth position in the map, or null if that is not
             a valid index.
             
             No Exceptions
 
-******************************************************************************/
-test('TODO: NamedNodeMap.prototype.item', function(){
-   
-});
-/******************************************************************************
+
         removeNamedItem
             Removes a node specified by name. When this map contains the 
             attributes attached to an element, if the removed attribute is 
@@ -1977,23 +3686,18 @@ test('TODO: NamedNodeMap.prototype.item', function(){
             Return Value
 
             Node
-            		
+                    
 
             The node removed from this map if a node with such a name exists.
             Exceptions
 
             DOMException
-            		
+                    
 
             NOT_FOUND_ERR: Raised if there is no node named name in this map.
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this map is readonly.
 
-******************************************************************************/
-test('TODO: NamedNodeMap.prototype.removeNamedItem', function(){
-   
-});
-/******************************************************************************
         setNamedItem
             Adds a node using its nodeName attribute. If a node with that name 
             is already present in this map, it is replaced by the new one.
@@ -2012,7 +3716,7 @@ test('TODO: NamedNodeMap.prototype.removeNamedItem', function(){
             Return Value
 
             Node
-            		
+                    
 
             If the new Node replaces an existing node the replaced Node is 
             returned, otherwise null is returned.
@@ -2020,7 +3724,7 @@ test('TODO: NamedNodeMap.prototype.removeNamedItem', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             WRONG_DOCUMENT_ERR: Raised if arg was created from a different 
             document than the one that created this map.
@@ -2030,12 +3734,43 @@ test('TODO: NamedNodeMap.prototype.removeNamedItem', function(){
             INUSE_ATTRIBUTE_ERR: Raised if arg is an Attr that is already an 
             attribute of another Element object. The DOM user must explicitly 
             clone Attr nodes to re-use them in other elements.
+
 ******************************************************************************/
-test('TODO: NamedNodeMap.prototype.setNamedItem', function(){
-   
+test('1.2.7. Interface NamedNodeMap', function(){
+//TODO: IDL Definition
+    
+//TODO: Attributes
+    //length
+
+//TODO: Methods
+    //getNamedItem
+    
+    //item
+    
+    //removeNamedItem
+
+    //setNamedItem
+    //TODO: move to NamedNodeMap test and/or Element
+    var element;
+
+    doc = document.implementation.createDocument('', '', null);
+    element = doc.createElement('envjs');
+    equals(element.attributes.length, 0, '.attributes.length');
+
+    element.setAttribute('animal', 'pig');
+    //console.log('dom-spec setAttribute done');
+    equals(element.attributes.length, 1, '.attributes.length');
+    //console.log('dom-spec attributes.length');
+    equals(element.attributes.animal.value, 'pig', 
+    'element.attributes.animal');
+    //console.log('dom-spec attributes.getNamedItem');
+    equals(element.attributes.getNamedItem('animal').value, 'pig', 
+    'element.attributes.getNamedItem');
+
 });
 /******************************************************************************
-Interface CharacterData
+
+1.2.8. Interface CharacterData
 
     The CharacterData interface extends Node with a set of attributes and 
     methods for accessing character data in the DOM. For clarity this set is 
@@ -2075,11 +3810,6 @@ Interface CharacterData
                                                 raises(DOMException);
         };
 
-******************************************************************************/
-test('TODO: CharacterData.prototype', function(){
-   
-});
-/******************************************************************************
 
     Attributes
 
@@ -2095,31 +3825,21 @@ test('TODO: CharacterData.prototype', function(){
             Exceptions on setting
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised when the node is readonly.
             Exceptions on retrieval
 
             DOMException
-            		
+                    
 
             DOMSTRING_SIZE_ERR: Raised when it would return more characters 
             than fit in a DOMString variable on the implementation platform.
-******************************************************************************/
-test('TODO: CharacterData.prototype.data', function(){
-   
-});
-/******************************************************************************
+            
         length of type unsigned long, readonly
             The number of 16-bit units that are available through data and the 
             substringData method below. This may have the value zero, i.e., 
             CharacterData nodes may be empty.
-
-******************************************************************************/
-test('TODO: CharacterData.prototype.length', function(){
-   
-});
-/******************************************************************************
 
     Methods
 
@@ -2136,15 +3856,10 @@ test('TODO: CharacterData.prototype.length', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
             No Return Value
-******************************************************************************/
-test('TODO: CharacterData.prototype.appendData', function(){
-   
-});
-/******************************************************************************
 
         deleteData
             Remove a range of 16-bit units from the node. Upon success, data 
@@ -2163,7 +3878,7 @@ test('TODO: CharacterData.prototype.appendData', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             INDEX_SIZE_ERR: Raised if the specified offset is negative or 
             greater than the number of 16-bit units in data, or if the 
@@ -2171,11 +3886,6 @@ test('TODO: CharacterData.prototype.appendData', function(){
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
             No Return Value
-******************************************************************************/
-test('TODO: CharacterData.prototype.deleteData', function(){
-   
-});
-/******************************************************************************
 
         insertData
             Insert a string at the specified 16-bit unit offset.
@@ -2190,18 +3900,13 @@ test('TODO: CharacterData.prototype.deleteData', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             INDEX_SIZE_ERR: Raised if the specified offset is negative or 
             greater than the number of 16-bit units in data.
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
             No Return Value
-******************************************************************************/
-test('TODO: CharacterData.prototype.insertData', function(){
-   
-});
-/******************************************************************************
 
         replaceData
             Replace the characters starting at the specified 16-bit unit offset
@@ -2225,7 +3930,7 @@ test('TODO: CharacterData.prototype.insertData', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             INDEX_SIZE_ERR: Raised if the specified offset is negative or 
             greater than the number of 16-bit units in data, or if the 
@@ -2233,11 +3938,6 @@ test('TODO: CharacterData.prototype.insertData', function(){
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
             No Return Value
-******************************************************************************/
-test('TODO: CharacterData.prototype.replaceData', function(){
-   
-});
-/******************************************************************************
 
         substringData
             Extracts a range of data from the node.
@@ -2252,7 +3952,7 @@ test('TODO: CharacterData.prototype.replaceData', function(){
             Return Value
 
             DOMString
-            		
+                    
 
             The specified substring. If the sum of offset and count exceeds the
             length, then all 16-bit units to the end of the data are returned.
@@ -2260,7 +3960,7 @@ test('TODO: CharacterData.prototype.replaceData', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             INDEX_SIZE_ERR: Raised if the specified offset is negative or 
             greater than the number of 16-bit units in data, or if the 
@@ -2269,11 +3969,25 @@ test('TODO: CharacterData.prototype.replaceData', function(){
             DOMSTRING_SIZE_ERR: Raised if the specified range of text does not 
             fit into a DOMString.
 ******************************************************************************/
-test('TODO: CharacterData.prototype.substringData', function(){
+test('1.2.8. Interface CharacterData', function(){
+//TODO: IDL Definition
+    //CharacterData.prototype
+        
+//TODO: Attributes
+    //CharacterData.prototype.data
+    //CharacterData.prototype.length
+    
+//TODO: Methods
+    //CharacterData.prototype.appendData
+    //CharacterData.prototype.deleteData
+    //CharacterData.prototype.insertData
+    //CharacterData.prototype.replaceData
+    //CharacterData.prototype.substringData
+    
    
 });
 /******************************************************************************
-Interface Attr
+1.2.9. Interface Attr
 
     The Attr interface represents an attribute in an Element object. Typically 
     the allowable values for the attribute are defined in a document type 
@@ -2320,21 +4034,12 @@ Interface Attr
 
         };
 
-******************************************************************************/
-test('TODO: Attr.prototype', function(){
-   
-});
-/******************************************************************************
 
     Attributes
 
         name of type DOMString, readonly
             Returns the name of this attribute.
-******************************************************************************/
-test('TODO: Attr.prototype.name', function(){
-   
-});
-/******************************************************************************
+            
         specified of type boolean, readonly
             If this attribute was explicitly given a value in the original 
             document, this is true; otherwise, it is false. Note that the 
@@ -2359,11 +4064,7 @@ test('TODO: Attr.prototype.name', function(){
                 * If the attribute is not associated to any element (i.e. 
                   because it was just created or was obtained from some removal
                   or cloning operation) specified is true.
-******************************************************************************/
-test('TODO: Attr.prototype.specified', function(){
-   
-});
-/******************************************************************************
+                  
         value of type DOMString, modified in DOM Level 1
             On retrieval, the value of the attribute is returned as a string. 
             Character and general entity references are replaced with their 
@@ -2379,12 +4080,46 @@ test('TODO: Attr.prototype.specified', function(){
             DOMException
 
             NO_MODIFICATION_ALLOWED_ERR: Raised when the node is readonly.
+
 ******************************************************************************/
-test('TODO: Attr.prototype.value', function(){
+test('1.2.9. Interface Attr', function(){
+//Attr.prototype
+//Attr.prototype.name
+//Attr.prototype.specified
+//Attr.prototype.value
+//TODO: IDL Definition
+
+    var doc = document.implementation.createDocument('','',null);
+    var attribute = doc.createAttribute('envjs');
+        
+//TODO: Attributes
+    ok(attribute, 'attribute created');
+    ok(attribute instanceof(Attr), 'instanceof Attr');
+    equals(attribute.attributes, null, '.attributes');
+    equals(attribute.name, 'envjs', '.name');
+    equals(attribute.value, '', '.value');
+    
+    equals(attribute.specified, true, '.specified');
+    equals(attribute.ownerElement, null, '.ownerElement');
+    equals(attribute.childNodes.length, 0, '.childNodes');
+    equals(attribute.localName, 'envjs', '.localName');
+    equals(attribute.namespaceURI, null, '.namespaceURI');
+    equals(attribute.nodeName, 'envjs', '.nodeName');
+    equals(attribute.nodeType, Node.ATTRIBUTE_NODE, 'nodeType');
+    equals(attribute.ownerDocument, doc, '.ownerDocument');
+    equals(attribute.parentNode, null, '.parentNode');
+    equals(attribute.prefix, null, '.prefix');
+    ok(attribute.value = 'abc123', 'set value');
+    equals(attribute.value, 'abc123', '.value');
+    equals(attribute.name, 'envjs', '.name');
+    
+//TODO: Methods    
+    equals(attribute.toString(), '[object Attr]', '.toString');
    
 });
 /******************************************************************************
-Interface Element
+
+1.2.10. Interface Element
 
     The Element interface represents an element in an HTML or XML document. 
     Elements may have attributes associated with them; since the Element 
@@ -2418,12 +4153,6 @@ Interface Element
           void               normalize();
         };
 
-******************************************************************************/
-test('TODO: Element.prototype', function(){
-   
-});
-/******************************************************************************
-
     Attributes
 
         tagName of type DOMString, readonly
@@ -2438,12 +4167,6 @@ test('TODO: Element.prototype', function(){
             HTML DOM returns the tagName of an HTML element in the canonical 
             uppercase form, regardless of the case in the source HTML document.
 
-******************************************************************************/
-test('TODO: Element.prototype.tagName', function(){
-   
-});
-/******************************************************************************
-
     Methods
 
         getAttribute
@@ -2456,18 +4179,12 @@ test('TODO: Element.prototype.tagName', function(){
             Return Value
 
             DOMString
-            		
+                    
 
             The Attr value as a string, or the empty string if that attribute 
             does not have a specified or default value.
             
             No Exceptions
-
-******************************************************************************/
-test('TODO: Element.prototype.getAttribute', function(){
-   
-});
-/******************************************************************************
 
         getAttributeNode
             Retrieves an Attr node by name.
@@ -2479,17 +4196,12 @@ test('TODO: Element.prototype.getAttribute', function(){
             Return Value
 
             Attr
-            		
+                    
 
             The Attr node with the specified attribute name or null if there is
             no such attribute.
             
             No Exceptions
-******************************************************************************/
-test('TODO: Element.prototype.getAttributeNode', function(){
-   
-});
-/******************************************************************************
 
         getElementsByTagName
             Returns a NodeList of all descendant Elements with a given tag 
@@ -2505,15 +4217,10 @@ test('TODO: Element.prototype.getAttributeNode', function(){
             Return Value
 
             NodeList
-            		
+                    
 
             A list of matching Element nodes.
             No Exceptions
-******************************************************************************/
-test('TODO: Element.prototype.getElementsByTagName', function(){
-   
-});
-/******************************************************************************
 
         normalize
             Puts all Text nodes in the full depth of the sub-tree underneath 
@@ -2533,11 +4240,6 @@ test('TODO: Element.prototype.getElementsByTagName', function(){
             No Parameters
             No Return Value
             No Exceptions
-******************************************************************************/
-test('TODO: Element.prototype.normalize', function(){
-   
-});
-/******************************************************************************
 
         removeAttribute
             Removes an attribute by name. If the removed attribute is known to 
@@ -2552,16 +4254,11 @@ test('TODO: Element.prototype.normalize', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
             No Return Value
 
-******************************************************************************/
-test('TODO: Element.prototype.removeAttribute', function(){
-   
-});
-/******************************************************************************
         removeAttributeNode
             Removes the specified attribute. If the removed Attr has a default 
             value it is immediately replaced.
@@ -2574,23 +4271,18 @@ test('TODO: Element.prototype.removeAttribute', function(){
             Return Value
 
             Attr
-            		
+                    
 
             The Attr node that was removed.
             Exceptions
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
 
             NOT_FOUND_ERR: Raised if oldAttr is not an attribute of the element.
 
-******************************************************************************/
-test('TODO: Element.prototype.removeAttributeNode', function(){
-   
-});
-/******************************************************************************
         setAttribute
             Adds a new attribute. If an attribute with that name is already 
             present in the element, its value is changed to be that of the 
@@ -2614,7 +4306,7 @@ test('TODO: Element.prototype.removeAttributeNode', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             INVALID_CHARACTER_ERR: Raised if the specified name contains an 
             illegal character.
@@ -2622,11 +4314,6 @@ test('TODO: Element.prototype.removeAttributeNode', function(){
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
             No Return Value
 
-******************************************************************************/
-test('TODO: Element.prototype.setAttribute', function(){
-   
-});
-/******************************************************************************
         setAttributeNode
             Adds a new attribute node. If an attribute with that name is 
             already present in the element, it is replaced by the new one.
@@ -2639,7 +4326,7 @@ test('TODO: Element.prototype.setAttribute', function(){
             Return Value
 
             Attr
-            		
+                    
 
             If the newAttr attribute replaces an existing attribute, the 
             replaced Attr node is returned, otherwise null is returned.
@@ -2647,7 +4334,7 @@ test('TODO: Element.prototype.setAttribute', function(){
             Exceptions
 
             DOMException
-            		
+                    
 
             WRONG_DOCUMENT_ERR: Raised if newAttr was created from a different 
             document than the one that created the element.
@@ -2657,12 +4344,46 @@ test('TODO: Element.prototype.setAttribute', function(){
             INUSE_ATTRIBUTE_ERR: Raised if newAttr is already an attribute of 
             another Element object. The DOM user must explicitly clone Attr 
             nodes to re-use them in other elements.
+            
 ******************************************************************************/
-test('TODO: Element.prototype.setAttributeNode', function(){
+test('1.2.10. Interface Element', function(){
+//TODO: IDL Definition
+        
+    var doc = document.implementation.createDocument('','',null);
+    var element = doc.createElement('envjs');
+    
+//TODO: Attributes
+    
+//TODO: Methods
+
+    ok(element, 'element created');
+    equals(element.attributes.length, 0, '.attributes.length');
+    equals(element.tagName, 'envjs', '.name');
+    equals(element.childNodes.length, 0, '.childNodes');
+    equals(element.localName, 'envjs', '.localName');
+    equals(element.namespaceURI, null, '.namespaceURI');
+    equals(element.nodeName, 'envjs', '.nodeName');
+    equals(element.nodeType, Node.ELEMENT_NODE, 'nodeType');
+    equals(element.ownerDocument, doc, '.ownerDocument');
+    equals(element.parentNode, null, '.parentNode');
+    equals(element.prefix, null, '.prefix');
+    equals(element.toString(), '[object Element]', '.toString');
+    
+//Element.prototype
+//Element.prototype.tagName
+//Element.prototype.getAttribute
+//Element.prototype.getAttributeNode
+//Element.prototype.getElementsByTagName
+//Element.prototype.normalize
+//Element.prototype.removeAttribute
+//Element.prototype.removeAttributeNode
+//Element.prototype.setAttribute
+//Element.prototype.setAttributeNode   
    
 });
 /******************************************************************************
-Interface Text
+
+1.2.11. Interface Text
 
     The Text interface inherits from CharacterData and represents the textual 
     content (termed character data in XML) of an Element or Attr. If there is 
@@ -2688,11 +4409,6 @@ Interface Text
                                                 raises(DOMException);
         };
 
-******************************************************************************/
-test('TODO: Text.prototype', function(){
-   
-});
-/******************************************************************************
 
     Methods
 
@@ -2712,24 +4428,64 @@ test('TODO: Text.prototype', function(){
             Return Value
 
             Text
-            		
+                    
 
             The new node, of the same type as this node.
             Exceptions
 
             DOMException
-            		
+                    
 
             INDEX_SIZE_ERR: Raised if the specified offset is negative or 
             greater than the number of 16-bit units in data.
 
             NO_MODIFICATION_ALLOWED_ERR: Raised if this node is readonly.
+
 ******************************************************************************/
-test('TODO: Text.prototype.splitText', function(){
-   
+test('1.2.11. Interface Text', function(){
+//TODO: IDL Definition
+        
+//TODO: Attributes
+    
+//TODO: Methods
+
+    var doc = document.implementation.createDocument('', '', null),
+        keyboardish=''+
+        '`1234567890-='+
+        '\tqwertyuiop[]\\'+
+        'asdfghjkl;\'\n'+
+        'zxcvbnm,./'+
+        ' '+
+        '~!@#$%^&*()_+'+
+        '\tQWERTYUIOP{}|'+
+        'ASDFGHJKL:"\n'+
+        'ZXCVBNM<>?'+
+        ' ';
+        
+    var text = doc.createTextNode(keyboardish);
+    ok(text, 'text node was created');
+    equals(text.attributes, null, '.attributes');
+    equals(text.baseURI, 'about:blank', '.baseURI');
+    equals(text.childNodes.length, 0, '.childNodes');
+    equals(text.data, keyboardish, '.data');
+    equals(text.length, 100, '.length');
+    equals(text.localName, null, '.localName');
+    equals(text.namespaceURI, null, '.namespaceURI');
+    equals(text.nodeName, '#text', '.nodeName');
+    equals(text.nodeType, Node.TEXT_NODE, 'nodeType');
+    equals(text.nodeValue, keyboardish, '.nodeValue');
+    equals(text.ownerDocument, doc, '.ownerDocument');
+    equals(text.parentNode, null, '.parentNode');
+    equals(text.prefix, null, '.prefix');
+    equals(text.textContent, keyboardish, '.textContent');
+    
+//TODO: Text.prototype
+//TODO: Text.prototype.splitText
+
 });
 /******************************************************************************
-Interface Comment
+
+1.2.12. Interface Comment
 
     This interface inherits from CharacterData and represents the content of a 
     comment, i.e., all the characters between the starting 
@@ -2742,11 +4498,75 @@ Interface Comment
 
         interface Comment : CharacterData {
         };
+        
 ******************************************************************************/
-test('TODO: Comment.prototype', function(){
+test('1.2.12. Interface Comment', function(){
+//TODO: IDL Definition
+        
+//TODO: Attributes
+    
+//TODO: Methods
+
+    var doc = document.implementation.createDocument('', '', null),
+        keyboardish=''+
+        '`1234567890-='+
+        '\tqwertyuiop[]\\'+
+        'asdfghjkl;\'\n'+
+        'zxcvbnm,./'+
+        ' '+
+        '~!@#$%^&*()_+'+
+        '\tQWERTYUIOP{}|'+
+        'ASDFGHJKL:"\n'+
+        'ZXCVBNM<>?'+
+        ' ';
    
+   var comment = doc.createComment(keyboardish);
+   ok(comment, 'node was created');
+   equals(comment.attributes, null, '.attributes');
+   equals(comment.baseURI, 'about:blank', '.baseURI');
+   equals(comment.childNodes.length, 0, '.childNodes');
+   equals(comment.data, keyboardish, '.data');
+   equals(comment.length, 100, '.length');
+   equals(comment.localName, null, '.localName');
+   equals(comment.namespaceURI, null, '.namespaceURI');
+   equals(comment.nodeName, '#comment', '.nodeName');
+   equals(comment.nodeType, Node.COMMENT_NODE, 'nodeType');
+   equals(comment.nodeValue, keyboardish, '.nodeValue');
+   equals(comment.ownerDocument, doc, '.ownerDocument');
+   equals(comment.parentNode, null, '.parentNode');
+   equals(comment.prefix, null, '.prefix');
+   equals(comment.textContent, keyboardish, '.textContent');
+
+   comment = doc.createComment("This is a pig, 'oink, oink'");
+
+   ok(comment, 'comment');
+   equals(comment.data, "This is a pig, 'oink, oink'", '.data');
+   equals(comment.length, 27, '.length');
+   ok(comment.appendData,  '.appendData');
+   ok(comment.deleteData,  '.deleteData');
+   ok(comment.insertData,  '.insertData');
+   ok(comment.replaceData,  '.replaceData');
+   ok(comment.substringData,  '.substringData');
+   equals(comment.attributes, null, '.attributes');
+   equals(comment.baseURI, 'about:blank', '.baseURI');
+   ok(comment.childNodes,  '.childNodes');
+   equals(comment.childNodes.length, 0, '.childNodes.length');
+   equals(comment.firstChild, null, '.firstChild');
+   equals(comment.lastChild, null, '.lastChild');
+   equals(comment.localName, null, '.localName');
+   equals(comment.namespaceURI, null, '.namespaceURI');
+   equals(comment.nextSibling, null, '.nextSibling');
+   equals(comment.nodeName, '#comment', '.nodeName');
+   equals(comment.nodeType, 8, '.nodeType');
+   equals(comment.nodeValue, "This is a pig, 'oink, oink'", '.nodeValue');
+   equals(comment.ownerDocument, doc, '.ownerDocument');
+   equals(comment.parentNode, null, '.parentNode');
+   equals(comment.prefix, null, '.prefix');
+   equals(comment.previousSibling, null, '.previousSibling');
+   equals(comment.textContent, "This is a pig, 'oink, oink'", '.textContent');
 });
 /******************************************************************************
+
 1.3. Extended Interfaces
 
 The interfaces defined here form part of the DOM Level 1 Core specification, 
@@ -2759,9 +4579,12 @@ interface to determine whether they are supported or not. The feature string
 for all the interfaces listed in this section is "XML" and the version is 
 "1.0".
 ******************************************************************************/
-
+test('1.3. Extended Interfaces', function(){
+    ok(document.implementation.hasFeature("XML","1.0"), 'Extended Interfaces Supported')
+});
 /******************************************************************************
-Interface CDATASection
+
+1.3.1. Interface CDATASection
 
     CDATA sections are used to escape blocks of text containing characters 
     that would otherwise be regarded as markup. The only delimiter that is 
@@ -2800,12 +4623,48 @@ Interface CDATASection
 
         interface CDATASection : Text {
         };
+
 ******************************************************************************/
-test('TODO: CDATASection.prototype', function(){
-   
+test('1.3.1. Interface CDATASection', function(){
+//TODO: IDL Definition
+
+//TODO: Attributes
+
+//TODO: Methods
+    var doc = document.implementation.createDocument('', '', null),
+        keyboardish=''+
+        '`1234567890-='+
+        '\tqwertyuiop[]\\'+
+        'asdfghjkl;\'\n'+
+        'zxcvbnm,./'+
+        ' '+
+        '~!@#$%^&*()_+'+
+        '\tQWERTYUIOP{}|'+
+        'ASDFGHJKL:"\n'+
+        'ZXCVBNM<>?'+
+        ' ';
+        
+    var cdata = doc.createCDATASection(keyboardish);
+    ok(cdata, 'node was created');
+    equals(cdata.attributes, null, '.attributes');
+    equals(cdata.baseURI, 'about:blank', '.baseURI');
+    equals(cdata.childNodes.length, 0, '.childNodes');
+    equals(cdata.data, keyboardish, '.data');
+    equals(cdata.length, 100, '.length');
+    equals(cdata.localName, null, '.localName');
+    equals(cdata.namespaceURI, null, '.namespaceURI');
+    equals(cdata.nodeName, '#cdata-section', '.nodeName');
+    equals(cdata.nodeType, Node.CDATA_SECTION_NODE, 'nodeType');
+    equals(cdata.nodeValue, keyboardish, '.nodeValue');
+    equals(cdata.ownerDocument, doc, '.ownerDocument');
+    equals(cdata.parentNode, null, '.parentNode');
+    equals(cdata.prefix, null, '.prefix');
+    equals(cdata.textContent, keyboardish, '.textContent');
+        
 });
 /******************************************************************************
-Interface DocumentType
+
+1.3.2. Interface DocumentType
 
     Each Document has a doctype attribute whose value is either null or a 
     DocumentType object. The DocumentType interface in the DOM Level 1 Core 
@@ -2824,11 +4683,7 @@ Interface DocumentType
           readonly attribute NamedNodeMap     entities;
           readonly attribute NamedNodeMap     notations;
         };
-******************************************************************************/
-test('TODO: DocumentType.prototype', function(){
-   
-});
-/******************************************************************************
+        
 
     Attributes
 
@@ -2852,20 +4707,10 @@ test('TODO: DocumentType.prototype', function(){
             The DOM Level 1 does not support editing entities, therefore 
             entities cannot be altered in any way.
 
-******************************************************************************/
-test('TODO: DocumentType.prototype.entities', function(){
-   
-});
-/******************************************************************************
         name of type DOMString, readonly
             The name of DTD; i.e., the name immediately following the DOCTYPE 
             keyword.
 
-******************************************************************************/
-test('TODO: DocumentType.prototype.name', function(){
-   
-});
-/******************************************************************************
         notations of type NamedNodeMap, readonly
             A NamedNodeMap containing the notations declared in the DTD. 
             Duplicates are discarded. Every node in this map also implements 
@@ -2874,11 +4719,17 @@ test('TODO: DocumentType.prototype.name', function(){
             The DOM Level 1 does not support editing notations, therefore 
             notations cannot be altered in any way.
 ******************************************************************************/
-test('TODO: DocumentType.prototype.notations', function(){
-   
+test('1.3.2. Interface DocumentType', function(){
+//TODO: IDL Definition
+
+//TODO: Attributes
+
+//TODO: Methods
+
 });
 /******************************************************************************
-Interface Notation
+
+1.3.3. Interface Notation
 
     This interface represents a notation declared in the DTD. A notation either
     declares, by name, the format of an unparsed entity (see section 4.7 of the
@@ -2899,31 +4750,29 @@ Interface Notation
           readonly attribute DOMString        publicId;
           readonly attribute DOMString        systemId;
         };
-******************************************************************************/
-test('TODO: Notation.prototype', function(){
-   
-});
-/******************************************************************************
 
     Attributes
 
         publicId of type DOMString, readonly
             The public identifier of this notation. If the public identifier 
             was not specified, this is null.
-******************************************************************************/
-test('TODO: Notation.prototype.publicId', function(){
-   
-});
-/******************************************************************************
+            
         systemId of type DOMString, readonly
             The system identifier of this notation. If the system identifier 
             was not specified, this is null.
+            
 ******************************************************************************/
-test('TODO: Notation.prototype.systemId', function(){
-   
+test('1.3.3. Interface Notation', function(){
+//TODO: IDL Definition
+
+//TODO: Attributes
+
+//TODO: Methods
+
 });
 /******************************************************************************
-Interface Entity
+
+1.3.4. Interface Entity
 
     This interface represents an entity, either parsed or unparsed, in an XML 
     document. Note that this models the entity itself not the entity 
@@ -2966,11 +4815,6 @@ Interface Entity
           readonly attribute DOMString        systemId;
           readonly attribute DOMString        notationName;
         };
-******************************************************************************/
-test('TODO: Entity.prototype', function(){
-   
-});
-/******************************************************************************
 
     Attributes
 
@@ -2978,29 +4822,26 @@ test('TODO: Entity.prototype', function(){
             For unparsed entities, the name of the notation for the entity. 
             For parsed entities, this is null.
 
-******************************************************************************/
-test('TODO: Entity.prototype.notationName', function(){
-   
-});
-/******************************************************************************
         publicId of type DOMString, readonly
             The public identifier associated with the entity, if specified. 
             If the public identifier was not specified, this is null.
 
-******************************************************************************/
-test('TODO: Entity.prototype.publicId', function(){
-   
-});
-/******************************************************************************
         systemId of type DOMString, readonly
             The system identifier associated with the entity, if specified. 
             If the system identifier was not specified, this is null.
+            
 ******************************************************************************/
-test('TODO: Entity.prototype.systemId', function(){
-   
+test('1.3.4. Interface Entity', function(){
+//TODO: IDL Definition
+
+//TODO: Attributes
+
+//TODO: Methods
+
 });
 /******************************************************************************
-Interface EntityReference
+
+1.3.5. Interface EntityReference
 
     EntityReference objects may be inserted into the structure model when an 
     entity reference is in the source document, or when the user wishes to 
@@ -3028,12 +4869,19 @@ Interface EntityReference
 
         interface EntityReference : Node {
         };
+        
 ******************************************************************************/
-test('TODO: EntityReference.prototype', function(){
-   
+test('1.3.5. Interface EntityReference', function(){
+//TODO: IDL Definition
+
+//TODO: Attributes
+
+//TODO: Methods
+
 });
 /******************************************************************************
-Interface ProcessingInstruction
+
+1.3.6. Interface ProcessingInstruction
 
     The ProcessingInstruction interface represents a "processing instruction", 
     used in XML as a way to keep processor-specific information in the text of 
@@ -3049,12 +4897,6 @@ Interface ProcessingInstruction
 
         };
 
-
-******************************************************************************/
-test('TODO: ProcessingInstruction.prototype', function(){
-   
-});
-/******************************************************************************
     Attributes
 
         data of type DOMString
@@ -3065,15 +4907,10 @@ test('TODO: ProcessingInstruction.prototype', function(){
             Exceptions on setting
 
             DOMException
-            		
+                    
 
             NO_MODIFICATION_ALLOWED_ERR: Raised when the node is readonly.
 
-******************************************************************************/
-test('TODO: ProcessingInstruction.prototype.data', function(){
-   
-});
-/******************************************************************************
         target of type DOMString, readonly
             The target of this processing instruction. XML defines this as 
             being the first token following the markup that begins the 
@@ -3081,8 +4918,16 @@ test('TODO: ProcessingInstruction.prototype.data', function(){
             
 
 ******************************************************************************/
-test('ProcessingInstruction.prototype.target', function(){
-     var doc,
+
+
+test('1.3.6. Interface ProcessingInstruction', function(){
+//TODO: IDL Definition
+    //ProcessingInstruction.prototype
+    
+//TODO: Attributes
+    //ProcessingInstruction.prototype.data
+    //ProcessingInstruction.prototype.target
+    var doc,
         data,
         root,
         target,
@@ -3094,7 +4939,7 @@ test('ProcessingInstruction.prototype.target', function(){
     pi = doc.createProcessingInstruction(target, data);
     equals(pi.target, 'foo', 'processinginstruction.target');
     equals(pi.data, 'bar="pooh"', 'processinginstruction.data');
-    
+
     target = 'this-is-a-pig'
     data = 'sounds-like="oink, oink"';
     doc = document.implementation.createDocument('', '', null);
@@ -3104,7 +4949,7 @@ test('ProcessingInstruction.prototype.target', function(){
     pi.data = 'sounds-like="oh,oh,ah,ah"';
     ok(true, "processinginstruction.data changed before part of the document");
     equals(pi.data, 'sounds-like="oh,oh,ah,ah"', "data value updated");
-    
+
     root = doc.createElement('root');
     doc.appendChild(root);
     root.appendChild(pi);
@@ -3117,732 +4962,25 @@ test('ProcessingInstruction.prototype.target', function(){
             'Modification in document was not allowed.');
     }*/
 
+    
+    //seriously i never use pi's--is there a better example
+    var target = 'foo', 
+        data = 'bar="pooh"',
+        pi = doc.createProcessingInstruction(target, data);
+    ok(pi, 'node was created');
+    equals(pi.attributes, null, '.attributes');
+    equals(pi.baseURI, 'about:blank', '.baseURI');
+    equals(pi.childNodes.length, 0, '.childNodes');
+    equals(pi.data, data, '.data');
+    equals(pi.localName, null, '.localName');
+    equals(pi.namespaceURI, null, '.namespaceURI');
+    equals(pi.nodeName, target, '.nodeName');
+    equals(pi.nodeType, Node.PROCESSING_INSTRUCTION_NODE, 'nodeType');
+    equals(pi.nodeValue, data, '.nodeValue');
+    equals(pi.ownerDocument, doc, '.ownerDocument');
+    equals(pi.parentNode, null, '.parentNode');
+    equals(pi.prefix, null, '.prefix');
+    equals(pi.textContent, data, '.textContent');
 });
 
 
-
-/******************************************************************************
-  Below here are tests still looking for a home here somewhere.
-******************************************************************************/
-test('location', function(){
-
-    var doc;
-
-    doc = document.implementation.createDocument(
-        'http://www.envjs.com', 'envjs', null);
-    ok(doc, 'doc created');
-    equals(doc.baseURI, 'about:blank', '.baseURI');
-    equals(doc.documentURI, 'about:blank', '.documentURI');
-
-    equals(doc.baseURI, 'about:blank', '.baseURI');
-    equals(doc.documentURI, 'about:blank', '.documentURI');
-
-});
-
-
-
-
-
-QUnit.module('DOMParser');
-
-test('parseFromString', function(){
-
-    var root,
-        doc;
-
-    //elements
-    doc = domparser.parseFromString(
-        '<farm><pig><oink/></pig><cow sound="moo"/><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(
-		xmlserializer.serializeToString(root),
-        '<farm><pig><oink/></pig><cow sound="moo"/><horse/></farm>',
-		'serializeToString'
-	);
-
-
-    //elements ns
-    doc = domparser.parseFromString(
-        '<farm><pig xmlns="http://oink"><oink/></pig><cow/><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm><pig xmlns="http://oink"><oink/></pig><cow/><horse/></farm>', 'serializeToString');
-
-
-    doc = domparser.parseFromString(
-        '<farm xmlns:oink="http://oink"><oink:pig>true</oink:pig><cow/><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    //NOTE: known issue with using e4x as it will remove the prefix and add xmlns='http://oink'
-    //to the pig <farm xmlns:oink="http://oink"><pig xmlns="http://oink">true</pig><cow/><horse/></farm>
-    //equals(xmlserializer.serializeToString(root),
-    //    '<farm xmlns:oink="http://oink"><oink:pig>true</oink:pig><cow/><horse/></farm>', 'serializeToString');
-
-    //attribute
-    doc = domparser.parseFromString(
-        '<farm sound="oink"><pig/><cow/><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    ok(root.hasAttribute('sound'), 'hasAttribute');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink"><pig/><cow/><horse/></farm>', 'serializeToString');
-
-
-    //attribute ns
-    doc = domparser.parseFromString(
-        '<farm xmlns:a="abc" a:sound="oink"><pig/><cow/><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm xmlns:a="abc" a:sound="oink"><pig/><cow/><horse/></farm>', 'serializeToString');
-
-
-    //e4x special characters {} (not evaluated outside XML literals)
-    doc = domparser.parseFromString(
-        '<farm sound="oink"><pig/>{abc.123}<cow/><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink"><pig/>{abc.123}<cow/><horse/></farm>', 'serializeToString');
-
-    //text
-    doc = domparser.parseFromString(
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/></farm>', 'serializeToString');
-
-
-    // comment
-    doc = domparser.parseFromString(
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/><!-- farmer --></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/><!-- farmer --></farm>', 'serializeToString');
-
-    //processing-instruction
-    doc = domparser.parseFromString(
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/><'+'?farmer hadA="duck"?></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/><'+'?farmer hadA="duck"?></farm>', 'serializeToString');
-
-    //xml pi is stripped out
-    doc = domparser.parseFromString(
-        '<'+'?xml version="1.0"?><farm sound="oink"><pig/></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink"><pig/></farm>', 'serializeToString');
-
-    //CDATA is a known deficiency in this approach, e4x turns it into an xml encoded text node
-    doc = domparser.parseFromString(
-        '<farm sound="oink"><pig/><cow>moo</cow><horse/><![CDATA[old mac ><&!-- d]]></farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    //equals(xmlserializer.serializeToString(root),
-    //    '<farm sound="oink"><pig/><cow>moo</cow><horse/><![CDATA[old mac ><&!-- d]]></farm>', 'serializeToString');
-
-    // whitespace
-    doc = domparser.parseFromString(
-        '<'+'?xml version="1.0"?>\
-        <farm sound="oink">\
-            <pig/>\
-            <cow>moo</cow>\
-            <horse/>\
-        </farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink">\
-            <pig/>\
-            <cow>moo</cow>\
-            <horse/>\
-        </farm>', 'serializeToString');
-
-    // line breaks
-    doc = domparser.parseFromString(
-        '<'+'?xml version="1.0"?>\n\
-        <farm sound="oink">\n\
-            <pig/>\n\
-            <cow>moo</cow>\n\
-            <horse/>\n\
-        </farm>', 'text/xml');
-    root = doc.documentElement;
-    equals(root.nodeName, 'farm', 'root.nodeName');
-    equals(xmlserializer.serializeToString(root),
-        '<farm sound="oink">\n\
-            <pig/>\n\
-            <cow>moo</cow>\n\
-            <horse/>\n\
-        </farm>', 'serializeToString');
-
-});
-
-
-
-
-
-QUnit.module('XPath');
-/**
-* XPATH - borrowed from the google ajaxslt project and modified to work inside our unit tests
-*/
-
-// Copyright 2005, Google Inc.
-// All Rights Reserved.
-//
-// Unit test for the XPath parser and engine.
-//
-// Author: Steffen Meschkat <mesch@google.com>
-//         Junji Takagi <jtakagi@google.com>
-
-test('document.createExpression', function(){
-	
-	var expr = [
-	    "@*",
-	    "@*|node()",
-	    "/descendant-or-self::div",
-	    "/div",
-	    "//div",
-	    "/descendant-or-self::node()/child::para",
-	    "substring('12345', 0, 3)",
-	    "//title | //link",
-	    "$x//title",
-	    // "$x/title",  // TODO(mesch): parsing of this expression is broken
-	    "id('a')//title",
-	    "//*[@about]",
-	    "count(descendant::*)",
-	    "count(descendant::*) + count(ancestor::*)",
-	    "concat(substring-before(@image,'marker'),'icon',substring-after(@image,'marker'))",
-	    "@*|text()",
-	    "*|/",
-	    "source|destination",
-	    "$page != 'to' and $page != 'from'",
-	    "substring-after(icon/@image, '/mapfiles/marker')",
-	    "substring-before($str, $c)",
-	    "$page = 'from'",
-	    "segments/@time",
-	    "child::para",
-	    "child::*",
-	    "child::text()",
-	    "child::node()",
-	    "attribute::name",
-	    "attribute::*",
-	    "descendant::para",
-	    "ancestor::div",
-	    "ancestor-or-self::div",
-	    "descendant-or-self::para",
-	    "self::para",
-	    "child::chapter/descendant::para",
-	    "child::*/child::para",
-	    "/",
-	    "/descendant::para",
-	    "/descendant::olist/child::item",
-	    "child::para[position()=1]",
-	    "child::para[position()=last()]",
-	    "child::para[position()=last()-1]",
-	    "child::para[position()>1]",
-	    "following-sibling::chapter[position()=1]",
-	    "preceding-sibling::chapter[position()=1]",
-	    "/descendant::figure[position()=42]",
-	    "/child::doc/child::chapter[position()=5]/child::section[position()=2]",
-	    "child::para[attribute::type='warning']",
-	    "child::para[attribute::type='warning'][position()=5]",
-	    "child::para[position()=5][attribute::type='warning']",
-	    "child::chapter[child::title='Introduction']",
-	    "child::chapter[child::title]",
-	    "child::*[self::chapter or self::appendix]",
-	    "child::*[self::chapter or self::appendix][position()=last()]",
-	    "count(//*[id='u1']|//*[id='u2'])",
-	    "count(//*[id='u1']|//*[class='u'])",
-	    "count(//*[class='u']|//*[class='u'])",
-	    "count(//*[class='u']|//*[id='u1'])",
-
-	    // Axis expressions
-	    "count(//*[@id='self']/ancestor-or-self::*)",
-	    "count(//*[@id='self']/ancestor::*)",
-	    "count(//*[@id='self']/attribute::*)",
-	    "count(//*[@id='self']/child::*)",
-	    "count(//*[@id='self']/descendant-or-self::*)",
-	    "count(//*[@id='self']/descendant::*)",
-	    "count(//*[@id='self']/following-sibling::*)",
-	    "count(//*[@id='self']/following::*)",
-	    "//*[@id='self']/parent::*/@id",
-	    "count(//*[@id='self']/preceding-sibling::*)",
-	    "count(//*[@id='self']/preceding::*)",
-	    "//*[@id='self']/self::*/@id",
-
-	    // (Japanese)
-	    "/descendant-or-self::\u90e8\u5206",
-	    "//\u90e8\u5206",
-	    "substring('\uff11\uff12\uff13\uff14\uff15', 0, 3)",
-	    "//\u30bf\u30a4\u30c8\u30eb | //\u30ea\u30f3\u30af",
-	    "$\u8b0e//\u30bf\u30a4\u30c8\u30eb",
-	    "//*[@\u30c7\u30b9\u30c6\u30a3\u30cd\u30a4\u30b7\u30e7\u30f3]",
-	    "concat(substring-before(@\u30a4\u30e1\u30fc\u30b8,'\u76ee\u5370'),'\u30a2\u30a4\u30b3\u30f3',substring-after(@\u30a4\u30e1\u30fc\u30b8,'\u76ee\u5370'))",
-	    "\u30bd\u30fc\u30b9|\u30c7\u30b9\u30c6\u30a3\u30cd\u30a4\u30b7\u30e7\u30f3",
-	    "$\u30da\u30fc\u30b8 != '\u307e\u3067' and $\u30da\u30fc\u30b8 != '\u304b\u3089'",
-	    "substring-after(\u30a2\u30a4\u30b3\u30f3/@\u30a4\u30e1\u30fc\u30b8, '/\u5730\u56f3\u30d5\u30a1\u30a4\u30eb/\u76ee\u5370')",
-	    "substring-before($\u6587\u5b57\u5217, $\u6587\u5b57)",
-	    "$\u30da\u30fc\u30b8 = '\u304b\u3089'",
-	    "\u30bb\u30b0\u30e1\u30f3\u30c8/@\u6642\u523b",
-	    "child::\u6bb5\u843d",
-	    "attribute::\u540d\u524d",
-	    "descendant::\u6bb5\u843d",
-	    "ancestor::\u90e8\u5206",
-	    "ancestor-or-self::\u90e8\u5206",
-	    "descendant-or-self::\u6bb5\u843d",
-	    "self::\u6bb5\u843d",
-	    "child::\u7ae0/descendant::\u6bb5\u843d",
-	    "child::*/child::\u6bb5\u843d",
-	    "/descendant::\u6bb5\u843d",
-	    "/descendant::\u9806\u5e8f\u30ea\u30b9\u30c8/child::\u9805\u76ee",
-	    "child::\u6bb5\u843d[position()=1]",
-	    "child::\u6bb5\u843d[position()=last()]",
-	    "child::\u6bb5\u843d[position()=last()-1]",
-	    "child::\u6bb5\u843d[position()>1]",
-	    "following-sibling::\u7ae0[position()=1]",
-	    "preceding-sibling::\u7ae0[position()=1]",
-	    "/descendant::\u56f3\u8868[position()=42]",
-	    "/child::\u6587\u66f8/child::\u7ae0[position()=5]/child::\u7bc0[position()=2]",
-	    "child::\u6bb5\u843d[attribute::\u30bf\u30a4\u30d7='\u8b66\u544a']",
-	    "child::\u6bb5\u843d[attribute::\u30bf\u30a4\u30d7='\u8b66\u544a'][position()=5]",
-	    "child::\u6bb5\u843d[position()=5][attribute::\u30bf\u30a4\u30d7='\u8b66\u544a']",
-	    "child::\u7ae0[child::\u30bf\u30a4\u30c8\u30eb='\u306f\u3058\u3081\u306b']",
-	    "child::\u7ae0[child::\u30bf\u30a4\u30c8\u30eb]",
-	    "child::*[self::\u7ae0 or self::\u4ed8\u9332]",
-	    "child::*[self::\u7ae0 or self::\u4ed8\u9332][position()=last()]",
-
-	    //Selenium bugs
-	    "id('nested1')/div[1]//input[2]",
-	    "id('foo')//div[contains(@id, 'useful')]//input",
-	    "(//table[@class='stylee'])//th[text()='theHeaderText']/../td",
-
-	    // The following are all expressions that used to occur in google
-	    // maps XSLT templates.
-	    "$address",
-	    "$address=string(/page/user/defaultlocation)",
-	    "$count-of-snippet-of-url = 0",
-	    "$daddr",
-	    "$form",
-	    "$form = 'from'",
-	    "$form = 'to'",
-	    "$form='near'",
-	    "$home",
-	    "$i",
-	    "$i > $page and $i < $page + $range",
-	    "$i < $page and $i >= $page - $range",
-	    "$i < @max",
-	    "$i <= $page",
-	    "$i + 1",
-	    "$i = $page",
-	    "$i = 1",
-	    "$info = position() or (not($info) and position() = 1)",
-	    "$is-first-order",
-	    "$is-first-order and $snippets-exist",
-	    "$more",
-	    "$more > 0",
-	    "$near-point",
-	    "$page",
-	    "$page != 'from'",
-	    "$page != 'to'",
-	    "$page != 'to' and $page != 'from'",
-	    "$page > 1",
-	    "$page = 'basics'",
-	    "$page = 'details'",
-	    "$page = 'from'",
-	    "$page = 'to'",
-	    "$page='from'",
-	    "$page='to'",
-	    "$r >= 0.5",
-	    "$r >= 1",
-	    "$r - 0",
-	    "$r - 1",
-	    "$r - 2",
-	    "$r - 3",
-	    "$r - 4",
-	    "$saddr",
-	    "$sources",
-	    "$sources[position() < $details]",
-	    "$src",
-	    "$str",
-	    "\"'\"",
-	    "(//location[string(info/references/reference[1]/url)=string($current-url)]/info/references/reference[1])[1]",
-	    "(not($count-of-snippet-of-url = 0) and (position() = 1) or not($current-url = //locations/location[position() = $last-pos]//reference[1]/url))",
-	    "(not($info) and position() = 1) or $info = position()",
-	    ".",
-	    "../@arg0",
-	    "../@filterpng",
-	    "/page/@filterpng",
-	    "4",
-	    "@attribution",
-	    "@id",
-	    "@max > @num",
-	    "@meters > 16093",
-	    "@name",
-	    "@start div @num + 1",
-	    "@url",
-	    "ad",
-	    "address/line",
-	    "adsmessage",
-	    "attr",
-	    "boolean(location[@id='near'][icon/@image])",
-	    "bubble/node()",
-	    "calltoaction/node()",
-	    "category",
-	    "contains($str, $c)",
-	    "count(//location[string(info/references/reference[1]/url)=string($current-url)]//snippet)",
-	    "count(//snippet)",
-	    "count(attr)",
-	    "count(location)",
-	    "count(structured/source) > 1",
-	    "description/node()",
-	    "destination",
-	    "destinationAddress",
-	    "domain",
-	    "false()",
-	    "icon/@class != 'noicon'",
-	    "icon/@image",
-	    "info",
-	    "info/address/line",
-	    "info/distance",
-	    "info/distance and $near-point",
-	    "info/distance and info/phone and $near-point",
-	    "info/distance or info/phone",
-	    "info/panel/node()",
-	    "info/phone",
-	    "info/references/reference[1]",
-	    "info/references/reference[1]/snippet",
-	    "info/references/reference[1]/url",
-	    "info/title",
-	    "info/title/node()",
-	    "line",
-	    "location",
-	    "location[@id!='near']",
-	    "location[@id='near'][icon/@image]",
-	    "location[position() > $numlocations div 2]",
-	    "location[position() <= $numlocations div 2]",
-	    "locations",
-	    "locations/location",
-	    "near",
-	    "node()",
-	    "not($count-of-snippets = 0)",
-	    "not($form = 'from')",
-	    "not($form = 'near')",
-	    "not($form = 'to')",
-	    "not(../@page)",
-	    "not(structured/source)",
-	    "notice",
-	    "number(../@info)",
-	    "number(../@items)",
-	    "number(/page/@linewidth)",
-	    "page/ads",
-	    "page/directions",
-	    "page/error",
-	    "page/overlay",
-	    "page/overlay/locations/location",
-	    "page/refinements",
-	    "page/request/canonicalnear",
-	    "page/request/near",
-	    "page/request/query",
-	    "page/spelling/suggestion",
-	    "page/user/defaultlocation",
-	    "phone",
-	    "position()",
-	    "position() != 1",
-	    "position() != last()",
-	    "position() > 1",
-	    "position() < $details",
-	    "position()-1",
-	    "query",
-	    "references/@total",
-	    "references/reference",
-	    "references/reference/domain",
-	    "references/reference/url",
-	    "reviews/@positive div (reviews/@positive + reviews/@negative) * 5",
-	    "reviews/@positive div (reviews/@positive + reviews/@negative) * (5)",
-	    "reviews/@total",
-	    "reviews/@total > 1",
-	    "reviews/@total > 5",
-	    "reviews/@total = 1",
-	    "segments/@distance",
-	    "segments/@time",
-	    "segments/segment",
-	    "shorttitle/node()",
-	    "snippet",
-	    "snippet/node()",
-	    "source",
-	    "sourceAddress",
-	    "sourceAddress and destinationAddress",
-	    "string(../@daddr)",
-	    "string(../@form)",
-	    "string(../@page)",
-	    "string(../@saddr)",
-	    "string(info/title)",
-	    "string(page/request/canonicalnear) != ''",
-	    "string(page/request/near) != ''",
-	    "string-length($address) > $linewidth",
-	    "structured/@total - $details",
-	    "structured/source",
-	    "structured/source[@name]",
-	    "substring($address, 1, $linewidth - 3)",
-	    "substring-after($str, $c)",
-	    "substring-after(icon/@image, '/mapfiles/marker')",
-	    "substring-before($str, $c)",
-	    "tagline/node()",
-	    "targetedlocation",
-	    "title",
-	    "title/node()",
-	    "true()",
-	    "url",
-	    "visibleurl"
-	];
-	for (var i = 0; i < expr.length; ++i) {
-	    ok( document.createExpression(expr[i], null), expr[i]);
-	}
-	
-});
-
-test('expression.evaluate', function(){
-	
-	var numExpr = [
-	    /* number expressions */
-	    [ "1+1", 2 ],
-	    [ "floor( -3.1415 )", -4 ],
-	    [ "-5 mod -2", -1 ],
-	    [ "-5 mod 2", -1 ],
-	    [ "5 mod -2", 1 ],
-	    [ "5 mod 2", 1 ],
-	    [ "ceiling( 3.1415 )", 4.0 ],
-	    [ "floor( 3.1415 )", 3.0 ],
-	    [ "ceiling( -3.1415 )", -3.0 ],
-	    /* string expressions */
-	    [ "substring('12345', -42, 1 div 0)", "12345" ],
-	    [ "normalize-space( '  qwerty ' )", "qwerty" ],
-	    [ "contains('1234567890','9')", true ],
-	    [ "contains('1234567890','1')", true ],
-	    [ "'Hello World!'", 'Hello World!' ],
-	    [ "substring('12345', 1.5, 2.6)", "234" ],
-	    [ "substring('12345', 0, 3)", "12" ],
-	    /* string expressions (Japanese) */
-	    [ "substring('\u3042\u3044\u3046\u3048\u304a', -42, 1 div 0)",
-	      "\u3042\u3044\u3046\u3048\u304a" ],
-	    [ "normalize-space( '  \u3044\u308d\u306f\u306b\u307b\u3078\u3068 ' )",
-	      "\u3044\u308d\u306f\u306b\u307b\u3078\u3068" ],
-	    [ "contains('\u5357\u7121\u5999\u6cd5\u9023\u83ef\u7d4c','\u7d4c')",
-	      true ],
-	    [ "contains('\u5357\u7121\u5999\u6cd5\u9023\u83ef\u7d4c','\u5357')",
-	      true ],
-	    [ "'\u3053\u3093\u306b\u3061\u306f\u3001\u4e16\u754c\uff01'",
-	      '\u3053\u3093\u306b\u3061\u306f\u3001\u4e16\u754c\uff01' ],
-	    [ "substring('\uff11\uff12\uff13\uff14\uff15', 1.5, 2.6)",
-	      "\uff12\uff13\uff14" ],
-	    [ "substring('\uff11\uff12\uff13\uff14\uff15', 0, 3)",
-	      "\uff11\uff12" ],
-	    /* selenium bug SEL-347, AJAXSLT issue 19 */
-	    [ "count(//a[@href=\"javascript:doFoo('a', 'b')\"])", 1 ],
-	    /* variables */
-	    //[ "$foo", 'bar', { foo: 'bar' } ],
-	    //[ "$foo", 100, { foo: 100 } ],
-	    //[ "$foo", true, { foo: true } ],
-	    //[ "$foo + 1", 101, { foo: 100 } ],
-	    /* variables (Japanese) */
-	    //[ "$\u307b\u3052", '\u307b\u3048', { \u307b\u3052: '\u307b\u3048' } ],
-	    //[ "$\u307b\u3052", 100, { \u307b\u3052: 100 } ],
-	    //[ "$\u307b\u3052", true, { \u307b\u3052: true } ],
-	    //[ "$\u307b\u3052 + 1", 101, { \u307b\u3052: 100 } ],
-	    /* functions */
-	    // function id() with string argument
-	    [ "count(id('test1'))", 1 ],
-	    // function id() with node-set argument
-	    [ "count(id(//*[@id='testid']))", 1 ],
-	    /* union expressions */
-	    [ "count(//*[@id='u1'])", 1 ],
-	    [ "count(//*[@class='u'])", 3 ],
-	    [ "count(//*[@id='u1']|//*[@id='u2'])", 2 ],
-	    [ "count(//*[@id='u1']|//*[@class='u'])", 3 ],
-	    [ "count(//*[@class='u']|//*[@class='u'])", 3 ],
-	    [ "count(//*[@class='u']|//*[@id='u1'])", 3 ]
-	];
-
-	
-    var doc = domparser.parseFromString(
-        '<body>\
-			\
-		    <div id="test1"></div>\
-		    <div id="testid">test1</div>\
-		    <a id="jshref" href="javascript:doFoo(\'a\', \'b\')">javascript href with spaces</a>\
-			\
-		    <!-- for union expression -->\
-		    <span id="u1" class="u"></span>\
-		    <span id="u2" class="u"></span>\
-		    <span id="u3" class="u"></span>\
-		  </body>',
-        'text/xml'
-    );
-	
-	for (var i = 0; i < numExpr.length; ++i) {
-    	
-    	var e = numExpr[i];
-		/**
-		 * this is related to xslt variables and we haven't
-		 * pulled this into Envjs yet.  Implementation details will
-		 * have to change.
-		 */
-		/*  
-		var ctx = new ExprContext(document.body);
-    	if (e[2]) {
-      		for (var k in e[2]) {
-        		var v = e[2][k];
-        		if (typeof v == 'number') {
-          			ctx.setVariable(k, new NumberValue(v));
-        		} else if (typeof v == 'string') {
-          			ctx.setVariable(k, new StringValue(v));
-        		} else if (typeof v == 'boolean') {
-          			ctx.setVariable(k, new BooleanValue(v));
-        		}
-      		}
-    	}
-		*/
-
-    	var result = doc.createExpression(e[0], null).evaluate(doc, null, null);
-    	if (typeof e[1] == 'number') {
-      		equals(e[1], result.numberValue, 'expected .numberValue');
-    	} else if (typeof e[1] == 'string') {
-      		equals(e[1], result.stringValue, 'expected .stringValue');
-    	} else if (typeof e[1] == 'boolean') {
-      		equals(e[1], result.booleanValue, 'expected .booleanValue');
-    	}
-  	}
-	
-	// For the following axis expressions, we need full control over the
-	// entire document, so we cannot evaluate them against document.body,
-	// but use our own XML document here. We verify that they give the
-	// right results by counting the nodes in their result node sets. For
-	// the axes that contain only one node, we check that we found the
-	// right node using the id. For axes that contain elements, we only
-	// count the elements, so we don't have to worry about whitespace
-	// normalization for the text nodes.
-	var axisTests = [
-	    [ "count(//*[@id='self']/ancestor-or-self::*)", 3 ],
-	    [ "count(//*[@id='self']/ancestor::*)", 2 ],
-	    [ "count(//*[@id='self']/attribute::node())", 1 ],
-	    [ "count(//*[@id='self']/child::*)", 1 ],
-	    [ "count(//*[@id='self']/descendant-or-self::*)", 3 ],
-	    [ "count(//*[@id='self']/descendant::*)", 2 ],
-	    [ "count(//*[@id='self']/following-sibling::*)", 3 ],
-	    [ "count(//*[@id='self']/@*/following-sibling::*)", 0 ],
-	    [ "count(//*[@id='self']/following::*)", 4 ],
-	    [ "//*[@id='self']/parent::*/@id", "parent" ],
-	    [ "count(/parent::*)", 0 ],
-	    [ "count(//*[@id='self']/preceding-sibling::*)", 1 ],
-	    [ "count(//*[@id='self']/@*/preceding-sibling::*)", 0 ],
-	    [ "count(//*[@id='self']/preceding::*)", 2 ],
-	    [ "//*[@id='self']/self::*/@id", "self" ]
-	];
-	
-	doc = domparser.parseFromString(
-	  	'<page>\
-	       	<p></p>\
-	       	<list id="parent">\
-	        	<item></item>\
-	        	<item id="self"><d><d></d></d></item>\
-	        	<item></item>\
-	        	<item></item>\
-	        	<item></item>\
-	       	</list>\
-	       	<f></f>\
-	    </page>'
-	);
-	
-	for (var i = 0; i < axisTests.length; ++i) {
-	    var e = axisTests[i];
-    	var result = doc.createExpression(e[0], null).evaluate(doc, null, null);
-	    if (typeof e[1] == 'number') {
-	      equals(e[1], result.numberValue, 'expected .numberValue');
-	    } else if (typeof e[1] == 'string') {
-	      equals(e[1], result.stringValue, 'expected .stringValue');
-	    } else if (typeof e[1] == 'boolean') {
-	      equals(e[1], result.booleanValue, 'expected .booleanValue');
-	    }
-	}
-});
-
-test('document.evalute', function(){
-	
-	//test attribute asterisk
-	var doc = domparser.parseFromString('<x a="1" b="1"><y><z></z></y></x>');
-	var result = doc.evaluate("count(/x/@*)", doc, null, XPathResult.NUMBER_TYPE, null);
-	equals(2, result.numberValue, 'attribute asterisk');
-	
-	doc = domparser.parseFromString(
-		'<page>\
-			<request>\
-	    		<q>new york</q>\
-	      	</request>\
-	      	<location lat="100" lon="200"/>\
-	    </page>'
-	);
-	
-	doTestEvalDom(doc, 'page', 'location', 'lat', '100', 'lon', '200');
-	
-	doc = domparser.parseFromString(
-	    '<\u30da\u30fc\u30b8>\
-	      	<\u30ea\u30af\u30a8\u30b9\u30c8>\
-	      		<\u30af\u30a8\u30ea>\u6771\u4eac</\u30af\u30a8\u30ea>\
-	      	</\u30ea\u30af\u30a8\u30b9\u30c8>\
-	      	<\u4f4d\u7f6e \u7def\u5ea6="\u4e09\u5341\u4e94" \u7d4c\u5ea6="\u767e\u56db\u5341"/>\
-	    </\u30da\u30fc\u30b8>'
-	);
-
-	doTestEvalDom(doc, '\u30da\u30fc\u30b8', '\u4f4d\u7f6e', '\u7def\u5ea6', '\u4e09\u5341\u4e94', '\u7d4c\u5ea6', '\u767e\u56db\u5341');
-	
-	function doTestEvalDom(doc, page, location, lat, latValue, lon, lonValue) {
-	  	var slashPage = '/' + page;
-	  	var slashPageLocationAtLat = '/' + page + '/' + location + '/@' + lat;
-	  	var slashPageLocationAtLon = '/' + page + '/' + location + '/@' + lon;
-
-	  	var result = doc.evaluate(page, doc, null, XPathResult.ANY_TYPE, null);
-	  	equals(result.snapshotLength, 1, "snapshotLength for xpath "+page);
-	  	ok(result.singleNodeValue, "singleNodeValue for xpath "+page);
-	  	equals(result.singleNodeValue.nodeName, page, "nodeName page");
-
-	  	result = doc.evaluate(slashPage, doc, null, XPathResult.ANY_TYPE, null);
-	  	equals(result.snapshotLength, 1, "snapshotLength for xpath "+slashPage);
-	  	ok(result.singleNodeValue, "singleNodeValue for xpath "+slashPage);
-	  	equals(result.singleNodeValue.nodeName, page, "nodeName page");
-	
-	  	result = doc.evaluate('/', doc, null, XPathResult.ANY_TYPE, null);
-	  	equals(result.snapshotLength, 1, "snapshotLength for xpath /");
-	  	ok(result.singleNodeValue, "singleNodeValue for xpath /");
-	  	equals(result.singleNodeValue.nodeName, '#document', "nodeName #document");
-	
-		result = doc.evaluate(slashPageLocationAtLat, doc, null, XPathResult.ANY_TYPE, null);
-		equals(result.snapshotLength, 1, "snapshotLength for xpath "+slashPageLocationAtLat);
-		ok(result.singleNodeValue, "singleNodeValue for xpath "+slashPageLocationAtLat);
-		equals(result.singleNodeValue.nodeName, lat, "nodeName");
-		equals(result.singleNodeValue.nodeValue, latValue, "nodeValue");
-		
-		result = doc.evaluate(slashPageLocationAtLon, doc, null, XPathResult.ANY_TYPE, null);
-		equals(result.snapshotLength, 1, "snapshotLength for xpath "+slashPageLocationAtLon);
-		ok(result.singleNodeValue, "singleNodeValue for xpath "+slashPageLocationAtLon);
-		equals(result.singleNodeValue.nodeName, lon, "nodeName");
-		equals(result.singleNodeValue.nodeValue, lonValue, "nodeValue");
-		
-		
-		result = doc.evaluate('//*', doc, null, XPathResult.ANY_TYPE, null);
-		
-		equals(result.snapshotLength, 4, "snapshotLength for xpath //*");
-		equals(result.iterateNext().nodeName, page, "iterateNext().nodeName");
-		ok(result.iterateNext(), "iterateNext");
-		ok(result.iterateNext(), "iterateNext");
-		equals(result.iterateNext().nodeName, location, "iterateNext().nodeName");
-		equals(result.iterateNext(), null, "iterateNext should be null");
-		
-	}
-});

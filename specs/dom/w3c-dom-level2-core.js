@@ -1,6 +1,6 @@
 QUnit.module('DOM Level 2');
 /******************************************************************************
-http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/core.html
+http://www.w3.org/TR/DOM-Level-2-Core
 
 13 November, 2000
 1. Document Object Model Core
@@ -32,11 +32,8 @@ Table of contents
             ProcessingInstruction
 
 ******************************************************************************/
-test('Fundamental Interfaces Available', function(){
-    ok(true, 'DOM 2 has no additional fundamental interfaces');
-});
-test('Extended Interfaces Available', function(){
-    ok(true, 'DOM 2 has no additional extended interfaces');
+test('1. Document Object Model Core', function(){
+    ok(true, 'http://www.w3.org/TR/DOM-Level-2-Core');
 });
 /******************************************************************************
 1.1. Overview of the DOM Core Interfaces
@@ -48,6 +45,12 @@ authors to access and manipulate parsed HTML and XML content inside conforming
 products. The DOM Core API also allows creation and population of a Document 
 object using only DOM API calls; loading a Document and saving it persistently 
 is left to the product that implements the DOM API.
+
+******************************************************************************/
+test('1.1. Overview of the DOM Core Interfaces', function(){
+   ok(true, 'See DOM Level 1 -- 1.1. Overview of the DOM Core Interfaces');
+});
+/******************************************************************************
 
 1.1.1. The DOM Structure Model
 
@@ -92,6 +95,12 @@ objects.
 Finally, the interfaces Text, Comment, and CDATASection all inherit from the 
 CharacterData interface.
 
+******************************************************************************/
+test('1.1.1. The DOM Structure Model', function(){
+   ok(true, 'See DOM Level 1 -- 1.1.1. The DOM Structure Model');
+});
+/******************************************************************************
+
 1.1.2. Memory Management
 
 Most of the APIs defined by this specification are interfaces rather than
@@ -128,7 +137,15 @@ implementation. Neither of the explicit language bindings defined by the DOM
 API (for ECMAScript and Java) require any memory management methods, but DOM
 bindings for other languages (especially C or C++) may require such support.
 These extensions will be the responsibility of those adapting the DOM API to a
-specific language, not the DOM Working Group. 1.1.3. Naming Conventions
+specific language, not the DOM Working Group. 
+
+******************************************************************************/
+test('1.1.2. Memory Management', function(){
+   ok(true, 'See DOM Level 1 -- 1.1.2. Memory Management');
+});
+/******************************************************************************
+
+1.1.3. Naming Conventions
 
 While it would be nice to have attribute and method names that are short,
 informative, internally consistent, and familiar to users of similar APIs, the
@@ -145,7 +162,15 @@ For example, the DOM API uses the method name "remove" when the method changes
 the structural model, and the method name "delete" when the method gets rid of
 something inside the structure model. The thing that is deleted is not
 returned. The thing that is removed may be returned, when it makes sense to
-return it. 1.1.4. Inheritance vs. Flattened Views of the API
+return it. 
+
+******************************************************************************/
+test('1.1.3. The DOMString type', function(){
+   ok(true, 'See DOM Level 1 -- 1.1.5. The DOMString type');
+});
+/******************************************************************************
+
+1.1.4. Inheritance vs. Flattened Views of the API
 
 The DOM Core APIs present two somewhat different sets of interfaces to an
 XML/HTML document: one presenting an "object oriented" approach with a
@@ -170,6 +195,13 @@ redundant one.) Thus, even though there is a generic nodeName attribute on the
 Node interface, there is still a tagName attribute on the Element interface;
 these two attributes must contain the same value, but the it is worthwhile to
 support both, given the different constituencies the DOM API must satisfy.
+
+******************************************************************************/
+test('1.1.4. Inheritance vs. Flattened Views of the API', function(){
+   ok(true, 'See DOM Level 1 -- 1.1.4. Inheritance vs. Flattened Views of the API');
+});
+/******************************************************************************
+
 1.1.5. The DOMString type
 
 To ensure interoperability, the DOM specifies the following:
@@ -204,6 +236,12 @@ wstring type. However, that definition did not meet the interoperability
 criteria of the DOM API since it relied on negotiation to decide the width and
 encoding of a character.
 
+******************************************************************************/
+test('1.1.5. The DOMString type', function(){
+   ok(true, 'See DOM Level 1 -- 1.1.5. The DOMString type');
+});
+/******************************************************************************
+
 1.1.6. The DOMTimeStamp type
 
 To ensure interoperability, the DOM specifies the following:
@@ -223,6 +261,12 @@ To ensure interoperability, the DOM specifies the following:
             the long type. In ECMAScript, TimeStamp is bound to the Date type 
             because the range of the integer type is too small.
 
+******************************************************************************/
+test('1.1.6. The DOMTimeStamp type', function(){
+    ok(true, "DOMTimeStamp is ECMAScript Date. Nothing to test.");
+});
+/******************************************************************************
+
 1.1.7. String comparisons in the DOM
 
 The DOM has many interfaces that imply string matching. HTML processors
@@ -241,6 +285,12 @@ means that data read into the DOM is assumed to already be normalized. The
 DOM and applications built on top of it in this case only have to assure that
 text remains normalized when being changed. For further details, please see
 [Charmod].
+
+******************************************************************************/
+test('1.1.7. String comparisons in the DOM', function(){
+   
+});
+/******************************************************************************
 
 1.1.8. XML Namespaces
 
@@ -319,8 +369,15 @@ implementation dependent manner. The only guarantee in such cases is that all
 methods that access a named item by its nodeName will access the same item,
 and all methods which access a node by its URI and local name will access the
 same node. For instance, setAttribute and setAttributeNS affect the node that
-getAttribute and getAttributeNS, respectively, return. 1.2. Fundamental
-Interfaces
+getAttribute and getAttributeNS, respectively, return. 
+
+******************************************************************************/
+test('1.1.8. XML Namespaces', function(){
+   
+});
+/******************************************************************************
+
+1.2. Fundamental Interfaces
 
 The interfaces within this section are considered fundamental, and must be
 fully implemented by all conforming implementations of the DOM, including all
@@ -329,11 +386,11 @@ HTML DOM implementations [DOM Level 2 HTML], unless otherwise specified.
 A DOM application may use the hasFeature(feature, version) method of the
 DOMImplementation interface with parameter values "Core" and "2.0"
 (respectively) to determine whether or not this module is supported by the
-implementation. Any implementation that conforms to DOM Level 2 or a DOM
-Level 2 module must conform to the Core module. Please refer to additional
+implementation. Any implementation that conforms to DOM Level 2 or a DOM Level
+2 module must conform to the Core module. Please refer to additional
 information about conformance in this specification.
 
-Exception DOMException
+1.2.1. Exception DOMException
 
     DOM operations only raise exceptions in "exceptional" circumstances, i.e., 
     when an operation is impossible to perform (either for logical reasons, 
@@ -379,15 +436,6 @@ Exception DOMException
         // Introduced in DOM Level 2:
         const unsigned short      INVALID_ACCESS_ERR             = 15;
 
-******************************************************************************/
-test('DOMException ExceptionCode', function(){
-   equals(DOMException.INVALID_STATE_ERR, 11);
-   equals(DOMException.SYNTAX_ERR, 12);
-   equals(DOMException.INVALID_MODIFICATION_ERR, 13);
-   equals(DOMException.NAMESPACE_ERR, 14);
-   equals(DOMException.INVALID_ACCESS_ERR, 15);
-});
-/******************************************************************************
 
     Definition group ExceptionCode
 
@@ -442,8 +490,12 @@ test('DOMException ExceptionCode', function(){
                 reated it (that doesn't support it)
 
 ******************************************************************************/
-test('TODO: ', function(){
-   
+test('1.2.1. Exception DOMException', function(){
+   equals(DOMException.INVALID_STATE_ERR, 11);
+   equals(DOMException.SYNTAX_ERR, 12);
+   equals(DOMException.INVALID_MODIFICATION_ERR, 13);
+   equals(DOMException.NAMESPACE_ERR, 14);
+   equals(DOMException.INVALID_ACCESS_ERR, 15);
 });
 /******************************************************************************
 Interface DOMImplementation
@@ -471,13 +523,6 @@ Interface DOMImplementation
         };
 
 
-******************************************************************************/
-test('DOMImplementation.prototype', function(){
-    ok(true, 'See DOM Level 1');
-    ok(DOMImplementation.prototype.createDocumentType, 'createDocumentType');
-    ok(DOMImplementation.prototype.createDocument, 'createDocument');
-});
-/******************************************************************************
     Methods
 
         createDocument introduced in DOM Level 2
@@ -517,46 +562,7 @@ test('DOMImplementation.prototype', function(){
 
             WRONG_DOCUMENT_ERR: Raised if doctype has already been used with a 
             different document or was created from a different implementation.
-******************************************************************************/
-test('DOMImplementation.prototype.createDocument', function(){
 
-    var doc;
-
-    doc = document.implementation.createDocument('http://www.envjs.com', 
-        'envjs', null);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.childNodes.length, 1, 'childNodes.length');
-    equals(doc.documentElement.tagName, 'envjs', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, 'http://www.envjs.com', 
-        '.documentElement.namespaceURI');
-
-    doc = document.implementation.createDocument(null, 'html', null);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, null, 
-        '.documentElement.namespaceURI');
-
-    doc = document.implementation.createDocument('', 'html', null);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, null, 
-        '.documentElement.namespaceURI');
-
-    doc = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html', null);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, 'http://www.w3.org/1999/xhtml', 
-        '.documentElement.namespaceURI');
-});
-/******************************************************************************
         createDocumentType introduced in DOM Level 2
             Creates an empty DocumentType node. Entity declarations and 
             notations are not made available. Entity reference expansions and 
@@ -590,44 +596,7 @@ test('DOMImplementation.prototype.createDocument', function(){
             contains an illegal character.
 
             NAMESPACE_ERR: Raised if the qualifiedName is malformed.
-*******************************************************************************/
-test('DOMImplementation.prototype.createDocumentType', function(){
-    var htmldoctype, doc;
 
-    htmldoctype = document.implementation.createDocumentType(
-        'html', null, null);
-    doc = document.implementation.createDocument(null, 'html', htmldoctype);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, null, 
-        '.documentElement.namespaceURI');
-
-
-    htmldoctype = document.implementation.createDocumentType('html', null, 
-        "-//W3C//DTD HTML 3.2 Final//EN");
-    doc = document.implementation.createDocument(null, 'html', htmldoctype);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, null, 
-        '.documentElement.namespaceURI');
-
-
-    htmldoctype = document.implementation.createDocumentType('html', null, 
-        "-//W3C//DTD HTML 4.01//EN");
-    doc = document.implementation.createDocument(null, 'html', htmldoctype);
-    ok(doc, 'doc created');
-    equals(doc.toString(), '[object XMLDocument]', '.toString()');
-    equals(doc.attributes, null, '.attributes');
-    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
-    equals(doc.documentElement.namespaceURI, null, 
-        '.documentElement.namespaceURI');
-
-});
-/******************************************************************************
         hasFeature
             Test if the DOM implementation implements a specific feature.
             Parameters
@@ -659,20 +628,136 @@ test('DOMImplementation.prototype.createDocumentType', function(){
             
             No Exceptions
 ******************************************************************************/
-test('TODO: ', function(){
-   
+test('DOMImplementation.prototype', function(){
+    
+//IDL Definition
+    ok(true, 'See DOM Level 1');
+    ok(DOMImplementation.prototype.createDocumentType, 'createDocumentType');
+    ok(DOMImplementation.prototype.createDocument, 'createDocument');
+
+//Methods
+//createDocument
+
+    var doc;
+
+    doc = document.implementation.createDocument('http://www.envjs.com', 
+        'envjs', null);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object XMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.childNodes.length, 1, 'childNodes.length');
+    equals(doc.documentElement.tagName, 'envjs', '.documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, 'http://www.envjs.com', 
+        '.documentElement.namespaceURI');
+
+    doc = document.implementation.createDocument(null, 'html', null);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object XMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.documentElement.tagName, 'html', 'documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, null, 
+        '.documentElement.namespaceURI');
+
+    doc = document.implementation.createDocument('', 'html', null);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object XMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, null, 
+        '.documentElement.namespaceURI');
+
+    doc = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html', null);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object XMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, 'http://www.w3.org/1999/xhtml', 
+        '.documentElement.namespaceURI');
+        
+//createDocumentType  
+    var htmldoctype;
+
+    htmldoctype = document.implementation.createDocumentType(
+        'html', null, null);
+    doc = document.implementation.createDocument(null, 'html', htmldoctype);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object HTMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, null, 
+        '.documentElement.namespaceURI');
+
+
+    htmldoctype = document.implementation.createDocumentType('html', null, 
+        "-//W3C//DTD HTML 3.2 Final//EN");
+    doc = document.implementation.createDocument(null, 'html', htmldoctype);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object HTMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, null, 
+        '.documentElement.namespaceURI');
+
+
+    htmldoctype = document.implementation.createDocumentType('html', null, 
+        "-//W3C//DTD HTML 4.01//EN");
+    doc = document.implementation.createDocument(null, 'html', htmldoctype);
+    ok(doc, 'doc created');
+    equals(doc.toString(), '[object HTMLDocument]', '.toString()');
+    equals(doc.attributes, null, '.attributes');
+    equals(doc.documentElement.tagName, 'html', '.documentElement.tagName');
+    equals(doc.documentElement.namespaceURI, null, 
+        '.documentElement.namespaceURI');
+        
+//hasFeature
+    equals(document.implementation.hasFeature('xml', '2.0'), true, 'xml');
+    equals(document.implementation.hasFeature('html', '2.0'), true, 'html');
+    equals(document.implementation.hasFeature('xml', '2.0'), true, 'xml 2.0');
+    equals(document.implementation.hasFeature('html', '2.0'), true, 'html 2.0');
+    equals(document.implementation.hasFeature('abc', '2.0'), false, 'abc 2.0');
+    
+    equals(document.implementation.hasFeature('XML', null), true, 'xml');
+    equals(document.implementation.hasFeature('HTML', null), true, 'html');
+    equals(document.implementation.hasFeature('Xml', null), true, 'xml 2.0');
+    equals(document.implementation.hasFeature('hTMl', null), true, 'html 2.0');
+    equals(document.implementation.hasFeature('AbC', null), false, 'abc 2.0');
 });
 /******************************************************************************
 
 Interface DocumentFragment
 
-    DocumentFragment is a "lightweight" or "minimal" Document object. It is very common to want to be able to extract a portion of a document's tree or to create a new fragment of a document. Imagine implementing a user command like cut or rearranging a document by moving fragments around. It is desirable to have an object which can hold such fragments and it is quite natural to use a Node for this purpose. While it is true that a Document object could fulfill this role, a Document object can potentially be a heavyweight object, depending on the underlying implementation. What is really needed for this is a very lightweight object. DocumentFragment is such an object.
+    DocumentFragment is a "lightweight" or "minimal" Document object. It is
+    very common to want to be able to extract a portion of a document's tree or
+    to create a new fragment of a document. Imagine implementing a user command
+    like cut or rearranging a document by moving fragments around. It is
+    desirable to have an object which can hold such fragments and it is quite
+    natural to use a Node for this purpose. While it is true that a Document
+    object could fulfill this role, a Document object can potentially be a
+    heavyweight object, depending on the underlying implementation. What is
+    really needed for this is a very lightweight object. DocumentFragment is
+    such an object.
 
-    Furthermore, various operations -- such as inserting nodes as children of another Node -- may take DocumentFragment objects as arguments; this results in all the child nodes of the DocumentFragment being moved to the child list of this node.
+    Furthermore, various operations -- such as inserting nodes as children of
+    another Node -- may take DocumentFragment objects as arguments; this
+    results in all the child nodes of the DocumentFragment being moved to the
+    child list of this node.
 
-    The children of a DocumentFragment node are zero or more nodes representing the tops of any sub-trees defining the structure of the document. DocumentFragment nodes do not need to be well-formed XML documents (although they do need to follow the rules imposed upon well-formed XML parsed entities, which can have multiple top nodes). For example, a DocumentFragment might have only one child and that child node could be a Text node. Such a structure model represents neither an HTML document nor a well-formed XML document.
+    The children of a DocumentFragment node are zero or more nodes representing
+    the tops of any sub-trees defining the structure of the document.
+    DocumentFragment nodes do not need to be well-formed XML documents
+    (although they do need to follow the rules imposed upon well-formed XML
+    parsed entities, which can have multiple top nodes). For example, a
+    DocumentFragment might have only one child and that child node could be a
+    Text node. Such a structure model represents neither an HTML document nor a
+    well-formed XML document.
 
-    When a DocumentFragment is inserted into a Document (or indeed any other Node that may take children) the children of the DocumentFragment and not the DocumentFragment itself are inserted into the Node. This makes the DocumentFragment very useful when the user wishes to create nodes that are siblings; the DocumentFragment acts as the parent of these nodes so that the user can use the standard methods from the Node interface, such as insertBefore and appendChild.
+    When a DocumentFragment is inserted into a Document (or indeed any other
+    Node that may take children) the children of the DocumentFragment and not
+    the DocumentFragment itself are inserted into the Node. This makes the
+    DocumentFragment very useful when the user wishes to create nodes that are
+    siblings; the DocumentFragment acts as the parent of these nodes so that
+    the user can use the standard methods from the Node interface, such as
+    insertBefore and appendChild.
 
 
     IDL Definition

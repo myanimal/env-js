@@ -1,6 +1,6 @@
 QUnit.module('DOM Level 3');
 /******************************************************************************
-http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html
+http://www.w3.org/TR/DOM-Level-3-Core
 
 07 April 2004
 1. Document Object Model Core
@@ -44,19 +44,10 @@ Table of contents
             CharacterData, Attr, Element, Text, Comment, TypeInfo, 
             UserDataHandler, DOMError, DOMErrorHandler, DOMLocator, 
             DOMConfiguration
-******************************************************************************/
-test('Fundamental Interfaces', function(){
-    
-});
-/******************************************************************************
     * 1.5 Extended Interfaces: XML Module
           o CDATASection, DocumentType, Notation, Entity, EntityReference, 
             ProcessingInstruction
-******************************************************************************/
-test('Extended Interfaces', function(){
-    
-});
-/******************************************************************************
+            
 This specification defines a set of objects and interfaces for accessing and
 manipulating document objects. The functionality specified (the Core
 functionality) is sufficient to allow software developers and Web script
@@ -66,7 +57,40 @@ population of a Document object using only DOM API calls. A solution for
 loading a Document and saving it persistently is proposed in [DOM Level 3 Load
 and Save].
 
+******************************************************************************/
+test('1. Document Object Model Core', function(){
+    ok(true, 'http://www.w3.org/TR/DOM-Level-3-Core');
+});
+/******************************************************************************
+
 1.1 Overview of the DOM Core Interfaces
+
+******************************************************************************/
+test('1.1. Overview of the DOM Core Interfaces', function(){
+    expect(10);
+    //ExceptionCode is not a globally available interface
+    //in any browser I can identify
+    //ok(ExceptionCode,           'ExceptionCode defined');
+    
+    ok(DOMStringList,           'DOMStringList defined');
+    ok(NameList,                'NameList defined');
+    
+    //DOMImplementationList is not a globally available interface
+    //in any browser I can identify
+    //ok(DOMImplementationList,   'DOMImplementationList defined');
+    
+    //DOMImplementationSource is not a globally available interface
+    //in any browser I can identify
+    //ok(DOMImplementationSource, 'DOMImplementationSource defined');
+    
+    ok(TypeInfo,                'TypeInfo defined');
+    ok(UserDataHandler,         'UserDataHandler defined');
+    ok(DOMError,                'DOMError defined');
+    ok(DOMErrorHandler,         'DOMErrorHandler defined');
+    ok(DOMLocator,              'DOMLocator defined');
+    ok(DOMConfiguration,        'DOMConfiguration defined');
+});
+/******************************************************************************
 
 1.1.1 The DOM Structure Model
 
@@ -1371,6 +1395,20 @@ Interface Document
 ******************************************************************************/
 test('Document.prototype', function(){
     
+});
+test('location', function(){
+
+    var doc;
+
+    doc = document.implementation.createDocument(
+        'http://www.envjs.com', 'envjs', null);
+    ok(doc, 'doc created');
+    equals(doc.baseURI, 'about:blank', '.baseURI');
+    equals(doc.documentURI, 'about:blank', '.documentURI');
+
+    equals(doc.baseURI, 'about:blank', '.baseURI');
+    equals(doc.documentURI, 'about:blank', '.documentURI');
+
 });
 /******************************************************************************
 

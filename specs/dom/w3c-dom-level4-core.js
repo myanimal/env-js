@@ -117,11 +117,23 @@ through the child nodes. The ElementTraversal interface has a similar
 attribute, childElementCount, that reports only the number of Element nodes,
 which is often what is desired for such operations.
 
+*******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 1.1. Not in This Specification
 
 This specification does not include the complete list of attributes, methods,
 and other interfaces available on the Element object. Additional interfaces are
 found in other specifications, notably the DOM Core specifications.
+
+*******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
 
 1.2. Conformance
 
@@ -140,9 +152,21 @@ A conforming implementation of this specification meets all requirements
 identified by the use of these terms, within the scope of its language
 bindings.
 
+*******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 2. Element Interfaces
 
 This section is normative.
+*******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 2.1. ElementCollection interface
 
 Interface ElementCollection
@@ -169,11 +193,6 @@ Interface ElementCollection
             Element                            item(in unsigned long index);
             Element                            namedItem(in DOMString name);
           };  
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
 
 
     Attributes
@@ -181,11 +200,6 @@ test('TODO: ', function(){
         length of type unsigned long, readonly
             This attribute specifies the number of items in the list. If there
             are no items in this list, the value of this attribute must be 0.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
 
     Methods
 
@@ -205,11 +219,6 @@ test('TODO: ', function(){
             null is returned if the index is out of range.
             
             No Exceptions
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
        namedItem
             This method retrieves an Element using a name. In languages with an
             id attribute (such as HTML or SVG), this method searches for an
@@ -282,11 +291,6 @@ Interface Element
           ...
         };  
         
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
 
     Attributes
 
@@ -294,71 +298,48 @@ test('TODO: ', function(){
         childElements of type ElementCollection, readonly
             A collection of all the elements which are children of the current
             element node.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         children of type HTMLCollection, readonly
             A collection of all the HTML elements which are children of the
             current element node. Note: In Internet Explorer, this may include
             Comment nodes, and in browsers other than WebKit this may include
             SVG elements.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         firstElementChild of type Element, readonly
             Returns the first child element node of this element. null if this
             element has no child elements.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         firstElementChild of type Element, readonly
             Returns the first child element node of this element. null if this
             element has no child elements.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         lastElementChild of type Element, readonly
             Returns the last child element node of this element. null if this
             element has no child elements.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         previousElementSibling of type Element, readonly
             Returns the previous sibling element node of this element. null if
             this element has no element sibling nodes that come before this one
             in the document tree.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         nextElementSibling of type Element, readonly
             Returns the next sibling element node of this element. null if this
             element has no element sibling nodes that come after this one in
             the document tree.
-*******************************************************************************/
-test('TODO: ', function(){
-
-});
-/******************************************************************************
         ...
 
     Methods
     ...
 
+*******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 4. Relationship to other DOM specifications
 
 This section is informative.
+*******************************************************************************/
+test('TODO: ', function(){
+
+});
+/******************************************************************************
+
 5. Security Considerations
 
 This section is informative.
