@@ -2777,6 +2777,7 @@ Envjs.getcwd = function() {
  * @param {Object} base  (semi-optional)  The base url used in resolving "path" above
  */
 Envjs.uri = function(path, base) {
+	path = path.replace(/\\/g, '/');
     //console.log('constructing uri from path %s and base %s', path, base);
     path = path+'';
     // Semi-common trick is to make an iframe with src='javascript:false'
@@ -2789,6 +2790,12 @@ Envjs.uri = function(path, base) {
     // if path is absolute, then just normalize and return
     if (path.match('^[a-zA-Z]+://')) {
         return urlparse.urlnormalize(path);
+    }
+
+    // if path is a Windows style absolute path (C:\foo\bar\index.html)
+	// make it a file: URL
+    if (path.match('^[a-zA-Z]+:/')) {
+        return 'file:///' + urlparse.urlnormalize(path);
     }
 
     // interesting special case, a few very large websites use
@@ -2812,7 +2819,7 @@ Envjs.uri = function(path, base) {
     // if base is still empty, then we are in QA mode loading local
     // files.  Get current working directory
     if (!base) {
-        base = 'file://' +  Envjs.getcwd() + '/';
+        base = 'file:///' + (""+Envjs.getcwd()).replace(/\\/g, '/') + '/';
     }
     // handles all cases if path is abosulte or relative to base
     // 3rd arg is "false" --> remove fragments
@@ -2898,13 +2905,15 @@ Envjs.localXHR = function(url, xhr, connection, data){
             xhr.statusText = "ok";
             xhr.responseText = Envjs.readFromFile(url);
             try{
-                if(url.match(/html$/)){
+                //url as passed in here might be an object, so stringify it
+                var urlstring = url.toString();
+                if(urlstring.match(/html$/)){
                     xhr.responseHeaders["Content-Type"] = 'text/html';
-                }else if(url.match(/.xml$/)){
+                }else if(urlstring.match(/.xml$/)){
                     xhr.responseHeaders["Content-Type"] = 'text/xml';
-                }else if(url.match(/.js$/)){
+                }else if(urlstring.match(/.js$/)){
                     xhr.responseHeaders["Content-Type"] = 'text/javascript';
-                }else if(url.match(/.json$/)){
+                }else if(urlstring.match(/.json$/)){
                     xhr.responseHeaders["Content-Type"] = 'application/json';
                 }else{
                     xhr.responseHeaders["Content-Type"] = 'text/plain';
@@ -2928,6 +2937,7 @@ Envjs.localXHR = function(url, xhr, connection, data){
 __extend__(Envjs, urlparse);
 
 }(/*Envjs.XMLHttpRequest.Core*/));
+
 (function(){
     
 var log = Envjs.logger('Envjs.Window');
